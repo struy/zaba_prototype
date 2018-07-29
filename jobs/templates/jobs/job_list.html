@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load countries %}
+{% load i18n %}
+
+{% block content %}
+
+<h2><a href="{% url 'jobs_cbv:job_list' %}">Jobs CBV</a></h2>
+
+<ul>
+    {% for job in object_list %}
+    <li>{{job.title }}
+{#        {{ job.update_at|naturaltime }} #}
+    <a href="{% url 'jobs_cbv:job_edit' job.id %}">edit</a>
+    <a href="{% url 'jobs_cbv:job_delete' job.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'jobs_cbv:job_new' %}">New</a>
+
+{% endblock %}

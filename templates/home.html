@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="home">
+<div class="container">
+
+    <div class="row ">
+        <a href="admin"> Admin</a> <br>
+        <a href="http://127.0.0.1:8000/rosetta">Rosetta</a>
+        <hr>
+        <div class="col-12 text-center"><h5>{%  trans "Frog greeting!" %} </h5></div>
+
+        <div class="col-6 text-center bg-success btn mybtn"><i class="fas fa-shopping-cart"></i>&nbsp;<a href="items">{% trans "Sell" %} </a></div>
+        <div class="col-6 text-center bg-info btn mybtn"><i class="fas fa-briefcase"></i>&nbsp; <a href="jobs">{% trans "Jobs" %}</a></div>
+        <div class="col-6 text-center bg-warning btn mybtn2 "> <i class="fas fa-home"></i> <a href="rents">{%trans "Housing" %}</a></div>
+        <div class="col-6 text-center bg-danger btn mybtn"><i class="fas fa-paw"></i><a href="gifts">{% trans "Cats" %}</a></div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

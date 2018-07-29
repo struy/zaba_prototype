@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img src="{% static "img/zaba.jpg" %}" alt="">
+            </div>
+            <div class="col-7">
+                <h2>{% trans "Items" %}</h2>
+                <div class="advert">
+                    {% if latest_advert_list %}
+                        {% for advert in latest_advert_list %}
+                            <span class="counter"> {{ forloop.counter }} </span>
+                            <div class="wrap_list_adverts">
+                                <h2>{{ advert.title }} </h2>
+                                <i>{{ advert.update_at|naturaltime }} </i>
+                             </div>
+                            <a href="/jobs/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
+                            <hr>
+                        {% endfor %}
+                    {% else %}
+                        <p>No adverts are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -24,7 +24,7 @@ SECRET_KEY = '*$#z=yb+z(vegr!k(*2!!(4$1o#qb)1m5m)8@*!r$rsvq!7ddg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-18-222-54-18.us-east-2.compute.amazonaws.com', '18.222.54.18']
 
 # Application definition
 
@@ -161,9 +161,7 @@ MEDIA_URL = ''
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 
-
 MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation',)
-
 
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"

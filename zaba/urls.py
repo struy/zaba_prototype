@@ -34,9 +34,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('adverts/', include('adverts.urls')),
     path('jobs/', include('jobs.urls')),
     path('rents/', include('rents.urls')),
     path('items/', include('items.urls')),

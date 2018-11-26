@@ -20,4 +20,4 @@ class ListAdmin(admin.ModelAdmin):
 #     }
 
 
-admin.site.register([Advert, Location, JobType])
+admin.site.register([Location, JobType])

@@ -2,7 +2,6 @@ from django.db import models
 from adverts.models import Advert
 
 
-
 class GiftsType(models.Model):
     name = models.CharField(max_length=42)
 

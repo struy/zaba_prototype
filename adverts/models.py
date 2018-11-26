@@ -17,6 +17,7 @@ class Advert(models.Model):
 
     class Meta:
         ordering = ['updated_at']
+        abstract = True
 
     def __unicode__(self):
         return self.title

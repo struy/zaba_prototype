@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from .models import Gift
 
 
-
 # Create your views here.
 def index(request):
     latest_advert_list = Gift.objects.order_by('-updated_at')[:5]

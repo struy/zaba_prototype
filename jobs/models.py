@@ -25,14 +25,15 @@ class Job(Advert):
     jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     DURATION = (('ft', 'Fulltime'),
-                ('pt', 'Parttime'),)
+                ('pt', 'Parttime'),
+                ('ca', 'Casual'),)
     duration = models.CharField(
         max_length=2,
         choices=DURATION,
         default='ft'
     )
     countries = CountryField(multiple=True, default='EN')
-    salary = models.PositiveIntegerField()
+    salary = models.PositiveIntegerField(blank=True)
 
     def get_absolute_url(self):
         return reverse('jobs_cbv:job_edit', kwargs={'pk': self.pk})

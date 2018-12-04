@@ -3,9 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
-
-# Create your models here.
+from django.utils.text import slugify
 
 
 class Advert(models.Model):
@@ -13,6 +11,7 @@ class Advert(models.Model):
     description = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(max_length=250)
     # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
@@ -27,6 +26,10 @@ class Advert(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name, allow_unicode=True)
+        return super(Advert, self).save(*args, **kwargs)
 
 
 class Location(models.Model):

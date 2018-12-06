@@ -1,9 +1,11 @@
 import datetime
 
+
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+
 
 
 class Advert(models.Model):
@@ -28,7 +30,12 @@ class Advert(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name, allow_unicode=True)
+        words = '-'.join(self.title.split()[:4])
+        text = slugify(words, allow_unicode=True)
+        count = Advert.objects.filter(slug__startswith=text).count()
+        if count != 0:
+            text = '%s-%d' % (text, count)
+        self.slug = text
         return super(Advert, self).save(*args, **kwargs)
 
 

@@ -29,7 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
     path('accounts/', include('allauth.urls')),
-    path('accounts/logout/', auth_views.logout, {'next_page': '/'}),
     path('logout/', auth_views.logout, name='logout'),
     path('i18n/', include('django.conf.urls.i18n')),
     # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),

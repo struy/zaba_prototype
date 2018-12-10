@@ -29,22 +29,17 @@
         <div class="row">
            <div class="col text-center">
 
-           {% if user.is_authenticated %}
-<p>Welcome {{ user.username }} !!!    <i class="fas fa-user fa-2x"></i> &nbsp; <i class="far fa-bell fa-2x"></i></p>
-<p><a href="{% url 'logout' %}">Log out</a></p>
-{% else %}
-{#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
-<a href="{% provider_login_url 'facebook' %}">Sign Up</a>
-<p><a href="{% url 'login' %}">Log In </a></p>
-{% endif %}
+               {% if user.is_authenticated %}
+                   <p>Welcome {{ user.username }} !!! <i class="fas fa-user fa-2x"></i> &nbsp; <i
+                           class="far fa-bell fa-2x"></i></p>
+                   <p><a href="{% url 'logout' %}">Log out</a></p>
+               {% else %}
+                   {#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
+                   <a href="{% provider_login_url 'facebook' %}">Sign Up</a>
+                   <p><a href="{% url 'login' %}">Log In </a></p>
+               {% endif %}
 
-
-
-
-
-
-
-            </div>
+           </div>
             <div class="col text-center"><a href="/" class="home_a"> <i class="fas fa-frog fa-2x"></i>
                 <h1>zaba.today</h1></a></div>
             <div class="col text-center">

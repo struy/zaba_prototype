@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from adverts import views
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
@@ -27,6 +28,8 @@ urlpatterns = [
     # path('sitemap.xml', sitemap, name='sitemap-xml'),
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
+    path('accounts/', include('allauth.urls')),
+    path('accounts/logout/', auth_views.logout, {'next_page': '/'}),
     path('logout/', auth_views.logout, name='logout'),
     path('i18n/', include('django.conf.urls.i18n')),
     # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
@@ -38,6 +41,7 @@ urlpatterns += i18n_patterns(
     path('rents/', include('rents.urls')),
     path('items/', include('items.urls')),
     path('gifts/', include('gifts.urls')),
+
 )
 
 if settings.DEBUG:

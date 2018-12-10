@@ -5,6 +5,7 @@ django-bootstrap-breadcrumbs==0.9.1
 django-countries==5.3.2
 django-country-and-language-flags==0.1.1
 django-debug-toolbar==1.10.1
+django-extensions==2.1.4
 django-js-asset==1.1.0
 django-map-widgets==0.2.1
 django-modeltranslation==0.12.2

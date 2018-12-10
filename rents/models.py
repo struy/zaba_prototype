@@ -2,10 +2,8 @@ from django.db import models
 # from django.contrib.gis.db import models
 from mapwidgets.widgets import GooglePointFieldWidget
 
-# Create your models here.
 from adverts.models import Advert, Location
 import django_tables2 as tables
-
 
 
 class Rental(Advert):

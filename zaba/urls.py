@@ -28,8 +28,8 @@ urlpatterns = [
     # path('sitemap.xml', sitemap, name='sitemap-xml'),
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
+    path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     path('accounts/', include('allauth.urls')),
-    path('logout/', auth_views.logout, name='logout'),
     path('i18n/', include('django.conf.urls.i18n')),
     # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 ]

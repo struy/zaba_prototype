@@ -35,7 +35,7 @@
                    <p><a href="{% url 'logout' %}">Log out</a></p>
                {% else %}
                    {#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
-                   <a href="{% provider_login_url 'facebook' %}">Sign Up</a>
+                   <a href="{% provider_login_url 'google' %}">Sign Up</a>
                    <p><a href="{% url 'login' %}">Log In </a></p>
                {% endif %}
 

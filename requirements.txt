@@ -1,6 +1,8 @@
 certifi==2018.10.15
 chardet==3.0.4
+defusedxml==0.5.0
 Django==2.0.7
+django-allauth==0.38.0
 django-bootstrap-breadcrumbs==0.9.1
 django-countries==5.3.2
 django-country-and-language-flags==0.1.1
@@ -15,6 +17,7 @@ django-tables2==2.0.3
 filelock==3.0.10
 idna==2.7
 microsofttranslator==0.8
+oauthlib==2.1.0
 packaging==18.0
 Pillow==5.3.0
 pluggy==0.8.0
@@ -22,8 +25,11 @@ polib==1.1.0
 py==1.7.0
 py-translate==1.0.3
 pyparsing==2.3.0
+python3-openid==3.1.0
 pytz==2018.7
+PyYAML==3.13
 requests==2.20.1
+requests-oauthlib==1.0.0
 six==1.11.0
 sqlparse==0.2.4
 toml==0.10.0

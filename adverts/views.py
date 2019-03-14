@@ -8,7 +8,7 @@ from translate import translator
 
 # Create your views here.
 def index(request):
-    latest_advert_list = Advert.objects.order_by('-updated_at')[:5]
+    latest_advert_list = Advert.objects.order_by('-updated')[:5]
     template = loader.get_template('adverts/index.html')
     context = {'latest_advert_list': latest_advert_list, }
     return HttpResponse(template.render(context, request))

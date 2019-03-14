@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
-    latest_advert_list = Job.objects.order_by('-updated_at')[:5]
+    latest_advert_list = Job.objects.order_by('-updated')[:5]
     context = {'latest_advert_list': latest_advert_list}
     return render(request, 'jobs/index.html', context)
 

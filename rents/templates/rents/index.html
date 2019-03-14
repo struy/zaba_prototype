@@ -20,7 +20,7 @@
                             <span class="counter"> {{ forloop.counter }} </span>
                             <div class="wrap_list_adverts">
                                 <h2>{{ rent.title }} </h2>
-                                <i>{{ rent.created_at|naturaltime }} </i>
+                                <i>{{ rent.created|naturaltime }} </i>
                                 {#                 <i>{{ bedroom|apnumber}} </i>#}
                             </div>
                             <a href="/rents/{{ rent.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>

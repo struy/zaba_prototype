@@ -18,7 +18,7 @@
                             <span class="counter"> {{ forloop.counter }} </span>
                             <div class="wrap_list_adverts">
                                 <h2>{{ advert.title }} </h2>
-                                <i>{{ advert.update_at|naturaltime }} </i>
+                                <i>{{ advert.modified|naturaltime }} </i>
                              </div>
                             <a href="/jobs/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
                             <hr>

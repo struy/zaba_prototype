@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    latest_rent_list = Rental.objects.order_by('-created_at')[:5]
+    latest_rent_list = Rental.objects.order_by('-created')[:5]
     template = loader.get_template('rents/index.html')
     context = {
         'latest_rent_list': latest_rent_list,

@@ -15,17 +15,25 @@
 
 {% block content %}
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
+                {% render_breadcrumbs %}
+
+                <h2><a href="{% url 'jobs_cbv:job_list' %}">Job CBV</a>: Edit</h2>
+
+                <form method="post">{% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit"/>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
 
 
 
-{#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
-     {% render_breadcrumbs %}
-
-<h2><a href="{% url 'jobs_cbv:job_list' %}">Job CBV</a>: Edit</h2>
-
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
 
 {% endblock %}

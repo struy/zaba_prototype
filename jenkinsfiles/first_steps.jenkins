@@ -26,6 +26,7 @@ pipeline {
         stage ("Build"){
             steps{
                 sh """
+                rm -r zaba_prototype
                 git clone https://github.com/struy/zaba_prototype.git
                 cd zaba_prototype
                 python3 -m venv env
@@ -35,6 +36,8 @@ pipeline {
                 python manage.py collectstatic --noinput
                 python manage.py makemigrations
                 python manage.py migrate
+                chmod 777 db.sqlite3
+                python manage.py runserver 0.0.0.0:8000
                 """
 
 

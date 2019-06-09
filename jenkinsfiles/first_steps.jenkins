@@ -28,6 +28,7 @@ pipeline {
                 sh """
                 rm -r zaba_prototype
                 git clone https://github.com/struy/zaba_prototype.git
+                chmod 664 zaba_prototype
                 cd zaba_prototype
                 python3 -m venv env
                 source env/bin/activate

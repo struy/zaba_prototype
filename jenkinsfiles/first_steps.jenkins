@@ -26,7 +26,7 @@ pipeline {
         stage ("Build"){
             steps{
                 sh 'cd /home/ubuntu/'
-#                sh 'rm -r zaba_prototype'
+                //sh 'rm -r zaba_prototype'
                 sh 'git clone https://github.com/struy/zaba_prototype.git'
                 sh 'cd zaba_prototype'
                 sh 'python3 -m venv env'

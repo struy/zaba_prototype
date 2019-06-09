@@ -45,7 +45,19 @@ pipeline {
 
          stage ("Test"){
             steps{
-              sh 'cd zaba_prototype  && source env/bin/activate && python ./manage.py runtests'
+              sh 'cd zaba_prototype  && source env/bin/activate && echo TEST'
+            }
+        }
+
+
+        stage('Deploy') {
+            when {
+            expression {
+            currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                    }
+                    }
+            steps {
+                sh 'echo YES'
             }
         }
 

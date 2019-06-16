@@ -25,7 +25,7 @@ pipeline {
             steps{
                 sh """
                 cd /home/ubuntu/Build
-                rm -r zazaba_prototype
+                rm -r zaba_prototype
                 git clone https://github.com/struy/zaba_prototype.git
                 cd zaba_prototype
                 python3 -m venv env

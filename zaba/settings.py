@@ -186,3 +186,13 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation',)
 
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
+
+
+if DEBUG:
+    MIDDLEWARE = (
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+    ) + MIDDLEWARE
+    INSTALLED_APPS = (
+        'whitenoise.runserver_nostatic',
+    ) + INSTALLED_APPS
+

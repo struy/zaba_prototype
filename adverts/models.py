@@ -3,21 +3,15 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django.urls import reverse
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 
 
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
-    # created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['modified']
         abstract = True
-
-    # def get_absolute_url(self):
-    #     return reverse('detail', kwargs={'slug': self.slug})
-
 
     def was_published_recently(self):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
@@ -29,8 +23,6 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 class Location(models.Model):
     city = models.CharField(max_length=42, default='Chicago')
     neighborhoods = models.CharField(max_length=42, blank=True)
-
-    # zipcode = models.IntegerField()
 
     class Meta:
         ordering = ['city']

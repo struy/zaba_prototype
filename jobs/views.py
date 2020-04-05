@@ -5,7 +5,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 
-# Create your views here.
 def index(request):
     latest_advert_list = Job.objects.order_by('-updated')[:5]
     context = {'latest_advert_list': latest_advert_list}

@@ -3,7 +3,6 @@
 {% load countries %}
 {% load i18n %}
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -12,14 +11,11 @@
                 <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
                 <p><b>{% trans "City:" %}</b> {{ advert.location.city }} </p>
                 <p><b>{% trans "Neighborhood:" %}</b> {{ advert.location.neighborhoods }} </p>
-                <p><b>{% trans "Languages spoken by the employer:" %} </b>
                     {% for country in advert.countries %}
                         <i class="{{ country.flag_css }}"></i>
                     {% endfor %}
                 </p>
-                <p><b>{% trans "Job type:" %}</b> {{ advert.jobtype }} </p>
             </div>
         </div>
     </div>
-
 {% endblock %}

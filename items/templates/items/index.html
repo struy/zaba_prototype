@@ -20,7 +20,7 @@
                                 <h2>{{ advert.title }} </h2>
                                 <i>{{ advert.modified|naturaltime }} </i>
                              </div>
-                            <a href="/jobs/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
+                            <a href="/items/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
                             <hr>
                         {% endfor %}
                     {% else %}

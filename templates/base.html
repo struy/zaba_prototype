@@ -5,7 +5,6 @@
 {% load socialaccount %}
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/flags.css' %}">
@@ -27,19 +26,19 @@
 <header class="bg-secondary">
     <div class="container">
         <div class="row">
-           <div class="col text-center">
+            <div class="col text-center">
 
-               {% if user.is_authenticated %}
-                   <p>Welcome {{ user.username }} !!! <i class="fas fa-user fa-2x"></i> &nbsp; <i
-                           class="far fa-bell fa-2x"></i></p>
-                   <p><a href="{% url 'logout' %}">Log out</a></p>
-               {% else %}
-                   {#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
-                   <a href="{% provider_login_url 'google' %}">Sign Up</a>
-                   <p><a href="{% url 'login' %}">Log In </a></p>
-               {% endif %}
+                {% if user.is_authenticated %}
+                    <p>Welcome {{ user.username }} !!! <i class="fas fa-user fa-2x"></i> &nbsp; <i
+                            class="far fa-bell fa-2x"></i></p>
+                    <p><a href="{% url 'logout' %}">Log out</a></p>
+                {% else %}
+                    {#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
+                    <a href="{% provider_login_url 'google' %}">Sign Up</a>
+                    <p><a href="{% url 'login' %}">Log In </a></p>
+                {% endif %}
 
-           </div>
+            </div>
             <div class="col text-center"><a href="/" class="home_a"> <i class="fas fa-frog fa-2x"></i>
                 <h1>zaba.today</h1></a></div>
             <div class="col text-center">
@@ -94,14 +93,14 @@
 <center><img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0" width="728"
              alt="" class="img_ad">
 </center>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </body>
 </html>

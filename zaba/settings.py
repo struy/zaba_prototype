@@ -170,7 +170,7 @@ LANGUAGES = (
 
 )
 
-LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 COUNTRIES_ONLY = ['UA', 'RU', 'PL', 'US']
 

@@ -170,10 +170,8 @@ LANGUAGES = (
 
 )
 
-LOCALE_PATHS = (
-    'locale',
-    # os.path.join(PROJECT_DIR, 'locale'),
-)
+LOCALE_PATHS = os.path.join(BASE_DIR, 'locale')
+
 COUNTRIES_ONLY = ['UA', 'RU', 'PL', 'US']
 
 MEDIA_ROOT = [os.path.join(BASE_DIR, "media")]

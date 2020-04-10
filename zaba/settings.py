@@ -185,4 +185,5 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 
-
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379

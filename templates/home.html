@@ -5,21 +5,88 @@
 
     <div class="home">
         <div class="container">
-            <div class="row ">
-                <a href="http://127.0.0.1:8000/admin"> Admin</a> <br>
-                <a href="http://127.0.0.1:8000/rosetta">Rosetta</a>
-                <hr>
-                <div class="col-12 text-center"><h5>{% trans "Frog greeting!" %} </h5></div>
 
-                <div class="col-6 text-center bg-success btn mybtn"><i class="fas fa-shopping-cart"></i>&nbsp;<a
-                        href="items">{% trans "Sell" %} </a></div>
-                <div class="col-6 text-center bg-info btn mybtn"><i class="fas fa-briefcase"></i>&nbsp; <a
-                        href="jobs">{% trans "Jobs" %}</a></div>
-                <div class="col-6 text-center bg-warning btn mybtn2 "><i class="fas fa-home"></i> <a
-                        href="rents">{% trans "Housing" %}</a></div>
-                <div class="col-6 text-center bg-danger btn mybtn"><i class="fas fa-paw"></i><a
-                        href="gifts">{% trans "Cats" %}</a></div>
+
+            <div class="row justify-content-end counter">
+                <div class="col-lg-11">
+                    <div class="row justify-content-end">
+
+                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box py-5">
+                                <i class="fas fa-book"></i>
+                                <span data-toggle="counter-up">85</span>
+                                <p>Total</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box py-5">
+                                <i class="fas fa-chart-pie"></i>
+                                <span data-toggle="counter-up">65</span>
+                                <p>Active</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box pb-5 pt-0 pt-lg-5">
+                                <i class="fas fa-chart-bar"></i>
+                                <span data-toggle="counter-up">27</span>
+                                <p>Month</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box pb-5 pt-0 pt-lg-5">
+                                <i class="fas fa-chart-line"></i>
+                                <span data-toggle="counter-up">3</span>
+                                <p>Today</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
+
+            <div class="row">
+                <div id="greeting">
+                    <div class="col-12 text-center"><h2>{% trans "Frog greeting!" %} </h2></div>
+                </div>
+            </div>
+
+
+            <div class="row ">
+
+
+                <div class="col-6">
+                    <div class="icon-box text-center">
+                        <i class="fas fa-shopping-cart "></i>
+                        <a href="items">{% trans "Sell" %} </a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="icon-box text-center">
+                        <i class="fas fa-briefcase "></i>&nbsp; <a
+                            href="jobs">{% trans "Jobs" %}</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="icon-box text-center">
+                        <i class="fas fa-home"></i> <a
+                            href="rents">{% trans "Housing" %}</a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="icon-box text-center">
+                        <i class="fas fa-paw"></i><a
+                            href="gifts">{% trans "Cats" %}</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
     </div>
 

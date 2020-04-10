@@ -3,11 +3,15 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.conf import settings
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 
 
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    # default = (timezone.now().date() - datetime.timedelta(days=7))
+    expires = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         ordering = ['modified']

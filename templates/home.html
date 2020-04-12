@@ -14,7 +14,7 @@
                         <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                             <div class="count-box py-5">
                                 <i class="fas fa-book"></i>
-                                <span data-toggle="counter-up">85</span>
+                                <span data-toggle="counter-up">{{ total }} </span>
                                 <p>Total</p>
                             </div>
                         </div>
@@ -22,23 +22,23 @@
                         <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                             <div class="count-box py-5">
                                 <i class="fas fa-chart-pie"></i>
-                                <span data-toggle="counter-up">65</span>
-                                <p>Active</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                            <div class="count-box pb-5 pt-0 pt-lg-5">
-                                <i class="fas fa-chart-bar"></i>
-                                <span data-toggle="counter-up">27</span>
+                                <span data-toggle="counter-up">{{ month }}</span>
                                 <p>Month</p>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                             <div class="count-box pb-5 pt-0 pt-lg-5">
+                                <i class="fas fa-chart-bar"></i>
+                                <span data-toggle="counter-up">{{ week }}</span>
+                                <p>Week</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box pb-5 pt-0 pt-lg-5">
                                 <i class="fas fa-chart-line"></i>
-                                <span data-toggle="counter-up">3</span>
+                                <span data-toggle="counter-up">{{ today }}</span>
                                 <p>Today</p>
                             </div>
                         </div>

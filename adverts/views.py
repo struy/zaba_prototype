@@ -1,12 +1,13 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from .models import Advert
-from translate import translator
+from gifts.models import Gift
+from items.models import Item
+from rents.models import Rental
+from jobs.models import Job
 
 
-# Create your views here.
 def index(request):
     latest_advert_list = Advert.objects.order_by('-updated')[:5]
     template = loader.get_template('adverts/index.html')
@@ -20,5 +21,14 @@ def detail(request, advert_id):
 
 
 def home(request):
-    context = {}
+    total = Gift.objects.count() + Item.objects.count() + Rental.objects.count() + Job.objects.count()
+    month = Item.objects.dates('created', 'month').count()
+    week = Item.objects.dates('created', 'week').count()
+    today = Item.objects.dates('created', 'day').count()
+
+    context = {'total': total,
+               'month': month,
+               'today': today,
+               'week': week}
+
     return render(request, 'home.html', context)

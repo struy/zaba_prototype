@@ -7,4 +7,4 @@ class Item(Advert):
     # condition =
     # size =
     price = models.PositiveIntegerField()
-    pass
+

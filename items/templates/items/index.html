@@ -13,6 +13,15 @@
             <div class="col-7">
                 <h2>{% trans "Items" %}</h2>
                 <div class="advert ">
+
+
+                    {% if user.is_authenticated %}    {% endif %}
+                        <a href="{% url 'items:new' %}" class="top-menu">
+                            <i class="far fa-plus-square"></i>
+                        </a>
+
+
+
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
                             <div class="icon-box">

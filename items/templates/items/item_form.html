@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load django_bootstrap_breadcrumbs %}
+{% load crispy_forms_tags %}
 
 
 {% block breadcrumbs %}
@@ -10,27 +11,31 @@
 
 
 
-
+{% block head %}
+    {{ form.media }}
+{% endblock %}
 
 
 {% block content %}
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 {#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
                 {% render_breadcrumbs %}
 
-                <h2><a href="{% url 'jobs:job_list' %}">Jobs</a>: Edit</h2>
+                {#                <h2><a href="{% url 'items:item_list' %}">Items</a>: Create</h2>#}
 
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Submit"/>
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </form>
 
 
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 

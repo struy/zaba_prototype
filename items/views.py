@@ -1,6 +1,12 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django import forms
+from django.contrib.gis import forms as gis_forms
+from django.forms.models import modelform_factory
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Item
+from .forms import ItemForm
 
 
 def index(request):
@@ -19,3 +25,18 @@ def detail(request, advert_id):
 class ItemList(ListView):
     queryset = Item.objects.filter(point__isnull=False)
 
+
+class ItemCreate(CreateView):
+    model = Item
+    form_class = ItemForm
+    login_required = True
+    success_url = reverse_lazy('items:detail')
+
+    # def get_form(self, form_class):
+    #     form = super(ItemCreate, self).get_form(form_class)
+    #     form.fields['password'].widget = forms.PasswordInput()
+    #     return form
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)

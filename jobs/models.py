@@ -32,4 +32,4 @@ class Job(Advert, Location):
     salary = models.PositiveIntegerField(blank=True, verbose_name=_('salary'))
 
     def get_absolute_url(self):
-        return reverse('jobs_cbv:job_edit', kwargs={'pk': self.pk})
+        return reverse('jobs:job_edit', kwargs={'pk': self.pk})

@@ -12,7 +12,7 @@
     L.tileLayer('//{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(m);
 
     {% for e in object_list %}
-        L.marker({{e.lat_lng}}).addTo(m).bindPopup('{{e.name}}');
+        L.marker({{e.lat_lng}}).addTo(m).bindPopup('{{e.title}}');
     {% endfor %}
 
 </script>

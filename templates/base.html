@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
     <title>zaba.today</title>
     <link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.ico' %}"/>
+
+    {% block head%}
+    {% endblock %}
+
 </head>
 <body>
 
@@ -84,7 +88,7 @@
                     </li>
 
                          <li class="nav-item">
-                        <a class="nav-link" href="{% url 'map_items' %}">{% trans 'Map' %}</a>
+                        <a class="nav-link" href="{% url 'items:map' %}">{% trans 'Map' %}</a>
                     </li>
 
 
@@ -148,7 +152,7 @@
     {% block content %}
     {% endblock %}
 </section>
-<footer class="bg-dark fixed-bottom" >
+<footer class="bg-dark " >
     <div class="container">
         <div class="row">
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>

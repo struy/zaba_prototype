@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'debug_toolbar',
     "django_bootstrap_breadcrumbs",
+    'crispy_forms',
     # Auth
     'django.contrib.sites',
     'allauth',
@@ -191,5 +192,7 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 

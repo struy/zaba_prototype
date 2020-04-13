@@ -2,8 +2,9 @@ from django.db import models
 # from django.contrib.gis.db import models
 from mapwidgets.widgets import GooglePointFieldWidget
 
-from adverts.models import Advert, Location
 import django_tables2 as tables
+from adverts.models import Advert, Location
+
 
 
 class Rental(Advert):
@@ -25,7 +26,6 @@ class Rental(Advert):
         choices=POLICE,
         default='1'
     )
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
     furnished = models.BooleanField()
     prefer_sex_list = (('a', 'any'),
                        ('g', 'woman'),
@@ -44,8 +44,6 @@ class Rental(Advert):
         blank=True
 
     )
-    address = models.TextField()
-    # coordinates = models.PointField() #https://github.com/erdem/django-map-widgets
 
 
 class RentalTable(tables.Table):

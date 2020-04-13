@@ -1,11 +1,9 @@
 from django.db import models
-from adverts.models import Advert, Location
 from django_countries.fields import CountryField
 from django.urls import reverse
+from adverts.models import Advert, Location
+from django.utils.translation import gettext_lazy as _
 
-
-
-# Create your models here.
 
 class JobType(models.Model):
     name = models.CharField(max_length=42)
@@ -14,16 +12,14 @@ class JobType(models.Model):
         return self.name
 
 
-class Job(Advert):
+class Job(Advert, Location):
     """
     :type
     location
     duration
     payment
-    expired
     """
-    jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('jobtype'))
     DURATION = (('ft', 'Fulltime'),
                 ('pt', 'Parttime'),
                 ('ca', 'Casual'),)
@@ -33,7 +29,7 @@ class Job(Advert):
         default='ft'
     )
     countries = CountryField(multiple=True, default='EN')
-    salary = models.PositiveIntegerField(blank=True)
+    salary = models.PositiveIntegerField(blank=True, verbose_name=_('salary'))
 
     def get_absolute_url(self):
         return reverse('jobs_cbv:job_edit', kwargs={'pk': self.pk})

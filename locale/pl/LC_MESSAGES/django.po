@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 21:42-0500\n"
+"POT-Creation-Date: 2020-04-12 19:35-0500\n"
 "PO-Revision-Date: 2018-07-21 00:55+0000\n"
 "Last-Translator: b'  <dubovyk@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: adverts/templates/adverts/index.html:15 gifts/templates/gifts/index.html:14
+#: adverts/templates/adverts/index.html:15
 msgid "Adverts"
 msgstr "Jedzenie"
 
@@ -1227,8 +1227,12 @@ msgstr ""
 msgid "Can't detect language for the text \"%s\" given."
 msgstr ""
 
+#: gifts/templates/gifts/index.html:14
+msgid "Gifts"
+msgstr ""
+
 #: items/templates/items/detail.html:11 jobs/templates/jobs/detail.html:12
-#: rents/templates/rents/detail.html:16
+#: rents/templates/rents/detail.html:11
 msgid "Description:"
 msgstr ""
 
@@ -1236,7 +1240,7 @@ msgstr ""
 msgid "City:"
 msgstr ""
 
-#: items/templates/items/detail.html:13 jobs/templates/jobs/detail.html:14
+#: items/templates/items/detail.html:13
 msgid "Neighborhood:"
 msgstr ""
 
@@ -1244,15 +1248,19 @@ msgstr ""
 msgid "Items"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:15
+#: jobs/models.py:33
+msgid "salary"
+msgstr ""
+
+#: jobs/templates/jobs/detail.html:14
 msgid "Languages spoken by the employer:"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:20
+#: jobs/templates/jobs/detail.html:19
 msgid "Job type:"
 msgstr "Rodzaj pracy"
 
-#: jobs/templates/jobs/index.html:16 templates/home.html:17
+#: jobs/templates/jobs/index.html:16 templates/home.html:70
 msgid "Jobs"
 msgstr "Praca"
 
@@ -1260,23 +1268,23 @@ msgstr "Praca"
 msgid "Bathrooms:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:11
+#: rents/templates/rents/detail.html:12
 msgid "Bedrooms"
 msgstr ""
 
-#: rents/templates/rents/detail.html:12
+#: rents/templates/rents/detail.html:13
 msgid "Price:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:13
+#: rents/templates/rents/detail.html:14
 msgid "Pet policy:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:14
+#: rents/templates/rents/detail.html:15
 msgid "Location:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:15
+#: rents/templates/rents/detail.html:16
 msgid "Furnished:"
 msgstr ""
 
@@ -1296,22 +1304,22 @@ msgstr ""
 msgid "Contacts"
 msgstr ""
 
-#: templates/base.html:90
-msgid "Log out"
+#: templates/base.html:87
+msgid "Map"
 msgstr ""
 
-#: templates/home.html:12
+#: templates/home.html:53
 msgid "Frog greeting!"
 msgstr "Żaba wita cię!"
 
-#: templates/home.html:15
+#: templates/home.html:64
 msgid "Sell"
 msgstr "Sprzedać"
 
-#: templates/home.html:19
+#: templates/home.html:76
 msgid "Housing"
 msgstr "Mieszkaniowy"
 
-#: templates/home.html:21
+#: templates/home.html:82
 msgid "Cats"
 msgstr "Koty"

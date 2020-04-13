@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.gis.db import models
-from mapwidgets.widgets import GooglePointFieldWidget
 
 from .models import Advert, Location
 from jobs.models import JobType
@@ -20,4 +19,4 @@ class ListAdmin(admin.ModelAdmin):
 #     }
 
 
-admin.site.register([Location, JobType])
+admin.site.register([JobType])

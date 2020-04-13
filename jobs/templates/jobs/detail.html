@@ -11,7 +11,6 @@
                 <h1 class="job_title">{{ advert.title }}</h1>
                 <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
                 <p><b>{% trans "City:" %}</b> {{ advert.location.city }} </p>
-                <p><b>{% trans "Neighborhood:" %}</b> {{ advert.location.neighborhoods }} </p>
                 <p><b>{% trans "Languages spoken by the employer:" %} </b>
                     {% for country in advert.countries %}
                         <i class="{{ country.flag_css }}"></i>

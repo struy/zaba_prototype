@@ -1,6 +1,8 @@
+import redis
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
+from django.conf import settings
 from .models import Advert
 from gifts.models import Gift
 from items.models import Item
@@ -21,10 +23,15 @@ def detail(request, advert_id):
 
 
 def home(request):
-    total = Gift.objects.count() + Item.objects.count() + Rental.objects.count() + Job.objects.count()
-    month = Item.objects.dates('created', 'month').count()
-    week = Item.objects.dates('created', 'week').count()
-    today = Item.objects.dates('created', 'day').count()
+    r = redis.StrictRedis(host=settings.REDIS_HOST,
+                          port=settings.REDIS_PORT,
+                          db=settings.REDIS_DB)
+
+    total = r.get("Total:saved").decode('utf-8')
+    cls = [Item, Gift, Rental, Job]
+    month = sum([c.objects.dates('created', 'month').count() for c in cls])
+    week = sum([c.objects.dates('created', 'week').count() for c in cls])
+    today = sum([c.objects.dates('created', 'day').count() for c in cls])
 
     context = {'total': total,
                'month': month,

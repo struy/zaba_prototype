@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 21:42-0500\n"
-"PO-Revision-Date: 2020-04-07 02:45+0000\n"
+"POT-Creation-Date: 2020-04-12 19:35-0500\n"
+"PO-Revision-Date: 2020-04-13 00:37+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: adverts/templates/adverts/index.html:15 gifts/templates/gifts/index.html:14
+#: adverts/templates/adverts/index.html:15
 msgid "Adverts"
 msgstr "Оголошення"
 
@@ -1228,8 +1228,12 @@ msgstr ""
 msgid "Can't detect language for the text \"%s\" given."
 msgstr ""
 
+#: gifts/templates/gifts/index.html:14
+msgid "Gifts"
+msgstr ""
+
 #: items/templates/items/detail.html:11 jobs/templates/jobs/detail.html:12
-#: rents/templates/rents/detail.html:16
+#: rents/templates/rents/detail.html:11
 msgid "Description:"
 msgstr ""
 
@@ -1237,7 +1241,7 @@ msgstr ""
 msgid "City:"
 msgstr ""
 
-#: items/templates/items/detail.html:13 jobs/templates/jobs/detail.html:14
+#: items/templates/items/detail.html:13
 msgid "Neighborhood:"
 msgstr ""
 
@@ -1245,15 +1249,19 @@ msgstr ""
 msgid "Items"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:15
+#: jobs/models.py:33
+msgid "salary"
+msgstr "заробітня платня"
+
+#: jobs/templates/jobs/detail.html:14
 msgid "Languages spoken by the employer:"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:20
+#: jobs/templates/jobs/detail.html:19
 msgid "Job type:"
 msgstr "Тип роботи"
 
-#: jobs/templates/jobs/index.html:16 templates/home.html:17
+#: jobs/templates/jobs/index.html:16 templates/home.html:70
 msgid "Jobs"
 msgstr "Робота"
 
@@ -1261,23 +1269,23 @@ msgstr "Робота"
 msgid "Bathrooms:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:11
+#: rents/templates/rents/detail.html:12
 msgid "Bedrooms"
 msgstr ""
 
-#: rents/templates/rents/detail.html:12
+#: rents/templates/rents/detail.html:13
 msgid "Price:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:13
+#: rents/templates/rents/detail.html:14
 msgid "Pet policy:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:14
+#: rents/templates/rents/detail.html:15
 msgid "Location:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:15
+#: rents/templates/rents/detail.html:16
 msgid "Furnished:"
 msgstr ""
 
@@ -1297,22 +1305,22 @@ msgstr "Домівка"
 msgid "Contacts"
 msgstr "Контакти"
 
-#: templates/base.html:90
-msgid "Log out"
+#: templates/base.html:87
+msgid "Map"
 msgstr ""
 
-#: templates/home.html:12
+#: templates/home.html:53
 msgid "Frog greeting!"
 msgstr "Жаба вітаю вас!"
 
-#: templates/home.html:15
+#: templates/home.html:64
 msgid "Sell"
 msgstr "Продаж"
 
-#: templates/home.html:19
+#: templates/home.html:76
 msgid "Housing"
 msgstr "Житло"
 
-#: templates/home.html:21
+#: templates/home.html:82
 msgid "Cats"
 msgstr "Коти"

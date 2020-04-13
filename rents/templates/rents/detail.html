@@ -8,17 +8,14 @@
             <div class="col-12">
                 <h1>{{ rent.title }}</h1>
                 <p><b>{% trans "Bathrooms:" %}</b> {{ rent.bathrooms }}</p>
+                <p><b>{% trans "Description:" %}</b> {{ rent.description }} </p>
                 <p><b>{% trans "Bedrooms" %}</b> {{ rent.bedrooms }}</p>
                 <p><b>{% trans "Price:" %}</b> {{ rent.price | prepend_dollars }}</p>
                 <p><b>{% trans "Pet policy:" %}</b> {{ rent.get_pet_policy_display }}</p>
                 <p><b>{% trans "Location:" %}</b> {{ rent.location}}</p>
               {% if rent.frunished %}  <p><b>{% trans "Furnished:" %}</b> {{ rent.furnished }}</p> {% endif %}
-                <p><b>{% trans "Description:" %}</b> {{ rent.description }}   </p>
                 <p><b>{% trans "Prefer sex" %}</b> {{ rent.get_prefer_sex_display }}</p>
-{#                <p><b>{% trans "IMG:" %}</b> {{ rent.attached }}</p>#}
                 <img src="{{ rent.attached.url }}">
-
-
             </div>
         </div>
     </div>

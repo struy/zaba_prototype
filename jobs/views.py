@@ -16,7 +16,8 @@ def detail(request, advert_id):
     job_type_dict = {
         'Driving': 'car',
         'Cleaning': 'broom',
-        'Construction': 'roller'
+        'Construction': 'roller',
+        'Babysitter': 'baby'
     }
     jobtype = job_type_dict[str(advert.jobtype)]
     return render(request, 'jobs/detail.html', {'advert': advert, 'jobtype': jobtype})
@@ -28,7 +29,7 @@ class JobList(ListView):
 
 class JobCreate(CreateView):
     model = Job
-    fields = ['title', 'jobtype', 'salary', 'location']
+    fields = ['title', 'jobtype', 'salary', 'city']
     success_url = reverse_lazy('jobs_cbv:job_list')
 
     # def form_valid(self, form):
@@ -54,7 +55,7 @@ class JobCreate(CreateView):
 
 class JobUpdate(UpdateView):
     model = Job
-    fields = ['title', 'jobtype', 'salary', 'location']
+    fields = ['title', 'jobtype', 'salary', ]
     success_url = reverse_lazy('jobs_cbv:job_list')
 
 

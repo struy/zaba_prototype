@@ -1,10 +1,9 @@
 from django.db import models
 from adverts.models import Advert, Location
+from django.utils.translation import gettext_lazy as _
 
 
-# Create your models here.
-class Item(Advert):
+class Item(Advert, Location):
     # condition =
     # size =
-    price = models.PositiveIntegerField()
-
+    price = models.PositiveIntegerField(verbose_name=_('price'))

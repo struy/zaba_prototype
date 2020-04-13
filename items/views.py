@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+from django.views.generic import ListView
 from .models import Item
 
 
@@ -13,3 +14,8 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
     return render(request, 'items/detail.html', {'advert': advert})
+
+
+class ItemList(ListView):
+    queryset = Item.objects.filter(point__isnull=False)
+

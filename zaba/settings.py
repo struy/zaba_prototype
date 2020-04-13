@@ -36,11 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
     'django_extensions',
     'mptt',
     'django_countries',
     'django_tables2',
-    # 'mapwidgets',
+    # Models
     'adverts.apps.AdvertsConfig',
     'rents.apps.RentsConfig',
     'jobs.apps.JobsConfig',
@@ -110,9 +111,10 @@ WSGI_APPLICATION = 'zaba.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }

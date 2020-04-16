@@ -21,7 +21,7 @@
     <title>zaba.today</title>
     <link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.ico' %}"/>
 
-    {% block head%}
+    {% block head %}
     {% endblock %}
 
 </head>
@@ -87,27 +87,26 @@
                         <a class="nav-link" href="#">{% trans 'Contacts' %}</a>
                     </li>
 
-                         <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'items:map' %}">{% trans 'Map' %}</a>
                     </li>
 
 
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-{#                            <a class="nav-link" href="{% url 'logout' %}"> {% trans 'Log out' %}</a>#}
+                            {#                            <a class="nav-link" href="{% url 'logout' %}"> {% trans 'Log out' %}</a>#}
                         </li>
                     {% else %}
                         <li class="nav-item">
-{#                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>#}
+                            {#                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>#}
                         </li>
                         <li class="nav-item">
-{#                            <a class="nav-link" href="{% provider_login_url 'google' %}">Sign Up</a></li>>#}
-{#                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log In </a></li>>#}
+                        {#                            <a class="nav-link" href="{% provider_login_url 'google' %}">Sign Up</a></li>>#}
+                        {#                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log In </a></li>>#}
                     {% endif %}
 
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/admin"> Admin</a></li>
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/rosetta">Rosetta</a></li>
-
 
 
                     <li class="nav-item">
@@ -142,17 +141,17 @@
 
 <section id="main">
 
-<section id="google_ads" >
-<center>
-    <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0" width="728"
-             alt="" class="img_ad">
-</center>
-</section>
+    <section id="google_ads">
+        <center>
+            <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0" width="728"
+                 alt="" class="img_ad">
+        </center>
+    </section>
 
     {% block content %}
     {% endblock %}
 </section>
-<footer class="bg-dark " >
+<footer class="bg-dark ">
     <div class="container">
         <div class="row">
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
@@ -194,6 +193,8 @@
 <script src="{% static 'js/counterup.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 
+{% block script %}
+{% endblock %}
 
 </body>
 </html>

@@ -16,9 +16,9 @@
 
 
                     {% if user.is_authenticated %}    {% endif %}
-                        <a href="{% url 'items:new' %}" class="top-menu">
-                            <i class="far fa-plus-square"></i>
-                        </a>
+                    <a href="{% url 'items:new' %}" class="top-menu">
+                        <i class="far fa-plus-square"></i>
+                    </a>
 
 
 
@@ -28,9 +28,16 @@
                                 <span class="counter"> {{ forloop.counter }} </span>
                                 <div class="wrap_list_adverts">
                                     <h2>{{ advert.title }} </h2>
+                                   <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                     <i>{{ advert.modified|naturaltime }} </i>
                                 </div>
-                                <a href="/items/{{ advert.id }}/"
+
+                                {% if advert.owner == request.user %}
+                                    <a href="{% url 'items:delete' advert.id %}"  class="btn btn-sm btn-danger">{% trans "Delete" %}</a>
+                                    <a href="{% url 'items:edit' advert.id %}"  class="btn btn-sm btn-info">{% trans "Edit" %}</a>
+                                {% endif %}
+
+                                 <a href="{% url 'items:detail' advert.id %}"
                                    class="btn btn-sm btn-success">{% trans "Detail" %}</a>
                             </div>
 

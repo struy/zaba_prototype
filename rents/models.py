@@ -1,14 +1,12 @@
 from django.db import models
 # from django.contrib.gis.db import models
-from mapwidgets.widgets import GooglePointFieldWidget
 
 import django_tables2 as tables
 from adverts.models import Advert, Location
 
 
-
 class Rental(Advert):
-    # bedroooms : studio, 1,2 3+
+    # bedrooms : studio, 1,2 3+
     # Rooms, Apartment
     # Map
 
@@ -39,10 +37,9 @@ class Rental(Advert):
     attached = models.ImageField(
         upload_to='media/rents',
         max_length=1000,
-        verbose_name='Imagen',
+        verbose_name='image',
         null=True,
         blank=True
-
     )
 
 

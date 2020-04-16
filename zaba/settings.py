@@ -36,11 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'django.contrib.gis',
     'django_extensions',
     'mptt',
     'django_countries',
     'django_tables2',
+    # view
+    "django_bootstrap_breadcrumbs",
+    'crispy_forms',
     # Models
     'adverts.apps.AdvertsConfig',
     'rents.apps.RentsConfig',
@@ -49,10 +53,7 @@ INSTALLED_APPS = [
     'gifts.apps.GiftsConfig',
     'language_flags',
     'rosetta',
-    'django.contrib.humanize',
     'debug_toolbar',
-    "django_bootstrap_breadcrumbs",
-    'crispy_forms',
     # Auth
     'django.contrib.sites',
     'allauth',

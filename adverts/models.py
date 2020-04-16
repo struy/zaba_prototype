@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.gis.db.models import PointField
+from django.utils.text import slugify
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 from django.utils.translation import gettext_lazy as _
@@ -22,6 +23,10 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 
     def was_published_recently(self):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
+
+    def get_image_filename(self, filename):
+        slug = slugify(self.title)
+        return "%s/%s/%s" % (self.__class__.__name__, slug, filename)
 
     def save(self, *args, **kwargs):
         super(Advert, self).save(*args, **kwargs)

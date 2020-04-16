@@ -30,7 +30,7 @@ class ItemCreate(CreateView):
     model = Item
     form_class = ItemForm
     login_required = True
-    success_url = reverse_lazy('items:detail')
+    success_url = reverse_lazy('items:index')
 
     # def get_form(self, form_class):
     #     form = super(ItemCreate, self).get_form(form_class)
@@ -40,3 +40,14 @@ class ItemCreate(CreateView):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
+
+
+class ItemUpdate(UpdateView):
+    model = Item
+    fields = '__all__'
+    success_url = reverse_lazy('items:index')
+
+
+class ItemDelete(DeleteView):
+    model = Item
+    success_url = reverse_lazy('items:index')

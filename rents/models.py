@@ -38,7 +38,6 @@ class Rental(Advert):
         upload_to='media/rents',
         max_length=1000,
         verbose_name='image',
-        null=True,
         blank=True
     )
 

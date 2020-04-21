@@ -12,16 +12,33 @@
             </div>
             <div class="col-7">
                 <h2>{% trans "Gifts" %}</h2>
-                <div class="advert">
+                <div class="advert ">
+
+
+                    {% if user.is_authenticated %}    {% endif %}
+                    <a href="{% url 'gifts:new' %}" class="top-menu">
+                        <i class="far fa-plus-square"></i>
+                    </a>
+
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
-                            <span class="counter"> {{ forloop.counter }} </span>
-                            <div class="wrap_list_adverts">
-                                <h2>{{ advert.title }} </h2>
-                                <i>{{ advert.created|naturaltime }} </i>
+                            <div class="">
+                                <span class="counter"> {{ forloop.counter }} </span>
+                                <div class="wrap_list_adverts">
+                                      <a href="{% url 'gifts:detail' advert.id %}">  <h2>{{ advert.title }} </h2></a>
+
+                                   <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                    <i>{{ advert.modified|naturaltime }} </i>
+                                </div>
+
+                                {% if advert.owner == request.user %}
+                                    <a href="{% url 'gifts:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt fa-2x"></i></a>
+                                    <a href="{% url 'gifts:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit fa-2x"></i></a>
+                                {% endif %}
                             </div>
-                            <a href="/gifts/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
-                            <hr>
+
+                            <div class="divider"></div>
+
                         {% endfor %}
                     {% else %}
                         <p>No adverts are available.</p>

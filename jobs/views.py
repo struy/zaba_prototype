@@ -14,12 +14,12 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Job, pk=advert_id)
     job_type_dict = {
-        'Driving': 'car',
-        'Cleaning': 'broom',
-        'Construction': 'roller',
-        'Babysitter': 'baby'
+        'driving': 'car',
+        'cleaning': 'broom',
+        'construction': 'roller',
+        'babysitter': 'baby'
     }
-    jobtype = job_type_dict[str(advert.jobtype)]
+    jobtype = job_type_dict.get(str(advert.jobtype))
     return render(request, 'jobs/detail.html', {'advert': advert, 'jobtype': jobtype})
 
 

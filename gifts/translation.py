@@ -1,13 +1,9 @@
 from modeltranslation.translator import translator, TranslationOptions
-from gifts.models import GiftsType
+from gifts.models import GiftType
 
 
 class GiftsTypeTranslationOptions(TranslationOptions):
-    """
-    Класс настроек интернационализации полей модели Modelka.
-    """
-
     fields = ('name',)
 
 
-translator.register(GiftsType, GiftsTypeTranslationOptions)
+translator.register(GiftType, GiftsTypeTranslationOptions)

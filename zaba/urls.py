@@ -33,6 +33,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
@@ -42,6 +44,7 @@ urlpatterns += i18n_patterns(
     path('gifts/', include('gifts.urls')),
 
 )
+
 
 if settings.DEBUG:
     import debug_toolbar

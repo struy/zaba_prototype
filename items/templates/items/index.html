@@ -20,26 +20,24 @@
                         <i class="far fa-plus-square"></i>
                     </a>
 
-
-
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
-                            <div class="icon-box">
+                            <div class="">
                                 <span class="counter"> {{ forloop.counter }} </span>
                                 <div class="wrap_list_adverts">
-                                    <h2>{{ advert.title }} </h2>
+                                      <a href="{% url 'items:detail' advert.id %}">  <h2>{{ advert.title }} </h2></a>
+
                                    <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                     <i>{{ advert.modified|naturaltime }} </i>
                                 </div>
 
                                 {% if advert.owner == request.user %}
-                                    <a href="{% url 'items:delete' advert.id %}"  class="btn btn-sm btn-danger">{% trans "Delete" %}</a>
-                                    <a href="{% url 'items:edit' advert.id %}"  class="btn btn-sm btn-info">{% trans "Edit" %}</a>
+                                    <a href="{% url 'items:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt fa-2x"></i></a>
+                                    <a href="{% url 'items:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit fa-2x"></i></a>
                                 {% endif %}
-
-                                 <a href="{% url 'items:detail' advert.id %}"
-                                   class="btn btn-sm btn-success">{% trans "Detail" %}</a>
                             </div>
+
+                            <div class="divider"></div>
 
                         {% endfor %}
                     {% else %}

@@ -19,7 +19,7 @@ class Job(Advert, Location):
     duration
     payment
     """
-    jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('jobtype'))
+    jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('job type'))
     DURATION = (('ft', 'Fulltime'),
                 ('pt', 'Parttime'),
                 ('ca', 'Casual'),)

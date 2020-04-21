@@ -178,14 +178,14 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 COUNTRIES_ONLY = ['UA', 'RU', 'PL', 'US']
 
-MEDIA_ROOT = [os.path.join(BASE_DIR, "media")]
-MEDIA_URL = ''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 
 MODELTRANSLATION_TRANSLATION_FILES = (
-    'gifts.translation',)
+    'gifts.translation', 'jobs.translation',)
 
 BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 

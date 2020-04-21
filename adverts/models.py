@@ -12,6 +12,11 @@ from django_extensions.db.models import (
 from django.utils.translation import gettext_lazy as _
 
 
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
+    return f'{instance.__class__.__name__}/{instance.owner.id}/{filename}'
+
+
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
     expires = models.DateTimeField(blank=True, null=True, help_text=_('This is the help text'),
@@ -23,10 +28,6 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 
     def was_published_recently(self):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
-
-    def get_image_filename(self, filename):
-        slug = slugify(self.title)
-        return "%s/%s/%s" % (self.__class__.__name__, slug, filename)
 
     def save(self, *args, **kwargs):
         super(Advert, self).save(*args, **kwargs)
@@ -52,7 +53,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 class Location(models.Model):
     city = models.CharField(max_length=50, default='Chicago', verbose_name=_('city'))
     address = models.CharField(max_length=100, blank=True, verbose_name=_('address'))
-    point = PointField(verbose_name=_('point'), blank=True)
+    point = PointField(blank=True, verbose_name=_('map'))
 
     @property
     def lat_lng(self):

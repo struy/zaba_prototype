@@ -1,5 +1,4 @@
 from django.urls import path
-
 from . import views
 
 urlpatterns = [
@@ -8,3 +7,4 @@ urlpatterns = [
     path('list', views.rents_list, name='list_rents')
 
 ]
+

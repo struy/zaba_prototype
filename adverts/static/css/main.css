@@ -3,6 +3,13 @@
     src: url('/static/fonts/HoppyRibbitday.ttf') format("truetype"),
     local('HoppyRibbitday');
 }
+.divider {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    opacity: 0.85;
+}
 
 
 body {

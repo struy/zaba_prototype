@@ -21,7 +21,7 @@
                 {#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
                 {% render_breadcrumbs %}
 
-                <h2><a href="{% url 'jobs:job_list' %}">Jobs</a>: Edit</h2>
+                <h2><a href="{% url 'jobs:index' %}">Jobs</a>: Edit</h2>
 
                 <form method="post">
                     {% csrf_token %}

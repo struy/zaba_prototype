@@ -5,40 +5,45 @@
 {% load i18n %}
 
 {% block content %}
-
-
     <div class="container">
         <div class="row">
             <div class="col-5">
                 <img src="{% static "img/zaba.jpg" %}" alt="">
             </div>
             <div class="col-7">
-                <h2>{% trans "Jobs" %}</h2>
-                <div class="advert">
+                <h2>{% trans "jobs" %} &nbsp; &nbsp;   <a href="{% url 'jobs:new' %}" class="top-menu btn btn-sm bg-warning">
+                    <i class="fas fa-plus"></i> {% trans "ADD AD" %}
+                </a></h2>
+                <div class="advert ">
+                    {% if user.is_authenticated %}    {% endif %}
+
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
-                            <span class="counter"> {{ forloop.counter }} </span>
-                            <div class="wrap_list_adverts">
+                            <div class="">
+                                <span class="counter"> {{ forloop.counter }} </span>
+                                <div class="wrap_list_adverts">
+                                      <a href="{% url 'jobs:detail' advert.id %}">  <h2>{{ advert.title }} </h2></a>
 
+                                   <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                    <i>{{ advert.modified|naturaltime }} </i>
+                                </div>
 
-                                <h2>{{ advert.title }} </h2>
-                                <i>{{ advert.update_at|naturaltime }} </i>
-                                {#                 <i>{{ bedroom|apnumber}} </i>#}
-                             </div>
-                            <a href="/jobs/{{ advert.id }}/" class="btn btn-sm btn-success">{% trans "Detail" %}</a>
+                                {% if advert.owner == request.user %}
+                                    <a href="{% url 'jobs:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{% url 'jobs:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit"></i></a>
+                                {% endif %}
+                            </div>
 
-
-                            <hr>
+                            <div class="divider"></div>
 
                         {% endfor %}
-
                     {% else %}
                         <p>No adverts are available.</p>
                     {% endif %}
                 </div>
-
             </div>
         </div>
     </div>
 {% endblock %}
 
+{% block add_ad_link %} {% url 'jobs:new' %} {% endblock %}

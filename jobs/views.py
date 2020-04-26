@@ -1,12 +1,20 @@
+import redis
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render
-from .models import Job
 from django.views.generic import TemplateView, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from .models import Job
+from .form import JobForm
+
+# connect to redis
+r = redis.StrictRedis(host=settings.REDIS_HOST,
+                      port=settings.REDIS_PORT,
+                      db=settings.REDIS_DB)
 
 
 def index(request):
-    latest_advert_list = Job.objects.order_by('-updated')[:5]
+    latest_advert_list = Job.objects.order_by('-modified')[:5]
     context = {'latest_advert_list': latest_advert_list}
     return render(request, 'jobs/index.html', context)
 
@@ -20,29 +28,31 @@ def detail(request, advert_id):
         'babysitter': 'baby'
     }
     jobtype = job_type_dict.get(str(advert.jobtype))
-    return render(request, 'jobs/detail.html', {'advert': advert, 'jobtype': jobtype})
+    total_views = r.incr('job:{}:views'.format(advert.id))
+    return render(request, 'jobs/detail.html', {'advert': advert, 'jobtype': jobtype, 'total_views': total_views})
 
 
 class JobList(ListView):
-    model = Job
+    queryset = Job.objects.filter(point__isnull=False)
 
 
 class JobCreate(CreateView):
     model = Job
-    fields = ['title', 'jobtype', 'salary', 'city']
-    success_url = reverse_lazy('jobs:job_list')
+    form_class = JobForm
+    login_required = True
+    success_url = reverse_lazy('jobs:index')
 
     def form_valid(self, form):
-        form.instance.created_by = self.request.user
+        form.instance.owner = self.request.user
         return super().form_valid(form)
 
 
 class JobUpdate(UpdateView):
     model = Job
-    fields = ['title', 'jobtype', 'salary', ]
-    success_url = reverse_lazy('jobs:job_list')
+    fields = "__all__"
+    success_url = reverse_lazy('jobs:index')
 
 
 class JobDelete(DeleteView):
     model = Job
-    success_url = reverse_lazy('jobs:job_list')
+    success_url = reverse_lazy('jobs:index')

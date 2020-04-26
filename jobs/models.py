@@ -15,21 +15,20 @@ class JobType(models.Model):
 class Job(Advert, Location):
     """
     :type
-    location
     duration
     payment
     """
     jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('job type'))
-    DURATION = (('ft', 'Fulltime'),
-                ('pt', 'Parttime'),
-                ('ca', 'Casual'),)
+    DURATIONS = (('ft', _('full-time')),
+                 ('pt', _('part-time')),
+                 ('ca', _('casual')),)
     duration = models.CharField(
         max_length=2,
-        choices=DURATION,
+        choices=DURATIONS,
         default='ft'
     )
     countries = CountryField(multiple=True, default='EN')
     salary = models.PositiveIntegerField(blank=True, verbose_name=_('salary'))
 
     def get_absolute_url(self):
-        return reverse('jobs:job_edit', kwargs={'pk': self.pk})
+        return reverse('jobs:edit', kwargs={'pk': self.pk})

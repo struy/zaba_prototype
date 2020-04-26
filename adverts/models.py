@@ -59,7 +59,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 class Location(models.Model):
     city = models.CharField(max_length=50, default='Chicago', verbose_name=_('city'))
     address = models.CharField(max_length=100, blank=True, verbose_name=_('address'))
-    point = PointField(blank=True, verbose_name=_('map'))
+    point = PointField(blank=True, verbose_name=_('map'), null=True)
 
     @property
     def lat_lng(self):

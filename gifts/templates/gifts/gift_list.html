@@ -4,7 +4,6 @@
 {% block head %}
     <link rel="stylesheet"
           href="//unpkg.com/leaflet/dist/leaflet.css"/>
-
 {% endblock %}
 
 {% block content %}
@@ -19,10 +18,12 @@
 {% endblock %}
 
 
+{% block add_ad_link %} {% url 'gifts:new' %} {% endblock %}
+
 {% block script %}
         <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
     <script type="text/javascript">
-        var m = L.map('m').setView([41.87, -87.61], 12);
+        var m = L.map('m').setView([41.90, -87.67], 11);
         L.tileLayer('//{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(m);
         {% for e in object_list %}
             L.marker({{e.lat_lng}}).addTo(m).bindPopup('<a href="{% url 'items:detail' e.id %}">{{e.title}}</a>');

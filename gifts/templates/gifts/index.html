@@ -11,14 +11,11 @@
                 <img src="{% static "img/zaba.jpg" %}" alt="">
             </div>
             <div class="col-7">
-                <h2>{% trans "Gifts" %}</h2>
+                <h2>{% trans "Gifts" %} &nbsp; &nbsp;   <a href="{% url 'gifts:new' %}" class="top-menu btn btn-sm bg-warning">
+                    <i class="fas fa-plus"></i> {% trans "ADD AD" %}
+                </a></h2>
                 <div class="advert ">
-
-
                     {% if user.is_authenticated %}    {% endif %}
-                    <a href="{% url 'gifts:new' %}" class="top-menu">
-                        <i class="far fa-plus-square"></i>
-                    </a>
 
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
@@ -32,8 +29,8 @@
                                 </div>
 
                                 {% if advert.owner == request.user %}
-                                    <a href="{% url 'gifts:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt fa-2x"></i></a>
-                                    <a href="{% url 'gifts:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit fa-2x"></i></a>
+                                    <a href="{% url 'gifts:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{% url 'gifts:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit"></i></a>
                                 {% endif %}
                             </div>
 
@@ -49,3 +46,4 @@
     </div>
 {% endblock %}
 
+{% block add_ad_link %} {% url 'gifts:new' %} {% endblock %}

@@ -1,18 +1,53 @@
 {% extends "base.html" %}
-{% block content %}
 
+{% load countries %}
+{% load i18n %}
+{% load advert_money %}
+
+{% if advert.point %}
+    {% block head %}
+        <link rel="stylesheet" href="//unpkg.com/leaflet/dist/leaflet.css"/>
+        <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
+    {% endblock %}
+{% endif %}
+
+{% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1>{{ advert.title }}</h1>
-                <span class="count">
-                {{ total_views }} view{{ total_views|pluralize }}
-                </span>
-                <p>
-                    {{ advert.advert_text }}
+            <div class="offset-md-1 col-md-10">
+                <p><b>{% trans "Title:" %} </b>
+                    {{ advert.title }}
+                    <span class="count">
+                        {{ total_views }} view{{ total_views|pluralize }}
+                    </span>
                 </p>
+
+                <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
+                <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
+                <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
+                {% if advert.point %}
+                    <p><b>{% trans "Map:" %} </b></p>
+                    <div id="m" style="width: 500px; height: 500px;"></div>
+                {% endif %}
             </div>
         </div>
     </div>
+{% endblock %}
 
+
+{% block script %}
+    <script type="text/javascript">
+        {% if advert.point %}
+            var m = L.map('m').setView({{ advert.lat_lng }}, 12);
+            L.tileLayer('//{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(m);
+            L.marker({{ advert.lat_lng }}).addTo(m).bindPopup('{{ advert.title }}');
+        {% endif %}
+    </script>
+{% endblock %}
+
+
+{% block add_ad_link %}
+    {% url 'gifts:new' %}
 {% endblock %}

@@ -35,6 +35,8 @@ pipeline {
                 python manage.py collectstatic --noinput
                 python manage.py makemigrations
                 python manage.py migrate
+                python manage.py loaddata fixtures/datagifttype.json
+                python manage.py loaddata fixtures/datajobtype.json
                 chmod 777 db.sqlite3
                 python manage.py runserver 0.0.0.0:8000
                 """

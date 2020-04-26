@@ -14,7 +14,7 @@ from django.utils.translation import gettext_lazy as _
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
-    return f'{instance.__class__.__name__}/{instance.owner.id}/{filename}'
+    return f'media/{instance.__class__.__name__}/{instance.owner.id}_{filename}'
 
 
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
@@ -37,6 +37,9 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         if (self.modified - self.created).seconds == 0:
             r.incr(f'Total:saved')
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
+            data = self.created.timestamp()
+            score = f'{self.__class__.__name__}:{self.created.timestamp()}'
+            r.zadd("adverts", {score: data})
 
     def delete(self, using=None, keep_parents=False):
         r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -45,6 +48,9 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         super(Advert, self).delete()
         r.decr(f'Total:saved')
         r.decr(f'{self.__class__.__name__}:{self.id}:saved')
+        data = self.created.timestamp()
+        score = f'{self.__class__.__name__}:{self.created.timestamp()}'
+        r.zadd("adverts", {score: data})
 
     def __str__(self):
         return self.title

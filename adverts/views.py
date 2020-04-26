@@ -1,13 +1,10 @@
+import datetime
 import redis
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.conf import settings
 from .models import Advert
-from gifts.models import Gift
-from items.models import Item
-from rents.models import Rental
-from jobs.models import Job
 
 
 def index(request):
@@ -28,10 +25,18 @@ def home(request):
                           db=settings.REDIS_DB)
 
     total = r.get("Total:saved").decode('utf-8')
-    cls = [Item, Gift, Rental, Job]
-    month = sum([c.objects.dates('created', 'month').count() for c in cls])
-    week = sum([c.objects.dates('created', 'week').count() for c in cls])
-    today = sum([c.objects.dates('created', 'day').count() for c in cls])
+
+    # cls = [Item, Gift, Rental, Job]
+    # month = sum([c.objects.dates('created', 'month').count() for c in cls])
+
+    now = datetime.datetime.now()
+    month_ago = now - datetime.timedelta(weeks=4)
+    week_ago = now - datetime.timedelta(weeks=1)
+    day_ago = now - datetime.timedelta(days=1)
+
+    month = r.zcount("adverts", month_ago.timestamp(), "+inf")
+    week = r.zcount("adverts", week_ago.timestamp(), "+inf")
+    today = r.zcount("adverts", day_ago.timestamp(), "+inf")
 
     context = {'total': total,
                'month': month,

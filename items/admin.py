@@ -13,17 +13,8 @@ class ItemAdmin(OSMGeoAdmin):
     First, there are some important requirements:
     OSMGeoAdmin requires that GDAL is installed.
     The PROJ.4 datum shifting files must be installed (see the PROJ.4 installation instructions for more details).
-
-3785 is old and was replaced by 900913 ('google') which was then replaced by 3857.
-
-    from django.contrib.gis.geos import Point
-    center = Point((41.87, -87.61), srid=4326)
-    center.transform(3785)
-    center.y
-    -24682980.487229597
-    center.x
-    4660947.079514365
     """
-    default_lon = 4660947
-    default_lat = -24682980
-    default_zoom = 12
+
+    default_lon = -9753402
+    default_lat = 5140871
+    default_zoom = 10

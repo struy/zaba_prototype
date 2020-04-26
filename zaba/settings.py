@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'django.contrib.gis',
+    'django.contrib.sites',
     'django_extensions',
     'mptt',
     'django_countries',
@@ -54,14 +55,6 @@ INSTALLED_APPS = [
     'language_flags',
     'rosetta',
     'debug_toolbar',
-    # Auth
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
 
 ]
 

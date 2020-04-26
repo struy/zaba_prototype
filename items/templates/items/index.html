@@ -11,34 +11,29 @@
                 <img src="{% static "img/zaba.jpg" %}" alt="">
             </div>
             <div class="col-7">
-                <h2>{% trans "Items" %}</h2>
+                <h2>{% trans "Items" %}  &nbsp; &nbsp;   <a href="{% url 'items:new' %}" class="top-menu btn btn-sm bg-warning">
+                    <i class="fas fa-plus"></i> {% trans "ADD AD" %}
+                </a></h2>
+                {% if user.is_authenticated %}    {% endif %}
+
                 <div class="advert ">
-
-
-                    {% if user.is_authenticated %}    {% endif %}
-                    <a href="{% url 'items:new' %}" class="top-menu">
-                        <i class="far fa-plus-square"></i>
-                    </a>
-
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
                             <div class="">
                                 <span class="counter"> {{ forloop.counter }} </span>
                                 <div class="wrap_list_adverts">
-                                      <a href="{% url 'items:detail' advert.id %}">  <h2>{{ advert.title }} </h2></a>
-
-                                   <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                    <a href="{% url 'items:detail' advert.id %}"><h2>{{ advert.title }} </h2></a>
+                                    <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                     <i>{{ advert.modified|naturaltime }} </i>
                                 </div>
-
                                 {% if advert.owner == request.user %}
-                                    <a href="{% url 'items:delete' advert.id %}"  class="btn btn-sm"><i class="fas fa-trash-alt fa-2x"></i></a>
-                                    <a href="{% url 'items:edit' advert.id %}"  class="btn btn-sm"><i class="fas fa-edit fa-2x"></i></a>
+                                    <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm"><i
+                                            class="fas fa-trash-alt"></i></a>
+                                    <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm"><i
+                                            class="fas fa-edit"></i></a>
                                 {% endif %}
                             </div>
-
                             <div class="divider"></div>
-
                         {% endfor %}
                     {% else %}
                         <p>No adverts are available.</p>
@@ -49,3 +44,7 @@
     </div>
 {% endblock %}
 
+
+{% block add_ad_link %}
+    {% url 'items:new' %}
+{% endblock %}

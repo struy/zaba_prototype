@@ -20,23 +20,18 @@
                 <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
-
                 {% if advert.point %}
                     <p><b>{% trans "Map:" %} </b></p>
                     <div id="m" style="width: 500px; height: 500px;"></div>
                 {% endif %}
                 <br>
                 <p><b>{% trans "Price:" %} </b>{{ advert.price|prepend_dollars }} </p>
-
-                {#                    {% for country in advert.countries %}#}
-                {#                        <i class="{{ country.flag_css }}"></i>#}
-                {#                    {% endfor %}#}
-                </p>
             </div>
         </div>
     </div>
 {% endblock %}
 
+{% block add_ad_link %} {% url 'items:new' %} {% endblock %}
 
 {% block script %}
     <script type="text/javascript">

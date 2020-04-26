@@ -1,44 +1,46 @@
 from django.db import models
-# from django.contrib.gis.db import models
-
+from django.utils.translation import gettext_lazy as _
 import django_tables2 as tables
 from adverts.models import Advert, Location
 
 
-class Rental(Advert):
+class RentalType(models.Model):
+    name = models.CharField(max_length=42)
+
+    def __str__(self):
+        return self.name
+
+
+class Rental(Advert, Location):
     # bedrooms : studio, 1,2 3+
     # Rooms, Apartment
-    # Map
+    # Move-in Date
+
+    rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('job type'))
 
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=2)
     price = models.PositiveIntegerField()
-    POLICE = (('1', 'None'),
-              ('2', 'Dogs'),
-              ('3', 'Cats'),
-              ('4', 'Dogs adn Cats'),
-              ('5', 'Any'),
-              )
+    POLICES = (('0', 'None'),
+               ('1', 'Dogs'),
+               ('2', 'Cats'),
+               ('3', 'Dogs adn Cats'),
+               ('4', 'Any'),
+               )
     pet_policy = models.CharField(
         max_length=1,
-        choices=POLICE,
+        choices=POLICES,
         default='1'
     )
     furnished = models.BooleanField()
     prefer_sex_list = (('a', 'any'),
-                       ('g', 'woman'),
-                       ('b', 'man'),
+                       ('w', 'woman'),
+                       ('m', 'man'),
                        )
     prefer_sex = models.CharField(
         max_length=1,
         choices=prefer_sex_list,
         default='a'
-    )
-    attached = models.ImageField(
-        upload_to='media/rents',
-        max_length=1000,
-        verbose_name='image',
-        blank=True
     )
 
 

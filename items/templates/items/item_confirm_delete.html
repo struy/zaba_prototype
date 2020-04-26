@@ -5,18 +5,18 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9">
-                <h2><a href="{% url 'items:index' %}">Jobs </a>: Delete?</h2>
-
+                <h2><a href="{% url 'items:index' %}">Item </a>: Delete?</h2>
                 <form method="post">{% csrf_token %}
-                    Are you sure you want to delete "{{ object }}" ?<br>
+                    Are you sure you want to delete "{{ object }}" ?
+                    <br>
+                    <br>
                     <input type="submit" class="btn btn-danger" value="Delete"/>
-
                 </form>
             </div>
-
         </div>
     </div>
+{% endblock %}
 
-
-
+{% block add_ad_link %}
+    {% url 'items:new' %}
 {% endblock %}

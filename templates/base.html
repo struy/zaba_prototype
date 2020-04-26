@@ -27,44 +27,6 @@
 </head>
 <body>
 
-
-{#<header class="bg-secondary">#}
-{#    <div class="container">#}
-{#        <div class="row">#}
-{#            <div class="col text-center">#}
-{##}
-{#                {% if user.is_authenticated %}#}
-{#                    <p>Welcome {{ user.username }} !!! <i class="fas fa-user fa-2x"></i> &nbsp; <i#}
-{#                            class="far fa-bell fa-2x"></i></p>#}
-{#                    <p><a href="{% url 'logout' %}">Log out</a></p>#}
-{#                {% else %}#}
-{#<p><a href="{% url 'signup' %}">Sign Up</a></p>#}
-{#                    <a href="{% provider_login_url 'google' %}">Sign Up</a>#}
-{#                    <p><a href="{% url 'login' %}">Log In </a></p>#}
-{#                {% endif %}#}
-{##}
-{#            </div>#}
-{#            <div class="col text-center"><a href="/" class="home_a"> <i class="fas fa-frog fa-2x"></i>#}
-{#                <h1>zaba.today</h1></a></div>#}
-{#            <div class="col text-center">#}
-{#                <a href="tel:1-408-555-5555">1-408-555-5555</a>#}
-{#            </div>#}
-{#            {% get_current_language as LANGUAGE_CODE %}#}
-{#            {% get_available_languages as LANGUAGES %}#}
-{#            {% get_language_info_list for LANGUAGES as languages %}#}
-{#            {% for language in languages %}#}
-{#                <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"#}
-{#                      style="display:inline!important;">#}
-{#                    {% csrf_token %}#}
-{#                    <input name="next" type="hidden" value="{{ redirect_to }}"/>#}
-{#                    <input name="language" type="hidden" value="{{ language.code }}"/>#}
-{#                </form>#}
-{#                <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#    </div>#}
-{#</header>#}
-
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
 
@@ -157,8 +119,12 @@
         <div class="row">
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
             <div class="col-2">
-                <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
+
+                <a href="{% block add_ad_link %} {% endblock %}" >
+                   <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
                 </button>
+                </a>
+
             </div>
             <div class="col-12 text-center">
                 <ul>

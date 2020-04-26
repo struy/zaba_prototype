@@ -41,7 +41,7 @@ class ItemCreate(CreateView):
 
 class ItemUpdate(UpdateView):
     model = Item
-    fields = '__all__'
+    fields =  ['title', 'description', 'image', 'expires','price', 'city', 'address', 'point' ]
     success_url = reverse_lazy('items:index')
 
 

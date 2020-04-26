@@ -39,32 +39,32 @@ msgstr "Карти сайту"
 
 #: env/lib/python3.7/site-packages/django/contrib/staticfiles/apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Статичні файли"
 
 #: env/lib/python3.7/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Синдикація"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:45
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "Число цієї сторінки не є цілим числом"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:47
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "Число цієї сторінки менше ніж 1"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:52
 msgid "That page contains no results"
-msgstr ""
+msgstr "Ця сторінка не містить ніяких результатів"
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:31
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Введіть дійсне значення."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:102
 #: env/lib/python3.7/site-packages/django/forms/fields.py:658
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Введіть дійсний URL."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:154
 msgid "Enter a valid integer."
@@ -72,53 +72,56 @@ msgstr ""
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:165
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Введіть дійсне число."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: env/lib/python3.7/site-packages/django/core/validators.py:239
 msgid ""
 "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
-msgstr ""
+msgstr "Введіть коректне значення 'slug' (короткого заголовку), що може містити "
+"тільки літери, числа, символи підкреслювання та дефіси."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:246
 msgid ""
 "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
 " hyphens."
-msgstr ""
+msgstr "Введіть коректне значення 'slug' (короткого заголовку), що може містити "
+"тільки літери Unicode, числа, символи підкреслювання або дефіси."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:255
 #: env/lib/python3.7/site-packages/django/core/validators.py:275
 msgid "Enter a valid IPv4 address."
-msgstr ""
+msgstr "Введіть коректну IPv4 адресу."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:260
 #: env/lib/python3.7/site-packages/django/core/validators.py:276
 msgid "Enter a valid IPv6 address."
-msgstr ""
+msgstr "Введіть дійсну адресу IPv6."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:270
 #: env/lib/python3.7/site-packages/django/core/validators.py:274
 msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
+msgstr "Введіть дійсну адресу IPv4 або IPv6."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:304
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Введіть тільки цифри, що розділені комами."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:310
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
+msgstr "Переконайтеся, що це значення дорівнює %(limit_value)s (зараз "
+"%(show_value)s)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:342
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Переконайтеся, що це значення менше чи дорівнює %(limit_value)s."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:351
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Переконайтеся, що це значення більше чи дорівнює %(limit_value)s."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:361
 #, python-format
@@ -128,8 +131,10 @@ msgid ""
 msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переконайтеся, що це значення містить не менш ніж %(limit_value)d символів"
+"(зараз %(show_value)d)."
+msgstr[1] "Переконайтеся, що це значення містить не менш ніж %(limit_value)d символів"
+"(зараз %(show_value)d)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:376
 #, python-format
@@ -139,28 +144,30 @@ msgid ""
 msgid_plural ""
 "Ensure this value has at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переконайтеся, що це значення містить не більше ніж %(limit_value)d символів"
+"(зараз %(show_value)d)."
+msgstr[1] "Переконайтеся, що це значення містить не більше ніж %(limit_value)d символів"
+"(зараз %(show_value)d)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:395
 #: env/lib/python3.7/site-packages/django/forms/fields.py:290
 #: env/lib/python3.7/site-packages/django/forms/fields.py:325
 msgid "Enter a number."
-msgstr ""
+msgstr "Введіть число."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:397
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переконайтеся, що загалом тут не більше ніж %(max)s цифер."
+msgstr[1] "Переконайтеся, що загалом тут не більше ніж %(max)s цифер."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:402
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переконайтеся, що тут не більше ніж %(max)s цифер після десяткової коми."
+msgstr[1] "Переконайтеся, що тут не більше ніж %(max)s цифер після десяткової коми."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:407
 #, python-format
@@ -168,8 +175,8 @@ msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
 msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Переконайтеся, що тут не більше ніж %(max)s цифра до десяткової коми."
+msgstr[1] "Переконайтеся, що тут не більше ніж %(max)s цифер до десяткової коми."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:469
 #, python-format
@@ -180,35 +187,35 @@ msgstr ""
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:521
 msgid "Null characters are not allowed."
-msgstr ""
+msgstr "Нульові символи не допускаються."
 
 #: env/lib/python3.7/site-packages/django/db/models/base.py:1162
 #: env/lib/python3.7/site-packages/django/forms/models.py:756
 msgid "and"
-msgstr ""
+msgstr "і"
 
 #: env/lib/python3.7/site-packages/django/db/models/base.py:1164
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s з таким %(field_labels)s вже існує."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:104
 #, python-format
 msgid "Value %(value)r is not a valid choice."
-msgstr ""
+msgstr "Значення %(value)r не є дозволеним вибором."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:105
 msgid "This field cannot be null."
-msgstr ""
+msgstr "Це поле не може бути пустим."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:106
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "Це поле не може бути порожнім."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:107
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s з таким %(field_label)s вже існує."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
 #. Eg: "Title must be unique for pub_date year"
@@ -1311,7 +1318,7 @@ msgstr ""
 
 #: templates/home.html:53
 msgid "Frog greeting!"
-msgstr "Жаба вітаю вас!"
+msgstr "Жаба вітає Вас!"
 
 #: templates/home.html:64
 msgid "Sell"

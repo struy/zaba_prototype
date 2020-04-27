@@ -15,22 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
 from adverts import views
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 
-# from sitemap.views import sitemap
-
 
 urlpatterns = [
-    # path('sitemap.xml', sitemap, name='sitemap-xml'),
     path('admin/', admin.site.urls),
-    path('login/', auth_views.LoginView, name='login'),
-    path('logout/', auth_views.LogoutView, {'next_page': '/'}, name='logout'),
     path('i18n/', include('django.conf.urls.i18n')),
-    # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -41,7 +36,8 @@ urlpatterns += i18n_patterns(
     path('rents/', include('rents.urls')),
     path('items/', include('items.urls')),
     path('gifts/', include('gifts.urls')),
-
+    path('accounts/', include('account.urls')),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 )
 
 

@@ -52,26 +52,34 @@
                     </li>
 
 
-                    {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            {#                            <a class="nav-link" href="{% url 'logout' %}"> {% trans 'Log out' %}</a>#}
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            {#                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>#}
-                        </li>
-                        <li class="nav-item">
-                        {#                            <a class="nav-link" href="{% provider_login_url 'google' %}">Sign Up</a></li>>#}
-                        {#                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log In </a></li>>#}
-                    {% endif %}
-
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/admin"> Admin</a></li>
                     <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/rosetta">Rosetta</a></li>
 
-
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+
+                        </a>
                     </li>
+
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "logout" %}">
+                                 {% if user.is_authenticated %}
+                                {% if  request.user.first_name %}
+                                    Hello {{ request.user.first_name }},
+                                {% else %}
+                                    Hello {{ request.user.username  }},
+                                {% endif %}
+                            {% else %}
+                            {% endif %}
+                                 Logout</a></li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url "login" %}">Log-in</a>
+                        </li>
+                    {% endif %}
+
+
                 </ul>
 
 
@@ -100,8 +108,8 @@
 
 
 <section id="main">
-<div id="attention" class="text-center">
-    <h3>Зауваження! Оголошення відображаються тільки на обраній мові.</h3></div>
+    <div id="attention" class="text-center">
+        <h3>Зауваження! Оголошення відображаються тільки на обраній мові.</h3></div>
     <section id="google_ads">
         <center>
             <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0" width="728"
@@ -118,9 +126,9 @@
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
             <div class="col-2">
 
-                <a href="{% block add_ad_link %} {% endblock %}" >
-                   <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
-                </button>
+                <a href="{% block add_ad_link %} {% endblock %}">
+                    <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
+                    </button>
                 </a>
 
             </div>

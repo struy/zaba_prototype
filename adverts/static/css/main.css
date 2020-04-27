@@ -3,6 +3,7 @@
     src: url('/static/fonts/HoppyRibbitday.ttf') format("truetype"),
     local('HoppyRibbitday');
 }
+
 .divider {
     display: inline-block;
     width: 100%;
@@ -156,15 +157,14 @@ button.btn-circle {
     float: left;
 }
 
-#main .home  .counter i.fas {
+#main .home .counter i.fas {
     display: block;
     font-size: 48px;
     color: #94c045;
 }
 
 
-
-#main .home  .counter .count-box p {
+#main .home .counter .count-box p {
     padding: 5px 0 0 0;
     margin: 0 0 0 60px;
     font-family: "Raleway", sans-serif;
@@ -174,7 +174,7 @@ button.btn-circle {
 }
 
 
-#main .home  #greeting {
+#main .home #greeting {
     background: #86b03c;
     color: white;
     padding-top: 10px;
@@ -182,12 +182,12 @@ button.btn-circle {
     margin-bottom: 20px;
 
 }
-#main .home  #greeting  h2{
+
+#main .home #greeting h2 {
 
     color: white;
 
 }
-
 
 
 #main .home i.fas, #main .home a {
@@ -277,4 +277,35 @@ footer ul li a {
 section#main {
     padding-top: 10px;
     min-height: 450px;
+}
+
+/*social media*/
+.btn.facebook {
+    background-color: #3b5998;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    width: 288px;
+}
+
+.btn.twitter {
+    background-color: #00ACEE;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    width: 288px;
+    text-align: left;
+}
+
+.btn.google {
+    /*background-color: #0F9D58;*/
+    /*background-color:#DB4437;*/
+    /*background-color:#F4B400;*/
+    background-color:#4285F4;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    width: 288px;
+    text-align: left;
 }

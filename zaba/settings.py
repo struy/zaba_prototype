@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django_bootstrap_breadcrumbs",
     'crispy_forms',
     # Models
+    'account.apps.AccountConfig',
     'adverts.apps.AdvertsConfig',
     'rents.apps.RentsConfig',
     'jobs.apps.JobsConfig',
@@ -55,18 +56,25 @@ INSTALLED_APPS = [
     'language_flags',
     'rosetta',
     'debug_toolbar',
+    #social
+    'social_django',
+
 
 ]
 
 AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
 )
 
 SITE_ID = 1
 
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
 
 
 MIDDLEWARE = [
@@ -171,8 +179,9 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 COUNTRIES_ONLY = ['UA', 'RU', 'PL', 'US']
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
@@ -189,4 +198,10 @@ REDIS_DB = 0
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "XXX" # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXX' # Google Consumer Secret
+SOCIAL_AUTH_TWITTER_KEY = 'XXX' # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'XXX' # Twitter Consumer Secret

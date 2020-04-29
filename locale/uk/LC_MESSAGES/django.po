@@ -616,7 +616,7 @@ msgstr "Будь ласка, виправте повторювані значе�
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1091
 msgid "The inline value did not match the parent instance."
-msgstr "З'вязане значення не співпадає з батьківським екземпляром."
+msgstr "Повязане значення не співпадає з батьківським екземпляром."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1158
 msgid ""
@@ -1096,7 +1096,7 @@ msgid ""
 "The CSRF protection requires the 'Referer' header to do strict referer "
 "checking. If you're concerned about privacy, use alternatives like <a "
 "rel=\"noreferrer\" ...> for links to third-party sites."
-msgstr "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> тег або й"
+msgstr "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> тег або "
 "в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-ласка, видаліть їх." 
 "Захист CSRF вимагає заголовка 'Referer', щоб зробити сувору referer "
 "перевірку. Якщо ви стурбовані про конфіденційність, використовуйте альтернативи, такі як <а "
@@ -1228,7 +1228,7 @@ msgstr "Ви бачите цю сторінку, тому що <a "
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:383
 msgid "Django Documentation"
-msgstr "Django документація"
+msgstr "Django Документація"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:384
 msgid "Topics, references, &amp; how-to's"
@@ -1264,7 +1264,7 @@ msgstr "Мовний пакет для коду %s не знайдений."
 #: env/lib/python3.7/site-packages/transliterate/utils.py:79
 #: env/lib/python3.7/site-packages/transliterate/utils.py:110
 msgid "``language_code`` is optional with ``reversed`` set to True only."
-msgstr "``Код мови`` не є обов'язковим з  ``зворотом`` встановити тільки значення True."
+msgstr "``language_code`` не є обов'язковим з ``reversed`` встановлено тільки значення True."
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:221
 #, python-format
@@ -1290,7 +1290,7 @@ msgstr "Район"
 
 #: items/templates/items/index.html:14
 msgid "Items"
-msgstr "Предмети"
+msgstr "Товари"
 
 #: jobs/models.py:33
 msgid "salary"
@@ -1318,11 +1318,11 @@ msgstr "Спальні"
 
 #: rents/templates/rents/detail.html:13
 msgid "Price:"
-msgstr "Ціна"
+msgstr "Ціна:"
 
 #: rents/templates/rents/detail.html:14
 msgid "Pet policy:"
-msgstr "Політика домашніх тварин"
+msgstr "Політика щодо домашніх тварин:"
 
 #: rents/templates/rents/detail.html:15
 msgid "Location:"
@@ -1334,7 +1334,7 @@ msgstr "Мебльований"
 
 #: rents/templates/rents/detail.html:17
 msgid "Prefer sex"
-msgstr "Якій статі надати перевагу"
+msgstr "Вибір статі"
 
 #: rents/templates/rents/index.html:16
 msgid "Rents"

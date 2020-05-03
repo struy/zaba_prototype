@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django_countries',
     'django_tables2',
     # view
-    "django_bootstrap_breadcrumbs",
     'crispy_forms',
     # Models
     'account.apps.AccountConfig',
@@ -189,7 +188,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation', 'jobs.translation',)
 
-BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
+
 
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
@@ -197,7 +196,6 @@ REDIS_DB = 0
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 

@@ -1,13 +1,6 @@
 {% extends "base.html" %}
-{% load django_bootstrap_breadcrumbs %}
 {% load crispy_forms_tags %}
 
-
-{% block breadcrumbs %}
-    {% clear_breadcrumbs %}
-    {% breadcrumb "Home" "/" %}
-    {% breadcrumb "Users and groups" "users_and_groups_index" %}
-{% endblock %}
 
 
 
@@ -23,11 +16,6 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                {#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
-                {% render_breadcrumbs %}
-
-                {#                <h2><a href="{% url 'items:item_list' %}">Items</a>: Create</h2>#}
-
                 <form method="post">
                     {% csrf_token %}
                     {{ form|crispy }}

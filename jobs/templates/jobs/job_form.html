@@ -1,25 +1,10 @@
 {% extends "base.html" %}
-{% load django_bootstrap_breadcrumbs %}
-
-
-{% block breadcrumbs %}
-    {% clear_breadcrumbs %}
-    {% breadcrumb "Home" "/" %}
-    {% breadcrumb "Users and groups" "users_and_groups_index" %}
-{% endblock %}
-
-
-
-
-
 
 {% block content %}
 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                {#     {% render_breadcrumbs "django_bootstrap_breadcrumbs/bootstrap4.html" %}#}
-                {% render_breadcrumbs %}
 
                 <h2><a href="{% url 'jobs:index' %}">Jobs</a>: Edit</h2>
 

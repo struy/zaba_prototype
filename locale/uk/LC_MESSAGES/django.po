@@ -43,7 +43,7 @@ msgstr "Статичні файли"
 
 #: env/lib/python3.7/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
-msgstr "Синдикація"
+msgstr "Об'єднання"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:45
 msgid "That page number is not an integer"
@@ -207,7 +207,7 @@ msgstr "Значення %(value)r не є дозволеним вибором."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:105
 msgid "This field cannot be null."
-msgstr "Це поле не може бути пустим."
+msgstr "Це поле не може мати значення null."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:106
 msgid "This field cannot be blank."
@@ -276,7 +276,7 @@ msgstr "Цілі числа, розділені комою"
 msgid ""
 "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
-msgstr "Значення '%(value)s' має невірний формат дати. Воно повинна бути у форматі "
+msgstr "Значення '%(value)s' має невірний формат дати. Воно повинно бути у форматі "
 "YYYY-MM-DD."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1155
@@ -515,9 +515,9 @@ msgid ""
 "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] "Переконайтеся, що це ім'я файлу містить не більше ніж з %(max)d символ. "
+msgstr[0] "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. "
 "(зараз %(length)d)."
-msgstr[1] "Переконайтеся, що це ім'я файлу містить не більше ніж з %(max)d символів. "
+msgstr[1] "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символів. "
 "(зараз %(length)d)."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:539
@@ -593,8 +593,7 @@ msgstr "Видалити"
 #: env/lib/python3.7/site-packages/django/forms/models.py:751
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
-msgstr "Будь ласка, виправте повторювані дані для поля %(field)s, яке має бути "
-"унікальним."
+msgstr "Будь ласка, виправте повторювані дані для поля %(field)s."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:755
 #, python-format
@@ -1109,7 +1108,7 @@ msgid ""
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
 msgstr "Ви бачите це повідомлення, тому що даний сайт вимагає, щоб при відправці "
-"форм була відправлені також CSRF-cookie. Даний тип cookie необхідний по"
+"форм були відправлені також CSRF-cookie. Даний тип cookie необхідний по"
 "міркуванням безпеки, щоб переконатися, що ваш браузер не був взломаний та"
 "не виконує з вашої сторони дій, запрограмованих третіми особами."
 
@@ -1269,7 +1268,7 @@ msgstr "``language_code`` не є обов'язковим з ``reversed`` вст
 #: env/lib/python3.7/site-packages/transliterate/utils.py:221
 #, python-format
 msgid "Can't detect language for the text \"%s\" given."
-msgstr "Неможливо визначити мову тексту \"% S \» який дано."
+msgstr "Неможливо визначити мову тексту \"%s\" який дано."
 
 #: gifts/templates/gifts/index.html:14
 msgid "Gifts"
@@ -1282,11 +1281,11 @@ msgstr "Опис:"
 
 #: items/templates/items/detail.html:12 jobs/templates/jobs/detail.html:13
 msgid "City:"
-msgstr "Місто"
+msgstr "Місто:"
 
 #: items/templates/items/detail.html:13
 msgid "Neighborhood:"
-msgstr "Район"
+msgstr "Район:"
 
 #: items/templates/items/index.html:14
 msgid "Items"
@@ -1326,11 +1325,11 @@ msgstr "Політика щодо домашніх тварин:"
 
 #: rents/templates/rents/detail.html:15
 msgid "Location:"
-msgstr "Місцеположення"
+msgstr "Місцеположення:"
 
 #: rents/templates/rents/detail.html:16
 msgid "Furnished:"
-msgstr "Мебльований"
+msgstr "Мебльований:"
 
 #: rents/templates/rents/detail.html:17
 msgid "Prefer sex"

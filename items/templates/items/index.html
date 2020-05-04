@@ -3,16 +3,11 @@
 {% load staticfiles %}
 {% load static %}
 {% load i18n %}
+{% load advert_money %}
 
 {% block breadcrumbs %}
-{#<nav aria-label="breadcrumb">#}
-{#  <ol class="breadcrumb">#}
-{#    <li class="breadcrumb-item">#}
-{#        <i class="fas fa-home"></i> </li>#}
-{#    <li class="breadcrumb-item"><a href="#">Library</a></li>#}
-{#    <li class="breadcrumb-item active" aria-current="page">Data</li>#}
-{#  </ol>#}
-{#</nav>#}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
 {% endblock %}
 
 
@@ -20,33 +15,30 @@
 
 {% block content %}
     <div class="container">
-
         <div class="row">
             <div class="col-5">
                 <img src="{% static "img/zaba.jpg" %}" alt="">
             </div>
             <div class="col-7">
-                <h2>{% trans "Items" %}  &nbsp; &nbsp;   <a href="{% url 'items:new' %}" class="top-menu btn btn-sm bg-warning">
-                    <i class="fas fa-plus"></i> {% trans "ADD AD" %}
-                </a></h2>
                 {% if user.is_authenticated %}    {% endif %}
-
                 <div class="advert ">
                     {% if latest_advert_list %}
                         {% for advert in latest_advert_list %}
-                            <div class="">
+                            <div class="advert">
                                 <span class="counter"> {{ forloop.counter }} </span>
                                 <div class="wrap_list_adverts">
                                     <a href="{% url 'items:detail' advert.id %}"><h2>{{ advert.title }} </h2></a>
                                     <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                     <i>{{ advert.modified|naturaltime }} </i>
+                                    {% if advert.owner == request.user %}
+                                            <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm"><i
+                                                    class="fas fa-trash-alt"></i></a>
+                                            <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm"><i
+                                                    class="fas fa-edit"></i></a>
+                                    {% endif %}
                                 </div>
-                                {% if advert.owner == request.user %}
-                                    <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm"><i
-                                            class="fas fa-trash-alt"></i></a>
-                                    <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm"><i
-                                            class="fas fa-edit"></i></a>
-                                {% endif %}
+                                <h3> {{ advert.price|prepend_dollars }} </h3>
+
                             </div>
                             <div class="divider"></div>
                         {% endfor %}

@@ -302,10 +302,26 @@ section#main {
     /*background-color: #0F9D58;*/
     /*background-color:#DB4437;*/
     /*background-color:#F4B400;*/
-    background-color:#4285F4;
+    background-color: #4285F4;
     color: #ffffff;
     font-size: 1.5em;
     margin-bottom: 5px;
     width: 288px;
     text-align: left;
+}
+
+#main .advert h2 {
+    font-size: 23px;
+}
+
+#main .advert h3 {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#main .advert .edit_buttons {
+    display: inline-block;
+    float: right;
 }

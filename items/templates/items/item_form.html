@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{%  trans "Items" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+{% endblock %}
 
 
 

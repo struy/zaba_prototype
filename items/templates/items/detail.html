@@ -11,12 +11,22 @@
     {% endblock %}
 {% endif %}
 
+
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{%  trans "Items" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="offset-md-1 col-md-10">
-                <p><b>{% trans "Title:" %} </b>{{ advert.title }} </p>
-                <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
+                <h2> {{ advert.title }} </h2>
+                {% if advert.description %}
+                    <p> {{ advert.description }} </p>
+                {% endif %}
                 <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>

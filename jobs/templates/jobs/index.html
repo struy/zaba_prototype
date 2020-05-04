@@ -11,9 +11,7 @@
                 <img src="{% static "img/zaba.jpg" %}" alt="">
             </div>
             <div class="col-7">
-                <h2>{% trans "jobs" %} &nbsp; &nbsp;   <a href="{% url 'jobs:new' %}" class="top-menu btn btn-sm bg-warning">
-                    <i class="fas fa-plus"></i> {% trans "ADD AD" %}
-                </a></h2>
+                <h2>{% trans "jobs" %} </h2>
                 <div class="advert ">
                     {% if user.is_authenticated %}    {% endif %}
 

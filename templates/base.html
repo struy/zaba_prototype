@@ -119,8 +119,12 @@
 
     <div class="container">
         <div class="row">
-          {% block breadcrumbs %}
-          {% endblock %}
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% block breadcrumbs %}
+                    {% endblock %}
+                </ol>
+            </nav>
         </div>
     </div>
 

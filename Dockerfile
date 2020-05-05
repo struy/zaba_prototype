@@ -32,8 +32,7 @@ RUN apt install -y \
  WORKDIR /usr/src/app
 
 # # # set environment varibles
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONHASHSEED=random
 
 
 # # # install dependencies
@@ -42,7 +41,7 @@ RUN pip3 install --upgrade pip
 
 COPY requirements.txt /usr/src/app/requirements.txt
 # # #RUN pipenv install --skip-lock --system --dev
-RUN  pip3 install -r requirements.txt
+RUN  pip3 install  --no-cache-dir -r requirements.txt
 
 
 

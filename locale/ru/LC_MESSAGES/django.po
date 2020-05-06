@@ -1218,9 +1218,8 @@ msgid ""
 "\">DEBUG=True</a> is in your settings file and you have not configured any "
 "URLs."
 msgstr "Вы видите эту страницу, так как <a href =\"https://docs.djangoproject.com/en/" 
-"%(version)s/ref/settings/#debug\" target = \"_blank\" rel =\"noopener" "\"> DEBUG = True</a> "
-"находится в файле настроек и вы не настроили ни один "
-"URLs."
+"%(version)s/ref/settings/#debug\" target = \"_blank\" rel =\"noopener\" > DEBUG = True</a> "
+"находится в файле настроек и вы не настроили ни один URLs."
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:383
 msgid "Django Documentation"

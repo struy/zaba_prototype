@@ -23,7 +23,7 @@ msgstr ""
 
 #: adverts/templates/adverts/index.html:15
 msgid "Adverts"
-msgstr "Объявление"
+msgstr "Объявления"
 
 #: adverts/templates/adverts/index.html:25 gifts/templates/gifts/index.html:23
 #: items/templates/items/index.html:25 jobs/templates/jobs/index.html:28
@@ -41,86 +41,88 @@ msgstr "Картa сайта"
 
 #: env/lib/python3.7/site-packages/django/contrib/staticfiles/apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Статические файлы"
 
 #: env/lib/python3.7/site-packages/django/contrib/syndication/apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Объединение"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:45
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "Номер этой страницы не является целым числом"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:47
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "Номер этой страницы менее 1"
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:52
 msgid "That page contains no results"
-msgstr ""
+msgstr "Эта страница не содержит никаких результатов"
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:31
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Введите действительное значение."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:102
 #: env/lib/python3.7/site-packages/django/forms/fields.py:658
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Введите действительный URL."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:154
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Введите корректное целое число."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:165
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Введите корректный email адрес."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: env/lib/python3.7/site-packages/django/core/validators.py:239
 msgid ""
 "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
-msgstr ""
+msgstr "Введите корректное значение 'slug', который может содержать "
+"только буквы, числа, символы подчеркивания или дефисы."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:246
 msgid ""
 "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
-msgstr ""
+msgstr "Введите корректное значение 'slug', который может содержать "
+"только буквы Unicode, числа, символы подчеркивания или дефисы."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:255
 #: env/lib/python3.7/site-packages/django/core/validators.py:275
 msgid "Enter a valid IPv4 address."
-msgstr ""
+msgstr "Введите действительный IPv4 адрес"
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:260
 #: env/lib/python3.7/site-packages/django/core/validators.py:276
 msgid "Enter a valid IPv6 address."
-msgstr ""
+msgstr "Введите действительный адрес IPv6."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:270
 #: env/lib/python3.7/site-packages/django/core/validators.py:274
 msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
+msgstr "Введите действительный адрес IPv4 или IPv6."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:304
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Введите только цифры, разделенные запятыми."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:310
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
+msgstr "Убедитесь, что это значение равно %(limit_value)s (сейчас %(show_value)s)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:342
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Убедитесь, что это значение меньше или равно %(limit_value)s."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:351
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
+msgstr "Убедитесь, что это значение больше или равно %(limit_value)s."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:361
 #, python-format
@@ -130,8 +132,10 @@ msgid ""
 msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что это значение содержит не менее чем %(limit_value)d символ "
+"(сейчас %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение содержит не менее чем %(limit_value)d символов "
+"(сейчас %(show_value)d)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:376
 #, python-format
@@ -141,28 +145,30 @@ msgid ""
 msgid_plural ""
 "Ensure this value has at most %(limit_value)d characters (it has "
 "%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что это значение содержит не более чем %(limit_value)d символ "
+"(сейчас %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение содержит не более чем %(limit_value)d символов "
+"(сейчас %(show_value)d)."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:395
 #: env/lib/python3.7/site-packages/django/forms/fields.py:290
 #: env/lib/python3.7/site-packages/django/forms/fields.py:325
 msgid "Enter a number."
-msgstr ""
+msgstr "Введите число."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:397
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что в целом здесь не более чем %(max)s цифра."
+msgstr[1] "Убедитесь, что в целом здесь не более чем %(max)s цифер."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:402
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что здесь не более чем %(max)s цифра после десятичной запятой."
+msgstr[1] "Убедитесь, что здесь не более чем %(max)s цифер после десятичной запятой."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:407
 #, python-format
@@ -170,47 +176,48 @@ msgid ""
 "Ensure that there are no more than %(max)s digit before the decimal point."
 msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что здесь не более чем %(max)s цифра перед десятичной запятой."
+msgstr[1] "Убедитесь, что здесь не более чем %(max)s цифер перед десятичной запятой."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:469
 #, python-format
 msgid ""
 "File extension '%(extension)s' is not allowed. Allowed extensions are: "
 "'%(allowed_extensions)s'."
-msgstr ""
+msgstr "Расширение файла '%(extension)s' не допускаются. Разрешенные расширения: "
+"'%(allowed_extensions)s'."
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:521
 msgid "Null characters are not allowed."
-msgstr ""
+msgstr "Нулевые символы не допускаются."
 
 #: env/lib/python3.7/site-packages/django/db/models/base.py:1162
 #: env/lib/python3.7/site-packages/django/forms/models.py:756
 msgid "and"
-msgstr ""
+msgstr "и"
 
 #: env/lib/python3.7/site-packages/django/db/models/base.py:1164
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s с таким %(field_labels)s уже существует."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:104
 #, python-format
 msgid "Value %(value)r is not a valid choice."
-msgstr ""
+msgstr "Значение %(value)r не является разрешенным выбором."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:105
 msgid "This field cannot be null."
-msgstr ""
+msgstr "Это поле может иметь значение null."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:106
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "Это поле не может быть пустым."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:107
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s с таким %(field_label)s уже существует."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
 #. Eg: "Title must be unique for pub_date year"
@@ -218,58 +225,60 @@ msgstr ""
 #, python-format
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-msgstr ""
+msgstr "%(field_label)s должно быть уникальным для %(date_field_label)s "
+"%(lookup_type)s."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:128
 #, python-format
 msgid "Field of type: %(field_type)s"
-msgstr ""
+msgstr "Тип поля: %(field_type)s"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:905
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1772
 msgid "Integer"
-msgstr ""
+msgstr "Целое число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:909
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1770
 #, python-format
 msgid "'%(value)s' value must be an integer."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть целым числом."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:984
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1850
 msgid "Big (8 byte) integer"
-msgstr ""
+msgstr "Большое (8 байтов) целое число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:996
 #, python-format
 msgid "'%(value)s' value must be either True or False."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть True или False"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:997
 #, python-format
 msgid "'%(value)s' value must be either True, False, or None."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть True, False или None."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:999
 msgid "Boolean (Either True or False)"
-msgstr ""
+msgstr "Булево значение (True или False)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1040
 #, python-format
 msgid "String (up to %(max_length)s)"
-msgstr ""
+msgstr "Строка (up to %(max_length)s)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1104
 msgid "Comma-separated integers"
-msgstr ""
+msgstr "Целые числа, разделенные запятой"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1153
 #, python-format
 msgid ""
 "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
-msgstr ""
+msgstr "Значение '%(value s' имеет неверный формат даты. Оно должна быть в формате "
+"YYYY-MM-DD."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1155
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1298
@@ -277,772 +286,783 @@ msgstr ""
 msgid ""
 "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
 "date."
-msgstr ""
+msgstr "Значение '%(value)s' имеет корректный формат (YYYY-MM-DD), но это недействительна дата."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1158
 msgid "Date (without time)"
-msgstr ""
+msgstr "Дата (без времени)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1296
 #, python-format
 msgid ""
 "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
 "uuuuuu]][TZ] format."
-msgstr ""
+msgstr "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате YYYY-"
+"MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1300
 #, python-format
 msgid ""
 "'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
 "[TZ]) but it is an invalid date/time."
-msgstr ""
+msgstr "Значение '%(value)s' имеет верный формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]), "
+"но это недействительна дата/время."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1304
 msgid "Date (with time)"
-msgstr ""
+msgstr "Дата (со временем)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1452
 #, python-format
 msgid "'%(value)s' value must be a decimal number."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть десятичным числом."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1454
 msgid "Decimal number"
-msgstr ""
+msgstr "Десятичное число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1593
 #, python-format
 msgid ""
 "'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
 "uuuuuu] format."
-msgstr ""
+msgstr "Значение '%(value)s' не соответствует формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1596
 msgid "Duration"
-msgstr ""
+msgstr "Продолжительность"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1646
 msgid "Email address"
-msgstr ""
+msgstr "Email адрес"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1669
 msgid "File path"
-msgstr ""
+msgstr "Путь к файлу"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1735
 #, python-format
 msgid "'%(value)s' value must be a float."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть числом с плавающей точкой."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1737
 msgid "Floating point number"
-msgstr ""
+msgstr "Число с плавающей точкой"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1866
 msgid "IPv4 address"
-msgstr ""
+msgstr "IPv4 адрес"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1897
 msgid "IP address"
-msgstr ""
+msgstr "IP адрес"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1977
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1978
 #, python-format
 msgid "'%(value)s' value must be either None, True or False."
-msgstr ""
+msgstr "Значение '%(value)s' должно быть None, True або False."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1980
 msgid "Boolean (Either True, False or None)"
-msgstr ""
+msgstr "Булево значение (включая True, False или None)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2015
 msgid "Positive integer"
-msgstr ""
+msgstr "Положительное целое число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2028
 msgid "Positive small integer"
-msgstr ""
+msgstr "Положительное малое целое число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2042
 #, python-format
 msgid "Slug (up to %(max_length)s)"
-msgstr ""
+msgstr "Slug (up к %(max_length)s)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2074
 msgid "Small integer"
-msgstr ""
+msgstr "Малое целое число"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2081
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2109
 #, python-format
 msgid ""
 "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
-msgstr ""
+msgstr "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате HH:MM[:"
+"ss[.uuuuuu]]."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2111
 #, python-format
 msgid ""
 "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
-msgstr ""
+msgstr "Значение '%(value)s' имеет верный формат (HH:MM[:ss[.uuuuuu]]), но это "
+"недействительное время."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2114
 msgid "Time"
-msgstr ""
+msgstr "Время"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2240
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2262
 msgid "Raw binary data"
-msgstr ""
+msgstr "Необработанные двоичные данные"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2312
 #, python-format
 msgid "'%(value)s' is not a valid UUID."
-msgstr ""
+msgstr "'%(value)s' неверное значение UUID."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2314
 msgid "Universally unique identifier"
-msgstr ""
+msgstr "Универсально уникальный идентификатор"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/files.py:221
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/files.py:360
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:778
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r does not exist."
-msgstr ""
+msgstr "Экземпляр %(model)s с %(field)s %(value)r не существует."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:780
 msgid "Foreign Key (type determined by related field)"
-msgstr ""
+msgstr "Внешний ключ (тип определяется в соответствии поля)"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1007
 msgid "One-to-one relationship"
-msgstr ""
+msgstr "\'один-к-одному'\ связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1057
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr ""
+msgstr "\'%(from)s-%(to)s'\ связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1058
 #, python-format
 msgid "%(from)s-%(to)s relationships"
-msgstr ""
+msgstr "\'%(from)s-%(to)s'\ связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1100
 msgid "Many-to-many relationship"
-msgstr ""
+msgstr "\'Многие-ко-многим'\ связь"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the label
 #: env/lib/python3.7/site-packages/django/forms/boundfield.py:146
 msgid ":?.!"
-msgstr ""
+msgstr ":?.!"
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:53
 msgid "This field is required."
-msgstr ""
+msgstr "Это поле является обязательным."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:245
 msgid "Enter a whole number."
-msgstr ""
+msgstr "Введите целое число."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:396
 #: env/lib/python3.7/site-packages/django/forms/fields.py:1126
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Введите корректную дату."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:420
 #: env/lib/python3.7/site-packages/django/forms/fields.py:1127
 msgid "Enter a valid time."
-msgstr ""
+msgstr "Введите корректное время."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:442
 msgid "Enter a valid date/time."
-msgstr ""
+msgstr "Введите корректную дату/время."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:471
 msgid "Enter a valid duration."
-msgstr ""
+msgstr "Введите корректную продолжительность."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:472
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
+msgstr "Количество дней должна быть между {min_дней} и {max_дней}."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:532
 msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+msgstr "Файл не отправлено. Проверьте тип кодирования формы."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:533
 msgid "No file was submitted."
-msgstr ""
+msgstr "Файл не было отправлено."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:534
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Передан файл пуст."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:536
 #, python-format
 msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Убедитесь, что это имя файла содержит не более чем %(max)d символ "
+"(сейчас %(length)d)."
+msgstr[1] "Убедитесь, что это имя файла содержит не более чем %(max)d символов "
+"(сейчас %(length)d)."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:539
 msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
+msgstr "Пожалуйста, или загрузите файл, или отметьте флажок очистки, а не "
+"оба варианта сразу."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:600
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
-msgstr ""
+msgstr "Загрузите правильное изображение. Файл, который вы загрузили, не является изображением, или "
+"является испорченным изображением."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:762
 #: env/lib/python3.7/site-packages/django/forms/fields.py:852
 #: env/lib/python3.7/site-packages/django/forms/models.py:1270
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
+msgstr "Сделайте корректный выбор, %(value)s нет среди вариантов выбора."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:853
 #: env/lib/python3.7/site-packages/django/forms/fields.py:968
 #: env/lib/python3.7/site-packages/django/forms/models.py:1269
 msgid "Enter a list of values."
-msgstr ""
+msgstr "Введите список значений."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:969
 msgid "Enter a complete value."
-msgstr ""
+msgstr "Введите значение полностью."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:1185
 msgid "Enter a valid UUID."
-msgstr ""
+msgstr "Введите корректное значение UUID."
 
 #. Translators: This is the default suffix added to form field labels
 #: env/lib/python3.7/site-packages/django/forms/forms.py:86
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: env/lib/python3.7/site-packages/django/forms/forms.py:212
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
+msgstr "(Скрытое поле %(name)s) %(error)s"
 
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:91
 msgid "ManagementForm data is missing or has been tampered with"
-msgstr ""
+msgstr "Данные ManagementForm отсутствовали или были повреждены"
 
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:338
 #, python-format
 msgid "Please submit %d or fewer forms."
 msgid_plural "Please submit %d or fewer forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Пожалуйста, отправьте %d или меньше форм."
+msgstr[1] "Пожалуйста, отправьте %d или меньше форм."
 
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:345
 #, python-format
 msgid "Please submit %d or more forms."
 msgid_plural "Please submit %d or more forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Пожалуйста, отправьте как минимум %d форм."
+msgstr[1] "Пожалуйста, отправьте как минимум %d форм."
 
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:371
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:373
 msgid "Order"
-msgstr ""
+msgstr "Последовательность"
 
 #: env/lib/python3.7/site-packages/django/forms/formsets.py:375
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:751
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
+msgstr "Пожалуйста, исправьте повторяющиеся данные для поля %(field)s."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:755
 #, python-format
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
-msgstr ""
+msgstr "Пожалуйста, исправьте повторяющиеся данные для поля %(field)s, которое должно быть "
+"уникальным."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:761
 #, python-format
 msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
-msgstr ""
+msgstr "Пожалуйста, исправьте повторяющиеся данные для поля %(field_name)s, которое должно быть "
+" уникальным для выборки %(lookup)s на %(date_field)s."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:770
 msgid "Please correct the duplicate values below."
-msgstr ""
+msgstr "Пожалуйста, исправьте повторяющиеся значения ниже."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1091
 msgid "The inline value did not match the parent instance."
-msgstr ""
+msgstr "Связаное значение не совпадает с родительским экземпляром."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1158
 msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
+msgstr "Сделайте корректный выбор. Такого варианта нет среди доступных."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1272
 #, python-format
 msgid "\"%(pk)s\" is not a valid value."
-msgstr ""
+msgstr "\"%(pk)s\" не является допустимым значением."
 
 #: env/lib/python3.7/site-packages/django/forms/utils.py:162
 #, python-format
 msgid ""
 "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
-msgstr ""
+msgstr "%(datetime)s не может быть интерпретирована в часовом поясе"
+" %(current_timezone)s; дата может быть неодзначной или оказаться несуществующей."
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:395
 msgid "Clear"
-msgstr ""
+msgstr "Очистить"
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:396
 msgid "Currently"
-msgstr ""
+msgstr "В настоящее время"
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:397
 msgid "Change"
-msgstr ""
+msgstr "Изменить"
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:709
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестно"
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:710
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: env/lib/python3.7/site-packages/django/forms/widgets.py:711
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:788
 msgid "yes,no,maybe"
-msgstr ""
+msgstr "да,нет,может быть"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:817
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:834
 #, python-format
 msgid "%(size)d byte"
 msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(size)d байт"
+msgstr[1] "%(size)d байтов"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:836
 #, python-format
 msgid "%s KB"
-msgstr ""
+msgstr "%s Кб"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:838
 #, python-format
 msgid "%s MB"
-msgstr ""
+msgstr "%s Мб"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:840
 #, python-format
 msgid "%s GB"
-msgstr ""
+msgstr "%s Гб"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:842
 #, python-format
 msgid "%s TB"
-msgstr ""
+msgstr "%s Тб"
 
 #: env/lib/python3.7/site-packages/django/template/defaultfilters.py:844
 #, python-format
 msgid "%s PB"
-msgstr ""
+msgstr "%s Пб"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:62
 msgid "p.m."
-msgstr ""
+msgstr "до полудня"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:63
 msgid "a.m."
-msgstr ""
+msgstr "до полудня"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:68
 msgid "PM"
-msgstr ""
+msgstr "после полудня"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:69
 msgid "AM"
-msgstr ""
+msgstr "до полудня"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:150
 msgid "midnight"
-msgstr ""
+msgstr "полночь"
 
 #: env/lib/python3.7/site-packages/django/utils/dateformat.py:152
 msgid "noon"
-msgstr ""
+msgstr "полдень"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Monday"
-msgstr ""
+msgstr "Понедельник"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Tuesday"
-msgstr ""
+msgstr "Вторник"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Wednesday"
-msgstr ""
+msgstr "Среда"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Thursday"
-msgstr ""
+msgstr "Четверг"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
 msgid "Friday"
-msgstr ""
+msgstr "Пятница"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:7
 msgid "Saturday"
-msgstr ""
+msgstr "Суббота"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:7
 msgid "Sunday"
-msgstr ""
+msgstr "Воскресенье"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Mon"
-msgstr ""
+msgstr "Пн"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Tue"
-msgstr ""
+msgstr "Вт"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Wed"
-msgstr ""
+msgstr "Ср"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Thu"
-msgstr ""
+msgstr "Чт"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:10
 msgid "Fri"
-msgstr ""
+msgstr "Пт"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:11
 msgid "Sat"
-msgstr ""
+msgstr "Сб"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:11
 msgid "Sun"
-msgstr ""
+msgstr "Вс"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "January"
-msgstr ""
+msgstr "Январь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "February"
-msgstr ""
+msgstr "Февраль"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "March"
-msgstr ""
+msgstr "Март"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "April"
-msgstr ""
+msgstr "Апрель"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "May"
-msgstr ""
+msgstr "Май"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "July"
-msgstr ""
+msgstr "Июль"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "August"
-msgstr ""
+msgstr "Август"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "September"
-msgstr ""
+msgstr "Сентябрь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "October"
-msgstr ""
+msgstr "Октябрь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
 msgid "November"
-msgstr ""
+msgstr "Ноябрь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:16
 msgid "December"
-msgstr ""
+msgstr "Декабрь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "jan"
-msgstr ""
+msgstr "янв"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "feb"
-msgstr ""
+msgstr "фев"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "mar"
-msgstr ""
+msgstr "мар"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "apr"
-msgstr ""
+msgstr "апр"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "may"
-msgstr ""
+msgstr "май"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:19
 msgid "jun"
-msgstr ""
+msgstr "июн"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "jul"
-msgstr ""
+msgstr "июл"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "aug"
-msgstr ""
+msgstr "авг"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "sep"
-msgstr ""
+msgstr "сен"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "oct"
-msgstr ""
+msgstr "окт"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "nov"
-msgstr ""
+msgstr "ноя"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:20
 msgid "dec"
-msgstr ""
+msgstr "дек"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:23
 msgctxt "abbrev. month"
 msgid "Jan."
-msgstr ""
+msgstr "Янв."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:24
 msgctxt "abbrev. month"
 msgid "Feb."
-msgstr ""
+msgstr "Фев."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:25
 msgctxt "abbrev. month"
 msgid "March"
-msgstr ""
+msgstr "Март"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:26
 msgctxt "abbrev. month"
 msgid "April"
-msgstr ""
+msgstr "Апрель"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:27
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ""
+msgstr "Май"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:28
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ""
+msgstr "Июнь"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:29
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ""
+msgstr "Июль"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:30
 msgctxt "abbrev. month"
 msgid "Aug."
-msgstr ""
+msgstr "Авг."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:31
 msgctxt "abbrev. month"
 msgid "Sept."
-msgstr ""
+msgstr "Сен."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:32
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ""
+msgstr "Окт."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:33
 msgctxt "abbrev. month"
 msgid "Nov."
-msgstr ""
+msgstr "Ноя."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:34
 msgctxt "abbrev. month"
 msgid "Dec."
-msgstr ""
+msgstr "Дек."
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:37
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "Января"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:38
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "Февраля"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:39
 msgctxt "alt. month"
 msgid "March"
-msgstr ""
+msgstr "Марта"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:40
 msgctxt "alt. month"
 msgid "April"
-msgstr ""
+msgstr "Апреля"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:41
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "Мая"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:42
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "Июня"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:43
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "Июля"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:44
 msgctxt "alt. month"
 msgid "August"
-msgstr ""
+msgstr "Августа"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:45
 msgctxt "alt. month"
 msgid "September"
-msgstr ""
+msgstr "Сентября"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:46
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "Октября"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:47
 msgctxt "alt. month"
 msgid "November"
-msgstr ""
+msgstr "Ноября"
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:48
 msgctxt "alt. month"
 msgid "December"
-msgstr ""
+msgstr "Декабря"
 
 #: env/lib/python3.7/site-packages/django/utils/ipv6.py:8
 msgid "This is not a valid IPv6 address."
-msgstr ""
+msgstr "Это не является правильным адресом IPv6."
 
 #: env/lib/python3.7/site-packages/django/utils/text.py:67
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
-msgstr ""
+msgstr "%(truncated_text)s…"
 
 #: env/lib/python3.7/site-packages/django/utils/text.py:233
 msgid "or"
-msgstr ""
+msgstr "или"
 
 #. Translators: This string is used as a separator between list elements
 #: env/lib/python3.7/site-packages/django/utils/text.py:252
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:83
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:9
 #, python-format
 msgid "%d year"
 msgid_plural "%d years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d год"
+msgstr[1] "%d лет"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:10
 #, python-format
 msgid "%d month"
 msgid_plural "%d months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d месяц"
+msgstr[1] "%d месяцев"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:11
 #, python-format
 msgid "%d week"
 msgid_plural "%d weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d неделя"
+msgstr[1] "%d недель"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:12
 #, python-format
 msgid "%d day"
 msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d день"
+msgstr[1] "%d дней"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:13
 #, python-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d час"
+msgstr[1] "%d часов"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:14
 #, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d минута"
+msgstr[1] "%d минут"
 
 #: env/lib/python3.7/site-packages/django/utils/timesince.py:72
 msgid "0 minutes"
-msgstr ""
+msgstr "0 минут"
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:110
 msgid "Forbidden"
-msgstr ""
+msgstr "Запрещено"
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:111
 msgid "CSRF verification failed. Request aborted."
-msgstr ""
+msgstr "Ошибка проверки CSRF. Запрос отклонен."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:115
 msgid ""
@@ -1050,14 +1070,21 @@ msgid ""
 "header' to be sent by your Web browser, but none was sent. This header is "
 "required for security reasons, to ensure that your browser is not being "
 "hijacked by third parties."
-msgstr ""
+msgstr "Вы видите это сообщение, потому что данный сайт использует защищенное "
+"соединение и требует, чтобы заголовок 'Referer' был передан вашим браузером,"
+"но он не был им передан. Данный заголовок необходим из соображений"
+"безопасности, чтобы убедиться, что ваш браузер не был сломан, а запрос"
+"сервера не был перехвачен или подменен."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:120
 msgid ""
 "If you have configured your browser to disable 'Referer' headers, please re-"
 "enable them, at least for this site, or for HTTPS connections, or for 'same-"
 "origin' requests."
-msgstr ""
+msgstr "Если вы настроили свой браузер таким образом, чтобы запретить ему передавать "
+"заголовок 'Referer ', пожалуйста, позвольте ему отсылать данный заголовок"
+"по крайней мере для данного сайта, или для всех HTTPS-соединений, или для 'same-"
+"origin' запросов."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:124
 msgid ""
@@ -1066,112 +1093,123 @@ msgid ""
 "CSRF protection requires the 'Referer' header to do strict referer checking. "
 "If you're concerned about privacy, use alternatives like <a rel=\"noreferrer"
 "\" ...> for links to third-party sites."
-msgstr ""
+msgstr "Если вы используете <meta name=\"referrer\" content=\"no-referrer\"> тег или "
+"в том числе 'Referrer-Policy: no-referrer' заголовок, пожалуйста, удалите их. "
+"Защита CSRF требует заголовка 'Referer', чтобы сделать строгую referer"
+"проверку. Если вы обеспокоены о конфиденциальности, используйте альтернативы, такие как <а "
+"rel=\"noreferrer\" ...> ссылки на сторонние сайты.  
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:132
 msgid ""
 "You are seeing this message because this site requires a CSRF cookie when "
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
-msgstr ""
+msgstr "Вы видите это сообщение, потому что данный сайт требует, чтобы при отправке "
+"форм были отправлены также CSRF-cookie. Данный тип cookie необходим по"
+"соображениям безопасности, чтобы убедиться, что ваш браузер не был взломан и"
+"не выполняет с вашей стороны действий, запрограммированных третьими лицами."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:137
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
 "them, at least for this site, or for 'same-origin' requests."
-msgstr ""
+msgstr "Если вы настроили свой браузер для отключения куков, пожалуйста, 
+повторно включите их по крайней мере на этом сайте или для 'same-origin' запросов."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:142
 msgid "More information is available with DEBUG=True."
-msgstr ""
+msgstr "Больше информации можно получить при DEBUG = True."
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:41
 msgid "No year specified"
-msgstr ""
+msgstr "Год не указан"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:61
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:111
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:208
 msgid "Date out of range"
-msgstr ""
+msgstr "Дата вне диапазона"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:90
 msgid "No month specified"
-msgstr ""
+msgstr "Месяц не указан"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:142
 msgid "No day specified"
-msgstr ""
+msgstr "День не указан"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:188
 msgid "No week specified"
-msgstr ""
+msgstr "Неделя не указана"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:338
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:367
 #, python-format
 msgid "No %(verbose_name_plural)s available"
-msgstr ""
+msgstr "%(verbose_name_plural)s недоступны"
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:589
 #, python-format
 msgid ""
 "Future %(verbose_name_plural)s not available because %(class_name)s."
 "allow_future is False."
-msgstr ""
+msgstr "Будущие %(verbose_name_plural)s недоступны, так как %(class_name)s."
+"allow_future имеет нулевое значение."
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:623
 #, python-format
 msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
-msgstr ""
+msgstr "Недействительна дата '%(datestr)s' для формата '%(format)s'"
 
 #: env/lib/python3.7/site-packages/django/views/generic/detail.py:54
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr ""
+msgstr "Не одни %(verbose_name)s не были найдены по запросу"
 
 #: env/lib/python3.7/site-packages/django/views/generic/list.py:67
 msgid "Page is not 'last', nor can it be converted to an int."
-msgstr ""
+msgstr "Страница должна быть задана целым " 
+"числом или значением 'last'."
 
 #: env/lib/python3.7/site-packages/django/views/generic/list.py:72
 #, python-format
 msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
+msgstr "Недействительна страница (%(page_number)s): %(message)s"
 
 #: env/lib/python3.7/site-packages/django/views/generic/list.py:154
 #, python-format
 msgid "Empty list and '%(class_name)s.allow_empty' is False."
-msgstr ""
+msgstr "Пустой список и величина '%(class_name)s.allow_empty' есть нулевой"
 
 #: env/lib/python3.7/site-packages/django/views/static.py:40
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "Индексы поисковых систем не допускаются."
 
 #: env/lib/python3.7/site-packages/django/views/static.py:42
 #, python-format
 msgid "\"%(path)s\" does not exist"
-msgstr ""
+msgstr "\"%(path)s\" не существует"
 
 #: env/lib/python3.7/site-packages/django/views/static.py:80
 #, python-format
 msgid "Index of %(directory)s"
-msgstr ""
+msgstr "Индекс of %(directory)s"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:6
 msgid "Django: the Web framework for perfectionists with deadlines."
-msgstr ""
+msgstr "Django: веб-рамка для перфекционистов с терминами."
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:345
 #, python-format
 msgid ""
 "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
+msgstr "Просмотр <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:367
 msgid "The install worked successfully! Congratulations!"
-msgstr ""
+msgstr "Установки успешно работали! Поздравляем!"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:368
 #, python-format
@@ -1180,85 +1218,89 @@ msgid ""
 "%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
 "\">DEBUG=True</a> is in your settings file and you have not configured any "
 "URLs."
-msgstr ""
+msgstr "Вы видите эту страницу, так как <a href =\"https://docs.djangoproject.com/en/" 
+"%(version)s/ref/settings/#debug\" target = \"_blank\" rel =\"noopener"
+"\"> DEBUG = True</a> находится в файле настроек
+и вы не настроили ни один "
+"URLs."
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:383
 msgid "Django Documentation"
-msgstr ""
+msgstr "Django Документация"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:384
 msgid "Topics, references, &amp; how-to's"
-msgstr ""
+msgstr "Темы, ссылки, & amp; советы"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:395
 msgid "Tutorial: A Polling App"
-msgstr ""
+msgstr "Учебник: Социологическое Приложение"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:396
 msgid "Get started with Django"
-msgstr ""
+msgstr "Начало работы с Django"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:407
 msgid "Django Community"
-msgstr ""
+msgstr "Django Общество"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:408
 msgid "Connect, get help, or contribute"
-msgstr ""
+msgstr "Подключите, получите помощь, или вносите."
 
 #: env/lib/python3.7/site-packages/modeltranslation/widgets.py:25
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:55
 #: env/lib/python3.7/site-packages/transliterate/utils.py:90
 #: env/lib/python3.7/site-packages/transliterate/utils.py:118
 #, python-format
 msgid "Language pack for code %s is not found."
-msgstr ""
+msgstr "Языковой пакет для кода %s не найдено."
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:79
 #: env/lib/python3.7/site-packages/transliterate/utils.py:110
 msgid "``language_code`` is optional with ``reversed`` set to True only."
-msgstr ""
+msgstr "``Language_code`` не является обязательным с ``reversed`` установлено только значение True."
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:221
 #, python-format
 msgid "Can't detect language for the text \"%s\" given."
-msgstr ""
+msgstr "Невозможно определить язык текста \"%s\" который дано."
 
 #: gifts/templates/gifts/index.html:14
 msgid "Gifts"
-msgstr ""
+msgstr "Подарки"
 
 #: items/templates/items/detail.html:11 jobs/templates/jobs/detail.html:12
 #: rents/templates/rents/detail.html:11
 msgid "Description:"
-msgstr ""
+msgstr "Описание:"
 
 #: items/templates/items/detail.html:12 jobs/templates/jobs/detail.html:13
 msgid "City:"
-msgstr ""
+msgstr "Город:"
 
 #: items/templates/items/detail.html:13
 msgid "Neighborhood:"
-msgstr ""
+msgstr "Район:"
 
 #: items/templates/items/index.html:14
 msgid "Items"
-msgstr ""
+msgstr "Товары"
 
 #: jobs/models.py:33
 msgid "salary"
-msgstr ""
+msgstr "заработная плата"
 
 #: jobs/templates/jobs/detail.html:14
 msgid "Languages spoken by the employer:"
-msgstr ""
+msgstr "Языки общения работодателя:"
 
 #: jobs/templates/jobs/detail.html:19
 msgid "Job type:"
-msgstr "Тип вакансии"
+msgstr "Тип вакансии:"
 
 #: jobs/templates/jobs/index.html:16 templates/home.html:70
 msgid "Jobs"
@@ -1266,55 +1308,55 @@ msgstr "Работа"
 
 #: rents/templates/rents/detail.html:10
 msgid "Bathrooms:"
-msgstr ""
+msgstr "Ванные:"
 
 #: rents/templates/rents/detail.html:12
 msgid "Bedrooms"
-msgstr ""
+msgstr "Спальни"
 
 #: rents/templates/rents/detail.html:13
 msgid "Price:"
-msgstr ""
+msgstr "Цена:"
 
 #: rents/templates/rents/detail.html:14
 msgid "Pet policy:"
-msgstr ""
+msgstr "Политика относительно домашних животных:"
 
 #: rents/templates/rents/detail.html:15
 msgid "Location:"
-msgstr ""
+msgstr "Местоположение:"
 
 #: rents/templates/rents/detail.html:16
 msgid "Furnished:"
-msgstr ""
+msgstr "Меблирован:"
 
 #: rents/templates/rents/detail.html:17
 msgid "Prefer sex"
-msgstr ""
+msgstr "Выбор пола"
 
 #: rents/templates/rents/index.html:16
 msgid "Rents"
-msgstr ""
+msgstr "Арендная плата"
 
 #: templates/base.html:79
 msgid "Home"
-msgstr "Домой"
+msgstr "Дом"
 
 #: templates/base.html:83
 msgid "Contacts"
-msgstr "Контакти"
+msgstr "Контакты"
 
 #: templates/base.html:87
 msgid "Map"
-msgstr ""
+msgstr "Карта"
 
 #: templates/home.html:53
 msgid "Frog greeting!"
-msgstr "Жаба приветствует вас!"
+msgstr "Жаба приветствует Вас!"
 
 #: templates/home.html:64
 msgid "Sell"
-msgstr "Продать"
+msgstr "Продажа"
 
 #: templates/home.html:76
 msgid "Housing"

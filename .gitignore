@@ -78,6 +78,7 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 /celerybeat-schedule.db
+/celerybeat.pid
 
 
 # SageMath parsed files
@@ -150,3 +151,4 @@ $RECYCLE.BIN/
 
 #upload files
 .media
+

@@ -6,7 +6,8 @@ RUN apt-get update
 RUN apt-get upgrade -y
 
 # Install GDAL dependencies
-RUN apt-get install -y python3-pip libgdal-dev locales
+RUN apt-get install -y python3-pip libgdal-dev locales 
+RUN apt-get install -y libsqlite3-mod-spatialite
 
 # Ensure locales configured correctly
 RUN locale-gen en_US.UTF-8

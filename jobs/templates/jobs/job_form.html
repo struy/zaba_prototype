@@ -1,25 +1,53 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load countries %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'jobs:index' %}">{%  trans "Jobs" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+{% endblock %}
+
+
+
+{% block head %}
+    {{ form.media }}
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
 
 {% block content %}
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-
-                <h2><a href="{% url 'jobs:index' %}">Jobs</a>: Edit</h2>
-
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <form method="post">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Submit"/>
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </form>
-
-
             </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 
 
+{% endblock %}
 
+
+{% block script %}
+
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/messages/messages.ru-ru.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('.datepicker').datepicker({
+        {% if  LANGUAGE_CODE == 'ru' %}
+              locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
+        {% endif %}
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
 
 {% endblock %}

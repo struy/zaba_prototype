@@ -15,14 +15,13 @@
                 <ul>
                     {% for job in object_list %}
                         <li>{{ job.title }}
-                            {#        {{ job.update_at|naturaltime }} #}
                             <a href="{% url 'jobs:edit' job.id %}">edit</a>
                             <a href="{% url 'jobs:delete' job.id %}">delete</a>
                         </li>
                     {% endfor %}
                 </ul>
 
-                <a href="{% url 'jobs:job_new' %}">New</a>
+                <a href="{% url 'jobs:new' %}">New</a>
 
 
             </div>
@@ -32,3 +31,6 @@
 
 
 {% endblock %}
+
+
+{% block add_ad_link %} {% url 'jobs:new' %} {% endblock %}

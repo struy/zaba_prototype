@@ -27,8 +27,8 @@ class Job(Advert, Location):
         choices=DURATIONS,
         default='ft'
     )
-    countries = CountryField(multiple=True, default='EN')
+    countries = CountryField(multiple=True, default='EN', verbose_name=_('language'), help_text=_('What language does the employer speak?'),)
     salary = models.PositiveIntegerField(blank=True, verbose_name=_('salary'))
 
     def get_absolute_url(self):
-        return reverse('jobs:edit', kwargs={'pk': self.pk})
+        return reverse('jobs:detail', kwargs={'pk': self.pk})

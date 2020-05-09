@@ -4,6 +4,14 @@
 {% load static %}
 {% load i18n %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Jobs" %}</li>
+{% endblock %}
+
+
+
+
 {% block content %}
     <div class="container">
         <div class="row">

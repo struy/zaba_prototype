@@ -13,5 +13,6 @@ _if you use docker please change "localhost" to "redis" (REDIS_HOST = 'localhost
 
 `docker-compose -f "docker-compose.yml" up -d --build`
 
-
-
+On Linux for start Elasticsearch > 5
+`sysctl -w vm.max_map_count=262144
+`

@@ -4,6 +4,7 @@ services:
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
+    container_name: zaba_web
     volumes:
       - .:/usr/src/app/
     ports:
@@ -14,9 +15,15 @@ services:
       - DEBUG=1
       - SECRET_KEY=foo
       - CACHE_LOCATION=redis://redis:6379
+      - LOGSTASH_HOST=logstash
+    expose:
+      - "5959"
+    logging:
+      driver: "json-file"
   celery:
     build: .
     command: celery -A zaba worker -l info
+    container_name: zaba_celery
     volumes:
       - .:/usr/src/app/
     depends_on:
@@ -24,12 +31,14 @@ services:
   celery-beat:
     build: .
     command: celery -A zaba beat -l info
+    container_name: zaba_celery_beat
     volumes:
       - .:/usr/src/app/
     depends_on:
       - redis
   celery-flower:
     image: mher/flower
+    container_name: zaba_celery_flower
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
       - FLOWER_PORT=5555
@@ -40,6 +49,7 @@ services:
   redisinsight:
     image: redislabs/redisinsight
     restart: always
+    container_name: zaba_redisinsight
     volumes:
       - redisinsight:/db
     ports:
@@ -51,11 +61,103 @@ services:
   redis:
     restart: always
     image: redis:latest
+    container_name: zaba_redis
     ports:
       - "6379:6379"
     volumes:
       - redisdata:/data
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    container_name: es01
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - xpack.license.self_generated.type=basic
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    container_name: es02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - xpack.license.self_generated.type=basic
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data02:/usr/share/elasticsearch/data
+    ports:
+      - 9201:9201
+    networks:
+      - elastic
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    container_name: es03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - xpack.license.self_generated.type=basic
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data03:/usr/share/elasticsearch/data
+    ports:
+      - 9202:9202
+    networks:
+      - elastic
+
+  kib01:
+    image: docker.elastic.co/kibana/kibana:7.6.2
+    container_name: kib01
+    ports:
+      - 5601:5601
+    environment:
+      ELASTICSEARCH_URL: http://es01:9200
+      ELASTICSEARCH_HOSTS: http://es01:9200     
+
+    networks:
+      - elastic
+
+
+networks:
+  elastic:
+    driver: bridge
+
 
 volumes:
   redisdata:
   redisinsight:
+  data01:
+    driver: local
+  data02:
+    driver: local
+  data03:
+    driver: local
+
+

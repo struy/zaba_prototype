@@ -32,6 +32,7 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
+    path('search', views.SearchView.as_view(), name="global_search"),
     path('jobs/', include('jobs.urls')),
     path('rents/', include('rents.urls')),
     path('items/', include('items.urls')),

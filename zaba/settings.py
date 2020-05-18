@@ -197,14 +197,14 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation', 'jobs.translation',)
 
 
-REDIS_HOST = 'redis' #'localhost'
+REDIS_HOST ='localhost' #'redis'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://redis:6379/1',
+        'LOCATION': 'redis://localhost:6379/1',
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         }
@@ -221,7 +221,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CELERY
 BROKER_URL = 'redis://redis:6379'
-CELERY_RESULT_BACKEND = 'redis://redis:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'

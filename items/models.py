@@ -22,3 +22,4 @@ class Item(Advert, Location):
 
     def get_absolute_url(self):
         return reverse('items:detail', args=[self.id])
+

@@ -23,4 +23,4 @@ class Gift(Advert, Location):
     gift_type = models.ForeignKey(GiftType, on_delete=models.CASCADE, verbose_name=_('gift type'))
 
     def get_absolute_url(self):
-        return reverse('gifts:detail', kwargs={'pk': self.pk})
+        return reverse('gifts:detail', args=[self.id])

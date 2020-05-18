@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 import django_tables2 as tables
 from adverts.models import Advert, Location
+from django.urls import reverse
 
 
 class RentalType(models.Model):
@@ -16,7 +17,7 @@ class Rental(Advert, Location):
     # Rooms, Apartment
     # Move-in Date
 
-    rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('job type'))
+    rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('rental type'))
 
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=2)
@@ -42,6 +43,9 @@ class Rental(Advert, Location):
         choices=prefer_sex_list,
         default='a'
     )
+
+    def get_absolute_url(self):
+        return reverse('rents:detail', args=[self.id])
 
 
 class RentalTable(tables.Table):

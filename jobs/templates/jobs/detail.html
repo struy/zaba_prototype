@@ -1,26 +1,51 @@
-{% extends "base.html" %}
+{% extends "base_detail.html" %}
 
 {% load countries %}
 {% load i18n %}
 
 
-{% block content %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'jobs:index' %}">{% trans "Jobs" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+{% endblock %}
+
+
+
+
+{% block content %}
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="offset-md-1 col-md-10">
                 <i class="fas fa-{{ jobtype }} fa-3x"></i>
-                <h1 class="job_title">{{ advert.title }}</h1>
-                <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
-                <p><b>{% trans "City:" %}</b> {{ advert.location.city }} </p>
+                <h2> {{ advert.title }} </h2>
+                <span class="count">
+                        {{ total_views }} view{{ total_views|pluralize }}
+                 </span>
+                <p><b>{% trans "Job type:" %}</b> {{ advert.jobtype }} </p>
+                <p><b>{% trans "Duration:" %}</b> {{ advert.duration }} </p>
+                <p><b>{% trans "Salary:" %}</b> {{ advert.salary }} </p>
+                {% if advert.description %}
+                    <p> {{ advert.description }} </p>
+                {% endif %}
                 <p><b>{% trans "Languages spoken by the employer:" %} </b>
                     {% for country in advert.countries %}
                         <i class="{{ country.flag_css }}"></i>
                     {% endfor %}
                 </p>
-                <p><b>{% trans "Job type:" %}</b> {{ advert.jobtype }} </p>
+                <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
+                <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+                {% if advert.point %}
+                    <p><b>{% trans "Map:" %} </b></p>
+                    <div id="m" style="width: 500px; height: 500px;"></div>
+                {% endif %}
+                <br>
             </div>
+
+
         </div>
     </div>
 

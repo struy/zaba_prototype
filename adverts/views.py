@@ -1,10 +1,17 @@
 import datetime
 import redis
+from itertools import chain
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.conf import settings
+from django.views.generic import ListView
+
 from .models import Advert
+from items.models import Item
+from gifts.models import Gift
+from rents.models import Rental
+from jobs.models import Job
 
 
 def index(request):
@@ -26,9 +33,6 @@ def home(request):
 
     total = r.get("Total:saved").decode('utf-8')
 
-    # cls = [Item, Gift, Rental, Job]
-    # month = sum([c.objects.dates('created', 'month').count() for c in cls])
-
     now = datetime.datetime.now()
     month_ago = now - datetime.timedelta(weeks=4)
     week_ago = now - datetime.timedelta(weeks=1)
@@ -44,3 +48,39 @@ def home(request):
                'week': week}
 
     return render(request, 'home.html', context)
+
+
+class SearchView(ListView):
+    template_name = 'search.html'
+    paginate_by = 20
+    count = 0
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['count'] = self.count or 0
+        context['query'] = self.request.GET.get('q')
+        return context
+
+    def get_queryset(self):
+        request = self.request
+        query = request.GET.get('q', None)
+
+        if query is not None:
+            item_results = Item.objects.search(query)
+            job_results = Job.objects.search(query)
+            gift_results = Gift.objects.search(query)
+            rental_results = Rental.objects.search(query)
+
+            # combine querysets
+            queryset_chain = chain(
+                item_results,
+                job_results,
+                gift_results,
+                rental_results
+            )
+            qs = sorted(queryset_chain,
+                        key=lambda instance: instance.pk,
+                        reverse=True)
+            self.count = len(qs)  # since qs is actually a list
+            return qs
+        return Item.objects.none()  # just an empty queryset as default

@@ -2,6 +2,7 @@ import datetime
 import redis
 
 from django.db import models
+from django.db.models import Q
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -17,10 +18,21 @@ def user_directory_path(instance, filename):
     return f'media/{instance.__class__.__name__}/{instance.owner.id}_{filename}'
 
 
+class AdvertsManager(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(title__icontains=query) |
+                         Q(description__icontains=query))
+            qs = qs.filter(or_lookup).distinct()  # distinct() is often necessary with Q lookups
+        return qs
+
+
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
     expires = models.DateTimeField(blank=True, null=True, help_text=_('This is the help text'),
                                    verbose_name=_('expires'))
+    objects = AdvertsManager()
 
     class Meta:
         ordering = ['modified']
@@ -60,6 +72,8 @@ class Location(models.Model):
     city = models.CharField(max_length=50, default='Chicago', verbose_name=_('city'))
     address = models.CharField(max_length=100, blank=True, verbose_name=_('address'))
     point = PointField(blank=True, verbose_name=_('map'), null=True)
+
+    # zipcode =
 
     @property
     def lat_lng(self):

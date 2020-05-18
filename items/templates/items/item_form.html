@@ -4,8 +4,8 @@
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{%  trans "Items" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+    <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{% trans "Items" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create or Edit</li>
 {% endblock %}
 
 
@@ -43,10 +43,9 @@
 
     <script type="text/javascript">
         $('.datepicker').datepicker({
-        {% if  LANGUAGE_CODE == 'ru' %}
-              locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
-        {% endif %}
-
+            {% if  LANGUAGE_CODE == 'ru' %}
+                locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
+            {% endif %}
             uiLibrary: 'bootstrap4'
         });
     </script>

@@ -1,0 +1,58 @@
+<div class="pagination">
+    <span class="step-links">
+        <span class="current">
+            Page {{ adverts.number }} of {{ adverts.paginator.num_pages }}.
+        </span>
+    </span>
+</div>
+
+
+
+
+
+{% if is_paginated %}
+<hr>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center pagination-sm">
+        {% if adverts.has_previous %}
+          <!-- If it ain't a search result display, don't append the search query
+               to the URL. -->
+          {% if not search %}
+          <li class="page-item">
+              <a class="page-link" href="{% url package_list %}?page={{ adverts.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+          {% else %}
+          <!-- Append the searched query to the URL, so that on a search results page,
+               the pagination don't revert to listing all the listview items. -->
+            <li class="page-item">
+              <a class="page-link" href="{% url package_list %}?{{search}}&page={{ adverts.previous_page_number }}" tabindex="-1">Previous</a>
+          </li>
+          {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+        {% for object in adverts.paginator.page_range %}
+            <li class="page-item"><a class="page-link" href="{% url package_list %}?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+        {% endfor %}
+        {% if adverts.has_next %}
+          {% if not search %}
+          <li class="page-item">
+              <a class="page-link" href="{% url package_list %}?page={{ adverts.next_page_number }}">Next</a>
+          </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="{% url package_list %}?{{search}}&page={{ adverts.next_page_number }}">Next</a>
+          </li>
+          {% endif %}
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+

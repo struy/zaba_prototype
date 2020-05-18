@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="get" class="filters">
+                    <div class="form-group has-search">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" name="q" value="{{ request.GET.q }}" class="form-control"
+                               placeholder="Search">
+                    </div>
+                    {{ filters.form | crispy }}
+                    <button class="btn btn-primary" type="submit">
+                        Filter Search
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>

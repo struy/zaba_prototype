@@ -64,15 +64,15 @@
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url "logout" %}">
-                                 {% if user.is_authenticated %}
-                                {% if  request.user.first_name %}
-                                    Hello {{ request.user.first_name }},
+                                {% if user.is_authenticated %}
+                                    {% if  request.user.first_name %}
+                                        Hello {{ request.user.first_name }},
+                                    {% else %}
+                                        Hello {{ request.user.username }},
+                                    {% endif %}
                                 {% else %}
-                                    Hello {{ request.user.username  }},
                                 {% endif %}
-                            {% else %}
-                            {% endif %}
-                                 Logout</a></li>
+                                Logout</a></li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url "login" %}">Log-in</a>
@@ -116,6 +116,9 @@
                  alt="" class="img_ad">
         </center>
     </section>
+
+    {% block global_search %}
+    {% endblock %}
 
     <div class="container">
         <div class="row">

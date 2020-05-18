@@ -1,15 +1,19 @@
-{% extends "base.html" %}
+{% extends "base_detail.html" %}
 
 {% load countries %}
 {% load i18n %}
 {% load advert_money %}
 
-{% if advert.point %}
-    {% block head %}
-        <link rel="stylesheet" href="//unpkg.com/leaflet/dist/leaflet.css"/>
-        <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
-    {% endblock %}
-{% endif %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'gifts:index' %}">{% trans "Gifts" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+{% endblock %}
+
+
+
+
 
 {% block content %}
     <div class="container">
@@ -28,8 +32,7 @@
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
 
                 {% if advert.point %}
-                    <p><b>{% trans "Map:" %} </b></p>
-                    <div id="m" style="width: 500px; height: 500px;"></div>
+                     <div id="m" style="width: 500px; height: 500px;"></div>
                 {% endif %}
             </div>
         </div>
@@ -37,15 +40,7 @@
 {% endblock %}
 
 
-{% block script %}
-    <script type="text/javascript">
-        {% if advert.point %}
-            var m = L.map('m').setView({{ advert.lat_lng }}, 12);
-            L.tileLayer('//{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(m);
-            L.marker({{ advert.lat_lng }}).addTo(m).bindPopup('{{ advert.title }}');
-        {% endif %}
-    </script>
-{% endblock %}
+
 
 
 {% block add_ad_link %}

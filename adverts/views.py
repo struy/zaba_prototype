@@ -31,7 +31,10 @@ def home(request):
                           port=settings.REDIS_PORT,
                           db=settings.REDIS_DB)
 
-    total = r.get("Total:saved").decode('utf-8')
+    total = r.get("Total:saved")
+
+    if total:
+        total = total.decode('utf-8')
 
     now = datetime.datetime.now()
     month_ago = now - datetime.timedelta(weeks=4)

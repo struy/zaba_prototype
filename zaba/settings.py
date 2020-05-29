@@ -197,7 +197,7 @@ MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation', 'jobs.translation',)
 
 
-REDIS_HOST ='localhost' #'redis'
+REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
@@ -220,7 +220,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CELERY
-BROKER_URL = 'redis://redis:6379'
+BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'

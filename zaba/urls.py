@@ -32,6 +32,7 @@ if settings.DEBUG:
 
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
+    path('', include('frontend.urls')),
     path('search', views.SearchView.as_view(), name="global_search"),
     path('jobs/', include('jobs.urls')),
     path('rents/', include('rents.urls')),
@@ -39,6 +40,7 @@ urlpatterns += i18n_patterns(
     path('gifts/', include('gifts.urls')),
     path('accounts/', include('account.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
+
 )
 
 

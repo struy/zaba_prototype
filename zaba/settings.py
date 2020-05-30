@@ -56,10 +56,11 @@ INSTALLED_APPS = [
     'language_flags',
     'rosetta',
     'debug_toolbar',
-    #social
+    # social
     'social_django',
-
-
+    # react
+    'rest_framework',
+    'frontend',
 
 ]
 
@@ -196,8 +197,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 MODELTRANSLATION_TRANSLATION_FILES = (
     'gifts.translation', 'jobs.translation',)
 
-
-REDIS_HOST ='localhost' #'redis'
+REDIS_HOST = 'localhost'  # 'redis'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
@@ -211,10 +211,8 @@ CACHES = {
     }
 }
 
-
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -227,7 +225,14 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 # CELERY_ALWAYS_EAGER
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "XXX" # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXX' # Google Consumer Secret
-SOCIAL_AUTH_TWITTER_KEY = 'XXX' # Twitter Consumer Key
-SOCIAL_AUTH_TWITTER_SECRET = 'XXX' # Twitter Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "XXX"  # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'XXX'  # Google Consumer Secret
+SOCIAL_AUTH_TWITTER_KEY = 'XXX'  # Twitter Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'XXX'  # Twitter Consumer Secret
+
+if not DEBUG:
+    REST_FRAMEWORK = {
+        'DEFAULT_RENDERER_CLASSES': (
+            'rest_framework.renderers.JSONRenderer',
+        )
+    }

@@ -6,12 +6,12 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
-
+from rest_framework import generics
 
 from .models import Item
 from .forms import ItemForm
 from .filters import ItemsFilter
-
+from .serializers import ItemSerializer
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -85,4 +85,6 @@ class ItemDelete(DeleteView):
     success_url = reverse_lazy('items:index')
 
 
-
+class ItemListCreate(generics.ListCreateAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemSerializer

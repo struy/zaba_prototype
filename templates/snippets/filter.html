@@ -1,4 +1,5 @@
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 <div class="container">
         <div class="row">
@@ -7,15 +8,13 @@
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
                         <input type="text" name="q" value="{{ request.GET.q }}" class="form-control"
-                               placeholder="Search">
+                               placeholder="{%  trans 'Search' %}">
                     </div>
                     {{ filters.form | crispy }}
                     <button class="btn btn-primary" type="submit">
-                        Filter Search
+                        {%  trans "Filter Search" %}
                     </button>
-
                 </form>
-
             </div>
         </div>
     </div>

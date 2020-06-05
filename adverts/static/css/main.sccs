@@ -1,7 +1,9 @@
 @font-face {
-  font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
+  font-family: 'HoppyRibbitday';
+  src: url('/static/fonts/HoppyRibbitday.ttf') format("truetype"),
+  local('HoppyRibbitday');
 }
+
 .divider {
   display: inline-block;
   width: 100%;
@@ -9,6 +11,7 @@
   background-color: gray;
   opacity: 0.85;
 }
+
 
 body {
   background-color: #fff !important;
@@ -20,17 +23,21 @@ header {
   color: white;
   padding-top: 5px;
   background-color: #343a40;
+
+  a {
+    color: white;
+  }
+
+  .navbar-brand i {
+    color: #94c045;
+  }
 }
-header a {
-  color: white;
-}
-header .navbar-brand i {
-  color: #94c045;
-}
+
 
 header i {
   padding-top: 15px;
 }
+
 
 header button[type=submit] {
   padding: 0;
@@ -40,33 +47,38 @@ header button[type=submit] {
   margin-left: 5px;
 }
 
-header button[form=form_uk] {
+
+header button[form="form_uk"] {
   background: url("/static/img/flags/Ukraine.png");
 }
 
-header button[form=form_ru] {
+header button[form="form_ru"] {
   background: url("/static/img/flags/Russia.png");
 }
 
-header button[form=form_en] {
+header button[form="form_en"] {
   background: url("/static/img/flags/United-States.png");
 }
 
-header button[form=form_pl] {
+header button[form="form_pl"] {
   background: url("/static/img/flags/Poland.png");
 }
 
 #main {
   margin: 10px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    font-family: "Poppins", sans-serif;
+    color: #646c55;
+  }
+
+
 }
-#main h2 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  padding-bottom: 0;
-  font-family: "Poppins", sans-serif;
-  color: #646c55;
-}
+
 
 .icon-box {
   padding: 15px 30px;
@@ -78,6 +90,7 @@ header button[form=form_pl] {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }
+
 
 /*JOB*/
 .job_title {
@@ -128,6 +141,7 @@ button.btn-circle {
   margin-left: 60px;
 }
 
+
 #main .home a {
   color: #111;
 }
@@ -143,6 +157,7 @@ button.btn-circle {
   color: #94c045;
 }
 
+
 #main .home .counter .count-box p {
   padding: 5px 0 0 0;
   margin: 0 0 0 60px;
@@ -152,17 +167,22 @@ button.btn-circle {
   color: #646c55;
 }
 
+
 #main .home #greeting {
   background: #86b03c;
   color: white;
   padding-top: 10px;
   width: 100%;
   margin-bottom: 20px;
+
 }
 
 #main .home #greeting h2 {
+
   color: white;
+
 }
+
 
 #main .home i.fas, #main .home a {
   font-size: 3em;
@@ -184,9 +204,11 @@ button.btn-circle {
   color: #dc3545;
 }
 
+
 #main .home a:hover {
   color: #94c045;
 }
+
 
 #main .advert {
   /*position: relative;*/
@@ -197,12 +219,14 @@ button.btn-circle {
   margin: 10px;
 }
 
+
 #main .advert h2 {
   color: blue;
 }
 
+
 span.counter {
-  font-family: "HoppyRibbitday";
+  font-family: 'HoppyRibbitday';
   font-size: 5em;
   color: darkgreen;
 }
@@ -211,14 +235,17 @@ span.counter {
   display: inline-block;
 }
 
+
 header .bg-dark, footer .bg-dark {
   background: #1c1f18;
 }
+
 
 /*color: #fff;*/
 #google_ads {
   margin-bottom: 15px;
 }
+
 
 footer {
   color: white;
@@ -230,9 +257,11 @@ footer ul {
   display: inline-block;
 }
 
+
 footer ul li {
   display: inline;
 }
+
 
 footer ul li a {
   display: inline;
@@ -291,7 +320,9 @@ section#main {
   float: right;
 }
 
+
 /* Bootstrap 4 text input with search icon */
+
 .has-search .form-control {
   padding-left: 2.375rem;
 }
@@ -313,6 +344,7 @@ span.count {
   background-color: #94c045;
   color: white;
   padding: 5px 10px;
+
 }
 
 .filters .form-group:not(:first-child) {
@@ -325,4 +357,3 @@ span.count {
   display: inline-block;
 }
 
-/*# sourceMappingURL=main.css.map */

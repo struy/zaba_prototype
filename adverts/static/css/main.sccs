@@ -31,11 +31,11 @@ header {
   .navbar-brand i {
     color: #94c045;
   }
-}
+  i {
+    padding-top: 15px;
+  }
 
-
-header i {
-  padding-top: 15px;
+ 
 }
 
 
@@ -210,9 +210,7 @@ button.btn-circle {
 }
 
 
-#main .advert {
-  /*position: relative;*/
-}
+
 
 #main .advert .btn {
   float: right;
@@ -317,7 +315,6 @@ section#main {
 
 #main .advert .edit_buttons {
   display: inline-block;
-  float: right;
 }
 
 

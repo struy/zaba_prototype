@@ -115,6 +115,7 @@ header button[form="form_pl"] {
 .mybtn2 {
     color: #000;
 }
+button.btn-success {margin-top: -4rem;}
 
 button.btn-circle.btn-xl {
     width: 70px;

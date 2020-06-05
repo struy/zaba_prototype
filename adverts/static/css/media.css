@@ -19,10 +19,11 @@
 @media (max-width: 575.98px) {  }
 
 /*Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) {  }
+@media (max-width: 767.98px) {#main .home a {font-size: 2em;}  }
 
 /*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) {  }
+@media (max-width: 991.98px) {header .navbar-nav {font-size: 30px;}
+#main .icon-box {padding: 15px 15px;}  }
 
 /*Large devices (desktops, less than 1200px)*/
 @media (max-width: 1199.98px) {  }

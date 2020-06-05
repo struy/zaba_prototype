@@ -1,3 +1,5 @@
+$base-color: #94c045;
+
 @font-face {
   font-family: 'HoppyRibbitday';
   src: url('/static/fonts/HoppyRibbitday.ttf') format("truetype"),
@@ -15,7 +17,6 @@
 
 body {
   background-color: #fff !important;
-  /*#fff*/
   padding-top: 84px;
 }
 
@@ -29,13 +30,18 @@ header {
   }
 
   .navbar-brand i {
-    color: #94c045;
+    color: $base-color;
   }
+
   i {
     padding-top: 15px;
   }
 
- 
+  .bg-dark, footer .bg-dark {
+    background: #1c1f18;
+  }
+
+
 }
 
 
@@ -210,8 +216,6 @@ button.btn-circle {
 }
 
 
-
-
 #main .advert .btn {
   float: right;
   margin: 10px;
@@ -231,11 +235,6 @@ span.counter {
 
 .wrap_list_adverts {
   display: inline-block;
-}
-
-
-header .bg-dark, footer .bg-dark {
-  background: #1c1f18;
 }
 
 

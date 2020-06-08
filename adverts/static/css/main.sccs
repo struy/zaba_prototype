@@ -273,12 +273,10 @@ footer {
 ul {
   display: inline-block;
 }
-
-ul li {
+li {
   display: inline;
 }
-
-ul li a {
+li a {
   display: inline;
   color: white;
 }

@@ -14,11 +14,11 @@ $base-color: #94c045;
   opacity: 0.85;
 }
 
-
 body {
   background-color: #fff !important;
   padding-top: 84px;
 }
+
 
 header {
   color: white;
@@ -41,34 +41,34 @@ header {
     background: #1c1f18;
   }
 
+  button[type=submit] {
+    padding: 0;
+    border: none;
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+  }
+
+  button[form="form_uk"] {
+    background: url("/static/img/flags/Ukraine.png");
+  }
+
+
+  button[form="form_ru"] {
+    background: url("/static/img/flags/Russia.png");
+  }
+
+  button[form="form_en"] {
+    background: url("/static/img/flags/United-States.png");
+  }
+
+  button[form="form_pl"] {
+    background: url("/static/img/flags/Poland.png");
+  }
+
 
 }
 
-
-header button[type=submit] {
-  padding: 0;
-  border: none;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
-}
-
-
-header button[form="form_uk"] {
-  background: url("/static/img/flags/Ukraine.png");
-}
-
-header button[form="form_ru"] {
-  background: url("/static/img/flags/Russia.png");
-}
-
-header button[form="form_en"] {
-  background: url("/static/img/flags/United-States.png");
-}
-
-header button[form="form_pl"] {
-  background: url("/static/img/flags/Poland.png");
-}
 
 #main {
   margin: 10px;

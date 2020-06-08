@@ -32,7 +32,6 @@ header i {
 header .bg-dark, header footer .bg-dark {
   background: #1c1f18;
 }
-
 header button[type=submit] {
   padding: 0;
   border: none;
@@ -40,19 +39,15 @@ header button[type=submit] {
   height: 24px;
   margin-left: 5px;
 }
-
 header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");
 }
-
 header button[form=form_ru] {
   background: url("/static/img/flags/Russia.png");
 }
-
 header button[form=form_en] {
   background: url("/static/img/flags/United-States.png");
 }
-
 header button[form=form_pl] {
   background: url("/static/img/flags/Poland.png");
 }

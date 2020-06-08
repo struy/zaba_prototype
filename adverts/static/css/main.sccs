@@ -3,7 +3,7 @@ $base-color: #94c045;
 @font-face {
   font-family: 'HoppyRibbitday';
   src: url('/static/fonts/HoppyRibbitday.ttf') format("truetype"),
-  local('HoppyRibbitday');
+    local('HoppyRibbitday');
 }
 
 .divider {
@@ -37,7 +37,8 @@ header {
     padding-top: 15px;
   }
 
-  .bg-dark, footer .bg-dark {
+  .bg-dark,
+  footer .bg-dark {
     background: #1c1f18;
   }
 
@@ -73,6 +74,10 @@ header {
 #main {
   margin: 10px;
 
+  a {
+    color: #111;
+  }
+
   h2 {
     font-size: 32px;
     font-weight: 600;
@@ -81,6 +86,108 @@ header {
     font-family: "Poppins", sans-serif;
     color: #646c55;
   }
+  .advert {
+    .btn  {
+   float: right;
+   margin: 10px;
+  }
+ 
+ h2 {
+   color: blue;
+ }
+ .advert h2 {
+  font-size: 23px;
+}
+.advert h3 {
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+.advert .edit_buttons {
+  display: inline-block;
+}
+
+}
+  
+  .home {
+  .count-box span {
+    font-size: 28px;
+    line-height: 24px;
+    display: block;
+    font-weight: 700;
+    color: #646c55;
+    margin-left: 60px;
+  }
+  
+   
+
+  
+   i.fas {
+    color: #646c55;
+    float: left;
+  }
+  
+   .counter i.fas {
+    display: block;
+    font-size: 48px;
+    color: $base-color;
+  }
+  
+   .counter .count-box p {
+    padding: 5px 0 0 0;
+    margin: 0 0 0 60px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #646c55;
+  }
+  
+   #greeting {
+    background: #86b03c;
+    color: white;
+    padding-top: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    h2 {
+  
+      color: white;
+    
+    }
+  
+  }
+  
+ 
+  
+   i.fas,
+    a {
+    font-size: 3em;
+  }
+  
+   i.fas.fa-shopping-cart {
+    color: #28a745;
+  }
+  
+   i.fas.fa-briefcase {
+    color: #17a2b8;
+  }
+  
+   i.fas.fa-home {
+    color: #ffc107;
+  }
+  
+   i.fas.fa-paw {
+    color: #dc3545;
+  }
+  
+   a:hover {
+    color: $base-color;
+  }
+   }
+  
+  
+
 
 
 }
@@ -138,93 +245,6 @@ button.btn-circle {
   line-height: 1.42857;
 }
 
-#main .home .count-box span {
-  font-size: 28px;
-  line-height: 24px;
-  display: block;
-  font-weight: 700;
-  color: #646c55;
-  margin-left: 60px;
-}
-
-
-#main .home a {
-  color: #111;
-}
-
-#main .home i.fas {
-  color: #646c55;
-  float: left;
-}
-
-#main .home .counter i.fas {
-  display: block;
-  font-size: 48px;
-  color: #94c045;
-}
-
-
-#main .home .counter .count-box p {
-  padding: 5px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #646c55;
-}
-
-
-#main .home #greeting {
-  background: #86b03c;
-  color: white;
-  padding-top: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-
-}
-
-#main .home #greeting h2 {
-
-  color: white;
-
-}
-
-
-#main .home i.fas, #main .home a {
-  font-size: 3em;
-}
-
-#main .home i.fas.fa-shopping-cart {
-  color: #28a745;
-}
-
-#main .home i.fas.fa-briefcase {
-  color: #17a2b8;
-}
-
-#main .home i.fas.fa-home {
-  color: #ffc107;
-}
-
-#main .home i.fas.fa-paw {
-  color: #dc3545;
-}
-
-
-#main .home a:hover {
-  color: #94c045;
-}
-
-
-#main .advert .btn {
-  float: right;
-  margin: 10px;
-}
-
-
-#main .advert h2 {
-  color: blue;
-}
 
 
 span.counter {
@@ -248,21 +268,20 @@ footer {
   color: white;
   padding-top: 20px;
   background: #1c1f18;
-}
 
-footer ul {
+
+ul {
   display: inline-block;
 }
 
-
-footer ul li {
+ul li {
   display: inline;
 }
 
-
-footer ul li a {
+ul li a {
   display: inline;
   color: white;
+}
 }
 
 section#main {
@@ -301,20 +320,7 @@ section#main {
   text-align: left;
 }
 
-#main .advert h2 {
-  font-size: 23px;
-}
 
-#main .advert h3 {
-  float: right;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 40px;
-}
-
-#main .advert .edit_buttons {
-  display: inline-block;
-}
 
 
 /* Bootstrap 4 text input with search icon */
@@ -352,4 +358,3 @@ span.count {
 .filters button {
   display: inline-block;
 }
-

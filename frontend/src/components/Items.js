@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import { Button, Spinner } from 'react-bootstrap';
+import {Button, Spinner} from 'react-bootstrap';
 import MainHeader from "./Layout/MainHeader";
 
 
@@ -49,28 +49,27 @@ class Items extends Component {
                 <MainHeader></MainHeader>
 
 
-            <main className="content">
+                <main className="content">
 
-                  <Button variant="primary">Primary </Button>{' '}
-                <h1 className=" text-uppercase text-center my-4">Item list</h1>
-                <div className="row ">
-                    <div className="col-md-6 col-sm-10 mx-auto p-0">
-                        <div className="card p-3">
-                            <ul className="list-group list-group-flush">
-                                {this.state.data.map(item => {
-                                    return (
-                                        <li style={{listStyleType:"none"}} key={item.id}>
-                                            {item.id} - {item.title}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
+                    <h1 className=" text-uppercase text-center my-4">Item list</h1>
+                    <div className="row ">
+                        <div className="col-md-6 col-sm-10 mx-auto p-0">
+                            <div className="card p-3">
+                                <ul className="list-group list-group-flush">
+                                    {this.state.data.map(item => {
+                                        return (
+                                            <li style={{listStyleType: "none"}} key={item.id}>
+                                                {item.id} - {item.title}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </main>
-                </div>
+                </main>
+            </div>
         );
     }
 }

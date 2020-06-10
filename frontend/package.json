@@ -23,8 +23,14 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "i18next": "^19.4.5",
+    "i18next-browser-languagedetector": "^4.2.0",
     "popper.js": "^1.16.1",
+    "react-bootstrap": "^1.0.1",
+    "react-i18next": "^11.5.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
-    "reactstrap": "^8.4.1"
+    "reactstrap": "^8.4.1",
+    "timeago-react": "^3.0.0"
   }
 }

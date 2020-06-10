@@ -16,3 +16,7 @@ _if you use docker please change "localhost" to "redis" (REDIS_HOST = 'localhost
 On Linux for start Elasticsearch > v.5
 `sysctl -w vm.max_map_count=262144
 `
+
+webpack build main.js 
+
+`npm run dev`

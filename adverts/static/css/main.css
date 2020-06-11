@@ -161,6 +161,22 @@ header button[form="form_pl"] {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }
+
+.breadcrumb {
+  background-color: #fff;
+}
+
+.icon-box {
+  padding: 15px 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+}
+
 /*JOB*/
 .job_title {
   margin-left: 10px;

@@ -94,6 +94,7 @@ header {
     font-family: "Poppins", sans-serif;
     color: #646c55;
   }
+
   .advert {
     .btn {
       float: right;
@@ -175,14 +176,18 @@ header {
     i.fas.fa-home {
       color: #ffc107;
     }
+  }
 
-    i.fas.fa-paw {
-      color: #dc3545;
-    }
+  .breadcrumb {
+    background-color: #fff;
+  }
 
-    a:hover {
-      color: $base-color;
-    }
+  i.fas.fa-paw {
+    color: #dc3545;
+  }
+
+  a:hover {
+    color: $base-color;
   }
 }
 
@@ -248,12 +253,14 @@ footer {
   ul {
     display: inline-block;
   }
+
   li {
     display: inline;
-  }
-  li a {
-    display: inline;
-    color: white;
+
+    a {
+      display: inline;
+      color: white;
+    }
   }
 }
 

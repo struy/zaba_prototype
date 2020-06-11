@@ -28,6 +28,10 @@
 
 </head>
 <body>
+    <a href="{% block add_ad_link %} {% endblock %}" id="add_button">
+        <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
+        </button>
+    </a>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
@@ -40,15 +44,15 @@
                 <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
                       style="display:inline!important;">
                     {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                    <input name="language" type="hidden" value="{{ language.code }}"/>
+                  <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                  <input name="language" type="hidden" value="{{ language.code }}"/>
                 </form>
-                <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
+            <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
             {% endfor %}
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
             </button>
             
             
@@ -152,10 +156,7 @@
         <div class="row">
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
             <div class="col-2">
-                <a href="{% block add_ad_link %} {% endblock %}">
-                    <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
-                    </button>
-                </a>
+                
             </div>
             <div class="col-12 text-center">
                 <ul>
@@ -174,6 +175,7 @@
         </div>
     </div>
 </footer>
+
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

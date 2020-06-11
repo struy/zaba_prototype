@@ -1,6 +1,7 @@
 @font-face {
   font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
+  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
+    local("HoppyRibbitday");
 }
 .divider {
   display: inline-block;
@@ -9,12 +10,23 @@
   background-color: gray;
   opacity: 0.85;
 }
-
 body {
   background-color: #fff !important;
   padding-top: 84px;
 }
-
+#add_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+#add_button button.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
 header {
   color: white;
   padding-top: 5px;
@@ -29,31 +41,34 @@ header .navbar-brand i {
 header i {
   padding-top: 15px;
 }
-header .bg-dark, header footer .bg-dark {
+header .bg-dark,
+header footer .bg-dark {
   background: #1c1f18;
 }
-header button[type=submit] {
+header button[type="submit"] {
   padding: 0;
   border: none;
   width: 24px;
   height: 24px;
   margin-left: 5px;
 }
-header button[form=form_uk] {
+header button[form="form_uk"] {
   background: url("/static/img/flags/Ukraine.png");
 }
-header button[form=form_ru] {
+header button[form="form_ru"] {
   background: url("/static/img/flags/Russia.png");
 }
-header button[form=form_en] {
+header button[form="form_en"] {
   background: url("/static/img/flags/United-States.png");
 }
-header button[form=form_pl] {
+header button[form="form_pl"] {
   background: url("/static/img/flags/Poland.png");
 }
-
 #main {
   margin: 10px;
+}
+#main a {
+  color: #111;
 }
 #main h2 {
   font-size: 32px;
@@ -63,7 +78,79 @@ header button[form=form_pl] {
   font-family: "Poppins", sans-serif;
   color: #646c55;
 }
-
+#main .advert .btn {
+  float: right;
+  margin: 10px;
+}
+#main .advert h2 {
+  color: blue;
+}
+#main .advert .advert h2 {
+  font-size: 23px;
+}
+#main .advert .advert h3 {
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+#main .advert .advert .edit_buttons {
+  display: inline-block;
+}
+#main .home .count-box span {
+  font-size: 28px;
+  line-height: 24px;
+  display: block;
+  font-weight: 700;
+  color: #646c55;
+  margin-left: 60px;
+}
+#main .home i.fas {
+  color: #646c55;
+  float: left;
+}
+#main .home .counter i.fas {
+  display: block;
+  font-size: 48px;
+  color: #94c045;
+}
+#main .home .counter .count-box p {
+  padding: 5px 0 0 0;
+  margin: 0 0 0 60px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #646c55;
+}
+#main .home #greeting {
+  background: #86b03c;
+  color: white;
+  padding-top: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#main .home #greeting h2 {
+  color: white;
+}
+#main .home i.fas,
+#main .home a {
+  font-size: 3em;
+}
+#main .home i.fas.fa-shopping-cart {
+  color: #28a745;
+}
+#main .home i.fas.fa-briefcase {
+  color: #17a2b8;
+}
+#main .home i.fas.fa-home {
+  color: #ffc107;
+}
+#main .home i.fas.fa-paw {
+  color: #dc3545;
+}
+#main .home a:hover {
+  color: #94c045;
+}
 .icon-box {
   padding: 15px 30px;
   position: relative;
@@ -74,37 +161,20 @@ header button[form=form_pl] {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }
-
 /*JOB*/
 .job_title {
   margin-left: 10px;
   display: inline-block;
 }
-
 .mybtn {
   color: white;
 }
-
 .mybtn2 {
   color: #000;
 }
-
 button.btn-success {
   margin-top: -4rem;
 }
-
-button.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  border-radius: 35px;
-  font-size: 24px;
-  line-height: 1.33;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 button.btn-circle {
   width: 30px;
   height: 30px;
@@ -114,175 +184,73 @@ button.btn-circle {
   font-size: 12px;
   line-height: 1.42857;
 }
-
-#main .home .count-box span {
-  font-size: 28px;
-  line-height: 24px;
-  display: block;
-  font-weight: 700;
-  color: #646c55;
-  margin-left: 60px;
-}
-
-#main .home a {
-  color: #111;
-}
-
-#main .home i.fas {
-  color: #646c55;
-  float: left;
-}
-
-#main .home .counter i.fas {
-  display: block;
-  font-size: 48px;
-  color: #94c045;
-}
-
-#main .home .counter .count-box p {
-  padding: 5px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #646c55;
-}
-
-#main .home #greeting {
-  background: #86b03c;
-  color: white;
-  padding-top: 10px;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#main .home #greeting h2 {
-  color: white;
-}
-
-#main .home i.fas, #main .home a {
-  font-size: 3em;
-}
-
-#main .home i.fas.fa-shopping-cart {
-  color: #28a745;
-}
-
-#main .home i.fas.fa-briefcase {
-  color: #17a2b8;
-}
-
-#main .home i.fas.fa-home {
-  color: #ffc107;
-}
-
-#main .home i.fas.fa-paw {
-  color: #dc3545;
-}
-
-#main .home a:hover {
-  color: #94c045;
-}
-
-#main .advert .btn {
-  float: right;
-  margin: 10px;
-}
-
-#main .advert h2 {
-  color: blue;
-}
-
 span.counter {
   font-family: "HoppyRibbitday";
   font-size: 5em;
   color: darkgreen;
 }
-
 .wrap_list_adverts {
   display: inline-block;
 }
-
-/*color: #fff;*/
+/*color: #fff;
+*/
 #google_ads {
   margin-bottom: 15px;
 }
-
 footer {
   color: white;
   padding-top: 20px;
   background: #1c1f18;
 }
-
 footer ul {
   display: inline-block;
 }
-
-footer ul li {
+footer li {
   display: inline;
 }
-
-footer ul li a {
+footer li a {
   display: inline;
   color: white;
 }
-
 section#main {
   padding-top: 10px;
   min-height: 450px;
 }
-
 /*social media*/
 .btn.facebook {
   background-color: #3b5998;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   margin-top: 30px;
   width: 288px;
 }
-
 .btn.twitter {
-  background-color: #00ACEE;
-  color: #ffffff;
+  background-color: #00acee;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
 }
-
 .btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
-  background-color: #4285F4;
-  color: #ffffff;
+  /*background-color: #0F9D58;
+ */
+  /*background-color:#DB4437;
+ */
+  /*background-color:#F4B400;
+ */
+  background-color: #4285f4;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
 }
-
-#main .advert h2 {
-  font-size: 23px;
-}
-
-#main .advert h3 {
-  float: right;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 40px;
-}
-
-#main .advert .edit_buttons {
-  display: inline-block;
-}
-
 /* Bootstrap 4 text input with search icon */
 .has-search .form-control {
   padding-left: 2.375rem;
 }
-
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -294,22 +262,17 @@ section#main {
   pointer-events: none;
   color: #aaa;
 }
-
 span.count {
   float: right;
   background-color: #94c045;
   color: white;
   padding: 5px 10px;
 }
-
 .filters .form-group:not(:first-child) {
   width: 200px;
   display: inline-block;
   margin-right: 5px;
 }
-
 .filters button {
   display: inline-block;
 }
-
-/*# sourceMappingURL=main.css.map */

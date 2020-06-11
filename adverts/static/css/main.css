@@ -141,6 +141,10 @@ header button[form=form_pl] {
   color: #94c045;
 }
 
+.breadcrumb {
+  background-color: #fff;
+}
+
 .icon-box {
   padding: 15px 30px;
   position: relative;

@@ -67,9 +67,7 @@ header {
     background: url("/static/img/flags/Poland.png");
   }
 
-
 }
-
 
 #main {
   margin: 10px;
@@ -92,6 +90,7 @@ header {
       float: right;
       margin: 10px;
     }
+
 
     h2 {
       color: blue;
@@ -186,6 +185,10 @@ header {
   }
 
 
+}
+
+.breadcrumb {
+  background-color: #fff;
 }
 
 
@@ -353,3 +356,4 @@ span.count {
 .filters button {
   display: inline-block;
 }
+

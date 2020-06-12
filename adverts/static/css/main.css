@@ -10,12 +10,10 @@
   background-color: gray;
   opacity: 0.85;
 }
-
 body {
   background-color: #fff !important;
   padding-top: 84px;
 }
-
 #add_button {
   position: fixed;
   bottom: 30px;
@@ -29,7 +27,6 @@ body {
   font-size: 24px;
   line-height: 1.33;
 }
-
 header {
   color: white;
   padding-top: 5px;
@@ -67,7 +64,6 @@ header button[form="form_en"] {
 header button[form="form_pl"] {
   background: url("/static/img/flags/Poland.png");
 }
-
 #main {
   margin: 10px;
 }
@@ -84,7 +80,6 @@ header button[form="form_pl"] {
 }
 #main .advert .btn {
   float: right;
-  margin: 10px;
 }
 #main .advert h2 {
   color: blue;
@@ -96,7 +91,6 @@ header button[form="form_pl"] {
   float: right;
   font-size: 16px;
   font-weight: bold;
-  margin-top: 40px;
 }
 #main .advert .advert .edit_buttons {
   display: inline-block;
@@ -173,19 +167,15 @@ header button[form="form_pl"] {
   margin-left: 10px;
   display: inline-block;
 }
-
 .mybtn {
   color: white;
 }
-
 .mybtn2 {
   color: #000;
 }
-
 button.btn-success {
   margin-top: -4rem;
 }
-
 button.btn-circle {
   width: 30px;
   height: 30px;
@@ -195,22 +185,16 @@ button.btn-circle {
   font-size: 12px;
   line-height: 1.42857;
 }
-
 span.counter {
   font-family: "HoppyRibbitday";
   font-size: 5em;
   color: darkgreen;
 }
-
-.wrap_list_adverts {
-  display: inline-block;
-}
-
-/*color: #fff;*/
+/*color: #fff;
+*/
 #google_ads {
   margin-bottom: 15px;
 }
-
 footer {
   color: white;
   padding-top: 20px;
@@ -226,48 +210,45 @@ footer li a {
   display: inline;
   color: white;
 }
-
 section#main {
   padding-top: 10px;
   min-height: 450px;
 }
-
 /*social media*/
 .btn.facebook {
   background-color: #3b5998;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   margin-top: 30px;
   width: 288px;
 }
-
 .btn.twitter {
   background-color: #00acee;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
 }
-
 .btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
+  /*background-color: #0F9D58;
+ */
+  /*background-color:#DB4437;
+ */
+  /*background-color:#F4B400;
+ */
   background-color: #4285f4;
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
 }
-
 /* Bootstrap 4 text input with search icon */
 .has-search .form-control {
   padding-left: 2.375rem;
 }
-
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -279,22 +260,17 @@ section#main {
   pointer-events: none;
   color: #aaa;
 }
-
 span.count {
   float: right;
   background-color: #94c045;
   color: white;
   padding: 5px 10px;
 }
-
 .filters .form-group:not(:first-child) {
   width: 200px;
   display: inline-block;
   margin-right: 5px;
 }
-
 .filters button {
   display: inline-block;
 }
-
-/*# sourceMappingURL=main.css.map */

@@ -16,8 +16,8 @@ body {
 }
 #add_button {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 30px;
+  right: 30px;
 }
 #add_button button.btn-circle.btn-xl {
   width: 70px;
@@ -145,10 +145,13 @@ header button[form="form_pl"] {
 #main .home i.fas.fa-home {
   color: #ffc107;
 }
-#main .home i.fas.fa-paw {
+#main .breadcrumb {
+  background-color: #fff;
+}
+#main i.fas.fa-paw {
   color: #dc3545;
 }
-#main .home a:hover {
+#main a:hover {
   color: #94c045;
 }
 .icon-box {
@@ -161,22 +164,6 @@ header button[form="form_pl"] {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }
-
-.breadcrumb {
-  background-color: #fff;
-}
-
-.icon-box {
-  padding: 15px 30px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin: 0 10px 40px 10px;
-  background: #fff;
-  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-}
-
 /*JOB*/
 .job_title {
   margin-left: 10px;

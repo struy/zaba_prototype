@@ -20,8 +20,8 @@ body {
 }
 #add_button {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 30px;
+  right: 30px;
   button.btn-circle.btn-xl {
     width: 70px;
     height: 70px;

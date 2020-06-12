@@ -1,4 +1,6 @@
 $base-color: #94c045;
+$primary-color: #4591c0;
+$add-color: #c04593;
 $facebook-color: #3b5998;
 $twitter-color: #00acee;
 $google-color: #4285f4;

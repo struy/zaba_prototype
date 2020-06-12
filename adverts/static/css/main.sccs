@@ -23,8 +23,8 @@ body {
 }
 #add_button {
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 30px;
+  right: 30px;
   button.btn-circle.btn-xl {
     width: 70px;
     height: 70px;
@@ -101,7 +101,6 @@ header {
   .advert {
     .btn {
       float: right;
-      margin: 10px;
     }
 
     h2 {
@@ -114,7 +113,6 @@ header {
       float: right;
       font-size: 16px;
       font-weight: bold;
-      margin-top: 40px;
     }
     .advert .edit_buttons {
       display: inline-block;
@@ -237,10 +235,6 @@ span.counter {
   font-family: "HoppyRibbitday";
   font-size: 5em;
   color: darkgreen;
-}
-
-.wrap_list_adverts {
-  display: inline-block;
 }
 
 /*color: #fff;*/

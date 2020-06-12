@@ -1,4 +1,7 @@
 $base-color: #94c045;
+$facebook-color: #3b5998;
+$twitter-color: #00acee;
+$google-color: #4285f4;
 
 @font-face {
   font-family: "HoppyRibbitday";
@@ -271,7 +274,7 @@ section#main {
 
 /*social media*/
 .btn.facebook {
-  background-color: #3b5998;
+  background-color: $facebook-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
@@ -280,7 +283,7 @@ section#main {
 }
 
 .btn.twitter {
-  background-color: #00acee;
+  background-color:$twitter-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
@@ -292,7 +295,7 @@ section#main {
   /*background-color: #0F9D58;*/
   /*background-color:#DB4437;*/
   /*background-color:#F4B400;*/
-  background-color: #4285f4;
+  background-color: $google-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;

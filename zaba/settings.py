@@ -25,6 +25,9 @@ SECRET_KEY = '*$#z=yb+z(vegr!k(*2!!(4$1o#qb)1m5m)8@*!r$rsvq!7ddg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'django_tables2',
     # view
     'crispy_forms',
+    'sorl.thumbnail',
     # Models
     'account.apps.AccountConfig',
     'adverts.apps.AdvertsConfig',

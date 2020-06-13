@@ -292,4 +292,11 @@ span.count {
   display: inline-block;
 }
 
+form.new-edit button.btn.btn-success {
+  margin-top: 15px !important;
+}
+form.new-edit .gj-datepicker-bootstrap {
+  width: 205px;
+}
+
 /*# sourceMappingURL=main.css.map */

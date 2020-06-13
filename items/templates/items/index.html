@@ -1,9 +1,19 @@
-{% extends "base.html" %} {% load humanize %} {% load staticfiles %} {% load
-static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
+{% extends "base.html" %}
+{% load humanize %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load advert_money %}
+{% load crispy_forms_tags %}
 {% block breadcrumbs %}
+
+{% load thumbnail %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
-{% endblock %} {% block content %} {% include 'snippets/filter.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'snippets/filter.html' %}
 
     <div class="container">
         <div class="row">
@@ -16,12 +26,12 @@ static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
                     {% if adverts %} {% for advert in adverts %}
 
                         <div class="media">
-                            <img
-                                    class="mr-3"
-                                    src="{{ advert.image.url }}"
-                                    alt="Generic placeholder image"
-                                    width="128"
-                            />
+                        {% thumbnail advert.image "128"  as ad %}
+                               <a href="{{ advert.image.url }}">
+                                <img   class="mr-3" src="{{ ad.url }}"  alt="no image"  >
+                               </a>
+                          {% endthumbnail %}
+
                             <div class="media-body">
                                 <div class="advert">
                                     <div class="wrap_list_adverts">
@@ -45,7 +55,6 @@ static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
                                 </div>
                             </div>
                         </div>
-                        <div class="divider"></div>
 
                     {% endfor %} {% else %}
                         <p>No adverts are available.</p>

@@ -34,7 +34,7 @@ def index(request):
     except EmptyPage:
         adverts = paginator.page(paginator.num_pages)
 
-    context = {'latest_advert_list': adverts,
+    context = {'adverts': adverts,
                'filters': filters
                }
     return render(request, 'gifts/index.html', context)

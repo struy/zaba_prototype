@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+              <h1>{%  trans "Contact Us"  %}</h1>
+            <form method="post" class="new-edit">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-success">{% trans "Send" %}</button>
+                </div>
+            </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    {% endblock %}
+
+

@@ -18,7 +18,7 @@ class Rental(Advert, Location):
     # Move-in Date
 
     rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('rental type'))
-
+    image = models.ImageField(upload_to='rents', default='none/no-img.jpg')
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=2)
     price = models.PositiveIntegerField()

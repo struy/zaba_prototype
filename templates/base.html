@@ -28,10 +28,10 @@
 
 </head>
 <body>
-    <a href="{% block add_ad_link %} {% endblock %}" id="add_button">
-        <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
-        </button>
-    </a>
+<a href="{% block add_ad_link %} {% endblock %}" id="add_button">
+    <button type="button" class="btn btn-danger btn-circle btn-xl "><i class="fas fa-plus"></i>
+    </button>
+</a>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top">
@@ -39,23 +39,23 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="{% url 'home' %}"> <i class="fas fa-frog fa-2x"></i></a>
-            <div class="col-md col-sm d-lg-none d-flex justify-content-center">   
+            <div class="col-md col-sm d-lg-none d-flex justify-content-center">
                 {% for language in languages %}
-                <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
-                      style="display:inline!important;">
-                    {% csrf_token %}
-                  <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                  <input name="language" type="hidden" value="{{ language.code }}"/>
-                </form>
-            <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
-            {% endfor %}
+                    <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
+                          style="display:inline!important;">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                        <input name="language" type="hidden" value="{{ language.code }}"/>
+                    </form>
+                    <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
+                {% endfor %}
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
-            
-            
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
@@ -63,13 +63,18 @@
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{% trans 'Contacts' %}</a>
+                        <a class="nav-link" href="{% url 'contact' %}">{% trans 'Contacts' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'items:map' %}">{% trans 'Map' %}</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/admin">{% trans "Admin" %}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/rosetta">Rosetta</a></li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item"><a class="nav-link" href="/admin">{% trans "Admin" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/rosetta">Rosetta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
+                    {% endif %}
+
+
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
                     </li>
@@ -95,10 +100,8 @@
                     {% endif %}
                 </ul>
 
-                
 
-
-                <div class="d-none d-lg-block"> 
+                <div class="d-none d-lg-block">
                     {% for language in languages %}
                         <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
                               style="display:inline!important;">
@@ -106,7 +109,8 @@
                             <input name="next" type="hidden" value="{{ redirect_to }}"/>
                             <input name="language" type="hidden" value="{{ language.code }}"/>
                         </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
+                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
+                                value="Submit"></button>
                     {% endfor %}
                 </div>
 
@@ -146,13 +150,14 @@
 
     {% block content %}
     {% endblock %}
+
 </section>
 <footer class="bg-dark ">
     <div class="container">
         <div class="row">
             <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
             <div class="col-2">
-                
+
             </div>
             <div class="col-12 text-center">
                 <ul>
@@ -171,7 +176,6 @@
         </div>
     </div>
 </footer>
-
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

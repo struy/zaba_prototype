@@ -27,6 +27,7 @@ DEBUG = True
 
 if DEBUG:
     THUMBNAIL_DEBUG = True
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,11 +58,14 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'items.apps.ItemsConfig',
     'gifts.apps.GiftsConfig',
+    'sendemail.apps.SendemailConfig',
     'language_flags',
     'rosetta',
     'debug_toolbar',
-    #social
+    # social
     'social_django',
+    # clean
+    'django_cleanup.apps.CleanupConfig',
 
 
 
@@ -221,7 +225,6 @@ SESSION_CACHE_ALIAS = "default"
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CELERY
 BROKER_URL = 'redis://localhost:6379'

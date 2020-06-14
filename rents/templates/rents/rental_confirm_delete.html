@@ -3,7 +3,7 @@
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{%  trans "Items" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'rents:index' %}">{%  trans "Rents" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">Delete</li>
 {% endblock %}
 
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9">
-                <h2><a href="{% url 'items:index' %}">Item </a>: Delete?</h2>
+                <h2><a href="{% url 'rents:index' %}">Item </a>: Delete?</h2>
                 <form method="post">{% csrf_token %}
                     Are you sure you want to delete "{{ object }}" ?
                     <br>
@@ -26,5 +26,5 @@
 {% endblock %}
 
 {% block add_ad_link %}
-    {% url 'items:new' %}
+    {% url 'rents:new' %}
 {% endblock %}

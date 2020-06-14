@@ -47,9 +47,10 @@ def index(request):
     return render(request, 'rents/index.html', context)
 
 
-def detail(request, rent_id):
-    rent = get_object_or_404(Rental, pk=rent_id)
-    return render(request, 'rents/detail.html', {'rent': rent})
+def detail(request, advert_id):
+    advert = get_object_or_404(Rental, pk=advert_id)
+    total_views = r.incr('rent:{}:views'.format(advert.id))
+    return render(request, 'rents/detail.html', {'advert': advert, 'total_views': total_views})
 
 
 def rents_list(request):

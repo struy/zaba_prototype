@@ -7,7 +7,7 @@ from . import views
 app_name = 'rents'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:rent_id>/', views.detail, name='detail'),
+    path('<int:advert_id>/', views.detail, name='detail'),
     path('list', views.rents_list, name='list'),
     path('new', login_required(views.RentCreate.as_view()), name='new'),
     path('edit/<int:pk>', login_required(views.RentUpdate.as_view()), name='edit'),

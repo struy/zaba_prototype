@@ -8,7 +8,7 @@ $google-color: #4285f4;
 @font-face {
   font-family: "HoppyRibbitday";
   src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-  local("HoppyRibbitday");
+    local("HoppyRibbitday");
 }
 
 .divider {
@@ -90,7 +90,7 @@ header {
   margin: 10px;
 
   a {
-    color: #111;
+    color: #fff;
   }
 
   h2 {
@@ -102,14 +102,11 @@ header {
     color: #646c55;
   }
 
+  img.zaba_img {
+    margin-top: 1rem;
+  }
+
   .advert {
-
-    .media {
-      //border-bottom: 2px solid black;
-      //margin-bottom: 3px;
-      //padding-bottom: 3px;
-    }
-
     .btn {
       float: right;
     }
@@ -199,10 +196,6 @@ header {
 
   i.fas.fa-paw {
     color: #dc3545;
-  }
-
-  a:hover {
-    color: $base-color;
   }
 }
 
@@ -352,7 +345,6 @@ form.new-edit {
   }
 
   .gj-datepicker-bootstrap {
-    width: 205px ;
+    width: 205px;
   }
-
 }

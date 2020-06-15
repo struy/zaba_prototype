@@ -18,10 +18,12 @@ body {
   background-color: #fff !important;
   padding-top: 84px;
 }
+
 #add_button {
   position: fixed;
   bottom: 30px;
   right: 30px;
+
   button.btn-circle.btn-xl {
     width: 70px;
     height: 70px;
@@ -83,7 +85,7 @@ header {
   margin: 10px;
 
   a {
-    color: #111;
+    color: #fff;
   }
 
   h2 {
@@ -95,7 +97,13 @@ header {
     color: #646c55;
   }
 
+  img.zaba_img {
+    margin-top: 1rem;
+  }
+
   .advert {
+    margin-top: 2rem;
+
     .btn {
       float: right;
     }
@@ -103,14 +111,17 @@ header {
     h2 {
       color: blue;
     }
+
     .advert h2 {
       font-size: 23px;
     }
+
     .advert h3 {
       float: right;
       font-size: 16px;
       font-weight: bold;
     }
+
     .advert .edit_buttons {
       display: inline-block;
     }
@@ -184,9 +195,6 @@ header {
     color: #dc3545;
   }
 
-  a:hover {
-    color: $base-color;
-  }
 }
 
 .icon-box {

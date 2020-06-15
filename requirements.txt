@@ -55,7 +55,7 @@ Pillow==7.1.2
 pluggy==0.13.1
 polib==1.1.0
 pony==0.7.13
-py==1.8.1
+py==1.8.2
 py-translate==1.0.3
 pycparser==2.20
 PyJWT==1.7.1

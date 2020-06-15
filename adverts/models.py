@@ -4,10 +4,10 @@ import redis
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
+from django.utils.translation import to_locale, get_language
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.gis.db.models import PointField
-from django.utils.text import slugify
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 from django.utils.translation import gettext_lazy as _
@@ -32,6 +32,19 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
     expires = models.DateTimeField(blank=True, null=True, help_text=_('This is the help text'),
                                    verbose_name=_('expires'))
+
+    LOCALES = (('en', 'en_US'),
+               ('uk', 'uk_UA'),
+               ('ru', 'ru_RU'),
+               ('pl', 'pl_PL'),
+               )
+
+    local = models.CharField(
+        max_length=2,
+        choices=LOCALES,
+        default='en'
+    )
+
     objects = AdvertsManager()
 
     class Meta:
@@ -42,7 +55,11 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
 
     def save(self, *args, **kwargs):
+        lang = get_language()
+        if lang:
+            self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
+
         r = redis.StrictRedis(host=settings.REDIS_HOST,
                               port=settings.REDIS_PORT,
                               db=settings.REDIS_DB)

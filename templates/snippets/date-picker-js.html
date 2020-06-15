@@ -3,9 +3,7 @@
 
     <script type="text/javascript">
         $('.datepicker').datepicker({
-            {% if  LANGUAGE_CODE == 'ru' %}
-                locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
-            {% endif %}
+            {#format: 'yyyy-mm-dd',#}
             uiLibrary: 'bootstrap4'
         });
     </script>

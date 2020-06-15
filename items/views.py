@@ -63,11 +63,6 @@ class ItemCreate(CreateView):
     login_required = True
     success_url = reverse_lazy('items:index')
 
-    # def get_form(self, form_class):
-    #     form = super(ItemCreate, self).get_form(form_class)
-    #     form.fields['password'].widget = forms.PasswordInput()
-    #     return form
-
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)

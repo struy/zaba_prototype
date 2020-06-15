@@ -15,13 +15,15 @@
             <div class="offset-md-1 col-md-10">
 
                 <h2> {{ advert.title }} </h2>
-                <span  class="count">
+                <span class="count">
                         {{ total_views }} view{{ total_views|pluralize }}
                  </span>
                 {% if advert.description %}
                     <p> {{ advert.description }} </p>
                 {% endif %}
-                <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                <a href="{{ advert.image.url }}">
+                    <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                </a>
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
                 {% if advert.point %}

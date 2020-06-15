@@ -1,16 +1,16 @@
 from django import forms
 from django.contrib.gis import forms as gis_forms
-from .models import Item
+from .models import Rental
 
 
-class ItemForm(forms.ModelForm):
+class RentForm(forms.ModelForm):
     class Meta:
-        model = Item
-        fields = ['title', 'description', 'price', 'image', 'expires', 'city', 'address', 'point']
+        model = Rental
+        fields = ['rental_type', 'title', 'description', 'expires', 'price', 'image', 'pet_policy',
+                  'bathrooms', 'bedrooms', 'furnished', 'city', 'address', 'point']
         widgets = {
             'expires': forms.DateInput(format='%m/%d/%Y', attrs={'class': 'datepicker'}),
             'point': gis_forms.OSMWidget(attrs={'default_lon': 20, 'default_lat': 30, 'map_width': 800,
                                                 'map_height': 500, }),
         }
-
 

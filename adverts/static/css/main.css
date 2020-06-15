@@ -1,6 +1,7 @@
 @font-face {
   font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
+  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
+    local("HoppyRibbitday");
 }
 
 .divider {
@@ -190,6 +191,9 @@ header button[form="form_pl"] {
 #main i.fas.fa-paw {
   color: #dc3545;
 }
+#main a:hover {
+  color: #94c045;
+}
 
 .icon-box {
   padding: 15px 30px;
@@ -269,7 +273,7 @@ section#main {
 /*social media*/
 .btn.facebook {
   background-color: #3b5998;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -278,7 +282,7 @@ section#main {
 
 .btn.twitter {
   background-color: #00acee;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
@@ -286,14 +290,11 @@ section#main {
 }
 
 .btn.google {
-  /*background-color: #0F9D58;
- */
-  /*background-color:#DB4437;
- */
-  /*background-color:#F4B400;
- */
+  /*background-color: #0F9D58;*/
+  /*background-color:#DB4437;*/
+  /*background-color:#F4B400;*/
   background-color: #4285f4;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
@@ -333,3 +334,12 @@ span.count {
 .filters button {
   display: inline-block;
 }
+
+form.new-edit button.btn.btn-success {
+  margin-top: 15px !important;
+}
+form.new-edit .gj-datepicker-bootstrap {
+  width: 205px;
+}
+
+/*# sourceMappingURL=main.css.map */

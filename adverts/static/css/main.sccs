@@ -1,4 +1,9 @@
 $base-color: #94c045;
+$primary-color: #4591c0;
+$add-color: #c04593;
+$facebook-color: #3b5998;
+$twitter-color: #00acee;
+$google-color: #4285f4;
 
 @font-face {
   font-family: "HoppyRibbitday";
@@ -102,8 +107,6 @@ header {
   }
 
   .advert {
-    margin-top: 2rem;
-
     .btn {
       float: right;
     }
@@ -194,7 +197,6 @@ header {
   i.fas.fa-paw {
     color: #dc3545;
   }
-
 }
 
 .icon-box {
@@ -273,7 +275,7 @@ section#main {
 
 /*social media*/
 .btn.facebook {
-  background-color: #3b5998;
+  background-color: $facebook-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
@@ -282,7 +284,7 @@ section#main {
 }
 
 .btn.twitter {
-  background-color: #00acee;
+  background-color: $twitter-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
@@ -294,7 +296,7 @@ section#main {
   /*background-color: #0F9D58;*/
   /*background-color:#DB4437;*/
   /*background-color:#F4B400;*/
-  background-color: #4285f4;
+  background-color: $google-color;
   color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
@@ -335,4 +337,14 @@ span.count {
 
 .filters button {
   display: inline-block;
+}
+
+form.new-edit {
+  button.btn.btn-success {
+    margin-top: 15px !important;
+  }
+
+  .gj-datepicker-bootstrap {
+    width: 205px;
+  }
 }

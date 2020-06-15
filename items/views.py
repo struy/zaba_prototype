@@ -41,7 +41,6 @@ def index(request):
         'adverts': adverts,
         'is_paginated': True,
         'package_list': 'items:index',
-        'search': '/result',
         'filters': filters
     }
 

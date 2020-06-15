@@ -25,6 +25,10 @@ SECRET_KEY = '*$#z=yb+z(vegr!k(*2!!(4$1o#qb)1m5m)8@*!r$rsvq!7ddg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    THUMBNAIL_DEBUG = True
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
     'django_tables2',
     # view
     'crispy_forms',
+    'sorl.thumbnail',
     # Models
     'account.apps.AccountConfig',
     'adverts.apps.AdvertsConfig',
@@ -53,11 +58,14 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'items.apps.ItemsConfig',
     'gifts.apps.GiftsConfig',
+    'sendemail.apps.SendemailConfig',
     'language_flags',
     'rosetta',
     'debug_toolbar',
-    #social
+    # social
     'social_django',
+    # clean
+    'django_cleanup.apps.CleanupConfig',
 
 
 
@@ -217,7 +225,6 @@ SESSION_CACHE_ALIAS = "default"
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # CELERY
 BROKER_URL = 'redis://localhost:6379'

@@ -1,51 +1,44 @@
-{% extends "base.html" %}
-{% load humanize %}
-{% load staticfiles %}
-{% load
-static %}
-{% load i18n %}
-{% load advert_money %}
-{% load crispy_forms_tags %}
-{% block breadcrumbs %}
-<li class="breadcrumb-item">
-  <a href="/">{% trans "Home" %}</a>
-</li>
+{% extends "base.html" %} {% load humanize %} {% load staticfiles %} {% load
+static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
+{% load thumbnail %} {% block breadcrumbs %}
+
+<li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
 <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
-{% endblock %}
-{% block content %}
-{% include 'snippets/filter.html' %}
+{% endblock %} {% block content %} {% include 'snippets/filter.html' %}
 
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <img class="zaba_img" src="{% static "img/zaba.jpg" %}" alt="" width="350">
+      <img src="{% static "img/zaba.jpg" %}" alt="" width="350">
     </div>
     <div class="col-8">
-      {% if user.is_authenticated %}{% endif %}
       <div class="advert">
-        {% if adverts %}
-        {% for advert in adverts %}
+        {% if adverts %} {% for advert in adverts %}
 
         <div class="media">
-          <img class="mr-3" src="{{ advert.image.url }}" alt="Generic placeholder image" width="128" />
+          {% thumbnail advert.image "128" as ad %}
+          <a href="{{ advert.image.url }}">
+            <img class="mr-3" src="{{ ad.url }}" alt="no image" />
+          </a>
+          {% endthumbnail %}
+
           <div class="media-body">
             <div class="advert">
               <div class="wrap_list_adverts">
+                {% if advert.owner == request.user %}
                 <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm">
                   <i class="fas fa-trash-alt"></i>
                 </a>
                 <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>
+                {% endif %}
                 <a href="{% url 'items:detail' advert.id %}">
                   <h2>{{ advert.title }}</h2>
                 </a>
 
-                <i class="fas fa-map-marker-alt"></i>
-                {{ advert.city }}
-                <i>{{ advert.modified|naturaltime }}
-                </i>
-                {% if advert.owner == request.user %}{% endif %}
+                <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                <i>{{ advert.modified|naturaltime }} </i>
               </div>
               <h3>{{ advert.price|prepend_dollars }}</h3>
             </div>
@@ -53,16 +46,11 @@ static %}
         </div>
         <div class="divider"></div>
 
-        {% endfor %}
-        {% else %}
+        {% endfor %} {% else %}
         <p>No adverts are available.</p>
-        {% endif %}
-        {% include "snippets/pagination.html" %}
+        {% endif %} {% include "snippets/pagination.html" %}
       </div>
     </div>
   </div>
 </div>
-{% endblock %}
-{% block add_ad_link %}
-{% url 'items:new' %}
-{% endblock %}
+{% endblock %} {% block add_ad_link %} {% url 'items:new' %} {% endblock %}

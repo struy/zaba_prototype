@@ -1,9 +1,7 @@
 @font-face {
   font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-    local("HoppyRibbitday");
+  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
 }
-
 .divider {
   display: inline-block;
   width: 100%;
@@ -22,7 +20,6 @@ body {
   bottom: 30px;
   right: 30px;
 }
-
 #add_button button.btn-circle.btn-xl {
   width: 70px;
   height: 70px;
@@ -37,56 +34,45 @@ header {
   padding-top: 5px;
   background-color: #343a40;
 }
-
 header a {
   color: white;
 }
-
 header .navbar-brand i {
   color: #94c045;
 }
-
 header i {
   padding-top: 15px;
 }
-
 header .bg-dark,
 header footer .bg-dark {
   background: #1c1f18;
 }
-
-header button[type="submit"] {
+header button[type=submit] {
   padding: 0;
   border: none;
   width: 24px;
   height: 24px;
   margin-left: 5px;
 }
-
-header button[form="form_uk"] {
+header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");
 }
-
-header button[form="form_ru"] {
+header button[form=form_ru] {
   background: url("/static/img/flags/Russia.png");
 }
-
-header button[form="form_en"] {
+header button[form=form_en] {
   background: url("/static/img/flags/United-States.png");
 }
-
-header button[form="form_pl"] {
+header button[form=form_pl] {
   background: url("/static/img/flags/Poland.png");
 }
 
 #main {
   margin: 10px;
 }
-
 #main a {
   color: #fff;
 }
-
 #main h2 {
   font-size: 32px;
   font-weight: 600;
@@ -95,37 +81,26 @@ header button[form="form_pl"] {
   font-family: "Poppins", sans-serif;
   color: #646c55;
 }
-
 #main img.zaba_img {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
-
-#main .advert {
-  margin-top: 2rem;
-}
-
 #main .advert .btn {
   float: right;
 }
-
 #main .advert h2 {
   color: blue;
 }
-
 #main .advert .advert h2 {
   font-size: 23px;
 }
-
 #main .advert .advert h3 {
   float: right;
   font-size: 16px;
   font-weight: bold;
 }
-
 #main .advert .advert .edit_buttons {
   display: inline-block;
 }
-
 #main .home .count-box span {
   font-size: 28px;
   line-height: 24px;
@@ -134,18 +109,15 @@ header button[form="form_pl"] {
   color: #646c55;
   margin-left: 60px;
 }
-
 #main .home i.fas {
   color: #646c55;
   float: left;
 }
-
 #main .home .counter i.fas {
   display: block;
   font-size: 48px;
   color: #94c045;
 }
-
 #main .home .counter .count-box p {
   padding: 5px 0 0 0;
   margin: 0 0 0 60px;
@@ -154,7 +126,6 @@ header button[form="form_pl"] {
   font-size: 14px;
   color: #646c55;
 }
-
 #main .home #greeting {
   background: #86b03c;
   color: white;
@@ -162,37 +133,27 @@ header button[form="form_pl"] {
   width: 100%;
   margin-bottom: 20px;
 }
-
 #main .home #greeting h2 {
   color: white;
 }
-
 #main .home i.fas,
 #main .home a {
   font-size: 3em;
 }
-
 #main .home i.fas.fa-shopping-cart {
   color: #28a745;
 }
-
 #main .home i.fas.fa-briefcase {
   color: #17a2b8;
 }
-
 #main .home i.fas.fa-home {
   color: #ffc107;
 }
-
 #main .breadcrumb {
   background-color: #fff;
 }
-
 #main i.fas.fa-paw {
   color: #dc3545;
-}
-#main a:hover {
-  color: #94c045;
 }
 
 .icon-box {
@@ -240,8 +201,7 @@ span.counter {
   color: darkgreen;
 }
 
-/*color: #fff;
-*/
+/*color: #fff;*/
 #google_ads {
   margin-bottom: 15px;
 }
@@ -251,15 +211,12 @@ footer {
   padding-top: 20px;
   background: #1c1f18;
 }
-
 footer ul {
   display: inline-block;
 }
-
 footer li {
   display: inline;
 }
-
 footer li a {
   display: inline;
   color: white;

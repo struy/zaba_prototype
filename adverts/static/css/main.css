@@ -70,9 +70,6 @@ header button[form=form_pl] {
 #main {
   margin: 10px;
 }
-#main a {
-  color: #fff;
-}
 #main h2 {
   font-size: 32px;
   font-weight: 600;
@@ -149,9 +146,6 @@ header button[form=form_pl] {
 #main .home i.fas.fa-home {
   color: #ffc107;
 }
-#main .breadcrumb {
-  background-color: #fff;
-}
 #main i.fas.fa-paw {
   color: #dc3545;
 }
@@ -201,7 +195,6 @@ span.counter {
   color: darkgreen;
 }
 
-/*color: #fff;*/
 #google_ads {
   margin-bottom: 15px;
 }

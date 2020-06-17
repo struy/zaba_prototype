@@ -23,7 +23,8 @@
             </div>
             <div class="col-8">
                 <div class="advert">
-                    {% if adverts %} {% for advert in adverts %}
+                    {% if adverts %}
+                        {% for advert in adverts %}
 
                         <div class="media">
                             {% thumbnail advert.image "128" as ad %}
@@ -44,7 +45,8 @@
                                             </a>
                                         {% endif %}
                                         <a href="{% url 'items:detail' advert.id %}">
-                                            <h2>{{ advert.title }}</h2>
+                                            <h2>{{ advert.title }}
+                                                ({% if advert.local == 'uk' %}ua{% else %}{{ advert.local }}{% endif %})</h2>
                                         </a>
 
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}

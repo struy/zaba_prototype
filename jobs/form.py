@@ -20,7 +20,6 @@ class JobForm(forms.ModelForm):
             "countries",
         ]
         widgets = dict(expires=forms.DateInput(format='%m/%d/%Y', attrs={'class': 'datepicker'}),
-                       point=gis_forms.OSMWidget(attrs={'default_lon': 20, 'default_lat': 30, 'map_width': 800,
-                                                        'map_height': 500, }),
-                       # countries=CountrySelectWidget()
+                       point=gis_forms.OSMWidget(attrs={'default_lon': -88, 'default_lat': 41.9, 'map_width': 800,
+                                                        'map_height': 500, 'default_zoom': 10}),
                        )

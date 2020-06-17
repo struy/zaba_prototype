@@ -55,9 +55,10 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
 
     def save(self, *args, **kwargs):
-        lang = get_language()
-        if lang:
-            self.local = lang[:2]
+        if not self.local:
+            lang = get_language()
+            if lang:
+                self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
 
         r = redis.StrictRedis(host=settings.REDIS_HOST,

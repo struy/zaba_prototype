@@ -24,7 +24,11 @@ def index(request):
     if query:
         advert_list = Item.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
     else:
-        advert_list = Item.objects.order_by('-modified')
+        lang = request.LANGUAGE_CODE
+        if lang:
+            advert_list = Item.objects.filter(local=lang).order_by('-modified')
+        else:
+            advert_list = Item.objects.order_by('-modified')
 
     filters = ItemsFilter(request.GET, queryset=advert_list)
     page = request.GET.get('page', 1)

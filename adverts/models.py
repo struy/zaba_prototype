@@ -30,7 +30,7 @@ class AdvertsManager(models.Manager):
 
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
-    expires = models.DateTimeField(blank=True, null=True, help_text=_('This is the help text'),
+    expires = models.DateTimeField(blank=True, null=True, help_text=_('Format mm.dd.yyyy'),
                                    verbose_name=_('expires'))
 
     LOCALES = (('en', 'en_US'),

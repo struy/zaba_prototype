@@ -22,7 +22,8 @@ for loc in local:
                     price=rand.randint(1, 2000),
                     expires=fake.date(),
                     city=local_lat[2],
-                    address=fake.street_address())
+                    address=fake.street_address(),
+                    local=loc[:2])
         item.image.save(image_name, ContentFile(response.read()))
 
         # Python3 save from folder

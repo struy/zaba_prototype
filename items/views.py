@@ -7,11 +7,9 @@ from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-
 from .models import Item
 from .forms import ItemForm
 from .filters import ItemsFilter
-
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -21,15 +19,13 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def index(request):
     query = request.GET.get('q')
+    lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Item.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Item.objects.filter(Q(local__exact=lang)
+                                          & (Q(title__icontains=query) | Q(description__icontains=query))
+                                          ).order_by('-modified')
     else:
-        lang = request.LANGUAGE_CODE
-        if lang:
-            advert_list = Item.objects.filter(local=lang).order_by('-modified')
-        else:
-            advert_list = Item.objects.order_by('-modified')
-
+        advert_list = Item.objects.filter(local=lang).order_by('-modified')
     filters = ItemsFilter(request.GET, queryset=advert_list)
     page = request.GET.get('page', 1)
     paginator = Paginator(filters.qs, 10)
@@ -81,6 +77,3 @@ class ItemUpdate(UpdateView):
 class ItemDelete(DeleteView):
     model = Item
     success_url = reverse_lazy('items:index')
-
-
-

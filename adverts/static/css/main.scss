@@ -11,17 +11,25 @@ $google-color: #4285f4;
     local("HoppyRibbitday");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff !important;
+  padding-top: 84px;
+}
 .divider {
   display: inline-block;
   width: 100%;
   height: 2px;
   background-color: gray;
   opacity: 0.85;
-}
-
-body {
-  background-color: #fff !important;
-  padding-top: 84px;
 }
 
 #add_button {
@@ -86,13 +94,13 @@ header {
   }
 }
 
-
 #main {
   margin: 10px;
+  flex: 1 0 auto;
 
-  //a {
-  //  color: #646c55;
-  //}
+  a {
+    color: #646c55;
+  }
 
   h2 {
     font-size: 32px;
@@ -113,7 +121,7 @@ header {
     }
 
     h2 {
-      color: blue;
+      color: $add-color;
     }
 
     .advert h2 {
@@ -194,6 +202,35 @@ header {
   i.fas.fa-paw {
     color: #dc3545;
   }
+  .btn.facebook {
+    background-color: $facebook-color;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    width: 288px;
+  }
+
+  .btn.twitter {
+    background-color: $twitter-color;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    width: 288px;
+    text-align: left;
+  }
+
+  .btn.google {
+    /*background-color: #0F9D58;*/
+    /*background-color:#DB4437;*/
+    /*background-color:#F4B400;*/
+    background-color: $google-color;
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    width: 288px;
+    text-align: left;
+  }
 }
 
 .icon-box {
@@ -205,6 +242,10 @@ header {
   background: #fff;
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 /*JOB*/
@@ -249,6 +290,7 @@ footer {
   color: white;
   padding-top: 20px;
   background: #1c1f18;
+  flex: 0 0 auto;
 
   ul {
     display: inline-block;
@@ -267,37 +309,6 @@ footer {
 section#main {
   padding-top: 10px;
   min-height: 450px;
-}
-
-/*social media*/
-.btn.facebook {
-  background-color: $facebook-color;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  margin-top: 30px;
-  width: 288px;
-}
-
-.btn.twitter {
-  background-color: $twitter-color;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  width: 288px;
-  text-align: left;
-}
-
-.btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
-  background-color: $google-color;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  width: 288px;
-  text-align: left;
 }
 
 /* Bootstrap 4 text input with search icon */
@@ -343,4 +354,9 @@ form.new-edit {
   .gj-datepicker-bootstrap {
     width: 205px;
   }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }

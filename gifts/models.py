@@ -21,7 +21,7 @@ class Gift(Advert, Location):
     items
     """
     gift_type = models.ForeignKey(GiftType, on_delete=models.CASCADE, verbose_name=_('gift type'))
-    image = models.ImageField(upload_to='gifts', default='none/no-img.jpg')
+    image = models.ImageField(upload_to='gifts', null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('gifts:detail', args=[self.id])

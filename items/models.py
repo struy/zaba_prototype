@@ -17,7 +17,7 @@ class Item(Advert, Location):
         choices=CONDITIONS,
         default='0'
     )
-    image = models.ImageField(upload_to='items', default='none/no-img.jpg', blank=True)
+    image = models.ImageField(upload_to='items', null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('price'))
 
     def get_absolute_url(self):

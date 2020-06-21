@@ -10,3 +10,5 @@ django-leaflet
 
 gunicorn
 psycopg2
+
+https://pypi.org/project/django-cookie-law/

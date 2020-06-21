@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load static %}
+{% load cookielaw_tags %}
 {% load i18n %}
 {% load language_flags_tags %}
 {% get_current_language as LANGUAGE_CODE %}
@@ -20,8 +21,10 @@
     <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
     <title>zaba.today</title>
     <link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static "cookielaw/css/cookielaw.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
     <link rel="stylesheet" href="{% static "css/media.css" %}">
+
 
     {% block head %}
     {% endblock %}
@@ -59,8 +62,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %} <span
-                                class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %}
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">{% trans 'Contacts' %}</a>
@@ -73,7 +77,6 @@
                         <li class="nav-item"><a class="nav-link" href="/rosetta">Rosetta</a></li>
                         <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
                     {% endif %}
-
 
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
@@ -124,60 +127,61 @@
 </header><!-- End Header -->
 
 <div class="wrapper">
-<section id="main">
-    <div id="attention" class="text-center">
-        <h3>{% trans "Remark! Ads are displayed only in the selected language." %}</h3>
-        {#        <h3>Зауваження! Оголошення відображаються тільки на обраній мові.</h3>#}
-    </div>
-    <section id="google_ads">
-        <center>
-            <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0" width="728"
-                 alt="" class="img_ad">
-        </center>
+    <section id="main">
+        <div id="attention" class="text-center">
+            <h3>{% trans "Remark! Ads are displayed only in the selected language." %}</h3>
+            {#        <h3>Зауваження! Оголошення відображаються тільки на обраній мові.</h3>#}
+        </div>
+        <section id="google_ads">
+            <center>
+                <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
+                     width="728"
+                     alt="" class="img_ad">
+            </center>
+        </section>
+
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        {% block breadcrumbs %}
+                        {% endblock %}
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+
+        {% block content %}
+        {% endblock %}
+
     </section>
-
-    <div class="container">
-        <div class="row">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    {% block breadcrumbs %}
-                    {% endblock %}
-                </ol>
-            </nav>
-        </div>
-    </div>
-
-
-    {% block content %}
-    {% endblock %}
-
-</section>
-<footer class="bg-dark ">
-    <div class="container">
-        <div class="row">
-            <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
-            <div class="col-2">
-
-            </div>
-            <div class="col-12 text-center">
-                <ul>
-                    <li class="nav_first"><a href="#" class="home_a">Conditions of Use</a></li>
-                    <li><a href="/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496"
-                           class="nav_a">Privacy Notice</a></li>
-                    <li><a href="/interestbasedads/ref=footer_iba" class="nav_a">Interest-Based Ads</a></li>
-                    <li class="nav_last">©
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        , Zaba.today, Inc. or its affiliates
-                    </li>
-                </ul>
+    <footer class="bg-dark ">
+        <div class="container">
+            <div class="row">
+                <div class="col-10 text-center"><i class="fas fa-filter"></i> Filter</div>
+                <div class="col-2"> </div>
+                <div class="col-12 text-center">
+                    <ul>
+                        <li class="nav_first"><a href="#" class="home_a">Conditions of Use</a></li>
+                        <li><a href="/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496"
+                               class="nav_a">Privacy Notice</a></li>
+                        <li><a href="/interestbasedads/ref=footer_iba" class="nav_a">Interest-Based Ads</a></li>
+                        <li class="nav_last">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            , Zaba.today, Inc. or its affiliates
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </div>
 
+{% cookielaw_banner %}
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -188,11 +192,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-<script src="{% static 'js/counterup.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+{% if user.is_superuser %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="{% static 'cookielaw/js/cookielaw.js' %}"></script>
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endif %}
 
 {% block script %}
 {% endblock %}

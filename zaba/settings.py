@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'django.contrib.sites',
     'django_extensions',
+    'cookielaw',
     'mptt',
     'django_countries',
     'django_tables2',

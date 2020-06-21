@@ -33,6 +33,10 @@
                                     </a>
                                 {% endthumbnail %}
 
+                            {% if not advert.image %}
+                                   <img class="mr-3" src="/media/none/no-img.jpg" alt="no image" width="128"/>
+                            {% endif %}
+
                                 <div class="media-body">
                                     <div class="advert">
                                         <div class="wrap_list_adverts">
@@ -47,8 +51,7 @@
                                             <a href="{% url 'items:detail' advert.id %}">
                                                 <h2>
                                                     {{ advert.title }}
-                                                    ({% if advert.local == 'uk' %}ua{% else %}
-                                                    {{ advert.local }}{% endif %})
+                                            ({% if advert.local == 'uk' %}ua{% else %}{{advert.local}}{% endif %})
                                                 </h2>
                                             </a>
 

@@ -70,7 +70,8 @@ class ItemCreate(CreateView):
 
 class ItemUpdate(UpdateView):
     model = Item
-    fields = ['title', 'description', 'image', 'expires', 'price', 'city', 'address', 'point']
+    # fields = ['title', 'description', 'image', 'expires', 'price', 'city', 'address', 'point']
+    form_class = ItemForm
     success_url = reverse_lazy('items:index')
 
 

@@ -8,8 +8,12 @@ class ItemForm(forms.ModelForm):
         model = Item
         fields = ['condition', 'title', 'description', 'price', 'image', 'expires', 'city', 'address', 'point']
         widgets = {
-            'expires': forms.DateInput(attrs={'class': 'datepicker'}),
-            'point': gis_forms.OSMWidget(attrs={'default_lon': -88, 'default_lat': 41.9, 'map_width': 800,
-                                                'map_height': 500, 'default_zoom': 10}),
+            'expires': forms.widgets.DateInput(attrs={'type': 'date'}),
+            'point': gis_forms.OSMWidget(attrs={
+                'default_lon': -88,
+                'default_lat': 41.9,
+                'map_width': 800,
+                'map_height': 500,
+                'default_zoom': 10
+            }),
         }
-# format='%m/%d/%Y',

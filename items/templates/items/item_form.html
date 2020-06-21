@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
+
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item "><a href="{% url 'items:index' %}">{% trans "Items" %}</a></li>
@@ -12,7 +13,6 @@
 
 {% block head %}
     {{ form.media }}
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
 {% endblock %}
 
 
@@ -36,7 +36,4 @@
 
 
 {% block script %}
-
-        {% include "snippets/date-picker-js.html" %}
-
 {% endblock %}

@@ -30,8 +30,8 @@ class AdvertsManager(models.Manager):
 
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
-    expires = models.DateTimeField(blank=True, null=True, help_text=_('Format mm.dd.yyyy'),
-                                   verbose_name=_('expires'))
+    expires = models.DateField(blank=True, null=True, help_text=_('Format mm/dd/yyyy'),
+                               verbose_name=_('expires'))
 
     LOCALES = (('en', 'en_US'),
                ('uk', 'uk_UA'),
@@ -55,10 +55,9 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
 
     def save(self, *args, **kwargs):
-        if not self.local:
-            lang = get_language()
-            if lang:
-                self.local = lang[:2]
+        lang = get_language()
+        if lang:
+            self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
 
         r = redis.StrictRedis(host=settings.REDIS_HOST,

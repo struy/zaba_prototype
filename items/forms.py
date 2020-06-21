@@ -4,11 +4,15 @@ from .models import Item
 
 
 class ItemForm(forms.ModelForm):
+    expires = forms.DateField(
+        localize=True,
+        widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+    )
+
     class Meta:
         model = Item
         fields = ['condition', 'title', 'description', 'price', 'image', 'expires', 'city', 'address', 'point']
         widgets = {
-            'expires': forms.widgets.DateInput(attrs={'type': 'date'}),
             'point': gis_forms.OSMWidget(attrs={
                 'default_lon': -88,
                 'default_lat': 41.9,

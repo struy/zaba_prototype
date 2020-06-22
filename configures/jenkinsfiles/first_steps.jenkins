@@ -1,26 +1,20 @@
 #!groovy
+properties([disableConcurrentBuilds()])
 //Build, Test, Prod
 pipeline {
     agent any
-
-
-
     options {
         skipDefaultCheckout(true)
         // Keep the 10 most recent builds
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
     }
-
-
     stages {
-
         stage ("Code pull"){
             steps{
                 checkout scm
             }
         }
-
         stage ("Build"){
             steps{
                 sh """
@@ -31,7 +25,6 @@ pipeline {
                 python3 -m venv env
                 source env/bin/activate
                 pip install -r requirements.txt
-                python manage.py makemigrations
                 python manage.py collectstatic --noinput
                 python manage.py makemigrations
                 python manage.py migrate
@@ -40,19 +33,13 @@ pipeline {
                 chmod 777 db.sqlite3
                 python manage.py runserver 0.0.0.0:8000
                 """
-
-
             }
         }
-
-
          stage ("Test"){
             steps{
               sh 'cd zaba_prototype  && source env/bin/activate && echo TEST'
             }
         }
-
-
         stage('Deploy') {
             when {
             expression {
@@ -65,8 +52,5 @@ pipeline {
         }
 
 
-
-
     }
-
 }

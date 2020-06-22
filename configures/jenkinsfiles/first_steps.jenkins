@@ -23,7 +23,7 @@ pipeline {
                 git clone https://github.com/struy/zaba_prototype.git
                 cd zaba_prototype
                 python3 -m venv env
-                . $env/bin/activate
+                source env/bin/activate
                 pip install -r requirements.txt
                 python manage.py collectstatic --noinput
                 python manage.py makemigrations

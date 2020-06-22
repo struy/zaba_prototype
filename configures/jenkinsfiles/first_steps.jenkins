@@ -3,7 +3,7 @@ properties([disableConcurrentBuilds()])
 //Build, Test, Prod
 pipeline {
     agent any
-    triggers {pollSCM{'* * * * *'}}
+
     options {
         skipDefaultCheckout(true)
         // Keep the 10 most recent builds
@@ -32,7 +32,6 @@ pipeline {
                 python manage.py loaddata fixtures/datagifttype.json
                 python manage.py loaddata fixtures/datajobtype.json
                 chmod 777 db.sqlite3
-                python manage.py runserver 0.0.0.0:8000
                 """
             }
         }

@@ -1,105 +1,91 @@
-{% extends "base.html" %}
-{% load i18n %}
+{% extends "base.html" %} {% load i18n %} {% block head %}
+<style>
+  #main nav[aria-label="breadcrumb"] {
+    display: none;
+  }
 
+  #add_button {
+    display: none;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="home">
+  {% include "snippets/search_bar.html" %}
 
-
-{% block head %}
-    <style>
-        #main nav[aria-label="breadcrumb"] {
-            display: none;
-        }
-
-        #add_button {
-            display: none;
-        }
-
-    </style>
-{% endblock %}
-
-
-
-{% block content %}
-    <div class="home">
-        {% include "snippets/search_bar.html" %}
-
-        <div class="container">
-
-            {% if user.is_superuser %}
-                <div class="row justify-content-end counter">
-                    <div class="col-lg-11">
-                        <div class="row justify-content-end">
-                            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box py-5">
-                                    <i class="fas fa-book"></i>
-                                    <span data-toggle="counter-up">{{ total }} </span>
-                                    <p>Total</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box py-5">
-                                    <i class="fas fa-chart-pie"></i>
-                                    <span data-toggle="counter-up">{{ month }}</span>
-                                    <p>Month</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box pb-5 pt-0 pt-lg-5">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <span data-toggle="counter-up">{{ week }}</span>
-                                    <p>Week</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
-                                <div class="count-box pb-5 pt-0 pt-lg-5">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span data-toggle="counter-up">{{ today }}</span>
-                                    <p>Today</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-
-
-            <div class="row">
-                <div id="greeting">
-                    <div class="col-12 text-center"><h2>{% trans "Frog greeting!" %} </h2></div>
-                </div>
+  <div class="container">
+    {% if user.is_superuser %}
+    <div class="row justify-content-end counter">
+      <div class="col-lg-11">
+        <div class="row justify-content-end">
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box py-5">
+              <i class="fas fa-book"></i>
+              <span data-toggle="counter-up">{{ total }} </span>
+              <p>Total</p>
             </div>
+          </div>
 
-
-            <div class="row ">
-                <div class="col-6">
-                    <div class="icon-box text-center">
-                        <i class="fas fa-shopping-cart "></i>
-                        <a href="items">{% trans "Sell" %} </a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="icon-box text-center">
-                        <i class="fas fa-briefcase "></i>&nbsp; <a
-                            href="jobs">{% trans "Jobs" %}</a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="icon-box text-center">
-                        <i class="fas fa-home"></i> <a
-                            href="rents">{% trans "Housing" %}</a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="icon-box text-center">
-                        <i class="fas fa-paw"></i><a
-                            href="gifts">{% trans "Cats" %}</a>
-                    </div>
-                </div>
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box py-5">
+              <i class="fas fa-chart-pie"></i>
+              <span data-toggle="counter-up">{{ month }}</span>
+              <p>Month</p>
             </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box pb-5 pt-0 pt-lg-5">
+              <i class="fas fa-chart-bar"></i>
+              <span data-toggle="counter-up">{{ week }}</span>
+              <p>Week</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box pb-5 pt-0 pt-lg-5">
+              <i class="fas fa-chart-line"></i>
+              <span data-toggle="counter-up">{{ today }}</span>
+              <p>Today</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+    {% endif %}
+
+    <div class="row">
+      <div id="greeting">
+        <div class="col-12 text-center">
+          <h2>{% trans "Frog greeting!" %}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="icon-box text-center">
+          <i class="fas fa-shopping-cart"></i>
+          <a href="items">{% trans "Sell" %} </a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="icon-box text-center">
+          <i class="fas fa-briefcase"></i>&nbsp;
+          <a href="jobs">{% trans "Jobs" %}</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="icon-box text-center">
+          <i class="fas fa-home"></i> <a href="rents">{% trans "Housing" %}</a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="icon-box text-center">
+          <i class="fas fa-paw"></i><a href="gifts">{% trans "Cats" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

@@ -55,12 +55,16 @@
   #btn_sm_md_ext {
     margin-bottom: 15px;
   }
+  .img_ad {
+    width: 100%;
+  }
 }
 
 /*Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) {
   header .navbar-nav {
     font-size: 30px;
+    text-align: center;
   }
   #main .icon-box {
     padding: 15px 15px;

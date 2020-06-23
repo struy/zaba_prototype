@@ -231,6 +231,9 @@ header {
     width: 288px;
     text-align: left;
   }
+  .form-group .btn.success {
+    background-color: $base-color;
+  }
 }
 
 .icon-box {
@@ -359,4 +362,9 @@ form.new-edit {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+#CookielawBanner {
+  background-color: #e7d9ac;
+  margin-top: -160px;
+  position: relative;
 }

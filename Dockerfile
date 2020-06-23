@@ -14,7 +14,7 @@ RUN apt-get install -y python3 python-dev python3-dev \
     build-essential libssl-dev libffi-dev \
     libxml2-dev libxslt1-dev zlib1g-dev \
     python3-pip  libgdal-dev locales \
-    libsqlite3-mod-spatialite
+    libsqlite3-mod-spatialite binutils
 
 # Ensure locales configured correctly
 RUN locale-gen en_US.UTF-8

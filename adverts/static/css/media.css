@@ -23,6 +23,9 @@
   button.fa-filter {
     display: none;
   }
+  #btn_sm_md_ext {
+    display: none;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -44,10 +47,13 @@
   #main .home a {
     font-size: 2em;
   }
-  button.fa-filter {
+  /* button.fa-filter {
     background-color: #fff;
     border: none;
     color: #94c045;
+  } */
+  #btn_sm_md_ext {
+    margin-bottom: 15px;
   }
 }
 

@@ -48,8 +48,8 @@ static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
 
                 <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                 <i>{{ advert.modified|naturaltime }} </i>
+                <h3>{{ advert.price|prepend_dollars }}</h3>
               </div>
-              <h3>{{ advert.price|prepend_dollars }}</h3>
             </div>
           </div>
         </div>

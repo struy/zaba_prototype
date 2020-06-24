@@ -94,7 +94,10 @@ class Location(models.Model):
 
     @property
     def lat_lng(self):
-        return list(getattr(self.point, 'coords', [])[::-1])
+        """for ubuntu 20.04(GDAL v. 3) dont need use revers
+         getattr(self.point, 'coords', [])[::-1]
+         """
+        return list(getattr(self.point, 'coords', []))
 
     class Meta:
         ordering = ['city']

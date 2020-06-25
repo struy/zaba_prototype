@@ -18,3 +18,9 @@ https://pypi.org/project/django-cookie-law/
 
 SSL
 https://www.youtube.com/watch?v=JbQbwum196g
+
+Poetry
+https://python-poetry.org/
+
+hiredis
+https://github.com/redis/hiredis-py

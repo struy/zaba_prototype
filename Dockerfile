@@ -16,6 +16,8 @@ RUN apt-get install -y python3 python-dev python3-dev \
     python3-pip  libgdal-dev locales \
     libsqlite3-mod-spatialite binutils
 
+# for ubuntu 20.04
+#RUN apt-get install gdal-bin
 # Ensure locales configured correctly
 RUN locale-gen en_US.UTF-8
 ENV LC_ALL='en_US.utf8'

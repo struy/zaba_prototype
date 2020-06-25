@@ -20,6 +20,7 @@ pipeline {
             steps{
                 sh """
                 cd /home/ubuntu/Build
+                [ ! -f /etc/docker ] && mkdir zaba_prototype
                 rm -r zaba_prototype
                 git clone https://github.com/struy/zaba_prototype.git
                 cd zaba_prototype

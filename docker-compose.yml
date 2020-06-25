@@ -3,7 +3,7 @@ version: '3.3'
 services:
   web:
     build: .
-    command: python3 manage.py runserver --settings=zaba.settings-docker 0.0.0.0:8000
+    command: python3 manage.py runserver --settings=zaba.settings_docker 0.0.0.0:8000
     container_name: zaba_web
     volumes:
       - .:/usr/src/app/

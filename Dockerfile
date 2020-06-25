@@ -36,11 +36,10 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 RUN pip3 install GDAL==2.2.3
 
 # # set work directory
- WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
 # # # set environment varibles
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONHASHSEED=random
-
 
 # # # install dependencies
 RUN pip3 install --upgrade pip
@@ -49,15 +48,6 @@ RUN pip3 install --upgrade pip
 COPY requirements.txt /usr/src/app/requirements.txt
 # # #RUN pipenv install --skip-lock --system --dev
 RUN  pip3 install  --no-cache-dir -r requirements.txt
-
-
-
-# RUN add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update \
-# RUN apt-get install gdal-bin libgdal-dev\
-# RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal\
-# RUN export C_INCLUDE_PATH=/usr/include/gdal\
-# RUN pip install GDAL 
-
 
 # copy project
 COPY . /usr/src/app/

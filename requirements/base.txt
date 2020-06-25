@@ -4,6 +4,7 @@ astroid==2.4.2
 attrs==19.3.0
 billiard==3.6.3.0
 celery==4.4.5
+sentry-sdk==0.15.1
 certifi==2020.6.20
 cffi==1.14.0
 chardet==3.0.4
@@ -11,7 +12,6 @@ click==7.1.2
 cryptography==2.9.2
 defusedxml==0.6.0
 distlib==0.3.0
-
 elasticsearch==7.8.0
 elasticsearch-dsl==7.2.1
 filelock==3.0.12
@@ -67,7 +67,6 @@ virtualenv==20.0.24
 wcwidth==0.2.4
 wrapt==1.12.1
 zipp==3.1.0
-
 
 # Django
 # ------------------------------------------------------------------------------

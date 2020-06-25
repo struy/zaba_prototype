@@ -24,7 +24,7 @@ pipeline {
                 rm -r zaba_prototype
                 git clone https://github.com/struy/zaba_prototype.git
                 cd zaba_prototype
-                cp /home/ubuntu/.env .env /home/ubuntu/Build/zaba_prototype/
+                cp /home/ubuntu/.env  /home/ubuntu/Build/zaba_prototype/
                 python3 -m venv env
                 source env/bin/activate
                 pip install --no-cache-dir -r requirements.txt

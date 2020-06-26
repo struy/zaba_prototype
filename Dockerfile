@@ -5,8 +5,7 @@ FROM ubuntu:eoan
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update base container install
-RUN apt-get update
-RUN apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 
 # Install GDAL dependencies
 
@@ -14,7 +13,7 @@ RUN apt-get install -y python3 python-dev python3-dev \
     build-essential libssl-dev libffi-dev \
     libxml2-dev libxslt1-dev zlib1g-dev \
     python3-pip  libgdal-dev locales \
-    libsqlite3-mod-spatialite binutils
+    libsqlite3-mod-spatialite binutils libpq-dev
 
 # for ubuntu 20.04
 #RUN apt-get install gdal-bin

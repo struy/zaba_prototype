@@ -20,6 +20,19 @@ services:
       - "5959"
     logging:
       driver: "json-file"
+
+  db:
+    image: postgis/postgis:11-3.0
+    container_name: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db_name
+    ports:
+      - "5433:5432"
+    volumes:
+      - bddata:/var/lib/postgresql/data
+
   celery:
     build: .
     command: celery -A zaba worker -l info
@@ -151,6 +164,7 @@ networks:
 
 
 volumes:
+  bddata:
   redisdata:
   redisinsight:
   data01:

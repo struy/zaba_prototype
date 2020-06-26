@@ -1,4 +1,5 @@
 from .settings import *
+from .settings import env
 
 # Database
 DATABASES = {
@@ -11,3 +12,5 @@ DATABASES = {
         'PORT': env('POSTGRES_PORT')
     },
 }
+
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=["13.59.235.149"])

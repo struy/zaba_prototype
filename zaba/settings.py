@@ -21,7 +21,7 @@ DEBUG = True
 if DEBUG:
     THUMBNAIL_DEBUG = True
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+    ALLOWED_HOSTS = ['*']
 
 # Application definition
 DJANGO_APPS = ['django.contrib.admin',

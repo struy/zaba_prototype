@@ -30,3 +30,6 @@ Sentry
 check USE_TZ
 
 https://www.braintreepayments.com/
+
+
+https://github.com/razisayyed/django-ads

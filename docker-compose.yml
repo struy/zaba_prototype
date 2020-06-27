@@ -11,6 +11,7 @@ services:
       - "80:8000"
     links:
       - redis:redis
+      - db:db
     environment: 
       - DEBUG=1
       - SECRET_KEY=foo

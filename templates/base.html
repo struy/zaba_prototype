@@ -207,10 +207,11 @@
 
 {% endif %}
 
-
+{% if not user.is_staff %}
 <div style="display:none">
     <img src="{% google_analytics %}" width="0" height="0" />
 </div>
+{% endif %}
 
 
 {% block script %}

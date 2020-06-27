@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'debug_toolbar',
                     'social_django',
                     'django_cleanup.apps.CleanupConfig',
+                    'google_analytics',
                     ]
 
 LOCAL_APPS = ['account.apps.AccountConfig',
@@ -224,3 +225,6 @@ Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 )
 
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
+}

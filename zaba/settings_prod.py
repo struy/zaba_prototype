@@ -1,6 +1,8 @@
 from .settings import *
 from .settings import env
 
+PROD_APPS = ['google_analytics', ]
+
 # Database
 DATABASES = {
     'default': {
@@ -13,4 +15,8 @@ DATABASES = {
     },
 }
 
-# ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=["13.59.235.149"])
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
+}
+
+INSTALLED_APPS += PROD_APPS

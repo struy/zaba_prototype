@@ -25,6 +25,7 @@ django-elasticsearch-dsl==7.1.1
 django-environ==0.4.5
 django-extensions==2.2.9
 django-filter==2.3.0
+django-google-analytics==2
 django-js-asset==1.2.2
 django-map-widgets==0.3.0
 django-modeltranslation==0.15

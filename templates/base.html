@@ -3,6 +3,7 @@
 {% load cookielaw_tags %}
 {% load i18n %}
 {% load language_flags_tags %}
+{% load google_analytics_tags %}
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
 {% get_language_info_list for LANGUAGES as languages %}
@@ -200,7 +201,16 @@
 
     <script src="{% static 'js/counterup.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+
+
 {% endif %}
+
+
+<div style="display:none">
+    <img src="{% google_analytics %}" width="0" height="0" />
+</div>
+
+
 
 {% block script %}
 {% endblock %}

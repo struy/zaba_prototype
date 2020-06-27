@@ -1,7 +1,7 @@
 from .settings import *
 from .settings import env
 
-PROD_APPS = ['google_analytics', ]
+PROD_APPS = []
 
 # Database
 DATABASES = {

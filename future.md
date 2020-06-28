@@ -18,6 +18,9 @@ https://pypi.org/project/django-cookie-law/
 
 SSL
 https://www.youtube.com/watch?v=JbQbwum196g
+https://certbot.eff.org/docs/install.html
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+
 
 Poetry
 https://python-poetry.org/
@@ -33,3 +36,4 @@ https://www.braintreepayments.com/
 
 
 https://github.com/razisayyed/django-ads
+

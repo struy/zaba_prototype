@@ -33,11 +33,12 @@ DJANGO_APPS = ['django.contrib.admin',
                'django.contrib.humanize',
                'django.contrib.gis',
                'django.contrib.sites',
-               'django_extensions',
                ]
 
 THIRD_PARTY_APPS = ['django_countries',
+                    'django_extensions',
                     'django_tables2',
+                    'captcha',
                     'crispy_forms',
                     'sorl.thumbnail',
                     'cookielaw',
@@ -46,8 +47,8 @@ THIRD_PARTY_APPS = ['django_countries',
                     'rosetta',
                     'debug_toolbar',
                     'social_django',
-                    'django_cleanup.apps.CleanupConfig',
                     'google_analytics',
+                    'django_cleanup.apps.CleanupConfig',
                     ]
 
 LOCAL_APPS = ['account.apps.AccountConfig',
@@ -224,3 +225,7 @@ Configuration.configure(
 GOOGLE_ANALYTICS = {
     'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
 }
+
+RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_REQUIRED_SCORE = 0.7

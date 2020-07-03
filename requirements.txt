@@ -35,6 +35,7 @@ django-js-asset==1.2.2
 django-map-widgets==0.3.0
 django-modeltranslation==0.15
 django-mptt==0.11.0
+django-recaptcha==2.0.6
 django-redis==4.12.1
 django-rosetta==0.9.4
 django-storages==1.9.1

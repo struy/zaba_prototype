@@ -1,4 +1,5 @@
 import os
+import sys
 import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -15,13 +16,19 @@ env.read_env(str(BASE_DIR + "/" + ".env"))
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 
+# Google Recaptcha
+RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_REQUIRED_SCORE = 0.7
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (sys.argv[1] == 'runserver')
 
 if DEBUG:
     THUMBNAIL_DEBUG = True
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "*"]
+    SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Application definition
 DJANGO_APPS = ['django.contrib.admin',
@@ -225,7 +232,3 @@ Configuration.configure(
 GOOGLE_ANALYTICS = {
     'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
 }
-
-RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
-RECAPTCHA_REQUIRED_SCORE = 0.7

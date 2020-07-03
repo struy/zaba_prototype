@@ -30,6 +30,6 @@ class ItemForm(forms.ModelForm):
                 'default_zoom': 10
             }),
             'captcha': ReCaptchaV3(
-                api_params={'hl': get_language()[:2], 'onload': 'onLoadFunc'}
+                api_params={'hl': get_language()[:2], 'badge': 'inline', }
             ),
         }

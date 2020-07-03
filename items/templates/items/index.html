@@ -53,8 +53,7 @@
                         {% endif %}
                         <a href="{% url 'items:detail' advert.id %}">
                           <h2>
-                            {{ advert.title }} ({% if advert.local == 'uk' %}ua{% else
-                            %}{{advert.local}}{% endif %})
+                            {{ advert.title }} ({% if advert.local == 'uk' %}ua{% else %}{{advert.local}}{% endif %})
                           </h2>
                         </a>
 

@@ -50,8 +50,18 @@ COPY requirements.txt /usr/src/app/requirements.txt
 # # #RUN pipenv install --skip-lock --system --dev
 RUN  pip3 install  --no-cache-dir -r requirements.txt
 
+
 # copy project
 COPY . /usr/src/app/
+
+#RUN python manage.py collectstatic --noinput
+#RUN python manage.py makemigrations
+#RUN python manage.py migrate
+#RUN python manage.py loaddata fixtures/datagifttype.json
+#RUN python manage.py loaddata fixtures/datajobtype.json
+
+
+
 
 
 

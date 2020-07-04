@@ -1,0 +1,37 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: python3 manage.py runserver --settings=zaba.settings_docker_simplified 0.0.0.0:8000
+    container_name: zaba_web_simplified
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - "80:8000"
+    links:
+      - redis:redis
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=foo
+      - CACHE_LOCATION=redis://redis:6379
+      - LOGSTASH_HOST=logstash
+    expose:
+      - "5959"
+    logging:
+      driver: "json-file"
+
+  redis:
+    restart: always
+    image: redis:latest
+    container_name: zaba_redis_simplified
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+volumes:
+  redisdata:
+
+
+

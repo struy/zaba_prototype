@@ -12,11 +12,11 @@ class ItemForm(forms.ModelForm):
         localize=True,
         widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
     )
-    captcha = ReCaptchaField(
-        public_key=RECAPTCHA_PUBLIC_KEY,
-        private_key=RECAPTCHA_PRIVATE_KEY,
-        widget=ReCaptchaV3,
-    )
+    # captcha = ReCaptchaField(
+    #     public_key=RECAPTCHA_PUBLIC_KEY,
+    #     private_key=RECAPTCHA_PRIVATE_KEY,
+    #     widget=ReCaptchaV3,
+    # )
 
     class Meta:
         model = Item
@@ -29,7 +29,7 @@ class ItemForm(forms.ModelForm):
                 'map_height': 500,
                 'default_zoom': 10
             }),
-            'captcha': ReCaptchaV3(
-                api_params={'hl': get_language()[:2], 'badge': 'inline', }
-            ),
+            # 'captcha': ReCaptchaV3(
+            #     api_params={'hl': get_language()[:2], 'badge': 'inline', }
+            # ),
         }

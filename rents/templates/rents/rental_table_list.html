@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 {% load django_tables2 %}
-
+{% block title %} {% trans "Rents table" %} {% endblock %}
 
 {% block content %}
 
     <div class="container">
         <div class="row">
             <div class="col-12">
-
                 {% render_table table %}
-
             </div>
         </div>
     </div>

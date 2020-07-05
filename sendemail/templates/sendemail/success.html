@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
-    {% block content %}
 
+{% block title %} {% trans "Success registration" %} {% endblock %}
+
+{% block content %}
     <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-success text-center">  {% trans 'Success! Thank you for your message.'  %}  </h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-success text-center">  {% trans 'Success! Thank you for your message.' %}  </h1>
+            </div>
         </div>
     </div>
-    </div>
-
-
-    {% endblock %}
+{% endblock %}
 
 

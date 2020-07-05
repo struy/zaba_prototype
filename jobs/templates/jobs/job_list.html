@@ -1,17 +1,14 @@
 {% extends "base.html" %}
-
 {% load countries %}
 {% load i18n %}
 
+{% block title %} {% trans "Jobs" %} {% endblock %}
+
 {% block content %}
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
                 <h2><a href="{% url 'jobs:index' %}">Jobs CBV</a></h2>
-
                 <ul>
                     {% for job in object_list %}
                         <li>{{ job.title }}
@@ -20,16 +17,10 @@
                         </li>
                     {% endfor %}
                 </ul>
-
                 <a href="{% url 'jobs:new' %}">New</a>
-
-
             </div>
         </div>
     </div>
-
-
-
 {% endblock %}
 
 

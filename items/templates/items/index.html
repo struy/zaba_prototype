@@ -7,6 +7,8 @@
 {% load crispy_forms_tags %}
 {% load thumbnail %}
 
+{% block title %} {% trans "Items" %} {% endblock %}
+
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>

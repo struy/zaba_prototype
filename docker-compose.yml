@@ -61,7 +61,7 @@ services:
     depends_on:
         - redis
   redisinsight:
-    image: redislabs/redisinsight
+    image: redislabs/redisinsight:latest
     restart: always
     container_name: zaba_redisinsight
     volumes:

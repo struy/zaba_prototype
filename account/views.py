@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from .forms import LoginForm, UserRegistrationForm, UserEditForm    # ProfileEditForm
 from .forms import UserRegistrationForm
 
 
@@ -18,3 +20,15 @@ def register(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/register.html', {'user_form': user_form})
+
+
+@login_required
+def edit(request):
+    if request.method == 'POST':
+        user_form = UserEditForm(instance=request.user, data=request.POST)
+        if user_form.is_valid():
+            user_form.save()
+    else:
+        user_form = UserEditForm(instance=request.user)
+
+    return render(request, 'account/edit.html', {'user_form': user_form})

@@ -2,34 +2,59 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
+{% block title %} {% trans "Log in" %} {% endblock %}
+
+{% block head %}
+    <style>
+        #add_button {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Log in" %}</li>
+{% endblock %}
+
+
+
 {% block content %}
 
     <div class="container">
         <div class="row">
-            <div class="col-6">
-                <h1>Log-in</h1>
+            <div class="col-md-6">
+                <h1>
+                    {% trans "Log in" %}
+                </h1>
                 {% if form.errors %}
                     <p>
-                      {%  trans   "Your username and password didn't match. Please try again." %}
+                        {% trans "Your username and password didn't match. Please try again." %}
                     </p>
                 {% else %}
                     <p>
                         {% trans "Please, use the following form to log-in." %}
                         <br>
-                        {% trans  "If you don't have an account" %}
-                        <a href="{% url "register" %}">{%  trans "register here" %}</a>
+                        {% trans "If you don't have an account" %}
+                        <a href="{% url "register" %}">{% trans "register here" %}</a>
                     </p>
                 {% endif %}
                 <div class="login-form">
                     <form action="{% url 'login' %}" method="post">
-                        {{ form|crispy  }}
+                        {{ form|crispy }}
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}"/>
-                        <p><input  type="submit"  class="btn btn-success" value="Log-in"></p>
+                        <p>
+                            <input type="submit" class="btn btn-success" value={% trans "Log In" %}>
+                        </p>
                     </form>
                 </div>
+                <p><a href="{% url "password_reset" %}">{% trans "Forgotten your password" %}?</a></p>
             </div>
-            <div class="col-6">
+
+            <div class="col-md-6">
                 <a href="{% url "social:begin" "facebook" %}" class="btn btn-sm facebook">
                     <i class="fab fa-facebook-square">&nbsp;</i> {% trans "Sign in with Facebook" %}
                 </a>
@@ -39,9 +64,10 @@
                 </a>
                 <br>
                 <a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-sm google">
-                  <i class="fab fa-google">&nbsp;</i>{% trans "Login with Google" %}
+                    <i class="fab fa-google">&nbsp;</i>{% trans "Login with Google" %}
                 </a>
             </div>
+
         </div>
     </div>
 {% endblock %}

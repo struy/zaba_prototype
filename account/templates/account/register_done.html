@@ -1,11 +1,37 @@
 {% extends "base.html" %}
+{% load i18n %}
+{% block title %} {% trans "Registration" %} {% endblock %}
+
+
+
+{% block head %}
+<style>
+  #add_button {
+    display: none;
+  }
+</style>
+{% endblock %}
+
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Registration" %}</li>
+{% endblock %}
+
+
+
 {% block title %}Welcome{% endblock %}
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Welcome {{ new_user.first_name }}!</h1>
-                <p>Your account has been successfully created. Now you can <a href="{% url "login" %}">log in</a>.</p>
+            <div class="offset-md-1 col-md-10">
+                <h1> {% trans "Welcome" %} {{ new_user.first_name }}!</h1>
+                <p>
+                    {%  trans "Your account has been successfully created. Now you can" %}
+                    <a href="{% url "login" %}">
+                        {% trans "log in" %}
+                    </a>.
+                </p>
             </div>
         </div>
     </div>

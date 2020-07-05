@@ -1,14 +1,41 @@
 from django import forms
 from django.contrib.auth.models import User
+from zaba.settings import RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
+from django.utils.translation import get_language
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
 
 
 class UserRegistrationForm(forms.ModelForm):
+
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
+
+    captcha = ReCaptchaField(
+        public_key=RECAPTCHA_PUBLIC_KEY,
+        private_key=RECAPTCHA_PRIVATE_KEY,
+        widget=ReCaptchaV3,
+    )
 
     class Meta:
         model = User
         fields = ('username', 'first_name', 'email')
+        widgets = {
+            'captcha': ReCaptchaV3(
+                api_params={'hl': get_language()[:2], 'badge': 'inline', }
+            ),
+        }
 
     def clean_password2(self):
         cd = self.cleaned_data

@@ -277,7 +277,7 @@ msgstr "Целые числа, разделенные запятой"
 msgid ""
 "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
-msgstr "Значение '%(value s' имеет неверный формат даты. Оно должна быть в формате "
+msgstr "Значение '%(value)s' имеет неверный формат даты. Оно должна быть в формате "
 "YYYY-MM-DD."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1155
@@ -444,21 +444,21 @@ msgstr "Внешний ключ (тип определяется в соотве
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1007
 msgid "One-to-one relationship"
-msgstr "\'один-к-одному'\ связь"
+msgstr "один-к-одному связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1057
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr "\'%(from)s-%(to)s'\ связь"
+msgstr "%(from)s-%(to)s связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1058
 #, python-format
 msgid "%(from)s-%(to)s relationships"
-msgstr "\'%(from)s-%(to)s'\ связь"
+msgstr "%(from)s-%(to)s связь"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1100
 msgid "Many-to-many relationship"
-msgstr "\'Многие-ко-многим'\ связь"
+msgstr "Многие-ко-многим связь"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the label
@@ -495,7 +495,7 @@ msgstr "Введите корректную продолжительность."
 #: env/lib/python3.7/site-packages/django/forms/fields.py:472
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
-msgstr "Количество дней должна быть между {min_дней} и {max_дней}."
+msgstr "Количество дней должна быть между {min_days} и {max_days}."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:532
 msgid "No file was submitted. Check the encoding type on the form."

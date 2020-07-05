@@ -443,21 +443,21 @@ msgstr "Зовнішній ключ (тип визначається відпо�
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1007
 msgid "One-to-one relationship"
-msgstr "\'один-до-одного'\ зв'язок"
+msgstr "один-до-одного зв'язок"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1057
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr "\'%(from)s-%(to)s'\ зв'язок"
+msgstr "%(from)s-%(to)s зв'язок"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1058
 #, python-format
 msgid "%(from)s-%(to)s relationships"
-msgstr "\'%(from)s-%(to)s'\ зв'язки"
+msgstr "%(from)s-%(to)s зв'язки"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:1100
 msgid "Many-to-many relationship"
-msgstr "\'Багато-до-багатьох'\ зв'язок"
+msgstr "Багато-до-багатьох зв'язок"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to the
@@ -495,7 +495,7 @@ msgstr "Введіть коректну тривалість."
 #: env/lib/python3.7/site-packages/django/forms/fields.py:472
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
-msgstr "Кількість днів повинна бути між {min_днів} та {max_днів}."
+msgstr "Кількість днів повинна бути між {min_days} та {max_days}."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:532
 msgid "No file was submitted. Check the encoding type on the form."
@@ -1099,8 +1099,7 @@ msgstr "Якщо ви використовуєте <meta name=\"referrer\" conte
 "в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-ласка, видаліть їх." 
 "Захист CSRF вимагає заголовка 'Referer', щоб зробити сувору referer "
 "перевірку. Якщо ви стурбовані про конфіденційність, використовуйте альтернативи, такі як <а "
-"rel=\"noreferrer\" ...> посилання на сторонні сайти.
-"
+"rel=\"noreferrer\" ...> посилання на сторонні сайти."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:132
 msgid ""

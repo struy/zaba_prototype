@@ -28,6 +28,7 @@ pipeline {
                 python3 -m venv env
                 source env/bin/activate
                 pip install --no-cache-dir -r requirements.txt
+                chown -R nginx:nginx /home/ubuntu/Build/zaba_prototype/
                 export DJANGO_SETTINGS_MODULE=zaba.settings_prod
                 python manage.py collectstatic --noinput --settings=zaba.settings_prod
                 python manage.py makemigrations --settings=zaba.settings_prod

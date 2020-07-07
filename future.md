@@ -2,6 +2,9 @@
 django-autocomplete-light 
 https://django-autocomplete-light.readthedocs.io/en/master/tutorial.html
 
+AWS
+https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
+https://www.simplified.guide/aws/create-public-s3-bucket
 
 coreapi
 django-cors-headers
@@ -33,7 +36,6 @@ Sentry
 check USE_TZ
 
 https://www.braintreepayments.com/
-
 
 https://github.com/razisayyed/django-ads
 

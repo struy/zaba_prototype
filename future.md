@@ -39,3 +39,7 @@ https://www.braintreepayments.com/
 
 https://github.com/razisayyed/django-ads
 
+
+select 2 and US states
+https://codepen.io/angelof/pen/gObgzPp
+https://github.com/oxguy3/flags

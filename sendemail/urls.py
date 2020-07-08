@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import contactView, successView
+from .views import contact_view, success_view
 
 urlpatterns = [
-    path('contact/', contactView, name='contact'),
-    path('success/', successView, name='success'),
+    path('contact/', contact_view, name='contact'),
+    path('success/', success_view, name='success'),
 ]

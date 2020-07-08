@@ -1,7 +1,7 @@
 from .settings import *
 from .settings import env
 
-PROD_APPS = ['storages',]
+PROD_APPS = ['storages', ]  # "anymail",
 
 # Database
 DATABASES = {
@@ -40,27 +40,45 @@ AWS_LOCATION = 'static'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'zaba.storage_backends.MediaStorage'
 # AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#
+# Anymail
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
+# https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
+# https://anymail.readthedocs.io/en/stable/esps/amazon_ses/
+# EMAIL_BACKEND = "anymail.backends.amazon_ses.EmailBackend"
+# ANYMAIL = {
+#
+#     "AMAZON_SES_CLIENT_PARAMS": {
+#         # example: override normal Boto credentials specifically for Anymail
+#         "aws_access_key_id": os.getenv("AWS_ACCESS_KEY_FOR_ANYMAIL_SES"),
+#         "aws_secret_access_key": os.getenv("AWS_SECRET_KEY_FOR_ANYMAIL_SES"),
+#         "region_name": "us-east-2",
+#         # override other default options
+#         "config": {
+#             "connect_timeout": 30,
+#             "read_timeout": 30,
+#         }
+#     },
+# }
 
-# CORS configuration
-# <?xml version="1.0" encoding="UTF-8"?>
-# <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-# <CORSRule>
-#     <AllowedOrigin>*</AllowedOrigin>
-#     <AllowedMethod>GET</AllowedMethod>
-#     <AllowedMethod>POST</AllowedMethod>
-#     <AllowedMethod>PUT</AllowedMethod>
-#     <AllowedHeader>*</AllowedHeader>
-# </CORSRule>
-# </CORSConfiguration>
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+
 
 INSTALLED_APPS += PROD_APPS
+INSTALLED_APPS = ["collectfast"] + INSTALLED_APPS
 
-
+COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+COLLECTFAST_ENABLED = True

@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %} {% trans "Success registration" %} {% endblock %}
+{% block title %} {% trans "Success" %} {% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "success" %}</li>
+{% endblock %}
+
+
+{% block head %}
+<style>
+  #add_button {
+    display: none;
+  }
+</style>
+{% endblock %}
 
 {% block content %}
     <div class="container">

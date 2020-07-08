@@ -1,10 +1,11 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .forms import ContactForm
 
 
-def contactView(request):
+def contact_view(request):
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -12,14 +13,15 @@ def contactView(request):
         if form.is_valid():
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data['from_email']
-            message = form.cleaned_data['message']
+            message = form.cleaned_data['message'] + ' ' + from_email
             try:
-                send_mail(subject, message, from_email, ['admin@example.com'])
+                superusers_emails = [x.email for x in User.objects.filter(is_superuser=True).all()]
+                send_mail(subject, message, from_email, superusers_emails)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
     return render(request, "sendemail/email.html", {'form': form})
 
 
-def successView(request):
+def success_view(request):
     return render(request, "sendemail/success.html", {'success': True})

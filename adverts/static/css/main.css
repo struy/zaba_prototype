@@ -166,6 +166,10 @@ header button[form="form_pl"] {
   margin-top: 30px;
   width: 288px;
 }
+#main .btn.facebook:hover {
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+}
 #main .btn.twitter {
   background-color: #00acee;
   color: #fff;
@@ -173,6 +177,10 @@ header button[form="form_pl"] {
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
+}
+#main .btn.twitter:hover {
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
 }
 #main .btn.google {
   /*background-color: #0F9D58;
@@ -187,6 +195,10 @@ header button[form="form_pl"] {
   margin-bottom: 5px;
   width: 288px;
   text-align: left;
+}
+#main .btn.google:hover {
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
 }
 #main .form-group .btn.success {
   background-color: #94c045;
@@ -296,7 +308,7 @@ form.new-edit .gj-datepicker-bootstrap {
   min-height: 100%;
 }
 #CookielawBanner {
-  background-color: #feffdb;
+  background-color: #e7d9ac;
   margin-top: -160px;
   position: relative;
 }

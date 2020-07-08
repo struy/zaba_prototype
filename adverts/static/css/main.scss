@@ -209,6 +209,11 @@ header {
     margin-bottom: 5px;
     margin-top: 30px;
     width: 288px;
+
+    &:hover {
+      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   .btn.twitter {
@@ -218,6 +223,11 @@ header {
     margin-bottom: 5px;
     width: 288px;
     text-align: left;
+
+    &:hover {
+      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+      transition: all 0.3s ease-in-out;
+    }
   }
 
   .btn.google {
@@ -230,6 +240,11 @@ header {
     margin-bottom: 5px;
     width: 288px;
     text-align: left;
+
+    &:hover {
+      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+      transition: all 0.3s ease-in-out;
+    }
   }
   .form-group .btn.success {
     background-color: $base-color;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-12 19:35-0500\n"
+"POT-Creation-Date: 2020-07-08 16:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,135 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: account/templates/account/edit.html:3 account/templates/account/edit.html:16
+msgid "Edit your account"
+msgstr ""
+
+#: account/templates/account/edit.html:17
+msgid "You can edit your account using the following form:"
+msgstr ""
+
+#: account/templates/account/register.html:4
+#: account/templates/account/register.html:17
+#: account/templates/account/register_done.html:3
+#: account/templates/account/register_done.html:18
+msgid "Registration"
+msgstr ""
+
+#: account/templates/account/register.html:16
+#: account/templates/account/register_done.html:17
+#: env/lib/python3.7/site-packages/djcelery/templates/admin/djcelery/change_list.html:6
+#: env/lib/python3.7/site-packages/djcelery/templates/djcelery/confirm_rate_limit.html:6
+#: gifts/templates/gifts/detail.html:11 gifts/templates/gifts/index.html:12
+#: items/templates/items/detail.html:10 items/templates/items/index.html:13
+#: items/templates/items/item_confirm_delete.html:7
+#: items/templates/items/item_form.html:9 jobs/templates/jobs/detail.html:8
+#: jobs/templates/jobs/index.html:12 jobs/templates/jobs/job_form.html:9
+#: rents/templates/rents/detail.html:8 rents/templates/rents/index.html:11
+#: rents/templates/rents/rental_confirm_delete.html:8
+#: rents/templates/rents/rental_form.html:8
+#: sendemail/templates/sendemail/email.html:17
+#: sendemail/templates/sendemail/success.html:7 templates/base.html:72
+#: templates/home.html:4 templates/registration/logged_out.html:15
+#: templates/registration/login.html:18
+#: templates/registration/password_change_done.html:16
+#: templates/registration/password_change_form.html:16
+msgid "Home"
+msgstr ""
+
+#: account/templates/account/register.html:27
+msgid "Create an account"
+msgstr ""
+
+#: account/templates/account/register.html:30
+msgid "Please, sign up using the following form:"
+msgstr ""
+
+#: account/templates/account/register.html:36
+msgid "Create my account"
+msgstr ""
+
+#: account/templates/account/register_done.html:28
+msgid "Welcome"
+msgstr ""
+
+#: account/templates/account/register_done.html:30
+msgid "Your account has been successfully created. Now you can"
+msgstr ""
+
+#: account/templates/account/register_done.html:32
+msgid "log in"
+msgstr ""
+
+#: adverts/models.py:32
+msgid "owner"
+msgstr ""
+
+#: adverts/models.py:33
+msgid "Format mm/dd/yyyy"
+msgstr ""
+
+#: adverts/models.py:34 env/lib/python3.7/site-packages/djcelery/models.py:244
+#: env/lib/python3.7/site-packages/djcelery/models.py:351
+msgid "expires"
+msgstr ""
+
+#: adverts/models.py:89
+msgid "city"
+msgstr ""
+
+#: adverts/models.py:90
+msgid "address"
+msgstr ""
+
+#: adverts/models.py:91
+msgid "map"
+msgstr ""
+
 #: adverts/templates/adverts/index.html:15
 msgid "Adverts"
 msgstr ""
 
-#: adverts/templates/adverts/index.html:25 gifts/templates/gifts/index.html:23
-#: items/templates/items/index.html:25 jobs/templates/jobs/index.html:28
-#: rents/templates/rents/index.html:26
+#: adverts/templates/adverts/index.html:25
 msgid "Detail"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/_pytest/config/argparsing.py:443
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/botocore/docs/bcdoc/textwriter.py:469
+#, python-format
+msgid "[image: %s]"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/botocore/docs/bcdoc/textwriter.py:470
+msgid "[image]"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/captcha/fields.py:26
+#: env/lib/python3.7/site-packages/captcha/fields.py:27
+msgid "Error verifying reCAPTCHA, please try again."
+msgstr ""
+
+#: env/lib/python3.7/site-packages/crispy_forms/tests/test_form_helper.py:129
+#: env/lib/python3.7/site-packages/crispy_forms/tests/test_form_helper.py:139
+#: env/lib/python3.7/site-packages/django/forms/fields.py:53
+msgid "This field is required."
+msgstr ""
+
+#: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout.py:361
+msgid "i18n text"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout.py:361
+msgid "i18n legend"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout_objects.py:129
+#: env/lib/python3.7/site-packages/django/core/validators.py:31
+msgid "Enter a valid value."
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/contrib/messages/apps.py:7
@@ -54,10 +175,6 @@ msgstr ""
 
 #: env/lib/python3.7/site-packages/django/core/paginator.py:52
 msgid "That page contains no results"
-msgstr ""
-
-#: env/lib/python3.7/site-packages/django/core/validators.py:31
-msgid "Enter a valid value."
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:102
@@ -450,10 +567,6 @@ msgstr ""
 msgid ":?.!"
 msgstr ""
 
-#: env/lib/python3.7/site-packages/django/forms/fields.py:53
-msgid "This field is required."
-msgstr ""
-
 #: env/lib/python3.7/site-packages/django/forms/fields.py:245
 msgid "Enter a whole number."
 msgstr ""
@@ -506,6 +619,7 @@ msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:600
+#: env/lib/python3.7/site-packages/sorl/thumbnail/fields.py:43
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
@@ -696,30 +810,37 @@ msgid "noon"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
+#: env/lib/python3.7/site-packages/tornado/locale.py:299
 msgid "Monday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
+#: env/lib/python3.7/site-packages/tornado/locale.py:300
 msgid "Tuesday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
+#: env/lib/python3.7/site-packages/tornado/locale.py:301
 msgid "Wednesday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
+#: env/lib/python3.7/site-packages/tornado/locale.py:302
 msgid "Thursday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:6
+#: env/lib/python3.7/site-packages/tornado/locale.py:303
 msgid "Friday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:7
+#: env/lib/python3.7/site-packages/tornado/locale.py:304
 msgid "Saturday"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:7
+#: env/lib/python3.7/site-packages/tornado/locale.py:305
 msgid "Sunday"
 msgstr ""
 
@@ -752,50 +873,62 @@ msgid "Sun"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:285
 msgid "January"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:286
 msgid "February"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:287
 msgid "March"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:288
 msgid "April"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:289
 msgid "May"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:14
+#: env/lib/python3.7/site-packages/tornado/locale.py:290
 msgid "June"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
+#: env/lib/python3.7/site-packages/tornado/locale.py:291
 msgid "July"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
+#: env/lib/python3.7/site-packages/tornado/locale.py:292
 msgid "August"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
+#: env/lib/python3.7/site-packages/tornado/locale.py:293
 msgid "September"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
+#: env/lib/python3.7/site-packages/tornado/locale.py:294
 msgid "October"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:15
+#: env/lib/python3.7/site-packages/tornado/locale.py:295
 msgid "November"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/utils/dates.py:16
+#: env/lib/python3.7/site-packages/tornado/locale.py:296
 msgid "December"
 msgstr ""
 
@@ -1203,8 +1336,547 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
+#: env/lib/python3.7/site-packages/djcelery/admin.py:53
+#: env/lib/python3.7/site-packages/djcelery/admin.py:62
+#: env/lib/python3.7/site-packages/djcelery/models.py:34
+#: env/lib/python3.7/site-packages/djcelery/models.py:341
+msgid "state"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:71
+#: env/lib/python3.7/site-packages/djcelery/models.py:350
+msgid "ETA"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:78
+msgid "when"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:87
+#: env/lib/python3.7/site-packages/djcelery/models.py:211
+#: env/lib/python3.7/site-packages/djcelery/models.py:345
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:12
+msgid "name"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:121
+msgid "Task detail"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:122
+msgid "Tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:137
+#: env/lib/python3.7/site-packages/djcelery/models.py:343
+msgid "UUID"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:161
+msgid "Revoke selected tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:167
+msgid "Terminate selected tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:173
+msgid "Kill selected tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:180
+#: env/lib/python3.7/site-packages/djcelery/templates/djcelery/confirm_rate_limit.html:9
+msgid "Rate limit selected tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:193
+msgid "Rate limit selection"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:215
+msgid "Node detail"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:216
+msgid "Worker Nodes"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:223
+msgid "Shutdown selected worker nodes"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:227
+msgid "Enable event mode for selected nodes."
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:232
+msgid "Disable event mode for selected nodes."
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:285
+msgid "Task (registered)"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:287
+msgid "Task (custom)"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:300
+msgid "Need name of task"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:311
+#, python-format
+msgid "Unable to parse JSON: %s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:361
+msgid "Enable selected periodic tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/admin.py:366
+msgid "Disable selected periodic tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} year ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:10
+#, python-brace-format
+msgid "{num} years ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} month ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:14
+#, python-brace-format
+msgid "{num} months ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} week ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:18
+#, python-brace-format
+msgid "{num} weeks ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} day ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:22
+#, python-brace-format
+msgid "{num} days ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:56
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:71
+msgid "just now"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:62
+#, python-brace-format
+msgid "{minutes} minute ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:63
+#, python-brace-format
+msgid "{minutes} minutes ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:68
+#, python-brace-format
+msgid "{seconds} second ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:69
+#, python-brace-format
+msgid "{seconds} seconds ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hour ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:74
+#, python-brace-format
+msgid "{hours} hours ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/humanize.py:78
+#, python-brace-format
+msgid "yesterday at {time}"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:32
+msgid "task id"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:38
+msgid "done at"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:39
+#: env/lib/python3.7/site-packages/djcelery/models.py:353
+msgid "traceback"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:50
+msgid "task state"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:51
+msgid "task states"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:69
+msgid "group id"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:71
+msgid "created at"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:78
+msgid "saved group result"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:79
+msgid "saved group results"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:91
+msgid "Days"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:92
+msgid "Hours"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:93
+msgid "Minutes"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:94
+msgid "Seconds"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:95
+msgid "Microseconds"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:100
+msgid "every"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:102
+msgid "period"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:106
+#: env/lib/python3.7/site-packages/djcelery/models.py:217
+msgid "interval"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:107
+msgid "intervals"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:127
+#, python-brace-format
+msgid "every {0.period_singular}"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:128
+#, python-brace-format
+msgid "every {0.every:d} {0.period}"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:137
+msgid "minute"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:138
+msgid "hour"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:140
+msgid "day of week"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:143
+msgid "day of month"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:146
+msgid "month of year"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:150
+#: env/lib/python3.7/site-packages/djcelery/models.py:221
+msgid "crontab"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:151
+msgid "crontabs"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:212
+msgid "Useful description"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:214
+msgid "task name"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:223
+msgid "Use one of interval/crontab"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:226
+#: env/lib/python3.7/site-packages/djcelery/models.py:348
+msgid "Arguments"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:227
+msgid "JSON encoded positional arguments"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:230
+#: env/lib/python3.7/site-packages/djcelery/models.py:349
+msgid "Keyword arguments"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:231
+msgid "JSON encoded keyword arguments"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:234
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:20
+msgid "queue"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:235
+msgid "Queue defined in CELERY_QUEUES"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:238
+msgid "exchange"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:241
+msgid "routing key"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:247
+msgid "enabled"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:257
+msgid "description"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:263
+msgid "periodic task"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:264
+msgid "periodic tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:307
+msgid "hostname"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:308
+msgid "last heartbeat"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:315
+#: env/lib/python3.7/site-packages/djcelery/models.py:360
+msgid "worker"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:316
+msgid "workers"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:347
+msgid "event received at"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:352
+msgid "result"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:355
+msgid "execution time"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:356
+msgid "in seconds if task succeeded"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:358
+msgid "number of retries"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:369
+msgid "task"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/models.py:370
+msgid "tasks"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/djcelery/templates/djcelery/confirm_rate_limit.html:22
+msgid "Rate limit"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:21
+msgid "queues"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:28
+msgid "payload"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:37
+msgid "message"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/django/models.py:38
+msgid "messages"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1295
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1300
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1318
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
+
 #: env/lib/python3.7/site-packages/modeltranslation/widgets.py:25
 msgid "None"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tests/test_base.py:22
+msgid "COOKIE_INFO_HEADER"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tests/test_base.py:23
+msgid "COOKIE_INFO_PARA"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tests/test_base.py:24
+msgid "COOKIE_INFO_OK"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:368
+msgid "1 second ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:374
+msgid "1 minute ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:379
+msgid "1 hour ago"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:382
+#, python-format
+msgid "%(time)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:384
+msgid "yesterday"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:384
+#, python-format
+msgid "yesterday at %(time)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:386
+#, python-format
+msgid "%(weekday)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:386
+#, python-format
+msgid "%(weekday)s at %(time)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:389
+#: env/lib/python3.7/site-packages/tornado/locale.py:442
+#, python-format
+msgid "%(month_name)s %(day)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:391
+#, python-format
+msgid "%(month_name)s %(day)s at %(time)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:396
+#, python-format
+msgid "%(month_name)s %(day)s, %(year)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:398
+#, python-format
+msgid "%(month_name)s %(day)s, %(year)s at %(time)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:436
+#, python-format
+msgid "%(weekday)s, %(month_name)s %(day)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/locale.py:459
+#, python-format
+msgid "%(commas)s and %(last)s"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:68
+msgctxt "law"
+msgid "right"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:69
+msgctxt "good"
+msgid "right"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:71
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:74
+msgctxt "organization"
+msgid "club"
+msgstr ""
+
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:76
+#: env/lib/python3.7/site-packages/tornado/test/locale_test.py:77
+msgctxt "stick"
+msgid "club"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:55
@@ -1224,99 +1896,411 @@ msgstr ""
 msgid "Can't detect language for the text \"%s\" given."
 msgstr ""
 
-#: gifts/templates/gifts/index.html:14
+#: gifts/models.py:23
+msgid "gift type"
+msgstr ""
+
+#: gifts/templates/gifts/detail.html:12 gifts/templates/gifts/gift_list.html:3
+#: gifts/templates/gifts/index.html:9 gifts/templates/gifts/index.html:13
 msgid "Gifts"
 msgstr ""
 
-#: items/templates/items/detail.html:11 jobs/templates/jobs/detail.html:12
-#: rents/templates/rents/detail.html:11
+#: gifts/templates/gifts/detail.html:24
+msgid "Title:"
+msgstr ""
+
+#: gifts/templates/gifts/detail.html:31
 msgid "Description:"
 msgstr ""
 
-#: items/templates/items/detail.html:12 jobs/templates/jobs/detail.html:13
+#: gifts/templates/gifts/detail.html:33 items/templates/items/detail.html:32
+#: jobs/templates/jobs/detail.html:38 rents/templates/rents/detail.html:35
 msgid "City:"
 msgstr ""
 
-#: items/templates/items/detail.html:13
-msgid "Neighborhood:"
+#: gifts/templates/gifts/detail.html:34 items/templates/items/detail.html:33
+#: jobs/templates/jobs/detail.html:39 rents/templates/rents/detail.html:36
+msgid "Address:"
 msgstr ""
 
+#: gifts/templates/gifts/gift_confirm_delete.html:3
+msgid "Gift delete"
+msgstr ""
+
+#: gifts/templates/gifts/gift_form.html:3
+msgid "Gift"
+msgstr ""
+
+#: gifts/templates/gifts/index.html:58
+msgid "Free"
+msgstr ""
+
+#: items/models.py:9
+msgid "Used"
+msgstr ""
+
+#: items/models.py:10
+msgid "Acceptable"
+msgstr ""
+
+#: items/models.py:11
+msgid "Very Good"
+msgstr ""
+
+#: items/models.py:12
+msgid "Like New"
+msgstr ""
+
+#: items/models.py:13
+msgid "New"
+msgstr ""
+
+#: items/models.py:21
+msgid "price"
+msgstr ""
+
+#: items/templates/items/detail.html:4 items/templates/items/item_form.html:5
+msgid "Item"
+msgstr ""
+
+#: items/templates/items/detail.html:11 items/templates/items/index.html:10
 #: items/templates/items/index.html:14
+#: items/templates/items/item_confirm_delete.html:8
+#: items/templates/items/item_form.html:10
+#: items/templates/items/item_list.html:4
 msgid "Items"
+msgstr ""
+
+#: items/templates/items/detail.html:35 jobs/templates/jobs/detail.html:41
+#: rents/templates/rents/detail.html:38
+msgid "Map:"
+msgstr ""
+
+#: items/templates/items/detail.html:39 rents/templates/rents/detail.html:33
+#: rents/templates/rents/detail.html:42
+msgid "Price:"
+msgstr ""
+
+#: items/templates/items/item_confirm_delete.html:4
+msgid "Item delete"
+msgstr ""
+
+#: jobs/models.py:22
+msgid "job type"
+msgstr ""
+
+#: jobs/models.py:23
+msgid "full-time"
+msgstr ""
+
+#: jobs/models.py:24
+msgid "part-time"
+msgstr ""
+
+#: jobs/models.py:25
+msgid "casual"
+msgstr ""
+
+#: jobs/models.py:31
+msgid "language"
+msgstr ""
+
+#: jobs/models.py:32
+msgid "What language does the employer speak?"
 msgstr ""
 
 #: jobs/models.py:33
 msgid "salary"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:14
-msgid "Languages spoken by the employer:"
+#: jobs/templates/jobs/detail.html:5 jobs/templates/jobs/job_form.html:6
+msgid "Job"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:19
-msgid "Job type:"
-msgstr ""
-
-#: jobs/templates/jobs/index.html:16 templates/home.html:70
+#: jobs/templates/jobs/detail.html:9 jobs/templates/jobs/index.html:9
+#: jobs/templates/jobs/index.html:13 jobs/templates/jobs/job_form.html:10
+#: jobs/templates/jobs/job_list.html:5 templates/home.html:83
 msgid "Jobs"
 msgstr ""
 
-#: rents/templates/rents/detail.html:10
-msgid "Bathrooms:"
+#: jobs/templates/jobs/detail.html:26
+msgid "Job type:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:12
-msgid "Bedrooms"
+#: jobs/templates/jobs/detail.html:27
+msgid "Duration:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:13
-msgid "Price:"
+#: jobs/templates/jobs/detail.html:28
+msgid "Salary:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:14
-msgid "Pet policy:"
+#: jobs/templates/jobs/detail.html:32
+msgid "Languages spoken by the employer:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:15
-msgid "Location:"
+#: jobs/templates/jobs/job_confirm_delete.html:3
+msgid "Job delete"
 msgstr ""
 
-#: rents/templates/rents/detail.html:16
-msgid "Furnished:"
+#: rents/models.py:20
+msgid "rental type"
 msgstr ""
 
-#: rents/templates/rents/detail.html:17
-msgid "Prefer sex"
+#: rents/templates/rents/detail.html:5 rents/templates/rents/rental_form.html:5
+msgid "Rent"
 msgstr ""
 
-#: rents/templates/rents/index.html:16
+#: rents/templates/rents/detail.html:9 rents/templates/rents/index.html:12
+#: rents/templates/rents/rental_confirm_delete.html:9
+#: rents/templates/rents/rental_form.html:9
+#: rents/templates/rents/rental_list.html:4
 msgid "Rents"
 msgstr ""
 
-#: templates/base.html:79
-msgid "Home"
+#: rents/templates/rents/detail.html:31
+msgid "Bathrooms:"
 msgstr ""
 
-#: templates/base.html:83
-msgid "Contacts"
+#: rents/templates/rents/detail.html:32
+msgid "Bedrooms"
 msgstr ""
 
-#: templates/base.html:87
+#: rents/templates/rents/detail.html:34
+msgid "Pet policy:"
+msgstr ""
+
+#: rents/templates/rents/detail.html:45
+msgid "Furnished:"
+msgstr ""
+
+#: rents/templates/rents/detail.html:46
+msgid "Prefer sex"
+msgstr ""
+
+#: rents/templates/rents/rental_confirm_delete.html:5
+msgid "Rent delete"
+msgstr ""
+
+#: rents/templates/rents/rental_table_list.html:3
+msgid "Rents table"
+msgstr ""
+
+#: sendemail/forms.py:6
+msgid "From  email"
+msgstr ""
+
+#: sendemail/forms.py:7
+msgid "Subject"
+msgstr ""
+
+#: sendemail/forms.py:8
+msgid "Message"
+msgstr ""
+
+#: sendemail/templates/sendemail/email.html:6
+#: sendemail/templates/sendemail/email.html:18
+#: sendemail/templates/sendemail/email.html:25 templates/base.html:77
+msgid "Contact us"
+msgstr ""
+
+#: sendemail/templates/sendemail/email.html:30
+msgid "Send"
+msgstr ""
+
+#: sendemail/templates/sendemail/success.html:4
+msgid "Success"
+msgstr ""
+
+#: sendemail/templates/sendemail/success.html:8
+msgid "success"
+msgstr ""
+
+#: sendemail/templates/sendemail/success.html:24
+msgid "Success! Thank you for your message."
+msgstr ""
+
+#: templates/base.html:80
 msgid "Map"
 msgstr ""
 
-#: templates/home.html:53
+#: templates/base.html:83
+msgid "Admin"
+msgstr ""
+
+#: templates/base.html:97 templates/base.html:99
+msgid "Hello"
+msgstr ""
+
+#: templates/base.html:103
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:108
+msgid "Sign up"
+msgstr ""
+
+#: templates/base.html:111 templates/registration/login.html:5
+#: templates/registration/login.html:19 templates/registration/login.html:30
+msgid "Log in"
+msgstr ""
+
+#: templates/base.html:143
+msgid "Notice! Ads are displayed only in the selected language."
+msgstr ""
+
+#: templates/home.html:68
 msgid "Frog greeting!"
 msgstr ""
 
-#: templates/home.html:64
+#: templates/home.html:77
 msgid "Sell"
 msgstr ""
 
-#: templates/home.html:76
+#: templates/home.html:88
 msgid "Housing"
 msgstr ""
 
-#: templates/home.html:82
+#: templates/home.html:93
 msgid "Cats"
+msgstr ""
+
+#: templates/registration/logged_out.html:3
+#: templates/registration/logged_out.html:16
+msgid "Logget out"
+msgstr ""
+
+#: templates/registration/logged_out.html:25
+msgid "Logged out"
+msgstr ""
+
+#: templates/registration/logged_out.html:28
+msgid "You have been successfully logged out. You can"
+msgstr ""
+
+#: templates/registration/logged_out.html:29
+msgid "log-in again"
+msgstr ""
+
+#: templates/registration/login.html:34
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: templates/registration/login.html:38
+msgid "Please, use the following form to log-in."
+msgstr ""
+
+#: templates/registration/login.html:40
+msgid "If you don't have an account"
+msgstr ""
+
+#: templates/registration/login.html:41
+msgid "register here"
+msgstr ""
+
+#: templates/registration/login.html:50
+msgid "Log In"
+msgstr ""
+
+#: templates/registration/login.html:54
+#: templates/registration/password_reset_form.html:19
+msgid "Forgotten your password"
+msgstr ""
+
+#: templates/registration/login.html:59
+msgid "Sign in with Facebook"
+msgstr ""
+
+#: templates/registration/login.html:63
+msgid "Login with Twitter"
+msgstr ""
+
+#: templates/registration/login.html:67
+msgid "Login with Google"
+msgstr ""
+
+#: templates/registration/password_change_done.html:17
+#: templates/registration/password_change_form.html:17
+msgid "Password"
+msgstr ""
+
+#: templates/registration/password_change_done.html:27
+msgid "Password changed"
+msgstr ""
+
+#: templates/registration/password_change_done.html:28
+msgid "Your password has been successfully changed"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:21
+msgid "Reset your password"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:14
+msgid "Please enter your new password twice:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Change my password"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:22
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:22
+msgid "We've emailed you instructions for setting your password"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:23
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:4
+msgid "Someone asked for password reset for email "
+msgstr ""
+
+#: templates/registration/password_reset_email.html:5
+msgid "Follow the link below:"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:7
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:20
+msgid "Enter your e-mail address to obtain a new password"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:23
+msgid "Send e-mail"
+msgstr ""
+
+#: templates/snippets/filter.html:26 templates/snippets/search_bar.html:17
+msgid "Search"
+msgstr ""
+
+#: templates/snippets/filter.html:31
+msgid "Filter Search"
+msgstr ""
+
+#: zaba/settings.py:168
+msgid "Ukrainian"
+msgstr ""
+
+#: zaba/settings.py:169
+msgid "Russian"
+msgstr ""
+
+#: zaba/settings.py:170
+msgid "Polish"
+msgstr ""
+
+#: zaba/settings.py:171
+msgid "English"
 msgstr ""

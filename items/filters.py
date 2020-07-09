@@ -1,4 +1,5 @@
 import django_filters
+from django.utils.translation import gettext_lazy as _
 
 from .models import Item
 

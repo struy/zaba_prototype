@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-08 16:35-0500\n"
-"PO-Revision-Date: 2020-07-08 21:50+0000\n"
+"PO-Revision-Date: 2020-07-09 02:53+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: adverts/models.py:89
 msgid "city"
-msgstr "населений пунк"
+msgstr "населений пункт"
 
 #: adverts/models.py:90
 #| msgid "IP address"
@@ -2065,7 +2065,7 @@ msgstr ""
 
 #: items/models.py:9
 msgid "Used"
-msgstr ""
+msgstr "Вживане"
 
 #: items/models.py:10
 msgid "Acceptable"

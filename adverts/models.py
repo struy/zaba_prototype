@@ -4,7 +4,7 @@ import redis
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
-from django.utils.translation import to_locale, get_language
+from django.utils.translation import get_language
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.gis.db.models import PointField
@@ -14,8 +14,9 @@ from django.utils.translation import gettext_lazy as _
 
 
 def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
-    return f'media/{instance.__class__.__name__}/{instance.owner.id}_{filename}'
+    """ file will be uploaded to MEDIA_ROOT /<class_name>/<year>/<month>/<day>/user_<id>_<filename>"""
+    now = datetime.datetime.now()
+    return f'{instance.__class__.__name__}s/{now.year}/{now.month}/{now.day}/{instance.owner.id}_{filename}'
 
 
 class AdvertsManager(models.Manager):
@@ -84,11 +85,14 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     def __str__(self):
         return self.title
 
+    def __unicode__(self):
+        return self.title
+
 
 class Location(models.Model):
     city = models.CharField(max_length=50, default='Chicago', verbose_name=_('city'))
     address = models.CharField(max_length=100, blank=True, verbose_name=_('address'))
-    point = PointField(blank=True, verbose_name=_('map'), null=True)
+    point = PointField(geography=True, verbose_name=_('map'), null=True, blank=True)
 
     # zipcode =
 

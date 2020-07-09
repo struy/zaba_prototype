@@ -46,6 +46,10 @@ AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = "us-east-2"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 
+THUMBNAIL_FORMAT = 'PNG'
+THUMBNAIL_FORCE_OVERWRITE = True
+THUMBNAIL_DEBUG = DEBUG
+THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
 #
 # Anymail
 # ------------------------------------------------------------------------------

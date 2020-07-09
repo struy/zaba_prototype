@@ -1,8 +1,9 @@
 from django.db import models
 from django.urls import reverse
 
-from adverts.models import Advert, Location
+from adverts.models import Advert, Location, user_directory_path
 from django.utils.translation import gettext_lazy as _
+from sorl.thumbnail import ImageField
 
 
 class Item(Advert, Location):
@@ -17,7 +18,7 @@ class Item(Advert, Location):
         choices=CONDITIONS,
         default='0'
     )
-    image = models.ImageField(upload_to='items', null=True, blank=True)
+    image = ImageField(upload_to=user_directory_path, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('price'))
 
     def get_absolute_url(self):

@@ -181,9 +181,11 @@ header {
       }
     }
 
-    i.fas,
     a {
       font-size: 3em;
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     i.fas.fa-shopping-cart {
@@ -249,20 +251,20 @@ header {
   .form-group .btn.success {
     background-color: $base-color;
   }
-}
+  .icon-box {
+    display: block;
+    padding: 15px 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 10px 40px 10px;
+    background: #fff;
+    box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
 
-.icon-box {
-  padding: 15px 30px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin: 0 10px 40px 10px;
-  background: #fff;
-  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-
-  a:hover {
-    text-decoration: none;
+    a:hover {
+      text-decoration: none;
+    }
   }
 }
 

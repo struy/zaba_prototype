@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 16:35-0500\n"
+"POT-Creation-Date: 2020-07-09 13:48-0500\n"
 "PO-Revision-Date: 2020-04-07 02:49+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,30 +83,30 @@ msgstr ""
 msgid "log in"
 msgstr ""
 
-#: adverts/models.py:32
+#: adverts/models.py:33
 msgid "owner"
 msgstr ""
 
-#: adverts/models.py:33
+#: adverts/models.py:34
 msgid "Format mm/dd/yyyy"
 msgstr ""
 
-#: adverts/models.py:34 env/lib/python3.7/site-packages/djcelery/models.py:244
+#: adverts/models.py:35 env/lib/python3.7/site-packages/djcelery/models.py:244
 #: env/lib/python3.7/site-packages/djcelery/models.py:351
 msgid "expires"
 msgstr ""
 
-#: adverts/models.py:89
+#: adverts/models.py:93
 msgid "city"
 msgstr ""
 
-#: adverts/models.py:90
+#: adverts/models.py:94
 #, fuzzy
 #| msgid "IP address"
 msgid "address"
 msgstr "IP адрес"
 
-#: adverts/models.py:91
+#: adverts/models.py:95
 #, fuzzy
 #| msgid "mar"
 msgid "map"
@@ -2062,27 +2062,35 @@ msgstr "Подарки"
 msgid "Free"
 msgstr ""
 
-#: items/models.py:9
-msgid "Used"
+#: items/filters.py:8
+msgid "Price is greater than"
+msgstr ""
+
+#: items/filters.py:9
+msgid "Price is less than"
 msgstr ""
 
 #: items/models.py:10
-msgid "Acceptable"
+msgid "Used"
 msgstr ""
 
 #: items/models.py:11
-msgid "Very Good"
+msgid "Acceptable"
 msgstr ""
 
 #: items/models.py:12
-msgid "Like New"
+msgid "Very Good"
 msgstr ""
 
 #: items/models.py:13
+msgid "Like New"
+msgstr ""
+
+#: items/models.py:14
 msgid "New"
 msgstr ""
 
-#: items/models.py:21
+#: items/models.py:22
 #, fuzzy
 #| msgid "Price:"
 msgid "price"

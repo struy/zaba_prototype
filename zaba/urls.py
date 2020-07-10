@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('djga/', include('google_analytics.urls')),   # This line for Django versions >=2.0
+    path('select2/', include("django_select2.urls")),
 ]
 
 urlpatterns += i18n_patterns(

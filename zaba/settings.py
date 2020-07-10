@@ -55,6 +55,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'debug_toolbar',
                     'social_django',
                     'google_analytics',
+                    'django_select2',
                     'django_cleanup.apps.CleanupConfig',
                     ]
 
@@ -191,8 +192,17 @@ CACHES = {
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         }
+    },
+    "select2": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://localhost:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
 }
+
+SELECT2_CACHE_BACKEND = "select2"
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"

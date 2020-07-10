@@ -4,7 +4,14 @@ from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV3
 from zaba.settings import RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
 from django.utils.translation import get_language
+from django_select2 import forms as s2forms
 from .models import Item
+
+
+class CityWidget(s2forms.ModelSelect2Widget):
+    search_fields = [
+        "city__icontains",
+    ]
 
 
 class ItemForm(forms.ModelForm):
@@ -27,7 +34,8 @@ class ItemForm(forms.ModelForm):
                 'default_lat': 41.9,
                 'map_width': 800,
                 'map_height': 500,
-                'default_zoom': 10
+                'default_zoom': 10,
+                'city': CityWidget
             }),
             # 'captcha': ReCaptchaV3(
             #     api_params={'hl': get_language()[:2], 'badge': 'inline', }

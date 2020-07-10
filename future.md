@@ -42,8 +42,10 @@ https://github.com/razisayyed/django-ads
 
 select 2 and US states
 https://codepen.io/angelof/pen/gObgzPp
-https://github.com/oxguy3/flags
+https://github.com/lipis/flag-icon-css
+https://github.com/applegrew/django-select2/issues/41
 
-
+filter 
+https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html
 distance
 https://stackoverflow.com/questions/19703975/django-sort-by-distance

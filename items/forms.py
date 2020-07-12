@@ -1,10 +1,7 @@
 from django import forms
 from django.contrib.gis import forms as gis_forms
-from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV3
-from zaba.settings import RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
-from django.utils.translation import get_language
 from django_select2 import forms as s2forms
+# from cities_light.models import City
 from .models import Item
 
 
@@ -19,11 +16,6 @@ class ItemForm(forms.ModelForm):
         localize=True,
         widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
     )
-    # captcha = ReCaptchaField(
-    #     public_key=RECAPTCHA_PUBLIC_KEY,
-    #     private_key=RECAPTCHA_PRIVATE_KEY,
-    #     widget=ReCaptchaV3,
-    # )
 
     class Meta:
         model = Item
@@ -35,9 +27,6 @@ class ItemForm(forms.ModelForm):
                 'map_width': 800,
                 'map_height': 500,
                 'default_zoom': 10,
-                'city': CityWidget
             }),
-            # 'captcha': ReCaptchaV3(
-            #     api_params={'hl': get_language()[:2], 'badge': 'inline', }
-            # ),
+            'city': CityWidget
         }

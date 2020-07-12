@@ -8,13 +8,14 @@ $google-color: #4285f4;
 @font-face {
   font-family: "HoppyRibbitday";
   src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-    local("HoppyRibbitday");
+  local("HoppyRibbitday");
 }
 
 * {
   margin: 0;
   padding: 0;
 }
+
 html,
 body {
   height: 100%;
@@ -24,6 +25,7 @@ body {
   background-color: #fff !important;
   padding-top: 84px;
 }
+
 .divider {
   display: inline-block;
   width: 100%;
@@ -46,6 +48,7 @@ body {
     font-size: 24px;
     line-height: 1.33;
   }
+
   &:hover {
     color: #fff;
     background-color: #dc3545;
@@ -148,8 +151,10 @@ header {
     h2 {
       color: white;
     }
+
     a {
       font-size: 3em;
+
       &:hover {
         text-decoration: none;
       }
@@ -208,6 +213,7 @@ header {
   i.fas.fa-paw {
     color: #dc3545;
   }
+
   .btn.facebook {
     background-color: $facebook-color;
     color: #ffffff;
@@ -252,9 +258,11 @@ header {
       transition: all 0.3s ease-in-out;
     }
   }
+
   .form-group .btn.success {
     background-color: $base-color;
   }
+
   .icon-box {
     display: block;
     padding: 15px 30px;
@@ -328,6 +336,7 @@ footer {
       color: white;
     }
   }
+
   .bg-dark {
     background: #1c1f18;
   }
@@ -382,14 +391,28 @@ form.new-edit {
     width: 205px;
   }
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
+
 #CookielawBanner {
   background-color: #e7d9ac;
   margin-top: -160px;
   position: relative;
   z-index: 1000;
+
+  a {
+    text-decoration: underline;
+  }
+
+  #CookielawCross {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+
+  }
 }
+

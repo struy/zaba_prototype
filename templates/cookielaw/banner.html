@@ -1,32 +1,19 @@
 {% load i18n %}
-<style>
-    #CookielawBanner a {
-        text-decoration: underline;
-    }
-
-    #CookielawBanner #CookielawCross {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    width: 15px;
-    height: 15px;
-}
-</style>
-
 
 
 <div id="CookielawBanner">
     <div class="container">
 
-<p>
-    {% trans "By using our site, you acknowledge that you have read and understand our" %}
-    <a class="text-dark" target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
-    <a class="text-dark" target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
-    {%  trans " and our " %} <a class="text-dark" target="_blank" href="">{% trans "Terms of Service" %}</a>. &nbsp;
-    <a class="text-dark" href="javascript:Cookielaw.createCookielawCookie();">
-        <span id="CookielawCross"></span>
-    </a>
-</p>
+        <p>
+            {% trans "By using our site, you acknowledge that you have read and understand our" %}
+            <a class="text-dark" target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
+            <a class="text-dark" target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
+            {% trans " and our " %} <a class="text-dark" target="_blank" href="term">{% trans "Terms of Service" %}</a>.
+            &nbsp;
+            <a class="text-dark" href="javascript:Cookielaw.createCookielawCookie();">
+                <span id="CookielawCross"></span>
+            </a>
+        </p>
 
     </div>
 </div>

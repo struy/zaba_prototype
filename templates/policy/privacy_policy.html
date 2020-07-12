@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "Privet Policy" %} {% endblock %}
+
+{% block head %}
+    <style>
+        #add_button {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Privet Policy" %}</li>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Privet policy
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}

@@ -4,6 +4,7 @@ from adverts import views
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -14,6 +15,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
+    path('', include('sendemail.urls')),
     path('search', views.SearchView.as_view(), name="global_search"),
     path('jobs/', include('jobs.urls')),
     path('rents/', include('rents.urls')),
@@ -21,7 +23,9 @@ urlpatterns += i18n_patterns(
     path('gifts/', include('gifts.urls')),
     path('accounts/', include('account.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('', include('sendemail.urls')),
+    path('cookie-policy', TemplateView.as_view(template_name='policy/cookie_policy.html'), name='cookie'),
+    path('privacy-policy', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
+    path('term-of-services', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
 )
 
 if settings.DEBUG:

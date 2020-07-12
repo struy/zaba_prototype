@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans "Term of Services" %} {% endblock %}
+
+{% block head %}
+    <style>
+        #add_button {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Term of Services" %}</li>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Term of Services
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block script %}
+{% endblock %}

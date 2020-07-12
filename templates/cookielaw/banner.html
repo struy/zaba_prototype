@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<div id="CookielawBanner">
+    <div class="container">
+
+<p>
+    {% trans "By using our site, you acknowledge that you have read and understand our" %}
+    <a class="text-dark" target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
+    <a class="text-dark" target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
+    {%  trans " and our " %} <a class="text-dark" target="_blank" href="">{% trans "Terms of Service" %}</a>.
+    <a class="text-dark" href="javascript:Cookielaw.createCookielawCookie();">
+        <span id="CookielawCross"></span>
+    </a>
+</p>
+
+    </div>
+</div>
+
+
+

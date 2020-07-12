@@ -70,8 +70,7 @@ header {
     padding-top: 15px;
   }
 
-  .bg-dark,
-  footer .bg-dark {
+  .bg-dark {
     background: #1c1f18;
   }
 
@@ -146,6 +145,16 @@ header {
   }
 
   .home {
+    h2 {
+      color: white;
+    }
+    a {
+      font-size: 3em;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     .count-box span {
       font-size: 28px;
       line-height: 24px;
@@ -181,17 +190,6 @@ header {
       padding-top: 10px;
       width: 100%;
       margin-bottom: 20px;
-
-      h2 {
-        color: white;
-      }
-    }
-
-    a {
-      font-size: 3em;
-      &:hover {
-        text-decoration: none;
-      }
     }
 
     i.fas.fa-shopping-cart {
@@ -329,6 +327,9 @@ footer {
       display: inline;
       color: white;
     }
+  }
+  .bg-dark {
+    background: #1c1f18;
   }
 }
 

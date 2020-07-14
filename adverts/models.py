@@ -1,6 +1,7 @@
 import datetime
+import pytz
 import redis
-
+from collections import namedtuple
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
@@ -8,6 +9,7 @@ from django.utils.translation import get_language
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.gis.db.models import PointField
+from django.core.exceptions import ValidationError
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 from django.utils.translation import gettext_lazy as _
@@ -17,6 +19,21 @@ def user_directory_path(instance, filename):
     """ file will be uploaded to MEDIA_ROOT /<class_name>/<year>/<month>/<day>/user_<id>_<filename>"""
     now = datetime.datetime.now()
     return f'{instance.__class__.__name__}s/{now.year}/{now.month}/{now.day}/{instance.owner.id}_{filename}'
+
+
+def validate_expires(value):
+    less_date = value - datetime.timedelta(days=1)
+    more_date = value + datetime.timedelta(weeks=4)
+    if value < less_date:
+        raise ValidationError(
+            _('%(value)s can\'t be past'),
+            params={'value': value},
+        )
+    if value > more_date:
+        raise ValidationError(
+            _('%(value)s can\'t be more than month'),
+            params={'value': value},
+        )
 
 
 class AdvertsManager(models.Manager):
@@ -32,7 +49,7 @@ class AdvertsManager(models.Manager):
 class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('owner'))
     expires = models.DateField(blank=True, null=True, help_text=_('Format mm/dd/yyyy'),
-                               verbose_name=_('expires'))
+                               verbose_name=_('expires'), validators=[validate_expires])
 
     LOCALES = (('en', 'en_US'),
                ('uk', 'uk_UA'),
@@ -45,6 +62,22 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         choices=LOCALES,
         default='en'
     )
+
+    @property
+    def expires_type(self):
+        """ return namedtuple(css, text) or None"""
+        utc = pytz.UTC
+        now = utc.localize(datetime.datetime.today())
+        NT = namedtuple('NT', 'css text')
+        if (self.modified + datetime.timedelta(weeks=2)) > now:
+            return NT("px-1 text-white bg-success", _("new"))
+        if (self.modified + datetime.timedelta(weeks=4)) > now:
+            return None
+        if (self.modified + datetime.timedelta(weeks=12)) > now:
+            return NT("px-1 text-white bg-secondary", _("old"))
+        if (self.modified + datetime.timedelta(weeks=24)) > now:
+            return NT("px-1 text-white bg-secondary", _("very old"))
+        return NT("px-1 text-white bg-dark", _("dead"))
 
     objects = AdvertsManager()
 

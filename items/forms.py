@@ -6,6 +6,7 @@ from .models import Item
 
 
 class CityWidget(s2forms.ModelSelect2Widget):
+    model = Item
     search_fields = [
         "city__icontains",
     ]
@@ -28,5 +29,5 @@ class ItemForm(forms.ModelForm):
                 'map_height': 500,
                 'default_zoom': 10,
             }),
-            'city': CityWidget
+            # 'city': CityWidget
         }

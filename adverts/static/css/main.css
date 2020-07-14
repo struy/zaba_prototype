@@ -25,6 +25,22 @@ body {
   opacity: 0.85;
 }
 
+.form_uk {
+  background: url("/static/img/flags/Ukraine.png");
+}
+
+.form_ru {
+  background: url("/static/img/flags/Russia.png");
+}
+
+.form_en {
+  background: url("/static/img/flags/United-States.png");
+}
+
+.form_pl {
+  background: url("/static/img/flags/Poland.png");
+}
+
 #add_button {
   position: fixed;
   bottom: 30px;
@@ -116,6 +132,14 @@ header button[form=form_pl] {
 }
 #main .advert .advert .edit_buttons {
   display: inline-block;
+}
+#main .advert .form_en, #main .advert .form_ua, #main .advert .form_ru, #main .advert .form_pl {
+  padding: 0;
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  display: block;
 }
 #main .home h2 {
   color: white;

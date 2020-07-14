@@ -8,7 +8,7 @@ $google-color: #4285f4;
 @font-face {
   font-family: "HoppyRibbitday";
   src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-  local("HoppyRibbitday");
+    local("HoppyRibbitday");
 }
 
 * {
@@ -33,7 +33,6 @@ body {
   background-color: gray;
   opacity: 0.85;
 }
-
 
 .form_uk {
   background: url("/static/img/flags/Ukraine.png");
@@ -70,6 +69,7 @@ body {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
+    border-radius: 35px;
   }
 }
 
@@ -117,7 +117,6 @@ header {
   button[form="form_pl"] {
     background: url("/static/img/flags/Poland.png");
   }
-
 }
 
 #main {
@@ -164,7 +163,10 @@ header {
       display: inline-block;
     }
 
-    .form_en, .form_ua, .form_ru, .form_pl {
+    .form_en,
+    .form_ua,
+    .form_ru,
+    .form_pl {
       padding: 0;
       border: none;
       width: 24px;
@@ -172,8 +174,6 @@ header {
       margin-left: 5px;
       display: block;
     }
-
-
   }
 
   .home {
@@ -241,6 +241,9 @@ header {
 
   i.fas.fa-paw {
     color: #dc3545;
+  }
+  img_ad {
+    width: 100%;
   }
 
   .btn.facebook {
@@ -441,7 +444,5 @@ form.new-edit {
     cursor: pointer;
     display: inline-block;
     position: relative;
-
   }
 }
-

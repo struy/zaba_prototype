@@ -49,3 +49,7 @@ filter
 https://simpleisbetterthancomplex.com/tutorial/2016/11/28/how-to-filter-querysets-dynamically.html
 distance
 https://stackoverflow.com/questions/19703975/django-sort-by-distance
+
+
+some idea
+https://obyava.ua/

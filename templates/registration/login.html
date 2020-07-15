@@ -29,7 +29,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 order-2 order-md-1">
                 <h1>
                     {% trans "Log in" %}
                 </h1>
@@ -58,7 +58,7 @@
                 <p><a href="{% url "password_reset" %}">{% trans "Forgotten your password" %}?</a></p>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 order-1 order-md-2">
                 <a href="{% url "social:begin" "facebook" %}" class="btn btn-sm facebook">
                     <i class="fab fa-facebook-square">&nbsp;</i> {% trans "Sign in with Facebook" %}
                 </a>

@@ -65,6 +65,9 @@
     overflow: hidden;
     white-space: nowrap;
   }
+  #main #google_ads br {
+    display: none;
+  }
 }
 
 /*Medium devices (tablets, less than 992px)*/

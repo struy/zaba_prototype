@@ -53,3 +53,8 @@ https://stackoverflow.com/questions/19703975/django-sort-by-distance
 
 some idea
 https://obyava.ua/
+
+BlockAdBlock
+
+maintenance
+https://blog.devcloud.hosting/configuring-nginx-for-quickly-switching-to-maintenance-mode-e4136cf497f3

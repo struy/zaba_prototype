@@ -3,7 +3,6 @@
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
-
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -38,6 +37,33 @@
 
   #btn_sm_md_ext {
     margin-bottom: 15px;
+  }
+  #main .attention h3 {
+    font-size: 1.25rem;
+  }
+
+  #main .btn.facebook {
+    width: 96px;
+    float: left;
+    margin-top: 0;
+    margin-right: 5px;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #main .btn.twitter {
+    width: 103px;
+    float: left;
+    margin-right: 5px;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #main .btn.google {
+    width: 103px;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 

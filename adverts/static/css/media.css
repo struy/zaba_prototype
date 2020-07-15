@@ -65,8 +65,9 @@
     overflow: hidden;
     white-space: nowrap;
   }
-  #main #google_ads br {
-    display: none;
+
+  #main .img_ad {
+    width: 100%;
   }
 }
 

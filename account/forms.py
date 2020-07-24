@@ -7,7 +7,7 @@ from captcha.widgets import ReCaptchaV3
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
+    username = forms.CharField(max_length=30)
     password = forms.CharField(widget=forms.PasswordInput)
 
 

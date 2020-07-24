@@ -18,7 +18,7 @@ class UserEditForm(forms.ModelForm):
 
 
 class UserRegistrationForm(forms.ModelForm):
-
+    username = forms.CharField(max_length=30)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
@@ -26,6 +26,7 @@ class UserRegistrationForm(forms.ModelForm):
         public_key=RECAPTCHA_PUBLIC_KEY,
         private_key=RECAPTCHA_PRIVATE_KEY,
         widget=ReCaptchaV3,
+        label='',
     )
 
     class Meta:

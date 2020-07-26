@@ -1,8 +1,8 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import django_tables2 as tables
 from adverts.models import Advert, Location
-from django.urls import reverse
 
 
 class RentalType(models.Model):
@@ -13,31 +13,32 @@ class RentalType(models.Model):
 
 
 class Rental(Advert, Location):
-    # bedrooms : studio, 1,2 3+
-    # Rooms, Apartment
     # Move-in Date
+    # Type : apartments, houses, condos, townhouses
+    # bedrooms : studio, 1,2,3,4+
+    # bathrooms 1,2,3+
 
     rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('rental type'))
     image = models.ImageField(upload_to='rents', default='none/no-img.jpg')
     bathrooms = models.PositiveSmallIntegerField(default=1)
-    bedrooms = models.PositiveSmallIntegerField(default=2)
+    bedrooms = models.PositiveSmallIntegerField(default=1)
     price = models.PositiveIntegerField()
-    POLICES = (('0', 'None'),
-               ('1', 'Dogs'),
-               ('2', 'Cats'),
-               ('3', 'Dogs adn Cats'),
-               ('4', 'Any'),
+    POLICES = ((0, _('None')),
+               (1, _('Dogs')),
+               (2, _('Cats')),
+               (3, _('Dogs adn Cats')),
+               (4, _('Any')),
                )
-    pet_policy = models.CharField(
-        max_length=1,
+    pet_policy = models.PositiveSmallIntegerField(
         choices=POLICES,
-        default='1'
+        default=1
     )
     furnished = models.BooleanField()
-    prefer_sex_list = (('a', 'any'),
-                       ('w', 'woman'),
-                       ('m', 'man'),
+    prefer_sex_list = (('a', _('any')),
+                       ('w', _('woman')),
+                       ('m', _('man')),
                        )
+
     prefer_sex = models.CharField(
         max_length=1,
         choices=prefer_sex_list,

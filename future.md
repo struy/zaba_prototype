@@ -61,3 +61,10 @@ https://blog.devcloud.hosting/configuring-nginx-for-quickly-switching-to-mainten
 
 geo
 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete
+https://stackoverflow.com/questions/8282026/how-to-limit-google-autocomplete-results-to-city-and-country-only
+http://rustamagasanov.com/blog/2014/09/04/google-places-limit-autocomplete-results-to-cities-only/
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+https://gist.github.com/lfender6445/6226290
+
+geo react 
+http://lortza.github.io/2018/05/15/react-google-places-autocomplete.html

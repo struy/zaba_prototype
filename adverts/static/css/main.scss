@@ -8,7 +8,7 @@ $google-color: #4285f4;
 @font-face {
   font-family: "HoppyRibbitday";
   src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-    local("HoppyRibbitday");
+  local("HoppyRibbitday");
 }
 
 * {
@@ -242,6 +242,7 @@ header {
   i.fas.fa-paw {
     color: #dc3545;
   }
+
   img_ad {
     width: 100%;
   }
@@ -445,4 +446,10 @@ form.new-edit {
     display: inline-block;
     position: relative;
   }
+}
+
+//google autocomplete
+.pac-icon {
+  width: 0;
+  background-image: none;
 }

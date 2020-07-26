@@ -1,20 +1,22 @@
 @font-face {
   font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"),
-    local("HoppyRibbitday");
+  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
 }
 * {
   margin: 0;
   padding: 0;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   background-color: #fff !important;
   padding-top: 84px;
 }
+
 .divider {
   display: inline-block;
   width: 100%;
@@ -22,18 +24,23 @@ body {
   background-color: gray;
   opacity: 0.85;
 }
+
 .form_uk {
   background: url("/static/img/flags/Ukraine.png");
 }
+
 .form_ru {
   background: url("/static/img/flags/Russia.png");
 }
+
 .form_en {
   background: url("/static/img/flags/United-States.png");
 }
+
 .form_pl {
   background: url("/static/img/flags/Poland.png");
 }
+
 #add_button {
   position: fixed;
   bottom: 30px;
@@ -54,6 +61,7 @@ body {
   border-color: #dc3545;
   border-radius: 35px;
 }
+
 header {
   color: white;
   padding-top: 5px;
@@ -71,25 +79,26 @@ header i {
 header .bg-dark {
   background: #1c1f18;
 }
-header button[type="submit"] {
+header button[type=submit] {
   padding: 0;
   border: none;
   width: 24px;
   height: 24px;
   margin-left: 5px;
 }
-header button[form="form_uk"] {
+header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");
 }
-header button[form="form_ru"] {
+header button[form=form_ru] {
   background: url("/static/img/flags/Russia.png");
 }
-header button[form="form_en"] {
+header button[form=form_en] {
   background: url("/static/img/flags/United-States.png");
 }
-header button[form="form_pl"] {
+header button[form=form_pl] {
   background: url("/static/img/flags/Poland.png");
 }
+
 #main {
   margin: 10px;
   flex: 1 0 auto;
@@ -189,10 +198,12 @@ header button[form="form_pl"] {
 #main i.fas.fa-paw {
   color: #dc3545;
 }
-
+#main img_ad {
+  width: 100%;
+}
 #main .btn.facebook {
   background-color: #3b5998;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   margin-top: 30px;
@@ -204,7 +215,7 @@ header button[form="form_pl"] {
 }
 #main .btn.twitter {
   background-color: #00acee;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
@@ -215,14 +226,11 @@ header button[form="form_pl"] {
   transition: all 0.3s ease-in-out;
 }
 #main .btn.google {
-  /*background-color: #0F9D58;
- */
-  /*background-color:#DB4437;
- */
-  /*background-color:#F4B400;
- */
+  /*background-color: #0F9D58;*/
+  /*background-color:#DB4437;*/
+  /*background-color:#F4B400;*/
   background-color: #4285f4;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.5em;
   margin-bottom: 5px;
   width: 288px;
@@ -249,20 +257,25 @@ header button[form="form_pl"] {
 #main .icon-box a:hover {
   text-decoration: none;
 }
+
 /*JOB*/
 .job_title {
   margin-left: 10px;
   display: inline-block;
 }
+
 .mybtn {
   color: white;
 }
+
 .mybtn2 {
   color: #000;
 }
+
 button.btn-success {
   margin-top: -4rem;
 }
+
 button.btn-circle {
   width: 30px;
   height: 30px;
@@ -272,14 +285,17 @@ button.btn-circle {
   font-size: 12px;
   line-height: 1.42857;
 }
+
 span.counter {
   font-family: "HoppyRibbitday";
   font-size: 5em;
   color: darkgreen;
 }
+
 #google_ads {
   margin-bottom: 15px;
 }
+
 footer {
   color: white;
   padding-top: 20px;
@@ -299,14 +315,17 @@ footer li a {
 footer .bg-dark {
   background: #1c1f18;
 }
+
 section#main {
   padding-top: 10px;
   min-height: 450px;
 }
+
 /* Bootstrap 4 text input with search icon */
 .has-search .form-control {
   padding-left: 2.375rem;
 }
+
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -318,31 +337,37 @@ section#main {
   pointer-events: none;
   color: #aaa;
 }
+
 span.count {
   float: right;
   background-color: #94c045;
   color: white;
   padding: 5px 10px;
 }
+
 .filters .form-group:not(:first-child) {
   width: 200px;
   display: inline-block;
   margin-right: 5px;
 }
+
 .filters button {
   display: inline-block;
 }
+
 form.new-edit button.btn.btn-success {
   margin-top: 15px !important;
 }
 form.new-edit .gj-datepicker-bootstrap {
   width: 205px;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
+
 #CookielawBanner {
   background-color: #e7d9ac;
   margin-top: -160px;
@@ -357,3 +382,10 @@ form.new-edit .gj-datepicker-bootstrap {
   display: inline-block;
   position: relative;
 }
+
+.pac-icon {
+  width: 0;
+  background-image: none;
+}
+
+/*# sourceMappingURL=main.css.map */

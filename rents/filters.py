@@ -13,7 +13,7 @@ class RentsFilter(django_filters.FilterSet):
     class Meta:
         model = Rental
         fields = {
-            'rental_type': ['exact'],
+            'property_type': ['exact'],
             'prefer_sex': ['exact'],
             'pet_policy': ['exact'],
             'bathrooms': ['exact'],

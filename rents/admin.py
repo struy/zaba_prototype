@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Rental, RentalType
+from .models import Rental, PropertyType
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -8,5 +8,5 @@ class RentalAdmin(TranslationAdmin):
 
 
 # admin.site.unregister(RentalType)
-admin.site.register(RentalType, RentalAdmin)
+admin.site.register(PropertyType, RentalAdmin)
 admin.site.register(Rental)

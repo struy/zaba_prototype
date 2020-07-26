@@ -5,7 +5,7 @@ import django_tables2 as tables
 from adverts.models import Advert, Location
 
 
-class RentalType(models.Model):
+class PropertyType(models.Model):
     name = models.CharField(max_length=42)
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Rental(Advert, Location):
     # bedrooms : studio, 1,2,3,4+
     # bathrooms 1,2,3+
 
-    rental_type = models.ForeignKey(RentalType, on_delete=models.CASCADE, verbose_name=_('rental type'))
+    property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name=_('property type'))
     image = models.ImageField(upload_to='rents', default='none/no-img.jpg')
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=1)

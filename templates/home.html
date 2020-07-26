@@ -16,24 +16,7 @@
 {% endblock %}
 
 {% block script %}
-    <script
-            src="http://maps.googleapis.com/maps/api/js?v=3.13&sensor=false&libraries=places&region=US&key=AIzaSyBQPbe31-5NvzhQhDQr_-GICqiU1YlJl5c"
-            type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-        function initialize() {
-            const options = {
-                language: "en-US",
-                types: ["(cities)"],
-                componentRestrictions: {country: "us"},
-            };
-            let input = document.getElementById("searchTextField");
-            let autocomplete = new google.maps.places.Autocomplete(input, options);
-        }
-
-        google.maps.event.addDomListener(window, "load", initialize);
-
-    </script>
+  {% include "snippets/address-input.html" %}
 
 {% endblock %}
 

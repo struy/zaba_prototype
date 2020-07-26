@@ -1,9 +1,9 @@
 from modeltranslation.translator import translator, TranslationOptions
-from .models import RentalType
+from .models import PropertyType
 
 
-class RentalsTypeTranslationOptions(TranslationOptions):
+class PropertyTypeTranslationOptions(TranslationOptions):
     fields = ('name',)
 
 
-translator.register(RentalType, RentalsTypeTranslationOptions)
+translator.register(PropertyType, PropertyTypeTranslationOptions)

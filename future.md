@@ -58,3 +58,6 @@ BlockAdBlock
 
 maintenance
 https://blog.devcloud.hosting/configuring-nginx-for-quickly-switching-to-maintenance-mode-e4136cf497f3
+
+geo
+https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete

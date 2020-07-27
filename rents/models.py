@@ -14,7 +14,8 @@ class PropertyType(models.Model):
 
 class Rental(Advert, Location):
     # Move-in Date
-    # Type : apartments, houses, condos, townhouses
+    # Type : apartments, houses, condos, townhouses, basement
+    # Та́ун-ха́ус,
     # bedrooms : studio, 1,2,3,4+
     # bathrooms 1,2,3+
 

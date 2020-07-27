@@ -9,19 +9,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-09 13:48-0500\n"
-"PO-Revision-Date: 2020-04-07 02:49+0000\n"
+"PO-Revision-Date: 2020-07-26 22:35+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Translated-Using: django-rosetta 0.9.3\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: account/templates/account/edit.html:3 account/templates/account/edit.html:16
+#: account/templates/account/edit.html:3
+#: account/templates/account/edit.html:16
 msgid "Edit your account"
 msgstr ""
 
@@ -211,8 +210,8 @@ msgstr ""
 
 #: env/lib/python3.7/site-packages/django/core/validators.py:246
 msgid ""
-"Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 "Введите корректное значение 'slug', который может содержать только буквы "
 "Unicode, числа, символы подчеркивания или дефисы."
@@ -436,8 +435,8 @@ msgstr "Дата (без времени)"
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1296
 #, python-format
 msgid ""
-"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате YYYY-"
 "MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
@@ -445,11 +444,11 @@ msgstr ""
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1300
 #, python-format
 msgid ""
-"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"'%(value)s' value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
-"Значение '%(value)s' имеет верный формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]), но это недействительна дата/время."
+"Значение '%(value)s' имеет верный формат (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]), но это недействительна дата/время."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1304
 msgid "Date (with time)"
@@ -467,8 +466,8 @@ msgstr "Десятичное число"
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1593
 #, python-format
 msgid ""
-"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
-"uuuuuu] format."
+"'%(value)s' value has an invalid format. It must be in [DD] "
+"[HH:[MM:]]ss[.uuuuuu] format."
 msgstr ""
 "Значение '%(value)s' не соответствует формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
@@ -538,8 +537,8 @@ msgid ""
 "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
-"Значение '%(value)s' имеет неверный формат. Оно должно быть в формате HH:MM[:"
-"ss[.uuuuuu]]."
+"Значение '%(value)s' имеет неверный формат. Оно должно быть в формате "
+"HH:MM[:ss[.uuuuuu]]."
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:2111
 #, python-format
@@ -607,7 +606,8 @@ msgid "Many-to-many relationship"
 msgstr "Многие-ко-многим связь"
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: env/lib/python3.7/site-packages/django/forms/boundfield.py:146
 msgid ":?.!"
 msgstr ":?.!"
@@ -653,7 +653,8 @@ msgstr "Передан файл пуст."
 
 #: env/lib/python3.7/site-packages/django/forms/fields.py:536
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -766,7 +767,8 @@ msgid "The inline value did not match the parent instance."
 msgstr "Связаное значение не совпадает с родительским экземпляром."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1158
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr "Сделайте корректный выбор. Такого варианта нет среди доступных."
 
 #: env/lib/python3.7/site-packages/django/forms/models.py:1272
@@ -1242,8 +1244,8 @@ msgid ""
 "hijacked by third parties."
 msgstr ""
 "Вы видите это сообщение, потому что данный сайт использует защищенное "
-"соединение и требует, чтобы заголовок 'Referer' был передан вашим браузером,"
-"но он не был им передан. Данный заголовок необходим из "
+"соединение и требует, чтобы заголовок 'Referer' был передан вашим "
+"браузером,но он не был им передан. Данный заголовок необходим из "
 "соображенийбезопасности, чтобы убедиться, что ваш браузер не был сломан, а "
 "запроссервера не был перехвачен или подменен."
 
@@ -1253,21 +1255,21 @@ msgid ""
 "enable them, at least for this site, or for HTTPS connections, or for 'same-"
 "origin' requests."
 msgstr ""
-"Если вы настроили свой браузер таким образом, чтобы запретить ему передавать "
-"заголовок 'Referer ', пожалуйста, позвольте ему отсылать данный заголовокпо "
-"крайней мере для данного сайта, или для всех HTTPS-соединений, или для 'same-"
-"origin' запросов."
+"Если вы настроили свой браузер таким образом, чтобы запретить ему передавать"
+" заголовок 'Referer ', пожалуйста, позвольте ему отсылать данный заголовокпо"
+" крайней мере для данного сайта, или для всех HTTPS-соединений, или для "
+"'same-origin' запросов."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the 'Referrer-Policy: no-referrer' header, please remove them. The "
-"CSRF protection requires the 'Referer' header to do strict referer checking. "
-"If you're concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" ...> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the 'Referrer-Policy: no-referrer' header, please remove them. "
+"The CSRF protection requires the 'Referer' header to do strict referer "
+"checking. If you're concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" ...> for links to third-party sites."
 msgstr ""
-"Если вы используете <meta name=\"referrer\" content=\"no-referrer\"> тег или "
-"в том числе 'Referrer-Policy: no-referrer' заголовок, пожалуйста, удалите "
+"Если вы используете <meta name=\"referrer\" content=\"no-referrer\"> тег или"
+" в том числе 'Referrer-Policy: no-referrer' заголовок, пожалуйста, удалите "
 "их. Защита CSRF требует заголовка 'Referer', чтобы сделать строгую "
 "refererпроверку. Если вы обеспокоены о конфиденциальности, используйте "
 "альтернативы, такие как <а rel=\"noreferrer\" ...> ссылки на сторонние "
@@ -1281,8 +1283,9 @@ msgid ""
 msgstr ""
 "Вы видите это сообщение, потому что данный сайт требует, чтобы при отправке "
 "форм были отправлены также CSRF-cookie. Данный тип cookie необходим "
-"посоображениям безопасности, чтобы убедиться, что ваш браузер не был взломан "
-"ине выполняет с вашей стороны действий, запрограммированных третьими лицами."
+"посоображениям безопасности, чтобы убедиться, что ваш браузер не был взломан"
+" ине выполняет с вашей стороны действий, запрограммированных третьими "
+"лицами."
 
 #: env/lib/python3.7/site-packages/django/views/csrf.py:137
 msgid ""
@@ -1327,11 +1330,11 @@ msgstr "%(verbose_name_plural)s недоступны"
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
-"Будущие %(verbose_name_plural)s недоступны, так как %(class_name)s."
-"allow_future имеет нулевое значение."
+"Будущие %(verbose_name_plural)s недоступны, так как "
+"%(class_name)s.allow_future имеет нулевое значение."
 
 #: env/lib/python3.7/site-packages/django/views/generic/dates.py:623
 #, python-format
@@ -1381,8 +1384,8 @@ msgid ""
 "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 msgstr ""
-"Просмотр <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
+"Просмотр <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\""
+" target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:367
 msgid "The install worked successfully! Congratulations!"
@@ -1391,14 +1394,15 @@ msgstr "Установки успешно работали! Поздравляе
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:368
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
-"Вы видите эту страницу, так как <a href =\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target = \"_blank\" rel =\"noopener\" > "
-"DEBUG = True</a> находится в файле настроек и вы не настроили ни один URLs."
+"Вы видите эту страницу, так как <a href "
+"=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target = \"_blank\" rel =\"noopener\" > DEBUG = True</a> находится в файле "
+"настроек и вы не настроили ни один URLs."
 
 #: env/lib/python3.7/site-packages/django/views/templates/default_urlconf.html:383
 msgid "Django Documentation"
@@ -2011,8 +2015,8 @@ msgstr "Языковой пакет для кода %s не найдено."
 #: env/lib/python3.7/site-packages/transliterate/utils.py:110
 msgid "``language_code`` is optional with ``reversed`` set to True only."
 msgstr ""
-"``Language_code`` не является обязательным с ``reversed`` установлено только "
-"значение True."
+"``Language_code`` не является обязательным с ``reversed`` установлено только"
+" значение True."
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:221
 #, python-format
@@ -2200,18 +2204,18 @@ msgstr "Тип вакансии:"
 msgid "rental type"
 msgstr "В настоящее время"
 
-#: rents/templates/rents/detail.html:5 rents/templates/rents/rental_form.html:5
-#, fuzzy
+#: rents/templates/rents/detail.html:5
+#: rents/templates/rents/rental_form.html:5
 #| msgid "Rents"
 msgid "Rent"
-msgstr "Арендная плата"
+msgstr "Аренда"
 
 #: rents/templates/rents/detail.html:9 rents/templates/rents/index.html:12
 #: rents/templates/rents/rental_confirm_delete.html:9
 #: rents/templates/rents/rental_form.html:9
 #: rents/templates/rents/rental_list.html:4
 msgid "Rents"
-msgstr "Арендная плата"
+msgstr "Аренда"
 
 #: rents/templates/rents/detail.html:31
 msgid "Bathrooms:"
@@ -2324,7 +2328,7 @@ msgstr "Жилище"
 
 #: templates/home.html:93
 msgid "Cats"
-msgstr "Кошки"
+msgstr "Котики"
 
 #: templates/registration/logged_out.html:3
 #: templates/registration/logged_out.html:16

@@ -3,7 +3,7 @@ import redis
 from itertools import chain
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, reverse
 from django.conf import settings
 from django.views.generic import ListView
 
@@ -67,12 +67,19 @@ class SearchView(ListView):
     def get_queryset(self):
         request = self.request
         query = request.GET.get('q', None)
+        locality = request.GET.get('address', None)
 
-        if query is not None:
-            item_results = Item.objects.search(query)
-            job_results = Job.objects.search(query)
-            gift_results = Gift.objects.search(query)
-            rental_results = Rental.objects.search(query)
+        if query:
+            if locality:
+                item_results = Item.objects.search(query)
+                job_results = Job.objects.search(query)
+                gift_results = Gift.objects.search(query)
+                rental_results = Rental.objects.search(query)
+            else:
+                item_results = Item.objects.search(query).filter(city__contains=locality)
+                job_results = Job.objects.search(query).filter(city__contains=locality)
+                gift_results = Gift.objects.search(query).filter(city__contains=locality)
+                rental_results = Rental.objects.search(query).filter(city__contains=locality)
 
             # combine querysets
             queryset_chain = chain(
@@ -87,3 +94,5 @@ class SearchView(ListView):
             self.count = len(qs)  # since qs is actually a list
             return qs
         return Item.objects.none()  # just an empty queryset as default
+
+

@@ -38,10 +38,16 @@ def validate_expires(value):
 
 class AdvertsManager(models.Manager):
     def search(self, query=None):
+        lang = get_language()
+        local = None
+        if lang:
+            local = lang[:2]
         qs = self.get_queryset()
         if query is not None:
-            or_lookup = (Q(title__icontains=query) |
-                         Q(description__icontains=query))
+            if local is not None:
+                or_lookup = (Q(local__exact=local) & (Q(title__icontains=query) | Q(description__icontains=query)))
+            else:
+                or_lookup = (Q(title__icontains=query) | Q(description__icontains=query))
             qs = qs.filter(or_lookup).distinct()  # distinct() is often necessary with Q lookups
         return qs
 

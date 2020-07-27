@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 import django_tables2 as tables
-from adverts.models import Advert, Location
+from adverts.models import Advert, Location, user_directory_path
 
 
 class PropertyType(models.Model):
@@ -20,7 +20,7 @@ class Rental(Advert, Location):
     # bathrooms 1,2,3+
 
     property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name=_('property type'))
-    image = models.ImageField(upload_to='rents', default='none/no-img.jpg')
+    image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=1)
     price = models.PositiveIntegerField()

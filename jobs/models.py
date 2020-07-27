@@ -18,6 +18,7 @@ class Job(Advert, Location):
     :type
     duration
     payment
+    LOGO
     """
     jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('job type'))
     DURATIONS = (('ft', _('full-time')),

@@ -272,10 +272,6 @@ header button[form=form_pl] {
   color: #000;
 }
 
-button.btn-success {
-  margin-top: -4rem;
-}
-
 button.btn-circle {
   width: 30px;
   height: 30px;

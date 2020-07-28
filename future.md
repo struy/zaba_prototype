@@ -1,6 +1,5 @@
-
-django-autocomplete-light 
-https://django-autocomplete-light.readthedocs.io/en/master/tutorial.html
+google advertise
+https://pypi.org/project/django-ads/
 
 AWS
 https://simpleisbetterthancomplex.com/tutorial/2017/08/01/how-to-setup-amazon-s3-in-a-django-project.html
@@ -35,7 +34,12 @@ Sentry
 
 check USE_TZ
 
+Braintree
 https://www.braintreepayments.com/
+https://levelup.gitconnected.com/using-django-and-stripe-for-monthly-subscriptions-465de92dd34f
+
+
+
 
 https://github.com/razisayyed/django-ads
 

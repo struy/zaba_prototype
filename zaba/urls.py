@@ -26,6 +26,7 @@ urlpatterns += i18n_patterns(
     path('cookie-policy', TemplateView.as_view(template_name='policy/cookie_policy.html'), name='cookie'),
     path('privacy-policy', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
     path('term-of-services', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
+    path('checkout', include('shop.urls'))
 )
 
 if settings.DEBUG:

@@ -3,6 +3,7 @@ import sys
 import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.redis import RedisIntegration
 from braintree import Configuration, Environment
 from django.utils.translation import gettext_lazy as _
 
@@ -225,9 +226,12 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 sentry_sdk.init(
     dsn=env('SENTRY_DSN'),
-    integrations=[DjangoIntegration()],
+    # integrations=[DjangoIntegration()],
+    integrations=[RedisIntegration()],
+
     # temporary fix
-    transport=print,
+    # transport=print,
+
     # If you wish to associate users to errors (assuming you are using
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True

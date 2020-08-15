@@ -2,6 +2,11 @@
 {% load i18n %}
 {% block title %} {% trans "Gifts" %} {% endblock %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Map of Gifts" %}</li>
+{% endblock %}
+
 {% block head %}
     <link rel="stylesheet"
           href="//unpkg.com/leaflet/dist/leaflet.css"/>

@@ -29,7 +29,9 @@
                 </p>
 
                 <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
+            {% if advert.image %}
                 <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+            {% endif %}
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
 

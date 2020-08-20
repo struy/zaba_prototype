@@ -34,7 +34,9 @@
                         <i class="{{ country.flag_css }}"></i>
                     {% endfor %}
                 </p>
+             {% if advert.image %}
                 <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+             {%  endif %}
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
                 {% if advert.point %}

@@ -1,5 +1,6 @@
 import datetime
 import redis
+import re
 from itertools import chain
 from django.http import HttpResponse
 from django.template import loader
@@ -67,32 +68,43 @@ class SearchView(ListView):
     def get_queryset(self):
         request = self.request
         query = request.GET.get('q', None)
-        locality = request.GET.get('address', None)
+        address = request.GET.get('address', None)
+        # regular exp for Google API example: Chicago, IL, USA
+        text = re.search(r'^([\w]*), [A-Z][A-Z], USA', address)
+        if text:
+            locality = text.group(1)
+        else:
+            locality = address
 
-        if query:
-            if locality:
-                item_results = Item.objects.search(query)
-                job_results = Job.objects.search(query)
-                gift_results = Gift.objects.search(query)
-                rental_results = Rental.objects.search(query)
-            else:
-                item_results = Item.objects.search(query).filter(city__contains=locality)
-                job_results = Job.objects.search(query).filter(city__contains=locality)
-                gift_results = Gift.objects.search(query).filter(city__contains=locality)
-                rental_results = Rental.objects.search(query).filter(city__contains=locality)
+        if query == "" and locality == "":
+            return Item.objects.none()  # just an empty queryset as default
 
-            # combine querysets
-            queryset_chain = chain(
-                item_results,
-                job_results,
-                gift_results,
-                rental_results
-            )
-            qs = sorted(queryset_chain,
-                        key=lambda instance: instance.pk,
-                        reverse=True)
-            self.count = len(qs)  # since qs is actually a list
-            return qs
-        return Item.objects.none()  # just an empty queryset as default
+        if not locality:
+            item_results = Item.objects.search(query)
+            job_results = Job.objects.search(query)
+            gift_results = Gift.objects.search(query)
+            rental_results = Rental.objects.search(query)
+        if not query:
+            item_results = Item.objects.filter(city__contains=locality)
+            job_results = Job.objects.filter(city__contains=locality)
+            gift_results = Gift.objects.filter(city__contains=locality)
+            rental_results = Rental.objects.filter(city__contains=locality)
 
+        if query and locality:
+            item_results = Item.objects.search(query).filter(city__contains=locality)
+            job_results = Job.objects.search(query).filter(city__contains=locality)
+            gift_results = Gift.objects.search(query).filter(city__contains=locality)
+            rental_results = Rental.objects.search(query).filter(city__contains=locality)
 
+        # combine querysets
+        queryset_chain = chain(
+            item_results,
+            job_results,
+            gift_results,
+            rental_results
+        )
+        qs = sorted(queryset_chain,
+                    key=lambda instance: instance.pk,
+                    reverse=True)
+        self.count = len(qs)  # since qs is actually a list
+        return qs

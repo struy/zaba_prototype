@@ -1,3 +1,5 @@
+from smtplib import SMTPDataError
+
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -19,6 +21,9 @@ def contact_view(request):
                 send_mail(subject, message, from_email, superusers_emails)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
+            except SMTPDataError:
+                return redirect('no_success')
+
             return redirect('success')
     return render(request, "sendemail/email.html", {'form': form})
 

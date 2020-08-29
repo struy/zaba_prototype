@@ -80,6 +80,9 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
+# need to fix for AWS SES default 'webmaster@localhost'
+DEFAULT_FROM_EMAIL = 'from@zaba.today'
+
 
 INSTALLED_APPS += PROD_APPS
 INSTALLED_APPS = ["collectfast"] + INSTALLED_APPS

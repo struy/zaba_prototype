@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %} {% trans " No success" %} {% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans " no success" %}</li>
+{% endblock %}
+
+
+{% block head %}
+<style>
+  #add_button {
+    display: none;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-success text-center">  {% trans 'No Success(  Probably a non-existent email. Please try again.' %}  </h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

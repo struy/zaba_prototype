@@ -15,7 +15,7 @@ class RentsFilter(django_filters.FilterSet):
             'pet_policy': ['exact'],
             'bathrooms': ['exact'],
             'bedrooms': ['exact'],
-            'price': ['gt', 'lt'],
+            'price': ['gte', 'lte'],
             'city': ['exact'],
             'furnished': ['exact']
 

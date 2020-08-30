@@ -6,7 +6,7 @@ class JobsFilter(django_filters.FilterSet):
     class Meta:
         model = Job
         fields = {
-            'salary': ['gt', 'lt'],
+            'salary': ['gte', 'lte'],
             'jobtype': ['exact'],
             'city': ['exact']
         }

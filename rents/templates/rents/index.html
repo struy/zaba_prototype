@@ -11,6 +11,7 @@
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Rents" %}</li>
 {% endblock %}
+
 {% block content %}
     {% include 'snippets/filter.html' %}
 
@@ -45,7 +46,7 @@
                                         </a>
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                         <i>{{ advert.modified|naturaltime }} </i>
-                                        <h3>{{ advert.price|prepend_dollars }}</h3>
+                                        <h3>{{ advert.price|prepend_dollars_only }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -61,4 +62,8 @@
             </div>
         </div>
     </div>
-{% endblock %} {% block add_ad_link %} {% url 'rents:new' %} {% endblock %}
+{% endblock %}
+
+{% block add_ad_link %}
+    {% url 'rents:new' %}
+{% endblock %}

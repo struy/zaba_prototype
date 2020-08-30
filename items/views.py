@@ -4,9 +4,9 @@ from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
+from adverts.utils import context_helper
 from .models import Item
 from .forms import ItemForm
 from .filters import ItemsFilter
@@ -27,21 +27,14 @@ def index(request):
     else:
         advert_list = Item.objects.filter(local=lang).order_by('-modified')
     filters = ItemsFilter(request.GET, queryset=advert_list)
-    page = request.GET.get('page', 1)
-    paginator = Paginator(filters.qs, 10)
-
-    try:
-        adverts = paginator.page(page)
-    except PageNotAnInteger:
-        adverts = paginator.page(1)
-    except EmptyPage:
-        adverts = paginator.page(paginator.num_pages)
+    adverts, has_filter = context_helper(request, filters)
 
     context = {
         'adverts': adverts,
         'is_paginated': True,
         'package_list': 'items:index',
-        'filters': filters
+        'filters': filters,
+        'has_filter': has_filter
     }
 
     return render(request, 'items/index.html', context)

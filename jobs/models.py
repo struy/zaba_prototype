@@ -31,7 +31,7 @@ class Job(Advert, Location):
     )
     countries = CountryField(multiple=True, default='EN', verbose_name=_('language'),
                              help_text=_('What language does the employer speak?'), )
-    salary = models.PositiveIntegerField(blank=True, verbose_name=_('salary'))
+    salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('salary'), blank=True)
 
     def get_absolute_url(self):
         return reverse('jobs:detail', args=[self.id])

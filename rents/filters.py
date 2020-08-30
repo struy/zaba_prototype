@@ -7,8 +7,8 @@ from .models import Rental
 
 
 class RentsFilter(django_filters.FilterSet):
-    price__gt = django_filters.NumberFilter(label=_("Price is greater than"), lookup_expr='price__gt')
-    price__lt = django_filters.NumberFilter(label=_("Price is less than"), lookup_expr='price__lt')
+    # price__gt = django_filters.NumberFilter(label=_("Price is greater than"), lookup_expr='price__gt')
+    # price__lt = django_filters.NumberFilter(label=_("Price is less than"), lookup_expr='price__lt')
 
     class Meta:
         model = Rental

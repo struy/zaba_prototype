@@ -57,6 +57,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'social_django',
                     'google_analytics',
                     'django_select2',
+                    'django_filters',
                     'django_cleanup.apps.CleanupConfig',
                     ]
 

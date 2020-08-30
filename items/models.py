@@ -16,7 +16,8 @@ class Item(Advert, Location):
     condition = models.CharField(
         max_length=1,
         choices=CONDITIONS,
-        default='0'
+        default='0',
+        verbose_name=_('condition')
     )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('price'))

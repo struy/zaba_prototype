@@ -1,12 +1,12 @@
 import redis
 from django.conf import settings
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import get_object_or_404, render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.db.models import Q
 
+from adverts.utils import context_helper
 from .filters import JobsFilter
 from .models import Job
 from .form import JobForm
@@ -25,19 +25,14 @@ def index(request):
         advert_list = Job.objects.order_by('-modified')
 
     filters = JobsFilter(request.GET, queryset=advert_list)
-    page = request.GET.get('page', 1)
-    paginator = Paginator(filters.qs, 10)
-
-    try:
-        adverts = paginator.page(page)
-    except PageNotAnInteger:
-        adverts = paginator.page(1)
-    except EmptyPage:
-        adverts = paginator.page(paginator.num_pages)
+    adverts, has_filter = context_helper(request, filters)
 
     context = {'adverts': adverts,
-               'filters': filters
+               'filters': filters,
+               'has_filter': has_filter,
+               'package_list': 'jobs:index',
                }
+
     return render(request, 'jobs/index.html', context)
 
 

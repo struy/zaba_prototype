@@ -1,14 +1,12 @@
 import redis
-from django.template import loader
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
+from adverts.utils import context_helper
 from .models import Rental, RentalTable
 from .forms import RentForm
 from .filters import RentsFilter
@@ -27,21 +25,14 @@ def index(request):
         advert_list = Rental.objects.order_by('-modified')
 
     filters = RentsFilter(request.GET, queryset=advert_list)
-    page = request.GET.get('page', 1)
-    paginator = Paginator(filters.qs, 10)
-
-    try:
-        adverts = paginator.page(page)
-    except PageNotAnInteger:
-        adverts = paginator.page(1)
-    except EmptyPage:
-        adverts = paginator.page(paginator.num_pages)
+    adverts, has_filter = context_helper(request, filters)
 
     context = {
         'adverts': adverts,
         'is_paginated': True,
         'package_list': 'rents:index',
-        'filters': filters
+        'filters': filters,
+        'has_filter': has_filter,
     }
 
     return render(request, 'rents/index.html', context)
@@ -83,6 +74,3 @@ class RentUpdate(UpdateView):
 class RentDelete(DeleteView):
     model = Rental
     success_url = reverse_lazy('items:index')
-
-
-

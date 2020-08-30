@@ -1,37 +1,40 @@
 {% load crispy_forms_tags %} {% load i18n %}
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <button
-        class="btn btn-info"
-        id="btn_sm_md_ext"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapseExample"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-      >
-        <i class="fas fa-filter"></i> Filter
-      </button>
-      <div class="collapse d-md-block" id="collapseExample">
-        <form method="get" class="filters">
-          <div class="form-group has-search">
-            <span class="fa fa-search form-control-feedback"></span>
-            <input
-              type="text"
-              name="q"
-              value="{{ request.GET.q }}"
-              class="form-control"
-              placeholder="{% trans 'Search' %}"
-            />
-          </div>
-          {{ filters.form | crispy }}
-          <button class="btn btn-primary" type="submit">
-            {% trans "Filter Search" %}
-          </button>
-        </form>
-      </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button
+                    class="btn btn-info"
+                    id="btn_sm_md_ext"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+            >
+                <i class="fas fa-filter"></i> Filter
+            </button>
+            <div class="collapse d-md-block" id="collapseExample">
+                <form method="get" class="filters">
+                    <div class="form-group has-search">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input
+                                type="text"
+                                name="q"
+                                value="{{ request.GET.q }}"
+                                class="form-control"
+                                placeholder="{% trans 'Search' %}"
+                        />
+                    </div>
+                    {{ filters.form | crispy }}
+                    <button class="btn btn-primary" type="submit">
+                        {% trans "Filter Search" %}
+                    </button>
+                    {% if has_filter %}
+                        <a href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

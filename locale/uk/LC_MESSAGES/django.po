@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-09 13:48-0500\n"
-"PO-Revision-Date: 2020-07-09 18:53+0000\n"
+"PO-Revision-Date: 2020-08-30 02:48+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2090,10 +2090,9 @@ msgid "New"
 msgstr ""
 
 #: items/models.py:22
-#, fuzzy
 #| msgid "Price:"
 msgid "price"
-msgstr "Ціна:"
+msgstr "Ціна"
 
 #: items/templates/items/detail.html:4 items/templates/items/item_form.html:5
 #, fuzzy

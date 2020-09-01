@@ -19,10 +19,13 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def index(request):
     query = request.GET.get('q')
+    lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Rental.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Rental.objects.filter(Q(local__exact=lang)
+                                            & (Q(title__icontains=query) | Q(description__icontains=query))
+                                            ).order_by('-modified')
     else:
-        advert_list = Rental.objects.order_by('-modified')
+        advert_list = Rental.objects.filter(local=lang).order_by('-modified')
 
     filters = RentsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
@@ -67,10 +70,12 @@ class RentCreate(CreateView):
 
 class RentUpdate(UpdateView):
     model = Rental
-    fields = ['title', 'description', 'image', 'expires', 'price', 'city', 'address', 'point']
-    success_url = reverse_lazy('items:index')
+    form_class = RentForm
+    login_required = True
+    success_url = reverse_lazy('rents:index')
 
 
 class RentDelete(DeleteView):
     model = Rental
-    success_url = reverse_lazy('items:index')
+    login_required = True
+    success_url = reverse_lazy('rents:index')

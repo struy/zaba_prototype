@@ -32,7 +32,7 @@ class Rental(Advert, Location):
                )
     pet_policy = models.PositiveSmallIntegerField(
         choices=POLICES,
-        default=1
+        default=0
     )
     furnished = models.BooleanField()
     prefer_sex_list = (('a', _('any')),

@@ -4,12 +4,22 @@ from .models import Rental
 
 
 class RentForm(forms.ModelForm):
+    expires = forms.DateField(
+        localize=True,
+        widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+    )
+
     class Meta:
         model = Rental
         fields = ['property_type', 'title', 'description', 'expires', 'price', 'image', 'pet_policy',
                   'bathrooms', 'bedrooms', 'furnished', 'city', 'address', 'point']
         widgets = {
-            'expires': forms.DateInput(format='%m/%d/%Y', attrs={'class': 'datepicker'}),
-            'point': gis_forms.OSMWidget(attrs={'default_lon': -88, 'default_lat': 41.9, 'map_width': 800,
-                                                'map_height': 500, 'default_zoom': 10}),
+            'point': gis_forms.OSMWidget(attrs={
+                'default_lon': -88,
+                'default_lat': 41.9,
+                'map_width': 800,
+                'map_height': 500,
+                'default_zoom': 10,
+            }),
         }
+

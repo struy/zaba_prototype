@@ -30,6 +30,15 @@
                                     <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
                                 </a>
                             {% endthumbnail %}
+                            {% if not advert.image %}
+                                <img
+                                        class="mr-3"
+                                        src="{% get_media_prefix %}/none/no-img.jpg"
+                                        alt="no image"
+                                        width="128"
+                                />
+                            {% endif %}
+
                             <div class="media-body">
                                 <div class="advert">
                                     <div class="wrap_list_adverts">
@@ -42,7 +51,13 @@
                                             </a>
                                         {% endif %}
                                         <a href="{% url 'rents:detail' advert.id %}">
-                                            <h2>{{ advert.title }}</h2>
+                                            <h2>
+                                                {{ advert.title }}
+                                                {% if advert.expires_type %}
+                                                    <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
+                                                {% endif %}
+                                                <span class="form_{{ advert.local }}"></span>
+                                            </h2>
                                         </a>
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                         <i>{{ advert.modified|naturaltime }} </i>

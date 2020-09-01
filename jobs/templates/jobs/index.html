@@ -4,66 +4,79 @@
 {% load static %}
 {% load i18n %}
 {% load advert_money %}
+{% load crispy_forms_tags %}
 {% load thumbnail %}
 
 {% block title %} {% trans "Jobs" %} {% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{% trans "Jobs" %}</li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
 {% endblock %}
-
-
-
 
 {% block content %}
 
-        {%  include 'snippets/filter.html' %}
+    {% include 'snippets/filter.html' %}
 
-    <div class="container">
+    <div class="container mt-4">
         <div class="row">
-            <div class="col-4">
-                <img src="{% static "img/zaba.jpg" %}" alt="" width="350">
+            <div class="col-4 d-none d-md-block">
+                <img src="{% static "img/zaba.jpg" %}" alt="" width="100%">
             </div>
-            <div class="col-8">
-                {% if user.is_authenticated %} {% endif %}
+            <div class="col-12 col-md-8">
                 <div class="advert">
-                    {% if adverts %} {% for advert in adverts %}
+                    {% if adverts %}
+                        {% for advert in adverts %}
+                            <div class="media">
+                                {% thumbnail advert.image "128" as ad %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% get_media_prefix %}/none/no-img.jpg"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
 
-                        <div class="media">
-                        {% thumbnail advert.image "128"  as ad %}
-                               <a href="{{ advert.image.url }}">
-                                <img   class="mr-3" src="{{ ad.url }}"  alt="no image"  >
-                               </a>
-                          {% endthumbnail %}
-
-                            <div class="media-body">
-                                <div class="advert">
-                                    <div class="wrap_list_adverts">
-                                        {% if advert.owner == request.user %}
-                                            <a href="{% url 'jobs:delete' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-trash-alt"></i>
+                                <div class="media-body">
+                                    <div class="advert">
+                                        <div class="wrap_list_adverts">
+                                            {% if advert.owner == request.user %}
+                                                <a href="{% url 'jobs:delete' advert.id %}" class="btn btn-sm">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                                <a href="{% url 'jobs:edit' advert.id %}" class="btn btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            {% endif %}
+                                            <a href="{% url 'jobs:detail' advert.id %}">
+                                                <h2>
+                                                    {{ advert.title }}
+                                                    {% if advert.expires_type %}
+                                                        <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
+                                                    {% endif %}
+                                                    <span class="form_{{ advert.local }}"></span>
+                                                </h2>
                                             </a>
-                                            <a href="{% url 'jobs:edit' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        {% endif %}
-                                        <a href="{% url 'jobs:detail' advert.id %}"
-                                        ><h2>{{ advert.title }}</h2>
-                                        </a>
 
-                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                                        <i>{{ advert.modified|naturaltime }} </i>
-
+                                            <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                            <i>{{ advert.modified|naturaltime }} </i>
+                                            <h3>{{ advert.salary|prepend_dollars }}</h3>
+                                        </div>
                                     </div>
-                                    <h3>{{ advert.salary|prepend_dollars }}</h3>
                                 </div>
                             </div>
-                        </div>
-                        <div class="divider"></div>
-                    {% endfor %} {% else %}
+                            <div class="divider"></div>
+
+                        {% endfor %}
+                    {% else %}
                         <p>No adverts are available.</p>
-                    {% endif %} {% include "snippets/pagination.html" %}
+                    {% endif %}
+                    {% include "snippets/pagination.html" %}
                 </div>
             </div>
         </div>
@@ -71,5 +84,6 @@
 
 
 {% endblock %}
+
 
 {% block add_ad_link %} {% url 'jobs:new' %} {% endblock %}

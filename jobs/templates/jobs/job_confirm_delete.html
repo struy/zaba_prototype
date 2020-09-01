@@ -3,6 +3,12 @@
 
 {% block title %} {% trans "Job delete" %} {% endblock %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'jobs:index' %}">{%  trans "Jobs" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Delete</li>
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">

@@ -19,10 +19,13 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def index(request):
     query = request.GET.get('q')
+    lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Job.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Job.objects.filter(Q(local__exact=lang)
+                                            & (Q(title__icontains=query) | Q(description__icontains=query))
+                                            ).order_by('-modified')
     else:
-        advert_list = Job.objects.order_by('-modified')
+        advert_list = Job.objects.filter(local=lang).order_by('-modified')
 
     filters = JobsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
@@ -39,14 +42,7 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Job, pk=advert_id)
     total_views = r.incr('job:{}:views'.format(advert.id))
-    job_type_dict = {
-        'driving': 'car',
-        'cleaning': 'broom',
-        'construction': 'roller',
-        'babysitter': 'baby'
-    }
-    jobtype = job_type_dict.get(str(advert.jobtype))
-    return render(request, 'jobs/detail.html', {'advert': advert, 'total_views': total_views, 'jobtype': jobtype})
+    return render(request, 'jobs/detail.html', {'advert': advert, 'total_views': total_views})
 
 
 class JobList(ListView):
@@ -66,10 +62,12 @@ class JobCreate(CreateView):
 
 class JobUpdate(UpdateView):
     model = Job
-    fields = "__all__"
+    login_required = True
+    form_class = JobForm
     success_url = reverse_lazy('jobs:index')
 
 
 class JobDelete(DeleteView):
     model = Job
+    login_required = True
     success_url = reverse_lazy('jobs:index')

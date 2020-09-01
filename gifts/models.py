@@ -25,3 +25,7 @@ class Gift(Advert, Location):
 
     def get_absolute_url(self):
         return reverse('gifts:detail', args=[self.id])
+
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        super().delete(*args, **kwargs)

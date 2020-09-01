@@ -1,7 +1,6 @@
 {% extends "base_detail.html" %}
 
 
-
 {% load countries %}
 {% load i18n %}
 {% load advert_money %}
@@ -21,22 +20,23 @@
     <div class="container">
         <div class="row">
             <div class="offset-md-1 col-md-10">
-                <p><b>{% trans "Title:" %} </b>
-                    {{ advert.title }}
-                    <span class="count">
+                <h2> {{ advert.title }} </h2>
+                <span class="count">
                         {{ total_views }} view{{ total_views|pluralize }}
-                    </span>
-                </p>
-
-                <p><b>{% trans "Description:" %} </b>{{ advert.description }} </p>
-            {% if advert.image %}
-                <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
-            {% endif %}
+                 </span>
+                {% if advert.description %}
+                    <p> {{ advert.description }} </p>
+                {% endif %}
+                {% if advert.image %}
+                    <a href="{{ advert.image.url }}">
+                        <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                    </a>
+                {% endif %}
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
-
                 {% if advert.point %}
-                     <div id="m" style="width: 500px; height: 500px;"></div>
+                    <p><b>{% trans "Map:" %} </b></p>
+                    <div id="m" style="width: 500px; height: 500px;"></div>
                 {% endif %}
             </div>
         </div>

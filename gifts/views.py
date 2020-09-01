@@ -18,11 +18,13 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def index(request):
     query = request.GET.get('q')
+    lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Gift.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Gift.objects.filter(Q(local__exact=lang)
+                                          & (Q(title__icontains=query) | Q(description__icontains=query))
+                                          ).order_by('-modified')
     else:
-        advert_list = Gift.objects.order_by('-modified')
-
+        advert_list = Gift.objects.filter(local=lang).order_by('-modified')
     filters = GiftsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
 
@@ -58,10 +60,12 @@ class GiftCreate(CreateView):
 
 class GiftUpdate(UpdateView):
     model = Gift
-    fields = '__all__'
+    form_class = GiftForm
+    login_required = True
     success_url = reverse_lazy('gifts:index')
 
 
 class GiftDelete(DeleteView):
     model = Gift
+    login_required = True
     success_url = reverse_lazy('gifts:index')

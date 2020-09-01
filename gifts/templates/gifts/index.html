@@ -31,10 +31,19 @@
 
                         <div class="media">
                             {% thumbnail advert.image "128" as ad %}
-                                <a href="{{ advert.image.url }}">
-                                    <img class="mr-3" src="{{ ad.url }}" alt="no image">
-                                </a>
-                            {% endthumbnail %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% get_media_prefix %}/none/no-img.jpg"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
+
 
                             <div class="media-body">
                                 <div class="advert">
@@ -48,7 +57,11 @@
                                             </a>
                                         {% endif %}
                                         <a href="{% url 'gifts:detail' advert.id %}">
-                                            <h2>{{ advert.title }}</h2>
+                                                {{ advert.title }}
+                                                {% if advert.expires_type %}
+                                                    <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
+                                                {% endif %}
+                                                <span class="form_{{ advert.local }}"></span>
                                         </a>
 
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}

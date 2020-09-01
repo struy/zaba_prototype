@@ -1,15 +1,6 @@
 from django import forms
 from django.contrib.gis import forms as gis_forms
-from django_select2 import forms as s2forms
-# from cities_light.models import City
 from .models import Item
-
-
-class CityWidget(s2forms.ModelSelect2Widget):
-    model = Item
-    search_fields = [
-        "city__icontains",
-    ]
 
 
 class ItemForm(forms.ModelForm):
@@ -20,7 +11,16 @@ class ItemForm(forms.ModelForm):
 
     class Meta:
         model = Item
-        fields = ['condition', 'title', 'description', 'price', 'image', 'expires', 'city', 'address', 'point']
+        fields = ['condition',
+                  'title',
+                  'description',
+                  'price',
+                  'image',
+                  'expires',
+                  'city',
+                  'address',
+                  'point']
+
         widgets = {
             'point': gis_forms.OSMWidget(attrs={
                 'default_lon': -88,
@@ -29,5 +29,4 @@ class ItemForm(forms.ModelForm):
                 'map_height': 500,
                 'default_zoom': 10,
             }),
-            # 'city': CityWidget
         }

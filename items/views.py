@@ -26,6 +26,7 @@ def index(request):
                                           ).order_by('-modified')
     else:
         advert_list = Item.objects.filter(local=lang).order_by('-modified')
+
     filters = ItemsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
 
@@ -63,11 +64,12 @@ class ItemCreate(CreateView):
 
 class ItemUpdate(UpdateView):
     model = Item
-    # fields = ['title', 'description', 'image', 'expires', 'price', 'city', 'address', 'point']
     form_class = ItemForm
+    login_required = True
     success_url = reverse_lazy('items:index')
 
 
 class ItemDelete(DeleteView):
     model = Item
+    login_required = True
     success_url = reverse_lazy('items:index')

@@ -7,6 +7,7 @@ from sorl.thumbnail import ImageField
 
 
 class Item(Advert, Location):
+    """ Items for sale """
     CONDITIONS = [('0', _('Used')),
                   ('1', _('Acceptable')),
                   ('2', _('Very Good')),
@@ -28,4 +29,3 @@ class Item(Advert, Location):
     def delete(self, *args, **kwargs):
         self.image.delete()
         super().delete(*args, **kwargs)
-

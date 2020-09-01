@@ -16,7 +16,6 @@
 
 {% block content %}
 
-
     {% include 'snippets/filter.html' %}
 
     <div class="container mt-4">
@@ -26,53 +25,54 @@
             </div>
             <div class="col-12 col-md-8">
                 <div class="advert">
-                    {% if adverts %} {% for advert in adverts %}
+                    {% if adverts %}
+                        {% for advert in adverts %}
+                            <div class="media">
+                                {% thumbnail advert.image "128" as ad %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% get_media_prefix %}/none/no-img.jpg"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
 
-                        <div class="media">
-                            {% thumbnail advert.image "128" as ad %}
-                                <a href="{{ advert.image.url }}">
-                                    <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                                </a>
-                            {% endthumbnail %} {% if not advert.image %}
-                            <img
-                                    class="mr-3"
-                                    src="{% get_media_prefix %}/none/no-img.jpg"
-                                    alt="no image"
-                                    width="128"
-                            />
-                        {% endif %}
-
-                            <div class="media-body">
-                                <div class="advert">
-                                    <div class="wrap_list_adverts">
-                                        {% if advert.owner == request.user %}
-                                            <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-trash-alt"></i>
+                                <div class="media-body">
+                                    <div class="advert">
+                                        <div class="wrap_list_adverts">
+                                            {% if advert.owner == request.user %}
+                                                <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
+                                                <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            {% endif %}
+                                            <a href="{% url 'items:detail' advert.id %}">
+                                                <h2>
+                                                    {{ advert.title }}
+                                                    {% if advert.expires_type %}
+                                                        <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
+                                                    {% endif %}
+                                                    <span class="form_{{ advert.local }}"></span>
+                                                </h2>
                                             </a>
-                                            <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        {% endif %}
-                                        <a href="{% url 'items:detail' advert.id %}">
-                                            <h2>
-                                                {{ advert.title }}
-                                                {% if advert.expires_type %}
-                                                    <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
-                                                {% endif %}
-                                                <span class="form_{{ advert.local }}"></span>
-                                            </h2>
-                                        </a>
 
-                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                                        <i>{{ advert.modified|naturaltime }} </i>
-                                        <h3>{{ advert.price|prepend_dollars }}</h3>
+                                            <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                            <i>{{ advert.modified|naturaltime }} </i>
+                                            <h3>{{ advert.price|prepend_dollars }}</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="divider"></div>
+                            <div class="divider"></div>
 
-                    {% endfor %}
+                        {% endfor %}
                     {% else %}
                         <p>No adverts are available.</p>
                     {% endif %}

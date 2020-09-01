@@ -14,7 +14,6 @@
 
 
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="offset-md-1 col-md-10">
@@ -22,31 +21,38 @@
                 <span class="count">
                         {{ total_views }} view{{ total_views|pluralize }}
                  </span>
+
                 {% if advert.description %}
                     <p> {{ advert.description }} </p>
                 {% endif %}
-                <a href="{{ advert.image.url }}">
-                    <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
-                </a>
+
+                {% if advert.image %}
+                    <a href="{{ advert.image.url }}">
+                        <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                    </a>
+                {% endif %}
+
                 <p><b>{% trans "Bathrooms:" %}</b> {{ advert.bathrooms }}</p>
                 <p><b>{% trans "Bedrooms" %}</b> {{ advert.bedrooms }}</p>
                 <p><b>{% trans "Price:" %}</b> {{ advert.price | prepend_dollars }}</p>
                 <p><b>{% trans "Pet policy:" %}</b> {{ advert.get_pet_policy_display }}</p>
+
+                {% if advert.frunished %}
+                    <p><b>{% trans "Furnished:" %}</b> {{ advert.furnished }}</p>
+                {% endif %}
+
+                <p><b>{% trans "Prefer sex" %}</b> {{ advert.get_prefer_sex_display }}</p>
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
                 {% if advert.point %}
                     <p><b>{% trans "Map:" %} </b></p>
                     <div id="m" style="width: 500px; height: 500px;"></div>
                 {% endif %}
+
                 <br>
                 <p><b>{% trans "Price:" %} </b>{{ advert.price|prepend_dollars }} </p>
-
-
-              {% if advert.frunished %}  <p><b>{% trans "Furnished:" %}</b> {{ advert.furnished }}</p> {% endif %}
-                <p><b>{% trans "Prefer sex" %}</b> {{ advert.get_prefer_sex_display }}</p>
-
             </div>
         </div>
     </div>
-
 {% endblock %}

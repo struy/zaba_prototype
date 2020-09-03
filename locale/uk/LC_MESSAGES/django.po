@@ -2323,7 +2323,7 @@ msgstr "Житло"
 
 #: templates/home.html:93
 msgid "Cats"
-msgstr "Коти"
+msgstr "Котики"
 
 #: templates/registration/logged_out.html:3
 #: templates/registration/logged_out.html:16
@@ -2445,7 +2445,7 @@ msgstr ""
 #, fuzzy
 #| msgid "March"
 msgid "Search"
-msgstr "Березень"
+msgstr "Пошук"
 
 #: templates/snippets/filter.html:31
 msgid "Filter Search"

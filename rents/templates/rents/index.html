@@ -79,6 +79,13 @@
     </div>
 {% endblock %}
 
+{% block script %}
+    {% include "snippets/city_latin_only.html" %}
+{% endblock %}
+
+
+
+
 {% block add_ad_link %}
     {% url 'rents:new' %}
 {% endblock %}

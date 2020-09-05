@@ -1,0 +1,14 @@
+<script>
+    $(function () {
+        $("#id_city").keypress(function (event) {
+            console.log(event.which);
+            if (!((event.which >= 65 && event.which <= 90) ||
+                (event.which >= 97 && event.which <= 122) ||
+                event.which == 32 || event.which == 45 ||
+                event.which == 39
+            )) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>

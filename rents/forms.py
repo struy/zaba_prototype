@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 from django import forms
 from django.contrib.gis import forms as gis_forms
+from django.utils.translation import gettext_lazy as _
+
 from .models import Rental
 
 
@@ -13,6 +15,7 @@ class RentForm(forms.ModelForm):
                                       'max': (datetime.now() + timedelta(weeks=2)).strftime("%Y-%m-%d")
                                       }),
     )
+    city = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
 
     class Meta:
         model = Rental

@@ -7,7 +7,7 @@
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'jobs:index' %}">{%  trans "Jobs" %}</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'jobs:index' %}">{% trans "Jobs" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">Edit</li>
 {% endblock %}
 
@@ -37,4 +37,6 @@
 
 
 {% block script %}
+    {% include "snippets/city_latin_only.html" %}
+
 {% endblock %}

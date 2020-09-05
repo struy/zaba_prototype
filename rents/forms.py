@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from django import forms
 from django.contrib.gis import forms as gis_forms
 from .models import Rental
@@ -6,7 +7,11 @@ from .models import Rental
 class RentForm(forms.ModelForm):
     expires = forms.DateField(
         localize=True,
-        widget=forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+        widget=forms.DateInput(format='%Y-%m-%d',
+                               attrs={'type': 'date',
+                                      'min': datetime.now().strftime("%Y-%m-%d"),
+                                      'max': (datetime.now() + timedelta(weeks=2)).strftime("%Y-%m-%d")
+                                      }),
     )
 
     class Meta:
@@ -22,4 +27,3 @@ class RentForm(forms.ModelForm):
                 'default_zoom': 10,
             }),
         }
-

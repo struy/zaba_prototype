@@ -16,6 +16,13 @@
 {% block head %}
     {{ form.media }}
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+
+    <style>
+        #add_button {
+            display: none;
+        }
+    </style>
+
 {% endblock %}
 
 
@@ -51,14 +58,14 @@
 
     <script type="text/javascript">
         $('.datepicker').datepicker({
-        {% if  LANGUAGE_CODE == 'ru' %}
-              locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
-        {% endif %}
+            {% if  LANGUAGE_CODE == 'ru' %}
+                locale: '{{ LANGUAGE_CODE }}-{{ LANGUAGE_CODE }}',
+            {% endif %}
             uiLibrary: 'bootstrap4'
         });
     </script>
 
-   {% include "snippets/city_latin_only.html" %}
+    {% include "snippets/city_latin_only.html" %}
 
 
 {% endblock %}

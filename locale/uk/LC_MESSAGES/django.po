@@ -22,11 +22,11 @@ msgstr ""
 #: account/templates/account/edit.html:3
 #: account/templates/account/edit.html:16
 msgid "Edit your account"
-msgstr ""
+msgstr "Редагування свого облікового запису"
 
 #: account/templates/account/edit.html:17
 msgid "You can edit your account using the following form:"
-msgstr ""
+msgstr "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
 
 #: account/templates/account/register.html:4
 #: account/templates/account/register.html:17

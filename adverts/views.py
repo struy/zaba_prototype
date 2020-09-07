@@ -63,18 +63,23 @@ class SearchView(ListView):
         context = super().get_context_data(*args, **kwargs)
         context['count'] = self.count or 0
         context['query'] = self.request.GET.get('q')
+        context['address'] = self.request.GET.get('address')
+        context['has_filter'] = bool(self.request.GET.get('q') or self.request.GET.get('address'))
         return context
 
     def get_queryset(self):
         request = self.request
-        query = request.GET.get('q', None)
-        address = request.GET.get('address', None)
+        query = request.GET.get('q', "")
+        address = request.GET.get('address', "")
         # regular exp for Google API example: Chicago, IL, USA
-        text = re.search(r'^([\w]*), [A-Z][A-Z], USA', address)
-        if text:
-            locality = text.group(1)
+        if address:
+            text = re.search(r'^([\w]*), [A-Z][A-Z], USA', address)
+            if text:
+                locality = text.group(1)
+            else:
+                locality = address
         else:
-            locality = address
+            locality = ""
 
         if query == "" and locality == "":
             return Item.objects.none()  # just an empty queryset as default

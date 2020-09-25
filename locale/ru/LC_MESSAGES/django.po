@@ -22,11 +22,11 @@ msgstr ""
 #: account/templates/account/edit.html:3
 #: account/templates/account/edit.html:16
 msgid "Edit your account"
-msgstr ""
+msgstr "Редактирование учетной записи"
 
 #: account/templates/account/edit.html:17
 msgid "You can edit your account using the following form:"
-msgstr ""
+msgstr "Вы можете редактировать учетную запись, используя следующую форму:"
 
 #: account/templates/account/register.html:4
 #: account/templates/account/register.html:17
@@ -60,44 +60,44 @@ msgstr "Дом"
 
 #: account/templates/account/register.html:27
 msgid "Create an account"
-msgstr ""
+msgstr "Создать учетную запись"
 
 #: account/templates/account/register.html:30
 msgid "Please, sign up using the following form:"
-msgstr ""
+msgstr "Пожалуйста, зарегистрируйтесь, воспользовавшись этой формой:"
 
 #: account/templates/account/register.html:36
 msgid "Create my account"
-msgstr ""
+msgstr "Создать аккаунт"
 
 #: account/templates/account/register_done.html:28
 msgid "Welcome"
-msgstr ""
+msgstr "Добро пожаловать"
 
 #: account/templates/account/register_done.html:30
 msgid "Your account has been successfully created. Now you can"
-msgstr ""
+msgstr "Ваш аккаунт успешно создан. Теперь вы можете"
 
 #: account/templates/account/register_done.html:32
 msgid "log in"
-msgstr ""
+msgstr "Войти"
 
 #: adverts/models.py:33
 msgid "owner"
-msgstr ""
+msgstr "владелец"
 
 #: adverts/models.py:34
 msgid "Format mm/dd/yyyy"
-msgstr ""
+msgstr "Формат мм/дд/гггг"
 
 #: adverts/models.py:35 env/lib/python3.7/site-packages/djcelery/models.py:244
 #: env/lib/python3.7/site-packages/djcelery/models.py:351
 msgid "expires"
-msgstr ""
+msgstr "заканчивается"
 
 #: adverts/models.py:93
 msgid "city"
-msgstr ""
+msgstr "город"
 
 #: adverts/models.py:94
 #, fuzzy
@@ -109,7 +109,7 @@ msgstr "IP адрес"
 #, fuzzy
 #| msgid "mar"
 msgid "map"
-msgstr "мар"
+msgstr "карта"
 
 #: adverts/templates/adverts/index.html:15
 msgid "Adverts"
@@ -122,12 +122,12 @@ msgstr "Подробнее"
 #: env/lib/python3.7/site-packages/_pytest/config/argparsing.py:443
 #, python-format
 msgid "ambiguous option: %(option)s could match %(matches)s"
-msgstr ""
+msgstr "неоднозначный вариант: %(option)s может совпадать %(matches)s"
 
 #: env/lib/python3.7/site-packages/botocore/docs/bcdoc/textwriter.py:469
 #, python-format
 msgid "[image: %s]"
-msgstr ""
+msgstr "[изображение: %s]"
 
 #: env/lib/python3.7/site-packages/botocore/docs/bcdoc/textwriter.py:470
 #, fuzzy
@@ -138,7 +138,7 @@ msgstr "Изображение"
 #: env/lib/python3.7/site-packages/captcha/fields.py:26
 #: env/lib/python3.7/site-packages/captcha/fields.py:27
 msgid "Error verifying reCAPTCHA, please try again."
-msgstr ""
+msgstr "Ошибка проверки reCaptcha, пожалуйста, попробуйте еще раз."
 
 #: env/lib/python3.7/site-packages/crispy_forms/tests/test_form_helper.py:129
 #: env/lib/python3.7/site-packages/crispy_forms/tests/test_form_helper.py:139
@@ -148,11 +148,11 @@ msgstr "Это поле является обязательным."
 
 #: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout.py:361
 msgid "i18n text"
-msgstr ""
+msgstr "i18n текст"
 
 #: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout.py:361
 msgid "i18n legend"
-msgstr ""
+msgstr "i18n легенда"
 
 #: env/lib/python3.7/site-packages/crispy_forms/tests/test_layout_objects.py:129
 #: env/lib/python3.7/site-packages/django/core/validators.py:31
@@ -1433,227 +1433,227 @@ msgstr "Подключите, получите помощь, или вносит
 #: env/lib/python3.7/site-packages/djcelery/models.py:34
 #: env/lib/python3.7/site-packages/djcelery/models.py:341
 msgid "state"
-msgstr ""
+msgstr "штат"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:71
 #: env/lib/python3.7/site-packages/djcelery/models.py:350
 msgid "ETA"
-msgstr ""
+msgstr "ETA"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:78
 msgid "when"
-msgstr ""
+msgstr "когда"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:87
 #: env/lib/python3.7/site-packages/djcelery/models.py:211
 #: env/lib/python3.7/site-packages/djcelery/models.py:345
 #: env/lib/python3.7/site-packages/kombu/transport/django/models.py:12
 msgid "name"
-msgstr ""
+msgstr "имя"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:121
 msgid "Task detail"
-msgstr ""
+msgstr "Подробности задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:122
 msgid "Tasks"
-msgstr ""
+msgstr "Задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:137
 #: env/lib/python3.7/site-packages/djcelery/models.py:343
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:161
 msgid "Revoke selected tasks"
-msgstr ""
+msgstr "Отменить выбранные задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:167
 msgid "Terminate selected tasks"
-msgstr ""
+msgstr "Завершить выбранные задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:173
 msgid "Kill selected tasks"
-msgstr ""
+msgstr "Отменить выбранные задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:180
 #: env/lib/python3.7/site-packages/djcelery/templates/djcelery/confirm_rate_limit.html:9
 msgid "Rate limit selected tasks"
-msgstr ""
+msgstr "Ограничить скорость выбранных заданий"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:193
 msgid "Rate limit selection"
-msgstr ""
+msgstr "Выбор ограничения скорости"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:215
 msgid "Node detail"
-msgstr ""
+msgstr "Деталь узла"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:216
 msgid "Worker Nodes"
-msgstr ""
+msgstr "Рабочие Узлы"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:223
 msgid "Shutdown selected worker nodes"
-msgstr ""
+msgstr "Завершить работу выбранных рабочих узлов"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:227
 msgid "Enable event mode for selected nodes."
-msgstr ""
+msgstr "Включить режим события для выбранных узлов."
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:232
 msgid "Disable event mode for selected nodes."
-msgstr ""
+msgstr "Отключить режим события для выбранных узлов."
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:285
 msgid "Task (registered)"
-msgstr ""
+msgstr "Задание (зарегистрировано)"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:287
 msgid "Task (custom)"
-msgstr ""
+msgstr "Задание (настраиваемое)"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:300
 msgid "Need name of task"
-msgstr ""
+msgstr "Требуется название задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:311
 #, python-format
 msgid "Unable to parse JSON: %s"
-msgstr ""
+msgstr "Невозможно разобрать JSON: %s"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:361
 msgid "Enable selected periodic tasks"
-msgstr ""
+msgstr "Включить выбранные периодические задания"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:366
 msgid "Disable selected periodic tasks"
-msgstr ""
+msgstr "Выключить выбранные периодические задания"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:10
 #, python-brace-format
 msgid "{num} year ago"
-msgstr ""
+msgstr "{num} год назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:10
 #, python-brace-format
 msgid "{num} years ago"
-msgstr ""
+msgstr "{num} лет назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:14
 #, python-brace-format
 msgid "{num} month ago"
-msgstr ""
+msgstr "{num} месяц назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:14
 #, python-brace-format
 msgid "{num} months ago"
-msgstr ""
+msgstr "{num} месяцев назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:18
 #, python-brace-format
 msgid "{num} week ago"
-msgstr ""
+msgstr "{num} неделю назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:18
 #, python-brace-format
 msgid "{num} weeks ago"
-msgstr ""
+msgstr "{num} неделей назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:22
 #, python-brace-format
 msgid "{num} day ago"
-msgstr ""
+msgstr "{num} день назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:22
 #, python-brace-format
 msgid "{num} days ago"
-msgstr ""
+msgstr "{num} дней назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:56
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:71
 msgid "just now"
-msgstr ""
+msgstr "прямо сейчас"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:62
 #, python-brace-format
 msgid "{minutes} minute ago"
-msgstr ""
+msgstr "{minutes} минуту назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:63
 #, python-brace-format
 msgid "{minutes} minutes ago"
-msgstr ""
+msgstr "{minutes} минут назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:68
 #, python-brace-format
 msgid "{seconds} second ago"
-msgstr ""
+msgstr "{seconds} секунду назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:69
 #, python-brace-format
 msgid "{seconds} seconds ago"
-msgstr ""
+msgstr "{seconds} секунд назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:74
 #, python-brace-format
 msgid "{hours} hour ago"
-msgstr ""
+msgstr "{hours} час назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:74
 #, python-brace-format
 msgid "{hours} hours ago"
-msgstr ""
+msgstr "{hours} часов назад"
 
 #: env/lib/python3.7/site-packages/djcelery/humanize.py:78
 #, python-brace-format
 msgid "yesterday at {time}"
-msgstr ""
+msgstr "вчера в {time}"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:32
 msgid "task id"
-msgstr ""
+msgstr "task id"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:38
 msgid "done at"
-msgstr ""
+msgstr "сделано в"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:39
 #: env/lib/python3.7/site-packages/djcelery/models.py:353
 msgid "traceback"
-msgstr ""
+msgstr "трассировки"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:50
 msgid "task state"
-msgstr ""
+msgstr "задача штата"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:51
 msgid "task states"
-msgstr ""
+msgstr "задача штатов"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:69
 msgid "group id"
-msgstr ""
+msgstr "group id"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:71
 msgid "created at"
-msgstr ""
+msgstr "созданый в"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:78
 msgid "saved group result"
-msgstr ""
+msgstr "сохраненный результат группы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:79
 msgid "saved group results"
-msgstr ""
+msgstr "сохраненные результаты группы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:91
 msgid "Days"
-msgstr ""
+msgstr "Дни"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:92
 msgid "Hours"
-msgstr ""
+msgstr "Часы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:93
 #, fuzzy
@@ -1663,38 +1663,38 @@ msgstr "0 минут"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:94
 msgid "Seconds"
-msgstr ""
+msgstr "Секунды"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:95
 msgid "Microseconds"
-msgstr ""
+msgstr "Микросекунды"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:100
 msgid "every"
-msgstr ""
+msgstr "каждый"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:102
 msgid "period"
-msgstr ""
+msgstr "период"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:106
 #: env/lib/python3.7/site-packages/djcelery/models.py:217
 msgid "interval"
-msgstr ""
+msgstr "интервал"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:107
 msgid "intervals"
-msgstr ""
+msgstr "интервалы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:127
 #, python-brace-format
 msgid "every {0.period_singular}"
-msgstr ""
+msgstr "каждый {0.period_singular}"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:128
 #, python-brace-format
 msgid "every {0.every:d} {0.period}"
-msgstr ""
+msgstr "каждый {0.every:d} {0.period}"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:137
 #, fuzzy
@@ -1726,12 +1726,12 @@ msgstr "%d месяц"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:146
 msgid "month of year"
-msgstr ""
+msgstr "месяц года"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:150
 #: env/lib/python3.7/site-packages/djcelery/models.py:221
 msgid "crontab"
-msgstr ""
+msgstr "кронтаб"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:151
 #, fuzzy
@@ -1747,38 +1747,38 @@ msgstr "Описание:"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:214
 msgid "task name"
-msgstr ""
+msgstr "название задания"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:223
 msgid "Use one of interval/crontab"
-msgstr ""
+msgstr "Используйте один интервал/кронтаб"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:226
 #: env/lib/python3.7/site-packages/djcelery/models.py:348
 msgid "Arguments"
-msgstr ""
+msgstr "Аргументы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:227
 msgid "JSON encoded positional arguments"
-msgstr ""
+msgstr "Закодированные позиционные аргументы JSON"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:230
 #: env/lib/python3.7/site-packages/djcelery/models.py:349
 msgid "Keyword arguments"
-msgstr ""
+msgstr "Необязательные и названные аргументы"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:231
 msgid "JSON encoded keyword arguments"
-msgstr ""
+msgstr "Необязательные и названные аргументы закодированы JSON"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:234
 #: env/lib/python3.7/site-packages/kombu/transport/django/models.py:20
 msgid "queue"
-msgstr ""
+msgstr "очередь"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:235
 msgid "Queue defined in CELERY_QUEUES"
-msgstr ""
+msgstr "Очередь определена в CELERY_QUEUES"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:238
 #, fuzzy
@@ -1788,11 +1788,11 @@ msgstr "Изменить"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:241
 msgid "routing key"
-msgstr ""
+msgstr "ключ маршрутизации"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:247
 msgid "enabled"
-msgstr ""
+msgstr "включен"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:257
 #, fuzzy
@@ -1802,68 +1802,68 @@ msgstr "Описание:"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:263
 msgid "periodic task"
-msgstr ""
+msgstr "периодическое задание"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:264
 msgid "periodic tasks"
-msgstr ""
+msgstr "периодическые задания"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:307
 msgid "hostname"
-msgstr ""
+msgstr "имя хоста"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:308
 msgid "last heartbeat"
-msgstr ""
+msgstr "последний такт диспетчера"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:315
 #: env/lib/python3.7/site-packages/djcelery/models.py:360
 msgid "worker"
-msgstr ""
+msgstr "работник"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:316
 msgid "workers"
-msgstr ""
+msgstr "работники"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:347
 msgid "event received at"
-msgstr ""
+msgstr "событие получено в"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:352
 msgid "result"
-msgstr ""
+msgstr "результат"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:355
 msgid "execution time"
-msgstr ""
+msgstr "время исполнения"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:356
 msgid "in seconds if task succeeded"
-msgstr ""
+msgstr "За считанные секунды, если задание выполнено успешно"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:358
 msgid "number of retries"
-msgstr ""
+msgstr "количество повторных попыток"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:369
 msgid "task"
-msgstr ""
+msgstr "задание"
 
 #: env/lib/python3.7/site-packages/djcelery/models.py:370
 msgid "tasks"
-msgstr ""
+msgstr "задания"
 
 #: env/lib/python3.7/site-packages/djcelery/templates/djcelery/confirm_rate_limit.html:22
 msgid "Rate limit"
-msgstr ""
+msgstr "Ограничение скорости"
 
 #: env/lib/python3.7/site-packages/kombu/transport/django/models.py:21
 msgid "queues"
-msgstr ""
+msgstr "очереди"
 
 #: env/lib/python3.7/site-packages/kombu/transport/django/models.py:28
 msgid "payload"
-msgstr ""
+msgstr "полезная нагрузка"
 
 #: env/lib/python3.7/site-packages/kombu/transport/django/models.py:37
 #, fuzzy
@@ -1880,17 +1880,17 @@ msgstr "Сообщения"
 #: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1295
 #, python-format
 msgid "Attempting to connect to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Попытка подключения к qpid с помощью механизма SASL %s"
 
 #: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1300
 #, python-format
 msgid "Connected to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Подключен к qpid с механизмом SASL %s"
 
 #: env/lib/python3.7/site-packages/kombu/transport/qpid.py:1318
 #, python-format
 msgid "Unable to connect to qpid with SASL mechanism %s"
-msgstr ""
+msgstr "Не удалось подключиться к qpid с помощью механизма SASL %s"
 
 #: env/lib/python3.7/site-packages/modeltranslation/widgets.py:25
 msgid "None"
@@ -1898,19 +1898,19 @@ msgstr "None"
 
 #: env/lib/python3.7/site-packages/tests/test_base.py:22
 msgid "COOKIE_INFO_HEADER"
-msgstr ""
+msgstr "COOKIE_INFO_HEADER"
 
 #: env/lib/python3.7/site-packages/tests/test_base.py:23
 msgid "COOKIE_INFO_PARA"
-msgstr ""
+msgstr "COOKIE_INFO_PARA"
 
 #: env/lib/python3.7/site-packages/tests/test_base.py:24
 msgid "COOKIE_INFO_OK"
-msgstr ""
+msgstr "COOKIE_INFO_OK"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:368
 msgid "1 second ago"
-msgstr ""
+msgstr "1 секунду назад"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:374
 #, fuzzy
@@ -1921,62 +1921,62 @@ msgstr "%d минута"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:379
 msgid "1 hour ago"
-msgstr ""
+msgstr "1 час назад"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:382
 #, python-format
 msgid "%(time)s"
-msgstr ""
+msgstr "%(time)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:384
 msgid "yesterday"
-msgstr ""
+msgstr "вчера"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:384
 #, python-format
 msgid "yesterday at %(time)s"
-msgstr ""
+msgstr "вчера в %(time)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:386
 #, python-format
 msgid "%(weekday)s"
-msgstr ""
+msgstr "%(weekday)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:386
 #, python-format
 msgid "%(weekday)s at %(time)s"
-msgstr ""
+msgstr "%(weekday)s в %(time)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:389
 #: env/lib/python3.7/site-packages/tornado/locale.py:442
 #, python-format
 msgid "%(month_name)s %(day)s"
-msgstr ""
+msgstr "%(month_name)s %(day)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:391
 #, python-format
 msgid "%(month_name)s %(day)s at %(time)s"
-msgstr ""
+msgstr "%(month_name)s %(day)s в %(time)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:396
 #, python-format
 msgid "%(month_name)s %(day)s, %(year)s"
-msgstr ""
+msgstr "%(month_name)s %(day)s, %(year)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:398
 #, python-format
 msgid "%(month_name)s %(day)s, %(year)s at %(time)s"
-msgstr ""
+msgstr "%(month_name)s %(day)s, %(year)s в %(time)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:436
 #, python-format
 msgid "%(weekday)s, %(month_name)s %(day)s"
-msgstr ""
+msgstr "%(weekday)s, %(month_name)s %(day)s"
 
 #: env/lib/python3.7/site-packages/tornado/locale.py:459
 #, python-format
 msgid "%(commas)s and %(last)s"
-msgstr ""
+msgstr "%(commas)s и %(last)s"
 
 #: env/lib/python3.7/site-packages/tornado/test/locale_test.py:68
 #, fuzzy
@@ -1996,13 +1996,13 @@ msgstr "полночь"
 #: env/lib/python3.7/site-packages/tornado/test/locale_test.py:74
 msgctxt "organization"
 msgid "club"
-msgstr ""
+msgstr "клуб"
 
 #: env/lib/python3.7/site-packages/tornado/test/locale_test.py:76
 #: env/lib/python3.7/site-packages/tornado/test/locale_test.py:77
 msgctxt "stick"
 msgid "club"
-msgstr ""
+msgstr "клуб"
 
 #: env/lib/python3.7/site-packages/transliterate/utils.py:55
 #: env/lib/python3.7/site-packages/transliterate/utils.py:90
@@ -2025,7 +2025,7 @@ msgstr "Невозможно определить язык текста \"%s\" �
 
 #: gifts/models.py:23
 msgid "gift type"
-msgstr ""
+msgstr "тип подарка"
 
 #: gifts/templates/gifts/detail.html:12 gifts/templates/gifts/gift_list.html:3
 #: gifts/templates/gifts/index.html:9 gifts/templates/gifts/index.html:13
@@ -2034,7 +2034,7 @@ msgstr "Подарки"
 
 #: gifts/templates/gifts/detail.html:24
 msgid "Title:"
-msgstr ""
+msgstr "Заглавие:"
 
 #: gifts/templates/gifts/detail.html:31
 msgid "Description:"
@@ -2054,7 +2054,7 @@ msgstr "IP адрес"
 
 #: gifts/templates/gifts/gift_confirm_delete.html:3
 msgid "Gift delete"
-msgstr ""
+msgstr "Удалить подарок"
 
 #: gifts/templates/gifts/gift_form.html:3
 #, fuzzy
@@ -2064,35 +2064,35 @@ msgstr "Подарки"
 
 #: gifts/templates/gifts/index.html:58
 msgid "Free"
-msgstr ""
+msgstr "Бесплатный"
 
 #: items/filters.py:8
 msgid "Price is greater than"
-msgstr ""
+msgstr "Цена от"
 
 #: items/filters.py:9
 msgid "Price is less than"
-msgstr ""
+msgstr "Цена до"
 
 #: items/models.py:10
 msgid "Used"
-msgstr ""
+msgstr "Использованое"
 
 #: items/models.py:11
 msgid "Acceptable"
-msgstr ""
+msgstr "Приемлемый"
 
 #: items/models.py:12
 msgid "Very Good"
-msgstr ""
+msgstr "Очень хорошо"
 
 #: items/models.py:13
 msgid "Like New"
-msgstr ""
+msgstr "Как Новый"
 
 #: items/models.py:14
 msgid "New"
-msgstr ""
+msgstr "Новый"
 
 #: items/models.py:22
 #, fuzzy
@@ -2117,7 +2117,7 @@ msgstr "Товары"
 #: items/templates/items/detail.html:35 jobs/templates/jobs/detail.html:41
 #: rents/templates/rents/detail.html:38
 msgid "Map:"
-msgstr ""
+msgstr "Карта:"
 
 #: items/templates/items/detail.html:39 rents/templates/rents/detail.html:33
 #: rents/templates/rents/detail.html:42
@@ -2126,7 +2126,7 @@ msgstr "Цена:"
 
 #: items/templates/items/item_confirm_delete.html:4
 msgid "Item delete"
-msgstr ""
+msgstr "Элемент удалить"
 
 #: jobs/models.py:22
 #, fuzzy
@@ -2136,19 +2136,19 @@ msgstr "Тип вакансии:"
 
 #: jobs/models.py:23
 msgid "full-time"
-msgstr ""
+msgstr "полный рабочий день"
 
 #: jobs/models.py:24
 msgid "part-time"
-msgstr ""
+msgstr "неполный рабочий день"
 
 #: jobs/models.py:25
 msgid "casual"
-msgstr ""
+msgstr "случайный"
 
 #: jobs/models.py:31
 msgid "language"
-msgstr ""
+msgstr "язык"
 
 #: jobs/models.py:32
 #, fuzzy
@@ -2239,7 +2239,7 @@ msgstr "Выбор пола"
 
 #: rents/templates/rents/rental_confirm_delete.html:5
 msgid "Rent delete"
-msgstr ""
+msgstr "Удалить аренду"
 
 #: rents/templates/rents/rental_table_list.html:3
 #, fuzzy
@@ -2249,11 +2249,11 @@ msgstr "Арендная плата"
 
 #: sendemail/forms.py:6
 msgid "From  email"
-msgstr ""
+msgstr "С электронной почты"
 
 #: sendemail/forms.py:7
 msgid "Subject"
-msgstr ""
+msgstr "Тема"
 
 #: sendemail/forms.py:8
 #, fuzzy
@@ -2271,19 +2271,19 @@ msgstr "Контакты"
 
 #: sendemail/templates/sendemail/email.html:30
 msgid "Send"
-msgstr ""
+msgstr "Отправить"
 
 #: sendemail/templates/sendemail/success.html:4
 msgid "Success"
-msgstr ""
+msgstr "Успех"
 
 #: sendemail/templates/sendemail/success.html:8
 msgid "success"
-msgstr ""
+msgstr "успех"
 
 #: sendemail/templates/sendemail/success.html:24
 msgid "Success! Thank you for your message."
-msgstr ""
+msgstr "Успеха! Спасибо за ваше сообщение."
 
 #: templates/base.html:80
 msgid "Map"
@@ -2291,28 +2291,28 @@ msgstr "Карта"
 
 #: templates/base.html:83
 msgid "Admin"
-msgstr ""
+msgstr "Админ"
 
 #: templates/base.html:97 templates/base.html:99
 msgid "Hello"
-msgstr ""
+msgstr "Привет"
 
 #: templates/base.html:103
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 #: templates/base.html:108
 msgid "Sign up"
-msgstr ""
+msgstr "Зарегестрироваться"
 
 #: templates/base.html:111 templates/registration/login.html:5
 #: templates/registration/login.html:19 templates/registration/login.html:30
 msgid "Log in"
-msgstr ""
+msgstr "Войти"
 
 #: templates/base.html:143
 msgid "Notice! Ads are displayed only in the selected language."
-msgstr ""
+msgstr "Замечание! Объявления отображаются только на выбранном языке."
 
 #: templates/home.html:68
 msgid "Frog greeting!"
@@ -2333,118 +2333,120 @@ msgstr "Котики"
 #: templates/registration/logged_out.html:3
 #: templates/registration/logged_out.html:16
 msgid "Logget out"
-msgstr ""
+msgstr "Выход"
 
 #: templates/registration/logged_out.html:25
 msgid "Logged out"
-msgstr ""
+msgstr "Выход"
 
 #: templates/registration/logged_out.html:28
 msgid "You have been successfully logged out. You can"
-msgstr ""
+msgstr "Вы успешно вышли. Вы можете"
 
 #: templates/registration/logged_out.html:29
 msgid "log-in again"
-msgstr ""
+msgstr "Войти повторно"
 
 #: templates/registration/login.html:34
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
+msgstr "Имя пользователя и пароль не совпадают. Попробуйте еще раз."
 
 #: templates/registration/login.html:38
 msgid "Please, use the following form to log-in."
-msgstr ""
+msgstr "Пожалуйста, используйте следующую форму входа."
 
 #: templates/registration/login.html:40
 msgid "If you don't have an account"
-msgstr ""
+msgstr "Если у вас нет учетной записи"
 
 #: templates/registration/login.html:41
 msgid "register here"
-msgstr ""
+msgstr "зарегистрируйтесь здесь"
 
 #: templates/registration/login.html:50
 msgid "Log In"
-msgstr ""
+msgstr "Войти"
 
 #: templates/registration/login.html:54
 #: templates/registration/password_reset_form.html:19
 msgid "Forgotten your password"
-msgstr ""
+msgstr "Забыли пароль"
 
 #: templates/registration/login.html:59
 msgid "Sign in with Facebook"
-msgstr ""
+msgstr "Войти через Facebook"
 
 #: templates/registration/login.html:63
 msgid "Login with Twitter"
-msgstr ""
+msgstr "Войти через Twitter"
 
 #: templates/registration/login.html:67
 msgid "Login with Google"
-msgstr ""
+msgstr "Войти через Google"
 
 #: templates/registration/password_change_done.html:17
 #: templates/registration/password_change_form.html:17
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: templates/registration/password_change_done.html:27
 msgid "Password changed"
-msgstr ""
+msgstr "Пароль изменен"
 
 #: templates/registration/password_change_done.html:28
 msgid "Your password has been successfully changed"
-msgstr ""
+msgstr "Пароль успешно изменен"
 
 #: templates/registration/password_reset_confirm.html:12
 #: templates/registration/password_reset_done.html:21
 msgid "Reset your password"
-msgstr ""
+msgstr "Сбросить пароль"
 
 #: templates/registration/password_reset_confirm.html:14
 msgid "Please enter your new password twice:"
-msgstr ""
+msgstr "Пожалуйста, введите новый пароль дважды:"
 
 #: templates/registration/password_reset_confirm.html:18
 msgid "Change my password"
-msgstr ""
+msgstr "Изменить пароль"
 
 #: templates/registration/password_reset_confirm.html:22
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr ""
+msgstr "Ссылка для восстановления пароля была недействительной, возможно потому, что ее уже "
+"использовали. Пожалуйста, дайте запрос на новую ссылку восстановления пароля."
 
 #: templates/registration/password_reset_done.html:22
 msgid "We've emailed you instructions for setting your password"
-msgstr ""
+msgstr "Мы отправили вам электронной почтой инструкции по настройке пароля"
 
 #: templates/registration/password_reset_done.html:23
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
-msgstr ""
+msgstr "Если вы не получите электронное письмо, убедитесь, что вы ввели адрес "
+"вы зарегистрировались в"
 
 #: templates/registration/password_reset_email.html:4
 msgid "Someone asked for password reset for email "
-msgstr ""
+msgstr "Некто дал запрос на сброс пароля к электронной почте"
 
 #: templates/registration/password_reset_email.html:5
 msgid "Follow the link below:"
-msgstr ""
+msgstr "Перейдите по ссылке ниже:"
 
 #: templates/registration/password_reset_email.html:7
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Ваше имя пользователя, если вы забыли:"
 
 #: templates/registration/password_reset_form.html:20
 msgid "Enter your e-mail address to obtain a new password"
-msgstr ""
+msgstr "Введите адрес электронной почты, чтобы получить новый пароль"
 
 #: templates/registration/password_reset_form.html:23
 msgid "Send e-mail"
-msgstr ""
+msgstr "Отправить сообщение электронной почты"
 
 #: templates/snippets/filter.html:26 templates/snippets/search_bar.html:17
 #, fuzzy
@@ -2454,23 +2456,23 @@ msgstr "Март"
 
 #: templates/snippets/filter.html:31
 msgid "Filter Search"
-msgstr ""
+msgstr "Фильтр поиска"
 
 #: zaba/settings.py:168
 msgid "Ukrainian"
-msgstr ""
+msgstr "Украинский"
 
 #: zaba/settings.py:169
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: zaba/settings.py:170
 msgid "Polish"
-msgstr ""
+msgstr "Польский"
 
 #: zaba/settings.py:171
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #~ msgid "Neighborhood:"
 #~ msgstr "Район:"

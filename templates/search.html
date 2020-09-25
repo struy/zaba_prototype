@@ -1,115 +1,97 @@
-{% extends "base.html" %}
-{% load class_name %}
-{% load i18n %}
+{% extends "base.html" %} {% load class_name %} {% load i18n %} {% block
+breadcrumbs %}
+<li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+<li class="breadcrumb-item active" aria-current="page">
+  {% trans "Search result" %}
+</li>
+{% endblock %} {% block head %}
+<style>
+  #add_button {
+    display: none;
+  }
+</style>
+{% endblock %} {% block content %} {% include "snippets/search_bar.html" %}
 
+<div class="container">
+  <div class="row title-row my-5">
+    <div class="col-12 py-0">
+      {% if query != None %}
+      <h3 class="my-0 py-0">
+        {{ count }} results
+        <b>
+          {% if query %} for {{ query }} {% endif %} {% if address %} in {{
+          address }} {% endif %}
+        </b>
+      </h3>
+      {% endif %}
+    </div>
+  </div>
 
-{% block breadcrumbs %}
-    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{% trans "Search result" %}</li>
-{% endblock %}
+  {% for object in object_list %} {% with object|class_name as klass %} {% if
+  klass == 'Item' %}
+  <div class="row">
+    <div class="offset-md-2 col-12">
+      Item : <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+    </div>
+  </div>
 
-{% block head %}
-    <style>
-        #add_button {
-            display: none;
-        }
-    </style>
-{% endblock %}
+  {% elif klass == 'Gift' %}
+  <div class="row">
+    <div class="offset-md-2 col-12">
+      Gift : <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+    </div>
+  </div>
 
+  {% elif klass == 'Job' %}
+  <div class="row">
+    <div class="offset-md-2 col-12">
+      Job : <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+    </div>
+  </div>
 
-{% block content %}
-    {% include "snippets/search_bar.html" %}
+  {% elif klass == 'Rental' %}
+  <div class="row">
+    <div class="offset-md-2 col-12">
+      Rent: <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+    </div>
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="offset-md-2 col-12 col-lg-8 offset-lg-4">
+      <a href="{{ object.get_absolute_url }}"
+        >{{ object }} | {{ object|class_name }}</a
+      >
+    </div>
+  </div>
+  {% endif %} {% endwith %} {% empty %}
+  <div class="row">
+    <div class="offset-md-2 col-12 col-md-6 mx-auto my-5 py-5">
+      <p class="text-center">
+        {% trans "Enter another query to search at this site" %}
+      </p>
+    </div>
+  </div>
+</div>
 
-    <div class="container">
+{% endfor %} {% endblock content %} {% block script %} {% include
+"snippets/address-input.html" %}
 
-        <div class='row title-row my-5'>
-            <div class='col-12 py-0'>
-                {% if query != None %}
-                    <h3 class='my-0 py-0'>{{ count }} results
-                        <b>
-                            {% if query %} for {{ query }}  {% endif %}
-                            {% if address %} in {{ address }}   {% endif %}
-                        </b>
-                    </h3>
-                {% endif %}
-            </div>
-        </div>
-
-
-        {% for object in object_list %}
-            {% with object|class_name as klass %}
-
-                {% if klass == 'Item' %}
-                    <div class='row'>
-                        <div class='offset-md-2 col-12'>
-                            Item : <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a>
-                        </div>
-                    </div>
-
-                {% elif klass == 'Gift' %}
-                    <div class='row'>
-                        <div class='offset-md-2 col-12'>
-                            Gift : <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a>
-                        </div>
-                    </div>
-
-                {% elif klass == 'Job' %}
-                    <div class='row'>
-                        <div class='offset-md-2 col-12'>
-                            Job : <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a>
-                        </div>
-                    </div>
-
-
-                {% elif klass == 'Rental' %}
-                    <div class='row'>
-                        <div class='offset-md-2 col-12'>
-                            Rent: <a href='{{ object.get_absolute_url }}'>{{ object.title }}</a>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class='row'>
-                        <div class='offset-md-2 col-12 col-lg-8 offset-lg-4'>
-                            <a href='{{ object.get_absolute_url }}'>{{ object }} | {{ object|class_name }}</a>
-                        </div>
-                    </div>
-                {% endif %}
-
-            {% endwith %}
-
-        {% empty %}
-            <div class='row'>
-                <div class='offset-md-2 col-12 col-md-6 mx-auto my-5 py-5'>
-                    <p class="text-center">
-                        {% trans "Enter another query to search at this site" %}
-                    </p>
-                </div>
-            </div>
-
-            </div>
-
-        {% endfor %}
-{% endblock content %}
-
-
-
-{% block script %}
-    {% include "snippets/address-input.html" %}
-
-    <script>
-        $(function () {
-            $("#search_city").keypress(function (event) {
-                if (!((event.which >= 65 && event.which <= 90) ||
-                    (event.which >= 97 && event.which <= 122) ||
-                    event.which == 32 || event.which == 45 ||
-                    event.which == 39
-                )) {
-                    event.preventDefault();
-                }
-            });
-            $("#search_city").tooltip();
-
-
-        });
-    </script>
+<script>
+  $(function () {
+    $("#search_city").keypress(function (event) {
+      if (
+        !(
+          (event.which >= 65 && event.which <= 90) ||
+          (event.which >= 97 && event.which <= 122) ||
+          event.which == 32 ||
+          event.which == 45 ||
+          event.which == 39
+        )
+      ) {
+        event.preventDefault();
+      }
+    });
+    $("#search_city").tooltip();
+  });
+</script>
 {% endblock script %}

@@ -1433,7 +1433,7 @@ msgstr "Подключите, получите помощь, или вносит
 #: env/lib/python3.7/site-packages/djcelery/models.py:34
 #: env/lib/python3.7/site-packages/djcelery/models.py:341
 msgid "state"
-msgstr "штат"
+msgstr "состояние"
 
 #: env/lib/python3.7/site-packages/djcelery/admin.py:71
 #: env/lib/python3.7/site-packages/djcelery/models.py:350

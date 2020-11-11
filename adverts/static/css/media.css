@@ -3,6 +3,9 @@
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
+  .form-inline .form-control {
+    width: 100%;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -27,6 +30,10 @@
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
+  #main .icon-box {
+    max-width: 80%;
+    margin: 10px auto;
+  }
 }
 
 /*Small devices (landscape phones, less than 768px)*/

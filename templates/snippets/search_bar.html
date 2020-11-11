@@ -1,9 +1,10 @@
 {% load i18n %}
 
+
 <div class="container">
   <form class="form-inline" action="{% url 'global_search' %}">
     <div class="form-row">
-      <div class="col-md-7 col-lg-7">
+      <div class="col-md-6 col-lg-6">
         <div class="form-group has-search">
           <span class="fa fa-search form-control-feedback"></span>
           <input
@@ -16,7 +17,12 @@
         </div>
       </div>
 
-      <div class="col-md-4 col-lg-4">
+    <div class="col-md-4 col-lg-4">
+      <div class="form-group has-search">
+       <span class="fas fa-map-marker-alt form-control-location">
+       </span>
+       <span class="fas fa-angle-right form-control-angle">
+       </span>
         <input
           id="search_city"
           type="text"
@@ -30,9 +36,10 @@
           autocomplete="on"
         />
       </div>
+    </div>
 
       <div class="col">
-        <button class="btn btn-success mb-2" type="submit">
+        <button id="btn_search" class="btn btn-success mb-2" type="submit">
           {% trans "Search" %}
         </button>
         {% if has_filter %}
@@ -40,5 +47,5 @@
         {% endif %}
       </div>
     </div>
-  </form>
-</div>
+   </form>
+  </div> 

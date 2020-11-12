@@ -23,7 +23,7 @@ RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
 RECAPTCHA_REQUIRED_SCORE = 0.7
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (sys.argv[1] == 'runserver')
+DEBUG = (len(sys.argv) >= 2 and sys.argv[1] == 'runserver')
 
 if DEBUG:
     THUMBNAIL_DEBUG = True

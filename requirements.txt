@@ -1,5 +1,6 @@
 amqp==5.0.2
 anyjson==0.3.3
+apipkg==1.5
 appdirs==1.4.4
 astroid==2.4.2
 async-generator==1.10
@@ -53,6 +54,7 @@ djangorestframework==3.12.2
 docutils==0.16
 elasticsearch==7.10.0
 elasticsearch-dsl==7.3.0
+execnet==1.7.1
 Faker==4.14.2
 filelock==3.0.12
 flower==0.9.5
@@ -80,6 +82,7 @@ oauthlib==3.1.0
 outcome==1.0.1
 packaging==20.4
 parso==0.8.0
+pep8==1.7.1
 Pillow==8.0.1
 pkg-resources==0.0.0
 pluggy==0.13.1
@@ -97,8 +100,10 @@ pylint==2.6.0
 pyOpenSSL==19.1.0
 pyparsing==3.0.0b1
 pytest==6.1.2
+pytest-cache==1.0
 pytest-cov==2.10.1
 pytest-django==4.1.0
+pytest-pep8==1.0.6
 pytest-runner==5.2
 pytest-testmon==1.0.3
 pytest-timeout==1.4.2

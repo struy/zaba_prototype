@@ -309,6 +309,20 @@ header {
       background-color: white;
       color: #495057;
       border: 1px solid #ced4da;
+      width: 100%;
+      .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 1.955rem;
+        line-height: 1.375rem;
+        pointer-events: none;
+        color: #aaa;
+        right: 0;
+      }
+  }
+  
   }
   .btn-success:focus {
     border-color: #80bdff;
@@ -407,7 +421,7 @@ header {
     background-color: #d8e7bb;
   }
   
-}
+
 
 /*JOB*/
 .job_title {
@@ -552,7 +566,10 @@ form.new-edit {
   background-image: none;
 }
 
-.mb-2, .my-2 {
+ .my-2 {
   margin-bottom: 1rem!important;
 }
+
+
+
 

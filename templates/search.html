@@ -1,16 +1,25 @@
-{% extends "base.html" %} {% load class_name %} {% load i18n %} {% block
-breadcrumbs %}
+{% extends "base.html" %} 
+{% load class_name %} 
+{% load i18n %} 
+
+
+{% block breadcrumbs %}
 <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
 <li class="breadcrumb-item active" aria-current="page">
-  {% trans "Search result" %}
+{% trans "Search result" %}
 </li>
-{% endblock %} {% block head %}
+ {% endblock %}  
+ 
+ {% block head %} 
 <style>
   #add_button {
     display: none;
   }
 </style>
-{% endblock %} {% block content %} {% include "snippets/search_bar.html" %}
+ {% endblock %} 
+ 
+ {% block content %} 
+ {% include "snippets/search_bar.html" %}  
 
 <div class="container">
   <div class="row title-row my-5">
@@ -27,8 +36,10 @@ breadcrumbs %}
     </div>
   </div>
 
-  {% for object in object_list %} {% with object|class_name as klass %} {% if
-  klass == 'Item' %}
+  {% for object in object_list %} 
+  {% with object|class_name as klass %} 
+  {% if klass == 'Item' %}
+  
   <div class="row">
     <div class="offset-md-2 col-12">
       Item : <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>

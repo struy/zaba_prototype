@@ -50,7 +50,7 @@
 
     
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}"> <i class="fas fa-frog fa-2x"></i></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/img/logo.svg" alt="logo"></a>
             <div class="col d-lg-none d-flex justify-content-center">
                 {% for language in languages %}
                     <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"

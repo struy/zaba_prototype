@@ -1,5 +1,6 @@
 import redis
 from django.shortcuts import get_object_or_404, render
+from django.utils.translation import get_language
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -19,7 +20,7 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def index(request):
     query = request.GET.get('q')
-    lang = request.LANGUAGE_CODE
+    lang = get_language()
     if query:
         advert_list = Item.objects.filter(Q(local__exact=lang)
                                           & (Q(title__icontains=query) | Q(description__icontains=query))

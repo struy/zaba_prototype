@@ -51,7 +51,7 @@ services:
     depends_on:
       - redis
   celery-flower:
-    image: mher/flower
+    image: mher/flower:0.9.5
     container_name: zaba_celery_flower
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0

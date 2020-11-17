@@ -11,6 +11,7 @@
             type="text"
             class="form-control"
             name="q"
+            placeholder="type in what you are looking for"
             size="90"
             value="{{ request.GET.q }}"
           />
@@ -39,12 +40,25 @@
     </div>
 
       <div class="col">
-        <button id="btn_search" class="btn btn-success mb-2" type="submit">
+      <button id="btn_search" class="btn btn-success input-group" type="submit">
+          {% trans "SEARCH" %}
+          
+      {% comment %} <div class="input-group"> {% endcomment %}
+    {% comment %} <input type="text" class="form-control" placeholder="SEARCH"> {% endcomment %}
+    <div class="input-group-append">
+      <span class="fa fa-search form-control-feedback"></span>
+    </div>
+    </button>
+  {% comment %} </div> {% endcomment %}
+         {% comment %} <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+           <button id="btn_search" class="btn btn-success" type="submit">
           {% trans "Search" %}
-        </button>
-        {% if has_filter %}
+          </button>
+        </div> {% endcomment %}
+         {% if has_filter %}
         <a href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
-        {% endif %}
+         {% endif %}
       </div>
     </div>
    </form>

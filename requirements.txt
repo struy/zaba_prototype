@@ -9,8 +9,8 @@ attrs==20.3.0
 autopep8==1.5.4
 beautifulsoup4==4.9.3
 billiard==3.6.3.0
-boto3==1.16.18
-botocore==1.19.18
+boto3==1.16.19
+botocore==1.19.19
 braintree==4.5.0
 celery==5.0.2
 certifi==2020.11.8
@@ -55,7 +55,7 @@ docutils==0.16
 elasticsearch==7.10.0
 elasticsearch-dsl==7.3.0
 execnet==1.7.1
-Faker==4.14.2
+Faker==4.15.0
 filelock==3.0.12
 flower==0.9.5
 future==0.18.2
@@ -88,7 +88,7 @@ pkg-resources==0.0.0
 pluggy==1.0.0.dev0
 polib==1.1.0
 pony==0.7.13
-prometheus-client==0.8.0
+prometheus-client==0.9.0
 prompt-toolkit==3.0.8
 psycopg2==2.8.6
 py==1.9.0
@@ -147,5 +147,5 @@ wcwidth==0.2.5
 wrapt==1.12.1
 wsaccel==0.6.2
 wsproto==0.15.0
-yarl==1.6.2
+yarl==1.6.3
 zipp==3.4.0

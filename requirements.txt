@@ -13,6 +13,7 @@ boto3==1.16.19
 botocore==1.19.19
 braintree==4.5.0
 celery==4.4.7
+certifi==2020.11.8
 cffi==1.14.3
 chardet==3.0.4
 click==7.1.2
@@ -23,9 +24,11 @@ coverage==5.3
 cryptography==3.2.1
 defusedxml==0.7.0rc1
 distlib==0.3.1
-Django==2.2.*
+Django==2.2.17
 django-anymail==8.1
 django-appconf==1.0.4
+django-celery==3.3.1
+django-celery-results==1.2.1
 django-classy-tags==2.0.0
 django-cleanup==5.1.0
 django-cookie-law==2.0.4
@@ -70,7 +73,7 @@ isort==5.6.4
 jmespath==0.10.0
 junit-xml==1.8
 kombu==4.6.10
-lazy-object-proxy==1.4.*
+lazy-object-proxy==1.4.3
 mccabe==0.6.1
 mixer==6.1.3
 more-itertools==8.6.0
@@ -83,7 +86,7 @@ parso==0.8.0
 pep8==1.7.1
 Pillow==8.0.1
 pipdeptree==1.0.0
-pluggy==0.12
+pluggy==0.12.0
 polib==1.1.0
 pony==0.7.13
 prometheus-client==0.8.0
@@ -144,6 +147,6 @@ virtualenv==20.1.0
 wcwidth==0.2.5
 wrapt==1.12.1
 wsaccel==0.6.2
-wsproto==0.14
+wsproto==0.14.0
 yarl==1.6.3
 zipp==3.4.0

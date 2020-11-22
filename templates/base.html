@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{% static "cookielaw/css/cookielaw.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
     <link rel="stylesheet" href="{% static "css/media.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
 
     <script data-ad-client="ca-pub-7774017442769796" async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -69,7 +70,7 @@
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %}
                             <span class="sr-only">(current)</span>
@@ -90,19 +91,24 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
                     </li>
-
+                    <li  class="nav-item">
+                        <a class="nav-link favorites" href="#">
+                            <div class="counter-favorites">
+                                7
+                            </div>
+                        <i class="far fa-heart"></i>
+                        </a>
+                    </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url "logout" %}">
-                                {% if user.is_authenticated %}
-                                    {% if  request.user.first_name %}
-                                        {% trans "Hello" %} {{ request.user.first_name }},
-                                    {% else %}
-                                        {% trans "Hello" %} {{ request.user.username }},
-                                    {% endif %}
-                                {% else %}
-                                {% endif %}
-                                {% trans "Logout" %}
+                            <a class="nav-link d-flex favorites" href="#">
+{#                                icon-Account.svg#}
+                               <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.21661 9.63409C9.54016 9.63409 10.6861 9.15939 11.6227 8.22281C12.559 7.28638 13.0338 6.14059 13.0338 4.81689C13.0338 3.49365 12.5591 2.34772 11.6225 1.41098C10.6859 0.474701 9.54001 0 8.21661 0C6.89291 0 5.74713 0.474701 4.8107 1.41113C3.87427 2.34756 3.39941 3.4935 3.39941 4.81689C3.39941 6.14059 3.87427 7.28653 4.8107 8.22296C5.74744 9.15924 6.89337 9.63409 8.21661 9.63409ZM5.63956 2.23984C6.35809 1.5213 7.20099 1.17203 8.21661 1.17203C9.23209 1.17203 10.0751 1.5213 10.7938 2.23984C11.5124 2.95853 11.8618 3.80157 11.8618 4.81689C11.8618 5.83252 11.5124 6.67542 10.7938 7.3941C10.0751 8.11279 9.23209 8.46207 8.21661 8.46207C7.20129 8.46207 6.3584 8.11264 5.63956 7.3941C4.92087 6.67557 4.57144 5.83252 4.57144 4.81689C4.57144 3.80157 4.92087 2.95853 5.63956 2.23984Z" fill="black"/>
+<path d="M16.6457 15.379C16.6187 14.9893 16.564 14.5642 16.4836 14.1153C16.4024 13.663 16.2979 13.2354 16.1728 12.8447C16.0434 12.4408 15.8678 12.0419 15.6503 11.6597C15.425 11.2629 15.1601 10.9175 14.8628 10.6332C14.552 10.3358 14.1714 10.0967 13.7314 9.9223C13.2928 9.74881 12.8069 9.66092 12.287 9.66092C12.0828 9.66092 11.8854 9.74469 11.5041 9.99295C11.2694 10.146 10.9949 10.323 10.6885 10.5188C10.4265 10.6857 10.0716 10.8421 9.63318 10.9837C9.20547 11.1221 8.77121 11.1923 8.34244 11.1923C7.91397 11.1923 7.47971 11.1221 7.0517 10.9837C6.61377 10.8423 6.2587 10.6859 5.99716 10.5189C5.69366 10.325 5.41901 10.148 5.18082 9.9928C4.7998 9.74454 4.60236 9.66077 4.39819 9.66077C3.87817 9.66077 3.39233 9.74881 2.95395 9.92245C2.51419 10.0966 2.13348 10.3357 1.82236 10.6334C1.52512 10.9178 1.26022 11.2631 1.035 11.6597C0.817871 12.0419 0.64209 12.4406 0.512695 12.8448C0.387726 13.2356 0.283203 13.663 0.202026 14.1153C0.12146 14.5636 0.0669861 14.9888 0.039978 15.3795C0.0134277 15.7614 0 16.1589 0 16.5605C0 17.6045 0.331879 18.4497 0.986328 19.073C1.63269 19.6881 2.48779 20 3.52798 20H13.1581C14.198 20 15.0531 19.6881 15.6996 19.073C16.3542 18.4501 16.6861 17.6046 16.6861 16.5603C16.6859 16.1573 16.6724 15.7599 16.6457 15.379ZM14.8915 18.2238C14.4644 18.6303 13.8974 18.8279 13.158 18.8279H3.52798C2.78839 18.8279 2.22137 18.6303 1.79443 18.224C1.37558 17.8253 1.17203 17.281 1.17203 16.5605C1.17203 16.1857 1.18439 15.8157 1.20911 15.4605C1.23322 15.112 1.2825 14.7291 1.35559 14.3223C1.42776 13.9206 1.51962 13.5435 1.62888 13.2022C1.7337 12.8749 1.87668 12.5508 2.05399 12.2386C2.22321 11.941 2.41791 11.6858 2.63275 11.4801C2.83371 11.2877 3.08701 11.1302 3.38547 11.0121C3.6615 10.9028 3.97171 10.843 4.30847 10.834C4.34952 10.8558 4.42261 10.8975 4.54102 10.9747C4.78195 11.1317 5.05966 11.3109 5.36667 11.5069C5.71274 11.7276 6.1586 11.9268 6.69128 12.0988C7.23587 12.2749 7.79129 12.3643 8.34259 12.3643C8.89389 12.3643 9.44946 12.2749 9.99374 12.099C10.5269 11.9267 10.9726 11.7276 11.3191 11.5066C11.6333 11.3058 11.9032 11.1319 12.1442 10.9747C12.2626 10.8976 12.3357 10.8558 12.3767 10.834C12.7136 10.843 13.0238 10.9028 13.3 11.0121C13.5983 11.1302 13.8516 11.2878 14.0526 11.4801C14.2674 11.6856 14.4621 11.9409 14.6313 12.2387C14.8088 12.5508 14.9519 12.875 15.0566 13.202C15.166 13.5438 15.258 13.9207 15.33 14.3222C15.403 14.7297 15.4524 15.1127 15.4765 15.4606V15.4609C15.5014 15.8148 15.5139 16.1847 15.5141 16.5605C15.5139 17.2812 15.3104 17.8253 14.8915 18.2238Z" fill="black"/>
+</svg>
+
+                               <span class="ml-1">{% trans "My Profile" %}</span>
                             </a>
                         </li>
                     {% else %}
@@ -117,18 +123,18 @@
                 </ul>
 
 
-                <div class="d-none d-lg-block">
-                    {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
-                    {% endfor %}
-                </div>
+{#                <div class="d-none d-lg-block">#}
+{#                    {% for language in languages %}#}
+{#                        <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"#}
+{#                              style="display:inline!important;">#}
+{#                            {% csrf_token %}#}
+{#                            <input name="next" type="hidden" value="{{ redirect_to }}"/>#}
+{#                            <input name="language" type="hidden" value="{{ language.code }}"/>#}
+{#                        </form>#}
+{#                        <button class="lang-button " type="submit" form="form_{{ language.code }}"#}
+{#                                value="Submit"></button>#}
+{#                    {% endfor %}#}
+{#                </div>#}
 
             </div>
 
@@ -147,9 +153,11 @@
         </div>
         <section id="google_ads">
             <center>
-                <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
+                <div class="container">
+                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
                      width="724"
                      alt="" class="img_ad">
+                </div>
             </center>
         </section>
 
@@ -216,7 +224,7 @@
 
 {% if not user.is_staff %}
     <div style="display:none">
-        <img src="{% google_analytics %}" width="0" height="0"/>
+{#        <img src="{% google_analytics %}" width="0" height="0"/>#}
     </div>
 {% endif %}
 

@@ -22,7 +22,7 @@ body {
 }
 
 body {
-  background-color: #E5E5E5!important;
+  background-color: #E5E5E5 !important;
   padding-top: 84px;
 }
 
@@ -40,6 +40,8 @@ body {
 
 .form_ru {
   background: url("/static/img/flags/Russia.png");
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .form_en {
@@ -86,12 +88,27 @@ header {
     color: $base-color;
   }
 
-  i {
-    padding-top: 15px;
+  .favorites {
+    position: relative;
+i{
+  font-size: 16px;
+}
+    .counter-favorites {
+      font-size: 12px;
+      position: absolute;
+      background-color: #749B27;
+      color: white;
+      text-align: center;
+      padding: 2px 7px;
+      border-radius: 100%;
+      top: -4px;
+      right: -5px;
+
+    }
   }
 
   .bg-dark {
-    background: #ffffff!important;
+    background: #ffffff !important;
   }
 
   button[type="submit"] {
@@ -117,48 +134,58 @@ header {
   button[form="form_pl"] {
     background: url("/static/img/flags/Poland.png");
   }
-  
-  button.navbar-toggler{
-      &:focus{
-        outline:none;
-      }
-    
+
+  button.navbar-toggler {
+    &:focus {
+      outline: none;
+    }
+
   }
-  .navbar-dark  {
-    
+
+  .navbar-dark {
+
     .navbar-nav {
-      
+      text-transform: uppercase;
+
       .nav-link {
         color: #000000;
+        font-size: 14px;
       }
     }
   }
+
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+  }
+
   .navbar-dark {
-    
+
     .navbar-nav .active {
-      
-      >.nav-link {
+
+      > .nav-link {
         color: #749B27;
-       }
       }
     }
-    .navbar-dark {
-      
-      .navbar-nav {
-        
-        .nav-link {
-          
-          &:hover, &:active, &:focus {
-            color: #749B27;
-          }
+  }
+
+  .navbar-dark {
+
+    .navbar-nav {
+
+      .nav-link {
+
+        &:hover, &:active, &:focus {
+          color: #749B27;
         }
       }
     }
-    .navbar-toggler {
-      background-color: #adb5bd;
-      border: 1px solid #dae0e5;
-    }
-    
+  }
+
+  .navbar-toggler {
+    background-color: #adb5bd;
+    border: 1px solid #dae0e5;
+  }
+
 }
 
 
@@ -220,18 +247,14 @@ header {
   }
 
   .home {
-  
-    h2 {
-      color: white;
-    }
 
     a {
       font-size: 3em;
-      
-     &:hover {
+
+      &:hover {
         text-decoration: none;
       }
-     
+
     }
 
     .count-box span {
@@ -282,6 +305,7 @@ header {
     i.fas.fa-home {
       color: #ffc107;
     }
+
     span.form-control-location {
       display: block;
       width: 2.375rem;
@@ -293,6 +317,7 @@ header {
       float: left;
       color: #aaa;
     }
+
     span.form-control-angle {
       display: block;
       width: 2.375rem;
@@ -305,11 +330,14 @@ header {
       color: #aaa;
       font-size: x-small;
     }
+
     button#btn_search {
       background-color: white;
       color: #495057;
       border: 1px solid #ced4da;
       width: 100%;
+      padding: 13px;
+
       .form-control-feedback {
         position: absolute;
         z-index: 2;
@@ -321,106 +349,110 @@ header {
         color: #aaa;
         right: 0;
       }
+    }
+
   }
-  
-  }
+
   .btn-success:focus {
     border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
   }
-  }
+}
 
-  i.fas.fa-paw {
-    color: #dc3545;
-  }
+i.fas.fa-paw {
+  color: #dc3545;
+}
 
-  img_ad {
-    width: 100%;
-  }
+img_ad {
+  width: 100%;
+}
 
-  .btn.facebook {
-    background-color: $facebook-color;
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    margin-top: 30px;
-    width: 288px;
+.btn.facebook {
+  background-color: $facebook-color;
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  width: 288px;
 
-    &:hover {
-      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-      transition: all 0.3s ease-in-out;
-    }
-  }
-
-  .btn.twitter {
-    background-color: $twitter-color;
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    width: 288px;
-    text-align: left;
-
-    &:hover {
-      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-      transition: all 0.3s ease-in-out;
-    }
-  }
-
-  .btn.google {
-    /*background-color: #0F9D58;*/
-    /*background-color:#DB4437;*/
-    /*background-color:#F4B400;*/
-    background-color: $google-color;
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    width: 288px;
-    text-align: left;
-
-    &:hover {
-      box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-      transition: all 0.3s ease-in-out;
-    }
-  }
-
-  .form-group .btn.success {
-    background-color: $base-color;
-  }
-
-  .icon-box {
-    display: block;
-    padding: 15px 30px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 0 10px 40px 10px;
+  &:hover {
     box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
     transition: all 0.3s ease-in-out;
-   
-    
+  }
+}
 
-    a:hover {
-      text-decoration: none;
-    }
-    img {
-     float: left;
-     
-    }
+.btn.twitter {
+  background-color: $twitter-color;
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  width: 288px;
+  text-align: left;
+
+  &:hover {
+    box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
   }
-  .bg-color-sell {
-    background-color: #ffe999;
+}
+
+.btn.google {
+  /*background-color: #0F9D58;*/
+  /*background-color:#DB4437;*/
+  /*background-color:#F4B400;*/
+  background-color: $google-color;
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  width: 288px;
+  text-align: left;
+
+  &:hover {
+    box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
   }
-  .bg-color-jobs {
-    background-color: #d6e7ff;
+}
+
+.form-group .btn.success {
+  background-color: $base-color;
+}
+
+.icon-box {
+  display: block;
+  padding: 15px 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+
+
+  a:hover {
+    text-decoration: none;
   }
-  .bg-color-housing{
-    background-color: #ffc480;
+
+  img {
+    float: left;
+
   }
-  .bg-color-cats {
-    background-color: #d8e7bb;
-  }
-  
+}
+
+.bg-color-sell {
+  background-color: #ffe999;
+}
+
+.bg-color-jobs {
+  background-color: #d6e7ff;
+}
+
+.bg-color-housing {
+  background-color: #ffc480;
+}
+
+.bg-color-cats {
+  background-color: #d8e7bb;
+}
 
 
 /*JOB*/
@@ -436,7 +468,6 @@ header {
 .mybtn2 {
   color: #000;
 }
-
 
 
 button.btn-circle {
@@ -506,7 +537,8 @@ section#main {
   pointer-events: none;
   color: #aaa;
 }
- .form-control {
+
+.form-control {
   padding: .375rem 1.2rem .375rem 2.5rem;
 }
 
@@ -566,8 +598,8 @@ form.new-edit {
   background-image: none;
 }
 
- .my-2 {
-  margin-bottom: 1rem!important;
+.my-2 {
+  margin-bottom: 1rem !important;
 }
 
 

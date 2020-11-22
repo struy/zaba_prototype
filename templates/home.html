@@ -88,38 +88,40 @@
             {% endif %}
 
             <div class="row">
-                <div id="greeting">
+                <div id="container" class="head-block">
                     <div class="col-12 text-center">
                         <h2>{% trans "Frog greeting!" %}</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 col-sm-6">
-                    <a href="items" class="icon-box text-center bg-color-sell">
+            <div class="row categories">
+                <div class="col-12 col-sm-4">
+                    <a href="items" class="icon-box text-center bg-color-sell d-flex justify-content-between">
                         {% comment %} <i class="fas fa-shopping-cart"></i> {% endcomment %}
                         <img src="/static/img/icon-hand-bag.svg" alt="sell">
-                        {% trans "Sell" %} </a>
+                        <span>{% trans "Sell" %} </span>
+                    </a>
                 </div>
 
-                <div class="col-12 col-sm-6">
-                    <a href="jobs" class="icon-box text-center bg-color-jobs">
+                <div class="col-12 col-sm-4">
+                    <a href="jobs" class="icon-box text-center bg-color-jobs d-flex justify-content-between">
                         {% comment %} <i class="fas fa-briefcase"></i> {% endcomment %}
                          <img src="/static/img/icon-Job.svg" alt="jobs">
-                        &nbsp;{% trans "Jobs" %}</a>
+                    <span>{% trans "Jobs" %}</span>
+                    </a>
                 </div>
-                <div class="col-12 col-sm-6">
-                    <a href="rents" class="icon-box text-center bg-color-housing">
+                <div class="col-12 col-sm-4">
+                    <a href="rents" class="icon-box text-center bg-color-housing d-flex justify-content-between">
                         {% comment %} <i class="fas fa-home"></i> {% endcomment %}
                          <img src="/static/img/icon-RealEstate.svg" alt="housing">
-                        {% trans "Housing" %}</a>
+                        <span>{% trans "Housing" %}</span></a>
                 </div>
-                <div class="col-12 col-sm-6">
-                    <a href="gifts" class="icon-box text-center bg-color-cats" alt="cats">
+                <div class="col-12 col-sm-4">
+                    <a href="gifts" class="icon-box text-center bg-color-cats d-flex justify-content-between" alt="cats">
                         {% comment %} <i class="fas fa-paw"></i> {% endcomment %}
                          <img src="/static/img/icon-Pets.svg">
-                        {% trans "Cats" %}</a>
+                       <span> {% trans "Cats" %}</span></a>
                 </div>
             </div>
         </div>

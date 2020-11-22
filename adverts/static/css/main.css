@@ -31,6 +31,8 @@ body {
 
 .form_ru {
   background: url("/static/img/flags/Russia.png");
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .form_en {
@@ -73,8 +75,22 @@ header a {
 header .navbar-brand i {
   color: #94c045;
 }
-header i {
-  padding-top: 15px;
+header .favorites {
+  position: relative;
+}
+header .favorites i {
+  font-size: 16px;
+}
+header .favorites .counter-favorites {
+  font-size: 12px;
+  position: absolute;
+  background-color: #749B27;
+  color: white;
+  text-align: center;
+  padding: 2px 7px;
+  border-radius: 100%;
+  top: -4px;
+  right: -5px;
 }
 header .bg-dark {
   background: #ffffff !important;
@@ -101,8 +117,15 @@ header button[form=form_pl] {
 header button.navbar-toggler:focus {
   outline: none;
 }
+header .navbar-dark .navbar-nav {
+  text-transform: uppercase;
+}
 header .navbar-dark .navbar-nav .nav-link {
   color: #000000;
+  font-size: 14px;
+}
+header .navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
 }
 header .navbar-dark .navbar-nav .active > .nav-link {
   color: #749B27;
@@ -160,9 +183,6 @@ header .navbar-toggler {
   height: 24px;
   margin-left: 5px;
   display: block;
-}
-#main .home h2 {
-  color: white;
 }
 #main .home a {
   font-size: 3em;
@@ -239,6 +259,7 @@ header .navbar-toggler {
   color: #495057;
   border: 1px solid #ced4da;
   width: 100%;
+  padding: 13px;
 }
 #main .home button#btn_search .form-control-feedback {
   position: absolute;

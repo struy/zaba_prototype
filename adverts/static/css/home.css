@@ -1,0 +1,26 @@
+#google_ads img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.grey-back {
+  background-color: #F4F5F6;
+  padding: 25px 0;
+}
+.grey-back .has-search .form-control {
+  height: 3.3em;
+}
+
+.head-block {
+  margin: auto;
+  display: block;
+}
+
+.categories span {
+  font-size: 20px;
+}
+.categories img {
+  width: 40px;
+}
+
+/*# sourceMappingURL=home.css.map */

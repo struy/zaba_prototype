@@ -1,39 +1,50 @@
 /*Extra small devices (portrait phones, less than 576px)*/
 /*No media query since this is the default in Bootstrap*/
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
   .form-inline .form-control {
     width: 100%;
   }
 }
+
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   button.fa-filter {
     display: none;
   }
-
   #btn_sm_md_ext {
     display: none;
   }
 }
+
 /*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
 /*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+
 /***************************************************************************************/
 @media (max-width: 326px) {
-  header button[type=submit] {
+  header button[type="submit"] {
     margin-left: 2px;
   }
+
 }
+
 @media (max-width: 390px) {
   #btn_search .fa-search {
-    display: none;
+  display: none;
   }
-}
-@media (max-width: 463px) {
+ }
+ @media (max-width: 463px) {
   .navbar-dark .navbar-toggler {
-    margin: auto;
+  margin: auto;
   }
 }
+
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
   #main .icon-box {
@@ -41,6 +52,7 @@
     margin: 10px auto;
   }
 }
+
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
   #main .home a {
@@ -50,7 +62,6 @@
   #btn_sm_md_ext {
     margin-bottom: 15px;
   }
-
   #main #attention h3 {
     font-size: 1.25rem;
   }
@@ -64,7 +75,6 @@
     overflow: hidden;
     white-space: nowrap;
   }
-
   #main .btn.twitter {
     width: 108px;
     float: left;
@@ -73,7 +83,6 @@
     overflow: hidden;
     white-space: nowrap;
   }
-
   #main .btn.google {
     width: 103px;
     text-overflow: clip;
@@ -84,52 +93,64 @@
   #main .img_ad {
     width: 100%;
   }
-
   #main .form-inline .form-group {
-    margin-bottom: 1rem !important;
-  }
-
-  #main .form-inline .form-row {
-    margin-bottom: 0;
-  }
-
-  #main .home button#btn_search {
-    width: 30%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 1rem!important;
 }
+#main .form-inline .form-row {
+  margin-bottom: 0;
+}
+#main .home button#btn_search {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+}
+
 /*Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) {
   header .navbar-nav {
     font-size: 30px;
     text-align: center;
   }
-
   #main .icon-box {
     padding: 15px 15px;
   }
-
   #main .home button#btn_search {
     text-align: right;
   }
-
-  #btn_search .form-control-feedback {
-    right: 8px;
-  }
+  #btn_search .form-control-feedback {right: 8px;}
 }
+
 /*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) {
+}
+
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/
+
 /***************************************************************************************/
+
 /*Extra small devices (portrait phones, less than 576px)*/
-/*Small devices (landscape phones, 576px and up)*/
-/*Medium devices (tablets, 768px and up)*/
-/*Large devices (desktops, 992px and up)*/
-/*Extra large devices (large desktops, 1200px and up)*/
-.test {
-  width: 100%;
+@media (max-width: 575.98px) {
 }
 
-/*# sourceMappingURL=media.css.map */
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+
+.test{
+  width: 100%;
+}

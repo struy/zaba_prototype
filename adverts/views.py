@@ -4,7 +4,7 @@ import re
 from itertools import chain
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import get_object_or_404, render, reverse
+from django.shortcuts import get_object_or_404, render
 from django.conf import settings
 from django.views.generic import ListView
 
@@ -84,7 +84,10 @@ class SearchView(ListView):
         if query == "" and locality == "":
             return Item.objects.none()  # just an empty queryset as default
 
-        item_results, job_results, gift_results, rental_results = None
+        item_results = None
+        job_results = None
+        gift_results = None
+        rental_results = None
 
         if not locality:
             item_results = Item.objects.search(query)

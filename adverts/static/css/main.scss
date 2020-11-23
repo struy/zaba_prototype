@@ -78,8 +78,8 @@ body {
 header {
   color: white;
   padding-top: 5px;
-  background-color: #fff;
-
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   a {
     color: white;
   }
@@ -190,7 +190,6 @@ i{
 
 
 #main {
-  margin: 10px;
   flex: 1 0 auto;
 
   a {
@@ -493,7 +492,7 @@ span.counter {
 footer {
   color: white;
   padding-top: 20px;
-  background: #1c1f18;
+  background: #091B34;
   flex: 0 0 auto;
 
   ul {
@@ -510,7 +509,7 @@ footer {
   }
 
   .bg-dark {
-    background: #1c1f18;
+    background: #091B34;
   }
 }
 

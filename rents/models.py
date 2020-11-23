@@ -13,11 +13,13 @@ class PropertyType(models.Model):
 
 
 class Rental(Advert, Location):
-    # Move-in Date
-    # Type : apartments, houses, condos, townhouses, basement
-    # Та́ун-ха́ус,
-    # bedrooms : studio, 1,2,3,4+
-    # bathrooms 1,2,3+
+    """
+    Move-in Date
+    Type : apartments, houses, condos, townhouses, basement
+    Та́ун-ха́ус,
+    bedrooms : studio, 1,2,3,4+
+    bathrooms 1,2,3+
+    """
 
     property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name=_('property type'))
     image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)

@@ -14,3 +14,6 @@ create fixture:
 on Linux for start Elasticsearch > v.5
 `sysctl -w vm.max_map_count=262144
 `
+
+for prod pls check:
+`manage.py check --deploy`

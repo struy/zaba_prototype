@@ -84,6 +84,8 @@ class SearchView(ListView):
         if query == "" and locality == "":
             return Item.objects.none()  # just an empty queryset as default
 
+        item_results, job_results, gift_results, rental_results = None
+
         if not locality:
             item_results = Item.objects.search(query)
             job_results = Job.objects.search(query)

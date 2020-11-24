@@ -270,7 +270,7 @@ header .navbar-toggler {
   line-height: 1.375rem;
   pointer-events: none;
   color: #aaa;
-  right: 0;
+  right: 5px;
 }
 #main .btn-success:focus {
   border-color: #80bdff;

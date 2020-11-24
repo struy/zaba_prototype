@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
+{% load static %}
 {% block title %} {% trans "Edit your account" %} {% endblock %}
 
 {% block head %}
-<style>
-  #add_button {
-    display: none;
-  }
-</style>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 {% block breadcrumbs %}
@@ -15,19 +13,55 @@
     <li class="breadcrumb-item active" aria-current="page">{% trans "Edit account" %}</li>
 {% endblock %}
 
-
-
-
-
-
-
 {% block content %}
-    <h1>{% trans "Edit your account" %}</h1>
-    <p>{% trans "You can edit your account using the following form:" %}</p>
-    <form action="." method="post" enctype="multipart/form-data">
-        {{ user_form|crispy }}
-{#        {{ profile_form.as_p }}#}
-        {% csrf_token %}
-    <p><input type="submit" value="Save changes"></p>
-    </form>
+
+    <div class="container">
+        <div class="navigate-user">
+            <a href="#" class="d-block item-nav active">
+                Profile
+            </a>
+            <a href="#" class="d-block item-nav">
+                Ads
+            </a>
+            <a href="#" class="d-block item-nav">
+                Favorites
+            </a>
+        </div>
+        <div class="user-form row">
+            <div class="from col-md-6 col-12">
+                <form action="." method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="user-image">
+                            <svg width="61" height="60" viewBox="0 0 61 60" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30.0234" cy="30" r="30" fill="#C4C4C4"/>
+                                <path d="M29.8096 29.6066C32.0538 29.6066 33.9971 28.8017 35.5849 27.2136C37.1727 25.6258 37.9776 23.6831 37.9776 21.4386C37.9776 19.1949 37.1727 17.2519 35.5846 15.6636C33.9966 14.076 32.0535 13.2711 29.8096 13.2711C27.5652 13.2711 25.6224 14.076 24.0346 15.6638C22.4468 17.2516 21.6416 19.1947 21.6416 21.4386C21.6416 23.6831 22.4468 25.6261 24.0348 27.2139C25.6229 28.8015 27.5659 29.6066 29.8096 29.6066Z"
+                                      fill="white"/>
+                                <path d="M44.1012 39.3477C44.0554 38.6869 43.9628 37.9661 43.8264 37.2049C43.6888 36.438 43.5116 35.7131 43.2994 35.0505C43.0803 34.3656 42.7822 33.6893 42.4138 33.0412C42.0314 32.3685 41.5822 31.7828 41.0782 31.3008C40.5512 30.7965 39.9059 30.3911 39.1598 30.0953C38.4162 29.8012 37.5921 29.6521 36.7107 29.6521C36.3645 29.6521 36.0297 29.7942 35.3831 30.2151C34.9852 30.4746 34.5198 30.7748 34.0002 31.1067C33.556 31.3898 32.9542 31.6549 32.2109 31.895C31.4857 32.1297 30.7493 32.2487 30.0226 32.2487C29.2958 32.2487 28.5597 32.1297 27.8338 31.895C27.0912 31.6552 26.4894 31.39 26.0457 31.107C25.5311 30.7781 25.0654 30.478 24.6615 30.2149C24.0157 29.7939 23.6807 29.6519 23.3345 29.6519C22.4528 29.6519 21.629 29.8012 20.8856 30.0956C20.14 30.3908 19.4945 30.7962 18.9669 31.301C18.4632 31.7833 18.0138 32.3688 17.6319 33.0412C17.2637 33.6893 16.9657 34.3654 16.7463 35.0507C16.5344 35.7133 16.3571 36.438 16.2195 37.2049C16.0832 37.965 15.9905 38.6861 15.9447 39.3484C15.8997 39.9973 15.877 40.6708 15.877 41.351C15.877 43.1212 16.4397 44.5543 17.5494 45.6112C18.6453 46.6541 20.0955 47.1832 21.859 47.1832H38.1877C39.9512 47.1832 41.4009 46.6544 42.4971 45.6112C43.607 44.5551 44.1698 43.1217 44.1698 41.3507C44.1695 40.6674 44.1465 39.9935 44.1012 39.3477Z"
+                                      fill="white"/>
+                            </svg>
+                            <span>Upload image</span>
+                        </label>
+                        <input type="file" name="image" id="user-image">
+                    </div>
+                    {{ user_form|crispy }}
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div>
+                            <input class="textinput textInput form-control" type="password" id="password">
+                        </div>
+                    </div>
+                    {#        {{ profile_form.as_p }}#}
+                    {% csrf_token %}
+                    <br>
+                    <div class="form-group">
+                        <input type="submit" class="submit" value="Save changes">
+                    </div>
+                </form>
+            </div>
+            <div class="image col-6 d-none d-md-block">
+                <img src="{% static 'img/background complete.png' %}" alt="">
+            </div>
+        </div>
+    </div>
 {% endblock %}

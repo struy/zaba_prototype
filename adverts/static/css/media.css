@@ -29,11 +29,6 @@
     display: none;
   }
 }
-@media (max-width: 463px) {
-  .navbar-dark .navbar-toggler {
-    margin: auto;
-  }
-}
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
   #main .icon-box {
@@ -45,6 +40,30 @@
 @media (max-width: 767.98px) {
   #main .home a {
     font-size: 2em;
+  }
+
+  header .favorites i {
+    font-size: 24px;
+  }
+
+  header .navbar-dark .navbar-nav .nav-item {
+    border-bottom: 1px solid #F4F5F6;
+    text-align: left;
+  }
+
+  header .navbar-dark .navbar-nav .nav-link {
+    font-size: 18px;
+    display: inline;
+  }
+
+  .navigate-user {
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+  }
+  .navigate-user a {
+    margin: 0 !important;
+    font-size: 18px !important;
+    padding: 10px 20px 20px !important;
   }
 
   #btn_sm_md_ext {

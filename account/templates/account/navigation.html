@@ -1,0 +1,11 @@
+<div class="navigate-user">
+    <a href="{% url 'edit' %}" class="d-block item-nav {% if active == "edit" %} active {% endif %}">
+        Profile
+    </a>
+    <a href="{% url 'ads' %}" class="d-block item-nav {% if active == "ads" %} active {% endif %}">
+        Ads
+    </a>
+    <a href="{% url 'favorites' %}" class="d-block item-nav {% if active == "favorites" %} active {% endif %}">
+        Favorites
+    </a>
+</div>

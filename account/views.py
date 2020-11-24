@@ -32,3 +32,11 @@ def edit(request):
         user_form = UserEditForm(instance=request.user)
 
     return render(request, 'account/edit.html', {'user_form': user_form})
+
+
+def ads(request):
+    return render(request, 'account/ads.html')
+
+
+def favorites(request):
+    return render(request, 'account/favorites.html')

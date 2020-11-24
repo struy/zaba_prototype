@@ -31,10 +31,12 @@
 .user-form {
   margin-top: 30px;
   padding-bottom: 50px;
+
   label {
     text-transform: uppercase;
     cursor: pointer;
     font-size: 12px;
+
     svg {
       margin-right: 10px;
     }
@@ -71,8 +73,65 @@
   }
 
   .image {
-    img{
+    img {
       width: 100%;
+    }
+  }
+}
+
+.list-ads-user {
+  .item {
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    .image {
+      width: 100%;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 170px;
+      border-radius: 8px;
+      padding: 10px 10px 10px 0;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        color: white;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 0 5px 0 0;
+        font-weight: bold;
+      }
+    }
+
+    .events {
+      a {
+        width: 100%;
+        color: white !important;
+        border-radius: 4px;
+        padding: 8px 15px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      & > div {
+        width: 100%;
+      }
+
+      .edit {
+        background-color: #091B34;
+      }
+
+      .delete {
+        background-color: #DA0B50;
+      }
     }
   }
 }

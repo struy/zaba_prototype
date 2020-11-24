@@ -16,17 +16,7 @@
 {% block content %}
 
     <div class="container">
-        <div class="navigate-user">
-            <a href="#" class="d-block item-nav active">
-                Profile
-            </a>
-            <a href="#" class="d-block item-nav">
-                Ads
-            </a>
-            <a href="#" class="d-block item-nav">
-                Favorites
-            </a>
-        </div>
+        {% include './navigation.html' with active="edit" %}
         <div class="user-form row">
             <div class="from col-md-6 col-12">
                 <form action="." method="post" enctype="multipart/form-data">

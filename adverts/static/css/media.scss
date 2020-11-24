@@ -26,6 +26,35 @@
 @media (min-width: 1200px) {
 }
 
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) {
+  .list-ads-user .item .image .icon{
+    bottom: 9px;
+    left: 0;
+  }
+}
+
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+  header .navbar-nav {
+    font-size: 30px;
+    text-align: center;
+  }
+  #main .icon-box {
+    padding: 15px 15px;
+  }
+  #main .home button#btn_search {
+    text-align: right;
+  }
+  #btn_search .form-control-feedback {
+    right: 8px;
+  }
+  .list-ads-user .item .image .icon{
+    bottom: 31px;
+  }
+}
+
+
 /***************************************************************************************/
 @media (max-width: 326px) {
   header button[type="submit"] {
@@ -77,6 +106,20 @@
     }
   }
 
+  .list-ads-user .item .image {
+    background-size: cover !important;
+    height: 220px !important;
+  }
+
+  .list-ads-user .item h3 {
+    margin-top: 10px;
+  }
+  .list-ads-user .item .events {
+    margin-top: 10px;
+  }
+  .list-ads-user .item{
+    margin: 0 auto 10px !important;
+  }
   #btn_sm_md_ext {
     margin-bottom: 15px;
   }
@@ -123,28 +166,16 @@
     margin: auto;
     margin-bottom: 1rem;
   }
-}
 
-/*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) {
-  header .navbar-nav {
-    font-size: 30px;
-    text-align: center;
+  .list-ads-user .item .image .icon{
+    bottom: 0;
   }
-  #main .icon-box {
-    padding: 15px 15px;
-  }
-  #main .home button#btn_search {
-    text-align: right;
-  }
-  #btn_search .form-control-feedback {
-    right: 8px;
+
+  .list-ads-user .item .events > div{
+    width: auto;
   }
 }
 
-/*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) {
-}
 
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/

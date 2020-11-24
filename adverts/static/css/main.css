@@ -2,6 +2,18 @@
   font-family: "HoppyRibbitday";
   src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
 }
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("/static/fonts/Montserrat-Black.ttf") format("truetype"), local("Montserrat-Black");
+}
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("/static/fonts/Montserrat-Light.ttf") format("truetype"), local("Montserrat-Light");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("/static/fonts/Montserrat-Regular.ttf") format("truetype"), local("Montserrat-Regular");
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +22,7 @@
 html,
 body {
   height: 100%;
+  font-family: Montserrat-Regular;
 }
 
 body {

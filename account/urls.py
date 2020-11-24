@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import register, edit
+from .views import register, edit, ads, favorites
 from django.contrib.auth import views as auth_views
 
 
@@ -7,6 +7,8 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
     path('edit/', edit, name='edit'),
+    path('ads/', ads, name='ads'),
+    path('favorites/', favorites, name='favorites'),
     # change password urls
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),

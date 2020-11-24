@@ -238,7 +238,6 @@ sentry_sdk.init(
     send_default_pii=True
 )
 
-
 BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID')
 BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY')
 BRAINTREE_PRIVATE_KEY = env('BRAINTREE_PRIVATE_KEY')
@@ -253,3 +252,5 @@ Configuration.configure(
 GOOGLE_ANALYTICS = {
     'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
 }
+
+

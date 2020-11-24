@@ -39,21 +39,20 @@
                     </div>
                 </div>
 
-                              <div class="col">
-                    <button id="btn_search" class="btn btn-success input-group" type="submit">
-                        {% trans "SEARCH" %}
+      <div class="col">
+      <button id="btn_search" class="btn btn-success input-group" type="submit">
+          {% trans "SEARCH" %}
 
 
-                        <div class="input-group-append">
-                            <span class="fa fa-search form-control-feedback"></span>
-                        </div>
-                    </button>
-
-                    {% if has_filter %}
-                        <a href="{% url 'package_list' %}">{% trans ' Clear all filters' %}</a>
-                    {% endif %}
-                </div>
-            </div>
-        </form>
+    <div class="input-group-append">
+      <span class="fa fa-search form-control-feedback"></span>
     </div>
-</div>
+    </button>
+
+         {% if has_filter %}
+        <a href="{% url 'package_list' %}">{% trans ' Clear all filters' %}</a>
+         {% endif %}
+      </div>
+    </div>
+   </form>
+  </div>

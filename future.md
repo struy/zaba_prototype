@@ -72,3 +72,9 @@ https://gist.github.com/lfender6445/6226290
 
 geo react 
 http://lortza.github.io/2018/05/15/react-google-places-autocomplete.html
+
+npm package.json
+https://pypi.org/project/django-node-assets/
+
+diff icons for diff types of ads
+https://github.com/lvoogdt/Leaflet.awesome-markers

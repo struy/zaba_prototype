@@ -7,6 +7,5 @@ class RentalAdmin(TranslationAdmin):
     pass
 
 
-# admin.site.unregister(RentalType)
 admin.site.register(PropertyType, RentalAdmin)
 admin.site.register(Rental)

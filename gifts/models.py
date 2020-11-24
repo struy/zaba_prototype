@@ -16,7 +16,7 @@ class Gift(Advert, Location):
     handmade
     free classes
     free ticket
-    volantir
+    volunteering
     pet
     items
     """

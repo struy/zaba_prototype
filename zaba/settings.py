@@ -108,8 +108,7 @@ ROOT_URLCONF = 'zaba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -237,7 +236,6 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
-
 
 BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID')
 BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY')

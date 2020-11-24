@@ -1,8 +1,6 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
-from .forms import LoginForm, UserRegistrationForm, UserEditForm    # ProfileEditForm
+from .forms import UserEditForm
 from .forms import UserRegistrationForm
 
 
@@ -32,3 +30,11 @@ def edit(request):
         user_form = UserEditForm(instance=request.user)
 
     return render(request, 'account/edit.html', {'user_form': user_form})
+
+
+def ads(request):
+    return render(request, 'account/ads.html')
+
+
+def favorites(request):
+    return render(request, 'account/favorites.html')

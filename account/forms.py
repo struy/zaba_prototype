@@ -31,7 +31,7 @@ class UserRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'email')
+        fields = ('username', 'first_name', 'last_name', 'email')
         widgets = {
             'captcha': ReCaptchaV3(
                 api_params={'hl': get_language()[:2], 'badge': 'inline', }

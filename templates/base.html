@@ -25,8 +25,9 @@
     <link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static "cookielaw/css/cookielaw.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" href="{% static "css/media.css" %}">
-    <link rel="stylesheet" href="{% static "css/home.css" %}">
+ <link rel="stylesheet" href="{% static "css/home.css" %}">
+
+    <link rel="stylesheet" href="{% static "css/colors.css" %}">
 
     <script data-ad-client="ca-pub-7774017442769796" async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -34,6 +35,7 @@
 
     {% block head %}
     {% endblock %}
+    <link rel="stylesheet" href="{% static "css/media.css" %}">
 
 </head>
 <body>
@@ -52,17 +54,7 @@
     
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/img/logo.svg" alt="logo"></a>
-            <div class="col d-lg-none d-flex justify-content-center">
-                {% for language in languages %}
-                    <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
-                          style="display:inline!important;">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                        <input name="language" type="hidden" value="{{ language.code }}"/>
-                    </form>
-                    <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
-                {% endfor %}
-            </div>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -101,7 +93,7 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link d-flex favorites" href="#">
+                            <a class="nav-link d-flex favorites" href="{% url 'edit' %}">
 {#                                icon-Account.svg#}
                                <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M8.21661 9.63409C9.54016 9.63409 10.6861 9.15939 11.6227 8.22281C12.559 7.28638 13.0338 6.14059 13.0338 4.81689C13.0338 3.49365 12.5591 2.34772 11.6225 1.41098C10.6859 0.474701 9.54001 0 8.21661 0C6.89291 0 5.74713 0.474701 4.8107 1.41113C3.87427 2.34756 3.39941 3.4935 3.39941 4.81689C3.39941 6.14059 3.87427 7.28653 4.8107 8.22296C5.74744 9.15924 6.89337 9.63409 8.21661 9.63409ZM5.63956 2.23984C6.35809 1.5213 7.20099 1.17203 8.21661 1.17203C9.23209 1.17203 10.0751 1.5213 10.7938 2.23984C11.5124 2.95853 11.8618 3.80157 11.8618 4.81689C11.8618 5.83252 11.5124 6.67542 10.7938 7.3941C10.0751 8.11279 9.23209 8.46207 8.21661 8.46207C7.20129 8.46207 6.3584 8.11264 5.63956 7.3941C4.92087 6.67557 4.57144 5.83252 4.57144 4.81689C4.57144 3.80157 4.92087 2.95853 5.63956 2.23984Z" fill="black"/>
@@ -162,7 +154,7 @@
         </section>
 
         <div class="container">
-            <div class="row">
+            <div class="row ml-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         {% block breadcrumbs %}
@@ -178,7 +170,7 @@
 
     </section>
      
-    <footer class="bg-dark ">
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-2"></div>
@@ -188,6 +180,7 @@
                         <li><a href="/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496"
                                class="nav_a">Privacy Notice</a></li>
                         <li><a href="/interestbasedads/ref=footer_iba" class="nav_a">Interest-Based Ads</a></li>
+                        <li><a href="{% url 'terms' %}" class="nav_a">Terms and conditions</a></li>
                         <li class="nav_last">
                             ©
                             <script>

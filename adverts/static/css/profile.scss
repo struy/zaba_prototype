@@ -1,0 +1,137 @@
+#add_button {
+  display: none;
+}
+
+.navigate-user {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000 !important;
+    margin: 0 30px 0 0;
+    padding: 20px 30px 30px;
+
+    &.active {
+      border-bottom: 2px solid #749B27;
+    }
+
+    &:hover {
+      text-decoration: none;
+      border-bottom: 2px solid #749B27;
+    }
+  }
+}
+
+.user-form {
+  margin-top: 30px;
+  padding-bottom: 50px;
+
+  label {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 12px;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  input[type=file] {
+    display: none;
+  }
+
+  .form-control {
+    padding: .375rem .75rem;
+  }
+
+  input.submit {
+    background: #749B27;
+    border-radius: 40px;
+    min-width: 230px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+  }
+
+  .textinput {
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.list-ads-user {
+  .item {
+    padding: 15px 0;
+    background-color: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    .image {
+      width: 100%;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 170px;
+      border-radius: 8px;
+      padding: 10px 10px 10px 0;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        color: white;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 0 5px 0 0;
+        font-weight: bold;
+      }
+    }
+
+    .events {
+      a {
+        width: 100%;
+        color: white !important;
+        border-radius: 4px;
+        padding: 8px 15px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      & > div {
+        width: 100%;
+      }
+
+      .edit {
+        background-color: #091B34;
+      }
+
+      .delete {
+        background-color: #DA0B50;
+      }
+    }
+  }
+}

@@ -26,15 +26,16 @@ urlpatterns += i18n_patterns(
     path('cookie-policy', TemplateView.as_view(template_name='policy/cookie_policy.html'), name='cookie'),
     path('privacy-policy', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
     path('term-of-services', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
-    path('checkout', include('shop.urls'))
+    path('checkout', include('shop.urls')),
+    path('terms', views.terms, name='terms')
 )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-    def trigger_error(request):
-        division_by_zero = 1 / 0
+    def trigger_error():
+        return 1 / 0
 
 
     urlpatterns += [path('sentry-debug/', trigger_error)]

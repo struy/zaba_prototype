@@ -113,19 +113,18 @@ header {
     position: relative;
 
     i {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .counter-favorites {
-      font-size: 12px;
       position: absolute;
       background-color: #749B27;
       color: white;
       text-align: center;
-      padding: 2px 7px;
+      padding: 2px 9px;
       border-radius: 100%;
-      top: -4px;
-      right: -5px;
+      top: -9px;
+      right: -9px;
 
     }
   }
@@ -624,6 +623,40 @@ form.new-edit {
   margin-bottom: 1rem !important;
 }
 
+.with-submenu {
+  cursor: pointer;
+  position: relative;
 
+  .sub-menu {
+    position: absolute;
+    color: black;
+    background-color: white;
+    margin-left: 10px;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 5px 8px 12px 1px #a4a4a433;
 
+    ul {
+      list-style: none;
 
+      li {
+        margin: 5px;
+        padding: 3px;
+      }
+    }
+
+    a {
+      color: black;
+    }
+  }
+
+  &:hover {
+    .sub-menu {
+      display: block !important;
+    }
+  }
+
+  .favorites span {
+    margin: 0 5px;
+  }
+}

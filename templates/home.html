@@ -98,7 +98,7 @@
 
             <div class="categories">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-4 col-sm-6">
+                    <div class="col-12 col-md-6">
                         <a href="items" class="icon-box text-center bg-color-sell d-flex justify-content-between">
                             {% comment %} <i class="fas fa-shopping-cart"></i> {% endcomment %}
                             <img src="/static/img/icon-hand-bag.svg" alt="sell">
@@ -106,7 +106,7 @@
                         </a>
                     </div>
 
-                    <div class="col-12 col-md-4 col-sm-6">
+                    <div class="col-12 col-md-6">
                         <a href="jobs" class="icon-box text-center bg-color-jobs d-flex justify-content-between">
                             {% comment %} <i class="fas fa-briefcase"></i> {% endcomment %}
                             <img src="/static/img/icon-Job.svg" alt="jobs">
@@ -115,13 +115,13 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-4 col-sm-6">
+                    <div class="col-12 col-md-6">
                         <a href="rents" class="icon-box text-center bg-color-housing d-flex justify-content-between">
                             {% comment %} <i class="fas fa-home"></i> {% endcomment %}
                             <img src="/static/img/icon-RealEstate.svg" alt="housing">
                             <span>{% trans "Housing" %}</span></a>
                     </div>
-                    <div class="col-12 col-md-4 col-sm-6">
+                    <div class="col-12 col-md-6">
                         <a href="gifts" class="icon-box text-center bg-color-cats d-flex justify-content-between"
                            alt="cats">
                             {% comment %} <i class="fas fa-paw"></i> {% endcomment %}
@@ -258,10 +258,10 @@
                 <span class="text-green">Ads</span>
             </h2>
         </div>
-        <div class="content">
+        <div class="content mb-2">
             <div class="container">
-                <div class="row list-ads">
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                <div class="row list-ads flex-nowrap overflow-auto">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-8.png" %}')"></div>
                             <div class="name">
@@ -275,7 +275,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-9.png" %}')"></div>
                             <div class="name">
@@ -289,7 +289,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/img-Empty.png" %}')"></div>
                             <div class="name">
@@ -303,7 +303,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-8.png" %}')"></div>
                             <div class="name">
@@ -317,10 +317,19 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="show-all">
-                    <div class="btn btn-gray">
-                        Show all
+                      <div class="col-10 col-lg-3">
+                        <div class="item">
+                            <div class="image" style="background: url('{% static "img/img-Empty.png" %}')"></div>
+                            <div class="name">
+                                Names longer than 2 lines should be truncated...
+                            </div>
+                            <div class="subtype">
+                                <small class="text-muted"> City - Sep 14</small>
+                            </div>
+                            <div class="price font-weight-bold">
+                                $ 400.39
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,10 +349,10 @@
                 <span class="text-green">Ads</span>
             </h2>
         </div>
-        <div class="content">
+        <div class="content mb-2">
             <div class="container">
-                <div class="row list-ads">
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+               <div class="row list-ads flex-nowrap overflow-auto">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-12.png" %}')"></div>
                             <div class="name">
@@ -357,11 +366,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>
                             <div class="name">
-                                Truncate HydraPak Stash 750ML Collapsible Lightwe...
+                                Truncate HydraPak Stash 750ML Collapsible...
                             </div>
                             <div class="subtype">
                                 <small class="text-muted"> City - Sep 14</small>
@@ -371,7 +380,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-15.png" %}')"></div>
                             <div class="name">
@@ -385,7 +394,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-sm-12">
+                    <div class="col-10 col-lg-3">
                         <div class="item">
                             <div class="image" style="background: url('{% static "img/image-16.png" %}')"></div>
                             <div class="name">
@@ -399,10 +408,19 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="show-all">
-                    <div class="btn btn-gray">
-                        Show all
+                   <div class="col-10 col-lg-3">
+                        <div class="item">
+                            <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>
+                            <div class="name">
+                                Truncate HydraPak Stash 750ML Collapsible...
+                            </div>
+                            <div class="subtype">
+                                <small class="text-muted"> City - Sep 14</small>
+                            </div>
+                            <div class="price font-weight-bold">
+                                $ 399.45
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

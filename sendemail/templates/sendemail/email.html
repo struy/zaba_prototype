@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
 
 {% block title %} {% trans "Contact us" %} {% endblock %}
 
 {% block head %}
-<style>
-  #add_button {
-    display: none;
-  }
-</style>
+    <style>
+        #add_button {
+            display: none;
+        }
+    </style>
 {% endblock %}
 
 {% block breadcrumbs %}
@@ -18,21 +19,28 @@
     <li class="breadcrumb-item active" aria-current="page">{% trans "Contact us" %}</li>
 {% endblock %}
 
-    {% block content %}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-              <h1>{% trans "Contact us" %}</h1>
-            <form method="post" class="new-edit">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <div class="form-actions">
-                  <button type="submit" class="btn btn-success">{% trans "Send" %}</button>
-                </div>
-            </form>
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{% trans "Contact" %} <span class="text-green">{% trans "Us" %}</span></h1>
+                <div class="mt-4 row">
+                    <div class="from col-md-6 col-12">
+                        <form method="post" class="new-edit">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="form-actions">
+                                <input type="submit" class="submit" value="{% trans "Send" %}">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="image col-6 d-none d-md-block">
+                        <img src="{% static 'img/illustr-Contact.png' %}" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    {% endblock %}
+    </div>
+{% endblock %}
 
 

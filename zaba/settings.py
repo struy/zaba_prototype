@@ -226,8 +226,8 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 sentry_sdk.init(
     dsn=env('SENTRY_DSN'),
-    integrations=[DjangoIntegration()],
-    # integrations=[RedisIntegration()],
+    # integrations=[DjangoIntegration()],
+    integrations=[RedisIntegration()],
 
     # temporary fix
     # transport=print,

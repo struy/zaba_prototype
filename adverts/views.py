@@ -31,6 +31,9 @@ def home(request):
     r = redis.Redis(connection_pool=settings.POOL)
 
     total = r.get("Total:saved")
+    new = [int(i) for i in r.lrange('Item:new', 0, 10)]
+    new = list(Item.objects.filter(id__in=new))
+    popular = []
 
     if total:
         total = total.decode('utf-8')
@@ -47,7 +50,9 @@ def home(request):
     context = {'total': total,
                'month': month,
                'today': today,
-               'week': week}
+               'week': week,
+               'new': new,
+               'popular': popular}
 
     return render(request, 'home.html', context)
 

@@ -96,7 +96,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 
     def save(self, *args, **kwargs):
         lang = get_language()
-        if lang:
+        if lang and not self.local:
             self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
 

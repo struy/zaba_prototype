@@ -17,7 +17,7 @@ for loc in local:
         item = Item(title=fake.catch_phrase(),
                     description=fake.text(),
                     author_id=1,
-                    point=Point((float(local_lat[1]), float(local_lat[0]))),
+                    point=Point((float(local_lat[0]), float(local_lat[1]))),
                     condition=rand.randint(0, 4),
                     price=rand.randint(1, 2000),
                     expires=fake.date_this_year(),

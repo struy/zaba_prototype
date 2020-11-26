@@ -18,7 +18,7 @@ from django.utils.translation import gettext_lazy as _
 def user_directory_path(instance, filename):
     """ file will be uploaded to MEDIA_ROOT /<class_name>/<year>/<month>/<day>/user_<id>_<filename>"""
     now = datetime.datetime.now()
-    return f'{instance.__class__.__name__}s/{now.year}/{now.month}/{now.day}/{instance.owner.id}_{filename}'
+    return f'{instance.__class__.__name__}s/{now.year}/{now.month}/{now.day}/{instance.author.id}_{filename}'
 
 
 def validate_expires(value):
@@ -105,6 +105,8 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         if (self.modified - self.created).seconds == 0:
             r.incr(f'Total:saved')
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
+            r.lpush(f'{self.__class__.__name__}:new', self.id)
+            r.ltrim(f'{self.__class__.__name__}:new', 0, 5)
             data = self.created.timestamp()
             score = f'{self.__class__.__name__}:{self.created.timestamp()}'
             r.zadd("adverts", {score: data})

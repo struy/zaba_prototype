@@ -31,7 +31,7 @@ static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
           <div class="media-body">
             <div class="advert">
               <div class="wrap_list_adverts">
-                {% if advert.owner == request.user %}
+                {% if advert.author == request.user %}
                 <a href="{% url 'rents:delete' advert.id %}" class="btn btn-sm">
                   <i class="fas fa-trash-alt"></i>
                 </a>

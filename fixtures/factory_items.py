@@ -16,7 +16,7 @@ for loc in local:
         local_lat = fake.local_latlng()
         item = Item(title=fake.catch_phrase(),
                     description=fake.text(),
-                    owner_id=1,
+                    author_id=1,
                     point=Point((float(local_lat[1]), float(local_lat[0]))),
                     condition=rand.randint(0, 4),
                     price=rand.randint(1, 2000),

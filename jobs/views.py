@@ -54,7 +54,7 @@ class JobCreate(CreateView):
     success_url = reverse_lazy('jobs:index')
 
     def form_valid(self, form):
-        form.instance.owner = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 

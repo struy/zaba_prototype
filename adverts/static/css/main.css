@@ -160,6 +160,10 @@ header .navbar-toggler {
   text-transform: uppercase;
   cursor: pointer;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  color: #091B34;
 }
 .from label svg {
   margin-right: 10px;
@@ -220,9 +224,11 @@ header .navbar-toggler {
 #main {
   flex: 1 0 auto;
 }
+#main .breadcrumb-item a {
+  font-weight: bold;
+}
 #main a {
   color: black;
-  font-weight: bold;
 }
 #main h2 {
   font-size: 32px;
@@ -394,22 +400,6 @@ i.fas.fa-paw {
   text-align: left;
 }
 .btn.twitter:hover {
-  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
-  background-color: #4285f4;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  width: 288px;
-  text-align: left;
-}
-.btn.google:hover {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }

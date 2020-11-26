@@ -219,6 +219,10 @@ header {
     text-transform: uppercase;
     cursor: pointer;
     font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    color: #091B34;
 
     svg {
       margin-right: 10px;
@@ -269,9 +273,11 @@ header {
     line-height: 30px;
   }
 }
-.navbar-brand img{
+
+.navbar-brand img {
   width: 150px;
 }
+
 .breadcrumb-item + .breadcrumb-item::before {
   content: ">" !important;
 }
@@ -280,15 +286,20 @@ header {
   width: 100% !important;
   height: 350px !important;
 }
-#id_point_div_map{
+
+#id_point_div_map {
   float: unset !important;
 }
+
 #main {
   flex: 1 0 auto;
 
+  .breadcrumb-item a {
+    font-weight: bold;
+  }
+
   a {
     color: black;
-    font-weight: bold;
   }
 
   h2 {
@@ -497,22 +508,6 @@ i.fas.fa-paw {
   }
 }
 
-.btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
-  background-color: $google-color;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  width: 288px;
-  text-align: left;
-
-  &:hover {
-    box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-    transition: all 0.3s ease-in-out;
-  }
-}
 
 .form-group .btn.success {
   background-color: $base-color;

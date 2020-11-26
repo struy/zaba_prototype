@@ -140,11 +140,12 @@
     white-space: nowrap;
   }
 
-  #main .btn.google {
-    width: 103px;
-    text-overflow: clip;
-    overflow: hidden;
-    white-space: nowrap;
+  .with-login {
+    padding-left: 15px;
+  }
+
+  .manual-login {
+    padding-right: 15px;
   }
 
   #main .img_ad {

@@ -28,9 +28,7 @@ def detail(request, advert_id):
 
 
 def home(request):
-    r = redis.StrictRedis(host=settings.REDIS_HOST,
-                          port=settings.REDIS_PORT,
-                          db=settings.REDIS_DB)
+    r = redis.Redis(connection_pool=settings.POOL)
 
     total = r.get("Total:saved")
 

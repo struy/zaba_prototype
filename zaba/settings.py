@@ -1,6 +1,7 @@
 import os
 import sys
 import environ
+import redis
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
@@ -190,6 +191,9 @@ MODELTRANSLATION_TRANSLATION_FILES = (
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
+
+POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+
 
 CACHES = {
     'default': {

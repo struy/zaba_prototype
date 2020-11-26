@@ -12,9 +12,7 @@ from .forms import RentForm
 from .filters import RentsFilter
 
 # connect to redis
-r = redis.StrictRedis(host=settings.REDIS_HOST,
-                      port=settings.REDIS_PORT,
-                      db=settings.REDIS_DB)
+r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):

@@ -139,6 +139,7 @@ header {
     width: 24px;
     height: 24px;
     margin-left: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   button[form="form_uk"] {
@@ -264,16 +265,30 @@ header {
     }
   }
 
-  p, ul{
+  p, ul {
     line-height: 30px;
   }
 }
+.navbar-brand img{
+  width: 150px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">" !important;
+}
 
+#id_point_map {
+  width: 100% !important;
+  height: 350px !important;
+}
+#id_point_div_map{
+  float: unset !important;
+}
 #main {
   flex: 1 0 auto;
 
   a {
-    color: #646c55;
+    color: black;
+    font-weight: bold;
   }
 
   h2 {
@@ -394,7 +409,7 @@ header {
       position: absolute;
       z-index: 1;
       float: left;
-      color: #aaa;
+      color: black;
     }
 
     span.form-control-angle {
@@ -406,7 +421,7 @@ header {
       position: absolute;
       z-index: 1;
       float: left;
-      color: #aaa;
+      color: black;
       font-size: x-small;
     }
 
@@ -415,7 +430,7 @@ header {
       color: #495057;
       border: 1px solid #ced4da;
       width: 100%;
-      padding: 13px;
+      padding: 13.5px;
 
       .form-control-feedback {
         position: absolute;
@@ -425,7 +440,7 @@ header {
         height: 1.955rem;
         line-height: 1.375rem;
         pointer-events: none;
-        color: #aaa;
+        color: black;
         right: 5px;
       }
     }
@@ -439,11 +454,18 @@ header {
   }
 }
 
+.language-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
 i.fas.fa-paw {
   color: #dc3545;
 }
 
-img_ad {
+.img_ad {
   width: 100%;
 }
 
@@ -614,7 +636,7 @@ section#main {
   line-height: 2.375rem;
   text-align: center;
   pointer-events: none;
-  color: #aaa;
+  color: black;
 }
 
 .form-control {

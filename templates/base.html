@@ -52,7 +52,7 @@
     <div class="container">
 
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3  pt-md-2">
             <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/img/logo.svg" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,18 +61,6 @@
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="col d-lg-none d-flex justify-content-center">
-                    {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
-                    {% endfor %}
-                </div>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %}
@@ -180,23 +168,19 @@
                     {% endif %}
                 </ul>
 
-
-                <div class="d-none d-lg-block">
-                    {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
-                    {% endfor %}
-                </div>
-
             </div>
-
-
+            <div class="d-lg-block language-block">
+                {% for language in languages %}
+                    <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"
+                          style="display:inline!important;">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                        <input name="language" type="hidden" value="{{ language.code }}"/>
+                    </form>
+                    <button class="lang-button " type="submit" form="form_{{ language.code }}"
+                            value="Submit"></button>
+                {% endfor %}
+            </div>
         </nav><!-- .nav-menu -->
     </div>
 
@@ -222,7 +206,7 @@
         <div class="container">
             <div class="row ml-0">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb p-0 m-0 bg-white">
                         {% block breadcrumbs %}
                         {% endblock %}
                     </ol>

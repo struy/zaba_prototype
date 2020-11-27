@@ -7,7 +7,9 @@
 {% load thumbnail %}
 
 {% block title %} {% trans "Gifts" %} {% endblock %}
-
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Gifts" %}</li>
@@ -20,72 +22,66 @@
 
     {% include 'snippets/filter.html' %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                 <img src="{% static "img/zaba.jpg" %}" alt="" width="350">
-            </div>
-            <div class="col-8">
-                <div class="advert">
-                    {% if adverts %} {% for advert in adverts %}
-
-                        <div class="media">
-                            {% thumbnail advert.image "128" as ad %}
-                                    <a href="{{ advert.image.url }}">
-                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                                    </a>
-                                {% endthumbnail %}
-                                {% if not advert.image %}
-                                    <img
-                                            class="mr-3"
-                                            src="{% static 'none/no-img.jpg' %}"
-                                            alt="no image"
-                                            width="128"
-                                    />
-                                {% endif %}
-
-
-                            <div class="media-body">
-                                <div class="advert">
-                                    <div class="wrap_list_adverts">
-                                        {% if advert.owner == request.user %}
-                                            <a href="{% url 'gifts:delete' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                            <a href="{% url 'gifts:edit' advert.id %}" class="btn btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        {% endif %}
-                                        <a href="{% url 'gifts:detail' advert.id %}">
-                                                {{ advert.title }}
-                                                {% if advert.expires_type %}
-                                                    <span class="{{ advert.expires_type.css }}"> {{ advert.expires_type.text }}</span>
-                                                {% endif %}
-                                                <span class="form_{{ advert.local }}"></span>
-                                        </a>
-
-                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                                        <i>{{ advert.modified|naturaltime }} </i>
-
-                                    </div>
-                                    <h3>{%  trans 'Free' %}</h3>
-                                </div>
-                            </div>
+    <div class="container list-ads-user">
+        {% if adverts %} {% for advert in adverts %}
+            <div class="row item mr-0 ml-0">
+                <div class="col-12 col-md-3">
+                    {% thumbnail advert.image "128" as ad %}
+                        <a href="{{ advert.image.url }}">
+                            <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                        </a>
+                    {% endthumbnail %}
+                    {% if not advert.image %}
+                        <img
+                                class="mr-3"
+                                src="{% static 'none/no-img.jpg' %}"
+                                alt="no image"
+                                width="128"
+                        />
+                    {% endif %}
+                </div>
+                <div class="col-12 col-md-6">
+                    <a href="{% url 'gifts:detail' advert.id %}">
+                        <h3>
+                            {{ advert.title }}
+                        </h3>
+                    </a>
+                    {% if advert.expires_type %}
+                        <div class="text-info text-uppercase">
+                            <b>{{ advert.expires_type.text }}</b>
                         </div>
-                        <div class="divider"></div>
+                    {% endif %}
 
-                    {% endfor %} {% else %}
-                        <p>No adverts are available.</p>
-                    {% endif %} {% include "snippets/pagination.html" %}
+                    <small class="text-muted">
+                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                        <i>{{ advert.modified|naturaltime }} </i>
+                    </small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap justify-content-between justify-content-md-normal">
+                    {% if advert.author == request.user %}
+                        <a href="{% url 'gifts:delete' advert.id %}" class="d-flex justify-content-between edit">
+                            <span>Delete</span>
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        <a href="{% url 'gifts:edit' advert.id %}" class="d-flex justify-content-between delete mt-3">
+                            <span>Edit</span>
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    {% endif %}
+                    <div class="d-flex justify-content-end align-self-md-end">
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %} {% else %}
+            <p>No adverts are available.</p>
+        {% endif %} {% include "snippets/pagination.html" %}
     </div>
 {% endblock %}
 
 
 {% block script %}
-   {% include "snippets/city_latin_only.html" %}
+    {% include "snippets/city_latin_only.html" %}
 {% endblock %}
 
 

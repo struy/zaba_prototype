@@ -114,6 +114,7 @@ header button[type=submit] {
   width: 24px;
   height: 24px;
   margin-left: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");
@@ -159,6 +160,10 @@ header .navbar-toggler {
   text-transform: uppercase;
   cursor: pointer;
   font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  color: #091B34;
 }
 .from label svg {
   margin-right: 10px;
@@ -199,11 +204,81 @@ header .navbar-toggler {
   line-height: 30px;
 }
 
+.navbar-brand img {
+  width: 150px;
+}
+
+.breadcrumb {
+  background-color: unset !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">" !important;
+}
+
+#id_point_map {
+  width: 100% !important;
+  height: 350px !important;
+}
+
+#id_point_div_map {
+  float: unset !important;
+}
+
+.list-ads-user .item {
+  padding: 15px 0;
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.list-ads-user .item .image {
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 170px;
+  border-radius: 8px;
+  padding: 10px 10px 10px 0;
+  position: relative;
+}
+.list-ads-user .item .image .icon {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  color: white;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 0 5px 0 0;
+  font-weight: bold;
+}
+.list-ads-user .item .events a {
+  width: 100%;
+  color: white !important;
+  border-radius: 4px;
+  padding: 8px 15px;
+}
+.list-ads-user .item .events a:hover {
+  text-decoration: none;
+}
+.list-ads-user .item .events > div {
+  width: 100%;
+}
+.list-ads-user .item .events .edit {
+  background-color: #091B34;
+}
+.list-ads-user .item .events .delete {
+  background-color: #DA0B50;
+}
+
 #main {
   flex: 1 0 auto;
 }
+#main .breadcrumb-item a {
+  font-weight: bold;
+}
 #main a {
-  color: #646c55;
+  color: black;
 }
 #main h2 {
   font-size: 32px;
@@ -211,7 +286,6 @@ header .navbar-toggler {
   margin-bottom: 20px;
   padding-bottom: 0;
   font-family: "Poppins", sans-serif;
-  color: #646c55;
 }
 #main img.zaba_img {
   margin-top: 1rem;
@@ -300,7 +374,7 @@ header .navbar-toggler {
   position: absolute;
   z-index: 1;
   float: left;
-  color: #aaa;
+  color: black;
 }
 #main .home span.form-control-angle {
   display: block;
@@ -311,7 +385,7 @@ header .navbar-toggler {
   position: absolute;
   z-index: 1;
   float: left;
-  color: #aaa;
+  color: black;
   font-size: x-small;
 }
 #main .home button#btn_search {
@@ -319,7 +393,7 @@ header .navbar-toggler {
   color: #495057;
   border: 1px solid #ced4da;
   width: 100%;
-  padding: 13px;
+  padding: 13.5px;
 }
 #main .home button#btn_search .form-control-feedback {
   position: absolute;
@@ -329,7 +403,7 @@ header .navbar-toggler {
   height: 1.955rem;
   line-height: 1.375rem;
   pointer-events: none;
-  color: #aaa;
+  color: black;
   right: 5px;
 }
 #main .btn-success:focus {
@@ -338,11 +412,18 @@ header .navbar-toggler {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
+.language-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
 i.fas.fa-paw {
   color: #dc3545;
 }
 
-img_ad {
+.img_ad {
   width: 100%;
 }
 
@@ -368,22 +449,6 @@ img_ad {
   text-align: left;
 }
 .btn.twitter:hover {
-  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-}
-
-.btn.google {
-  /*background-color: #0F9D58;*/
-  /*background-color:#DB4437;*/
-  /*background-color:#F4B400;*/
-  background-color: #4285f4;
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  width: 288px;
-  text-align: left;
-}
-.btn.google:hover {
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
 }
@@ -499,7 +564,7 @@ section#main {
   line-height: 2.375rem;
   text-align: center;
   pointer-events: none;
-  color: #aaa;
+  color: black;
 }
 
 .form-control {

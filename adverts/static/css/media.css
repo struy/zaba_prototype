@@ -114,7 +114,14 @@
   }
 
   #btn_sm_md_ext {
+    display: flex;
+    width: 100%;
     margin-bottom: 15px;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #091b33;
+    border: 1px solid #091b33;
+    background-color: white;
   }
 
   #main #attention h3 {
@@ -140,11 +147,12 @@
     white-space: nowrap;
   }
 
-  #main .btn.google {
-    width: 103px;
-    text-overflow: clip;
-    overflow: hidden;
-    white-space: nowrap;
+  .with-login {
+    padding-left: 15px;
+  }
+
+  .manual-login {
+    padding-right: 15px;
   }
 
   #main .img_ad {
@@ -172,6 +180,25 @@
 
   .list-ads-user .item .events > div {
     width: auto;
+  }
+
+  .filters button[type=submit] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .filters .form-group:not(:first-child) {
+    width: auto;
+    flex-basis: 50%;
+    margin-right: 0;
+  }
+
+  #collapseExample .filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #collapseExample .filters .has-search {
+    width: 100%;
   }
 }
 /*Extra large devices (large desktops)*/

@@ -199,6 +199,12 @@
       width: 100%;
     }
   }
+  .with-submenu{
+    order: -1;
+  }
+  .with-submenu:hover .sub-menu{
+    margin-left: 0;
+  }
 }
 
 

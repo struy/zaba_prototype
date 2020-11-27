@@ -43,6 +43,8 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
     total_views = r.incr('item:{}:views'.format(advert.id))
+    # increment image ranking by 1
+    r.zincrby('ranking:Item', int(advert_id), 1)
     return render(request, 'items/detail.html', {'advert': advert, 'total_views': total_views})
 
 

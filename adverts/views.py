@@ -33,7 +33,13 @@ def home(request):
     total = r.get("Total:saved")
     new = [int(i) for i in r.lrange('Item:new', 0, 10)]
     new = list(Item.objects.filter(id__in=new))
-    popular = []
+    item_ranking = r.zrange('ranking:Item', 0, -1,
+                            desc=True)[:10]
+    item_ranking_ids = [int(item) for item in item_ranking]
+    # get most viewed images
+    most_viewed = list(Item.objects.filter(
+        id__in=item_ranking_ids))
+    most_viewed.sort(key=lambda x: item_ranking_ids.index(x.id))
 
     if total:
         total = total.decode('utf-8')
@@ -52,7 +58,7 @@ def home(request):
                'today': today,
                'week': week,
                'new': new,
-               'popular': popular}
+               'most_viewed': most_viewed}
 
     return render(request, 'home.html', context)
 

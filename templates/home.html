@@ -128,8 +128,51 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12  bg-color-jobs">
-                    <h2>New</h2>
+                <div class="col-md-12  text-center text-dark">
+                    <h3>Popular Ads</h3>
+                </div>
+
+                {% if most_viewed %}
+                    {% for advert in most_viewed %}
+                        <div class="col-10 col-lg-3">
+                            <div class="item">
+                                {% thumbnail advert.image "128" as ad %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% static 'none/no-img.jpg' %}"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
+
+
+                                <div class="name">
+                                    {{ advert.title }}
+                                </div>
+                                <div class="subtype">
+                                    <small class="text-muted">
+                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                        <i>{{ advert.modified|naturaltime }} </i>
+                                    </small>
+                                </div>
+                                <div class="price font-weight-bold">
+                                    {{ advert.price }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
+            </div>
+                   <div class="row">
+                <div class="col-md-12  text-center text-dark">
+                    <h3>New Ads</h3>
                 </div>
 
                 {% if new %}
@@ -170,6 +213,7 @@
 
 
             </div>
+
         </div>
     </div>
 

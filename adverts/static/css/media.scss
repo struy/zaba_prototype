@@ -121,7 +121,14 @@
     margin: 0 auto 10px !important;
   }
   #btn_sm_md_ext {
+    display: flex;
+    width: 100%;
     margin-bottom: 15px;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #091b33;
+    border: 1px solid #091b33;
+    background-color: white
   }
   #main #attention h3 {
     font-size: 1.25rem;
@@ -173,6 +180,24 @@
 
   .list-ads-user .item .events > div {
     width: auto;
+  }
+
+  .filters button[type=submit] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .filters .form-group:not(:first-child) {
+    width: auto;
+    flex-basis: 50%;
+    margin-right: 0;
+  }
+  #collapseExample .filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    .has-search {
+      width: 100%;
+    }
   }
 }
 

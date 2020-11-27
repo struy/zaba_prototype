@@ -200,6 +200,14 @@
   #collapseExample .filters .has-search {
     width: 100%;
   }
+
+  .with-submenu {
+    order: -1;
+  }
+
+  .with-submenu:hover .sub-menu {
+    margin-left: 0;
+  }
 }
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/

@@ -208,6 +208,16 @@
   .with-submenu:hover .sub-menu {
     margin-left: 0;
   }
+
+  header .favorites .counter-favorites {
+    top: -9px;
+    right: -16px;
+    font-size: 14px;
+  }
+
+  .language-block {
+    position: inherit;
+  }
 }
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/

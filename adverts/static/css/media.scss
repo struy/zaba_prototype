@@ -199,11 +199,19 @@
       width: 100%;
     }
   }
-  .with-submenu{
+  .with-submenu {
     order: -1;
   }
-  .with-submenu:hover .sub-menu{
+  .with-submenu:hover .sub-menu {
     margin-left: 0;
+  }
+  header .favorites .counter-favorites {
+    top: -9px;
+    right: -16px;
+    font-size: 14px;
+  }
+  .language-block{
+    position: inherit;
   }
 }
 

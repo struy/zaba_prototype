@@ -31,7 +31,7 @@ class Rental(Advert, Location):
     POLICES = ((0, _('None')),
                (1, _('Dogs')),
                (2, _('Cats')),
-               (3, _('Dogs and Cats')),2
+               (3, _('Dogs and Cats')),
                (4, _('Any')),
                )
     pet_policy = models.PositiveSmallIntegerField(

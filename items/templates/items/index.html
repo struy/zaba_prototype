@@ -54,12 +54,13 @@
                   <h2>
                     {{ advert.title }} {% if advert.expires_type %}
                     <span class="{{ advert.expires_type.css }}">
-                      {{ advert.expires_type.text }}</span
-                    >
+                      {{ advert.expires_type.text }}</span>
                     {% endif %}
                     <span class="form_{{ advert.local }}"></span>
                   </h2>
                 </a>
+
+              <a href="{% url 'accounts:favorite_add' 'Item' advert.id %}"> <i class="far fa-heart"></i> </a>
 
                 <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                 <i>{{ advert.modified|naturaltime }} </i>

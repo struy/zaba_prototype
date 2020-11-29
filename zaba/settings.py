@@ -62,7 +62,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'django_cleanup.apps.CleanupConfig',
                     ]
 
-LOCAL_APPS = ['account.apps.AccountConfig',
+LOCAL_APPS = ['accounts.apps.AccountsConfig',
               'adverts.apps.AdvertsConfig',
               'rents.apps.RentsConfig',
               'jobs.apps.JobsConfig',

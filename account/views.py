@@ -1,7 +1,39 @@
+from django.apps import AppConfig
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
+
+from gifts.models import Gift
+from items.models import Item
+from jobs.models import Job
+from rents.models import Rental
 from .forms import UserEditForm
 from .forms import UserRegistrationForm
+
+
+@login_required
+def favourite_list(request):
+    items = Item.objects.filter(favourites=request.user)
+    jobs = Job.objects.filter(favourites=request.user)
+    rents = Rental.objects.filter(favourites=request.user)
+    gifts = Gift.objects.filter(favourites=request.user)
+
+    new = items + jobs + rents + gifts
+
+    return render(request,
+                  'account/favourites.html',
+                  {'new': new})
+
+
+@login_required
+def favourite_add(request, name, id):
+    model = AppConfig.get_models(name)
+    ad = get_object_or_404(model, id=id)
+    if ad.favourites.filter(id=request.user.id).exists():
+        ad.favourites.remove(request.user)
+    else:
+        ad.favourites.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 def register(request):

@@ -47,6 +47,42 @@
   .list-ads-user .item .image .icon {
     bottom: 31px;
   }
+
+  header .mobile-logo {
+    display: block;
+  }
+  header .mobile-logo svg {
+    height: 50px;
+  }
+
+  header .desktop-logo {
+    display: none;
+  }
+
+  .language-block {
+    position: inherit;
+    width: auto;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+  }
+
+  header .bg-dark .mobile-header {
+    width: 100%;
+  }
+
+  header .bg-dark {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .with-submenu .sub-menu {
+    position: initial;
+    box-shadow: unset;
+    display: block !important;
+    margin-left: -10px;
+    font-size: 16px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {
@@ -74,6 +110,10 @@
 
   header .favorites i {
     font-size: 24px;
+  }
+
+  header button[type=submit] {
+    margin-left: 5px;
   }
 
   header .navbar-dark .navbar-nav .nav-item {
@@ -168,10 +208,9 @@
   }
 
   #main .home button#btn_search {
-    width: 100%;
+    width: 200px;
     text-align: center;
     margin: auto;
-    margin-bottom: 1rem;
   }
 
   .list-ads-user .item .image .icon {

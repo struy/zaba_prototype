@@ -28,6 +28,15 @@ $google-color: #4285f4;
   src: url("/static/fonts/Montserrat-Regular.ttf") format("truetype"),
   local("Montserrat-Regular");
 }
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/static/fonts/Montserrat-Bold.ttf") format("truetype"),
+  local("Montserrat-Bold");
+}@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("/static/fonts/Montserrat-Medium.ttf") format("truetype"),
+  local("Montserrat-Medium");
+}
 
 * {
   margin: 0;
@@ -101,6 +110,9 @@ header {
   background: #FFFFFF;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 
+  .mobile-logo{
+    display: none;
+  }
   a {
     color: white;
   }
@@ -138,8 +150,7 @@ header {
     border: none;
     width: 24px;
     height: 24px;
-    margin-left: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    margin-left: 20px;
   }
 
   button[form="form_uk"] {
@@ -210,7 +221,6 @@ header {
   }
 
 }
-
 .from {
   margin-top: 30px;
   padding-bottom: 50px;
@@ -529,6 +539,7 @@ header {
   top: 0;
   width: 100%;
   text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 i.fas.fa-paw {
@@ -577,6 +588,7 @@ i.fas.fa-paw {
   padding: 15px 30px;
   position: relative;
   overflow: hidden;
+  font-family: Montserrat-Medium;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
@@ -589,7 +601,7 @@ i.fas.fa-paw {
 
   img {
     float: left;
-
+    margin-top: 10px;
   }
 }
 

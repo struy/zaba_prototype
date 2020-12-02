@@ -24,9 +24,30 @@
   }
 }
 
-.categories {
+#main .home .simple-search {
+  input.form-control {
+    border-radius: 5px 0 0 5px !important;
+  }
 
+  .form-group .form-control-feedback {
+    top: 8px;
+  }
 
+  button .form-control-feedback {
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  #btn_search {
+    background-color: #091B34;
+    border: 1px solid #091B34;
+    border-radius: 0 5px 5px 0 !important;;
+
+    .form-control-feedback {
+      color: white;
+    }
+  }
 }
 
 .popular-ads {
@@ -53,9 +74,9 @@
       background: #FFFFFF;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
       border-radius: 8px;
-       margin-bottom: 10px;
+      margin-bottom: 10px;
       @media only screen and (max-width: 1200px) {
-          max-width: none;
+        max-width: none;
       }
 
       .image {

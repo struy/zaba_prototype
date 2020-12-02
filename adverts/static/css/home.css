@@ -20,6 +20,26 @@
   font-weight: 100 !important;
 }
 
+#main .home .simple-search input.form-control {
+  border-radius: 5px 0 0 5px !important;
+}
+#main .home .simple-search .form-group .form-control-feedback {
+  top: 8px;
+}
+#main .home .simple-search button .form-control-feedback {
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+#main .home .simple-search #btn_search {
+  background-color: #091B34;
+  border: 1px solid #091B34;
+  border-radius: 0 5px 5px 0 !important;
+}
+#main .home .simple-search #btn_search .form-control-feedback {
+  color: white;
+}
+
 .popular-ads {
   position: relative;
   margin-top: 50px;

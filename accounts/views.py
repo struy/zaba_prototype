@@ -26,13 +26,21 @@ def favourite_list(request):
 
 
 @login_required
-def favourite_add(request, name, d):
-    model = AppConfig.get_models(name)
-    ad = get_object_or_404(model, id=d)
-    if ad.favourites.filter(id=request.user.id).exists():
-        ad.favourites.remove(request.user)
-    else:
-        ad.favourites.add(request.user)
+def favourite_add(request, name, id):
+    models = {
+        "Item": Item,
+        "Job": Job,
+        "Gift": Gift,
+        "Rental": Rental
+
+    }
+    # AppConfig.get_models(name)
+    ad = get_object_or_404(models[name], id=id)
+    if ad:
+        if ad.favourites.filter(id=request.user.id).exists():
+            ad.favourites.remove(request.user)
+        else:
+            ad.favourites.add(request.user)
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 

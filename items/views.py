@@ -27,14 +27,17 @@ def index(request):
         advert_list = Item.objects.filter(local=lang).order_by('-modified')
 
     filters = ItemsFilter(request.GET, queryset=advert_list)
+
     adverts, has_filter = context_helper(request, filters)
+    favourites = Item.favourites.filter(id=request.user.id)
 
     context = {
         'adverts': adverts,
         'is_paginated': True,
         'package_list': 'items:index',
         'filters': filters,
-        'has_filter': has_filter
+        'has_filter': has_filter,
+        'favourites': favourites
     }
 
     return render(request, 'items/index.html', context)
@@ -43,9 +46,13 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
     total_views = r.incr('item:{}:views'.format(advert.id))
+    is_favourite = False
+    if advert.favourites.filter(id=request.user.id).exists():
+        is_favourite = True
     # increment image ranking by 1
     r.zincrby('ranking:Item', int(advert_id), 1)
-    return render(request, 'items/detail.html', {'advert': advert, 'total_views': total_views})
+    context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
+    return render(request, 'items/detail.html', context)
 
 
 class ItemList(ListView):

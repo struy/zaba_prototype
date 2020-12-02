@@ -27,9 +27,16 @@
 }
 /*Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) {
+  body {
+    padding-top: 0;
+  }
+
+  #header.fixed-top {
+    position: initial;
+  }
+
   header .navbar-nav {
     font-size: 30px;
-    text-align: center;
   }
 
   #main .icon-box {
@@ -72,8 +79,7 @@
   }
 
   header .bg-dark {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: 0 !important;
   }
 
   .with-submenu .sub-menu {
@@ -82,6 +88,53 @@
     display: block !important;
     margin-left: -10px;
     font-size: 16px;
+  }
+
+  #mobile-data {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 10px 5px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #mobile-data .item a {
+    color: #262a5d !important;
+    font-size: 14px;
+  }
+  #mobile-data .item a svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+  }
+
+  #navbarSupportedContent {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    bottom: 54px;
+    z-index: 9;
+    left: 0;
+    padding-left: 15px;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  header .favorites .counter-favorites {
+    top: -9px;
+    right: auto;
+    left: 11px;
+    font-size: 14px;
+  }
+
+  footer {
+    height: 150px;
   }
 }
 /***************************************************************************************/
@@ -165,7 +218,7 @@
   }
 
   #main #attention h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   #main .btn.facebook {
@@ -213,6 +266,10 @@
     margin: auto;
   }
 
+  #main .home .simple-search button#btn_search {
+    width: 100%;
+  }
+
   .list-ads-user .item .image .icon {
     bottom: 0;
   }
@@ -240,18 +297,8 @@
     width: 100%;
   }
 
-  .with-submenu {
-    order: -1;
-  }
-
   .with-submenu:hover .sub-menu {
     margin-left: 0;
-  }
-
-  header .favorites .counter-favorites {
-    top: -9px;
-    right: -16px;
-    font-size: 14px;
   }
 
   .language-block {

@@ -29,6 +29,20 @@
                         <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
                     </a>
                 {% endif %}
+                <p>
+                    <a href="{% url 'favourite_add' 'Item' advert.id %}">
+                        <i class="
+                     {% if favourite %}
+                        fas
+                     {% else %}
+                        far
+                     {% endif %}
+                     fa-heart"></i>
+                    </a>
+
+                </p>
+
+
                 <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                 <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
                 {% if advert.point %}

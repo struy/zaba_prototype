@@ -54,22 +54,19 @@
                                             <h2>
                                                 {{ advert.title }} {% if advert.expires_type %}
                                                 <span class="{{ advert.expires_type.css }}">
-                      {{ advert.expires_type.text }}</span>
+                                                        {{ advert.expires_type.text }}</span>
                                             {% endif %}
                                                 <span class="form_{{ advert.local }}"></span>
                                             </h2>
                                         </a>
 
                                         <a href="{% url 'favourite_add' 'Item' advert.id %}">
-                                            <i class="far fa-heart"></i>
+                                            {% if advert.id in  favourites %}
+                                             <i class="fas fa-heart"></i>
+                                            {% else %}
+                                                <i class="far fa-heart"></i>
+                                            {% endif %}
                                         </a>
-
-
-                                        {% for fav in  favourites %}
-                                          <span>{{ fav }}</span>
-                                        {% endfor %}
-
-
 
 
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
@@ -81,13 +78,22 @@
                         </div>
                         <div class="divider"></div>
 
-                    {% endfor %} {% else %}
+                    {% endfor %}
+                    {% else %}
                         <p>No adverts are available.</p>
-                    {% endif %} {% include "snippets/pagination.html" %}
+                    {% endif %}
+                    {% include "snippets/pagination.html" %}
                 </div>
             </div>
         </div>
     </div>
 
-{% endblock %} {% block script %} {% include "snippets/city_latin_only.html" %}
-{% endblock %} {% block add_ad_link %} {% url 'items:new' %} {% endblock %}
+{% endblock %}
+
+{% block script %}
+    {% include "snippets/city_latin_only.html" %}
+{% endblock %}
+
+{% block add_ad_link %}
+    {% url 'items:new' %}
+{% endblock %}

@@ -29,7 +29,7 @@ def index(request):
     filters = ItemsFilter(request.GET, queryset=advert_list)
 
     adverts, has_filter = context_helper(request, filters)
-    favourites = Item.favourites.filter(id=request.user.id)
+    favourites = Item.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
 
     context = {
         'adverts': adverts,

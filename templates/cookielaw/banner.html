@@ -3,17 +3,23 @@
 
 <div id="CookielawBanner">
     <div class="container">
-
-        <p>
-            {% trans "By using our site, you acknowledge that you have read and understand our" %}
-            <a class="text-dark" target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
-            <a class="text-dark" target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
-            {% trans " and our " %} <a class="text-dark" target="_blank" href="term">{% trans "Terms of Service" %}</a>.
-            &nbsp;
-            <a class="text-dark" href="javascript:Cookielaw.createCookielawCookie();">[X]
-            </a>
-        </p>
-
+        <h3>Cookies policy.</h3>
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <p>
+                    {% trans "By using our site, you acknowledge that you have read and understand our" %}
+                    <a target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
+                    <a target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
+                    {% trans " and our " %} <a target="_blank"
+                                               href="term">{% trans "Terms of Service" %}</a>.
+                </p>
+            </div>
+            <div class="col-12 col-md-2">
+                <a class="btn btn-primary" href="javascript:Cookielaw.createCookielawCookie();">
+                    Accept Cookies
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 

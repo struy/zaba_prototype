@@ -125,6 +125,11 @@
   footer {
     height: 150px;
   }
+
+  #CookielawBanner {
+    margin-top: -280px;
+    font-size: 14px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {
@@ -293,17 +298,29 @@
   .language-block {
     position: inherit;
   }
+
+  #CookielawBanner {
+    margin-top: -300px;
+    font-size: 12px;
+  }
+
+  #CookielawBanner a.btn {
+    display: block;
+    margin: auto;
+  }
 }
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/
 /***************************************************************************************/
 /*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 495.98px) {
+  #CookielawBanner {
+    margin-top: -310px;
+  }
+}
 /*Small devices (landscape phones, 576px and up)*/
 /*Medium devices (tablets, 768px and up)*/
 /*Large devices (desktops, 992px and up)*/
 /*Extra large devices (large desktops, 1200px and up)*/
-.test {
-  width: 100%;
-}
 
 /*# sourceMappingURL=media.css.map */

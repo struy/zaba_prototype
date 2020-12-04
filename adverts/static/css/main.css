@@ -783,13 +783,22 @@ form.new-edit .gj-datepicker-bootstrap {
 }
 
 #CookielawBanner {
-  background-color: #e7d9ac;
-  margin-top: -160px;
+  background-color: #091b33;
+  margin-top: -195px;
   position: relative;
-  z-index: 900;
+  z-index: 8;
+  color: white;
+  border-bottom: 1px solid white;
 }
 #CookielawBanner a {
   text-decoration: underline;
+  color: white;
+}
+#CookielawBanner a.btn {
+  background-color: #091b33 !important;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 #CookielawBanner #CookielawCross {
   cursor: pointer;

@@ -24,6 +24,7 @@
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
+
 }
 
 /*Medium devices (tablets, less than 992px)*/
@@ -121,8 +122,12 @@
     left: 11px;
     font-size: 14px;
   }
-  footer{
+  footer {
     height: 150px;
+  }
+  #CookielawBanner {
+    margin-top: -280px;
+    font-size: 14px;
   }
 }
 
@@ -284,6 +289,14 @@
   .language-block {
     position: inherit;
   }
+  #CookielawBanner {
+    margin-top: -300px;
+    font-size: 12px;
+  }
+  #CookielawBanner a.btn{
+    display: block;
+    margin: auto;
+  }
 }
 
 
@@ -293,7 +306,10 @@
 /***************************************************************************************/
 
 /*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
+@media (max-width: 495.98px) {
+  #CookielawBanner {
+    margin-top: -310px;
+  }
 }
 
 /*Small devices (landscape phones, 576px and up)*/
@@ -310,8 +326,4 @@
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-}
-
-.test {
-  width: 100%;
 }

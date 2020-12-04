@@ -121,11 +121,11 @@ header .bg-dark {
 }
 header button[type=submit] {
   padding: 0;
-  border: none;
+  border: 1px solid #f4f5f6;
   width: 30px;
-  height: 30px;
+  height: 20px;
   background-size: cover !important;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");

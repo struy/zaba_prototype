@@ -70,7 +70,7 @@
             <div class="container">
                 <form action="{% url 'global_search' %}">
                     <div class="form-row has-search simple-search">
-                        <div class="col-sm-11 col-10 p-0">
+                        <div class="col-md-7 col-10 p-0">
                             <div class="form-group">
                                 <span class="fa fa-search form-control-feedback"></span>
                                 <input
@@ -83,7 +83,26 @@
                                 />
                             </div>
                         </div>
-
+                        <div class="col-md-4 d-none d-md-block p-0">
+                            <div class="form-group has-search">
+       <span class="fas fa-map-marker-alt form-control-location">
+       </span>
+                                <span class="fas fa-angle-right form-control-angle">
+       </span>
+                                <input
+                                        id="search_city"
+                                        type="text"
+                                        name="address"
+                                        value="{{ request.GET.address }}"
+                                        class="form-control rounded-0"
+                                        size="30"
+                                        placeholder="Enter a location"
+                                        title="only Latin characters "
+                                        data-toggle="tooltip"
+                                        autocomplete="on"
+                                />
+                            </div>
+                        </div>
                         <div class="col-sm-1 col-2 p-0">
                             <button id="btn_search" class="btn btn-success input-group rounded-0 form-control"
                                     type="submit">
@@ -169,7 +188,7 @@
 
             <div class="categories">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 p-0">
                         <a href="items" class="icon-box text-center bg-color-sell">
                             {% comment %} <i class="fas fa-shopping-cart"></i> {% endcomment %}
                             <img src="/static/img/icon-hand-bag.svg" alt="sell">
@@ -177,7 +196,7 @@
                         </a>
                     </div>
 
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 p-0">
                         <a href="jobs" class="icon-box text-center bg-color-jobs">
                             {% comment %} <i class="fas fa-briefcase"></i> {% endcomment %}
                             <img src="/static/img/icon-Job.svg" alt="jobs">
@@ -186,13 +205,13 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 p-0">
                         <a href="rents" class="icon-box text-center bg-color-housing">
                             {% comment %} <i class="fas fa-home"></i> {% endcomment %}
                             <img src="/static/img/icon-RealEstate.svg" alt="housing">
                             <span>{% trans "Housing" %}</span></a>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 p-0">
                         <a href="gifts" class="icon-box text-center bg-color-cats"
                            alt="cats">
                             {% comment %} <i class="fas fa-paw"></i> {% endcomment %}

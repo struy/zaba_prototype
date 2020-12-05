@@ -553,6 +553,7 @@ header .navbar-toggler {
   z-index: 1;
   float: left;
   color: black;
+  top: 8px;
 }
 #main .home span.form-control-angle {
   display: block;
@@ -565,6 +566,7 @@ header .navbar-toggler {
   float: left;
   color: black;
   font-size: x-small;
+  top: 8px;
 }
 #main .home button#btn_search {
   background-color: white;

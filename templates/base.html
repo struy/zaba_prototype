@@ -101,14 +101,24 @@
 
                 <div class="d-lg-block language-block">
                     {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
+                        <div class="d-inline item-lang">
+                            <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
+                                  style="display:inline!important;">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                                <input name="language" type="hidden" value="{{ language.code }}"/>
+                            </form>
+                            {% if language.code == LANGUAGE_CODE %}
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6.80273" cy="6.73688" r="6" fill="#091B34"/>
+                                    <path d="M4.25439 6.19475L6.31487 8.25534L9.35176 5.21844" stroke="white"
+                                          stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            {% endif %}
+                            <button class="lang-button " type="submit" form="form_{{ language.code }}"
+                                    value="Submit"></button>
+                        </div>
                     {% endfor %}
                 </div>
             </div>

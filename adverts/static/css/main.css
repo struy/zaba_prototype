@@ -599,6 +599,14 @@ header .navbar-toggler {
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
+.language-block .item-lang {
+  position: relative;
+}
+.language-block .item-lang svg {
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
 
 i.fas.fa-paw {
   color: #dc3545;

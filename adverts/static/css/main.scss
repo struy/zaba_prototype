@@ -720,6 +720,14 @@ header {
   width: 100%;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  .item-lang{
+    position: relative;
+    svg{
+      position: absolute;
+      right: 0;
+      top: -10px;
+    }
+  }
 }
 
 i.fas.fa-paw {

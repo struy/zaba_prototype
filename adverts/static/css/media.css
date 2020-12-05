@@ -130,6 +130,11 @@
     margin-top: -280px;
     font-size: 14px;
   }
+
+  .language-block .item-lang svg {
+    right: -5px;
+    top: -5px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {

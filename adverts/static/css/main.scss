@@ -28,11 +28,14 @@ $google-color: #4285f4;
   src: url("/static/fonts/Montserrat-Regular.ttf") format("truetype"),
   local("Montserrat-Regular");
 }
+
 @font-face {
   font-family: "Montserrat-Bold";
   src: url("/static/fonts/Montserrat-Bold.ttf") format("truetype"),
   local("Montserrat-Bold");
-}@font-face {
+}
+
+@font-face {
   font-family: "Montserrat-Medium";
   src: url("/static/fonts/Montserrat-Medium.ttf") format("truetype"),
   local("Montserrat-Medium");
@@ -110,11 +113,8 @@ header {
   background: #FFFFFF;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 
-  .mobile-logo{
+  .mobile-logo {
     display: none;
-  }
-  a {
-    color: white;
   }
 
   .navbar-brand i {
@@ -147,11 +147,11 @@ header {
 
   button[type="submit"] {
     padding: 0;
-    border: none;
+    border: 1px solid #f4f5f6;
     width: 30px;
-    height: 30px;
+    height: 20px;
     background-size: cover !important;
-    margin-left: 20px;
+    margin-left: 50px;
   }
 
   button[form="form_uk"] {
@@ -183,7 +183,7 @@ header {
       text-transform: uppercase;
 
       .nav-link {
-        color: #000000;
+        color: #000000 !important;
         font-size: 14px;
       }
     }
@@ -226,172 +226,173 @@ header {
 /* Icon 1 */
 
 .animated-icon1, .animated-icon2, .animated-icon3 {
-width: 30px;
-height: 20px;
-position: relative;
-margin: 0px;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
 }
 
 .animated-icon1 span, .animated-icon2 span, .animated-icon3 span {
-display: block;
-position: absolute;
-height: 3px;
-width: 100%;
-border-radius: 9px;
-opacity: 1;
-left: 0;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .25s ease-in-out;
--moz-transition: .25s ease-in-out;
--o-transition: .25s ease-in-out;
-transition: .25s ease-in-out;
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 
 .animated-icon1 span {
-background: #e65100;
+  background: #e65100;
 }
 
 .animated-icon2 span {
-background: #e3f2fd;
+  background: #e3f2fd;
 }
 
 .animated-icon3 span {
-background: #f3e5f5;
+  background: #f3e5f5;
 }
 
 .animated-icon1 span:nth-child(1) {
-top: 0px;
+  top: 0px;
 }
 
 .animated-icon1 span:nth-child(2) {
-top: 10px;
+  top: 10px;
 }
 
 .animated-icon1 span:nth-child(3) {
-top: 20px;
+  top: 20px;
 }
 
 .animated-icon1.open span:nth-child(1) {
-top: 11px;
--webkit-transform: rotate(135deg);
--moz-transform: rotate(135deg);
--o-transform: rotate(135deg);
-transform: rotate(135deg);
+  top: 11px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .animated-icon1.open span:nth-child(2) {
-opacity: 0;
-left: -60px;
+  opacity: 0;
+  left: -60px;
 }
 
 .animated-icon1.open span:nth-child(3) {
-top: 11px;
--webkit-transform: rotate(-135deg);
--moz-transform: rotate(-135deg);
--o-transform: rotate(-135deg);
-transform: rotate(-135deg);
+  top: 11px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 /* Icon 3*/
 
 .animated-icon2 span:nth-child(1) {
-top: 0px;
+  top: 0px;
 }
 
 .animated-icon2 span:nth-child(2), .animated-icon2 span:nth-child(3) {
-top: 10px;
+  top: 10px;
 }
 
 .animated-icon2 span:nth-child(4) {
-top: 20px;
+  top: 20px;
 }
 
 .animated-icon2.open span:nth-child(1) {
-top: 11px;
-width: 0%;
-left: 50%;
+  top: 11px;
+  width: 0%;
+  left: 50%;
 }
 
 .animated-icon2.open span:nth-child(2) {
--webkit-transform: rotate(45deg);
--moz-transform: rotate(45deg);
--o-transform: rotate(45deg);
-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .animated-icon2.open span:nth-child(3) {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
--o-transform: rotate(-45deg);
-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .animated-icon2.open span:nth-child(4) {
-top: 11px;
-width: 0%;
-left: 50%;
+  top: 11px;
+  width: 0%;
+  left: 50%;
 }
 
 /* Icon 4 */
 
 .animated-icon3 span:nth-child(1) {
-top: 0px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
 }
 
 .animated-icon3 span:nth-child(2) {
-top: 10px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
 }
 
 .animated-icon3 span:nth-child(3) {
-top: 20px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
+  top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
 }
 
 .animated-icon3.open span:nth-child(1) {
--webkit-transform: rotate(45deg);
--moz-transform: rotate(45deg);
--o-transform: rotate(45deg);
-transform: rotate(45deg);
-top: 0px;
-left: 8px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0px;
+  left: 8px;
 }
 
 .animated-icon3.open span:nth-child(2) {
-width: 0%;
-opacity: 0;
+  width: 0%;
+  opacity: 0;
 }
 
 .animated-icon3.open span:nth-child(3) {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
--o-transform: rotate(-45deg);
-transform: rotate(-45deg);
-top: 21px;
-left: 8px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 8px;
 }
+
 .from {
   margin-top: 30px;
   padding-bottom: 50px;
@@ -458,9 +459,11 @@ left: 8px;
 .navbar-brand img {
   width: 150px;
 }
-.breadcrumb{
+
+.breadcrumb {
   background-color: unset !important;
 }
+
 .breadcrumb-item + .breadcrumb-item::before {
   content: ">" !important;
 }
@@ -485,7 +488,7 @@ left: 8px;
     .image {
       width: 100%;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       height: 170px;
       border-radius: 8px;
@@ -495,7 +498,7 @@ left: 8px;
       .icon {
         position: absolute;
         bottom: 0;
-        left: 10px;
+        left: 0;
         color: white;
         text-transform: uppercase;
         padding: 4px 12px;
@@ -661,6 +664,7 @@ left: 8px;
       z-index: 1;
       float: left;
       color: black;
+      top: 8px;
     }
 
     span.form-control-angle {
@@ -674,6 +678,7 @@ left: 8px;
       float: left;
       color: black;
       font-size: x-small;
+      top: 8px;
     }
 
     button#btn_search {
@@ -711,6 +716,16 @@ left: 8px;
   width: 100%;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  .item-lang {
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 0;
+      top: -10px;
+    }
+  }
 }
 
 i.fas.fa-paw {
@@ -914,13 +929,23 @@ form.new-edit {
 }
 
 #CookielawBanner {
-  background-color: #e7d9ac;
-  margin-top: -160px;
+  background-color: #091b33;
+  margin-top: -195px;
   position: relative;
-  z-index: 900;
+  z-index: 8;
+  color: white;
+  border-bottom: 1px solid white;
 
   a {
     text-decoration: underline;
+    color: white;
+
+    &.btn {
+      background-color: #091b33 !important;
+      text-decoration: none;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
   }
 
   #CookielawCross {
@@ -940,8 +965,7 @@ form.new-edit {
   margin-bottom: 1rem !important;
 }
 
-.with-submenu {
-  cursor: pointer;
+.with-menu {
   position: relative;
 
   .sub-menu {
@@ -949,8 +973,7 @@ form.new-edit {
     color: black;
     background-color: white;
     margin-left: 10px;
-    width: 100%;
-    font-size: 14px;
+    left: auto !important;
     box-shadow: 5px 8px 12px 1px #a4a4a433;
 
     ul {
@@ -966,14 +989,17 @@ form.new-edit {
       color: black;
     }
   }
+}
 
-  &:hover {
-    .sub-menu {
-      display: block !important;
-    }
-  }
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: unset !important;
+}
 
-  .favorites span {
-    margin: 0 5px;
-  }
+.dropdown-item.active, .dropdown-item:active {
+  background-color: unset !important;
+  color: #000 !important;
+}
+
+.favorites span {
+  margin: 0 5px;
 }

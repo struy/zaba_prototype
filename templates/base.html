@@ -98,16 +98,27 @@
 
                     </div>
                 </a>
+
                 <div class="d-lg-block language-block">
                     {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
+                        <div class="d-inline item-lang">
+                            <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
+                                  style="display:inline!important;">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                                <input name="language" type="hidden" value="{{ language.code }}"/>
+                            </form>
+                            {% if language.code == LANGUAGE_CODE %}
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6.80273" cy="6.73688" r="6" fill="#091B34"/>
+                                    <path d="M4.25439 6.19475L6.31487 8.25534L9.35176 5.21844" stroke="white"
+                                          stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            {% endif %}
+                            <button class="lang-button " type="submit" form="form_{{ language.code }}"
+                                    value="Submit"></button>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
@@ -142,8 +153,9 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item with-submenu">
-                            <div class="nav-link d-flex favorites">
+                        <li class="nav-item with-menu">
+                            <a class="nav-link d-flex favorites dropdown-toggle align-items-center" href="#" id="navbarDropdownMenuLink"
+                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {#                                icon-Account.svg#}
                                 <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -153,56 +165,16 @@
                                           fill="black"/>
                                 </svg>
                                 <span class="ml-1">{% trans "My Profile" %}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                     x="0px" y="0px"
-                                     viewBox="0 0 490.656 490.656" style="enable-background:new 0 0 490.656 490.656;"
-                                     xml:space="preserve" width="17" height="20">
-<g>
-	<g>
-		<path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0
-			c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667
-			C491.696,131.368,491.696,124.605,487.536,120.445z"/>
-	</g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
-</g>
-                                    <g>
 </g>
 </svg>
 
-                            </div>
-                            <div class="sub-menu d-none">
+                            </a>
+                            <div class="sub-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <ul>
-                                    <li><a href="{% url 'my_ads' %}">My Ads</a></li>
-                                    <li><a href="{% url 'profile_edit' %}">Profile</a></li>
-                                    <li><a href="{% url 'favorites' %}">Favorites</a></li>
-                                    <li>
+                                    <li class="dropdown-item"><a href="{% url 'my_ads' %}">My Ads</a></li>
+                                    <li class="dropdown-item"><a href="{% url 'profile_edit' %}">Profile</a></li>
+                                    <li class="dropdown-item"><a href="{% url 'favorites' %}">Favorites</a></li>
+                                    <li class="dropdown-item">
                                         <a href="{% url "logout" %}">
                                             {% trans "Logout" %}
                                         </a>
@@ -245,7 +217,7 @@
             </center>
         </section>
 
-        <div class="container mb-2">
+        <div class="container mb-4">
             <div class="row ml-0">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb p-0 m-0">

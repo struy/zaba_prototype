@@ -94,9 +94,6 @@ header {
 header .mobile-logo {
   display: none;
 }
-header a {
-  color: white;
-}
 header .navbar-brand i {
   color: #94c045;
 }
@@ -121,11 +118,11 @@ header .bg-dark {
 }
 header button[type=submit] {
   padding: 0;
-  border: none;
+  border: 1px solid #f4f5f6;
   width: 30px;
-  height: 30px;
+  height: 20px;
   background-size: cover !important;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 header button[form=form_uk] {
   background: url("/static/img/flags/Ukraine.png");
@@ -146,7 +143,7 @@ header .navbar-dark .navbar-nav {
   text-transform: uppercase;
 }
 header .navbar-dark .navbar-nav .nav-link {
-  color: #000000;
+  color: #000000 !important;
   font-size: 14px;
 }
 header .navbar-expand-lg .navbar-collapse {
@@ -413,7 +410,7 @@ header .navbar-toggler {
 .list-ads-user .item .image {
   width: 100%;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 170px;
   border-radius: 8px;
@@ -423,7 +420,7 @@ header .navbar-toggler {
 .list-ads-user .item .image .icon {
   position: absolute;
   bottom: 0;
-  left: 10px;
+  left: 0;
   color: white;
   text-transform: uppercase;
   padding: 4px 12px;
@@ -553,6 +550,7 @@ header .navbar-toggler {
   z-index: 1;
   float: left;
   color: black;
+  top: 8px;
 }
 #main .home span.form-control-angle {
   display: block;
@@ -565,6 +563,7 @@ header .navbar-toggler {
   float: left;
   color: black;
   font-size: x-small;
+  top: 8px;
 }
 #main .home button#btn_search {
   background-color: white;
@@ -596,6 +595,14 @@ header .navbar-toggler {
   width: 100%;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.language-block .item-lang {
+  position: relative;
+}
+.language-block .item-lang svg {
+  position: absolute;
+  right: 0;
+  top: -10px;
 }
 
 i.fas.fa-paw {
@@ -783,13 +790,22 @@ form.new-edit .gj-datepicker-bootstrap {
 }
 
 #CookielawBanner {
-  background-color: #e7d9ac;
-  margin-top: -160px;
+  background-color: #091b33;
+  margin-top: -195px;
   position: relative;
-  z-index: 900;
+  z-index: 8;
+  color: white;
+  border-bottom: 1px solid white;
 }
 #CookielawBanner a {
   text-decoration: underline;
+  color: white;
+}
+#CookielawBanner a.btn {
+  background-color: #091b33 !important;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 4px;
 }
 #CookielawBanner #CookielawCross {
   cursor: pointer;
@@ -806,33 +822,38 @@ form.new-edit .gj-datepicker-bootstrap {
   margin-bottom: 1rem !important;
 }
 
-.with-submenu {
-  cursor: pointer;
+.with-menu {
   position: relative;
 }
-.with-submenu .sub-menu {
+.with-menu .sub-menu {
   position: absolute;
   color: black;
   background-color: white;
   margin-left: 10px;
-  width: 100%;
-  font-size: 14px;
+  left: auto !important;
   box-shadow: 5px 8px 12px 1px #a4a4a433;
 }
-.with-submenu .sub-menu ul {
+.with-menu .sub-menu ul {
   list-style: none;
 }
-.with-submenu .sub-menu ul li {
+.with-menu .sub-menu ul li {
   margin: 5px;
   padding: 3px;
 }
-.with-submenu .sub-menu a {
+.with-menu .sub-menu a {
   color: black;
 }
-.with-submenu:hover .sub-menu {
-  display: block !important;
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: unset !important;
 }
-.with-submenu .favorites span {
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: unset !important;
+  color: #000 !important;
+}
+
+.favorites span {
   margin: 0 5px;
 }
 

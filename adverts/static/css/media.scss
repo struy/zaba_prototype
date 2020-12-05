@@ -24,14 +24,7 @@
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-}
 
-/*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) {
-  .list-ads-user .item .image .icon {
-    bottom: 9px;
-    left: 0;
-  }
 }
 
 /*Medium devices (tablets, less than 992px)*/
@@ -54,9 +47,7 @@
   #btn_search .form-control-feedback {
     right: 8px;
   }
-  .list-ads-user .item .image .icon {
-    bottom: 31px;
-  }
+
   header .mobile-logo {
     display: block;
 
@@ -131,8 +122,19 @@
     left: 11px;
     font-size: 14px;
   }
-  footer{
+  footer {
     height: 150px;
+  }
+  #CookielawBanner {
+    margin-top: -280px;
+    font-size: 14px;
+  }
+  .language-block .item-lang svg{
+    right: -5px;
+    top: -5px;
+  }
+  .with-menu{
+    order: -1;
   }
 }
 
@@ -154,8 +156,7 @@
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
   #main .icon-box {
-    max-width: 80%;
-    margin: 10px auto;
+    margin: 10px;
   }
 }
 
@@ -294,6 +295,14 @@
   .language-block {
     position: inherit;
   }
+  #CookielawBanner {
+    margin-top: -300px;
+    font-size: 12px;
+  }
+  #CookielawBanner a.btn{
+    display: block;
+    margin: auto;
+  }
 }
 
 
@@ -303,7 +312,10 @@
 /***************************************************************************************/
 
 /*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
+@media (max-width: 495.98px) {
+  #CookielawBanner {
+    margin-top: -310px;
+  }
 }
 
 /*Small devices (landscape phones, 576px and up)*/
@@ -320,8 +332,4 @@
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-}
-
-.test {
-  width: 100%;
 }

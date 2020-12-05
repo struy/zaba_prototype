@@ -94,9 +94,6 @@ header {
 header .mobile-logo {
   display: none;
 }
-header a {
-  color: white;
-}
 header .navbar-brand i {
   color: #94c045;
 }
@@ -146,7 +143,7 @@ header .navbar-dark .navbar-nav {
   text-transform: uppercase;
 }
 header .navbar-dark .navbar-nav .nav-link {
-  color: #000000;
+  color: #000000 !important;
   font-size: 14px;
 }
 header .navbar-expand-lg .navbar-collapse {
@@ -825,33 +822,38 @@ form.new-edit .gj-datepicker-bootstrap {
   margin-bottom: 1rem !important;
 }
 
-.with-submenu {
-  cursor: pointer;
+.with-menu {
   position: relative;
 }
-.with-submenu .sub-menu {
+.with-menu .sub-menu {
   position: absolute;
   color: black;
   background-color: white;
   margin-left: 10px;
-  width: 100%;
-  font-size: 14px;
+  left: auto !important;
   box-shadow: 5px 8px 12px 1px #a4a4a433;
 }
-.with-submenu .sub-menu ul {
+.with-menu .sub-menu ul {
   list-style: none;
 }
-.with-submenu .sub-menu ul li {
+.with-menu .sub-menu ul li {
   margin: 5px;
   padding: 3px;
 }
-.with-submenu .sub-menu a {
+.with-menu .sub-menu a {
   color: black;
 }
-.with-submenu:hover .sub-menu {
-  display: block !important;
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: unset !important;
 }
-.with-submenu .favorites span {
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: unset !important;
+  color: #000 !important;
+}
+
+.favorites span {
   margin: 0 5px;
 }
 

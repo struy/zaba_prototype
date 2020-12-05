@@ -117,10 +117,6 @@ header {
     display: none;
   }
 
-  a {
-    color: white;
-  }
-
   .navbar-brand i {
     color: $base-color;
   }
@@ -187,7 +183,7 @@ header {
       text-transform: uppercase;
 
       .nav-link {
-        color: #000000;
+        color: #000000 !important;
         font-size: 14px;
       }
     }
@@ -720,9 +716,11 @@ header {
   width: 100%;
   text-align: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  .item-lang{
+
+  .item-lang {
     position: relative;
-    svg{
+
+    svg {
       position: absolute;
       right: 0;
       top: -10px;
@@ -967,8 +965,7 @@ form.new-edit {
   margin-bottom: 1rem !important;
 }
 
-.with-submenu {
-  cursor: pointer;
+.with-menu {
   position: relative;
 
   .sub-menu {
@@ -976,8 +973,7 @@ form.new-edit {
     color: black;
     background-color: white;
     margin-left: 10px;
-    width: 100%;
-    font-size: 14px;
+    left: auto !important;
     box-shadow: 5px 8px 12px 1px #a4a4a433;
 
     ul {
@@ -993,14 +989,17 @@ form.new-edit {
       color: black;
     }
   }
+}
 
-  &:hover {
-    .sub-menu {
-      display: block !important;
-    }
-  }
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: unset !important;
+}
 
-  .favorites span {
-    margin: 0 5px;
-  }
+.dropdown-item.active, .dropdown-item:active {
+  background-color: unset !important;
+  color: #000 !important;
+}
+
+.favorites span {
+  margin: 0 5px;
 }

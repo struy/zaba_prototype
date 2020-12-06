@@ -22,3 +22,9 @@ check:
 Using django-extensions  for REST APIs or micro services 
 `./manage.py runserver_plus --print-sql`
 `./manage.py shell_plus --print-sql`
+
+
+i18n
+`sudo apt install python-django-common`
+`django-admin compilemessages`
+`django-admin makemessages -a -i env`

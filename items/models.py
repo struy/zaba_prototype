@@ -25,7 +25,6 @@ class Item(Advert, Location):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('price'))
     favourites = models.ManyToManyField(User, related_name='favourite_items', default=None, blank=True)
 
-
     def get_absolute_url(self):
         return reverse('items:detail', args=[self.id])
 

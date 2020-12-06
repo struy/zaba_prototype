@@ -20,8 +20,8 @@ def index(request):
     query = request.GET.get('q')
     lang = get_language()
     if query:
-        advert_list = Item.objects.filter(Q(local__exact=lang)
-                                          & (Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Item.objects.filter(Q(local__exact=lang) &
+                                          (Q(title__icontains=query) | Q(description__icontains=query))
                                           ).order_by('-modified')
     else:
         advert_list = Item.objects.filter(local=lang).order_by('-modified')

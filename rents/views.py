@@ -19,8 +19,8 @@ def index(request):
     query = request.GET.get('q')
     lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Rental.objects.filter(Q(local__exact=lang)
-                                            & (Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Rental.objects.filter(Q(local__exact=lang) &
+                                            (Q(title__icontains=query) | Q(description__icontains=query))
                                             ).order_by('-modified')
     else:
         advert_list = Rental.objects.filter(local=lang).order_by('-modified')

@@ -9,8 +9,8 @@ attrs==20.3.0
 autopep8==1.5.4
 beautifulsoup4==4.9.3
 billiard==3.6.3.0
-boto3==1.16.25
-botocore==1.19.25
+boto3==1.16.30
+botocore==1.19.30
 braintree==4.5.0
 celery==4.4.7
 certifi==2020.11.8
@@ -35,7 +35,7 @@ django-cookie-law==2.0.4
 django-countries==6.1.3
 django-country-and-language-flags==0.1.1
 django-crispy-forms==1.10.0
-django-debug-toolbar==3.2a1
+django-debug-toolbar==3.2
 django-elasticsearch-dsl==7.1.4
 django-environ==0.4.5
 django-extensions==3.1.0
@@ -137,13 +137,13 @@ tornado==6.1
 tox==3.20.1
 transliterate==1.10.2
 trio==0.17.0
-trio-websocket==0.8.1
+trio-websocket==0.9.1
 typed-ast==1.4.1
 typing-extensions==3.7.4.3
 urllib3==1.26.2
 vcrpy==4.1.1
 vine==1.3.0
-virtualenv==20.2.0
+virtualenv==20.2.1
 wcwidth==0.2.5
 wrapt==1.12.1
 wsaccel==0.6.2

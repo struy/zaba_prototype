@@ -9,7 +9,7 @@ local = ['en_US', 'uk_UA', 'ru_RU', 'pl_PL']
 for loc in local:
     fake = Factory.create(loc)
     # items
-    for i in range(20):
+    for i in range(100):
         image_url = fake.image_url()
         response = request.urlopen(image_url)
         image_name = image_url.rsplit('.', 1)[1].lower() + '.jpeg'

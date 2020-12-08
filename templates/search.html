@@ -70,7 +70,9 @@
                         >
                     </div>
                 </div>
-            {% endif %} {% endwith %} {% empty %}
+            {% endif %}
+        {% endwith %}
+        {% empty %}
             <div class="row">
                 <div class="offset-md-2 col-12 col-md-6 mx-auto my-5 py-5">
                     <p class="text-center">
@@ -79,29 +81,12 @@
                 </div>
             </div>
             </div>
-
         {% endfor %}
+
+      {% include "snippets/pagination.html" %}
 {% endblock content %}
 
 {% block script %}
-    {% include "snippets/address-input.html" %}
-
-    <script>
-        $(function () {
-            $("#search_city").keypress(function (event) {
-                if (
-                    !(
-                        (event.which >= 65 && event.which <= 90) ||
-                        (event.which >= 97 && event.which <= 122) ||
-                        event.which == 32 ||
-                        event.which == 45 ||
-                        event.which == 39
-                    )
-                ) {
-                    event.preventDefault();
-                }
-            });
-            $("#search_city").tooltip();
-        });
-    </script>
+    {% include "snippets/js/address-input-js.html" %}
+    {% include "snippets/js/city-latin-only-js.html" %}
 {% endblock script %}

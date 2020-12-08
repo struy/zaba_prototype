@@ -421,10 +421,6 @@ section#main {
   color: #aaa;
 }
 
-.form-control {
-  padding: 0.375rem 1.2rem 0.375rem 2.5rem;
-}
-
 span.count {
   float: right;
   background-color: #94c045;

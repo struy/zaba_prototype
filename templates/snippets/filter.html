@@ -34,10 +34,10 @@
                     </div>
                     {{ filters.form | crispy }}
                     <button class="btn" type="submit">
-                        {% trans "Filter Search" %}
+                        {% trans "filter search" %}
                     </button>
                     {% if has_filter %}
-                        <a href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
+                        <a  class="mb-4 mb-md-0" href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
                     {% endif %}
                 </form>
             </div>

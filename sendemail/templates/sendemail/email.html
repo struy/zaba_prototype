@@ -26,7 +26,7 @@
                 <h1>{% trans "Contact" %} <span class="text-green">{% trans "Us" %}</span></h1>
                 <div class="mt-4 row">
                     <div class="from col-md-6 col-12">
-                        <form method="post" class="new-edit">
+                        <form method="post" class="new-edit col-md-11 col-12 pl-0">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="form-actions">
@@ -34,7 +34,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="image col-6 d-none d-md-block">
+                    <div class="image col-6 d-none d-md-block text-right">
                         <img src="{% static 'img/illustr-Contact.png' %}" alt="">
                     </div>
                 </div>

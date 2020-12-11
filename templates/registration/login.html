@@ -42,14 +42,14 @@
             </h2>
         </div>
         <div class="row from">
-            <div class="col-md-6 order-2 order-md-1 manual-login">
+            <div class="col-md-6 order-2 order-md-1 manual-login pt-4">
                 {% if form.errors %}
                     <p>
                         {% trans "Your username and password didn't match. Please try again." %}
                     </p>
                 {% endif %}
                 <div class="login-form">
-                    <form action="{% url 'login' %}" method="post">
+                    <form action="{% url 'login' %}" method="post" class="col-md-11 col-12 pl-0">
                         {{ form|crispy }}
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ next }}"/>
@@ -67,7 +67,7 @@
 
             </div>
 
-            <div class="col-md-6 order-1 order-md-2 with-login">
+            <div class="col-md-6 order-1 order-md-2 with-login pt-4">
                 <h2>Log in with an account</h2>
                 {#                <a href="{% url "social:begin" "facebook" %}" class="btn btn-sm facebook">#}
                 {#                    <i class="fab fa-facebook-square">&nbsp;</i> {% trans "Sign in with Facebook" %}#}

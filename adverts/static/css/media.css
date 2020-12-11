@@ -97,7 +97,11 @@
     color: #262a5d !important;
     font-size: 14px;
   }
-  #mobile-data .item a svg {
+  #mobile-data .item {
+    color: #262a5d !important;
+    font-size: 14px;
+  }
+  #mobile-data .item svg {
     width: 20px;
     height: 20px;
     display: block;
@@ -123,7 +127,7 @@
   }
 
   footer {
-    height: 150px;
+    background-color: white;
   }
 
   #CookielawBanner {
@@ -137,13 +141,12 @@
   }
 
   .with-menu {
-    order: -1;
+    display: none;
   }
-}
-/***************************************************************************************/
-@media (max-width: 326px) {
+
   header button[type=submit] {
-    margin-left: 2px;
+    width: 3em;
+    height: 2em;
   }
 }
 @media (max-width: 390px) {
@@ -168,7 +171,7 @@
   }
 
   header button[type=submit] {
-    margin-left: 5px;
+    margin-left: 15px;
   }
 
   header .navbar-dark .navbar-nav .nav-item {
@@ -277,18 +280,22 @@
   }
 
   .list-ads-user .item .events > div {
-    width: auto;
+    width: 100%;
+  }
+  .list-ads-user .item .events > div:first-child {
+    text-align: left !important;
   }
 
   .filters button[type=submit] {
     width: 100%;
+    margin-top: 15px;
     margin-bottom: 15px;
   }
 
   .filters .form-group:not(:first-child) {
-    width: auto;
-    flex-basis: 50%;
+    width: 100%;
     margin-right: 0;
+    margin-bottom: 0;
   }
 
   #collapseExample .filters {
@@ -315,6 +322,21 @@
   #CookielawBanner a.btn {
     display: block;
     margin: auto;
+  }
+}
+/***************************************************************************************/
+@media (max-width: 326px) {
+  header button[type=submit] {
+    margin-left: 5px;
+  }
+
+  #mobile-data .item a > div {
+    display: none;
+  }
+
+  #mobile-data .item a svg {
+    width: 30px;
+    height: 40px;
   }
 }
 /*Extra large devices (large desktops)*/

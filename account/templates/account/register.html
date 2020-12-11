@@ -37,11 +37,11 @@
             </h2>
         </div>
         <div class="row from">
-            <div class="col-md-6 login-form">
+            <div class="col-md-6 login-form pt-4">
                 <p>
                     {% trans "Please, sign up using the following form:" %}
                 </p>
-                <form action="." method="post">
+                <form action="." method="post" class="col-md-11 col-12 pl-0">
                     {{ user_form|crispy }}
                     {% csrf_token %}
                     <div class="row register">
@@ -54,7 +54,7 @@
                         </div>
                 </form>
             </div>
-             <div class="col-md-6 order-1 order-md-2 with-login">
+             <div class="col-md-6 order-1 order-md-2 with-login pt-4">
                 <h2>Use account</h2>
                 <a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-sm google d-flex align-center">
                     <div class="icon">

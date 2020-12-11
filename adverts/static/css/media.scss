@@ -96,6 +96,11 @@
     .item a {
       color: #262a5d !important;
       font-size: 14px;
+    }
+
+    .item {
+      color: #262a5d !important;
+      font-size: 14px;
 
       svg {
         width: 20px;
@@ -123,28 +128,24 @@
     font-size: 14px;
   }
   footer {
-    height: 150px;
+    background-color: white;
   }
+
   #CookielawBanner {
     margin-top: -280px;
     font-size: 14px;
   }
-  .language-block .item-lang svg{
+  .language-block .item-lang svg {
     right: -5px;
     top: -5px;
   }
-  .with-menu{
-    order: -1;
+  .with-menu {
+    display: none;
   }
-}
-
-
-/***************************************************************************************/
-@media (max-width: 326px) {
-  header button[type="submit"] {
-    margin-left: 2px;
+  header button[type=submit] {
+    width: 3em;
+    height: 2em;
   }
-
 }
 
 @media (max-width: 390px) {
@@ -169,7 +170,7 @@
     font-size: 24px;
   }
   header button[type=submit] {
-    margin-left: 5px;
+    margin-left: 15px;
   }
 
   header .navbar-dark .navbar-nav .nav-item {
@@ -267,17 +268,22 @@
   }
 
   .list-ads-user .item .events > div {
-    width: auto;
+    width: 100%;
+
+    &:first-child {
+      text-align: left !important;
+    }
   }
 
   .filters button[type=submit] {
     width: 100%;
+    margin-top: 15px;
     margin-bottom: 15px;
   }
   .filters .form-group:not(:first-child) {
-    width: auto;
-    flex-basis: 50%;
+    width: 100%;
     margin-right: 0;
+    margin-bottom: 0;
   }
   #collapseExample .filters {
     display: flex;
@@ -299,12 +305,27 @@
     margin-top: -300px;
     font-size: 12px;
   }
-  #CookielawBanner a.btn{
+  #CookielawBanner a.btn {
     display: block;
     margin: auto;
   }
 }
 
+/***************************************************************************************/
+@media (max-width: 326px) {
+  header button[type="submit"] {
+    margin-left: 5px;
+  }
+
+  #mobile-data .item a > div {
+    display: none;
+  }
+
+  #mobile-data .item a svg {
+    width: 30px;
+    height: 40px;
+  }
+}
 
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/

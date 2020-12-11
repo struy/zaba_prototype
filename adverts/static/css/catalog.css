@@ -18,8 +18,8 @@ section#main {
   font-weight: bold;
   font-size: 16px;
   text-align: center;
-  text-transform: uppercase;
   color: #FFFFFF;
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=catalog.css.map */

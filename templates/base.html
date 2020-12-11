@@ -40,7 +40,7 @@
 <body>
 
 <a href="{% block add_ad_link %} {% endblock %}" id="add_button">
-    <button type="button" class="btn btn-danger btn-circle btn-xl ">
+    <button type="button" class="btn btn-success btn-circle btn-xl ">
         <i class="fas fa-plus"></i>
     </button>
 </a>
@@ -154,8 +154,9 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item with-menu">
-                            <a class="nav-link d-flex favorites dropdown-toggle align-items-center" href="#" id="navbarDropdownMenuLink"
-                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link d-flex favorites dropdown-toggle align-items-center" href="#"
+                               id="navbarDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {#                                icon-Account.svg#}
                                 <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -165,8 +166,8 @@
                                           fill="black"/>
                                 </svg>
                                 <span class="ml-1">{% trans "My Profile" %}</span>
-</g>
-</svg>
+                                </g>
+                                </svg>
 
                             </a>
                             <div class="sub-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -192,9 +193,20 @@
 
                     {% endif %}
                 </ul>
-
             </div>
 
+            <div id="navbarSupportedSubContent" class="collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'my_ads' %}">My Ads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile_edit' %}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'favorites' %}">Favorites</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "logout" %}">
+                            {% trans "Logout" %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav><!-- .nav-menu -->
     </div>
 
@@ -246,19 +258,21 @@
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <div data-toggle="collapse"
+                     data-target="#navbarSupportedSubContent"
+                     aria-controls="navbarSupportedSubContent20" aria-expanded="false"
+                     aria-label="Toggle navigation">
                     <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.89264 8.91589C9.01834 8.91589 9.99311 8.51215 10.7896 7.71557C11.586 6.91912 11.9898 5.94461 11.9898 4.81878C11.9898 3.69334 11.586 2.7187 10.7894 1.92199C9.99285 1.12567 9.01822 0.721924 7.89264 0.721924C6.76681 0.721924 5.79231 1.12567 4.99586 1.92212C4.1994 2.71857 3.79553 3.69321 3.79553 4.81878C3.79553 5.94461 4.1994 6.91925 4.99598 7.7157C5.79257 8.51202 6.7672 8.91589 7.89264 8.91589Z"
                               fill="#749B27"></path>
                         <path d="M15.0615 13.8021C15.0385 13.4706 14.992 13.109 14.9237 12.7272C14.8546 12.3426 14.7657 11.9789 14.6593 11.6466C14.5494 11.303 14.3999 10.9638 14.2151 10.6387C14.0232 10.3013 13.798 10.0075 13.5451 9.76568C13.2808 9.51274 12.9571 9.30938 12.5828 9.16104C12.2099 9.01348 11.7965 8.93873 11.3544 8.93873C11.1807 8.93873 11.0128 9.00998 10.6885 9.22113C10.4889 9.35129 10.2554 9.50184 9.99479 9.66834C9.77196 9.81032 9.47009 9.94335 9.09724 10.0638C8.73347 10.1815 8.36412 10.2412 7.99957 10.2412C7.63502 10.2412 7.2658 10.1815 6.90164 10.0638C6.52918 9.94347 6.22731 9.81045 6.00474 9.66847C5.74661 9.50353 5.51301 9.35298 5.31043 9.221C4.9865 9.00985 4.81844 8.9386 4.64479 8.9386C4.20251 8.9386 3.78929 9.01348 3.41644 9.16117C3.04242 9.30925 2.71862 9.51261 2.454 9.76581C2.20132 10.0077 1.97589 10.3014 1.78434 10.6387C1.59967 10.9638 1.45016 11.3029 1.34011 11.6467C1.23382 11.9791 1.14492 12.3426 1.07588 12.7272C1.00749 13.1085 0.961026 13.4702 0.938055 13.8024C0.915473 14.1279 0.904053 14.4657 0.904053 14.8069C0.904053 15.6949 1.18632 16.4137 1.74294 16.9439C2.29268 17.467 3.02009 17.7324 3.90467 17.7324H12.0953C12.9798 17.7324 13.707 17.4671 14.2569 16.9439C14.8136 16.4141 15.0959 15.6951 15.0959 14.8068C15.0957 14.4641 15.0842 14.126 15.0615 13.8021Z"
                               fill="#749B27"></path>
                     </svg>
-
                     <div>Profile</div>
-                </a>
+                </div>
             </div>
-            <div class="item">
-                <a href="#">
+            <div class="item" id="link_add_mobile">
+               <a href="#">
                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.00002 0.721924C4.14047 0.721924 0.187256 4.67513 0.187256 9.53469C0.187256 14.3942 4.14047 18.3475 9.00002 18.3475C13.8596 18.3475 17.8128 14.3942 17.8128 9.53469C17.8128 4.67513 13.8596 0.721924 9.00002 0.721924ZM12.8556 10.269H9.73437V13.3903C9.73437 13.7957 9.40545 14.1246 9.00002 14.1246C8.59459 14.1246 8.26567 13.7957 8.26567 13.3903V10.269H5.14444C4.739 10.269 4.41008 9.94012 4.41008 9.53469C4.41008 9.12925 4.739 8.80034 5.14444 8.80034H8.26567V5.6791C8.26567 5.27367 8.59459 4.94475 9.00002 4.94475C9.40545 4.94475 9.73437 5.27367 9.73437 5.6791V8.80034H12.8556C13.261 8.80034 13.59 9.12925 13.59 9.53469C13.59 9.94012 13.261 10.269 12.8556 10.269Z"
                               fill="#749B27"></path>
@@ -284,7 +298,7 @@
                 </button>
             </div>
         </div>
-        <div class="container">
+        <div class="container d-none d-md-block">
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-12 text-center">

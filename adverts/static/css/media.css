@@ -323,20 +323,20 @@
     display: block;
     margin: auto;
   }
+
+  #mobile-data .item .nav-item > div {
+    display: none;
+  }
+
+  #mobile-data .item .nav-item svg {
+    width: 30px;
+    height: 40px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {
   header button[type=submit] {
     margin-left: 5px;
-  }
-
-  #mobile-data .item a > div {
-    display: none;
-  }
-
-  #mobile-data .item a svg {
-    width: 30px;
-    height: 40px;
   }
 }
 /*Extra large devices (large desktops)*/

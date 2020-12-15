@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
-<<<<<<< HEAD
-=======
 {% load thumbnail %}
 {% load humanize %}
->>>>>>> master
+{% load advert_money %}
+
 
 {% block title %}
     {% trans "Home" %}
@@ -82,7 +81,8 @@
                             </button>
 
                             {% if has_filter %}
-                                <a class="mb-4 mb-md-0" href="{% url 'package_list' %}">{% trans ' Clear all filters' %}</a>
+                                <a class="mb-4 mb-md-0"
+                                   href="{% url 'package_list' %}">{% trans ' Clear all filters' %}</a>
                             {% endif %}
                         </div>
                     </div>
@@ -312,17 +312,21 @@
             </svg>
 
 
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  text-center text-dark">
+                <h3>{% trans "Popular Ads" %} </h3>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12  text-center text-dark">
-                    <h3>{% trans "Popular Ads" %} </h3>
-                </div>
 
-                {% if most_viewed %}
-                    {% for advert in most_viewed %}
-                        <div class="col-10 col-lg-3">
+        {% if most_viewed %}
+            <div class="content mb-2">
+                <div class="container">
+                    <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
+                        {% for advert in most_viewed %}
+
                             <div class="item">
                                 {% thumbnail advert.image "128" as ad %}
                                     <a href="{{ advert.image.url }}">
@@ -349,21 +353,27 @@
                                     </small>
                                 </div>
                                 <div class="price font-weight-bold">
-                                    {{ advert.price }}
+                                    {{ advert.price|prepend_dollars }}
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
 
 
-            </div>
-            <div class="row">
-                <div class="col-md-12  text-center text-dark">
-                    <h3>{% trans "New Ads" %} </h3>
+                        {% endfor %}
+
+                    </div>
                 </div>
 
-                {% if new %}
+            </div>>
+        {% endif %}
+
+        {% if new %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12  text-center text-dark">
+                        <h3>{% trans "New Ads" %} </h3>
+                    </div>
+
+
                     {% for advert in new %}
                         <div class="col-10 col-lg-3">
                             <div class="item">
@@ -392,16 +402,18 @@
                                     </small>
                                 </div>
                                 <div class="price font-weight-bold">
-                                    {{ advert.price }}
+                                    {{ advert.price|prepend_dollars }}
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
-                {% endif %}
 
 
+                </div>
             </div>
-        </div>
+        {% endif %}
+
+    </div>
 
 
 

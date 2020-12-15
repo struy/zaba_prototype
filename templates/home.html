@@ -60,7 +60,7 @@
                                 <span class="fas fa-angle-right form-control-angle">
        </span>
                                 <input
-                                        id="search_city"
+                                        id="id_city"
                                         type="text"
                                         name="address"
                                         value="{{ request.GET.address }}"
@@ -311,24 +311,7 @@
                 </g>
             </svg>
 
-                <div class="col-12 col-sm-6">
-                    <a href="jobs" class="icon-box text-center bg-color-jobs">
-                        <img src="{% static  "img/icon-Job.svg" %}" alt="jobs">
-                        &nbsp;{% trans "Jobs" %}
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <a href="rents" class="icon-box text-center bg-color-housing">
-                        <img src="{% static "img/icon-RealEstate.svg" %}" alt="housing">
-                        {% trans "Housing" %}
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <a href="gifts" class="icon-box text-center bg-color-cats">
-                        <img src="{% static "img/icon-Pets.svg" %}" alt="cats">
-                        {% trans "Cats" %}
-                    </a>
-                </div>
+
             </div>
         </div>
         <div class="container">
@@ -419,7 +402,7 @@
 
             </div>
         </div>
-    </div>
+
 
 
 

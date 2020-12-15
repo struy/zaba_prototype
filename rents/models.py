@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -23,6 +24,7 @@ class Rental(Advert, Location):
 
     property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name=_('property type'))
     image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
+    favourites = models.ManyToManyField(User, related_name='favourite_rents', default=None, blank=True)
     bathrooms = models.PositiveSmallIntegerField(default=1)
     bedrooms = models.PositiveSmallIntegerField(default=1)
     price = models.PositiveIntegerField()

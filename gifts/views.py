@@ -11,17 +11,15 @@ from .filters import GiftsFilter
 from .models import Gift
 
 # connect to redis
-r = redis.StrictRedis(host=settings.REDIS_HOST,
-                      port=settings.REDIS_PORT,
-                      db=settings.REDIS_DB)
+r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
     query = request.GET.get('q')
     lang = request.LANGUAGE_CODE
     if query:
-        advert_list = Gift.objects.filter(Q(local__exact=lang)
-                                          & (Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Gift.objects.filter(Q(local__exact=lang) &
+                                          (Q(title__icontains=query) | Q(description__icontains=query))
                                           ).order_by('-modified')
     else:
         advert_list = Gift.objects.filter(local=lang).order_by('-modified')
@@ -54,7 +52,7 @@ class GiftCreate(CreateView):
     success_url = reverse_lazy('gifts:index')
 
     def form_valid(self, form):
-        form.instance.owner = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 

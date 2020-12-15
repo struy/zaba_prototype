@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
@@ -35,6 +36,7 @@ class Job(Advert, Location):
     countries = CountryField(multiple=True, default='EN', verbose_name=_('language'),
                              help_text=_('What language does the employer speak?'), )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True, verbose_name=_('Logo or image'))
+    favourites = models.ManyToManyField(User, related_name='favourite_jobs', default=None, blank=True)
     salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('salary'), null=True, blank=True)
 
     def get_absolute_url(self):

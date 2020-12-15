@@ -67,6 +67,19 @@
                     <div class="count d-flex justify-content-end">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
+                    <p>
+                        <a href="{% url 'favourite_add' 'Item' advert.id %}">
+                            <i class="
+                         {% if favourite %}
+                            fas
+                         {% else %}
+                            far
+                         {% endif %}
+                         fa-heart"></i>
+                        </a>
+    
+                    </p>
+    
                 </div>
             </div>
             <div class="col-md-4 user-info">

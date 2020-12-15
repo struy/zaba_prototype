@@ -18,17 +18,31 @@
 
     <div class="container list-ads-user">
         {% if adverts %} {% for advert in adverts %}
-            <div class="row item mr-0 ml-0">
-                <div class="col-12 col-md-3">
-                    {% thumbnail advert.image "128" as ad %}
-                        <a href="{{ advert.image.url }}" class="d-block image"
-                           style="background-image: url('{{ ad.url }}')">
-                            {% if advert.expires_type %}
-                                <div class="icon bg-info">{{ advert.expires_type.text }}</div>
-                            {% endif %}
-                        </a>
-                    {% endthumbnail %} {% if not advert.image %}
-                    <div class="image" style="background-image: url('{% static 'none/no-img.jpg' %}')"></div>
+
+        <div class="media">
+          {% thumbnail advert.image "128" as ad %}
+          <a href="{{ advert.image.url }}">
+            <img class="mr-3" src="{{ ad.url }}" alt="no image" />
+          </a>
+          {% endthumbnail %} {% if not advert.image %}
+          <img
+            class="mr-3"
+            src="{% static 'none/no-img.jpg' %}"
+            alt="no image"
+            width="128"
+          />
+          {% endif %}
+
+          <div class="media-body">
+            <div class="advert">
+              <div class="wrap_list_adverts">
+                {% if advert.author == request.user %}
+                <a href="{% url 'rents:delete' advert.id %}" class="btn btn-sm">
+                  <i class="fas fa-trash-alt"></i>
+                </a>
+                <a href="{% url 'rents:edit' advert.id %}" class="btn btn-sm">
+                  <i class="fas fa-edit"></i>
+                </a>
                 {% endif %}
                 </div>
                 <div class="col-12 col-md-6">
@@ -73,5 +87,14 @@
         {% endif %}
         {% include "snippets/pagination.html" %}
     </div>
-{% endblock %} {% block script %} {% include "snippets/city_latin_only.html" %}
-{% endblock %} {% block add_ad_link %} {% url 'rents:new' %} {% endblock %}
+  </div>
+</div>
+{% endblock %}
+
+{% block script %} 
+    {% include "snippets/js/city-latin-only-js.html" %}
+{% endblock %} 
+
+{% block add_ad_link %}
+    {% url 'rents:new' %}
+{% endblock %}

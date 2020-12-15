@@ -1,6 +1,7 @@
 import os
 import sys
 import environ
+import redis
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
@@ -50,18 +51,18 @@ THIRD_PARTY_APPS = ['django_countries',
                     'crispy_forms',
                     'sorl.thumbnail',
                     'cookielaw',
-                    'mptt',
+                    # 'mptt',
                     'language_flags',
                     'rosetta',
                     'debug_toolbar',
                     'social_django',
                     'google_analytics',
-                    'django_select2',
+                    # 'django_select2',
                     'django_filters',
                     'django_cleanup.apps.CleanupConfig',
                     ]
 
-LOCAL_APPS = ['account.apps.AccountConfig',
+LOCAL_APPS = ['accounts.apps.AccountsConfig',
               'adverts.apps.AdvertsConfig',
               'rents.apps.RentsConfig',
               'jobs.apps.JobsConfig',
@@ -191,6 +192,9 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
+POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+
+
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
@@ -226,8 +230,8 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 sentry_sdk.init(
     dsn=env('SENTRY_DSN'),
-    integrations=[DjangoIntegration()],
-    # integrations=[RedisIntegration()],
+    # integrations=[DjangoIntegration()],
+    integrations=[RedisIntegration()],
 
     # temporary fix
     # transport=print,

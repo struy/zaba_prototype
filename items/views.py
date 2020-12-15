@@ -13,30 +13,31 @@ from .forms import ItemForm
 from .filters import ItemsFilter
 
 # connect to redis
-r = redis.StrictRedis(host=settings.REDIS_HOST,
-                      port=settings.REDIS_PORT,
-                      db=settings.REDIS_DB)
+r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
     query = request.GET.get('q')
     lang = get_language()
     if query:
-        advert_list = Item.objects.filter(Q(local__exact=lang)
-                                          & (Q(title__icontains=query) | Q(description__icontains=query))
+        advert_list = Item.objects.filter(Q(local__exact=lang) &
+                                          (Q(title__icontains=query) | Q(description__icontains=query))
                                           ).order_by('-modified')
     else:
         advert_list = Item.objects.filter(local=lang).order_by('-modified')
 
     filters = ItemsFilter(request.GET, queryset=advert_list)
+
     adverts, has_filter = context_helper(request, filters)
+    favourites = Item.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
 
     context = {
         'adverts': adverts,
         'is_paginated': True,
         'package_list': 'items:index',
         'filters': filters,
-        'has_filter': has_filter
+        'has_filter': has_filter,
+        'favourites': favourites
     }
 
     return render(request, 'items/index.html', context)
@@ -45,7 +46,13 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
     total_views = r.incr('item:{}:views'.format(advert.id))
-    return render(request, 'items/detail.html', {'advert': advert, 'total_views': total_views})
+    is_favourite = False
+    if advert.favourites.filter(id=request.user.id).exists():
+        is_favourite = True
+    # increment image ranking by 1
+    r.zincrby('ranking:Item', int(advert_id), 1)
+    context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
+    return render(request, 'items/detail.html', context)
 
 
 class ItemList(ListView):
@@ -59,7 +66,7 @@ class ItemCreate(CreateView):
     success_url = reverse_lazy('items:index')
 
     def form_valid(self, form):
-        form.instance.owner = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 

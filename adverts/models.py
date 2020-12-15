@@ -96,24 +96,23 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 
     def save(self, *args, **kwargs):
         lang = get_language()
-        if lang:
+        if lang and not self.local:
             self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
 
-        r = redis.StrictRedis(host=settings.REDIS_HOST,
-                              port=settings.REDIS_PORT,
-                              db=settings.REDIS_DB)
+        r = redis.Redis(connection_pool=settings.POOL)
+
         if (self.modified - self.created).seconds == 0:
             r.incr(f'Total:saved')
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
+            r.lpush(f'{self.__class__.__name__}:new', self.id)
+            r.ltrim(f'{self.__class__.__name__}:new', 0, 5)
             data = self.created.timestamp()
             score = f'{self.__class__.__name__}:{self.created.timestamp()}'
             r.zadd("adverts", {score: data})
 
     def delete(self, using=None, keep_parents=False):
-        r = redis.StrictRedis(host=settings.REDIS_HOST,
-                              port=settings.REDIS_PORT,
-                              db=settings.REDIS_DB)
+        r = redis.Redis(connection_pool=settings.POOL)
         super(Advert, self).delete()
         r.decr(f'Total:saved')
         r.decr(f'{self.__class__.__name__}:{self.id}:saved')

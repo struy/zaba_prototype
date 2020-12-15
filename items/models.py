@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -22,6 +23,7 @@ class Item(Advert, Location):
     )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('price'))
+    favourites = models.ManyToManyField(User, related_name='favourite_items', default=None, blank=True)
 
     def get_absolute_url(self):
         return reverse('items:detail', args=[self.id])

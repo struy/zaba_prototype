@@ -28,11 +28,18 @@ def detail(request, advert_id):
 
 
 def home(request):
-    r = redis.StrictRedis(host=settings.REDIS_HOST,
-                          port=settings.REDIS_PORT,
-                          db=settings.REDIS_DB)
+    r = redis.Redis(connection_pool=settings.POOL)
 
     total = r.get("Total:saved")
+    new = [int(i) for i in r.lrange('Item:new', 0, 10)]
+    new = list(Item.objects.filter(id__in=new))
+    item_ranking = r.zrange('ranking:Item', 0, -1,
+                            desc=True)[:10]
+    item_ranking_ids = [int(item) for item in item_ranking]
+    # get most viewed images
+    most_viewed = list(Item.objects.filter(
+        id__in=item_ranking_ids))
+    most_viewed.sort(key=lambda x: item_ranking_ids.index(x.id))
 
     if total:
         total = total.decode('utf-8')
@@ -49,7 +56,9 @@ def home(request):
     context = {'total': total,
                'month': month,
                'today': today,
-               'week': week}
+               'week': week,
+               'new': new,
+               'most_viewed': most_viewed}
 
     return render(request, 'home.html', context)
 

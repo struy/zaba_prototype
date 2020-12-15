@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load static %}
+<<<<<<< HEAD
+=======
+{% load thumbnail %}
+{% load humanize %}
+>>>>>>> master
 
-{% block title %} {% trans "Home" %} {% endblock %}
+{% block title %}
+    {% trans "Home" %}
+{% endblock %}
 
 {% block head %}
 
@@ -16,27 +23,13 @@
         .create-advert-button {
             display: none !important;
         }
+
     </style>
 {% endblock %}
 
 {% block script %}
-    {% include "snippets/address-input.html" %}
-
-    <script>
-        $(function () {
-            $("#search_city").keypress(function (event) {
-                if (!((event.which >= 65 && event.which <= 90) ||
-                    (event.which >= 97 && event.which <= 122) ||
-                    event.which == 32 || event.which == 45 ||
-                    event.which == 39
-                )) {
-                    event.preventDefault();
-                }
-            });
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-
+    {% include "snippets/js/address-input-js.html" %}
+    {% include "snippets/js/city-latin-only-js.html" %}
 {% endblock %}
 
 
@@ -154,8 +147,8 @@
                 </div>
             {% endif %}
 
-            <div class="row mt-3">
-                <div id="container" class="head-block">
+            <div class="row mt-4">
+                <div id="greeting" class="head-block">
                     <div class="col-12 text-center">
                         <h2><span>{% trans "Main" %}</span> <span class="text-green">{% trans "Categories" %}</span>
                         </h2>
@@ -318,160 +311,116 @@
                 </g>
             </svg>
 
-        </div>
-        <div class="head-block">
-            <h2 align="center">
-                <span class="text-black">Popular</span>
-                <span class="text-green">Ads</span>
-            </h2>
-        </div>
-        <div class="content mb-2">
-            <div class="container">
-                <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-8.png" %}')"></div>
-                        <div class="name">
-                            Names longer than 2 lines should be truncated...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-9.png" %}')"></div>
-                        <div class="name">
-                            HydraPak Stash 750ML Collapsible Lightweigh...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 399.45
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/img-Empty.png" %}')"></div>
-                        <div class="name">
-                            Names longer than 2 lines should be truncated...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-8.png" %}')"></div>
-                        <div class="name">
-                            HydraPak Stash 750ML Collapsible Lightweigh...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/img-Empty.png" %}')"></div>
-                        <div class="name">
-                            Names longer than 2 lines should be truncated...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
+                <div class="col-12 col-sm-6">
+                    <a href="jobs" class="icon-box text-center bg-color-jobs">
+                        <img src="{% static  "img/icon-Job.svg" %}" alt="jobs">
+                        &nbsp;{% trans "Jobs" %}
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="rents" class="icon-box text-center bg-color-housing">
+                        <img src="{% static "img/icon-RealEstate.svg" %}" alt="housing">
+                        {% trans "Housing" %}
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <a href="gifts" class="icon-box text-center bg-color-cats">
+                        <img src="{% static "img/icon-Pets.svg" %}" alt="cats">
+                        {% trans "Cats" %}
+                    </a>
                 </div>
             </div>
         </div>
-        <section id="google_ads">
-            <center>
-                <div class="container">
-                    <img src="{% static 'img/image-20.png' %}" border="0"
-                         width="724"
-                         alt="" class="img_ad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12  text-center text-dark">
+                    <h3>{% trans "Popular Ads" %} </h3>
                 </div>
-            </center>
-        </section>
-        <div class="head-block">
-            <h2 align="center">
-                <span class="text-black">New</span>
-                <span class="text-green">Ads</span>
-            </h2>
-        </div>
-        <div class="content mb-2">
-            <div class="container">
-                <div class="row list-ads flex-nowrap  owl-carousel owl-theme ml-0">
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-12.png" %}')"></div>
-                        <div class="name">
-                            Names longer than 2 lines should be truncated...
+
+                {% if most_viewed %}
+                    {% for advert in most_viewed %}
+                        <div class="col-10 col-lg-3">
+                            <div class="item">
+                                {% thumbnail advert.image "128" as ad %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% static 'none/no-img.jpg' %}"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
+
+
+                                <div class="name">
+                                    {{ advert.title }}
+                                </div>
+                                <div class="subtype">
+                                    <small class="text-muted">
+                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                        <i>{{ advert.modified|naturaltime }} </i>
+                                    </small>
+                                </div>
+                                <div class="price font-weight-bold">
+                                    {{ advert.price }}
+                                </div>
+                            </div>
                         </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>
-                        <div class="name">
-                            Truncate HydraPak Stash 750ML Collapsible...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 399.45
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-15.png" %}')"></div>
-                        <div class="name">
-                            Names longer than 2 lines should be truncated...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 400.39
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-16.png" %}')"></div>
-                        <div class="name">
-                            HydraPak Stash 750ML Collapsible Lightweigh...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 399.45
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>
-                        <div class="name">
-                            Truncate HydraPak Stash 750ML Collapsible...
-                        </div>
-                        <div class="subtype">
-                            <small class="text-muted"> City - Sep 14</small>
-                        </div>
-                        <div class="price font-weight-bold">
-                            $ 399.45
-                        </div>
-                    </div>
+                    {% endfor %}
+                {% endif %}
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-12  text-center text-dark">
+                    <h3>{% trans "New Ads" %} </h3>
                 </div>
+
+                {% if new %}
+                    {% for advert in new %}
+                        <div class="col-10 col-lg-3">
+                            <div class="item">
+                                {% thumbnail advert.image "128" as ad %}
+                                    <a href="{{ advert.image.url }}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    </a>
+                                {% endthumbnail %}
+                                {% if not advert.image %}
+                                    <img
+                                            class="mr-3"
+                                            src="{% static 'none/no-img.jpg' %}"
+                                            alt="no image"
+                                            width="128"
+                                    />
+                                {% endif %}
+
+
+                                <div class="name">
+                                    {{ advert.title }}
+                                </div>
+                                <div class="subtype">
+                                    <small class="text-muted">
+                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                        <i>{{ advert.modified|naturaltime }} </i>
+                                    </small>
+                                </div>
+                                <div class="price font-weight-bold">
+                                    {{ advert.price }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+
             </div>
         </div>
     </div>
+
+
 
 {% endblock %}

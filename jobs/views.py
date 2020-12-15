@@ -12,9 +12,7 @@ from .models import Job
 from .form import JobForm
 
 # connect to redis
-r = redis.StrictRedis(host=settings.REDIS_HOST,
-                      port=settings.REDIS_PORT,
-                      db=settings.REDIS_DB)
+r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
@@ -56,7 +54,7 @@ class JobCreate(CreateView):
     success_url = reverse_lazy('jobs:index')
 
     def form_valid(self, form):
-        form.instance.owner = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
 

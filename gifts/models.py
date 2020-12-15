@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 from adverts.models import Advert, Location, user_directory_path
 from django.utils.translation import gettext_lazy as _
 
@@ -22,6 +23,7 @@ class Gift(Advert, Location):
     """
     gift_type = models.ForeignKey(GiftType, on_delete=models.CASCADE, verbose_name=_('gift type'))
     image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
+    favourites = models.ManyToManyField(User, related_name='favourite_gifts', default=None, blank=True)
 
     def get_absolute_url(self):
         return reverse('gifts:detail', args=[self.id])

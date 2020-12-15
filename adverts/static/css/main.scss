@@ -249,7 +249,7 @@ header {
 .animated-icon1 span, .animated-icon2 span, .animated-icon3 span {
   display: block;
   position: absolute;
-  height: 3px;
+  height: 6px;
   width: 100%;
   border-radius: 9px;
   opacity: 1;
@@ -742,8 +742,8 @@ header {
 
     svg {
       position: absolute;
-      right: 0;
-      top: -10px;
+      right: -5px;
+      top: -6px;
     }
   }
 }

@@ -88,11 +88,10 @@
     width: 100%;
     left: 0;
     right: 0;
-    padding: 10px 5px;
     height: 54px;
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     .item a {
       color: #262a5d !important;
       font-size: 14px;

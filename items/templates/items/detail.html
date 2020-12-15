@@ -15,31 +15,6 @@
     <li class="breadcrumb-item active" aria-current="page">Detail</li>
 {% endblock %}
 
-{% block script %}
-    <script src="{% static 'js/libs/OwlCarous/owl.carousel.js' %}"></script>
-    <script type="text/javascript">
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            {#nav: true,#}
-            autoplay: true,
-            autoplayTimeout: 1000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 4
-                }
-            }
-        })
-    </script>
-{% endblock %}
-
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/product.css' %}">
     <link rel="stylesheet" href="{% static 'js/libs/OwlCarous/assets/owl.carousel.css' %}">

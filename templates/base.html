@@ -44,8 +44,6 @@
 
 <header id="header" class="fixed-top">
     <div class="container">
-
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3  pt-lg-5">
             <div class="d-lg-block d-flex justify-content-between mobile-header">
                 <a class="navbar-brand" href="{% url 'home' %}">
@@ -194,7 +192,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{% url 'my_ads' %}">My Ads</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'profile_edit' %}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'favorites' %}">Favorites</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url "logout" %}">
                             {% trans "Logout" %}
@@ -211,18 +208,20 @@
 
 <div class="wrapper">
     <section id="main">
-        <div id="attention" class="text-center">
-            <h3>{% trans "Notice! Ads are displayed only in the selected language." %}</h3>
+        <div class="container">
+            <div id="attention" class="text-center">
+                <h3>{% trans "Notice! Ads are displayed only in the selected language." %}</h3>
+            </div>
+            <section id="google_ads">
+                <center>
+                    <div class="container">
+                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
+                             width="724"
+                             alt="" class="img_ad">
+                    </div>
+                </center>
+            </section>
         </div>
-        <section id="google_ads">
-            <center>
-                <div class="container">
-                    <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
-                         width="724"
-                         alt="" class="img_ad">
-                </div>
-            </center>
-        </section>
 
         <div class="container mb-4">
             <div class="row ml-0">
@@ -242,7 +241,7 @@
     </section>
 
     <footer>
-        <div id="mobile-data" class="d-flex d-lg-none">
+        <div id="mobile-data" class="d-flex d-lg-none container">
             <div class="item">
                 <a href="/" class="nav-item">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -267,7 +266,7 @@
                 </div>
             </div>
             <div class="item create-advert-button">
-               <a href="{% block add_ad_link %} {% endblock %}" class="nav-item">
+                <a href="{% block add_ad_link %} {% endblock %}" class="nav-item">
                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9.00002 0.721924C4.14047 0.721924 0.187256 4.67513 0.187256 9.53469C0.187256 14.3942 4.14047 18.3475 9.00002 18.3475C13.8596 18.3475 17.8128 14.3942 17.8128 9.53469C17.8128 4.67513 13.8596 0.721924 9.00002 0.721924ZM12.8556 10.269H9.73437V13.3903C9.73437 13.7957 9.40545 14.1246 9.00002 14.1246C8.59459 14.1246 8.26567 13.7957 8.26567 13.3903V10.269H5.14444C4.739 10.269 4.41008 9.94012 4.41008 9.53469C4.41008 9.12925 4.739 8.80034 5.14444 8.80034H8.26567V5.6791C8.26567 5.27367 8.59459 4.94475 9.00002 4.94475C9.40545 4.94475 9.73437 5.27367 9.73437 5.6791V8.80034H12.8556C13.261 8.80034 13.59 9.12925 13.59 9.53469C13.59 9.94012 13.261 10.269 12.8556 10.269Z"
                               fill="#749B27"></path>
@@ -277,7 +276,7 @@
                 </a>
             </div>
             <div class="item">
-                <a href="#" class="nav-item">
+                <a href="{% url 'favorites' %}" class="nav-item">
                     <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.6166 2.92834C17.6937 3.84503 18.2666 5.0138 18.3354 6.43466C18.4041 7.85552 17.9458 9.05867 16.9603 10.0441L10.3258 16.9192C10.0967 17.1484 9.83312 17.263 9.5352 17.263C9.23728 17.263 8.97373 17.1484 8.74456 16.9192L2.11006 10.0441C1.12463 9.05867 0.666284 7.85552 0.735035 6.43466C0.803787 5.0138 1.37671 3.84503 2.45382 2.92834C3.39342 2.12625 4.47052 1.78249 5.68513 1.89708C6.92265 1.98874 7.97684 2.48146 8.84769 3.37523L9.5352 4.06274L10.2227 3.37523C11.0936 2.48146 12.1363 1.98874 13.3509 1.89708C14.5884 1.78249 15.677 2.12625 16.6166 2.92834Z"
                               fill="#749B27"></path>
@@ -331,6 +330,29 @@
 
 <script src="{% static 'js/cookielaw.js' %}"></script>
 
+<script src="{% static 'js/libs/OwlCarous/owl.carousel.js' %}"></script>
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        {#nav: true,#}
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+</script>
+
 {% if user.is_superuser %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="{% static 'js/counterup.min.js' %}"></script>
@@ -346,6 +368,7 @@
 
 {% block script %}
 {% endblock %}
+
 
 </body>
 </html>

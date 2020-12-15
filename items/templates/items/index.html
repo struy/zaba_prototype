@@ -56,14 +56,18 @@
                         <b>{{ advert.price|prepend_dollars }}</b>
                     </div>
                     {% if advert.author == request.user %}
-                        <a href="{% url 'items:delete' advert.id %}" class="d-flex justify-content-between edit">
-                            <span>Delete</span>
-                            <i class="fas fa-trash"></i>
-                        </a>
-                        <a href="{% url 'items:edit' advert.id %}" class="d-flex justify-content-between delete mt-3">
-                            <span>Edit</span>
-                            <i class="fas fa-edit"></i>
-                        </a>
+                        <div class="row m-0 justify-content-between align-self-md-end flex-nowrap">
+                            <a href="{% url 'items:edit' advert.id %}"
+                               class="d-flex justify-content-between edit col-6">
+                                <span>Edit</span>
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{% url 'items:delete' advert.id %}"
+                               class="d-flex justify-content-between ml-1 delete col-6">
+                                <span>Delete</span>
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
                     {% endif %}
                     <div class="d-flex justify-content-end align-self-md-end">
                         <i class="fas fa-heart"></i>

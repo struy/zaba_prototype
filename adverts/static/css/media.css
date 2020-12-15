@@ -88,10 +88,10 @@
     width: 100%;
     left: 0;
     right: 0;
-    padding: 10px 5px;
     height: 54px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   #mobile-data .item a {
     color: #262a5d !important;

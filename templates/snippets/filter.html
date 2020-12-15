@@ -1,7 +1,7 @@
 {% load crispy_forms_tags %} {% load i18n %}
 
-<div class="container">
-    <div class="row">
+<div class="container mt-2">
+    <div class="row filters from">
         <div class="col-md-12">
             <button
                     class="btn btn-info"
@@ -12,7 +12,13 @@
                     aria-expanded="false"
                     aria-controls="collapseExample"
             >
-                <i class="fas fa-filter"></i> Filter
+                <span>Filter</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.2854 9.28548H7.75559C7.36825 7.76357 5.82048 6.84383 4.29853 7.23117C3.28923 7.48806 2.50112 8.27617 2.24423 9.28548H0.714288C0.319791 9.28548 0 9.60527 0 9.99976C0 10.3943 0.319791 10.714 0.714288 10.714H2.24427C2.63161 12.2359 4.17938 13.1557 5.70133 12.7683C6.71063 12.5114 7.49875 11.7233 7.75564 10.714H19.2854C19.6799 10.714 19.9997 10.3942 19.9997 9.99972C19.9997 9.60522 19.6799 9.28548 19.2854 9.28548Z" fill="#091B34"/>
+<path d="M19.2854 2.14247H17.0412C16.6538 0.620564 15.1061 -0.299175 13.5841 0.0881648C12.5748 0.345052 11.7867 1.13317 11.5298 2.14247H0.714288C0.319791 2.14247 0 2.46226 0 2.85676C0 3.25126 0.319791 3.57105 0.714288 3.57105H11.5298C11.9171 5.09295 13.4649 6.01269 14.9869 5.62535C15.9962 5.36846 16.7843 4.58035 17.0412 3.57105H19.2854C19.6799 3.57105 19.9997 3.25126 19.9997 2.85676C19.9997 2.46226 19.6799 2.14247 19.2854 2.14247Z" fill="#091B34"/>
+<path d="M19.2854 16.4282H15.6126C15.2253 14.9063 13.6775 13.9866 12.1555 14.3739C11.1462 14.6308 10.3581 15.4189 10.1012 16.4282H0.714288C0.319791 16.4282 0 16.748 0 17.1425C0 17.5369 0.319791 17.8568 0.714288 17.8568H10.1013C10.4886 19.3787 12.0364 20.2984 13.5583 19.9111C14.5676 19.6542 15.3557 18.8661 15.6126 17.8568H19.2854C19.6799 17.8568 19.9997 17.537 19.9997 17.1425C19.9997 16.748 19.6799 16.4282 19.2854 16.4282Z" fill="#091B34"/>
+</svg>
+
             </button>
             <div class="collapse d-md-block" id="collapseExample">
                 <form method="get" class="filters">
@@ -27,11 +33,11 @@
                         />
                     </div>
                     {{ filters.form | crispy }}
-                    <button class="btn btn-primary" type="submit">
-                        {% trans "Filter Search" %}
+                    <button class="btn" type="submit">
+                        {% trans "filter search" %}
                     </button>
                     {% if has_filter %}
-                        <a href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
+                        <a  class="mb-4 mb-md-0" href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
                     {% endif %}
                 </form>
             </div>

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load static %}
+{% block title %} {% trans "My Ads" %} {% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "My Ads" %}</li>
+{% endblock %}
+
+{% block content %}
+
+    {#    <div class="container">#}
+    {#        {% include './navigation.html' with active="ads" %}#}
+    {#    </div>#}
+    <div class="grey-back">
+        <div class="container list-ads-user">
+            <div class="row item ">
+                <div class="col-12 col-md-3">
+                    <div class="image" style="background-image: url('{% static 'img/image-10.png' %}')"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>
+                        Advertisement title name truncate longer one line
+                    </h3>
+                    <div class="text-info text-uppercase">
+                        <b>New</b>
+                    </div>
+                    <small class="text-muted">City Name — Aug 20, 2019 — English</small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
+                    <div class="mb-2 mt-1 text-right">
+                        <b>$ 1,412,000.00</b>
+                    </div>
+                    <a href="#" class="d-flex justify-content-between edit">
+                        <span>Delete</span>
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    <a href="#" class="d-flex justify-content-between delete mt-3">
+                        <span>Edit</span>
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row item ">
+                <div class="col-12 col-md-3">
+                    <div class="image" style="background-image: url('{% static 'img/image-26.png' %}')"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>
+                        Advertisement title name truncate longer one line
+                    </h3>
+                    <div class="text-info text-uppercase">
+                        <b>New</b>
+                    </div>
+                    <small class="text-muted">City Name — Aug 20, 2019 — English</small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
+                    <div class="mb-2 mt-1 text-right">
+                        <b>$ 1,412,000.00</b>
+                    </div>
+                     <a href="#" class="d-flex justify-content-between edit">
+                        <span>Delete</span>
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    <a href="#" class="d-flex justify-content-between delete mt-3">
+                        <span>Edit</span>
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row item ">
+                <div class="col-12 col-md-3">
+                    <div class="image" style='background-image: url("{% static 'img/image-25.png' %}")'></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>
+                        Advertisement title name truncate longer one line
+                    </h3>
+                    <div class="text-info text-uppercase">
+                        <b>New</b>
+                    </div>
+                    <small class="text-muted">City Name — Aug 20, 2019 — English</small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
+                    <div class="mb-2 mt-1 text-right">
+                        <b>$ 1,412,000.00</b>
+                    </div>
+                     <a href="#" class="d-flex justify-content-between edit">
+                        <span>Delete</span>
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    <a href="#" class="d-flex justify-content-between delete mt-3">
+                        <span>Edit</span>
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row item ">
+                <div class="col-12 col-md-3">
+                    <div class="image" style="background-image: url('{% static 'img/image-22.png' %}')"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h3>
+                        Advertisement title name truncate longer one line
+                    </h3>
+                    <div class="text-info text-uppercase">
+                        <b>New</b>
+                    </div>
+                    <small class="text-muted">City Name — Aug 20, 2019 — English</small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
+                    <div class="mb-2 mt-1 text-right">
+                        <b>$ 1,412,000.00</b>
+                    </div>
+                     <a href="#" class="d-flex justify-content-between edit">
+                        <span>Delete</span>
+                        <i class="fas fa-trash"></i>
+                    </a>
+                    <a href="#" class="d-flex justify-content-between delete mt-3">
+                        <span>Edit</span>
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -25,51 +25,100 @@
     <link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static "cookielaw/css/cookielaw.css" %}">
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" href="{% static "css/media.css" %}">
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
 
+    <link rel="stylesheet" href="{% static "css/colors.css" %}">
     <script data-ad-client="ca-pub-7774017442769796" async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
     {% block head %}
     {% endblock %}
+    <link rel="stylesheet" href="{% static "css/media.css" %}">
 
 </head>
 <body>
 
-<a href="{% block add_ad_link %} {% endblock %}" id="add_button">
-    <button type="button" class="btn btn-danger btn-circle btn-xl ">
-        <i class="fas fa-plus"></i>
-    </button>
-</a>
-
+{% include "snippets/add_button.html" %}
 <!-- ======= Header ======= -->
 
-    <header id="header" class="fixed-top">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static "img/logo.svg" %}" alt="logo">
-            </a>
-            <div class="col d-lg-none d-flex justify-content-center">
-                {% for language in languages %}
-                    <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
-                          style="display:inline!important;">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                        <input name="language" type="hidden" value="{{ language.code }}"/>
-                    </form>
-                    <button class="lang-button " type="submit" form="form_{{ language.code }}" value="Submit"></button>
-                {% endfor %}
+<header id="header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3  pt-lg-5">
+            <div class="d-lg-block d-flex justify-content-between mobile-header">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="/static/img/logo.svg" alt="logo" class="desktop-logo">
+                    <div class="mobile-logo">
+                        <svg viewBox="0 0 210 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M153.071 62.1506C142.16 86.8098 134.064 113.441 127.733 135.314C127.661 135.604 127.704 135.911 127.854 136.171C128.003 136.43 128.248 136.621 128.535 136.704C128.823 136.788 129.131 136.756 129.396 136.617C129.661 136.477 129.861 136.241 129.956 135.957C136.287 114.091 144.347 87.5958 155.186 63.0724C166.026 38.5489 163.975 37.5128 153.071 62.1506Z"
+                                  fill="#32663D"/>
+                            <path d="M137.995 104.474C147.741 87.1315 153.586 91.4474 164.926 78.7927C178.503 63.6513 210 71.247 210 71.247C210 71.247 206.427 98.2571 193.873 114.306C159.667 160.688 103.61 141.28 103.61 141.28C111.728 120.137 141.367 93.6982 137.995 104.474Z"
+                                  fill="#749B27"/>
+                            <path opacity="0.3"
+                                  d="M137.995 104.474C147.741 87.1315 153.586 91.4474 164.926 78.7927C178.503 63.6513 210 71.247 210 71.247C210 71.247 206.427 98.2571 193.873 114.306C159.667 160.688 103.61 141.28 103.61 141.28C111.728 120.137 141.367 93.6982 137.995 104.474Z"
+                                  fill="#333329"/>
+                            <path d="M71.0053 38.7561C72.8203 39.2277 78.501 41.4428 84.3532 42.186C90.2054 42.9291 109.098 46.6019 109.098 46.6019L125.576 52.5041L140.153 58.8636C140.153 58.8636 149.52 61.3646 149.592 61.7218C149.663 62.0791 166.805 67.2882 167.006 67.8813C167.206 68.4744 172.236 72.8832 172.236 72.8832C172.236 72.8832 172.443 77.3491 172.393 77.5921C172.343 77.835 170.014 83.8015 161.761 87.7459C156.1 90.6062 151.625 95.3667 149.12 101.194C141.26 119.529 118.044 132.684 118.044 132.684C118.044 132.684 84.2674 107.989 74.8496 77.5849C70.8124 64.5586 60.287 52.3255 57.5575 49.16C56.6214 48.0739 71.0053 38.7561 71.0053 38.7561Z"
+                                  fill="#E5E494"/>
+                            <path d="M169.663 25.5583C168.663 25.7726 163.175 27.9949 159.881 27.5876C156.587 27.1803 146.64 21.2066 142.91 19.6418C139.18 18.0769 133.886 16.5263 132.135 15.9547C128.098 14.647 126.418 0.806152 111.641 0.806152C96.4215 0.806152 93.2632 14.2397 88.9901 18.4413C88.2756 19.1559 83.8668 25.7941 81.8446 28.0592C79.8224 30.3243 75.6566 31.7606 73.3343 34.6474C72.3677 35.9038 71.5768 37.2861 70.9834 38.7561L74.056 44.0652C77.6898 42.4533 81.6938 41.8604 85.6389 42.3503C92.3986 43.1291 97.2289 43.9008 110.034 47.6237C122.839 51.3465 135.365 59.8139 152.571 64.8158C156.737 66.0305 164.197 68.2099 166.612 69.5247C168.663 70.6323 170.556 71.7255 171.135 72.633C171.983 74.1385 172.366 75.8618 172.236 77.5849C172.236 77.5849 174.172 77.2848 174.865 75.8271C175.558 74.3694 175.215 72.0971 175.58 71.3325C176.023 70.5056 176.332 69.6131 176.494 68.6887C176.544 67.9027 176.337 67.2596 176.652 66.7594C176.966 66.2592 178.752 64.5371 179.188 63.3938C179.624 62.2506 180.482 59.3995 180.482 59.3995C180.482 59.3995 189.178 40.4996 188.806 39.685C188.434 38.8704 187.984 37.7914 187.634 37.2055C187.284 36.6195 187.105 34.7117 186.534 33.8256C185.048 31.5033 182.018 28.1092 178.102 26.6444C175.38 25.594 172.507 24.9366 169.663 25.5583Z"
+                                  fill="#42845D"/>
+                            <path d="M117.573 10.5099C116.329 7.24439 111.642 1.83522 105.425 3.27862C98.7941 4.8292 94.421 10.6742 92.5632 14.9115C91.0626 18.3414 88.6903 24.7009 92.9634 27.9593C97.2364 31.2176 104.968 31.1891 108.769 29.7099C112.571 28.2308 116.472 25.0653 117.58 20.4207C118.837 15.2188 118.394 12.6607 117.573 10.5099Z"
+                                  fill="#E5E494"/>
+                            <path d="M102.617 31.0318C99.209 31.0318 95.4718 30.253 92.7994 28.2236C88.0119 24.5794 91.2345 17.2052 92.2921 14.7829C94.3214 10.0954 98.8731 4.47903 105.376 2.94988C112.021 1.3993 116.744 7.40869 117.88 10.3812C118.788 12.7464 119.138 15.3831 117.93 20.4636C116.937 24.6294 113.571 28.195 108.92 30.01C106.895 30.7164 104.762 31.0623 102.617 31.0318ZM107.526 3.36432C106.852 3.36403 106.181 3.44318 105.526 3.60013C99.2518 5.09354 94.8859 10.467 92.8923 15.0473C91.8848 17.3481 88.8194 24.3365 93.1924 27.702C97.5655 31.0675 105.097 30.8175 108.677 29.3883C113.136 27.652 116.351 24.2579 117.251 20.3064C118.423 15.376 118.095 12.8607 117.251 10.6099C116.315 8.12325 112.693 3.36432 107.526 3.36432Z"
+                                  fill="#333329"/>
+                            <path d="M113.443 20.5922C119.516 12.9108 111.471 3.9717 103.925 6.52266C98.7516 8.30189 95.7505 12.3105 95.3503 16.5264C94.9788 20.4636 96.5508 25.101 102.274 25.4583C104.395 25.6538 106.531 25.3102 108.483 24.4595C110.436 23.6088 112.142 22.2785 113.443 20.5922Z"
+                                  fill="#333329"/>
+                            <path d="M111.642 16.8264C113.639 16.8264 115.258 15.6683 115.258 14.2398C115.258 12.8112 113.639 11.6531 111.642 11.6531C109.645 11.6531 108.026 12.8112 108.026 14.2398C108.026 15.6683 109.645 16.8264 111.642 16.8264Z"
+                                  fill="white"/>
+                            <path d="M141.118 30.6888C140.76 30.06 137.409 30.4887 136.637 30.7531C134.494 31.4677 132.45 34.4545 135.208 36.3695C136.88 37.5271 138.581 35.9979 139.253 35.2548C139.924 34.5117 141.846 31.9964 141.118 30.6888Z"
+                                  fill="#E5E494"/>
+                            <path d="M140.103 31.7249C139.695 30.9317 136.694 31.0103 135.973 32.1822C135.537 32.8967 136.308 33.7256 137.009 34.0472C137.649 34.2491 138.343 34.1953 138.945 33.8971C139.402 33.6256 140.374 32.2465 140.103 31.7249Z"
+                                  fill="#333329"/>
+                            <path opacity="0.2"
+                                  d="M175.852 62.0578C176.324 62.7724 176.566 63.1654 177.095 62.9653C177.624 62.7652 178.639 60.6716 178.639 60.6716C178.639 60.6716 175.645 59.0996 174.937 57.2132C174.23 55.3268 173.587 49.1602 173.587 49.1602C173.587 49.1602 172.229 54.0548 173.587 56.813C174.944 59.5712 175.852 62.0578 175.852 62.0578Z"
+                                  fill="#333329"/>
+                            <path d="M186.034 34.7046C183.962 33.8972 181.032 35.8122 179.753 36.5696C176.145 38.6632 172.451 48.717 173.558 53.6188C174.666 58.5207 176.724 61.1145 178.946 60.6143C181.168 60.1141 187.856 55.198 188.871 50.0103C189.886 44.8227 189.993 41.1356 188.642 39.3921C186.563 36.7697 187.563 35.2977 186.034 34.7046Z"
+                                  fill="#E5E494"/>
+                            <path d="M183.347 36.7697C187.32 36.7697 190.178 44.7512 189.099 49.1886C188.228 52.7971 185.527 56.9772 181.768 57.0844C178.195 57.1845 175.852 49.2243 175.651 49.1886C175.451 49.1529 175.208 53.6832 176.087 56.277C176.966 58.8708 179.131 60.0927 178.946 60.6143C178.76 61.1359 178.231 61.9219 177.631 61.6861C177.031 61.4503 171.15 56.0912 174.222 44.3011C174.458 43.3793 176.938 35.3191 181.496 34.2973C186.441 33.1683 177.552 37.2985 177.581 39.0134C177.602 40.1995 180.389 36.7697 183.347 36.7697Z"
+                                  fill="#333329"/>
+                            <path d="M178.945 42.2859C180.129 42.2859 181.089 41.4509 181.089 40.4209C181.089 39.3909 180.129 38.5559 178.945 38.5559C177.762 38.5559 176.802 39.3909 176.802 40.4209C176.802 41.4509 177.762 42.2859 178.945 42.2859Z"
+                                  fill="white"/>
+                            <path d="M75.6424 46.3875C77.0215 46.2874 83.5025 47.0591 83.0523 43.1934C82.6021 39.3277 79.6082 36.5695 76.6642 36.1979C73.7202 35.8264 71.8981 36.8625 70.9478 38.756C69.9974 40.6496 71.7695 42.1144 72.7056 43.5435C73.4706 44.69 74.4719 45.6597 75.6424 46.3875Z"
+                                  fill="#E5E494"/>
+                            <path d="M81.7306 76.0843C65.4816 41.2998 4.28732 18.1055 0 19.7561C1.78638 21.4067 3.67995 32.4608 3.47273 37.9629C3.17262 45.9016 2.75817 55.7624 4.64459 69.3318C14.8556 143.717 110.041 167.104 162.918 139.151C173.994 133.313 108.026 132.37 81.7306 76.0843Z"
+                                  fill="#749B27"/>
+                        </svg>
+
+                    </div>
+                </a>
+
+                <div class="d-lg-block language-block">
+                    {% for language in languages %}
+                        <div class="d-inline-flex item-lang">
+                            <form action="{% url 'set_language' %}" method="post" id="form_{{ language.code }}"
+                                  style="display:inline!important;">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                                <input name="language" type="hidden" value="{{ language.code }}"/>
+                            </form>
+                            {% if language.code == LANGUAGE_CODE %}
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6.80273" cy="6.73688" r="6" fill="#091B34"/>
+                                    <path d="M4.25439 6.19475L6.31487 8.25534L9.35176 5.21844" stroke="white"
+                                          stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            {% endif %}
+                            <button class="lang-button " type="submit" form="form_{{ language.code }}"
+                                    value="Submit"></button>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %}
                             <span class="sr-only">(current)</span>
@@ -87,23 +136,45 @@
                         <li class="nav-item"><a class="nav-link" href="/pricing">Pricing</a></li>
                     {% endif %}
 
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
-                    </li>
 
+                    <li class="nav-item  d-none d-lg-block">
+                        <a class="nav-link favorites" href="{% url 'favorites' %}">
+                            <div class="counter-favorites">
+                                <b>7</b>
+                            </div>
+                            <i class="far fa-heart"></i>
+                        </a>
+                    </li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url "logout" %}">
-                                {% if user.is_authenticated %}
-                                    {% if  request.user.first_name %}
-                                        {% trans "Hello" %} {{ request.user.first_name }},
-                                    {% else %}
-                                        {% trans "Hello" %} {{ request.user.username }},
-                                    {% endif %}
-                                {% else %}
-                                {% endif %}
-                                {% trans "Logout" %}
+                        <li class="nav-item with-menu d-none d-lg-block">
+                            <a class="nav-link d-flex favorites dropdown-toggle align-items-center" href="#"
+                               id="navbarDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {#                                icon-Account.svg#}
+                                <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.21661 9.63409C9.54016 9.63409 10.6861 9.15939 11.6227 8.22281C12.559 7.28638 13.0338 6.14059 13.0338 4.81689C13.0338 3.49365 12.5591 2.34772 11.6225 1.41098C10.6859 0.474701 9.54001 0 8.21661 0C6.89291 0 5.74713 0.474701 4.8107 1.41113C3.87427 2.34756 3.39941 3.4935 3.39941 4.81689C3.39941 6.14059 3.87427 7.28653 4.8107 8.22296C5.74744 9.15924 6.89337 9.63409 8.21661 9.63409ZM5.63956 2.23984C6.35809 1.5213 7.20099 1.17203 8.21661 1.17203C9.23209 1.17203 10.0751 1.5213 10.7938 2.23984C11.5124 2.95853 11.8618 3.80157 11.8618 4.81689C11.8618 5.83252 11.5124 6.67542 10.7938 7.3941C10.0751 8.11279 9.23209 8.46207 8.21661 8.46207C7.20129 8.46207 6.3584 8.11264 5.63956 7.3941C4.92087 6.67557 4.57144 5.83252 4.57144 4.81689C4.57144 3.80157 4.92087 2.95853 5.63956 2.23984Z"
+                                          fill="black"/>
+                                    <path d="M16.6457 15.379C16.6187 14.9893 16.564 14.5642 16.4836 14.1153C16.4024 13.663 16.2979 13.2354 16.1728 12.8447C16.0434 12.4408 15.8678 12.0419 15.6503 11.6597C15.425 11.2629 15.1601 10.9175 14.8628 10.6332C14.552 10.3358 14.1714 10.0967 13.7314 9.9223C13.2928 9.74881 12.8069 9.66092 12.287 9.66092C12.0828 9.66092 11.8854 9.74469 11.5041 9.99295C11.2694 10.146 10.9949 10.323 10.6885 10.5188C10.4265 10.6857 10.0716 10.8421 9.63318 10.9837C9.20547 11.1221 8.77121 11.1923 8.34244 11.1923C7.91397 11.1923 7.47971 11.1221 7.0517 10.9837C6.61377 10.8423 6.2587 10.6859 5.99716 10.5189C5.69366 10.325 5.41901 10.148 5.18082 9.9928C4.7998 9.74454 4.60236 9.66077 4.39819 9.66077C3.87817 9.66077 3.39233 9.74881 2.95395 9.92245C2.51419 10.0966 2.13348 10.3357 1.82236 10.6334C1.52512 10.9178 1.26022 11.2631 1.035 11.6597C0.817871 12.0419 0.64209 12.4406 0.512695 12.8448C0.387726 13.2356 0.283203 13.663 0.202026 14.1153C0.12146 14.5636 0.0669861 14.9888 0.039978 15.3795C0.0134277 15.7614 0 16.1589 0 16.5605C0 17.6045 0.331879 18.4497 0.986328 19.073C1.63269 19.6881 2.48779 20 3.52798 20H13.1581C14.198 20 15.0531 19.6881 15.6996 19.073C16.3542 18.4501 16.6861 17.6046 16.6861 16.5603C16.6859 16.1573 16.6724 15.7599 16.6457 15.379ZM14.8915 18.2238C14.4644 18.6303 13.8974 18.8279 13.158 18.8279H3.52798C2.78839 18.8279 2.22137 18.6303 1.79443 18.224C1.37558 17.8253 1.17203 17.281 1.17203 16.5605C1.17203 16.1857 1.18439 15.8157 1.20911 15.4605C1.23322 15.112 1.2825 14.7291 1.35559 14.3223C1.42776 13.9206 1.51962 13.5435 1.62888 13.2022C1.7337 12.8749 1.87668 12.5508 2.05399 12.2386C2.22321 11.941 2.41791 11.6858 2.63275 11.4801C2.83371 11.2877 3.08701 11.1302 3.38547 11.0121C3.6615 10.9028 3.97171 10.843 4.30847 10.834C4.34952 10.8558 4.42261 10.8975 4.54102 10.9747C4.78195 11.1317 5.05966 11.3109 5.36667 11.5069C5.71274 11.7276 6.1586 11.9268 6.69128 12.0988C7.23587 12.2749 7.79129 12.3643 8.34259 12.3643C8.89389 12.3643 9.44946 12.2749 9.99374 12.099C10.5269 11.9267 10.9726 11.7276 11.3191 11.5066C11.6333 11.3058 11.9032 11.1319 12.1442 10.9747C12.2626 10.8976 12.3357 10.8558 12.3767 10.834C12.7136 10.843 13.0238 10.9028 13.3 11.0121C13.5983 11.1302 13.8516 11.2878 14.0526 11.4801C14.2674 11.6856 14.4621 11.9409 14.6313 12.2387C14.8088 12.5508 14.9519 12.875 15.0566 13.202C15.166 13.5438 15.258 13.9207 15.33 14.3222C15.403 14.7297 15.4524 15.1127 15.4765 15.4606V15.4609C15.5014 15.8148 15.5139 16.1847 15.5141 16.5605C15.5139 17.2812 15.3104 17.8253 14.8915 18.2238Z"
+                                          fill="black"/>
+                                </svg>
+                                <span class="ml-1">{% trans "My Profile" %}</span>
+                                </g>
+                                </svg>
+
                             </a>
+                            <div class="sub-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <ul>
+                                    <li class="dropdown-item"><a href="{% url 'my_ads' %}">My Ads</a></li>
+                                    <li class="dropdown-item"><a href="{% url 'profile_edit' %}">Profile</a></li>
+                                    <li class="dropdown-item"><a href="{% url 'favorites' %}">Favorites</a></li>
+                                    <li class="dropdown-item">
+                                        <a href="{% url "logout" %}">
+                                            {% trans "Logout" %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     {% else %}
                         <li class="nav-item">
@@ -115,48 +186,47 @@
 
                     {% endif %}
                 </ul>
-
-
-                <div class="d-none d-lg-block">
-                    {% for language in languages %}
-                        <form action="{% url 'set_language' %}" method="post" class="form_{{ language.code }}"
-                              style="display:inline!important;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
-                            <input name="language" type="hidden" value="{{ language.code }}"/>
-                        </form>
-                        <button class="lang-button " type="submit" form="form_{{ language.code }}"
-                                value="Submit"></button>
-                    {% endfor %}
-                </div>
-
             </div>
 
-
+            <div id="navbarSupportedSubContent" class="collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'my_ads' %}">My Ads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile_edit' %}">Profile</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "logout" %}">
+                            {% trans "Logout" %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav><!-- .nav-menu -->
-      </div>
-    
+    </div>
 
-   </header><!-- End Header -->
+
+</header><!-- End Header -->
 
 
 <div class="wrapper">
     <section id="main">
-        <div id="attention" class="text-center">
-            <h3>{% trans "Notice! Ads are displayed only in the selected language." %}</h3>
-        </div>
-        <section id="google_ads">
-            <center>
-                <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
-                     width="724"
-                     alt="" class="img_ad">
-            </center>
-        </section>
-
         <div class="container">
-            <div class="row">
+            <div id="attention" class="text-center">
+                <h3>{% trans "Notice! Ads are displayed only in the selected language." %}</h3>
+            </div>
+            <section id="google_ads">
+                <center>
+                    <div class="container">
+                        <img src="https://tpc.googlesyndication.com/daca_images/simgad/4147597777643565181" border="0"
+                             width="724"
+                             alt="" class="img_ad">
+                    </div>
+                </center>
+            </section>
+        </div>
+
+        <div class="container mb-4">
+            <div class="row ml-0">
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb p-0 m-0">
                         {% block breadcrumbs %}
                         {% endblock %}
                     </ol>
@@ -169,9 +239,60 @@
         {% endblock %}
 
     </section>
-     
-    <footer class="bg-dark ">
-        <div class="container">
+
+    <footer>
+        <div id="mobile-data" class="d-flex d-lg-none container">
+            <div class="item">
+                <a href="/" class="nav-item">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.6233 6.08932L13.6223 6.08836L10.9114 0.377686C10.668 0.134155 7.34436 0 7.00011 0C6.65585 0 3.33221 0.134048 3.08868 0.377579L0.380782 6.08537C0.37886 6.0873 0.376937 6.08932 0.375014 6.09125C-0.124864 6.59401 -0.124009 7.40973 0.377471 7.91121C0.606582 8.14043 0.909179 8.27319 1.23271 8.28708C1.24585 8.28836 1.25909 8.289 1.27244 8.289H1.50006V12.4917C1.50006 13.3233 2.17671 14 3.00856 14H5.24284C5.46928 14 5.653 13.8164 5.653 13.5898V10.2949C5.653 9.91542 5.96168 9.60674 6.34119 9.60674H7.65903C8.03853 9.60674 8.34721 9.91542 8.34721 10.2949V13.5898C8.34721 13.8164 8.53082 14 8.75737 14H10.9917C11.8235 14 12.5002 13.3233 12.5002 12.4917V8.289H12.7112C13.0554 8.289 13.379 8.15495 13.6226 7.91142C14.1246 7.40909 14.1249 6.59198 13.6233 6.08932Z"
+                              fill="#749B27"></path>
+                    </svg>
+                    <div>Home</div>
+                </a>
+            </div>
+            <div class="item">
+                <div data-toggle="collapse" class="nav-item"
+                     data-target="#navbarSupportedSubContent"
+                     aria-controls="navbarSupportedSubContent20" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.89264 8.91589C9.01834 8.91589 9.99311 8.51215 10.7896 7.71557C11.586 6.91912 11.9898 5.94461 11.9898 4.81878C11.9898 3.69334 11.586 2.7187 10.7894 1.92199C9.99285 1.12567 9.01822 0.721924 7.89264 0.721924C6.76681 0.721924 5.79231 1.12567 4.99586 1.92212C4.1994 2.71857 3.79553 3.69321 3.79553 4.81878C3.79553 5.94461 4.1994 6.91925 4.99598 7.7157C5.79257 8.51202 6.7672 8.91589 7.89264 8.91589Z"
+                              fill="#749B27"></path>
+                        <path d="M15.0615 13.8021C15.0385 13.4706 14.992 13.109 14.9237 12.7272C14.8546 12.3426 14.7657 11.9789 14.6593 11.6466C14.5494 11.303 14.3999 10.9638 14.2151 10.6387C14.0232 10.3013 13.798 10.0075 13.5451 9.76568C13.2808 9.51274 12.9571 9.30938 12.5828 9.16104C12.2099 9.01348 11.7965 8.93873 11.3544 8.93873C11.1807 8.93873 11.0128 9.00998 10.6885 9.22113C10.4889 9.35129 10.2554 9.50184 9.99479 9.66834C9.77196 9.81032 9.47009 9.94335 9.09724 10.0638C8.73347 10.1815 8.36412 10.2412 7.99957 10.2412C7.63502 10.2412 7.2658 10.1815 6.90164 10.0638C6.52918 9.94347 6.22731 9.81045 6.00474 9.66847C5.74661 9.50353 5.51301 9.35298 5.31043 9.221C4.9865 9.00985 4.81844 8.9386 4.64479 8.9386C4.20251 8.9386 3.78929 9.01348 3.41644 9.16117C3.04242 9.30925 2.71862 9.51261 2.454 9.76581C2.20132 10.0077 1.97589 10.3014 1.78434 10.6387C1.59967 10.9638 1.45016 11.3029 1.34011 11.6467C1.23382 11.9791 1.14492 12.3426 1.07588 12.7272C1.00749 13.1085 0.961026 13.4702 0.938055 13.8024C0.915473 14.1279 0.904053 14.4657 0.904053 14.8069C0.904053 15.6949 1.18632 16.4137 1.74294 16.9439C2.29268 17.467 3.02009 17.7324 3.90467 17.7324H12.0953C12.9798 17.7324 13.707 17.4671 14.2569 16.9439C14.8136 16.4141 15.0959 15.6951 15.0959 14.8068C15.0957 14.4641 15.0842 14.126 15.0615 13.8021Z"
+                              fill="#749B27"></path>
+                    </svg>
+                    <div>Profile</div>
+                </div>
+            </div>
+            <div class="item create-advert-button">
+                <a href="{% block add_ad_link %} {% endblock %}" class="nav-item">
+                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.00002 0.721924C4.14047 0.721924 0.187256 4.67513 0.187256 9.53469C0.187256 14.3942 4.14047 18.3475 9.00002 18.3475C13.8596 18.3475 17.8128 14.3942 17.8128 9.53469C17.8128 4.67513 13.8596 0.721924 9.00002 0.721924ZM12.8556 10.269H9.73437V13.3903C9.73437 13.7957 9.40545 14.1246 9.00002 14.1246C8.59459 14.1246 8.26567 13.7957 8.26567 13.3903V10.269H5.14444C4.739 10.269 4.41008 9.94012 4.41008 9.53469C4.41008 9.12925 4.739 8.80034 5.14444 8.80034H8.26567V5.6791C8.26567 5.27367 8.59459 4.94475 9.00002 4.94475C9.40545 4.94475 9.73437 5.27367 9.73437 5.6791V8.80034H12.8556C13.261 8.80034 13.59 9.12925 13.59 9.53469C13.59 9.94012 13.261 10.269 12.8556 10.269Z"
+                              fill="#749B27"></path>
+                    </svg>
+
+                    <div>Create</div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="{% url 'favorites' %}" class="nav-item">
+                    <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.6166 2.92834C17.6937 3.84503 18.2666 5.0138 18.3354 6.43466C18.4041 7.85552 17.9458 9.05867 16.9603 10.0441L10.3258 16.9192C10.0967 17.1484 9.83312 17.263 9.5352 17.263C9.23728 17.263 8.97373 17.1484 8.74456 16.9192L2.11006 10.0441C1.12463 9.05867 0.666284 7.85552 0.735035 6.43466C0.803787 5.0138 1.37671 3.84503 2.45382 2.92834C3.39342 2.12625 4.47052 1.78249 5.68513 1.89708C6.92265 1.98874 7.97684 2.48146 8.84769 3.37523L9.5352 4.06274L10.2227 3.37523C11.0936 2.48146 12.1363 1.98874 13.3509 1.89708C14.5884 1.78249 15.677 2.12625 16.6166 2.92834Z"
+                              fill="#749B27"></path>
+                    </svg>
+                    <div>Fav</div>
+                </a>
+            </div>
+            <div class="item">
+                <button class="navbar-toggler first-button" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon1"><span></span><span></span><span></span></div>
+                </button>
+            </div>
+        </div>
+        <div class="container d-none d-md-block">
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-12 text-center">
@@ -180,6 +301,7 @@
                         <li><a href="/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496"
                                class="nav_a">Privacy Notice</a></li>
                         <li><a href="/interestbasedads/ref=footer_iba" class="nav_a">Interest-Based Ads</a></li>
+                        <li><a href="{% url 'terms' %}" class="nav_a">Terms and conditions</a></li>
                         <li class="nav_last">
                             ©
                             <script>
@@ -192,7 +314,7 @@
             </div>
         </div>
     </footer>
-    
+
 </div>
 
 {% cookielaw_banner %}
@@ -208,6 +330,28 @@
 
 <script src="{% static 'js/cookielaw.js' %}"></script>
 
+<script src="{% static 'js/libs/OwlCarous/owl.carousel.js' %}"></script>
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
+</script>
+
 {% if user.is_superuser %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="{% static 'js/counterup.min.js' %}"></script>
@@ -216,13 +360,14 @@
 
 {% if not user.is_staff %}
     <div style="display:none">
-        <img src="{% google_analytics %}" width="0" height="0"/>
+        {#        <img src="{% google_analytics %}" width="0" height="0"/>#}
     </div>
 {% endif %}
 
 
 {% block script %}
 {% endblock %}
+
 
 </body>
 </html>

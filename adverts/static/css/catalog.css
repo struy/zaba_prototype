@@ -1,0 +1,25 @@
+section#main {
+  background-color: #F4F5F6 !important;
+}
+
+.from {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.filters label {
+  font-size: 12.5px;
+  text-transform: none !important;
+  margin-bottom: 0 !important;
+}
+.filters button[type=submit] {
+  background: #091B34;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: capitalize;
+}
+
+/*# sourceMappingURL=catalog.css.map */

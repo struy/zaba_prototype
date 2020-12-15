@@ -8,10 +8,12 @@
 {% load thumbnail %}
 
 {% block title %} {% trans "Jobs" %} {% endblock %}
-
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Jobs" %}</li>
 {% endblock %}
 
 {% block content %}
@@ -75,10 +77,16 @@
                     {% else %}
                         <p>No adverts are available.</p>
                     {% endif %}
-                    {% include "snippets/pagination.html" %}
+                    <div class="d-flex justify-content-end align-self-md-end">
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
+        {% else %}
+            <p>No adverts are available.</p>
+        {% endif %}
+        {% include "snippets/pagination.html" %}
     </div>
 
 

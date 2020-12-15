@@ -10,6 +10,9 @@
     {% trans "Gifts" %}
 {% endblock %}
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Gifts" %}</li>
@@ -71,14 +74,32 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="divider"></div>
+                    {% endif %}
 
-                    {% endfor %} {% else %}
-                        <p>No adverts are available.</p>
-                    {% endif %} {% include "snippets/pagination.html" %}
+                    <small class="text-muted">
+                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                        <i>{{ advert.modified|naturaltime }} </i>
+                    </small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap justify-content-between justify-content-md-normal">
+                    {% if advert.author == request.user %}
+                        <a href="{% url 'gifts:delete' advert.id %}" class="d-flex justify-content-between edit">
+                            <span>Delete</span>
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        <a href="{% url 'gifts:edit' advert.id %}" class="d-flex justify-content-between delete mt-3">
+                            <span>Edit</span>
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    {% endif %}
+                    <div class="d-flex justify-content-end align-self-md-end">
+                        <i class="fas fa-heart"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %} {% else %}
+            <p>No adverts are available.</p>
+        {% endif %} {% include "snippets/pagination.html" %}
     </div>
 {% endblock %}
 

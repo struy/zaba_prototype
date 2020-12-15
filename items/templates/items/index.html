@@ -7,10 +7,12 @@
 {% load crispy_forms_tags %}
 {% load thumbnail %}
 
-{% block title %}
-    {% trans "Items" %}
+{% block title %} 
+    {% trans "Items" %} 
 {% endblock %}
-
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
@@ -64,6 +66,8 @@
                                             </h2>
                                         </a>
 
+                                        <div class="d-flex justify-content-end align-self-md-end">
+
                                         <a href="{% url 'favourite_add' 'Item' advert.id %}">
                                             {% if advert.id in  favourites %}
                                              <i class="fas fa-heart"></i>
@@ -71,6 +75,7 @@
                                                 <i class="far fa-heart"></i>
                                             {% endif %}
                                         </a>
+                                        </div>
 
 
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}

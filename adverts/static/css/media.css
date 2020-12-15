@@ -1,69 +1,229 @@
 /*Extra small devices (portrait phones, less than 576px)*/
 /*No media query since this is the default in Bootstrap*/
-
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
   .form-inline .form-control {
     width: 100%;
   }
 }
-
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   button.fa-filter {
     display: none;
   }
+
   #btn_sm_md_ext {
     display: none;
   }
 }
-
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-}
-
 /*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 0;
+  }
+
+  #header.fixed-top {
+    position: initial;
+  }
+
+  header .navbar-nav {
+    font-size: 30px;
+  }
+
+  #main .icon-box {
+    padding: 15px 15px;
+  }
+
+  #main .home button#btn_search {
+    text-align: right;
+  }
+
+  #btn_search .form-control-feedback {
+    right: 8px;
+  }
+
+  header .mobile-logo {
+    display: block;
+  }
+  header .mobile-logo svg {
+    height: 50px;
+  }
+
+  header .desktop-logo {
+    display: none;
+  }
+
+  .language-block {
+    position: inherit;
+    width: auto;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+  }
+
+  header .bg-dark .mobile-header {
+    width: 100%;
+  }
+
+  header .bg-dark {
+    padding: 0 !important;
+  }
+
+  .with-submenu .sub-menu {
+    position: initial;
+    box-shadow: unset;
+    display: block !important;
+    margin-left: -10px;
+    font-size: 16px;
+  }
+
+  #mobile-data {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    background-color: white;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #mobile-data .item a {
+    color: #262a5d !important;
+    font-size: 14px;
+  }
+  #mobile-data .item {
+    color: #262a5d !important;
+    font-size: 14px;
+  }
+  #mobile-data .item svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+  }
+
+  #navbarSupportedContent {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    bottom: 54px;
+    z-index: 9;
+    left: 0;
+    padding-left: 15px;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  header .favorites .counter-favorites {
+    top: -9px;
+    right: auto;
+    left: 11px;
+    font-size: 14px;
+  }
+
+  footer {
+    background-color: white;
+  }
+
+  #CookielawBanner {
+    margin-top: -280px;
+    font-size: 14px;
+  }
+
+  .language-block .item-lang svg {
+    right: -5px;
+    top: -5px;
+  }
+
+  .with-menu {
+    display: none;
+  }
+
+  header button[type=submit] {
+    width: 3em;
+    height: 2em;
+  }
 }
-
-/***************************************************************************************/
-@media (max-width: 326px) {
-  header button[type="submit"] {
-    margin-left: 2px;
-  }  
-
-}
-
 @media (max-width: 390px) {
   #btn_search .fa-search {
-  display: none;
-  }
- }
- @media (max-width: 463px) {
-  .navbar-dark .navbar-toggler {
-  margin: auto;
+    display: none;
   }
 }
-
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
   #main .icon-box {
-    max-width: 80%;
-    margin: 10px auto;
+    margin: 10px;
   }
 }
-
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
   #main .home a {
     font-size: 2em;
   }
 
-  #btn_sm_md_ext {
-    margin-bottom: 15px;
+  header .favorites i {
+    font-size: 24px;
   }
+
+  header button[type=submit] {
+    margin-left: 15px;
+  }
+
+  header .navbar-dark .navbar-nav .nav-item {
+    border-bottom: 1px solid #F4F5F6;
+    text-align: left;
+  }
+
+  header .navbar-dark .navbar-nav .nav-link {
+    font-size: 18px;
+    display: inline;
+  }
+
+  .navigate-user {
+    flex-wrap: nowrap !important;
+    justify-content: space-between;
+  }
+  .navigate-user a {
+    margin: 0 !important;
+    font-size: 18px !important;
+    padding: 10px 20px 20px !important;
+  }
+
+  .list-ads-user .item .image {
+    background-size: cover !important;
+    height: 220px !important;
+  }
+
+  .list-ads-user .item h3 {
+    margin-top: 10px;
+  }
+
+  .list-ads-user .item .events {
+    margin-top: 10px;
+  }
+
+  .list-ads-user .item {
+    margin: 0 auto 10px !important;
+  }
+
+  #btn_sm_md_ext {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #091b33;
+    border: 1px solid #091b33;
+    background-color: white;
+  }
+
   #main #attention h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   #main .btn.facebook {
@@ -75,6 +235,7 @@
     overflow: hidden;
     white-space: nowrap;
   }
+
   #main .btn.twitter {
     width: 108px;
     float: left;
@@ -83,70 +244,113 @@
     overflow: hidden;
     white-space: nowrap;
   }
-  #main .btn.google {
-    width: 103px;
-    text-overflow: clip;
-    overflow: hidden;
-    white-space: nowrap;
+
+  .with-login {
+    padding-left: 15px;
+  }
+
+  .manual-login {
+    padding-right: 15px;
   }
 
   #main .img_ad {
     width: 100%;
   }
+
   #main .form-inline .form-group {
-    margin-bottom: 1rem!important;
-}
-#main .form-inline .form-row {
-  margin-bottom: 0;
-}
-#main .home button#btn_search {
-  width: 30%;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 1rem;
-}
-}
+    margin-bottom: 1rem !important;
+  }
 
-/*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) {
-  header .navbar-nav {
-    font-size: 30px;
-    text-align: center;
+  #main .form-inline .form-row {
+    margin-bottom: 0;
   }
-  #main .icon-box {
-    padding: 15px 15px;
-  }
+
   #main .home button#btn_search {
-    text-align: right;  
+    width: 200px;
+    text-align: center;
+    margin: auto;
   }
-  #btn_search .form-control-feedback {right: 8px;}
-}
 
-/*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) {
-}
+  #main .home .simple-search button#btn_search {
+    width: 100%;
+  }
 
+  .list-ads-user .item .image .icon {
+    bottom: 0;
+  }
+
+  .list-ads-user .item .events > div {
+    width: 100%;
+  }
+  .list-ads-user .item .events > div:first-child {
+    text-align: left !important;
+  }
+
+  .filters button[type=submit] {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .filters .form-group:not(:first-child) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  #collapseExample .filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #collapseExample .filters .has-search {
+    width: 100%;
+  }
+
+  .with-submenu:hover .sub-menu {
+    margin-left: 0;
+  }
+
+  .language-block {
+    position: inherit;
+  }
+
+  #CookielawBanner {
+    margin-top: -300px;
+    font-size: 12px;
+  }
+
+  #CookielawBanner a.btn {
+    display: block;
+    margin: auto;
+  }
+
+  #mobile-data .item .nav-item > div {
+    display: none;
+  }
+
+  #mobile-data .item .nav-item svg {
+    width: 30px;
+    height: 40px;
+  }
+}
+/***************************************************************************************/
+@media (max-width: 326px) {
+  header button[type=submit] {
+    margin-left: 5px;
+  }
+}
 /*Extra large devices (large desktops)*/
 /*No media query since the extra-large breakpoint has no upper bound on its width*/
-
 /***************************************************************************************/
-
 /*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
+@media (max-width: 495.98px) {
+  #CookielawBanner {
+    margin-top: -310px;
+  }
 }
-
 /*Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767.98px) {
-}
-
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) {
-}
-
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
-}
-
 /*Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-}
+
+/*# sourceMappingURL=media.css.map */

@@ -1,17 +1,22 @@
-{% extends "base.html" %} {% load humanize %} {% load staticfiles %} {% load
-static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
-{% load thumbnail %} {% block breadcrumbs %}
-<li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-<li class="breadcrumb-item active" aria-current="page">{% trans "Rents" %}</li>
+{% extends "base.html" %}
+{% load humanize %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load advert_money %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+
+{% block title %} {% trans "Rents   " %} {% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Rents" %}</li>
 {% endblock %} {% block content %} {% include 'snippets/filter.html' %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      <img src="{% static "img/zaba.jpg" %}" alt="" width="350">
-    </div>
-    <div class="col-8">
-      <div class="advert">
+    <div class="container list-ads-user">
         {% if adverts %} {% for advert in adverts %}
 
         <div class="media">
@@ -39,31 +44,57 @@ static %} {% load i18n %} {% load advert_money %} {% load crispy_forms_tags %}
                   <i class="fas fa-edit"></i>
                 </a>
                 {% endif %}
-                <a href="{% url 'rents:detail' advert.id %}">
-                  <h2>
-                    {{ advert.title }} {% if advert.expires_type %}
-                    <span class="{{ advert.expires_type.css }}">
-                      {{ advert.expires_type.text }}</span
-                    >
+                </div>
+                <div class="col-12 col-md-6">
+                    <a href="{% url 'rents:detail' advert.id %}">
+                        <h3>
+                            {{ advert.title }}
+                        </h3>
+                    </a>
+                    {% if advert.expires_type %}
+                        <div class="text-info text-uppercase">
+                            <b>{{ advert.expires_type.text }}</b>
+                        </div>
                     {% endif %}
-                    <span class="form_{{ advert.local }}"></span>
-                  </h2>
-                </a>
-                <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                <i>{{ advert.modified|naturaltime }} </i>
-                <h3>{{ advert.price|prepend_dollars_only }}</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
 
+                    <small class="text-muted">
+                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                        <i>{{ advert.modified|naturaltime }} </i>
+                    </small>
+                </div>
+                <div class="col-12 col-md-3 events d-flex flex-wrap justify-content-between justify-content-md-normal">
+                    <div class="d-flex justify-content-end">
+                        <b>{{ advert.price|prepend_dollars }}</b>
+                    </div>
+                    {% if advert.author == request.user %}
+                        <a href="{% url 'rents:delete' advert.id %}" class="d-flex justify-content-between edit">
+                            <span>Delete</span>
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        <a href="{% url 'rents:edit' advert.id %}"
+                           class="d-flex justify-content-between delete mt-3">
+                            <span>Edit</span>
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    {% endif %}
+                    <div class="d-flex justify-content-end align-self-md-end">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
         {% endfor %} {% else %}
-        <p>No adverts are available.</p>
-        {% endif %} {% include "snippets/pagination.html" %}
-      </div>
+            <p>No adverts are available.</p>
+        {% endif %}
+        {% include "snippets/pagination.html" %}
     </div>
   </div>
 </div>
-{% endblock %} {% block script %} {% include "snippets/js/city-latin-only-js.html" %}
-{% endblock %} {% block add_ad_link %} {% url 'rents:new' %} {% endblock %}
+{% endblock %}
+
+{% block script %} 
+    {% include "snippets/js/city-latin-only-js.html" %}
+{% endblock %} 
+
+{% block add_ad_link %}
+    {% url 'rents:new' %}
+{% endblock %}

@@ -11,13 +11,14 @@
 
 {% block head %}
     <style>
-        #add_button {
-            display: none;
+        .create-advert-button {
+            display: none !important;
         }
     </style>
 {% endblock %}
 
 {% block content %}
+    <div class="home">
     {% include "snippets/search_bar.html" %}
 
     <div class="container">
@@ -90,3 +91,4 @@
     {% include "snippets/js/address-input-js.html" %}
     {% include "snippets/js/city-latin-only-js.html" %}
 {% endblock script %}
+ 

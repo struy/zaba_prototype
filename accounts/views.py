@@ -70,3 +70,8 @@ def edit(request):
         user_form = UserEditForm(instance=request.user)
 
     return render(request, 'accounts/edit.html', {'user_form': user_form})
+
+
+@login_required
+def ads(request):
+    pass

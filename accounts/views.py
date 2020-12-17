@@ -1,4 +1,7 @@
 from itertools import chain
+import redis
+
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
@@ -39,10 +42,14 @@ def favourite_add(request, name, id):
     # AppConfig.get_models(name)
     ad = get_object_or_404(models[name], id=id)
     if ad:
+        r = redis.Redis(connection_pool=settings.POOL)
+
         if ad.favourites.filter(id=request.user.id).exists():
             ad.favourites.remove(request.user)
+            r.decr(f'Author:fav:{request.user}')
         else:
             ad.favourites.add(request.user)
+            r.incr(f'Author:fav:{request.user}')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 

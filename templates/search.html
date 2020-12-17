@@ -19,8 +19,9 @@
 
 {% block content %}
     <div class="home">
+       <div class="container">
     {% include "snippets/search_bar.html" %}
-
+       </div>
     <div class="container">
         <div class="row title-row my-5">
             <div class="col-12 py-0">
@@ -85,10 +86,10 @@
         {% endfor %}
 
       {% include "snippets/pagination.html" %}
+    </div>
 {% endblock content %}
 
 {% block script %}
     {% include "snippets/js/address-input-js.html" %}
     {% include "snippets/js/city-latin-only-js.html" %}
 {% endblock script %}
- 

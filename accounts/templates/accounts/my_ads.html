@@ -69,14 +69,6 @@
                                                 </h2>
                                             </a>
 
-                                            <div class="d-flex justify-content-end align-self-md-end">
-
-                                                <a href="{% url 'favourite_add' 'Item' advert.id %}">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                            </div>
-
-
                                             <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
                                             <i>{{ advert.modified|naturaltime }} </i>
                                             <h3>{{ advert.price|prepend_dollars }}</h3>

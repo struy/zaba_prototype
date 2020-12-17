@@ -37,56 +37,7 @@
     <div class="home">
         <div class="grey-back">
             <div class="container">
-                <form action="{% url 'global_search' %}">
-                    <div class="form-row has-search simple-search">
-                        <div class="col-md-7 col-10 p-0">
-                            <div class="form-group">
-                                <span class="fa fa-search form-control-feedback"></span>
-                                <input
-                                        type="text"
-                                        class="form-control rounded-0"
-                                        name="q"
-                                        placeholder="type in what you are looking for"
-                                        size="90"
-                                        value="{{ request.GET.q }}"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-md-4 d-none d-md-block p-0">
-                            <div class="form-group has-search">
-       <span class="fas fa-map-marker-alt form-control-location">
-       </span>
-                                <span class="fas fa-angle-right form-control-angle">
-       </span>
-                                <input
-                                        id="id_city"
-                                        type="text"
-                                        name="address"
-                                        value="{{ request.GET.address }}"
-                                        class="form-control rounded-0"
-                                        size="30"
-                                        placeholder="Enter a location"
-                                        title="only Latin characters "
-                                        data-toggle="tooltip"
-                                        autocomplete="on"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-sm-1 col-2 p-0">
-                            <button id="btn_search" class="btn btn-success input-group rounded-0 form-control"
-                                    type="submit">
-                                <div class="input-group-append">
-                                    <span class="fa fa-search form-control-feedback"></span>
-                                </div>
-                            </button>
-
-                            {% if has_filter %}
-                                <a class="mb-4 mb-md-0"
-                                   href="{% url 'package_list' %}">{% trans ' Clear all filters' %}</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </form>
+                {% include "snippets/search_bar.html" %}
             </div>
         </div>
 
@@ -147,10 +98,12 @@
                 </div>
             {% endif %}
 
-            <div class="row mt-4">
-                <div id="greeting" class="head-block">
+            <div class="row mt-3">
+                <div id="container" class="head-block">
                     <div class="col-12 text-center">
-                        <h2><span>{% trans "Main" %}</span> <span class="text-green">{% trans "Categories" %}</span>
+                        <h2>
+                            <span>{% trans "Main" %}</span>
+                            <span class="text-green">{% trans "Categories" %}</span>
                         </h2>
                     </div>
                 </div>
@@ -187,9 +140,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
 
     </div>
@@ -311,111 +261,118 @@
                           fill="black"/>
                 </g>
             </svg>
-
-
         </div>
+
+        <div class="head-block">
+            <h2 align="center">
+                <span class="text-black">{% trans "Popular" %}</span>
+                <span class="text-green">{% trans "Ads" %}</span>
+            </h2>
+        </div>
+
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12  text-center text-dark">
-                <h3>{% trans "Popular Ads" %} </h3>
-            </div>
-        </div>
 
-        {% if most_viewed %}
-            <div class="content mb-2">
-                <div class="container">
-                    <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
-                        {% for advert in most_viewed %}
-
-                            <div class="item">
-                                {% thumbnail advert.image "128" as ad %}
-                                    <a href="{{ advert.image.url }}">
-                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                                    </a>
-                                {% endthumbnail %}
-                                {% if not advert.image %}
-                                    <img
-                                            class="mr-3"
-                                            src="{% static 'none/no-img.jpg' %}"
-                                            alt="no image"
-                                            width="128"
-                                    />
-                                {% endif %}
-
-
-                                <div class="name">
-                                    {{ advert.title }}
-                                </div>
-                                <div class="subtype">
-                                    <small class="text-muted">
-                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                                        <i>{{ advert.modified|naturaltime }} </i>
-                                    </small>
-                                </div>
-                                <div class="price font-weight-bold">
-                                    {{ advert.price|prepend_dollars }}
-                                </div>
-                            </div>
-
-
-                        {% endfor %}
-
-                    </div>
-                </div>
-
-            </div>>
-        {% endif %}
-
-        {% if new %}
+    {% if most_viewed %}
+        <div class="content mb-2">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12  text-center text-dark">
-                        <h3>{% trans "New Ads" %} </h3>
-                    </div>
+                <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
+                    {% for advert in most_viewed %}
+
+                        <div class="item">
+                            {% thumbnail advert.image "128" as ad %}
+                                <a href="{{ advert.image.url }}">
+                                    <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                </a>
+                            {% endthumbnail %}
+                            {% if not advert.image %}
+                                <img
+                                        class="mr-3"
+                                        src="{% static 'none/no-img.jpg' %}"
+                                        alt="no image"
+                                        width="128"
+                                />
+                            {% endif %}
 
 
-                    {% for advert in new %}
-                        <div class="col-10 col-lg-3">
-                            <div class="item">
-                                {% thumbnail advert.image "128" as ad %}
-                                    <a href="{{ advert.image.url }}">
-                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                                    </a>
-                                {% endthumbnail %}
-                                {% if not advert.image %}
-                                    <img
-                                            class="mr-3"
-                                            src="{% static 'none/no-img.jpg' %}"
-                                            alt="no image"
-                                            width="128"
-                                    />
-                                {% endif %}
-
-
-                                <div class="name">
-                                    {{ advert.title }}
-                                </div>
-                                <div class="subtype">
-                                    <small class="text-muted">
-                                        <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
-                                        <i>{{ advert.modified|naturaltime }} </i>
-                                    </small>
-                                </div>
-                                <div class="price font-weight-bold">
-                                    {{ advert.price|prepend_dollars }}
-                                </div>
+                            <div class="name">
+                                {{ advert.title }}
+                            </div>
+                            <div class="subtype">
+                                <small class="text-muted">
+                                    <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                </small>
+                            </div>
+                            <div class="price font-weight-bold">
+                                {{ advert.price|prepend_dollars }}
                             </div>
                         </div>
-                    {% endfor %}
 
+
+                    {% endfor %}
 
                 </div>
             </div>
-        {% endif %}
 
+        </div>>
+    {% endif %}
+
+    <section id="google_ads">
+        <center>
+            <div class="container">
+                <img src="{% static 'img/image-20.png' %}" border="0"
+                     width="724"
+                     alt="" class="img_ad">
+            </div>
+        </center>
+    </section>
+
+    <div class="head-block">
+        <h2 align="center">
+            <span class="text-black">{% trans "New" %}</span>
+            <span class="text-green">{% trans "Ads" %}</span>
+        </h2>
     </div>
 
+
+    {% if new %}
+        <div class="container">
+            <div class="row list-ads flex-nowrap  owl-carousel owl-theme ml-0">
+                {% for advert in new %}
+                    <div class="item">
+                        {% thumbnail advert.image "128" as ad %}
+                            <a href="{{ advert.image.url }}">
+                                <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                            </a>
+                        {% endthumbnail %}
+                        {% if not advert.image %}
+                            <img
+                                    class="mr-3"
+                                    src="{% static 'none/no-img.jpg' %}"
+                                    alt="no image"
+                                    width="128"
+                            />
+                        {% endif %}
+
+                        <div class="name">
+                            {{ advert.title }}
+                        </div>
+                        <div class="subtype">
+                            <small class="text-muted">
+                            <i class="fas fa-map-marker-alt"> </i>
+                                {{ advert.city }}
+                            </small>
+                        </div>
+                        <div class="price font-weight-bold">
+                            {{ advert.price|prepend_dollars }}
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    {% endif %}
 
 
 

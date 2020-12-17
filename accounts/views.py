@@ -1,7 +1,9 @@
 from django.apps import AppConfig
+from itertools import chain
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from gifts.models import Gift
 from items.models import Item
@@ -17,12 +19,24 @@ def favourite_list(request):
     jobs = Job.objects.filter(favourites=request.user)
     rents = Rental.objects.filter(favourites=request.user)
     gifts = Gift.objects.filter(favourites=request.user)
+    adverts = chain(items,
+                    jobs,
+                    rents,
+                    gifts)
 
-    new = items + jobs + rents + gifts
+    # page = request.GET.get('page', 1)
+    # paginator = Paginator([query_sets], 10)
+    #
+    # try:
+    #     adverts = paginator.page(page)
+    # except PageNotAnInteger:
+    #     adverts = paginator.page(1)
+    # except EmptyPage:
+    #     adverts = paginator.page(paginator.num_pages)
 
     return render(request,
                   'accounts/favourites.html',
-                  {'new': new})
+                  {'adverts': adverts})
 
 
 @login_required
@@ -73,5 +87,5 @@ def edit(request):
 
 
 @login_required
-def ads(request):
+def my_ads(request):
     pass

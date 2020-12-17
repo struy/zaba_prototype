@@ -86,5 +86,5 @@ def my_ads(request):
                     gifts)
 
     return render(request,
-                  'accounts/favourites.html',
+                  'accounts/my_ads.html',
                   {'adverts': adverts})

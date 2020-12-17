@@ -7,22 +7,23 @@
 {% load crispy_forms_tags %}
 {% load thumbnail %}
 
+
 {% block title %}
-    {% trans "Favorites" %}
+    {% trans "My Ads" %}
 {% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-{% endblock %}]
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{% trans "Favorites" %}</li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "My Ads" %}</li>
 {% endblock %}
 
 {% block content %}
-
-    <div class="container mt-4">
+    <div class="grey-back">
+      <div class="container mt-4">
         <div class="row">
             <div class="col-4 d-none d-md-block">
                 <img src="{% static "img/zaba.jpg" %}" alt="" width="100%">
@@ -104,3 +105,5 @@
 {% block add_ad_link %}
     {% url 'items:new' %}
 {% endblock %}
+
+</div>

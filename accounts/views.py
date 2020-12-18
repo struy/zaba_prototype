@@ -46,10 +46,10 @@ def favourite_add(request, name, id):
 
         if ad.favourites.filter(id=request.user.id).exists():
             ad.favourites.remove(request.user)
-            r.decr(f'Author:fav:{request.user}')
+            r.decr(f'Author:fav:{request.user.id}')
         else:
             ad.favourites.add(request.user)
-            r.incr(f'Author:fav:{request.user}')
+            r.incr(f'Author:fav:{request.user.id}')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 

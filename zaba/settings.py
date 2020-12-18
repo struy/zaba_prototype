@@ -196,7 +196,6 @@ REDIS_DB = 0
 
 POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 
-
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
@@ -257,3 +256,15 @@ Configuration.configure(
 GOOGLE_ANALYTICS = {
     'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
 }
+
+# Function name should be lowercase not this case
+def FILTERS_VERBOSE_LOOKUPS():
+    """https://django-filter.readthedocs.io/en/stable/ref/settings.html#verbose-lookups-setting"""
+    from django_filters.conf import DEFAULTS
+
+    verbose_lookups = DEFAULTS['VERBOSE_LOOKUPS'].copy()
+    verbose_lookups.update({
+        'gte': 'from',
+        'lte': 'to'
+    })
+    return verbose_lookups

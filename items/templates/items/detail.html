@@ -92,7 +92,13 @@
                         <span>User</span>
                     </div>
                     <div class="mb-4">
-                        <h3>Abraham Lincoln</h3>
+                     <h3>
+                        {% if not advert.author.first_name  and  not advert.author.last_name%}
+                            Anonymous
+                        {% else %}
+                            {{ advert.author.first_name }} {{ advert.author.last_name }}
+                        {% endif %}
+                     </h3>
                     </div>
                     <div class="mb-4">
                         <a href="#">Other user’s ads</a>

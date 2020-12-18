@@ -1,12 +1,14 @@
 {% extends "base_detail.html" %}
 {% load i18n %}
 {% load static %}
-
-{% block title %} {% trans "Item" %} {% endblock %}
-
-{% load i18n %}
-
 {% load advert_money %}
+
+{% block title %}
+    {% trans "Item" %}
+{% endblock %}
+
+
+
 
 
 {% block breadcrumbs %}
@@ -35,7 +37,15 @@
                         <div>{{ advert.title }} </div>
                         <div>
                             <small class="text-muted">
-                                <i class="far fa-heart"></i>
+                                <a href="{% url 'favourite_add' 'Item' advert.id %}">
+                                    <i class="
+                                     {% if favourite %}
+                                        fas
+                                     {% else %}
+                                        far
+                                     {% endif %}
+                                     fa-heart"></i>
+                                </a>
                             </small>
                         </div>
                     </h2>
@@ -64,22 +74,10 @@
                         </p>
                         <div id="m"></div>
                     {% endif %}
-                    <div class="count d-flex justify-content-end">
-                        <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
+                    <div class="count d-flex justify-content-start">
+                            <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
-                    <p>
-                        <a href="{% url 'favourite_add' 'Item' advert.id %}">
-                            <i class="
-                         {% if favourite %}
-                            fas
-                         {% else %}
-                            far
-                         {% endif %}
-                         fa-heart"></i>
-                        </a>
-    
-                    </p>
-    
+
                 </div>
             </div>
             <div class="col-md-4 user-info">
@@ -196,5 +194,7 @@
 
 {% endblock %}
 
-{% block add_ad_link %} {% url 'items:new' %} {% endblock %}
+{% block add_ad_link %}
+    {% url 'items:new' %}
+{% endblock %}
 

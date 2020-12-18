@@ -2,7 +2,9 @@
 {% load countries %}
 {% load i18n %}
 
-{% block title %} {% trans "Jobs" %} {% endblock %}
+{% block title %}
+    {% trans "Jobs" %}
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -24,4 +26,6 @@
 {% endblock %}
 
 
-{% block add_ad_link %} {% url 'jobs:new' %} {% endblock %}
+{% block add_ad_link %}
+    {% url 'jobs:new' %}
+{% endblock %}

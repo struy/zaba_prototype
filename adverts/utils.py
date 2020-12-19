@@ -19,7 +19,7 @@ def get_most_viewed(pool):
 
     for key, value in models.items():
         ranking_ids = [int(item[len(key) + 1:]) for item in ranking if item.startswith(key)]
-        viewed = list(Item.objects.filter(
+        viewed = list(value.objects.filter(
             id__in=ranking_ids))
         viewed.sort(key=lambda x: ranking_ids.index(x.id))
         result.append(viewed)

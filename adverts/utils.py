@@ -18,7 +18,7 @@ def get_most_viewed(pool):
     models = {"Item": Item, "Job": Job, "Gift": Gift, "Rental": Rental}
 
     for key, value in models.items():
-        ranking_ids = [int(item[len(key)+1:]) for item in ranking if item.startswith(key)]
+        ranking_ids = [int(item[len(key) + 1:]) for item in ranking if item.startswith(key)]
         viewed = list(Item.objects.filter(
             id__in=ranking_ids))
         viewed.sort(key=lambda x: ranking_ids.index(x.id))
@@ -29,8 +29,12 @@ def get_most_viewed(pool):
 
 
 def get_new_ads(pool):
-    new = [int(i) for i in pool.lrange('Item:new', 0, 4)]
-    new = list(Item.objects.filter(id__in=new))
+    models = ["Item", "Job", "Gift", "Rental"]
+    result = []
+    for name in models:
+        ids = [int(i) for i in pool.lrange(f'{name}:new', 0, 4)]
+        result.append(list(Item.objects.filter(id__in=ids)))
+    new = chain(*result)
     return new
 
 

@@ -37,7 +37,6 @@ def favourite_add(request, name, id):
         "Job": Job,
         "Gift": Gift,
         "Rental": Rental
-
     }
     # AppConfig.get_models(name)
     ad = get_object_or_404(models[name], id=id)

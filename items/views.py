@@ -50,7 +50,7 @@ def detail(request, advert_id):
     if advert.favourites.filter(id=request.user.id).exists():
         is_favourite = True
     # increment image ranking by 1
-    r.zincrby('ranking:Item', int(advert_id), 1)
+    r.zincrby('ranking:All', 1, f'Item:{advert_id}')
     context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
     return render(request, 'items/detail.html', context)
 

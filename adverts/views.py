@@ -13,6 +13,7 @@ from items.models import Item
 from gifts.models import Gift
 from rents.models import Rental
 from jobs.models import Job
+from .utils import get_most_viewed
 
 
 def index(request):
@@ -29,18 +30,13 @@ def detail(request, advert_id):
 
 def home(request):
     r = redis.Redis(connection_pool=settings.POOL)
-
-    total = r.get("Total:saved")
+    # new ads
     new = [int(i) for i in r.lrange('Item:new', 0, 10)]
     new = list(Item.objects.filter(id__in=new))
-    item_ranking = r.zrange('ranking:Item', 0, -1,
-                            desc=True)[:10]
-    item_ranking_ids = [int(item) for item in item_ranking]
-    # get most viewed images
-    most_viewed = list(Item.objects.filter(
-        id__in=item_ranking_ids))
-    most_viewed.sort(key=lambda x: item_ranking_ids.index(x.id))
+    # popular ads
+    most_viewed = get_most_viewed(r)
 
+    total = r.get("Total:saved")
     if total:
         total = total.decode('utf-8')
 

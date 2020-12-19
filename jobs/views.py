@@ -40,6 +40,7 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Job, pk=advert_id)
     total_views = r.incr('job:{}:views'.format(advert.id))
+    r.zincrby('ranking:All', 1, f'Job:{advert_id}')
     return render(request, 'jobs/detail.html', {'advert': advert, 'total_views': total_views})
 
 

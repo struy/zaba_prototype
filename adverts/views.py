@@ -13,7 +13,7 @@ from items.models import Item
 from gifts.models import Gift
 from rents.models import Rental
 from jobs.models import Job
-from .utils import get_most_viewed
+from .utils import get_most_viewed, get_new_ads
 
 
 def index(request):
@@ -30,10 +30,7 @@ def detail(request, advert_id):
 
 def home(request):
     r = redis.Redis(connection_pool=settings.POOL)
-    # new ads
-    new = [int(i) for i in r.lrange('Item:new', 0, 10)]
-    new = list(Item.objects.filter(id__in=new))
-    # popular ads
+    new = get_new_ads(r)
     most_viewed = get_most_viewed(r)
 
     total = r.get("Total:saved")

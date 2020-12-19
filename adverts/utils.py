@@ -28,6 +28,12 @@ def get_most_viewed(pool):
     return most_viewed
 
 
+def get_new_ads(pool):
+    new = [int(i) for i in pool.lrange('Item:new', 0, 4)]
+    new = list(Item.objects.filter(id__in=new))
+    return new
+
+
 def context_helper(request, filters):
     """check filter and make pagination for context"""
     has_filter = any(field in request.GET for field in set(filters.get_fields()))

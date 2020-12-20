@@ -257,6 +257,7 @@ GOOGLE_ANALYTICS = {
     'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
 }
 
+
 # Function name should be lowercase not this case
 def FILTERS_VERBOSE_LOOKUPS():
     """https://django-filter.readthedocs.io/en/stable/ref/settings.html#verbose-lookups-setting"""
@@ -268,3 +269,6 @@ def FILTERS_VERBOSE_LOOKUPS():
         'lte': 'to'
     })
     return verbose_lookups
+
+
+EXTENSIONS_MAX_UNIQUE_QUERY_ATTEMPTS = 1000

@@ -33,8 +33,10 @@ pipeline {
                 python manage.py collectstatic --noinput --settings=zaba.settings_prod
                 python manage.py makemigrations --settings=zaba.settings_prod
                 python manage.py migrate --settings=zaba.settings_prod
-                python manage.py loaddata fixtures/datagifttype.json --settings=zaba.settings_prod
-                python manage.py loaddata fixtures/datajobtype.json --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_gift_type.json --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_job_type.json --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_rent_type.json --settings=zaba.settings_prod
+
                 """
             }
         }

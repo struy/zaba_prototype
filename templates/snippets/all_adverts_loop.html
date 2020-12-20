@@ -1,0 +1,6 @@
+{% load i18n %}
+
+{% for  name, adverts in all_adverts.items %}
+    <h3> {% trans name %}: </h3>
+ {% include 'snippets/adverts_loop.html' %}
+{% endfor %}

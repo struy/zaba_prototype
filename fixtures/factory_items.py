@@ -4,9 +4,9 @@ from faker import Factory
 from django.contrib.gis.geos import Point
 from django.core.files.base import ContentFile
 from items.models import Item
-from gifts.models import Gift
-from jobs.models import Job
-from rents.models import Rental
+from gifts.models import Gift, GiftType
+from jobs.models import Job, JobType
+from rents.models import Rental, PropertyType
 
 AUTHOR_ID = 2
 local = ['en_US', 'uk_UA', 'ru_RU', 'pl_PL']
@@ -46,7 +46,7 @@ for loc in local:
                   city=local_lat[2],
                   expires=fake.date_this_year(),
                   # uniq
-                  jobtype=rand.randint(0, 4),
+                  jobtype=JobType.objects.filter(pk=rand.randint(0, 4)),
                   duration=rand.randint(0, 3),
                   salary=rand.randint(1, 2000),
                   countries=rand.choice(['US', 'UA', 'RU', 'PL'])
@@ -67,7 +67,7 @@ for loc in local:
                       city=local_lat[2],
                       expires=fake.date_this_year(),
                       # uniq
-                      property_type=rand.randint(0, 4),
+                      property_type=PropertyType.objects.filter(pk=rand.randint(0, 4)),
                       bathrooms=rand.randint(1, 3),
                       bedrooms=rand.randint(1, 3),
                       pet_policy=rand.randint(0, 5),
@@ -84,7 +84,7 @@ for loc in local:
         local_lat = fake.local_latlng()
         gift = Gift(title=fake.catch_phrase(),
                     description=fake.text(),
-                    gift_type=rand.randint(0, 4),
+                    gift_type=GiftType.objects.filter(pk=rand.randint(0, 4)),
                     author_id=AUTHOR_ID,
                     point=Point((float(local_lat[0]), float(local_lat[1]))),
                     expires=fake.date_this_year(),

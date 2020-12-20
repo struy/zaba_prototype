@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% load humanize %}
 {% load staticfiles %}
 {% load static %}
 {% load i18n %}
-{% load advert_money %}
 {% load crispy_forms_tags %}
-{% load thumbnail %}
+
+
 
 
 {% block title %}
-    {% trans "My Ads" %}
+    {% trans "User's Ads" %}
 {% endblock %}
 
 {% block head %}
@@ -18,7 +17,7 @@
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{% trans "My Ads" %}</li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "User's Ads" %}</li>
 {% endblock %}
 
 {% block content %}
@@ -29,7 +28,7 @@
                 <img src="{% static "img/zaba.jpg" %}" alt="" width="100%">
             </div>
             <div class="col-12 col-md-8">
-               {% include 'snippets/all_adverts_loop.html'  %}
+                {% include 'snippets/all_adverts_loop.html'  %}
             </div>
         </div>
     </div>

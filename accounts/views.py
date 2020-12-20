@@ -16,14 +16,9 @@ from .forms import UserRegistrationForm
 
 @login_required
 def favourite_list(request):
-    items = Item.objects.filter(favourites=request.user)
-    jobs = Job.objects.filter(favourites=request.user)
-    rents = Rental.objects.filter(favourites=request.user)
-    gifts = Gift.objects.filter(favourites=request.user)
-    adverts = chain(items,
-                    jobs,
-                    rents,
-                    gifts)
+    models = [Item, Job, Rental, Gift]
+    ads = [m.objects.filter(author_id=request.user) for m in models]
+    adverts = chain(*ads)
 
     return render(request,
                   'accounts/favourites.html',
@@ -39,7 +34,7 @@ def favourite_add(request, name, id):
         "Rental": Rental
     }
     # AppConfig.get_models(name)
-    ad = get_object_or_404(models[name], id=id)
+    ad = get_object_or_404(models[name.capitalize()], id=id)
     if ad:
         r = redis.Redis(connection_pool=settings.POOL)
 
@@ -82,15 +77,24 @@ def edit(request):
 
 @login_required
 def my_ads(request):
-    items = Item.objects.filter(author=request.user)
-    jobs = Job.objects.filter(author=request.user)
-    rents = Rental.objects.filter(author=request.user)
-    gifts = Gift.objects.filter(author=request.user)
-    adverts = chain(items,
-                    jobs,
-                    rents,
-                    gifts)
+    models = [Item, Job, Rental, Gift]
+    adverts = [m.objects.filter(author_id=request.user.id) for m in models]
+    ads = [i for i in adverts if len(i)]
+    names = [i.model.__name__ + "s" for i in ads]
+    all_adverts = dict(zip(names, ads))
 
     return render(request,
                   'accounts/my_ads.html',
-                  {'adverts': adverts})
+                  {'all_adverts': all_adverts})
+
+
+def user_ads(request, pk):
+    models = [Item, Job, Rental, Gift]
+    adverts = [m.objects.filter(author_id=pk) for m in models]
+    ads = [i for i in adverts if len(i)]
+    names = [i.model.__name__ + "s" for i in ads]
+    all_adverts = dict(zip(names, ads))
+
+    return render(request,
+                  'accounts/user_ads.html',
+                  {'all_adverts': all_adverts})

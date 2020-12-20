@@ -67,7 +67,7 @@
                                                 <span class="form_{{ advert.local }}"></span>
                                             </h2>
                                         </a>
-
+                                    {% if user.is_authenticated %}
                                         <div class="d-flex justify-content-end align-self-md-end">
 
                                             <a href="{% url 'favourite_add' 'Item' advert.id %}">
@@ -78,6 +78,7 @@
                                                 {% endif %}
                                             </a>
                                         </div>
+                                    {% endif %}
 
 
                                         <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}

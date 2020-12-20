@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import register, edit, my_ads, favourite_add, favourite_list
+from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list
 from django.contrib.auth import views as auth_views
 
 # app_name = 'accounts'
@@ -10,6 +10,7 @@ urlpatterns = [
     path('fav/<str:name>/<int:id>', favourite_add, name='favourite_add'),
     path('favorites/', favourite_list, name="favorites"),
     path('my_ads/', my_ads, name='my_ads'),
+    path('ads/<int:pk>', user_ads, name='user_ads'),
     # change password urls
     path('password_change/', auth_views.PasswordChangeView.as_view(),
          name='password_change'),

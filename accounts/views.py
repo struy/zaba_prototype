@@ -17,7 +17,7 @@ from .forms import UserRegistrationForm
 @login_required
 def favourite_list(request):
     models = [Item, Job, Rental, Gift]
-    ads = [m.objects.filter(author_id=request.user) for m in models]
+    ads = [m.objects.filter(favourites=request.user) for m in models]
     adverts = chain(*ads)
 
     return render(request,

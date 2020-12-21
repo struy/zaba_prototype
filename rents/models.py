@@ -21,6 +21,7 @@ class Rental(Advert, Location):
     bedrooms : studio, 1,2,3,4+
     bathrooms 1,2,3+
     """
+    # TODO Available
 
     property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE, verbose_name=_('property type'))
     image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)

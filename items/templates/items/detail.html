@@ -75,7 +75,7 @@
                         <div id="m"></div>
                     {% endif %}
                     <div class="count d-flex justify-content-start">
-                            <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
+                        <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
 
                 </div>
@@ -92,20 +92,23 @@
                         <span>User</span>
                     </div>
                     <div class="mb-4">
-                     <h3>
-                        {% if not advert.author.first_name  and  not advert.author.last_name%}
-                            Anonymous
-                        {% else %}
-                            {{ advert.author.first_name }} {{ advert.author.last_name }}
-                        {% endif %}
-                     </h3>
+                        <h3>
+                            {% if not advert.author.first_name  and  not advert.author.last_name %}
+                                Anonymous
+                            {% else %}
+                                {{ advert.author.first_name }} {{ advert.author.last_name }}
+                            {% endif %}
+                        </h3>
                     </div>
                     <div class="mb-4">
                         <a href="{% url 'user_ads'  advert.author.id %}">Other user’s ads</a>
                     </div>
                     <div class="mb-4">
+                        <a href="#">{% trans 'Other user’s ads' %}</a>
+                    </div>
+                    <div class="mb-4">
                         <div class="button">
-                            Show phone
+                            {% trans "Email" %}
                         </div>
                     </div>
                 </div>

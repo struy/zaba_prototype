@@ -45,12 +45,15 @@ def index(request):
 
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
-    total_views = r.incr('item:{}:views'.format(advert.id))
+
+    if not request.session[f'item:{advert.id}:views']:
+        request.session[f'item:{advert.id}:views'] = True
+        total_views = r.incr(f'item:{advert.id}:views')
+        r.zincrby('ranking:All', 1, f'Item:{advert_id}')
+
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():
         is_favourite = True
-    # increment image ranking by 1
-    r.zincrby('ranking:All', 1, f'Item:{advert_id}')
     context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
     return render(request, 'items/detail.html', context)
 

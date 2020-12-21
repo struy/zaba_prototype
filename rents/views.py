@@ -41,8 +41,10 @@ def index(request):
 
 def detail(request, advert_id):
     advert = get_object_or_404(Rental, pk=advert_id)
-    total_views = r.incr('rent:{}:views'.format(advert.id))
-    r.zincrby('ranking:All', 1, f'Rental:{advert_id}')
+    if not request.session[f'rent:{advert.id}:views']:
+        request.session[f'rent:{advert.id}:views'] = True
+        total_views = r.incr(f'rent:{advert.id}:views')
+        r.zincrby('ranking:All', 1, f'Rental:{advert_id}')
     return render(request, 'rents/detail.html', {'advert': advert, 'total_views': total_views})
 
 

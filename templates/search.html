@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="home">
+    <div class="global-search">
        <div class="container">
     {% include "snippets/search_bar.html" %}
        </div>
@@ -85,7 +85,8 @@
             </div>
         {% endfor %}
 
-      {% include "snippets/pagination.html" %}
+{% include "snippets/pagination.html" %}
+
     </div>
 {% endblock content %}
 

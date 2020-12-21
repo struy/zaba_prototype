@@ -62,7 +62,7 @@ def terms(request):
 
 class SearchView(ListView):
     template_name = 'search.html'
-    paginate_by = 20
+    # paginate_by = 20
     count = 0
 
     def get_context_data(self, *args, **kwargs):
@@ -71,6 +71,7 @@ class SearchView(ListView):
         context['query'] = self.request.GET.get('q')
         context['address'] = self.request.GET.get('address')
         context['has_filter'] = bool(self.request.GET.get('q') or self.request.GET.get('address'))
+        # context['is_paginated'] = True
         return context
 
     def get_queryset(self):

@@ -4,6 +4,7 @@ from zaba.settings import RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
 from django.utils.translation import get_language
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV3
+from django.utils.translation import gettext_lazy as _
 
 
 class LoginForm(forms.Form):
@@ -43,3 +44,8 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
+
+
+class ContactUserForm(forms.Form):
+    from_email = forms.EmailField(required=True, label=_('From  email'))
+    message = forms.CharField(widget=forms.Textarea, required=True, label=_('Message'))

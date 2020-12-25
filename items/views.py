@@ -46,14 +46,17 @@ def index(request):
 def detail(request, advert_id):
     advert = get_object_or_404(Item, pk=advert_id)
 
-    if not request.session[f'item:{advert.id}:views']:
+    if not request.session.get(f'item:{advert.id}:views'):
         request.session[f'item:{advert.id}:views'] = True
         total_views = r.incr(f'item:{advert.id}:views')
         r.zincrby('ranking:All', 1, f'Item:{advert_id}')
+    else:
+        total_views = r.get(f'item:{advert.id}:views').decode('utf-8')
 
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():
         is_favourite = True
+
     context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
     return render(request, 'items/detail.html', context)
 

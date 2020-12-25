@@ -1,17 +1,21 @@
-from itertools import chain
 import redis
+from itertools import chain
+from smtplib import SMTPDataError
 
+from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.mail import send_mail, BadHeaderError
 
 from gifts.models import Gift
 from items.models import Item
 from jobs.models import Job
 from rents.models import Rental
-from .forms import UserEditForm
+from .forms import UserEditForm, ContactUserForm
 from .forms import UserRegistrationForm
+from .tasks import sample_task
 
 
 @login_required
@@ -33,6 +37,7 @@ def favourite_add(request, name, id):
         "Gift": Gift,
         "Rental": Rental
     }
+    sample_task.delay("Our printed value!")
     # AppConfig.get_models(name)
     ad = get_object_or_404(models[name.capitalize()], id=id)
     if ad:
@@ -98,3 +103,36 @@ def user_ads(request, pk):
     return render(request,
                   'accounts/user_ads.html',
                   {'all_adverts': all_adverts})
+
+
+def connect(request, pk, name, a_id):
+    user = get_object_or_404(User, pk=pk)
+    models = {
+        "Item": Item,
+        "Job": Job,
+        "Gift": Gift,
+        "Rental": Rental
+    }
+    advert = get_object_or_404(models[name.capitalize()], id=a_id)
+    if request.method == 'GET':
+        form = ContactUserForm()
+    else:
+        form = ContactUserForm(request.POST)
+        if form.is_valid():
+            subject = advert.title
+            from_email = user.email
+            message = form.cleaned_data['message'] + ' ' + from_email
+            try:
+                superusers_emails = [x.email for x in User.objects.filter(is_superuser=True).all()]
+                send_mail(subject, message, from_email, superusers_emails)
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            except SMTPDataError:
+                return redirect('no_success')
+
+            return redirect('success')
+    return render(request, "sendemail/email.html", {'form': form})
+
+
+def success_view(request):
+    return render(request, "sendemail/success.html", {'success': True})

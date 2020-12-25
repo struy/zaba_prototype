@@ -34,7 +34,7 @@
                 {% endif %}
                 <div class="information">
                     <h2 class="d-flex justify-content-between">
-                        <div>{{ advert.title }} </div>
+                        <div> {{ advert.title }} </div>
                         <div>
                             <small class="text-muted">
                                 <a href="{% url 'favourite_add' 'Item' advert.id %}">
@@ -77,7 +77,6 @@
                     <div class="count d-flex justify-content-start">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
-
                 </div>
             </div>
             <div class="col-md-4 user-info">
@@ -101,15 +100,14 @@
                         </h3>
                     </div>
                     <div class="mb-4">
-                        <a href="{% url 'user_ads'  advert.author.id %}">Other user’s ads</a>
+                        <a href="{% url 'user_ads'  advert.author.id %}">{% trans 'Other user’s ads' %}</a>
                     </div>
                     <div class="mb-4">
-                        <a href="#">{% trans 'Other user’s ads' %}</a>
-                    </div>
-                    <div class="mb-4">
+                        <a href="{% url 'connect_user'  advert.author.id 'Item' advert.id %}">
                         <div class="button">
                             {% trans "Email" %}
                         </div>
+                        </a>
                     </div>
                 </div>
                 <div class="banner" style="background-image: url('{% static 'img/image-23.png' %}')"></div>

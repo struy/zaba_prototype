@@ -131,7 +131,7 @@ def connect(request, pk, name, a_id):
                 return redirect('no_success')
 
             return redirect('success')
-    return render(request, "sendemail/email.html", {'form': form})
+    return render(request, "accounts/connect.html", {'form': form})
 
 
 def success_view(request):

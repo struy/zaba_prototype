@@ -2,7 +2,6 @@ from django.test import RequestFactory
 from django.urls import reverse
 from django.contrib.auth.models import User, AnonymousUser
 from items.views import ItemCreate
-from mixer.backend.django import mixer
 import pytest
 
 from items.views import index

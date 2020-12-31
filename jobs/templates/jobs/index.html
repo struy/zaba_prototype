@@ -31,7 +31,7 @@
                         <div class="media d-lg-flex d-block w-100">
                             <div class="col-12 col-lg-2 text-center">
                                 {% thumbnail advert.image "128" as ad %}
-                                    <a href="{{ advert.image.url }}">
+                                   <a href="{% url 'jobs:detail' advert.id %}">
                                         <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
                                     </a>
                                 {% endthumbnail %} {% if not advert.image %}

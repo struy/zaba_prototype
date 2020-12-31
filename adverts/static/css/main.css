@@ -65,24 +65,15 @@ body {
 }
 
 #add_button {
-  position: fixed;
-  bottom: 30px;
-  right: 100px;
-  z-index: 999;
-}
-#add_button button.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  border-radius: 35px;
-  font-size: 24px;
-  line-height: 1.33;
-}
-#add_button:hover {
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
-  border-radius: 35px;
+  background-color: #749B27;
+  padding: 8px 7px;
+  min-width: 130px;
+  margin-left: 10px;
+  border-radius: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  box-shadow: 5px 5px 20px rgba(122, 163, 41, 0.35);
+  color: #FFFFFF;
 }
 
 header {
@@ -163,7 +154,7 @@ header .navbar-toggler {
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 0;
-  padding-left: 25px;
+  padding-left: 15px;
 }
 
 /* Icon 1 */
@@ -359,9 +350,6 @@ header .navbar-toggler {
 .from label svg {
   margin-right: 10px;
 }
-.from input[type=file] {
-  display: none;
-}
 .from .form-control {
   padding: 0.375rem 0.75rem;
 }
@@ -443,14 +431,14 @@ header .navbar-toggler {
   border-radius: 0 5px 0 0;
   font-weight: bold;
 }
-.list-ads-user .item .events a {
+.list-ads-user .item .events a:not(.text-dark) {
   width: 100%;
   color: white !important;
   border-radius: 4px;
   padding: 8px 15px;
   align-items: center;
 }
-.list-ads-user .item .events a:hover {
+.list-ads-user .item .events a:not(.text-dark):hover {
   text-decoration: none;
 }
 .list-ads-user .item .events > div {
@@ -482,20 +470,6 @@ header .navbar-toggler {
 #main img.zaba_img {
   margin-top: 1rem;
 }
-#main .advert .btn {
-  float: right;
-}
-#main .advert h2 {
-  color: #c04593;
-}
-#main .advert .advert h2 {
-  font-size: 23px;
-}
-#main .advert .advert h3 {
-  float: right;
-  font-size: 16px;
-  font-weight: bold;
-}
 #main .advert .advert .edit_buttons {
   display: inline-block;
 }
@@ -505,10 +479,11 @@ header .navbar-toggler {
 #main .advert .form_pl {
   padding: 0;
   border: none;
-  width: 24px;
-  height: 24px;
-  margin-left: 5px;
+  width: 30px;
+  height: 20px;
+  margin-left: 10px;
   display: block;
+  background-size: cover;
 }
 #main .home a {
   font-size: 3em;

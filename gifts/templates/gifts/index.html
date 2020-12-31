@@ -33,7 +33,7 @@
                     {% if adverts %} {% for advert in adverts %}
                         <div class="media">
                             {% thumbnail advert.image "128" as ad %}
-                                <a href="{{ advert.image.url }}">
+                                <a href="{% url 'gifts:detail' advert.id %}">
                                     <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
                                 </a>
                             {% endthumbnail %} {% if not advert.image %}

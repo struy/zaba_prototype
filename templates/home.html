@@ -163,11 +163,9 @@
                 <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
                     {% for advert in most_viewed %}
 
-                        <div class="item">
+                        <a href="{{advert.get_absolute_url}}" class="item">
                             {% thumbnail advert.image "128" as ad %}
-                                <a href="{{ advert.image.url }}">
                                     <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                                </a>
                             {% endthumbnail %}
                             {% if not advert.image %}
                                 <img
@@ -190,7 +188,7 @@
                             <div class="price font-weight-bold">
                                 {{ advert.price|prepend_dollars }}
                             </div>
-                        </div>
+                        </a>
 
 
                     {% endfor %}
@@ -220,14 +218,12 @@
 
 
     {% if new %}
-        <div class="container">
+        <div class="container mb-5">
             <div class="row list-ads flex-nowrap  owl-carousel owl-theme ml-0">
                 {% for advert in new %}
-                    <div class="item">
+                    <a href="{{advert.get_absolute_url}}" class="item">
                         {% thumbnail advert.image "128" as ad %}
-                            <a href="{{ advert.image.url }}">
                                 <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                            </a>
                         {% endthumbnail %}
                         {% if not advert.image %}
                             <img
@@ -250,7 +246,7 @@
                         <div class="price font-weight-bold">
                             {{ advert.price|prepend_dollars }}
                         </div>
-                    </div>
+                    </a>
 
                 {% endfor %}
 

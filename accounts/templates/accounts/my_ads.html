@@ -23,15 +23,9 @@
 
 {% block content %}
     <div class="grey-back">
-      <div class="container mt-4">
-        <div class="row">
-            <div class="col-4 d-none d-md-block">
-                <img src="{% static "img/zaba.jpg" %}" alt="" width="100%">
-            </div>
-            <div class="col-12 col-md-8">
-               {% include 'snippets/all_adverts_loop.html'  %}
-            </div>
-        </div>
+      <div class="container mt-4  list-ads-user">
+          {% include 'snippets/all_adverts_loop.html'  %}
+      </div>
     </div>
 
 {% endblock %}

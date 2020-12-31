@@ -426,10 +426,6 @@ header {
     }
   }
 
-  input[type=file] {
-    display: none;
-  }
-
   .form-control {
     padding: .375rem .75rem;
   }
@@ -523,7 +519,7 @@ header {
     }
 
     .events {
-      a {
+      a:not(.text-dark) {
         width: 100%;
         color: white !important;
         border-radius: 4px;
@@ -575,24 +571,6 @@ header {
   }
 
   .advert {
-    .btn {
-      float: right;
-    }
-
-    h2 {
-      color: $add-color;
-    }
-
-    .advert h2 {
-      font-size: 23px;
-    }
-
-    .advert h3 {
-      float: right;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
     .advert .edit_buttons {
       display: inline-block;
     }
@@ -601,12 +579,13 @@ header {
     .form_uk,
     .form_ru,
     .form_pl {
-      padding: 0;
+       padding: 0;
       border: none;
-      width: 24px;
-      height: 24px;
-      margin-left: 5px;
+      width: 30px;
+      height: 20px;
+      margin-left: 10px;
       display: block;
+      background-size: cover;
     }
   }
 

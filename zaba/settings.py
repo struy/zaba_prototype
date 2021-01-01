@@ -70,6 +70,7 @@ LOCAL_APPS = ['accounts.apps.AccountsConfig',
               'gifts.apps.GiftsConfig',
               'sendemail.apps.SendemailConfig',
               'shop.apps.ShopConfig',
+              'frontend.apps.FrontendConfig'
               ]
 
 INSTALLED_APPS = ['modeltranslation', ] + DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS

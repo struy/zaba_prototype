@@ -303,27 +303,6 @@
         crossorigin="anonymous"></script>
 <script src="{% static 'js/cookielaw.js' %}"></script>
 
-<script src="{% static 'js/libs/OwlCarous/owl.carousel.js' %}"></script>
-<script type="text/javascript">
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            },
-            1000: {
-                items: 4
-            }
-        }
-    })
-</script>
 
 {% if user.is_superuser %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>

@@ -60,6 +60,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     # 'django_select2',
                     'django_filters',
                     'django_cleanup.apps.CleanupConfig',
+                    'rest_framework'
                     ]
 
 LOCAL_APPS = ['accounts.apps.AccountsConfig',

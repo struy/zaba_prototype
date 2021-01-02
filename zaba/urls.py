@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('djga/', include('google_analytics.urls')),   # This line for Django versions >=2.0
+    path('djga/', include('google_analytics.urls')),  # This line for Django versions >=2.0
     path('select2/', include("django_select2.urls")),
 ]
 
@@ -27,14 +27,20 @@ urlpatterns += i18n_patterns(
     path('privacy-policy', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
     path('term-of-services', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
     path('checkout', include('shop.urls')),
-    path('terms', views.terms, name='terms')
+    path('terms', views.terms, name='terms'),
+    # API
+    path('', include('frontend.urls')),
+    path('', include('items.api.urls')),
 )
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+
     def trigger_error():
         return 1 / 0
+
 
     urlpatterns += [path('sentry-debug/', trigger_error)]
 

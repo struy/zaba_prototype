@@ -12,8 +12,6 @@
 
 {% block head %}
 
-    <link rel="stylesheet" href="{% static 'js/libs/OwlCarous/assets/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'js/libs/OwlCarous/assets/owl.theme.default.css' %}">
     <style>
         #main nav[aria-label="breadcrumb"] {
             display: none;
@@ -145,7 +143,7 @@
     </div>
     <div class="wrap popular-ads grey-back">
         <div class="top-svg">
-           {%  include 'svg/top.html' %}
+            {% include 'svg/top.html' %}
         </div>
 
         <div class="head-block">
@@ -158,31 +156,46 @@
     </div>
 
     {% if most_viewed %}
-        <div class="content mb-2">
-            <div class="container">
-                <div class="row list-ads flex-nowrap owl-carousel owl-theme ml-0">
-                    {% for advert in most_viewed %}
+        <div class="container my-4">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-                        <a href="{{advert.get_absolute_url}}" class="item">
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                    <li data-target="#multi-item-example" data-slide-to="1"></li>
+                    <li data-target="#multi-item-example" data-slide-to="2"></li>
+                </ol>
+                <!--/.Indicators-->
+
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    {% for advert in most_viewed %}
+                        <!--First slide-->
+                        {% if forloop.counter0|divisibleby:3 %}
+                            <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                            <div class="row">
+                        {% endif %}
+                    <div class="col-md-4 {% if forloop.counter0|divisibleby:3 == False %} clearfix d-none d-md-block {% endif %}">
+                        <a href="{{ advert.get_absolute_url }}"
+                           class="card mb-2">
                             {% thumbnail advert.image "128" as ad %}
-                                    <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                <img class="card-img-top" src="{{ ad.url }}" alt="no image"/>
                             {% endthumbnail %}
                             {% if not advert.image %}
-                                <img
-                                        class="mr-3"
-                                        src="{% static 'none/no-img.jpg' %}"
-                                        alt="no image"
-                                        width="128"
+                                <img class="card-img-top"
+                                     src="{% static 'none/no-img.jpg' %}"
+                                     alt="no image"
+                                     width="128"
                                 />
                             {% endif %}
-
 
                             <div class="name">
                                 {{ advert.title }}
                             </div>
                             <div class="subtype">
                                 <small class="text-muted">
-                                    <i class="fas fa-map-marker-alt"> </i> {{ advert.city }}
+                                    <i class="fas fa-map-marker-alt"> </i>
+                                    {{ advert.city }}
                                 </small>
                             </div>
                             <div class="price font-weight-bold">
@@ -190,13 +203,19 @@
                             </div>
                         </a>
 
-
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                        </div>
+                        </div>
+                    {% endif %}
+                        <!--/.First slide-->
                     {% endfor %}
-
                 </div>
+                <!--/.Slides-->
             </div>
-
-        </div>>
+        </div>
+        </div>
+        </div>
     {% endif %}
 
     <section id="google_ads">
@@ -216,42 +235,66 @@
         </h2>
     </div>
 
-
     {% if new %}
-        <div class="container mb-5">
-            <div class="row list-ads flex-nowrap  owl-carousel owl-theme ml-0">
-                {% for advert in new %}
-                    <a href="{{advert.get_absolute_url}}" class="item">
-                        {% thumbnail advert.image "128" as ad %}
-                                <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
-                        {% endthumbnail %}
-                        {% if not advert.image %}
-                            <img
-                                    class="mr-3"
-                                    src="{% static 'none/no-img.jpg' %}"
-                                    alt="no image"
-                                    width="128"
-                            />
+        <div class="container my-4">
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                <!--Indicators-->
+                <ol class="carousel-indicators">
+                    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                    <li data-target="#multi-item-example" data-slide-to="1"></li>
+                    <li data-target="#multi-item-example" data-slide-to="2"></li>
+                </ol>
+                <!--/.Indicators-->
+
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    {% for advert in new %}
+                        <!--First slide-->
+                        {% if forloop.counter0|divisibleby:3 %}
+                            <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                            <div class="row">
                         {% endif %}
+                    <div class="col-md-4 {% if forloop.counter0|divisibleby:3 == False %} clearfix d-none d-md-block {% endif %}">
+                        <a href="{{ advert.get_absolute_url }}"
+                           class="card mb-2">
+                            {% thumbnail advert.image "128" as ad %}
+                                <img class="card-img-top" src="{{ ad.url }}" alt="no image"/>
+                            {% endthumbnail %}
+                            {% if not advert.image %}
+                                <img class="card-img-top"
+                                     src="{% static 'none/no-img.jpg' %}"
+                                     alt="no image"
+                                     width="128"
+                                />
+                            {% endif %}
 
-                        <div class="name">
-                            {{ advert.title }}
+                            <div class="name">
+                                {{ advert.title }}
+                            </div>
+                            <div class="subtype">
+                                <small class="text-muted">
+                                    <i class="fas fa-map-marker-alt"> </i>
+                                    {{ advert.city }}
+                                </small>
+                            </div>
+                            <div class="price font-weight-bold">
+                                {{ advert.price|prepend_dollars }}
+                            </div>
+                        </a>
+
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
                         </div>
-                        <div class="subtype">
-                            <small class="text-muted">
-                            <i class="fas fa-map-marker-alt"> </i>
-                                {{ advert.city }}
-                            </small>
                         </div>
-                        <div class="price font-weight-bold">
-                            {{ advert.price|prepend_dollars }}
-                        </div>
-                    </a>
-
-                {% endfor %}
-
-
+                    {% endif %}
+                        <!--/.First slide-->
+                    {% endfor %}
+                </div>
+                <!--/.Slides-->
             </div>
+        </div>
+        </div>
         </div>
     {% endif %}
 

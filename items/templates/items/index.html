@@ -31,17 +31,24 @@
                         <div class="media d-lg-flex d-block w-100">
                             <div class="col-12 col-lg-2 text-center">
                                 {% thumbnail advert.image "128" as ad %}
-                                     <a href="{% url 'items:detail' advert.id %}">
-                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                    <a href="{% url 'items:detail' advert.id %}">
+                                        <img class="mr-3 image-advert" src="{{ ad.url }}" alt="no image"/>
                                     </a>
                                 {% endthumbnail %} {% if not advert.image %}
                                 <img
-                                        class="mr-3"
+                                        class="mr-3  image-advert"
                                         src="{% static 'none/no-img.jpg' %}"
                                         alt="no image"
                                         width="128"
                                 />
                             {% endif %}
+                                {% if advert.expires_type %}
+                                    <div class="corner-item">
+                                        <b>
+                                            {{ advert.expires_type.text }}
+                                        </b>
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="media-body col-12 col-lg-10">
                                 <div class="advert">
@@ -84,7 +91,8 @@
                                             {% if user.is_authenticated %}
                                                 <div class="d-flex justify-content-end align-self-md-end">
 
-                                                    <a class="text-dark" href="{% url 'favourite_add' 'Item' advert.id %}">
+                                                    <a class="text-dark"
+                                                       href="{% url 'favourite_add' 'Item' advert.id %}">
                                                         {% if advert.id in  favourites %}
                                                             <i class="fas fa-heart"></i>
                                                         {% else %}

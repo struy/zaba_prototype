@@ -354,6 +354,18 @@
 }
 /*Small devices (landscape phones, 576px and up)*/
 /*Medium devices (tablets, 768px and up)*/
+@media (max-width: 991.98px) {
+  .image-advert {
+    width: 100%;
+  }
+}
+/*Medium devices (tablets, 768px and up)*/
+/*Large devices (desktops, 992px and up)*/
+@media (max-width: 1199.98px) {
+  .corner-item {
+    left: 15px;
+  }
+}
 /*Large devices (desktops, 992px and up)*/
 /*Extra large devices (large desktops, 1200px and up)*/
 

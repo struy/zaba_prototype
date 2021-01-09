@@ -18,9 +18,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="global-search">
-        <div class="container">
-            {% include "snippets/search_bar.html" %}
+    <div class="global-search home">
+        <div class="grey-back">
+            <div class="container">
+                {% include "snippets/search_bar.html" %}
+            </div>
         </div>
         <div class="container">
             <div class="row title-row my-5">
@@ -32,7 +34,7 @@
                                 {% if query %} for {{ query }} {% endif %} {% if address %} in {{ address }} {% endif %}
                             </b>
                         </h3>
-                        <h5>{%  trans "try searching in other languages also" %}</h5>
+                        <h5>{% trans "try searching in other languages also" %}</h5>
                     {% endif %}
                 </div>
             </div>

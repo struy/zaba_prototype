@@ -530,6 +530,7 @@ header {
 
       .delete {
         background-color: #DA0B50;
+        margin-right: .5rem;
       }
     }
   }
@@ -912,6 +913,25 @@ form.new-edit {
   min-height: 100%;
 }
 
+.item-slider {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  border: none !important;
+}
+.carousel-indicators{
+  bottom: -40px;
+}
+.corner-item{
+      position: absolute;
+    bottom: 0;
+    z-index: 10;
+    color: white;
+    background-color: #46a745;
+    left: 23px;
+    padding: 3px 15px;
+    text-transform: uppercase;
+    border-radius: 0 5px 0 0;
+}
 #CookielawBanner {
   background-color: #091b33;
   position: fixed;

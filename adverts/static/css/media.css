@@ -113,7 +113,7 @@
     background-color: white;
     width: 100%;
     bottom: 54px;
-    z-index: 9;
+    z-index: 100;
     left: 0;
     padding-left: 15px;
     box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
@@ -336,6 +336,10 @@
 
   .filters .clear-filter {
     width: 100%;
+  }
+
+  #main h2.log_with_account {
+    font-size: 22px;
   }
 }
 /***************************************************************************************/

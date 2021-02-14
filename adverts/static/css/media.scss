@@ -114,7 +114,7 @@
     background-color: white;
     width: 100%;
     bottom: 54px;
-    z-index: 9;
+    z-index: 100;
     left: 0;
     padding-left: 15px;
     box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
@@ -133,6 +133,7 @@
   #CookielawBanner {
     margin-top: -280px;
     font-size: 14px;
+    bottom: 54px;
   }
   .language-block .item-lang svg {
     right: -5px;
@@ -145,6 +146,7 @@
     width: 3em;
     height: 2em;
   }
+
 }
 
 @media (max-width: 390px) {
@@ -317,6 +319,11 @@
   }
   .filters .clear-filter{
     width: 100%;
+  }
+
+
+  #main h2.log_with_account{
+    font-size: 22px;
   }
 
 }

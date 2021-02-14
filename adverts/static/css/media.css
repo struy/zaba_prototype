@@ -337,6 +337,10 @@
   .filters .clear-filter {
     width: 100%;
   }
+
+  #main h2.log_with_account {
+    font-size: 22px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {

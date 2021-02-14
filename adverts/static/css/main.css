@@ -30,7 +30,7 @@
 html,
 body {
   height: 100%;
-  font-family: Montserrat-Regular;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -117,16 +117,16 @@ header button[type=submit] {
   margin-left: 50px;
 }
 header button[form=form_uk] {
-  background: url("/static/img/flags/Ukraine.png");
+  background: url("/static/img/flags/Ukraine.svg");
 }
 header button[form=form_ru] {
-  background: url("/static/img/flags/Russia.png");
+  background: url("/static/img/flags/Russia.webp");
 }
 header button[form=form_en] {
-  background: url("/static/img/flags/United-States.png");
+  background: url("/static/img/flags/United-States2.png");
 }
 header button[form=form_pl] {
-  background: url("/static/img/flags/Poland.png");
+  background: url("/static/img/flags/Poland.svg");
 }
 header button.navbar-toggler:focus {
   outline: none;
@@ -140,6 +140,9 @@ header .navbar-dark .navbar-nav .nav-link {
 }
 header .navbar-expand-lg .navbar-collapse {
   justify-content: flex-end;
+}
+header .burgerPosition ul {
+  z-index: 2;
 }
 header .navbar-dark .navbar-nav .active > .nav-link {
   color: #749B27;
@@ -274,6 +277,10 @@ header .navbar-toggler {
   top: 11px;
   width: 0%;
   left: 50%;
+}
+
+#m {
+  z-index: 1;
 }
 
 /* Icon 4 */
@@ -450,6 +457,10 @@ header .navbar-toggler {
 .list-ads-user .item .events .delete {
   background-color: #DA0B50;
   margin-right: 0.5rem;
+}
+
+#fzLogInAccount {
+  background: red;
 }
 
 #main {
@@ -796,7 +807,6 @@ form.new-edit .gj-datepicker-bootstrap {
   bottom: 0;
   z-index: 10;
   color: white;
-  background-color: #46a745;
   left: 23px;
   padding: 3px 15px;
   text-transform: uppercase;

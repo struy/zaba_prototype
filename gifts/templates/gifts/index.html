@@ -60,10 +60,7 @@
 
                                         <a href="{% url 'gifts:detail' advert.id %}">
                                             <h2>
-                                                {{ advert.title }} {% if advert.expires_type %}
-                                                <span class="{{ advert.expires_type.css }}">
-                                                        {{ advert.expires_type.text }}</span>
-                                            {% endif %}
+                                                {{ advert.title }}
                                                 <span class="form_{{ advert.local }}"></span>
                                             </h2>
                                         </a>

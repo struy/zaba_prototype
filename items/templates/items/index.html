@@ -43,7 +43,7 @@
                                 />
                             {% endif %}
                                 {% if advert.expires_type %}
-                                    <div class="corner-item bg-success">
+                                    <div class="corner-item {{ advert.expires_type.css }}">
                                         <b>
                                             {{ advert.expires_type.text }}
                                         </b>
@@ -59,14 +59,7 @@
                                                     {{ advert.title }}
                                                 </h3>
                                             </a>
-                                            {% if advert.expires_type %}
-                                                <div class="text-success text-uppercase d-flex">
-                                                    <b>
-                                                        {{ advert.expires_type.text }}
-                                                    </b>
-                                                    <span class="form_{{ advert.local }}"></span>
-                                                </div>
-                                            {% endif %}
+                                            <span class="form_{{ advert.local }}"></span>
                                             <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
                                                 {{ advert.city }}
                                                 <i>{{ advert.modified|naturaltime }} </i>

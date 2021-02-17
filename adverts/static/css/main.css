@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "HoppyRibbitday";
-  src: url("/static/fonts/HoppyRibbitday.ttf") format("truetype"), local("HoppyRibbitday");
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("/static/fonts/Montserrat-Regular.ttf") format("truetype"), local("Montserrat-Regular");
-}
 * {
   margin: 0;
   padding: 0;
@@ -31,21 +23,21 @@ body {
 }
 
 .form_uk {
-  background: url("/static/img/flags/Ukraine.png");
+  background: url("/static/img/flags/flag-uk.svg");
 }
 
 .form_ru {
-  background: url("/static/img/flags/Russia.png");
+  background: url("/static/img/flags/flag-ru.svg");
   -webkit-background-size: cover;
   background-size: cover;
 }
 
 .form_en {
-  background: url("/static/img/flags/United-States.png");
+  background: url("/static/img/flags/flag-us.svg");
 }
 
 .form_pl {
-  background: url("/static/img/flags/Poland.png");
+  background: url("/static/img/flags/flag-pl.svg");
 }
 
 #add_button {
@@ -101,16 +93,16 @@ header button[type=submit] {
   margin-left: 50px;
 }
 header button[form=form_uk] {
-  background: url("/static/img/flags/flag-ukraine.svg");
+  background: url("/static/img/flags/flag-uk.svg");
 }
 header button[form=form_ru] {
-  background: url("/static/img/flags/flag-russia.svg");
+  background: url("/static/img/flags/flag-ru.svg");
 }
 header button[form=form_en] {
-  background: url("/static/img/flags/flag-usa.svg");
+  background: url("/static/img/flags/flag-us.svg");
 }
 header button[form=form_pl] {
-  background: url("/static/img/flags/flag-poland.svg");
+  background: url("/static/img/flags/flag-pl.svg");
 }
 header button.navbar-toggler:focus {
   outline: none;

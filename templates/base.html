@@ -205,7 +205,7 @@
     </section>
 
     <footer>
-        <div id="mobile-data" class="d-flex d-lg-none container">
+        <div id="mobile-data" class="d-flex d-lg-none pr-4 pl-4">
             <div class="item">
                 <a href="/" class="nav-item">
                     {% include 'svg/icon-Home.svg' %}
@@ -278,7 +278,15 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 <script src="{% static 'js/cookielaw.js' %}"></script>
+<script type="text/javascript">
+      $('.navbar-toggler[data-target="#navbarSupportedContent"]').off('click').click(function (event) {
+        $('#navbarSupportedSubContent').removeClass('show');
+    });
 
+    $('.nav-item[data-target="#navbarSupportedSubContent"]').off('click').click(function (event) {
+        $('#navbarSupportedContent').removeClass('show');
+    });
+</script>
 
 {% if user.is_superuser %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>

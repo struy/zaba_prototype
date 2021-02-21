@@ -139,7 +139,7 @@ header .navbar-toggler {
 /* Icon 1 */
 .animated-icon1, .animated-icon2, .animated-icon3 {
   width: 30px;
-  height: 20px;
+  height: 25px;
   position: relative;
   margin: 0px;
   -webkit-transform: rotate(0deg);

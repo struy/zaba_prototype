@@ -176,7 +176,8 @@
                                 <div class="row">
                             {% endif %}
                         <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
-                            <div class="card mb-2 p-3 item-slider h-100">
+
+                            <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
                                 {% thumbnail advert.image "128" as ad %}
                                     <img class="card-img-top" src="{{ ad.url }}" alt="no image"/>
                                 {% endthumbnail %}
@@ -189,7 +190,7 @@
                                 {% endif %}
 
                                 <h5 class="name pt-3 pb-2">
-                                    <a href="{{ advert.get_absolute_url }}">{{ advert.title }}</a>
+                                    <div>{{ advert.title }}</div>
                                 </h5>
                                 <div class="subtype">
                                     <small class="text-muted">
@@ -197,10 +198,10 @@
                                         {{ advert.city }}
                                     </small>
                                 </div>
-                                <div class="price font-weight-bold">
-                                    <b>{{ advert.price|prepend_dollars }}</b>
+                                <div class="price ">
+                                    <span>{{ advert.price|prepend_dollars }}</span>
                                 </div>
-                            </div>
+                            </a>
 
                         </div>
                         {% if forloop.counter|divisibleby:4 %}
@@ -256,7 +257,8 @@
                             <div class="row">
                         {% endif %}
                     <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
-                        <div class="card mb-2 p-3 item-slider h-100">
+
+                        <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
                             {% thumbnail advert.image "128" as ad %}
                                 <img class="card-img-top rounded" src="{{ ad.url }}"
                                      alt="no image"/>
@@ -270,7 +272,7 @@
                             {% endif %}
 
                             <h5 class="name pt-3 pb-2">
-                                <a href="{{ advert.get_absolute_url }}">{{ advert.title }}</a>
+                                <div>{{ advert.title }}</div>
                             </h5>
                             <div class="subtype">
                                 <small class="text-muted">
@@ -278,10 +280,10 @@
                                     {{ advert.city }}
                                 </small>
                             </div>
-                            <div class="price font-weight-bold">
-                                <b>{{ advert.price|prepend_dollars }}</b>
+                            <div class="price">
+                                <span>{{ advert.price|prepend_dollars }}</span>
                             </div>
-                        </div>
+                        </a>
 
                     </div>
                     {% if forloop.counter|divisibleby:4 %}

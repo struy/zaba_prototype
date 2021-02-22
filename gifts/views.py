@@ -36,7 +36,7 @@ def index(request):
 
 def detail(request, advert_id):
     advert = get_object_or_404(Gift, pk=advert_id)
-    if not request.session[f'gift:{advert.id}:views']:
+    if not request.session.get(f'gift:{advert.id}:views'):
         request.session[f'gift:{advert.id}:views'] = True
         total_views = r.incr(f'gift:{advert.id}:views')
         r.zincrby('ranking:All', 1, f'Gift:{advert_id}')

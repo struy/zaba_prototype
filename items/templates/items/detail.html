@@ -7,10 +7,6 @@
     {% trans "Item" %}
 {% endblock %}
 
-
-
-
-
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item "><a href="javascript: history.go(-1)">{% trans "Items" %}</a></li>
@@ -32,8 +28,8 @@
                 {% endif %}
                 <div class="information">
                     <h2 class="d-flex justify-content-between">
-                        <div> {{ advert.title }} </div>
-                        <div>
+                        <span> {{ advert.title }} </span>
+                        <span>
                             <small class="text-muted">
                                 <a href="{% url 'favourite_add' 'Item' advert.id %}">
                                     <i class="
@@ -45,15 +41,18 @@
                                      fa-heart"></i>
                                 </a>
                             </small>
-                        </div>
+                        </span>
                     </h2>
+
                     <h1>{{ advert.price|prepend_dollars }}</h1>
+
                     {% if advert.description %}
+
+                        <span class="mb-2">
+                                <b>{% trans "Description:" %}</b>
+                            </span>
                         <p>
-                        <div class="mb-2">
-                            <b>{% trans "Description:" %}</b>
-                        </div>
-                        {{ advert.description }}
+                            {{ advert.description }}
                         </p>
                     {% endif %}
 
@@ -61,7 +60,7 @@
                     <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
                     {% if advert.point %}
                         <p>
-                           {% include 'svg/icon-Locate.svg' %}
+                            {% include 'svg/icon-Locate.svg' %}
                             <span>{% trans "Location:" %} </span>
                         </p>
                         <div id="m"></div>
@@ -91,9 +90,9 @@
                     </div>
                     <div class="mb-4">
                         <a href="{% url 'connect_user'  advert.author.id 'Item' advert.id %}">
-                        <div class="button">
-                            {% trans "Email" %}
-                        </div>
+                            <div class="button">
+                                {% trans "Email" %}
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -101,90 +100,21 @@
             </div>
         </div>
     </div>
+
     <div class="wrap popular-ads grey-back mt-0">
         <section id="google_ads">
-            <center>
-                <div class="container">
-                    <img src="{% static 'img/image-20.png' %}" border="0"
+            <div class="container">
+                <div class="col-sm-6 mx-auto">
+                    <img src="{% static 'img/image-20.png' %}"
                          width="724"
                          alt="" class="img_ad">
                 </div>
-            </center>
+            </div>
         </section>
-{#        <div class="head-block">#}
-{#            <h2 align="center">#}
-{#                <span class="text-black">Other user’s</span>#}
-{#                <span class="text-green">Ads</span>#}
-{#            </h2>#}
-{#        </div>#}
-{#        <div class="content mb-2">#}
-{#            <div class="container">#}
-{#                <div class="row list-ads flex-nowrap  owl-carousel owl-theme ml-0">#}
-{#                    <div class="item">#}
-{#                        <div class="image" style="background: url('{% static "img/image-12.png" %}')"></div>#}
-{#                        <div class="name">#}
-{#                            Names longer than 2 lines should be truncated...#}
-{#                        </div>#}
-{#                        <div class="subtype">#}
-{#                            <small class="text-muted"> City - Sep 14</small>#}
-{#                        </div>#}
-{#                        <div class="price font-weight-bold">#}
-{#                            $ 400.39#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="item">#}
-{#                        <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>#}
-{#                        <div class="name">#}
-{#                            Truncate HydraPak Stash 750ML Collapsible...#}
-{#                        </div>#}
-{#                        <div class="subtype">#}
-{#                            <small class="text-muted"> City - Sep 14</small>#}
-{#                        </div>#}
-{#                        <div class="price font-weight-bold">#}
-{#                            $ 399.45#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="item">#}
-{#                        <div class="image" style="background: url('{% static "img/image-15.png" %}')"></div>#}
-{#                        <div class="name">#}
-{#                            Names longer than 2 lines should be truncated...#}
-{#                        </div>#}
-{#                        <div class="subtype">#}
-{#                            <small class="text-muted"> City - Sep 14</small>#}
-{#                        </div>#}
-{#                        <div class="price font-weight-bold">#}
-{#                            $ 400.39#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="item">#}
-{#                        <div class="image" style="background: url('{% static "img/image-16.png" %}')"></div>#}
-{#                        <div class="name">#}
-{#                            HydraPak Stash 750ML Collapsible Lightweigh...#}
-{#                        </div>#}
-{#                        <div class="subtype">#}
-{#                            <small class="text-muted"> City - Sep 14</small>#}
-{#                        </div>#}
-{#                        <div class="price font-weight-bold">#}
-{#                            $ 399.45#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="item">#}
-{#                        <div class="image" style="background: url('{% static "img/image-13.png" %}')"></div>#}
-{#                        <div class="name">#}
-{#                            Truncate HydraPak Stash 750ML Collapsible...#}
-{#                        </div>#}
-{#                        <div class="subtype">#}
-{#                            <small class="text-muted"> City - Sep 14</small>#}
-{#                        </div>#}
-{#                        <div class="price font-weight-bold">#}
-{#                            $ 399.45#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-
     </div>
+
+
+    {#   TODO:  Other user’s  CAROUSEL #}
 
 {% endblock %}
 

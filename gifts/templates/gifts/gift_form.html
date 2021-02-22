@@ -1,28 +1,33 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load crispy_forms_tags %}
-{% block title %} {% trans "Gift" %} {% endblock %}
 
-
-{% block breadcrumbs %}
-    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'gifts:index' %}">{% trans "Gifts" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create or Edit</li>
+{% block title %}
+    {% trans "Gift" %}
 {% endblock %}
 
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item">
+        <a href="/">{% trans "Home" %}</a>
+    </li>
+    <li class="breadcrumb-item ">
+        <a href="{% url 'gifts:index' %}">{% trans "Gifts" %}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+        Create or Edit
+    </li>
+{% endblock %}
 
 
 {% block head %}
     {{ form.media }}
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
-
     <style>
         .create-advert-button {
             display: none !important;
         }
     </style>
-
 {% endblock %}
 
 
@@ -39,7 +44,6 @@
             </div>
         </div>
     </div>
-
 
 {% endblock %}
 
@@ -63,7 +67,6 @@
 
     {% include "snippets/js/city-latin-only-js.html" %}
     {% include "snippets/js/address-input-js.html" %}
-
 
 
 {% endblock %}

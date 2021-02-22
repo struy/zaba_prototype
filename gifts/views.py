@@ -52,7 +52,6 @@ def detail(request, advert_id):
     return render(request, 'gifts/detail.html', context)
 
 
-
 class GiftList(ListView):
     queryset = Gift.objects.filter(point__isnull=False)
 

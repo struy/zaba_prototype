@@ -2,12 +2,20 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-{% block title %} {% trans "Rent" %} {% endblock %}
+{% block title %}
+    {% trans "Rent" %}
+{% endblock %}
 
 {% block breadcrumbs %}
-    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'rents:index' %}">{% trans "Rents" %}</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create or Edit</li>
+    <li class="breadcrumb-item">
+        <a href="/">{% trans "Home" %}</a>
+    </li>
+    <li class="breadcrumb-item ">
+        <a href="{% url 'rents:index' %}">{% trans "Rents" %}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+        Create or Edit
+    </li>
 {% endblock %}
 
 

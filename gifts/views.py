@@ -36,12 +36,21 @@ def index(request):
 
 def detail(request, advert_id):
     advert = get_object_or_404(Gift, pk=advert_id)
+
     if not request.session.get(f'gift:{advert.id}:views'):
         request.session[f'gift:{advert.id}:views'] = True
         total_views = r.incr(f'gift:{advert.id}:views')
         r.zincrby('ranking:All', 1, f'Gift:{advert_id}')
-    return render(request, 'gifts/detail.html', {'advert': advert,
-                                                 'total_views': total_views})
+    else:
+        total_views = r.get(f'gift:{advert.id}:views').decode('utf-8')
+
+    is_favourite = False
+    if advert.favourites.filter(id=request.user.id).exists():
+        is_favourite = True
+
+    context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
+    return render(request, 'gifts/detail.html', context)
+
 
 
 class GiftList(ListView):

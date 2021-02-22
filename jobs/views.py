@@ -39,11 +39,20 @@ def index(request):
 
 def detail(request, advert_id):
     advert = get_object_or_404(Job, pk=advert_id)
+
     if not request.session.get(f'job:{advert.id}:views'):
         request.session[f'job:{advert.id}:views'] = True
         total_views = r.incr(f'job:{advert.id}:views')
         r.zincrby('ranking:All', 1, f'Job:{advert_id}')
-    return render(request, 'jobs/detail.html', {'advert': advert, 'total_views': total_views})
+    else:
+        total_views = r.get(f'job:{advert.id}:views').decode('utf-8')
+
+    is_favourite = False
+    if advert.favourites.filter(id=request.user.id).exists():
+        is_favourite = True
+
+    context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
+    return render(request, 'jobs/detail.html', context)
 
 
 class JobList(ListView):

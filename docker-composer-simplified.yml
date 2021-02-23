@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   web:
-    build:
+    build: .
     command: python3 manage.py runserver --settings=zaba.settings_docker_simplified 0.0.0.0:8000
     container_name: zaba_web_simplified
     volumes:

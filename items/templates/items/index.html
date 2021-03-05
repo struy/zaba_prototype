@@ -11,10 +11,6 @@
     {% trans "Items" %}
 {% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-{% endblock %}]
-
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
@@ -32,7 +28,7 @@
                             <div class="col-12 col-lg-2 text-center">
                                 {% thumbnail advert.image "128" as ad %}
                                     <a href="{% url 'items:detail' advert.id %}">
-                                        <img class="mr-3 image-advert" src="{{ ad.url }}" alt="no image"/>
+                                        <img class="mr-3 image-advert image-size-page" src="{{ ad.url }}" alt="no image"/>
                                     </a>
                                 {% endthumbnail %} {% if not advert.image %}
                                 <img
@@ -70,7 +66,7 @@
                                                 <h3>{{ advert.price|prepend_dollars }}</h3>
                                             </div>
                                             {% if advert.author.id == request.user.id %}
-                                                <div class="d-flex">
+                                                <div class="d-flex" id="white-text">
                                                     <a href="{% url 'items:delete' advert.id %}"
                                                        class="btn btn-sm delete">
                                                         {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
@@ -87,9 +83,9 @@
                                                     <a class="text-dark"
                                                        href="{% url 'favourite_add' 'Item' advert.id %}">
                                                         {% if advert.id in  favourites %}
-                                                            <i class="fas fa-heart"></i>
+                                                            <i class="fas fa-heart icon-heart"></i>
                                                         {% else %}
-                                                            <i class="far fa-heart"></i>
+                                                            <i class="far fa-heart icon-heart"></i>
                                                         {% endif %}
                                                     </a>
 
@@ -109,8 +105,6 @@
                 {% endif %}
             </div>
         </div>
-    </div>
-    </div>
     </div>
 
 {% endblock %}

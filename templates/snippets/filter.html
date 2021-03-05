@@ -29,12 +29,14 @@
                         />
                     </div>
                     {{ filters.form | crispy }}
-                    <button class="btn" type="submit">
+                    <div class="d-flex btn-adaptive">
+                    <button class="btn mr-4" type="submit">
                         {% trans "filter search" %}
                     </button>
                     {% if has_filter %}
                         <a class="clear-filter btn bg-white mb-4 mb-md-0" href="{% url package_list %}">{% trans ' Clear all filters' %}</a>
                     {% endif %}
+                </div>
                 </form>
             </div>
         </div>

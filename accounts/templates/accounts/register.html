@@ -22,7 +22,7 @@
         <div class="head-block">
             <h2>
                 {% include 'svg/icon-SignUp.svg' %}
-                <span class="ml-4">{% trans "Create an account" %}</span>
+                <span class="ml-4 font-weight-light">{% trans "Create an account" %}</span>
             </h2>
         </div>
         <div class="row from">
@@ -35,7 +35,7 @@
                     {% csrf_token %}
                     <div class="row register">
                         <div class="col-6">
-                            <input type="submit" class="btn btn-success submit" value={% trans "Create" %}>
+                            <input type="submit" class="btn btn-success submit mb-5" value={% trans "Create" %}>
                         </div>
                         <div class="col-6">
                             <a class="btn btn-gray" href="{% url "login" %}">{% trans "Login" %}</a>
@@ -43,8 +43,8 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-6 order-1 order-md-2 with-login pt-4">
-                <h2>Use account</h2>
+            <div class="col-md-6 order-1 order-md-2 with-login pt-4 mb-5 bt-2">
+                <h2 class="font-weight-light">Use account</h2>
                 <a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-sm google d-flex align-center">
                     <div class="icon">
                         {% include 'svg/Google_Logo.svg' %}

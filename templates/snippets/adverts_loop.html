@@ -12,7 +12,7 @@
                     <div class="col-12 col-lg-2 text-center">
                         {% thumbnail advert.image "128" as ad %}
                             <a href="{{ advert.get_absolute_url }}">
-                                <img class="mr-3 rounded" src="{{ ad.url }}" alt="no image"/>
+                                <img class="mr-3 rounded image-size-page" src="{{ ad.url }}" alt="no image"/>
                             </a>
                         {% endthumbnail %} {% if not advert.image %}
                         <img
@@ -22,6 +22,13 @@
                                 width="128"
                         />
                     {% endif %}
+                    {% if advert.expires_type %}
+                                    <div class="corner-item {{ advert.expires_type.css }}">
+                                        <b>
+                                            {{ advert.expires_type.text }}
+                                        </b>
+                                    </div>
+                                {% endif %}
                     </div>
                     <div class="media-body col-12 col-lg-10">
                         <div class="advert">
@@ -32,15 +39,7 @@
                                             {{ advert.title }}
                                         </h3>
                                     </a>
-                                    {% if advert.expires_type %}
-                                        <div class="text-success text-uppercase d-flex">
-                                            <b>
-                                                {{ advert.expires_type.text }}
-                                            </b>
-                                            <span class="form_{{ advert.local }}"></span>
-                                        </div>
-                                    {% endif %}
-
+                                    <span class="form_{{ advert.local }}"></span>
                                     <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
                                         {{ advert.city }}
                                         <i>{{ advert.modified|naturaltime }} </i>
@@ -51,7 +50,7 @@
                                         <h3>{{ advert.price|prepend_dollars }}</h3>
                                     </div>
                                     {% if advert.author.id == request.user.id %}
-                                        <div class="d-flex">
+                                        <div class="d-flex" id="white-text" >
                                             <a href="{% url name|lower|add:':delete' advert.id %}"
                                                class="btn btn-sm delete">
                                                 {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
@@ -62,14 +61,13 @@
                                             </a>
                                         </div>
                                     {% endif %}
-
                                 {% if user.is_authenticated and advert.author.id != request.user.id %}
                                         <div class="d-flex justify-content-end align-self-md-end">
-                                            <a class="text-dark" href="{% url 'favourite_add' name advert.id %}">
+                                            <a class="text-dark" href="{% url 'favourite_add' '' advert.id %}">
                                                 {% if advert.id in  favourites %}
-                                                    <i class="fas fa-heart"></i>
+                                                    <i class="fas fa-heart icon-heart"></i>
                                                 {% else %}
-                                                    <i class="far fa-heart"></i>
+                                                    <i class="far fa-heart icon-heart"></i>
                                                 {% endif %}
                                             </a>
                                         </div>
@@ -88,6 +86,4 @@
 
     {% endif %}
 </div>
-
-
 

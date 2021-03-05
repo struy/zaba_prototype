@@ -11,10 +11,6 @@
     {% trans "Favorites" %}
 {% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-{% endblock %}]
-
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Favorites" %}</li>
@@ -32,7 +28,7 @@
                                 <div class="col-12 col-lg-2 text-center">
                                     {% thumbnail advert.image "128" as ad %}
                                         <a href="{{ advert.image.url }}">
-                                            <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                            <img class="mr-3 image-size-page" src="{{ ad.url }}" alt="no image"/>
                                         </a>
                                     {% endthumbnail %} {% if not advert.image %}
                                     <img
@@ -41,6 +37,13 @@
                                             alt="no image"
                                             width="128"
                                     />
+                                {% endif %}
+                                 {% if advert.expires_type %}
+                                    <div class="corner-item {{ advert.expires_type.css }}">
+                                        <b>
+                                            {{ advert.expires_type.text }}
+                                        </b>
+                                    </div>
                                 {% endif %}
                                 </div>
                                 <div class="media-body col-12 col-lg-10">
@@ -52,14 +55,7 @@
                                                         {{ advert.title }}
                                                     </h3>
                                                 </a>
-                                                {% if advert.expires_type %}
-                                                    <div class="text-success text-uppercase d-flex">
-                                                        <b>
-                                                            {{ advert.expires_type.text }}
-                                                        </b>
-                                                        <span class="form_{{ advert.local }}"></span>
-                                                    </div>
-                                                {% endif %}
+                                                <span class="form_{{ advert.local }}"></span>
                                                 <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
                                                     {{ advert.city }}
                                                     <i>{{ advert.modified|naturaltime }} </i>
@@ -70,17 +66,19 @@
                                                     <h3>{{ advert.price|prepend_dollars }}</h3>
                                                 </div>
                                                 {% if advert.author.id == request.user.id %}
-                                                    <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm">
+                                                    <div class="d-flex" id="white-text">
+                                                    <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm delete">
                                                         {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
                                                     </a>
-                                                    <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm">
+                                                    <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm edit">
                                                         {% trans "Edit" %} <i class="fas fa-edit"></i>
                                                     </a>
+                                                    </div>
                                                 {% endif %}
                                                 <div class="d-flex justify-content-end align-self-md-end">
 
                                                     <a class="text-dark" href="{% url 'favourite_add' 'Item' advert.id %}">
-                                                        <i class="fas fa-heart"></i>
+                                                        <i class="fas fa-heart icon-heart"></i>
                                                     </a>
                                                 </div>
                                             </div>

@@ -68,13 +68,13 @@
   }
 
   header .bg-dark {
-    padding: 0 !important;
+    padding: 0;
   }
 
   .with-submenu .sub-menu {
     position: initial;
     box-shadow: unset;
-    display: block !important;
+    display: block;
     margin-left: -10px;
     font-size: 16px;
   }
@@ -94,11 +94,11 @@
     align-items: center;
   }
   #mobile-data .item a {
-    color: #262a5d !important;
+    color: #262a5d;
     font-size: 14px;
   }
   #mobile-data .item {
-    color: #262a5d !important;
+    color: #262a5d;
     font-size: 14px;
   }
   #mobile-data .item svg {
@@ -186,36 +186,37 @@
   }
 
   .navigate-user {
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
   .navigate-user a {
-    margin: 0 !important;
-    font-size: 18px !important;
-    padding: 10px 20px 20px !important;
+    margin: 0;
+    font-size: 18px;
+    padding: 10px 20px 20px;
   }
 
   .list-ads-user .item .image {
-    background-size: cover !important;
-    height: 220px !important;
+    background-size: cover;
+    height: 220px;
   }
 
   .list-ads-user .item h3 {
     margin-top: 10px;
+    font-size: 1.3em;
   }
 
   .list-ads-user .item .events {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .list-ads-user .item {
-    margin: 0 auto 10px !important;
+    margin: 0 auto 10px;
   }
 
   #btn_sm_md_ext {
     display: flex;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     justify-content: space-between;
     font-weight: bold;
     color: #091b33;
@@ -259,7 +260,7 @@
   }
 
   #main .form-inline .form-group {
-    margin-bottom: 1rem !important;
+    margin-bottom: 5rem;
   }
 
   #main .form-inline .form-row {
@@ -284,13 +285,14 @@
     width: 100%;
   }
   .list-ads-user .item .events > div:first-child {
-    text-align: left !important;
+    text-align: left;
   }
 
   .filters button[type=submit] {
     width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
 
   .filters .form-group:not(:first-child) {
@@ -336,16 +338,35 @@
 
   .filters .clear-filter {
     width: 100%;
+    height: 40px;
+    padding: 5px 5px -2px 5px;
+    margin-top: 10px;
+    white-space: nowrap;
   }
 
   #main h2.log_with_account {
     font-size: 22px;
   }
 }
+@media (max-width: 425px) {
+  .filters .clear-filter {
+    padding: 5px;
+    height: 35px;
+  }
+}
 /***************************************************************************************/
 @media (max-width: 326px) {
   header button[type=submit] {
     margin-left: 5px;
+  }
+
+  .navbar-ml {
+    margin: 0 0 0 -17px;
+  }
+}
+@media (max-width: 990px) {
+  header button[type=submit] {
+    background-size: cover;
   }
 }
 /*Extra large devices (large desktops)*/

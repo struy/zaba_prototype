@@ -11,10 +11,6 @@
     {% trans "Gifts" %}
 {% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
-{% endblock %}]
-
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Gifts" %}</li>
@@ -69,9 +65,9 @@
 
                                             <a href="{% url 'favourite_add' 'Gift' advert.id %}">
                                                 {% if advert.id in  favourites %}
-                                                    <i class="fas fa-heart"></i>
+                                                    <i class="fas fa-heart icon-heart"></i>
                                                 {% else %}
-                                                    <i class="far fa-heart"></i>
+                                                    <i class="far fa-heart icon-heart "></i>
                                                 {% endif %}
                                             </a>
                                         </div>

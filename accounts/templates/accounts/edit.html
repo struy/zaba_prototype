@@ -4,10 +4,6 @@
 {% load static %}
 {% block title %} {% trans "Edit your account" %} {% endblock %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-{% endblock %}
-
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Edit account" %}</li>
@@ -48,3 +44,7 @@
         </div>
     </div>
 {% endblock %}
+
+
+
+

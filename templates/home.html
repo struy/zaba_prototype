@@ -32,7 +32,7 @@
 
 
 {% block content %}
-    <div class="home">
+    <div class="home bg-white">
         <div class="grey-back">
             <div class="container">
                 {% include "snippets/search_bar.html" %}
@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="categories">
+            <div class="categories pb-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 p-0">
                         <a href="items" class="icon-box text-center bg-color-sell">
@@ -179,10 +179,10 @@
 
                             <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
                                 {% thumbnail advert.image "128" as ad %}
-                                    <img class="card-img-top" src="{{ ad.url }}" alt="no image"/>
+                                    <img class="card-img-top size-image" src="{{ ad.url }}" alt="no image"/>
                                 {% endthumbnail %}
                                 {% if not advert.image %}
-                                    <img class="card-img-top rounded"
+                                    <img class="card-img-top rounded size-image"
                                          src="{% static 'none/no-img.jpg' %}"
                                          alt="no image"
                                          width="128"
@@ -260,11 +260,11 @@
 
                         <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
                             {% thumbnail advert.image "128" as ad %}
-                                <img class="card-img-top rounded" src="{{ ad.url }}"
+                                <img class="card-img-top rounded size-image" src="{{ ad.url }}"
                                      alt="no image"/>
                             {% endthumbnail %}
                             {% if not advert.image %}
-                                <img class="card-img-top"
+                                <img class="card-img-top size-image"
                                      src="{% static 'none/no-img.jpg' %}"
                                      alt="no image"
                                      width="128"

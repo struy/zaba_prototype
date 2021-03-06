@@ -86,6 +86,9 @@ def my_ads(request):
     adverts = [m.objects.filter(author_id=request.user.id) for m in models]
     ads = [i for i in adverts if len(i)]
     names = [i.model.__name__ + "s" for i in ads]
+    # fix for rents view
+    if "rentals" in names:
+        names[names.index("rentals")] = "rents"
     all_adverts = dict(zip(names, ads))
 
     return render(request,
@@ -98,6 +101,9 @@ def user_ads(request, pk):
     adverts = [m.objects.filter(author_id=pk) for m in models]
     ads = [i for i in adverts if len(i)]
     names = [i.model.__name__ + "s" for i in ads]
+    # fix for rents view
+    if "rentals" in names:
+        names[names.index("rentals")] = "rents"
     all_adverts = dict(zip(names, ads))
 
     return render(request,

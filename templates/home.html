@@ -240,7 +240,7 @@
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
                 <!--Indicators-->
-                    {% if advert.count >= 4 %}
+                    {% if new.count >= 4 %}
                         <ol class="carousel-indicators">
                             {% for x in advert.count|divisibleby:4|floatformat %}
                                 <li data-target="#multi-item-example" data-slide-to="{{ x }}" class="active"></li>

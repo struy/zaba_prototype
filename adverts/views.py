@@ -56,10 +56,6 @@ def home(request):
     return render(request, 'home.html', context)
 
 
-def terms(request):
-    return render(request, 'terms.html')
-
-
 class SearchView(ListView):
     template_name = 'search.html'
     # paginate_by = 20

@@ -244,17 +244,27 @@
                 <div class="col-2"></div>
                 <div class="col-12 text-center">
                     <ul>
-                        <li class="nav_first"><a href="#" class="home_a">Conditions of Use</a></li>
-                        <li><a href="/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&amp;nodeId=468496"
-                               class="nav_a">Privacy Notice</a></li>
-                        <li><a href="/interestbasedads/ref=footer_iba" class="nav_a">Interest-Based Ads</a></li>
-                        <li><a href="{% url 'terms' %}" class="nav_a">Terms and conditions</a></li>
+                        <li class="nav_first">
+                            <a href="{% url 'term' %}" class="home_a">
+                                {% trans "Conditions of Use" %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'privacy' %}" class="nav_a">
+                                {% trans "Privacy Notice" %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'term' %}" class="nav_a">
+                                {% trans "Terms and conditions" %}
+                            </a>
+                        </li>
                         <li class="nav_last">
                             ©
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            , Zaba.today, Inc. or its affiliates
+                            , zaba.today, Inc. or its affiliates
                         </li>
                     </ul>
                 </div>

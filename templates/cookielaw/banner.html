@@ -8,10 +8,10 @@
             <div class="col-12 col-md-10">
                 <p>
                     {% trans "By using our site, you acknowledge that you have read and understand our" %}
-                    <a target="_blank" href="cookie"> {% trans "Cookie Policy" %}</a>,
-                    <a target="_blank" href="privacy">{% trans "Privacy Policy" %}</a>,
-                    {% trans " and our " %} <a target="_blank"
-                                               href="term">{% trans "Terms of Service" %}</a>.
+                    <a target="_blank" href="{% url 'cookie' %}"> {% trans "Cookie Policy" %}</a>,
+                    <a target="_blank" href="{% url 'privacy' %}"> {% trans "Privacy Policy" %}</a>,
+                    {% trans " and our " %}
+                    <a target="_blank" href="{% url 'term' %}">{% trans "Terms of Service" %}</a>.
                 </p>
             </div>
             <div class="col-12 col-md-2">

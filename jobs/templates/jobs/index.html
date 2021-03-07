@@ -22,17 +22,18 @@
     <div class="grey-back">
         <div class="container mt-4  list-ads-user">
             <div class="advert">
-                {% for advert in adverts %}
+                {% if adverts %} {% for advert in adverts %}
                     <div class="row item ">
                         <div class="media d-lg-flex d-block w-100">
                             <div class="col-12 col-lg-2 text-center align-self-center">
                                 {% thumbnail advert.image "128" as ad %}
                                     <a href="{% url 'jobs:detail' advert.id %}">
-                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
+                                        <img class="mr-3 image-advert image-size-page" src="{{ ad.url }}"
+                                             alt="no image"/>
                                     </a>
                                 {% endthumbnail %} {% if not advert.image %}
                                 <img
-                                        class="mr-3 image-advert image-size-page"
+                                        class="mr-3  image-advert"
                                         src="{% static 'none/no-img.jpg' %}"
                                         alt="no image"
                                         width="128"
@@ -75,27 +76,33 @@
                                                         {% trans "Edit" %} <i class="fas fa-edit"></i>
                                                     </a>
                                                 </div>
+                                            {% else %}
+                                                {% if user.is_authenticated %}
+                                                    <div class="d-flex justify-content-end align-self-md-end">
+
+                                                        <a class="text-dark"
+                                                           href="{% url 'favourite_add' 'Job' advert.id %}">
+                                                            {% if advert.id in  favourites %}
+                                                                <i class="fas fa-heart icon-heart-items"></i>
+                                                            {% else %}
+                                                                <i class="far fa-heart icon-heart-items"></i>
+                                                            {% endif %}
+                                                        </a>
+                                                    </div>
+                                                {% endif %}
+
                                             {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        <div class="d-flex justify-content-end align-self-md-end">
-                                    <a class="text-dark"
-                                       href="{% url 'favourite_add' 'Job' advert.id %}">
-                                        {% if advert.id in  favourites %}
-                                            <i class="fas fa-heart icon-heart-jobs"></i>
-                                        {% else %}
-                                            <i class="far fa-heart icon-heart-jobs"></i>
-                                        {% endif %}
-                                    </a>
-                                </div>
                         </div>
                     </div>
                 {% empty %}
                     <p>{% trans "No adverts are available." %}</p>
                 {% endfor %}
-                {% include "snippets/pagination.html" %}
+                    {% include "snippets/pagination.html" %}
+                {% endif %}
             </div>
         </div>
     </div>

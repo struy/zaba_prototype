@@ -394,5 +394,26 @@
 }
 /*Large devices (desktops, 992px and up)*/
 /*Extra large devices (large desktops, 1200px and up)*/
+@media (max-width: 425px) {
+  #main .home .simple-search input.form-control {
+    font-size: 13px;
+    text-indent: 100%;
+  }
+
+  #main .home .simple-search .form-group .form-control-feedback {
+    top: 3px;
+  }
+
+  #main .home .simple-search button#btn_search {
+    height: 42px;
+    width: 42px;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .grey-back {
+    padding: 0;
+  }
+}
 
 /*# sourceMappingURL=media.css.map */

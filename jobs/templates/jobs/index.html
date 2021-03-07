@@ -25,10 +25,10 @@
                 {% for advert in adverts %}
                     <div class="row item ">
                         <div class="media d-lg-flex d-block w-100">
-                            <div class="col-12 col-lg-2 text-center">
+                            <div class="col-12 col-lg-2 text-center align-self-center">
                                 {% thumbnail advert.image "128" as ad %}
-                                   <a href="{% url 'jobs:detail' advert.id %}">
-                                        <img class="mr-3 image-advert image-size-page" src="{{ ad.url }}" alt="no image"/>
+                                    <a href="{% url 'jobs:detail' advert.id %}">
+                                        <img class="mr-3" src="{{ ad.url }}" alt="no image"/>
                                     </a>
                                 {% endthumbnail %} {% if not advert.image %}
                                 <img
@@ -55,7 +55,7 @@
                                                     {{ advert.title }}
                                                 </h3>
                                             </a>
-                                           <span class="form_{{ advert.local }}"></span>
+                                            <span class="form_{{ advert.local }}"></span>
                                             <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
                                                 {{ advert.city }}
                                                 <i>{{ advert.modified|naturaltime }} </i>
@@ -76,21 +76,20 @@
                                                     </a>
                                                 </div>
                                             {% endif %}
-
-                                           <div class="d-flex justify-content-end align-self-md-end">
-                                               <a class="text-dark"
-                                                       href="{% url 'favourite_add' 'Job' advert.id %}">
-                                                        {% if advert.id in  favourites %}
-                                                            <i class="fas fa-heart icon-heart"></i>
-                                                        {% else %}
-                                                            <i class="far fa-heart icon-heart"></i>
-                                                        {% endif %}
-                                               </a>
-                                           </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <div class="d-flex justify-content-end align-self-md-end">
+                                    <a class="text-dark"
+                                       href="{% url 'favourite_add' 'Job' advert.id %}">
+                                        {% if advert.id in  favourites %}
+                                            <i class="fas fa-heart icon-heart-jobs"></i>
+                                        {% else %}
+                                            <i class="far fa-heart icon-heart-jobs"></i>
+                                        {% endif %}
+                                    </a>
+                                </div>
                         </div>
                     </div>
                 {% empty %}

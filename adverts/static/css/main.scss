@@ -93,9 +93,6 @@ header {
     }
   }
 
-  .bg-dark {
-
-  }
 
   button[type="submit"] {
     padding: 0;
@@ -108,18 +105,26 @@ header {
 
   button[form="form_uk"] {
     background: url("/static/img/flags/flag-uk.svg");
+    border: 1px solid black;
+    border-radius: 3px;
   }
 
   button[form="form_ru"] {
     background: url("/static/img/flags/flag-ru.svg");
+    border: 1px solid black;
+    border-radius: 3px;
   }
 
   button[form="form_en"] {
     background: url("/static/img/flags/flag-us.svg");
+    border: 1px solid black;
+    border-radius: 3px;
   }
 
   button[form="form_pl"] {
     background: url("/static/img/flags/flag-pl.svg");
+    border: 1px solid black;
+    border-radius: 3px;
   }
 
   button.navbar-toggler {
@@ -553,7 +558,7 @@ header {
       border: none;
       width: 30px;
       height: 20px;
-      margin-left: 10px;
+      margin: 5px 0;
       display: block;
       background-size: cover;
     }
@@ -788,7 +793,7 @@ i.fas.fa-paw {
 }
 
 .mybtn2 {
-  color: #000;
+  color: #000!important;
 }
 
 
@@ -900,16 +905,20 @@ form.new-edit {
 
 .size-image{
   max-height: 230px;
-  transition-duration: 0.2s;
 }
 
-.size-image:hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+.shadow-item {
+  transition-duration: 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.shadow-item:hover{
+  box-shadow: 0 20px 22px rgba(33,33,33,.2);
   transform: scale(1.01)
 }
 
 .carousel-indicators{
-  bottom: -40px;
+  bottom: -60px;
 }
 .corner-item{
       position: absolute;
@@ -926,7 +935,7 @@ form.new-edit {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 8;
+  z-index: 20;
   color: white;
   border-bottom: 1px solid white;
 
@@ -1002,9 +1011,14 @@ form.new-edit {
   max-height: 130px;
   max-width: 180px;
 }
-.icon-heart{
+.icon-heart-jobs{
   position: relative;
-  bottom: -12px;
+  bottom: -10px;
+  right: 15px;
+}
+.icon-heart-items{
+  position: relative;
+  bottom: -10px;
 }
 
 /*home scss*/
@@ -1301,4 +1315,38 @@ h2 {
 
 p{
   font-size: 18px;
+}
+
+/**/
+
+
+.dots-carousel li{
+  border-radius: 50%;
+  height: 0.8em;
+  width: 0.8em;
+  background-color: #091B34;
+}
+
+.price-settings{
+  font-weight: 700;
+  color: #091B34;
+}
+
+.text-fixed-bottom{
+
+}
+.heart-position{
+  position: relative;
+  bottom: 0;
+  right: 19px;
+}
+.image-slider{
+  height: 230px;
+}
+.btn-err-404{
+  transition-duration: 0.2s;
+}
+.btn-err-404:hover{
+  background-color: white;
+  border: 1px solid black;
 }

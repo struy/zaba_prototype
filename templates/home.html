@@ -111,7 +111,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 p-0">
                         <a href="items" class="icon-box text-center bg-color-sell">
-                            <img src="{%  static 'img/icon-hand-bag.svg' %}" alt="sell">
+                            <img src="{% static 'img/icon-hand-bag.svg' %}" alt="sell">
                             <span>{% trans "Sell" %} </span>
                         </a>
                     </div>
@@ -155,14 +155,16 @@
 
 
         {% if most_viewed %}
-            <div class="container my-4 py-1">
-                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <div class="container my-4 pt-1 pb-4">
+                <div id="multi-item-example" class="carousel slide carousel-multi-item"
+                     data-ride="carousel">
 
-                    <!--Indicators-->
-                    {% if advert.count >= 4 %}
-                        <ol class="carousel-indicators">
-                            {% for x in advert.count|divisibleby:4|floatformat %}
-                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" class="active"></li>
+                    {# logins carosel (add points for tunr page #}
+                    {% if most_viewed|length >= 4 %}
+                        <ol class="carousel-indicators dots-carousel">
+                            {% for x in most_viewed|length|divisibleby:4|floatformat %}
+                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if x == 0 %}
+                                    class="active" {% endif %}></li>
                             {% endfor %}
                         </ol>
                         <!--/.Indicators-->
@@ -177,9 +179,12 @@
                             {% endif %}
                         <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
 
-                            <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
+                            <a href="{{ advert.get_absolute_url }}"
+                               class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
                                 {% thumbnail advert.image "128" as ad %}
-                                    <img class="card-img-top size-image" src="{{ ad.url }}" alt="no image"/>
+                                    <div class="image-slider">
+                                        <img class="card-img-top size-image" src="{{ ad.url }}" alt="no image"/>
+                                    </div>
                                 {% endthumbnail %}
                                 {% if not advert.image %}
                                     <img class="card-img-top rounded size-image"
@@ -188,18 +193,19 @@
                                          width="128"
                                     />
                                 {% endif %}
-
-                                <h5 class="name pt-3 pb-2">
-                                    <div>{{ advert.title }}</div>
-                                </h5>
-                                <div class="subtype">
-                                    <small class="text-muted">
-                                        <i class="fas fa-map-marker-alt"> </i>
-                                        {{ advert.city }}
-                                    </small>
-                                </div>
-                                <div class="price ">
-                                    <span>{{ advert.price|prepend_dollars }}</span>
+                                <div class="text-fixed-bottom">
+                                    <h5 class="name pt-3 pb-2">
+                                        <div>{{ advert.title }}</div>
+                                    </h5>
+                                    <div class="subtype">
+                                        <small class="text-muted">
+                                            <i class="fas fa-map-marker-alt"> </i>
+                                            {{ advert.city }}
+                                        </small>
+                                    </div>
+                                    <div class="price price-settings">
+                                        <span>{{ advert.price|prepend_dollars }}</span>
+                                    </div>
                                 </div>
                             </a>
 
@@ -237,20 +243,23 @@
 
     {% if new %}
         <div class="container my-4 py-2">
-            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel">
 
+                {# logins carosel (add points for tunr page #}
                 <!--Indicators-->
-                    {% if advert.count >= 4 %}
-                        <ol class="carousel-indicators">
-                            {% for x in advert.count|divisibleby:4|floatformat %}
-                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" class="active"></li>
-                            {% endfor %}
-                        </ol>
-                        <!--/.Indicators-->
-                    {% endif %}
+                {% if new|length >= 4 %}
+                    <ol class="carousel-indicators dots-carousel">
+                        {% for x in new|length|divisibleby:4|floatformat %}
+                            <li data-target="#multi-item-example2" data-slide-to="{{ x }}" {% if x == 0 %}
+                                class="active" {% endif %}></li>
+                        {% endfor %}
+                    </ol>
+                    <!--/.Indicators-->
+                {% endif %}
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
                     {% for advert in new %}
+
                         <!--First slide-->
                         {% if forloop.counter0|divisibleby:4 %}
                             <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
@@ -258,17 +267,17 @@
                         {% endif %}
                     <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
 
-                        <a href="{{ advert.get_absolute_url }}" class="card mb-2 p-3 item-slider h-100">
+                        <a href="{{ advert.get_absolute_url }}"
+                           class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
                             {% thumbnail advert.image "128" as ad %}
-                                <img class="card-img-top rounded size-image" src="{{ ad.url }}"
-                                     alt="no image"/>
+                                <div class="image-slider">
+                                    <img class="card-img-top rounded size-image" src="{{ ad.url }}"
+                                         alt="no image"/>
+                                </div>
                             {% endthumbnail %}
                             {% if not advert.image %}
-                                <img class="card-img-top size-image"
-                                     src="{% static 'none/no-img.jpg' %}"
-                                     alt="no image"
-                                     width="128"
-                                />
+                                <img class="card-img-top size-image" src="{% static 'none/no-img.jpg' %}" alt="no image"
+                                     width="128"/>
                             {% endif %}
 
                             <h5 class="name pt-3 pb-2">
@@ -280,7 +289,7 @@
                                     {{ advert.city }}
                                 </small>
                             </div>
-                            <div class="price">
+                            <div class="price price-settings">
                                 <span>{{ advert.price|prepend_dollars }}</span>
                             </div>
                         </a>
@@ -301,5 +310,6 @@
     {% endif %}
 
     </div>
+
 
 {% endblock %}

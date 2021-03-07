@@ -30,3 +30,7 @@ def contact_view(request):
 
 def success_view(request):
     return render(request, "sendemail/success.html", {'success': True})
+
+
+def no_success_view(request):
+    return render(request, "sendemail/no_success.html", {'success': False})

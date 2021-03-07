@@ -111,7 +111,7 @@ def user_ads(request, pk):
                   {'all_adverts': all_adverts})
 
 
-def connect(request, pk, name, a_id):
+def contact_user(request, pk, name, a_id):
     user = get_object_or_404(User, pk=pk)
     models = {
         "Item": Item,
@@ -126,11 +126,11 @@ def connect(request, pk, name, a_id):
         form = ContactUserForm(request.POST)
         if form.is_valid():
             subject = advert.title
-            from_email = user.email
+            to_email = user.email
+            from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message'] + ' ' + from_email
             try:
-                superusers_emails = [x.email for x in User.objects.filter(is_superuser=True).all()]
-                send_mail(subject, message, from_email, superusers_emails)
+                send_mail(subject, message, from_email, to_email)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             except SMTPDataError:
@@ -138,7 +138,3 @@ def connect(request, pk, name, a_id):
 
             return redirect('success')
     return render(request, "accounts/connect.html", {'form': form})
-
-
-def success_view(request):
-    return render(request, "sendemail/success.html", {'success': True})

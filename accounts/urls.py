@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, connect
+from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_the_user
 from django.contrib.auth import views as auth_views
 
 # app_name = 'accounts'
@@ -26,5 +26,5 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
-    path('connect_user/<int:pk>/<str:name>/<int:a_id>', connect, name='connect_user')
+    path('connect_user/<int:pk>/<str:name>/<int:a_id>', contact_user, name='connect_user')
 ]

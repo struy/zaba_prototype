@@ -1,9 +1,12 @@
 import redis
 from django.shortcuts import get_object_or_404, render
+from django.utils.translation import get_language
+from django.views.generic import ListView
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from django.db.models import Q
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
+from django.db.models import Q
+
 
 from adverts.utils import context_helper
 from .form import GiftForm
@@ -16,7 +19,7 @@ r = redis.Redis(connection_pool=settings.POOL)
 
 def index(request):
     query = request.GET.get('q')
-    lang = request.LANGUAGE_CODE
+    lang = get_language()
     if query:
         advert_list = Gift.objects.filter(Q(local__exact=lang) &
                                           (Q(title__icontains=query) | Q(description__icontains=query))
@@ -25,12 +28,17 @@ def index(request):
         advert_list = Gift.objects.filter(local=lang).order_by('-modified')
     filters = GiftsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
+    favourites = Gift.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
 
-    context = {'adverts': adverts,
-               'filters': filters,
-               'has_filter': has_filter,
-               'package_list': 'gifts:index',
-               }
+    context = {
+        'adverts': adverts,
+        'is_paginated': True,
+        'package_list': 'gifts:index',
+        'filters': filters,
+        'has_filter': has_filter,
+        'favourites': favourites
+    }
+
     return render(request, 'gifts/index.html', context)
 
 

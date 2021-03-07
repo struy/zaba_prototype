@@ -1,5 +1,6 @@
 import redis
 from django.shortcuts import get_object_or_404, render
+from django.utils.translation import get_language
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -17,7 +18,7 @@ r = redis.Redis(connection_pool=settings.POOL)
 
 def index(request):
     query = request.GET.get('q')
-    lang = request.LANGUAGE_CODE
+    lang = get_language()
     if query:
         advert_list = Rental.objects.filter(Q(local__exact=lang) &
                                             (Q(title__icontains=query) | Q(description__icontains=query))
@@ -27,6 +28,7 @@ def index(request):
 
     filters = RentsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
+    favourites = Rental.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
 
     context = {
         'adverts': adverts,
@@ -34,6 +36,7 @@ def index(request):
         'package_list': 'rents:index',
         'filters': filters,
         'has_filter': has_filter,
+        'favourites': favourites
     }
 
     return render(request, 'rents/index.html', context)

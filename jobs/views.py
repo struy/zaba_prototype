@@ -1,6 +1,7 @@
 import redis
 from django.conf import settings
 from django.shortcuts import get_object_or_404, render
+from django.utils.translation import get_language
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -17,7 +18,7 @@ r = redis.Redis(connection_pool=settings.POOL)
 
 def index(request):
     query = request.GET.get('q')
-    lang = request.LANGUAGE_CODE
+    lang = get_language()
     if query:
         advert_list = Job.objects.filter(Q(local__exact=lang)
                                          & (Q(title__icontains=query) | Q(description__icontains=query))
@@ -27,12 +28,16 @@ def index(request):
 
     filters = JobsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
+    favourites = Job.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
 
-    context = {'adverts': adverts,
-               'filters': filters,
-               'has_filter': has_filter,
-               'package_list': 'jobs:index',
-               }
+    context = {
+        'adverts': adverts,
+        'is_paginated': True,
+        'package_list': 'jobs:index',
+        'filters': filters,
+        'has_filter': has_filter,
+        'favourites': favourites
+    }
 
     return render(request, 'jobs/index.html', context)
 

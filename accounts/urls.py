@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_the_user
+from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user
 from django.contrib.auth import views as auth_views
 
 # app_name = 'accounts'

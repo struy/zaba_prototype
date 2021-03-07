@@ -68,34 +68,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 user-info">
-                <div class="info">
-                    <div class="mb-3">
-                        {% include 'svg/icon-Account.svg' %}
-                        <span>User</span>
-                    </div>
-                    <div class="mb-4">
-                        <h3>
-                            {% if not advert.author.first_name  and  not advert.author.last_name %}
-                                Anonymous
-                            {% else %}
-                                {{ advert.author.first_name }} {{ advert.author.last_name }}
-                            {% endif %}
-                        </h3>
-                    </div>
-                    <div class="mb-4">
-                        <a href="{% url 'user_ads'  advert.author.id %}">{% trans 'Other user’s ads' %}</a>
-                    </div>
-                    <div class="mb-4">
-                        <a href="{% url 'connect_user'  advert.author.id 'Item' advert.id %}">
-                            <div class="button">
-                                {% trans "Email" %}
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="banner" style="background-image: url('{% static 'img/image-23.png' %}')"></div>
-            </div>
+            
+            {% include "snippets/right_side_detail.html" %}
+
         </div>
     </div>
 

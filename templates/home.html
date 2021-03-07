@@ -159,10 +159,10 @@
                 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
                     <!--Indicators-->
-                    {% if advert.count >= 4 %}
+                    {% if most_viewed|length >= 4 %}
                         <ol class="carousel-indicators">
-                            {% for x in advert.count|divisibleby:4|floatformat %}
-                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" class="active"></li>
+                            {% for x in most_viewed|length|divisibleby:4|floatformat %}
+                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if x == 0 %} class="active" {% endif %}></li>
                             {% endfor %}
                         </ol>
                         <!--/.Indicators-->
@@ -238,12 +238,11 @@
     {% if new %}
         <div class="container my-4 py-2">
             <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-                <!--Indicators-->
-                    {% if advert.count >= 4 %}
+        <!--Indicators-->
+                    {% if new|length >= 4 %}
                         <ol class="carousel-indicators">
-                            {% for x in advert.count|divisibleby:4|floatformat %}
-                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" class="active"></li>
+                            {% for x in new|length|divisibleby:4|floatformat %}
+                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if x == 0 %} class="active" {% endif %}></li>
                             {% endfor %}
                         </ol>
                         <!--/.Indicators-->

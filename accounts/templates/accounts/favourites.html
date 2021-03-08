@@ -6,6 +6,7 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% load class_name %}
 
 {% block title %}
     {% trans "Favorites" %}
@@ -38,22 +39,31 @@
                                             width="128"
                                     />
                                 {% endif %}
-                                 {% if advert.expires_type %}
-                                    <div class="corner-item {{ advert.expires_type.css }}">
-                                        <b>
-                                            {{ advert.expires_type.text }}
-                                        </b>
-                                    </div>
-                                {% endif %}
+                                    {% if advert.expires_type %}
+                                        <div class="corner-item {{ advert.expires_type.css }}">
+                                            <b>
+                                                {{ advert.expires_type.text }}
+                                            </b>
+                                        </div>
+                                    {% endif %}
                                 </div>
                                 <div class="media-body col-12 col-lg-10">
                                     <div class="advert">
                                         <div class="wrap_list_adverts row">
                                             <div class="col-12 col-md-8">
-                                                <a href="{% url 'items:detail' advert.id %}">
-                                                    <h3>
-                                                        {{ advert.title }}
-                                                    </h3>
+                                                {% url 'home'  as the_url %}
+
+                                                {% if advert|class_name == "Rental" %}
+                                                    <a href="{{ the_url }}rents/{{ advert.id }}">
+                                                {% else %}
+                                                    <a href="
+                                                            {{ the_url }}{{ advert|class_name|lower }}s/{{ advert.id }}">
+                                                {% endif %}
+
+                                                {#{% url 'items:detail' advert.id %}">#}
+                                                <h3>
+                                                    {{ advert.title }}
+                                                </h3>
                                                 </a>
                                                 <span class="form_{{ advert.local }}"></span>
                                                 <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
@@ -65,21 +75,14 @@
                                                 <div class="d-flex justify-content-end">
                                                     <h3>{{ advert.price|prepend_dollars }}</h3>
                                                 </div>
-                                                {% if advert.author.id == request.user.id %}
-                                                    <div class="d-flex" id="white-text">
-                                                    <a href="{% url 'items:delete' advert.id %}" class="btn btn-sm delete">
-                                                        {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                    <a href="{% url 'items:edit' advert.id %}" class="btn btn-sm edit">
-                                                        {% trans "Edit" %} <i class="fas fa-edit"></i>
-                                                    </a>
-                                                    </div>
-                                                {% endif %}
+
                                                 <div class="d-flex justify-content-end align-self-md-end">
 
-                                                    <a class="text-dark" href="{% url 'favourite_add' 'Item' advert.id %}">
+                                                    <a class="text-dark"
+                                                       href="{% url 'favourite_add' advert|class_name advert.id %}">
                                                         <i class="fas fa-heart icon-heart"></i>
                                                     </a>
+
                                                 </div>
                                             </div>
                                         </div>

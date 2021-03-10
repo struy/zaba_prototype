@@ -3,7 +3,9 @@
 {% load advert_money %}
 {% load static %}
 
-{% block title %} {% trans "Rent" %} {% endblock %}
+{% block title %}
+    {% trans "Rent" %}
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
@@ -28,7 +30,15 @@
                         <span>{{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <i class="far fa-heart icon-heart"></i>
+                                <a href="{% url 'favourite_add' 'Rental' advert.id %}">
+                                    <i class="
+                                     {% if favourite %}
+                                        fas
+                                     {% else %}
+                                        far
+                                     {% endif %}
+                                     fa-heart fa-heart"></i>
+                                </a>
                             </small>
                         </span>
                     </h2>
@@ -44,8 +54,7 @@
                     {% endif %}
 
                     <p><b>{% trans "Bathrooms:" %}</b> {{ advert.bathrooms }}</p>
-                    <p><b>{% trans "Bedrooms" %}</b> {{ advert.bedrooms }}</p>
-                    <p><b>{% trans "Price:" %}</b> {{ advert.price | prepend_dollars }}</p>
+                    <p><b>{% trans "Bedrooms:" %}</b> {{ advert.bedrooms }}</p>
                     <p><b>{% trans "Pet policy:" %}</b> {{ advert.get_pet_policy_display }}</p>
 
                     {% if advert.frunished %}
@@ -61,33 +70,16 @@
                             {% include 'svg/icon-Locate.svg' %}
                             <span>{% trans "Location:" %} </span>
                         </p>
-                        <div id="map"></div>
+                        <div id="m"></div>
                     {% endif %}
-                    <div class="count d-flex justify-content-end">
+                    <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 user-info">
-                <div class="info">
-                    <div class="mb-3">
-                        {% include 'svg/icon-Account.svg' %}
-                        <span>User</span>
-                    </div>
-                    <div class="mb-4">
-                        <h3>Abraham Lincoln</h3>
-                    </div>
-                    <div class="mb-4">
-                        <a href="#">Other user’s ads</a>
-                    </div>
-                    <div class="mb-4">
-                        <div class="button">
-                            Show phone
-                        </div>
-                    </div>
-                </div>
-                <div class="banner" style="background-image: url('{% static 'img/image-23.png' %}')"></div>
-            </div>
+
+            {% include "snippets/right_side_detail.html" %}
+
         </div>
     </div>
 

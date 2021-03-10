@@ -2,6 +2,7 @@
 {% load countries %}
 {% load i18n %}
 {% load static %}
+{% load advert_money %}
 
 {% block title %}
     {% trans "Job" %}
@@ -30,11 +31,19 @@
                         <span> {{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <i class="far fa-heart icon-heart"></i>
+                                 <a href="{% url 'favourite_add' 'Job' advert.id %}">
+                                    <i class="
+                                     {% if favourite %}
+                                        fas
+                                     {% else %}
+                                        far
+                                     {% endif %}
+                                     fa-heart fa-heart"></i>
+                                </a>
                             </small>
                         </span>
                     </h2>
-                    <h1>{{ advert.salary }}</h1>
+                    <h1>{{ advert.salary|prepend_dollars }}</h1>
 
                     <p>
                         {% if advert.jobtype.icon %}
@@ -48,7 +57,13 @@
                     </p>
 
                     {% if advert.description %}
-                        <p> {{ advert.description }} </p>
+
+                        <span class="mb-2">
+                                <b>{% trans "Description:" %}</b>
+                            </span>
+                        <p>
+                            {{ advert.description }}
+                        </p>
                     {% endif %}
 
                     <p><b>{% trans "Duration:" %}</b> {{ advert.get_duration_display }} </p>
@@ -69,7 +84,7 @@
                         </p>
                         <div id="m"></div>
                     {% endif %}
-                    <div class="count d-flex justify-content-end">
+                    <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
                 </div>

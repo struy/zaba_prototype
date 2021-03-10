@@ -30,7 +30,15 @@
                         <span>{{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <i class="far fa-heart icon-heart "></i>
+                                <a href="{% url 'favourite_add' 'Gift' advert.id %}">
+                                    <i class="
+                                     {% if favourite %}
+                                        fas
+                                     {% else %}
+                                        far
+                                     {% endif %}
+                                     fa-heart fa-heart"></i>
+                                </a>
                             </small>
                         </span>
                     </h2>
@@ -51,9 +59,9 @@
                             {% include 'svg/icon-Locate.svg' %}
                             <span>{% trans "Location:" %} </span>
                         </p>
-                        <div id="m" style="width: 500px; height: 500px;"></div>
+                        <div id="m" ></div>
                     {% endif %}
-                    <div class="count d-flex justify-content-end">
+                    <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
                 </div>
@@ -61,7 +69,18 @@
 
             {% include "snippets/right_side_detail.html" %}
 
-            <div class="banner" style="background-image: url('{% static 'img/image-23.png' %}')"></div>
+            <div class="wrap popular-ads grey-back mt-0">
+                <section id="google_ads">
+                    <div class="container">
+                        <div class="col-sm-6 mx-auto">
+                            <img src="{% static 'img/image-20.png' %}"
+                                 width="724"
+                                 alt="" class="img_ad">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
         </div>
     </div>
 {% endblock %}

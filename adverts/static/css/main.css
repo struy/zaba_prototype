@@ -90,22 +90,18 @@ header button[type=submit] {
 }
 header button[form=form_uk] {
   background: url("/static/img/flags/flag-uk.svg");
-  border: 1px solid black;
   border-radius: 3px;
 }
 header button[form=form_ru] {
   background: url("/static/img/flags/flag-ru.svg");
-  border: 1px solid black;
   border-radius: 3px;
 }
 header button[form=form_en] {
   background: url("/static/img/flags/flag-us.svg");
-  border: 1px solid black;
   border-radius: 3px;
 }
 header button[form=form_pl] {
   background: url("/static/img/flags/flag-pl.svg");
-  border: 1px solid black;
   border-radius: 3px;
 }
 header button.navbar-toggler:focus {

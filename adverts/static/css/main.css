@@ -43,7 +43,7 @@ body {
   background-color: #749B27;
   padding: 8px 7px;
   min-width: 130px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 20px;
   text-align: center;
   letter-spacing: 0.05em;
@@ -78,7 +78,7 @@ header .favorites .counter-favorites {
   border-radius: 100%;
   top: -5px;
   font-size: 12px;
-  right: -9px;
+  right: -13px;
 }
 header button[type=submit] {
   padding: 0;
@@ -475,6 +475,12 @@ header .navbar-toggler {
   margin: 5px 0;
   display: block;
   background-size: cover;
+}
+#main .advert a {
+  text-decoration: none;
+}
+#main .advert a:hover {
+  color: #749B27;
 }
 #main .home a {
   font-size: 3em;

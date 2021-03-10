@@ -51,7 +51,7 @@ body {
   background-color: #749B27;
   padding: 8px 7px;
   min-width: 130px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 20px;
   text-align: center;
   letter-spacing: 0.05em;
@@ -89,7 +89,7 @@ header {
       border-radius: 100%;
       top: -5px;
       font-size: 12px;
-      right: -9px;
+      right: -13px;
     }
   }
 
@@ -557,6 +557,13 @@ header {
       margin: 5px 0;
       display: block;
       background-size: cover;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      color: #749B27;
     }
   }
 

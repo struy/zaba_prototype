@@ -39,6 +39,7 @@
 
     {% block head %}
     {% endblock %}
+
     <link rel="stylesheet" href="{% static "css/media.css" %}">
 
 </head>
@@ -79,11 +80,6 @@
 
             <div class="collapse navbar-collapse burgerPosition" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-{#                    <li class="nav-item active">#}
-{#                        <a class="nav-link" href="{% url 'home' %}">{% trans "Home" %}#}
-{#                            <span class="sr-only">(current)</span>#}
-{#                        </a>#}
-{#                    </li>#}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">{% trans 'Contact us' %}</a>
                     </li>
@@ -120,14 +116,12 @@
                                         {{ user }}
                                     {% endif %}
                                 </span>
-
-
                             </a>
+
                             <div class="sub-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <ul>
                                     <li class="dropdown-item"><a href="{% url 'my_ads' %}">My Ads</a></li>
                                     <li class="dropdown-item"><a href="{% url 'profile_edit' %}">Profile</a></li>
-                                    <li class="dropdown-item"><a href="{% url 'favorites' %}">Favorites</a></li>
                                     <li class="dropdown-item">
                                         <a href="{% url "logout" %}">
                                             {% trans "Logout" %}
@@ -145,7 +139,7 @@
                         </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a href="{% block add_ad_link %} {% endblock %}" id="add_button"
+                        <a href="{% url 'place_ad' %}" id="add_button"
                            class="nav-link create-advert-button d-none d-lg-block">
                             <b class="text-white text-uppercase">{% trans "Place Ad" %}</b>
                         </a>
@@ -223,7 +217,7 @@
                 </div>
             </div>
             <div class="item">
-                <a href="{% url 'items:new' %}" class="nav-item">
+                <a href="{% url 'place_ad' %}" class="nav-item">
                     {% include 'svg/icon-Plus.svg' %}
                     <div>Create</div>
                 </a>

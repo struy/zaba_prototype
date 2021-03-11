@@ -10,22 +10,16 @@
     {% trans "Select ad's type" %}
 {% endblock %}
 
-{% block head %}
-
-    <style>
-    {#TODO make button disactive#}
-        .create-advert-button {
-            display: none !important;
-        }
-
-    </style>
+{% block breadcrumbs %}
+    <li class="breadcrumb-item "><a href="javascript: history.go(-1)">{% trans "Back" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Place ad</li>
 {% endblock %}
+
 
 {% block script %}
     {% include "snippets/js/address-input-js.html" %}
     {% include "snippets/js/city-latin-only-js.html" %}
 {% endblock %}
-
 
 
 {% block content %}
@@ -51,8 +45,8 @@
             <div class="categories pb-5">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 p-0">
-                        <a href= "{% url 'items:new' %}" class="icon-box text-center bg-color-sell">
-                            <img src="{%  static 'img/icon-hand-bag.svg' %}" alt="sell">
+                        <a href="{% url 'items:new' %}" class="icon-box text-center bg-color-sell">
+                            <img src="{% static 'img/icon-hand-bag.svg' %}" alt="sell">
                             <span>{% trans "Sell" %} </span>
                         </a>
                     </div>
@@ -66,34 +60,33 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 p-0">
-                        <a href= "{% url 'rents:new' %}" class="icon-box text-center bg-color-housing">
+                        <a href="{% url 'rents:new' %}" class="icon-box text-center bg-color-housing">
                             <img src="{% static 'img/icon-RealEstate.svg' %}" alt="housing">
-                            <span>{% trans "Rent" %}</span></a>
+                            <span>{% trans "Rent" %}</span>
+                        </a>
                     </div>
                     <div class="col-12 col-md-6 p-0">
                         <a href=" {% url 'gifts:new' %}" class="icon-box text-center bg-color-cats"
                            alt="cats">
                             <img src="{% static 'img/icon-Pets.svg' %}">
-                            <span> {% trans "Cats" %}</span></a>
+                            <span> {% trans "Cats" %}</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
+
     <div class="wrap popular-ads grey-back">
-
-    <section id="google_ads">
-        <center>
-            <div class="container">
-                <img src="{% static 'img/image-20.png' %}" border="0"
-                     width="724"
-                     alt="" class="img_ad">
-            </div>
-        </center>
-    </section>
-
+        <section id="google_ads">
+            <center>
+                <div class="container">
+                    <img src="{% static 'img/image-20.png' %}" border="0"
+                         width="724"
+                         alt="" class="img_ad">
+                </div>
+            </center>
+        </section>
     </div>
 
 {% endblock %}

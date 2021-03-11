@@ -30,7 +30,7 @@ pipeline {
         stage ("Build"){
             steps{
                 sh """
-                cd zaba_prototype
+                cd /home/ubuntu/Build/zaba_prototype
                 cp  -r /home/ubuntu/Build/env /home/ubuntu/Build/zaba_prototype/
                 cp /home/ubuntu/.env  /home/ubuntu/Build/zaba_prototype/
                 source env/bin/activate

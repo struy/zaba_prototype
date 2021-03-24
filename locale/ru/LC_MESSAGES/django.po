@@ -59,7 +59,7 @@ msgstr "Редактирование учетной записи"
 #: templates/registration/password_reset_done.html:7
 #: templates/registration/password_reset_form.html:8 templates/search.html:6
 msgid "Home"
-msgstr "Дом"
+msgstr "На главную"
 
 #: accounts/templates/account/edit.html:15
 #, fuzzy
@@ -77,7 +77,7 @@ msgstr "Вы можете редактировать учетную запись
 #, fuzzy
 #| msgid "Duration"
 msgid "Registration"
-msgstr "Продолжительность"
+msgstr "Регистрация"
 
 #: accounts/templates/account/register.html:27
 msgid "Create an account"
@@ -107,16 +107,16 @@ msgstr "Войти"
 #, fuzzy, python-format
 #| msgid "'%(value)s' value must be a float."
 msgid "%(value)s can't be past"
-msgstr "Значение '%(value)s' должно быть числом с плавающей точкой."
+msgstr "Значение '%(value)s' не должно быть в прошлом."
 
 #: adverts/models.py:34
 #, python-format
 msgid "%(value)s can't be more than month"
-msgstr ""
+msgstr "Значение '%(value)s' не должно превышать месяц"
 
 #: adverts/models.py:56
 msgid "author"
-msgstr ""
+msgstr "автор"
 
 #: adverts/models.py:57
 msgid "Format mm/dd/yyyy"
@@ -130,21 +130,21 @@ msgstr "заканчивается"
 #, fuzzy
 #| msgid "New"
 msgid "new"
-msgstr "Новый"
+msgstr "новое"
 
 #: adverts/models.py:83
 msgid "old"
-msgstr ""
+msgstr "старое"
 
 #: adverts/models.py:85
 #, fuzzy
 #| msgid "Very Good"
 msgid "very old"
-msgstr "Очень хорошо"
+msgstr "очень старое"
 
 #: adverts/models.py:86
 msgid "dead"
-msgstr ""
+msgstr "мертвое"
 
 #: adverts/models.py:131
 msgid "city"
@@ -168,12 +168,12 @@ msgstr "Объявления"
 
 #: adverts/templates/adverts/index.html:25
 msgid "Detail"
-msgstr "Подробнее"
+msgstr "Подробности"
 
 #: gifts/filters.py:10 gifts/form.py:18 items/filters.py:9 items/forms.py:18
 #: jobs/filters.py:9 jobs/form.py:18 rents/filters.py:10 rents/forms.py:18
 msgid "Only Latin characters"
-msgstr ""
+msgstr "Только латинские символы"
 
 #: gifts/models.py:24
 msgid "gift type"
@@ -212,11 +212,11 @@ msgstr "Удалить подарок"
 #, fuzzy
 #| msgid "Gifts"
 msgid "Gift"
-msgstr "Подарки"
+msgstr "Подарок"
 
 #: gifts/templates/gifts/gift_list.html:7
 msgid "Map of Gifts"
-msgstr ""
+msgstr "Карта Подарков"
 
 #: gifts/templates/gifts/index.html:71
 msgid "Free"
@@ -224,41 +224,41 @@ msgstr "Бесплатный"
 
 #: items/models.py:12
 msgid "Used"
-msgstr "Использованое"
+msgstr "Использованные"
 
 #: items/models.py:13
 msgid "Acceptable"
-msgstr "Приемлемый"
+msgstr "Приемлемые"
 
 #: items/models.py:14
 msgid "Very Good"
-msgstr "Очень хорошо"
+msgstr "В хорошем состоянии"
 
 #: items/models.py:15
 msgid "Like New"
-msgstr "Как Новый"
+msgstr "Как Новые"
 
 #: items/models.py:16
 msgid "New"
-msgstr "Новый"
+msgstr "Новые"
 
 #: items/models.py:22
 #, fuzzy
 #| msgid "Syndication"
 msgid "condition"
-msgstr "Объединение"
+msgstr "состояние"
 
 #: items/models.py:25
 #, fuzzy
 #| msgid "Price:"
 msgid "price"
-msgstr "Цена:"
+msgstr "цена"
 
 #: items/templates/items/detail.html:4 items/templates/items/item_form.html:5
 #, fuzzy
 #| msgid "Items"
 msgid "Item"
-msgstr "Товары"
+msgstr "Товар"
 
 #: items/templates/items/detail.html:11 items/templates/items/index.html:11
 #: items/templates/items/index.html:16
@@ -279,15 +279,15 @@ msgstr "Удалить"
 
 #: items/templates/items/index.html:53
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: items/templates/items/item_confirm_delete.html:4
 msgid "Item delete"
-msgstr "Элемент удалить"
+msgstr "Удалить товар"
 
 #: items/templates/items/item_list.html:8
 msgid "Map of Items"
-msgstr ""
+msgstr "Карта товаров"
 
 #: jobs/models.py:26
 msgid "full-time"
@@ -299,7 +299,7 @@ msgstr "неполный рабочий день"
 
 #: jobs/models.py:28
 msgid "casual"
-msgstr "случайный"
+msgstr "нерегулярный рабочий день"
 
 #: jobs/models.py:30
 #, fuzzy
@@ -315,11 +315,11 @@ msgstr "язык"
 #, fuzzy
 #| msgid "Languages spoken by the employer:"
 msgid "What language does the employer speak?"
-msgstr "Языки общения работодателя:"
+msgstr "На каком языке общается работодатель?"
 
 #: jobs/models.py:38
 msgid "Logo or image"
-msgstr ""
+msgstr "Логотип или изображение"
 
 #: jobs/models.py:40
 msgid "salary"
@@ -340,7 +340,7 @@ msgstr "Работа"
 
 #: jobs/templates/jobs/detail.html:27
 msgid "Job type:"
-msgstr "Тип вакансии:"
+msgstr "Вакансия:"
 
 #: jobs/templates/jobs/detail.html:39
 #, fuzzy
@@ -364,49 +364,49 @@ msgstr "Языки общения работодателя:"
 #, fuzzy
 #| msgid "Job type:"
 msgid "Job delete"
-msgstr "Тип вакансии:"
+msgstr "Удалить работу"
 
 #: rents/models.py:25
 #, fuzzy
 #| msgid "Currently"
 msgid "property type"
-msgstr "В настоящее время"
+msgstr "тип недвижимости"
 
 #: rents/models.py:31
 msgid "None"
-msgstr "None"
+msgstr "Отсуствуют"
 
 #: rents/models.py:32
 msgid "Dogs"
-msgstr ""
+msgstr "Собаки"
 
 #: rents/models.py:33 templates/home.html:129
 msgid "Cats"
-msgstr "Котики"
+msgstr "Коты"
 
 #: rents/models.py:34
 msgid "Dogs and Cats"
-msgstr ""
+msgstr "Собаки и Коты"
 
 #: rents/models.py:35
 msgid "Any"
-msgstr ""
+msgstr "не важно"
 
 #: rents/models.py:42
 #, fuzzy
 #| msgid "and"
 msgid "any"
-msgstr "и"
+msgstr "не важно"
 
 #: rents/models.py:43
 msgid "woman"
-msgstr ""
+msgstr "женщина"
 
 #: rents/models.py:44
 #, fuzzy
 #| msgid "mar"
 msgid "man"
-msgstr "карта"
+msgstr "мужчина"
 
 #: rents/templates/rents/detail.html:5 rents/templates/rents/rental_form.html:5
 msgid "Rent"
@@ -461,7 +461,7 @@ msgstr "Тема"
 #, fuzzy
 #| msgid "Messages"
 msgid "Message"
-msgstr "Сообщения"
+msgstr "Сообщение"
 
 #: sendemail/templates/sendemail/email.html:6
 #: sendemail/templates/sendemail/email.html:18
@@ -469,7 +469,7 @@ msgstr "Сообщения"
 #, fuzzy
 #| msgid "Contacts"
 msgid "Contact us"
-msgstr "Контакты"
+msgstr "Связаться с нами"
 
 #: sendemail/templates/sendemail/email.html:30
 msgid "Send"
@@ -479,33 +479,33 @@ msgstr "Отправить"
 #, fuzzy
 #| msgid "success"
 msgid " No success"
-msgstr "успех"
+msgstr "Не удалось отправить"
 
 #: sendemail/templates/sendemail/no_success.html:8
 #, fuzzy
 #| msgid "success"
 msgid " no success"
-msgstr "успех"
+msgstr "не удалось отправить"
 
 #: sendemail/templates/sendemail/no_success.html:24
 msgid "No Success(  Probably a non-existent email. Please try again."
-msgstr ""
+msgstr "Не удалось отправить (вероятно, несуществующая электронная почта. Попробуйте еще раз."
 
 #: sendemail/templates/sendemail/success.html:4
 msgid "Success"
-msgstr "Успех"
+msgstr "Письмо отправлено"
 
 #: sendemail/templates/sendemail/success.html:8
 msgid "success"
-msgstr "успех"
+msgstr "письмо отправлено"
 
 #: sendemail/templates/sendemail/success.html:24
 msgid "Success! Thank you for your message."
-msgstr "Успеха! Спасибо за ваше сообщение."
+msgstr "Письмо отправлено! Спасибо за ваше сообщение."
 
 #: shop/templates/shop/product/checkout.html:6
 msgid "Checkout"
-msgstr ""
+msgstr "Оформить заказ"
 
 #: templates/base.html:82
 msgid "Map"
@@ -539,26 +539,26 @@ msgstr "Замечание! Объявления отображаются тол
 #: templates/cookielaw/banner.html:8
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
-msgstr ""
+msgstr "Используя наш сайт, вы признаете, что вы прочитали и понимаете"
 
 #: templates/cookielaw/banner.html:9 templates/policy/cookie_policy.html:4
 #: templates/policy/cookie_policy.html:18
 msgid "Cookie Policy"
-msgstr ""
+msgstr "Политику в отношении cookie-файлов"
 
 #: templates/cookielaw/banner.html:10
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Политику Конфиденциальности"
 
 #: templates/cookielaw/banner.html:11
 msgid " and our "
-msgstr ""
+msgstr "и наши"
 
 #: templates/cookielaw/banner.html:11
 #, fuzzy
 #| msgid "number of retries"
 msgid "Terms of Service"
-msgstr "количество повторных попыток"
+msgstr "Условия предоставления услуг"
 
 #: templates/home.html:96
 msgid "Frog greeting!"
@@ -570,32 +570,32 @@ msgstr "Продажа"
 
 #: templates/home.html:122
 msgid "Housing"
-msgstr "Жилище"
+msgstr "Жилье"
 
 #: templates/home.html:136
 msgid "Popular Ads"
-msgstr ""
+msgstr "Популярная Реклама"
 
 #: templates/home.html:179
 msgid "New Ads"
-msgstr ""
+msgstr "Новая Реклама"
 
 #: templates/policy/privacy_policy.html:4
 #: templates/policy/privacy_policy.html:18
 #, fuzzy
 #| msgid "Pet policy:"
 msgid "Privet Policy"
-msgstr "Политика относительно домашних животных:"
+msgstr ""
 
 #: templates/policy/term_of_services.html:4
 #: templates/policy/term_of_services.html:18
 #, fuzzy
 #| msgid "number of retries"
 msgid "Term of Services"
-msgstr "количество повторных попыток"
+msgstr "Условия предоставления услуг"
 
 #: templates/registration/logged_out.html:3
-msgid "Logget out"
+msgid "Logged out"
 msgstr "Выход"
 
 #: templates/registration/logged_out.html:16
@@ -657,13 +657,13 @@ msgstr "Пароль успешно изменен"
 #, fuzzy
 #| msgid "Password"
 msgid "Password reset"
-msgstr "Пароль"
+msgstr "Сброс пароля"
 
 #: templates/registration/password_reset_complete.html:17
 #, fuzzy
 #| msgid "Your password has been successfully changed"
 msgid "Your password has been set. You can"
-msgstr "Пароль успешно изменен"
+msgstr "Пароль был установлен. Вы можете"
 
 #: templates/registration/password_reset_confirm.html:10
 #: templates/registration/password_reset_done.html:8
@@ -731,29 +731,29 @@ msgstr "Отправить сообщение электронной почты"
 #, fuzzy
 #| msgid "result"
 msgid "Search result"
-msgstr "результат"
+msgstr "Результат поиска"
 
 #: templates/search.html:77
 msgid "Enter another query to search at this site"
-msgstr ""
+msgstr "Введите другой запрос для поиска на этом сайте"
 
 #: templates/snippets/filter.html:26
 #, fuzzy
 #| msgid "March"
 msgid "Search"
-msgstr "Март"
+msgstr "Поиск"
 
 #: templates/snippets/filter.html:31
 msgid "Filter Search"
 msgstr "Фильтр поиска"
 
 #: templates/snippets/filter.html:34 templates/snippets/search_bar.html:53
-msgid " Clear all filters"
-msgstr ""
+msgid "Clear all filters"
+msgstr "Очистить фильтр"
 
 #: templates/snippets/search_bar.html:44
 msgid "SEARCH"
-msgstr ""
+msgstr "ПОИСК"
 
 #: zaba/settings.py:176
 msgid "Ukrainian"
@@ -2133,4 +2133,4 @@ msgstr "Английский"
 #~ msgstr "Район:"
 
 #~ msgid "Location:"
-#~ msgstr "Местоположение:"
+#~ msgstr "Местоположение:" 

@@ -87,6 +87,6 @@ django-recaptcha==2.0.6
 django-redis==4.12.1
 django-rosetta==0.9.4
 django-tables2==2.3.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 
 

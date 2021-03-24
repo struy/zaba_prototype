@@ -1,16 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %} {% trans "Term of Services" %} {% endblock %}
-
-{% block head %}
-    <style>
-        .create-advert-button {
-            display: none !important;
-        }
-    </style>
+{% block title %}
+    {% trans "Term of Services" %}
 {% endblock %}
-
 
 
 {% block breadcrumbs %}
@@ -19,9 +12,7 @@
 {% endblock %}
 
 
-
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -72,7 +63,6 @@
                     Mauris mi libero, pharetra commodo blandit eu, sodales vel nibh.
                 </p>
 
-
             </div>
         </div>
     </div>
@@ -80,5 +70,3 @@
 {% endblock %}
 
 
-{% block script %}
-{% endblock %}

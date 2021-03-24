@@ -4,6 +4,8 @@
 {% load static %}
 {% load staticfiles %}
 {% load humanize %}
+
+
 <div class="advert">
     {% if adverts %}
         {% for advert in adverts %}
@@ -82,6 +84,7 @@
         {% empty %}
             <p>{% trans "No adverts are available." %}</p>
         {% endfor %}
+
         {% include "snippets/pagination.html" %}
 
     {% endif %}

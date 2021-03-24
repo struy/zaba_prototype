@@ -3,12 +3,13 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %} {% trans "Log in" %} {% endblock %}
+{% block title %}
+    {% trans "Log in" %}
+{% endblock %}
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/auth.css' %}">
     {{ form.media.css }}
-
 {% endblock %}
 
 
@@ -21,7 +22,6 @@
 
 
 {% block content %}
-
     <div class="container">
         <div class="head-block ">
             <h2>
@@ -55,15 +55,8 @@
 
             </div>
 
-            <div class="col-md-6 order-1 order-md-2 with-login pt-4 head-block-size" >
+            <div class="col-md-6 order-1 order-md-2 with-login pt-4 head-block-size">
                 <h2 class="log_with_account font-weight-light">Log in with an account</h2>
-                {#                <a href="{% url "social:begin" "facebook" %}" class="btn btn-sm facebook">#}
-                {#                    <i class="fab fa-facebook-square">&nbsp;</i> {% trans "Sign in with Facebook" %}#}
-                {#                </a>#}
-                {#                #}
-                {#                <a href="{% url "social:begin" "twitter" %}" class="btn btn-sm twitter">#}
-                {#                    <i class="fab fa-twitter-square">&nbsp;</i> {% trans "Login with Twitter" %}#}
-                {#                </a>#}
 
                 <a href="{% url "social:begin" "google-oauth2" %}" class="btn btn-sm google d-flex align-center">
                     <div class="icon">

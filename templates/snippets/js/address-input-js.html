@@ -1,7 +1,8 @@
-<script
+<script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?v=weekly&libraries=places&region=US&key=AIzaSyBQPbe31-5NvzhQhDQr_-GICqiU1YlJl5c&language=en"
-        type="text/javascript"
-></script>
+>
+</script>
+
 <script type="text/javascript">
     function initialize() {
         const options = {
@@ -12,7 +13,5 @@
         let input = document.getElementById("id_city");
         let autocomplete = new google.maps.places.Autocomplete(input, options);
     }
-
     google.maps.event.addDomListener(window, "load", initialize);
-
 </script>

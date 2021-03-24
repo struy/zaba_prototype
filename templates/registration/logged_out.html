@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% block title %} {% trans "Logget out" %} {% endblock %}
 
-{% block head %}
-<style>
-  .create-advert-button {
-            display: none !important;
-        }
-</style>
+{% block title %}
+    {% trans "Logget out" %}
 {% endblock %}
 
 
@@ -15,7 +10,6 @@
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Logged out" %}</li>
 {% endblock %}
-
 
 
 {% block content %}

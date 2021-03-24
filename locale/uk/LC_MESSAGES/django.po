@@ -8,97 +8,168 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-06 17:01-0600\n"
-"PO-Revision-Date: 2020-12-06 23:09+0000\n"
-"Last-Translator: b'  <struykm@yandex.ru>'\n"
+"POT-Creation-Date: 2021-03-24 14:39-0500\n"
+"PO-Revision-Date: 2021-03-24 19:38+0000\n"
+"Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
-#: accounts/templates/account/edit.html:3
-#: accounts/templates/account/edit.html:25
-msgid "Edit your account"
-msgstr "Редагування облікового запису"
+#: accounts/forms.py:50 sendemail/forms.py:6
+msgid "From  email"
+msgstr "З електронної пошти"
 
-#: accounts/templates/account/edit.html:14
-#: accounts/templates/account/register.html:16
-#: accounts/templates/account/register_done.html:16
-#: gifts/templates/gifts/detail.html:10
-#: gifts/templates/gifts/gift_confirm_delete.html:8
-#: gifts/templates/gifts/gift_form.html:8
-#: gifts/templates/gifts/gift_list.html:6 gifts/templates/gifts/index.html:12
-#: items/templates/items/detail.html:10 items/templates/items/index.html:15
-#: items/templates/items/item_confirm_delete.html:7
-#: items/templates/items/item_form.html:9
-#: items/templates/items/item_list.html:7 jobs/templates/jobs/detail.html:8
-#: jobs/templates/jobs/index.html:13
-#: jobs/templates/jobs/job_confirm_delete.html:7
-#: jobs/templates/jobs/job_form.html:9 rents/templates/rents/detail.html:8
-#: rents/templates/rents/index.html:4
-#: rents/templates/rents/rental_confirm_delete.html:8
-#: rents/templates/rents/rental_form.html:8
-#: sendemail/templates/sendemail/email.html:17
-#: sendemail/templates/sendemail/no_success.html:7
+#: accounts/forms.py:51 sendemail/forms.py:8
+#, fuzzy
+#| msgid "Messages"
+msgid "Message"
+msgstr "Повідомлення"
+
+#: accounts/templates/accounts/connect.html:8
+#: accounts/templates/accounts/connect.html:22
+#, fuzzy
+#| msgid "Contacts"
+msgid "Contact user"
+msgstr "Зв'яжіться з нами"
+
+#: accounts/templates/accounts/connect.html:21
+#: accounts/templates/accounts/edit.html:8
+#: accounts/templates/accounts/favorites.html:9
+#: accounts/templates/accounts/favourites.html:16
+#: accounts/templates/accounts/my_ads.html:16
+#: accounts/templates/accounts/register.html:14
+#: accounts/templates/accounts/register_done.html:16
+#: accounts/templates/accounts/user_ads.html:19
+#: gifts/templates/gifts/detail.html:12
+#: gifts/templates/gifts/gift_confirm_delete.html:10
+#: gifts/templates/gifts/gift_form.html:12
+#: gifts/templates/gifts/gift_list.html:10 gifts/templates/gifts/index.html:15
+#: items/templates/items/detail.html:11 items/templates/items/index.html:15
+#: items/templates/items/item_confirm_delete.html:9
+#: items/templates/items/item_form.html:11
+#: items/templates/items/item_list.html:10 jobs/templates/jobs/detail.html:12
+#: jobs/templates/jobs/index.html:15
+#: jobs/templates/jobs/job_confirm_delete.html:9
+#: jobs/templates/jobs/job_form.html:11 rents/templates/rents/detail.html:11
+#: rents/templates/rents/index.html:15
+#: rents/templates/rents/rental_confirm_delete.html:11
+#: rents/templates/rents/rental_form.html:11
+#: sendemail/templates/sendemail/email.html:18
+#: sendemail/templates/sendemail/no_success.html:9
 #: sendemail/templates/sendemail/success.html:7
-#: shop/templates/shop/product/checkout.html:5 templates/base.html:74
-#: templates/home.html:7 templates/policy/cookie_policy.html:17
-#: templates/policy/privacy_policy.html:17
-#: templates/policy/term_of_services.html:17
-#: templates/registration/logged_out.html:15
-#: templates/registration/login.html:22
-#: templates/registration/password_change_done.html:16
-#: templates/registration/password_change_form.html:16
-#: templates/registration/password_reset_complete.html:9
-#: templates/registration/password_reset_confirm.html:9
-#: templates/registration/password_reset_done.html:7
-#: templates/registration/password_reset_form.html:8 templates/search.html:6
+#: shop/templates/shop/product/checkout.html:5 templates/home.html:10
+#: templates/policy/cookie_policy.html:10
+#: templates/policy/privacy_policy.html:10
+#: templates/policy/term_of_services.html:10
+#: templates/registration/logged_out.html:10
+#: templates/registration/login.html:18
+#: templates/registration/password_change_done.html:5
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_reset_complete.html:11
+#: templates/registration/password_reset_confirm.html:11
+#: templates/registration/password_reset_done.html:9
+#: templates/registration/password_reset_form.html:11 templates/search.html:6
 msgid "Home"
 msgstr "На головну"
 
-#: accounts/templates/account/edit.html:15
-#| msgid "Edit your account"
+#: accounts/templates/accounts/connect.html:29
+#: sendemail/templates/sendemail/email.html:26
+#, fuzzy
+#| msgid "Contacts"
+msgid "Contact"
+msgstr "Зв'яжіться з нами"
+
+#: accounts/templates/accounts/connect.html:29
+msgid "User"
+msgstr ""
+
+#: accounts/templates/accounts/connect.html:36
+#: sendemail/templates/sendemail/email.html:33
+msgid "Send"
+msgstr "Відіслати"
+
+#: accounts/templates/accounts/edit.html:5
+msgid "Edit your account"
+msgstr "Редагування облікового запису"
+
+#: accounts/templates/accounts/edit.html:9
 msgid "Edit account"
 msgstr "Редагування облікового запису"
 
-#: accounts/templates/account/edit.html:26
-msgid "You can edit your account using the following form:"
-msgstr "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
+#: accounts/templates/accounts/favorites.html:5
+msgid "My Favorites"
+msgstr ""
 
-#: accounts/templates/account/register.html:4
-#: accounts/templates/account/register.html:17
-#: accounts/templates/account/register_done.html:17
-#, fuzzy
-#| msgid "Duration"
+#: accounts/templates/accounts/favorites.html:10
+#: accounts/templates/accounts/favourites.html:12
+#: accounts/templates/accounts/favourites.html:17
+msgid "Favorites"
+msgstr ""
+
+#: accounts/templates/accounts/favourites.html:94
+#: gifts/templates/gifts/index.html:103 items/templates/items/index.html:102
+#: jobs/templates/jobs/index.html:102 rents/templates/rents/index.html:101
+#: templates/snippets/adverts_loop.html:85
+msgid "No adverts are available."
+msgstr "%(verbose_name_plural)s недоступні"
+
+#: accounts/templates/accounts/my_ads.html:12
+#: accounts/templates/accounts/my_ads.html:17
+msgid "My Ads"
+msgstr "Мої оголошення"
+
+#: accounts/templates/accounts/register.html:5
+#: accounts/templates/accounts/register.html:15
+#: accounts/templates/accounts/register_done.html:17
 msgid "Registration"
 msgstr "Регістрація"
 
-#: accounts/templates/account/register.html:27
+#: accounts/templates/accounts/register.html:25
 msgid "Create an account"
 msgstr "Створити обліковий запис"
 
-#: accounts/templates/account/register.html:30
+#: accounts/templates/accounts/register.html:31
 msgid "Please, sign up using the following form:"
 msgstr "Будь ласка, зареєструйтеся, скориставшись цією формою:"
 
-#: accounts/templates/account/register.html:36
-msgid "Create my account"
-msgstr "Створити свій обліковий запис"
+#: accounts/templates/accounts/register.html:38
+#, fuzzy
+#| msgid "created at"
+msgid "Create"
+msgstr "створений в"
 
-#: accounts/templates/account/register_done.html:27
+#: accounts/templates/accounts/register.html:41
+#: templates/registration/login.html:47
+#: templates/registration/password_reset_form.html:39
+msgid "Login"
+msgstr ""
+
+#: accounts/templates/accounts/register.html:52
+#: templates/registration/login.html:74
+msgid "Google"
+msgstr ""
+
+#: accounts/templates/accounts/register_done.html:27
 msgid "Welcome"
 msgstr "Ласкаво просимо"
 
-#: accounts/templates/account/register_done.html:29
+#: accounts/templates/accounts/register_done.html:29
 msgid "Your account has been successfully created. Now you can"
 msgstr "Ваш обліковий запис успішно створено. Тепер ви можете"
 
-#: accounts/templates/account/register_done.html:31
+#: accounts/templates/accounts/register_done.html:31
 msgid "log in"
 msgstr "Ввійти"
+
+#: accounts/templates/accounts/user_ads.html:11
+#: accounts/templates/accounts/user_ads.html:20
+msgid "User's Ads"
+msgstr ""
 
 #: adverts/models.py:29
 #, fuzzy, python-format
@@ -124,34 +195,30 @@ msgid "expires"
 msgstr "закінчується"
 
 #: adverts/models.py:79
-#, fuzzy
-#| msgid "New"
 msgid "new"
-msgstr "Нове"
+msgstr "нове"
 
 #: adverts/models.py:83
 msgid "old"
 msgstr "старе"
 
 #: adverts/models.py:85
-#, fuzzy
-#| msgid "Very Good"
 msgid "very old"
-msgstr "дуже старе"
+msgstr "старіше"
 
 #: adverts/models.py:86
 msgid "dead"
 msgstr "мертве"
 
-#: adverts/models.py:131
+#: adverts/models.py:132
 msgid "city"
 msgstr "місто"
 
-#: adverts/models.py:132
+#: adverts/models.py:133
 msgid "address"
 msgstr "адреса"
 
-#: adverts/models.py:133
+#: adverts/models.py:134
 msgid "map"
 msgstr "мапа"
 
@@ -163,7 +230,7 @@ msgstr "Оголошення"
 msgid "Detail"
 msgstr "Подробиці"
 
-#: gifts/filters.py:10 gifts/form.py:18 items/filters.py:9 items/forms.py:18
+#: gifts/filters.py:10 gifts/form.py:18 items/filters.py:8 items/forms.py:18
 #: jobs/filters.py:9 jobs/form.py:18 rents/filters.py:10 rents/forms.py:18
 msgid "Only Latin characters"
 msgstr "Тільки латинські символи"
@@ -172,48 +239,57 @@ msgstr "Тільки латинські символи"
 msgid "gift type"
 msgstr "тип подарунка"
 
-#: gifts/templates/gifts/detail.html:11
-#: gifts/templates/gifts/gift_confirm_delete.html:9
-#: gifts/templates/gifts/gift_form.html:9
-#: gifts/templates/gifts/gift_list.html:3 gifts/templates/gifts/index.html:9
-#: gifts/templates/gifts/index.html:13
+#: gifts/templates/gifts/detail.html:8 gifts/templates/gifts/detail.html:13
+#: gifts/templates/gifts/gift_confirm_delete.html:11
+#: gifts/templates/gifts/gift_form.html:15
+#: gifts/templates/gifts/gift_list.html:5 gifts/templates/gifts/index.html:11
+#: gifts/templates/gifts/index.html:16
 msgid "Gifts"
 msgstr "Подарунки"
 
-#: gifts/templates/gifts/detail.html:35 items/templates/items/detail.html:46
-#: jobs/templates/jobs/detail.html:52 rents/templates/rents/detail.html:45
+#: gifts/templates/gifts/detail.html:48 items/templates/items/detail.html:50
+#: jobs/templates/jobs/detail.html:62 rents/templates/rents/detail.html:49
+msgid "Description:"
+msgstr "Опис:"
+
+#: gifts/templates/gifts/detail.html:55 items/templates/items/detail.html:57
+#: jobs/templates/jobs/detail.html:77 rents/templates/rents/detail.html:65
 msgid "City:"
 msgstr "Місто:"
 
-#: gifts/templates/gifts/detail.html:36 items/templates/items/detail.html:47
-#: jobs/templates/jobs/detail.html:53 rents/templates/rents/detail.html:46
-#, fuzzy
-#| msgid "IP address"
+#: gifts/templates/gifts/detail.html:56 items/templates/items/detail.html:58
+#: jobs/templates/jobs/detail.html:78 rents/templates/rents/detail.html:66
 msgid "Address:"
 msgstr "Адреса:"
 
-#: gifts/templates/gifts/detail.html:38 items/templates/items/detail.html:49
-#: jobs/templates/jobs/detail.html:56 rents/templates/rents/detail.html:49
-msgid "Map:"
-msgstr "Мапа:"
+#: gifts/templates/gifts/detail.html:60 items/templates/items/detail.html:62
+#: jobs/templates/jobs/detail.html:83 rents/templates/rents/detail.html:71
+msgid "Location:"
+msgstr "Місцеположення:"
 
-#: gifts/templates/gifts/gift_confirm_delete.html:4
+#: gifts/templates/gifts/gift_confirm_delete.html:5
 msgid "Gift delete"
 msgstr "Видалити подарунок"
 
-#: gifts/templates/gifts/gift_form.html:4
-#, fuzzy
-#| msgid "Gifts"
+#: gifts/templates/gifts/gift_form.html:6 templates/search.html:46
 msgid "Gift"
 msgstr "Подарунок"
 
-#: gifts/templates/gifts/gift_list.html:7
+#: gifts/templates/gifts/gift_list.html:13
 msgid "Map of Gifts"
 msgstr "Карта подарунків"
 
-#: gifts/templates/gifts/index.html:71
-msgid "Free"
-msgstr "Безкоштовний"
+#: gifts/templates/gifts/index.html:73 items/templates/items/index.html:73
+#: jobs/templates/jobs/index.html:73 rents/templates/rents/index.html:73
+#: templates/snippets/adverts_loop.html:58
+msgid "Delete"
+msgstr "Видалити"
+
+#: gifts/templates/gifts/index.html:76 items/templates/items/index.html:76
+#: jobs/templates/jobs/index.html:76 rents/templates/rents/index.html:76
+#: templates/snippets/adverts_loop.html:62
+msgid "Edit"
+msgstr "Редагувати"
 
 #: items/models.py:12
 msgid "Used"
@@ -231,12 +307,11 @@ msgstr "В гарному стані"
 msgid "Like New"
 msgstr "Як Нові"
 
-#: items/models.py:16
+#: items/models.py:16 templates/home.html:234
 msgid "New"
 msgstr "Нові"
 
 #: items/models.py:22
-#| msgid "Syndication"
 msgid "condition"
 msgstr "стан"
 
@@ -244,38 +319,24 @@ msgstr "стан"
 msgid "price"
 msgstr "ціна"
 
-#: items/templates/items/detail.html:4 items/templates/items/item_form.html:5
-#, fuzzy
-#| msgid "Items"
+#: items/templates/items/detail.html:7 items/templates/items/item_form.html:6
+#: templates/search.html:39
 msgid "Item"
 msgstr "Товар"
 
-#: items/templates/items/detail.html:11 items/templates/items/index.html:11
+#: items/templates/items/detail.html:12 items/templates/items/index.html:11
 #: items/templates/items/index.html:16
-#: items/templates/items/item_confirm_delete.html:8
-#: items/templates/items/item_form.html:10
-#: items/templates/items/item_list.html:4 jobs/templates/jobs/index.html:14
+#: items/templates/items/item_confirm_delete.html:10
+#: items/templates/items/item_form.html:12
+#: items/templates/items/item_list.html:5
 msgid "Items"
 msgstr "Товари"
 
-#: items/templates/items/detail.html:53 rents/templates/rents/detail.html:37
-#: rents/templates/rents/detail.html:54
-msgid "Price:"
-msgstr "Ціна:"
-
-#: items/templates/items/index.html:50
-msgid "Delete"
-msgstr "Видалити"
-
-#: items/templates/items/index.html:53
-msgid "Edit"
-msgstr "Редагувати"
-
-#: items/templates/items/item_confirm_delete.html:4
+#: items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr "Видалити товар"
 
-#: items/templates/items/item_list.html:8
+#: items/templates/items/item_list.html:13
 msgid "Map of Items"
 msgstr "Мапа товарів"
 
@@ -292,8 +353,6 @@ msgid "casual"
 msgstr "нерегулярний робочий день"
 
 #: jobs/models.py:30
-#, fuzzy
-#| msgid "Job type:"
 msgid "job type"
 msgstr "тип роботи"
 
@@ -302,8 +361,6 @@ msgid "language"
 msgstr "Мова"
 
 #: jobs/models.py:37
-#, fuzzy
-#| msgid "Languages spoken by the employer:"
 msgid "What language does the employer speak?"
 msgstr "На якій мові спілкується роботодавець?"
 
@@ -315,174 +372,146 @@ msgstr "Логотип чи зображення"
 msgid "salary"
 msgstr "заробітня платня"
 
-#: jobs/templates/jobs/detail.html:5 jobs/templates/jobs/job_form.html:6
-#, fuzzy
-#| msgid "Jobs"
+#: jobs/templates/jobs/detail.html:8 jobs/templates/jobs/job_form.html:7
+#: templates/search.html:53
 msgid "Job"
 msgstr "Робота"
 
-#: jobs/templates/jobs/detail.html:9 jobs/templates/jobs/index.html:10
-#: jobs/templates/jobs/job_confirm_delete.html:8
-#: jobs/templates/jobs/job_form.html:10 jobs/templates/jobs/job_list.html:5
-#: templates/home.html:115
+#: jobs/templates/jobs/detail.html:13 jobs/templates/jobs/index.html:11
+#: jobs/templates/jobs/index.html:16
+#: jobs/templates/jobs/job_confirm_delete.html:10
+#: jobs/templates/jobs/job_form.html:12 jobs/templates/jobs/job_list.html:6
+#: rents/templates/rents/index.html:11 templates/home.html:118
+#: templates/place_ad.html:57
 msgid "Jobs"
 msgstr "Робота"
 
-#: jobs/templates/jobs/detail.html:27
+#: jobs/templates/jobs/detail.html:55
 msgid "Job type:"
 msgstr "Вакансія:"
 
-#: jobs/templates/jobs/detail.html:39
-#, fuzzy
-#| msgid "salary"
-msgid "Salary:"
-msgstr "Заробітня плата:"
-
-#: jobs/templates/jobs/detail.html:40
+#: jobs/templates/jobs/detail.html:69
 #, fuzzy
 #| msgid "Duration"
 msgid "Duration:"
 msgstr "Тривалість"
 
-#: jobs/templates/jobs/detail.html:42
+#: jobs/templates/jobs/detail.html:71
 #, fuzzy
 #| msgid "Languages spoken by the employer:"
 msgid "Language(s) spoken by the employer:"
 msgstr "Мови спілкування роботодавця:"
 
-#: jobs/templates/jobs/job_confirm_delete.html:4
+#: jobs/templates/jobs/job_confirm_delete.html:5
 #, fuzzy
 #| msgid "Job type:"
 msgid "Job delete"
 msgstr "Видалити роботу"
 
-#: rents/models.py:25
+#: rents/models.py:26
 #, fuzzy
 #| msgid "Currently"
 msgid "property type"
 msgstr "тип нерухомості"
 
-#: rents/models.py:31
+#: rents/models.py:32
 msgid "None"
 msgstr "Відсутні"
 
-#: rents/models.py:32
+#: rents/models.py:33
 msgid "Dogs"
 msgstr "Собаки"
 
-#: rents/models.py:33 templates/home.html:129
+#: rents/models.py:34 templates/home.html:132 templates/place_ad.html:72
 msgid "Cats"
 msgstr "Котики"
 
-#: rents/models.py:34
+#: rents/models.py:35
 msgid "Dogs and Cats"
 msgstr "Собаки та Котики"
 
-#: rents/models.py:35
+#: rents/models.py:36
 msgid "Any"
 msgstr "Не важливо"
 
-#: rents/models.py:42
-#, fuzzy
-#| msgid "and"
-msgid "any"
-msgstr "не важливо"
-
 #: rents/models.py:43
+msgid "any"
+msgstr "будь-якими"
+
+#: rents/models.py:44
 msgid "woman"
 msgstr "жінка"
 
-#: rents/models.py:44
-#, fuzzy
-#| msgid "map"
+#: rents/models.py:45
 msgid "man"
 msgstr "чоловік"
 
-#: rents/templates/rents/detail.html:5
-#: rents/templates/rents/rental_form.html:5
-#, fuzzy
-#| msgid "Rents"
+#: rents/templates/rents/detail.html:7 rents/templates/rents/rental_form.html:6
+#: templates/home.html:126 templates/place_ad.html:65 templates/search.html:60
 msgid "Rent"
 msgstr "Орендна плата"
 
-#: rents/templates/rents/detail.html:9 rents/templates/rents/index.html:5
-#: rents/templates/rents/rental_confirm_delete.html:9
-#: rents/templates/rents/rental_form.html:9
+#: rents/templates/rents/detail.html:12 rents/templates/rents/index.html:16
+#: rents/templates/rents/rental_confirm_delete.html:14
+#: rents/templates/rents/rental_form.html:14
 #: rents/templates/rents/rental_list.html:4
 msgid "Rents"
 msgstr "Орендна плата"
 
-#: rents/templates/rents/detail.html:35
+#: rents/templates/rents/detail.html:56
 msgid "Bathrooms:"
 msgstr "Ванні кімнати:"
 
-#: rents/templates/rents/detail.html:36
-msgid "Bedrooms"
-msgstr "Спальні"
+#: rents/templates/rents/detail.html:57
+msgid "Bedrooms:"
+msgstr "Спальні:"
 
-#: rents/templates/rents/detail.html:38
+#: rents/templates/rents/detail.html:58
 msgid "Pet policy:"
 msgstr "Політика щодо домашніх тварин:"
 
-#: rents/templates/rents/detail.html:41
+#: rents/templates/rents/detail.html:61
 msgid "Furnished:"
 msgstr "Мебльований:"
 
-#: rents/templates/rents/detail.html:44
+#: rents/templates/rents/detail.html:64
 msgid "Prefer sex"
 msgstr "Вибір статі"
 
-#: rents/templates/rents/rental_confirm_delete.html:5
+#: rents/templates/rents/rental_confirm_delete.html:6
 msgid "Rent delete"
 msgstr "Видалити оренду"
 
-#: rents/templates/rents/rental_table_list.html:5
-#, fuzzy
-#| msgid "Rents"
+#: rents/templates/rents/rental_table_list.html:6
 msgid "Rents table"
-msgstr "Орендна плата"
-
-#: sendemail/forms.py:6
-msgid "From  email"
-msgstr "З електронної пошти"
+msgstr "Таблиця оренд "
 
 #: sendemail/forms.py:7
 msgid "Subject"
 msgstr "Тема"
 
-#: sendemail/forms.py:8
-#, fuzzy
-#| msgid "Messages"
-msgid "Message"
-msgstr "Повідомлення"
-
-#: sendemail/templates/sendemail/email.html:6
-#: sendemail/templates/sendemail/email.html:18
-#: sendemail/templates/sendemail/email.html:25 templates/base.html:79
-#, fuzzy
-#| msgid "Contacts"
+#: sendemail/templates/sendemail/email.html:7
+#: sendemail/templates/sendemail/email.html:19 templates/base.html:85
 msgid "Contact us"
 msgstr "Зв'яжіться з нами"
 
-#: sendemail/templates/sendemail/email.html:30
-msgid "Send"
-msgstr "Відіслати"
+#: sendemail/templates/sendemail/email.html:26
+msgid "Us"
+msgstr ""
 
-#: sendemail/templates/sendemail/no_success.html:4
-#, fuzzy
-#| msgid "success"
+#: sendemail/templates/sendemail/no_success.html:5
 msgid " No success"
 msgstr "Не вдалось відправити"
 
-#: sendemail/templates/sendemail/no_success.html:8
-#, fuzzy
-#| msgid "success"
+#: sendemail/templates/sendemail/no_success.html:10
 msgid " no success"
 msgstr "не вдалось відправити"
 
-#: sendemail/templates/sendemail/no_success.html:24
+#: sendemail/templates/sendemail/no_success.html:19
 msgid "No Success(  Probably a non-existent email. Please try again."
-msgstr "Не вдалося відправити (ймовірно, неіснуюча електронна пошта. Спробуйте ще раз."
+msgstr ""
+"Не вдалося відправити (ймовірно, неіснуюча електронна пошта. Спробуйте ще "
+"раз."
 
 #: sendemail/templates/sendemail/success.html:4
 msgid "Success"
@@ -500,175 +529,207 @@ msgstr "Лист відправлено! Дякую за ваше повідом
 msgid "Checkout"
 msgstr "Оформити замовлення"
 
-#: templates/base.html:82
+#: templates/404.html:8
+msgid "404"
+msgstr ""
+
+#: templates/404.html:24
+msgid "Page"
+msgstr ""
+
+#: templates/404.html:25
+msgid "not found"
+msgstr ""
+
+#: templates/404.html:43
+msgid "To home page"
+msgstr ""
+
+#: templates/base.html:88
 msgid "Map"
 msgstr "Карта"
 
-#: templates/base.html:85
+#: templates/base.html:91
 msgid "Admin"
 msgstr "Адмін"
 
-#: templates/base.html:99 templates/base.html:101
-msgid "Hello"
-msgstr "Привіт"
-
-#: templates/base.html:105
+#: templates/base.html:128 templates/base.html:157
 msgid "Logout"
 msgstr "Вийти"
 
-#: templates/base.html:110
+#: templates/base.html:136
 msgid "Sign up"
 msgstr "Зареєструватися"
 
-#: templates/base.html:113 templates/registration/login.html:6
-#: templates/registration/login.html:23 templates/registration/login.html:34
+#: templates/base.html:139 templates/registration/login.html:7
+#: templates/registration/login.html:19 templates/registration/login.html:29
 msgid "Log in"
 msgstr "Ввійти"
 
-#: templates/base.html:146
+#: templates/base.html:145
+msgid "Place Ad"
+msgstr ""
+
+#: templates/base.html:173
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Зауваження! Оголошення відображаються тільки на вибраній мові."
 
-#: templates/cookielaw/banner.html:8
+#: templates/base.html:249
+#, fuzzy
+#| msgid "condition"
+msgid "Conditions of Use"
+msgstr "стан"
+
+#: templates/base.html:254
+#, fuzzy
+#| msgid "Privacy Policy"
+msgid "Privacy Notice"
+msgstr "Політику Конфіденційності"
+
+#: templates/base.html:259
+#, fuzzy
+#| msgid "condition"
+msgid "Terms and conditions"
+msgstr "стан"
+
+#: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
 msgstr "Використовуючи наш сайт, ви визнаєте, що ви прочитали і розумієте"
 
-#: templates/cookielaw/banner.html:9 templates/policy/cookie_policy.html:4
-#: templates/policy/cookie_policy.html:18
+#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:5
+#: templates/policy/cookie_policy.html:11
 msgid "Cookie Policy"
 msgstr "Політику щодо cookie-файлів"
 
-#: templates/cookielaw/banner.html:10
+#: templates/cookielaw/banner.html:12 templates/policy/privacy_policy.html:5
+#: templates/policy/privacy_policy.html:11
 msgid "Privacy Policy"
 msgstr "Політику Конфіденційності"
 
-#: templates/cookielaw/banner.html:11
+#: templates/cookielaw/banner.html:13
 msgid " and our "
 msgstr "та наші"
 
-#: templates/cookielaw/banner.html:11
+#: templates/cookielaw/banner.html:14
 #, fuzzy
 #| msgid "number of retries"
 msgid "Terms of Service"
 msgstr "Умови надання послуг"
 
-#: templates/home.html:96
-msgid "Frog greeting!"
-msgstr "Жаба вітає Вас!"
+#: templates/home.html:99
+msgid "Main"
+msgstr ""
 
-#: templates/home.html:107
+#: templates/home.html:100
+msgid "Categories"
+msgstr ""
+
+#: templates/home.html:111 templates/place_ad.html:50
 msgid "Sell"
 msgstr "Продаж"
 
-#: templates/home.html:122
-msgid "Housing"
-msgstr "Житло"
-
-#: templates/home.html:136
-msgid "Popular Ads"
+#: templates/home.html:147
+#, fuzzy
+#| msgid "Popular Ads"
+msgid "Popular"
 msgstr "Популярна Реклама"
 
-#: templates/home.html:179
-msgid "New Ads"
-msgstr "Нова Реклама"
-
-#: templates/policy/privacy_policy.html:4
-#: templates/policy/privacy_policy.html:18
+#: templates/home.html:148 templates/home.html:235
 #, fuzzy
-#| msgid "Pet policy:"
-msgid "Privet Policy"
+#| msgid "Adverts"
+msgid "Ads"
+msgstr "Оголошення"
+
+#: templates/place_ad.html:10
+msgid "Select ad's type"
 msgstr ""
 
-#: templates/policy/term_of_services.html:4
-#: templates/policy/term_of_services.html:18
+#: templates/place_ad.html:14
+msgid "Back"
+msgstr ""
+
+#: templates/place_ad.html:38
+msgid "Select a category"
+msgstr ""
+
+#: templates/place_ad.html:39
+#, fuzzy
+#| msgid "created at"
+msgid "to create ad"
+msgstr "створений в"
+
+#: templates/policy/term_of_services.html:5
+#: templates/policy/term_of_services.html:11
 #, fuzzy
 #| msgid "number of retries"
 msgid "Term of Services"
 msgstr "Умови надання послуг"
 
-#: templates/registration/logged_out.html:3
+#: templates/registration/logged_out.html:5
+#: templates/registration/logged_out.html:11
+#: templates/registration/logged_out.html:19
 msgid "Logged out"
 msgstr "Вихід"
 
-#: templates/registration/logged_out.html:16
-#: templates/registration/logged_out.html:25
-msgid "Logged out"
-msgstr "Вихід"
-
-#: templates/registration/logged_out.html:28
+#: templates/registration/logged_out.html:22
 msgid "You have been successfully logged out. You can"
 msgstr "Ви успішно вийшли. Ви можете"
 
-#: templates/registration/logged_out.html:29
+#: templates/registration/logged_out.html:23
 msgid "log-in again"
 msgstr "Ввійти повторно"
 
-#: templates/registration/login.html:38
+#: templates/registration/login.html:36
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
-"Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
-
-#: templates/registration/login.html:42
-msgid "Please, use the following form to log-in."
-msgstr "Будь ласка, використовуйте наступну форму для входу"
+msgstr "Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
 
 #: templates/registration/login.html:44
-msgid "If you don't have an account"
-msgstr "Якщо у вас немає облікового запису"
-
-#: templates/registration/login.html:45
-msgid "register here"
-msgstr "зареєструйтесь тут"
-
-#: templates/registration/login.html:54
-msgid "Log In"
-msgstr "Ввійти"
-
-#: templates/registration/login.html:58
 #: templates/registration/password_reset_form.html:24
 msgid "Forgotten your password"
 msgstr "Забули пароль"
 
-#: templates/registration/login.html:71
-msgid "Login with Google"
-msgstr "Увійти через Google"
+#: templates/registration/login.html:50
+#, fuzzy
+#| msgid "register here"
+msgid "Register here"
+msgstr "зареєструйтесь тут"
 
-#: templates/registration/password_change_done.html:17
-#: templates/registration/password_change_form.html:17
+#: templates/registration/password_change_done.html:6
+#: templates/registration/password_change_form.html:7
 msgid "Password"
 msgstr "Пароль"
 
-#: templates/registration/password_change_done.html:27
+#: templates/registration/password_change_done.html:13
 msgid "Password changed"
 msgstr "Пароль змінено"
 
-#: templates/registration/password_change_done.html:28
+#: templates/registration/password_change_done.html:14
 msgid "Your password has been successfully changed"
 msgstr "Пароль успішно змінено"
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:12
 #, fuzzy
 #| msgid "Password"
 msgid "Password reset"
 msgstr "Cкинути пароль"
 
-#: templates/registration/password_reset_complete.html:17
+#: templates/registration/password_reset_complete.html:18
 #, fuzzy
 #| msgid "Your password has been successfully changed"
 msgid "Your password has been set. You can"
 msgstr "Пароль був встановлений. Ви можете"
 
-#: templates/registration/password_reset_confirm.html:10
-#: templates/registration/password_reset_done.html:8
-#: templates/registration/password_reset_form.html:9
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_form.html:12
 #, fuzzy
 #| msgid "Reset your password"
 msgid "Reset password"
 msgstr "Скинути пароль"
 
 #: templates/registration/password_reset_confirm.html:20
-#: templates/registration/password_reset_done.html:26
+#: templates/registration/password_reset_done.html:18
 msgid "Reset your password"
 msgstr "Скинути пароль"
 
@@ -688,12 +749,12 @@ msgstr ""
 "Посилання для відновлення пароля було недійсним, можливо тому, що його вже "
 "використали. Будь ласка, запросіть нове посилання на відновлення пароля."
 
-#: templates/registration/password_reset_done.html:27
+#: templates/registration/password_reset_done.html:19
 msgid "We've emailed you instructions for setting your password"
 msgstr ""
 "Ми надіслали вам електронною поштою інструкції щодо налаштування пароля"
 
-#: templates/registration/password_reset_done.html:28
+#: templates/registration/password_reset_done.html:20
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
@@ -713,11 +774,11 @@ msgstr "Перейдіть за посиланням нижче:"
 msgid "Your username, in case you've forgotten:"
 msgstr "Ваше ім'я користувача, якщо ви забули:"
 
-#: templates/registration/password_reset_form.html:25
+#: templates/registration/password_reset_form.html:30
 msgid "Enter your e-mail address to obtain a new password"
 msgstr "Введіть адресу електронної пошти, щоб отримати новий пароль"
 
-#: templates/registration/password_reset_form.html:28
+#: templates/registration/password_reset_form.html:36
 msgid "Send e-mail"
 msgstr "Надіслати повідомлення електронної пошти"
 
@@ -727,43 +788,97 @@ msgstr "Надіслати повідомлення електронної по�
 msgid "Search result"
 msgstr "Результат пошуку"
 
+#: templates/search.html:29
+msgid "try searching in other languages also"
+msgstr ""
+
 #: templates/search.html:77
 msgid "Enter another query to search at this site"
 msgstr "Введіть інший запит для пошуку на цьому сайті"
 
-#: templates/snippets/filter.html:26
+#: templates/snippets/filter.html:29
 #, fuzzy
 #| msgid "March"
 msgid "Search"
 msgstr "Пошук"
 
-#: templates/snippets/filter.html:31
-msgid "Filter Search"
+#: templates/snippets/filter.html:35
+#, fuzzy
+#| msgid "Filter Search"
+msgid "filter search"
 msgstr "Фільтр пошуку"
 
-#: templates/snippets/filter.html:34 templates/snippets/search_bar.html:53
+#: templates/snippets/filter.html:38
 msgid " Clear all filters"
 msgstr "Очистити фільтр"
 
-#: templates/snippets/search_bar.html:44
-msgid "SEARCH"
-msgstr "ПОШУК"
+#: templates/snippets/right_side_detail.html:20
+msgid "Other user’s ads"
+msgstr ""
 
-#: zaba/settings.py:176
+#: templates/snippets/right_side_detail.html:25
+msgid "Email"
+msgstr ""
+
+#: zaba/settings.py:178
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: zaba/settings.py:177
+#: zaba/settings.py:179
 msgid "Russian"
 msgstr "Російська"
 
-#: zaba/settings.py:178
+#: zaba/settings.py:180
 msgid "Polish"
 msgstr "Польська"
 
-#: zaba/settings.py:179
+#: zaba/settings.py:181
 msgid "English"
 msgstr "Англійська"
+
+#~ msgid "You can edit your account using the following form:"
+#~ msgstr ""
+#~ "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
+
+#~ msgid "Create my account"
+#~ msgstr "Створити свій обліковий запис"
+
+#~ msgid "Map:"
+#~ msgstr "Мапа:"
+
+#~ msgid "Free"
+#~ msgstr "Безкоштовний"
+
+#~ msgid "Price:"
+#~ msgstr "Ціна:"
+
+#, fuzzy
+#~ msgid "Salary:"
+#~ msgstr "Заробітня плата:"
+
+#~ msgid "Hello"
+#~ msgstr "Привіт"
+
+#~ msgid "Frog greeting!"
+#~ msgstr "Жаба вітає Вас!"
+
+#~ msgid "Housing"
+#~ msgstr "Житло"
+
+#~ msgid "Please, use the following form to log-in."
+#~ msgstr "Будь ласка, використовуйте наступну форму для входу"
+
+#~ msgid "If you don't have an account"
+#~ msgstr "Якщо у вас немає облікового запису"
+
+#~ msgid "Log In"
+#~ msgstr "Ввійти"
+
+#~ msgid "Login with Google"
+#~ msgstr "Увійти через Google"
+
+#~ msgid "SEARCH"
+#~ msgstr "ПОШУК"
 
 #~ msgid "owner"
 #~ msgstr "власник"
@@ -821,14 +936,15 @@ msgstr "Англійська"
 #~ msgstr "Введіть коректну email адресу."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or "
+#~ "hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери, числа, "
 #~ "символи підкреслювання та дефіси."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
-#~ " hyphens."
+#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, "
+#~ "or hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери Unicode, "
 #~ "числа, символи підкреслювання або дефіси."
@@ -900,7 +1016,8 @@ msgstr "Англійська"
 #~ msgid ""
 #~ "Ensure that there are no more than %(max)s digit before the decimal point."
 #~ msgid_plural ""
-#~ "Ensure that there are no more than %(max)s digits before the decimal point."
+#~ "Ensure that there are no more than %(max)s digits before the decimal "
+#~ "point."
 #~ msgstr[0] ""
 #~ "Переконайтеся, що тут не більше ніж %(max)s цифра до десяткової коми."
 #~ msgstr[1] ""
@@ -968,12 +1085,12 @@ msgstr "Англійська"
 #~ "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 #~ "format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у форматі "
-#~ "YYYY-MM-DD."
+#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у "
+#~ "форматі YYYY-MM-DD."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
-#~ "date."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an "
+#~ "invalid date."
 #~ msgstr ""
 #~ "Значення '%(value)s' має коректний формат (YYYY-MM-DD), але це недійсна "
 #~ "дата."
@@ -982,18 +1099,18 @@ msgstr "Англійська"
 #~ msgstr "Дата (без часу)"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD "
-#~ "HH:MM[:ss[.uuuuuu]][TZ] format."
+#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
+#~ "ss[.uuuuuu]][TZ] format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі YYYY-"
-#~ "MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
+#~ "YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD "
-#~ "HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+#~ "[TZ]) but it is an invalid date/time."
 #~ msgstr ""
-#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]),"
-#~ " але це недійсна дата/час."
+#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+#~ "[TZ]), але це недійсна дата/час."
 
 #~ msgid "Date (with time)"
 #~ msgstr "Дата (з часом)"
@@ -1005,8 +1122,8 @@ msgstr "Англійська"
 #~ msgstr "Десяткове число"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in [DD] "
-#~ "[HH:[MM:]]ss[.uuuuuu] format."
+#~ "'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+#~ "uuuuuu] format."
 #~ msgstr ""
 #~ "Значення '%(value)s' не відповідає формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
@@ -1050,15 +1167,15 @@ msgstr "Англійська"
 #~ msgstr "Текст"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-#~ "format."
+#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[."
+#~ "uuuuuu]] format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
-#~ "HH:MM[:ss[.uuuuuu]]."
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі HH:"
+#~ "MM[:ss[.uuuuuu]]."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-#~ "invalid time."
+#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
+#~ "an invalid time."
 #~ msgstr ""
 #~ "Значення '%(value)s' має вірний формат (HH:MM[:ss[.uuuuuu]]), але це "
 #~ "недійсний час."
@@ -1137,8 +1254,8 @@ msgstr "Англійська"
 #~ msgid_plural ""
 #~ "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 #~ msgstr[0] ""
-#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. (зараз"
-#~ " %(length)d)."
+#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. "
+#~ "(зараз %(length)d)."
 #~ msgstr[1] ""
 #~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символів. "
 #~ "(зараз %(length)d)."
@@ -1155,7 +1272,8 @@ msgstr "Англійська"
 #~ "Завантажте правильне зображення. Файл, який ви завантажили, не є "
 #~ "зображенням, або є зіпсованим зображенням."
 
-#~ msgid "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgid ""
+#~ "Select a valid choice. %(value)s is not one of the available choices."
 #~ msgstr "Зробіть коректний вибір, %(value)s немає серед варіантів вибору."
 
 #~ msgid "Enter a list of values."
@@ -1192,7 +1310,8 @@ msgstr "Англійська"
 #~ msgid "Please correct the duplicate data for %(field)s."
 #~ msgstr "Будь ласка, виправте повторювані дані для поля %(field)s."
 
-#~ msgid "Please correct the duplicate data for %(field)s, which must be unique."
+#~ msgid ""
+#~ "Please correct the duplicate data for %(field)s, which must be unique."
 #~ msgstr ""
 #~ "Будь ласка, виправте повторювані дані для поля %(field)s, яке має бути "
 #~ "унікальним."
@@ -1201,8 +1320,8 @@ msgstr "Англійська"
 #~ "Please correct the duplicate data for %(field_name)s which must be unique "
 #~ "for the %(lookup)s in %(date_field)s."
 #~ msgstr ""
-#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має бути "
-#~ "унікальним для вибірки %(lookup)s на %(date_field)s."
+#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має "
+#~ "бути унікальним для вибірки %(lookup)s на %(date_field)s."
 
 #~ msgid "Please correct the duplicate values below."
 #~ msgstr "Будь ласка, виправте повторювані значення нижче."
@@ -1218,8 +1337,8 @@ msgstr "Англійська"
 #~ msgstr "\"%(pk)s\" не є допустимим значенням."
 
 #~ msgid ""
-#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
-#~ "may be ambiguous or it may not exist."
+#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; "
+#~ "it may be ambiguous or it may not exist."
 #~ msgstr ""
 #~ "%(datetime)s не може бути інтерпретована в часовому поясі "
 #~ "%(current_timezone)s; дата може бути неодзначною або виявитись неіснуючою."
@@ -1554,32 +1673,32 @@ msgstr "Англійська"
 #~ "Ви бачите це повідомлення, тому що даний сайт використовує захищене "
 #~ "з'єднання і вимагає, щоб заголовок 'Referer' був переданий вашим "
 #~ "браузером,але він не був їм переданий. Даний заголовок необхідний з "
-#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а запит "
-#~ "досерверу не був перехоплений або підмінений."
+#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а "
+#~ "запит досерверу не був перехоплений або підмінений."
 
 #~ msgid ""
-#~ "If you have configured your browser to disable 'Referer' headers, please re-"
-#~ "enable them, at least for this site, or for HTTPS connections, or for 'same-"
-#~ "origin' requests."
+#~ "If you have configured your browser to disable 'Referer' headers, please "
+#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
+#~ "'same-origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому передавати"
-#~ " заголовок 'Referer', будь ласка, дозвольте йому відсилати даний заголовок "
-#~ "принаймні для даного сайту, або для всіх HTTPS-з'єднань, або для 'same-"
-#~ "origin' запитів."
+#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому "
+#~ "передавати заголовок 'Referer', будь ласка, дозвольте йому відсилати "
+#~ "даний заголовок принаймні для даного сайту, або для всіх HTTPS-з'єднань, "
+#~ "або для 'same-origin' запитів."
 
 #~ msgid ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
-#~ " including the 'Referrer-Policy: no-referrer' header, please remove them. "
-#~ "The CSRF protection requires the 'Referer' header to do strict referer "
-#~ "checking. If you're concerned about privacy, use alternatives like <a "
-#~ "rel=\"noreferrer\" ...> for links to third-party sites."
+#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
+#~ "or including the 'Referrer-Policy: no-referrer' header, please remove "
+#~ "them. The CSRF protection requires the 'Referer' header to do strict "
+#~ "referer checking. If you're concerned about privacy, use alternatives "
+#~ "like <a rel=\"noreferrer\" ...> for links to third-party sites."
 #~ msgstr ""
-#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> тег "
-#~ "або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-ласка, "
-#~ "видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити сувору "
-#~ "referer перевірку. Якщо ви стурбовані про конфіденційність, використовуйте "
-#~ "альтернативи, такі як <а rel=\"noreferrer\" ...> посилання на сторонні "
-#~ "сайти."
+#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> "
+#~ "тег або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-"
+#~ "ласка, видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити "
+#~ "сувору referer перевірку. Якщо ви стурбовані про конфіденційність, "
+#~ "використовуйте альтернативи, такі як <а rel=\"noreferrer\" ...> посилання "
+#~ "на сторонні сайти."
 
 #~ msgid ""
 #~ "You are seeing this message because this site requires a CSRF cookie when "
@@ -1595,8 +1714,9 @@ msgstr "Англійська"
 #~ "If you have configured your browser to disable cookies, please re-enable "
 #~ "them, at least for this site, or for 'same-origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, повторно"
-#~ " включіть їх принаймі на цьому сайті або для 'same-origin' запитів."
+#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, "
+#~ "повторно включіть їх принаймі на цьому сайті або для 'same-origin' "
+#~ "запитів."
 
 #~ msgid "More information is available with DEBUG=True."
 #~ msgstr "Більше інформації можна отримати при DEBUG=True."
@@ -1616,15 +1736,12 @@ msgstr "Англійська"
 #~ msgid "No week specified"
 #~ msgstr "Тиждень не вказано"
 
-#~ msgid "No %(verbose_name_plural)s available"
-#~ msgstr "%(verbose_name_plural)s недоступні"
-
 #~ msgid ""
-#~ "Future %(verbose_name_plural)s not available because "
-#~ "%(class_name)s.allow_future is False."
+#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
+#~ "allow_future is False."
 #~ msgstr ""
-#~ "Майбутні %(verbose_name_plural)s недоступні, тому що "
-#~ "%(class_name)s.allow_future має нульове значення."
+#~ "Майбутні %(verbose_name_plural)s недоступні, тому що %(class_name)s."
+#~ "allow_future має нульове значення."
 
 #~ msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
 #~ msgstr "Недійсна дата '%(datestr)s' для формату '%(format)s'"
@@ -1655,24 +1772,26 @@ msgstr "Англійська"
 
 #~ msgid ""
 #~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
+#~ "%(version)s"
 #~ msgstr ""
-#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\""
-#~ " target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
+#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/"
+#~ "\" target=\"_blank\" rel=\"noopener\">release notes</a> для Django "
+#~ "%(version)s"
 
 #~ msgid "The install worked successfully! Congratulations!"
 #~ msgstr "Встановлення успішно працювали! Вітаємо!"
 
 #~ msgid ""
-#~ "You are seeing this page because <a "
-#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
-#~ "and you have not configured any URLs."
+#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
+#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
+#~ "any URLs."
 #~ msgstr ""
-#~ "Ви бачите цю сторінку, тому що <a "
-#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> знаходиться в файлі "
-#~ "налаштувань і ви не налаштували жодної URL."
+#~ "Ви бачите цю сторінку, тому що <a href=\"https://docs.djangoproject.com/"
+#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+#~ "\">DEBUG=True</a> знаходиться в файлі налаштувань і ви не налаштували "
+#~ "жодної URL."
 
 #~ msgid "Django Documentation"
 #~ msgstr "Django Документація"
@@ -1826,9 +1945,6 @@ msgstr "Англійська"
 
 #~ msgid "group id"
 #~ msgstr "group id"
-
-#~ msgid "created at"
-#~ msgstr "створений в"
 
 #~ msgid "saved group result"
 #~ msgstr "збережений результат групи"
@@ -2081,9 +2197,6 @@ msgstr "Англійська"
 #~ msgid "Title:"
 #~ msgstr "Заголовок:"
 
-#~ msgid "Description:"
-#~ msgstr "Опис:"
-
 #~ msgid "Price is greater than"
 #~ msgstr "Ціна від"
 
@@ -2098,7 +2211,3 @@ msgstr "Англійська"
 
 #~ msgid "Neighborhood:"
 #~ msgstr "Район:"
-
-#~ msgid "Location:"
-#~ msgstr "Місцеположення:"
-

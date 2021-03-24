@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-06 17:01-0600\n"
+"POT-Creation-Date: 2021-03-24 14:39-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,82 +18,147 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: accounts/templates/account/edit.html:3
-#: accounts/templates/account/edit.html:25
-msgid "Edit your account"
+#: accounts/forms.py:50 sendemail/forms.py:6
+msgid "From  email"
 msgstr ""
 
-#: accounts/templates/account/edit.html:14
-#: accounts/templates/account/register.html:16
-#: accounts/templates/account/register_done.html:16
-#: gifts/templates/gifts/detail.html:10
-#: gifts/templates/gifts/gift_confirm_delete.html:8
-#: gifts/templates/gifts/gift_form.html:8
-#: gifts/templates/gifts/gift_list.html:6 gifts/templates/gifts/index.html:12
-#: items/templates/items/detail.html:10 items/templates/items/index.html:15
-#: items/templates/items/item_confirm_delete.html:7
-#: items/templates/items/item_form.html:9
-#: items/templates/items/item_list.html:7 jobs/templates/jobs/detail.html:8
-#: jobs/templates/jobs/index.html:13
-#: jobs/templates/jobs/job_confirm_delete.html:7
-#: jobs/templates/jobs/job_form.html:9 rents/templates/rents/detail.html:8
-#: rents/templates/rents/index.html:4
-#: rents/templates/rents/rental_confirm_delete.html:8
-#: rents/templates/rents/rental_form.html:8
-#: sendemail/templates/sendemail/email.html:17
-#: sendemail/templates/sendemail/no_success.html:7
+#: accounts/forms.py:51 sendemail/forms.py:8
+msgid "Message"
+msgstr ""
+
+#: accounts/templates/accounts/connect.html:8
+#: accounts/templates/accounts/connect.html:22
+msgid "Contact user"
+msgstr ""
+
+#: accounts/templates/accounts/connect.html:21
+#: accounts/templates/accounts/edit.html:8
+#: accounts/templates/accounts/favorites.html:9
+#: accounts/templates/accounts/favourites.html:16
+#: accounts/templates/accounts/my_ads.html:16
+#: accounts/templates/accounts/register.html:14
+#: accounts/templates/accounts/register_done.html:16
+#: accounts/templates/accounts/user_ads.html:19
+#: gifts/templates/gifts/detail.html:12
+#: gifts/templates/gifts/gift_confirm_delete.html:10
+#: gifts/templates/gifts/gift_form.html:12
+#: gifts/templates/gifts/gift_list.html:10 gifts/templates/gifts/index.html:15
+#: items/templates/items/detail.html:11 items/templates/items/index.html:15
+#: items/templates/items/item_confirm_delete.html:9
+#: items/templates/items/item_form.html:11
+#: items/templates/items/item_list.html:10 jobs/templates/jobs/detail.html:12
+#: jobs/templates/jobs/index.html:15
+#: jobs/templates/jobs/job_confirm_delete.html:9
+#: jobs/templates/jobs/job_form.html:11 rents/templates/rents/detail.html:11
+#: rents/templates/rents/index.html:15
+#: rents/templates/rents/rental_confirm_delete.html:11
+#: rents/templates/rents/rental_form.html:11
+#: sendemail/templates/sendemail/email.html:18
+#: sendemail/templates/sendemail/no_success.html:9
 #: sendemail/templates/sendemail/success.html:7
-#: shop/templates/shop/product/checkout.html:5 templates/base.html:74
-#: templates/home.html:7 templates/policy/cookie_policy.html:17
-#: templates/policy/privacy_policy.html:17
-#: templates/policy/term_of_services.html:17
-#: templates/registration/logged_out.html:15
-#: templates/registration/login.html:22
-#: templates/registration/password_change_done.html:16
-#: templates/registration/password_change_form.html:16
-#: templates/registration/password_reset_complete.html:9
-#: templates/registration/password_reset_confirm.html:9
-#: templates/registration/password_reset_done.html:7
-#: templates/registration/password_reset_form.html:8 templates/search.html:6
+#: shop/templates/shop/product/checkout.html:5 templates/home.html:10
+#: templates/policy/cookie_policy.html:10
+#: templates/policy/privacy_policy.html:10
+#: templates/policy/term_of_services.html:10
+#: templates/registration/logged_out.html:10
+#: templates/registration/login.html:18
+#: templates/registration/password_change_done.html:5
+#: templates/registration/password_change_form.html:6
+#: templates/registration/password_reset_complete.html:11
+#: templates/registration/password_reset_confirm.html:11
+#: templates/registration/password_reset_done.html:9
+#: templates/registration/password_reset_form.html:11 templates/search.html:6
 msgid "Home"
 msgstr ""
 
-#: accounts/templates/account/edit.html:15
+#: accounts/templates/accounts/connect.html:29
+#: sendemail/templates/sendemail/email.html:26
+msgid "Contact"
+msgstr ""
+
+#: accounts/templates/accounts/connect.html:29
+msgid "User"
+msgstr ""
+
+#: accounts/templates/accounts/connect.html:36
+#: sendemail/templates/sendemail/email.html:33
+msgid "Send"
+msgstr ""
+
+#: accounts/templates/accounts/edit.html:5
+msgid "Edit your account"
+msgstr ""
+
+#: accounts/templates/accounts/edit.html:9
 msgid "Edit account"
 msgstr ""
 
-#: accounts/templates/account/edit.html:26
-msgid "You can edit your account using the following form:"
+#: accounts/templates/accounts/favorites.html:5
+msgid "My Favorites"
 msgstr ""
 
-#: accounts/templates/account/register.html:4
-#: accounts/templates/account/register.html:17
-#: accounts/templates/account/register_done.html:17
+#: accounts/templates/accounts/favorites.html:10
+#: accounts/templates/accounts/favourites.html:12
+#: accounts/templates/accounts/favourites.html:17
+msgid "Favorites"
+msgstr ""
+
+#: accounts/templates/accounts/favourites.html:94
+#: gifts/templates/gifts/index.html:103 items/templates/items/index.html:102
+#: jobs/templates/jobs/index.html:102 rents/templates/rents/index.html:101
+#: templates/snippets/adverts_loop.html:85
+msgid "No adverts are available."
+msgstr ""
+
+#: accounts/templates/accounts/my_ads.html:12
+#: accounts/templates/accounts/my_ads.html:17
+msgid "My Ads"
+msgstr ""
+
+#: accounts/templates/accounts/register.html:5
+#: accounts/templates/accounts/register.html:15
+#: accounts/templates/accounts/register_done.html:17
 msgid "Registration"
 msgstr ""
 
-#: accounts/templates/account/register.html:27
+#: accounts/templates/accounts/register.html:25
 msgid "Create an account"
 msgstr ""
 
-#: accounts/templates/account/register.html:30
+#: accounts/templates/accounts/register.html:31
 msgid "Please, sign up using the following form:"
 msgstr ""
 
-#: accounts/templates/account/register.html:36
-msgid "Create my account"
+#: accounts/templates/accounts/register.html:38
+msgid "Create"
 msgstr ""
 
-#: accounts/templates/account/register_done.html:27
+#: accounts/templates/accounts/register.html:41
+#: templates/registration/login.html:47
+#: templates/registration/password_reset_form.html:39
+msgid "Login"
+msgstr ""
+
+#: accounts/templates/accounts/register.html:52
+#: templates/registration/login.html:74
+msgid "Google"
+msgstr ""
+
+#: accounts/templates/accounts/register_done.html:27
 msgid "Welcome"
 msgstr ""
 
-#: accounts/templates/account/register_done.html:29
+#: accounts/templates/accounts/register_done.html:29
 msgid "Your account has been successfully created. Now you can"
 msgstr ""
 
-#: accounts/templates/account/register_done.html:31
+#: accounts/templates/accounts/register_done.html:31
 msgid "log in"
+msgstr ""
+
+#: accounts/templates/accounts/user_ads.html:11
+#: accounts/templates/accounts/user_ads.html:20
+msgid "User's Ads"
 msgstr ""
 
 #: adverts/models.py:29
@@ -134,15 +199,15 @@ msgstr ""
 msgid "dead"
 msgstr ""
 
-#: adverts/models.py:131
+#: adverts/models.py:132
 msgid "city"
 msgstr ""
 
-#: adverts/models.py:132
+#: adverts/models.py:133
 msgid "address"
 msgstr ""
 
-#: adverts/models.py:133
+#: adverts/models.py:134
 msgid "map"
 msgstr ""
 
@@ -154,7 +219,7 @@ msgstr ""
 msgid "Detail"
 msgstr ""
 
-#: gifts/filters.py:10 gifts/form.py:18 items/filters.py:9 items/forms.py:18
+#: gifts/filters.py:10 gifts/form.py:18 items/filters.py:8 items/forms.py:18
 #: jobs/filters.py:9 jobs/form.py:18 rents/filters.py:10 rents/forms.py:18
 msgid "Only Latin characters"
 msgstr ""
@@ -163,43 +228,56 @@ msgstr ""
 msgid "gift type"
 msgstr ""
 
-#: gifts/templates/gifts/detail.html:11
-#: gifts/templates/gifts/gift_confirm_delete.html:9
-#: gifts/templates/gifts/gift_form.html:9
-#: gifts/templates/gifts/gift_list.html:3 gifts/templates/gifts/index.html:9
-#: gifts/templates/gifts/index.html:13
+#: gifts/templates/gifts/detail.html:8 gifts/templates/gifts/detail.html:13
+#: gifts/templates/gifts/gift_confirm_delete.html:11
+#: gifts/templates/gifts/gift_form.html:15
+#: gifts/templates/gifts/gift_list.html:5 gifts/templates/gifts/index.html:11
+#: gifts/templates/gifts/index.html:16
 msgid "Gifts"
 msgstr ""
 
-#: gifts/templates/gifts/detail.html:35 items/templates/items/detail.html:46
-#: jobs/templates/jobs/detail.html:52 rents/templates/rents/detail.html:45
+#: gifts/templates/gifts/detail.html:48 items/templates/items/detail.html:50
+#: jobs/templates/jobs/detail.html:62 rents/templates/rents/detail.html:49
+msgid "Description:"
+msgstr ""
+
+#: gifts/templates/gifts/detail.html:55 items/templates/items/detail.html:57
+#: jobs/templates/jobs/detail.html:77 rents/templates/rents/detail.html:65
 msgid "City:"
 msgstr ""
 
-#: gifts/templates/gifts/detail.html:36 items/templates/items/detail.html:47
-#: jobs/templates/jobs/detail.html:53 rents/templates/rents/detail.html:46
+#: gifts/templates/gifts/detail.html:56 items/templates/items/detail.html:58
+#: jobs/templates/jobs/detail.html:78 rents/templates/rents/detail.html:66
 msgid "Address:"
 msgstr ""
 
-#: gifts/templates/gifts/detail.html:38 items/templates/items/detail.html:49
-#: jobs/templates/jobs/detail.html:56 rents/templates/rents/detail.html:49
-msgid "Map:"
+#: gifts/templates/gifts/detail.html:60 items/templates/items/detail.html:62
+#: jobs/templates/jobs/detail.html:83 rents/templates/rents/detail.html:71
+msgid "Location:"
 msgstr ""
 
-#: gifts/templates/gifts/gift_confirm_delete.html:4
+#: gifts/templates/gifts/gift_confirm_delete.html:5
 msgid "Gift delete"
 msgstr ""
 
-#: gifts/templates/gifts/gift_form.html:4
+#: gifts/templates/gifts/gift_form.html:6 templates/search.html:46
 msgid "Gift"
 msgstr ""
 
-#: gifts/templates/gifts/gift_list.html:7
+#: gifts/templates/gifts/gift_list.html:13
 msgid "Map of Gifts"
 msgstr ""
 
-#: gifts/templates/gifts/index.html:71
-msgid "Free"
+#: gifts/templates/gifts/index.html:73 items/templates/items/index.html:73
+#: jobs/templates/jobs/index.html:73 rents/templates/rents/index.html:73
+#: templates/snippets/adverts_loop.html:58
+msgid "Delete"
+msgstr ""
+
+#: gifts/templates/gifts/index.html:76 items/templates/items/index.html:76
+#: jobs/templates/jobs/index.html:76 rents/templates/rents/index.html:76
+#: templates/snippets/adverts_loop.html:62
+msgid "Edit"
 msgstr ""
 
 #: items/models.py:12
@@ -218,7 +296,7 @@ msgstr ""
 msgid "Like New"
 msgstr ""
 
-#: items/models.py:16
+#: items/models.py:16 templates/home.html:234
 msgid "New"
 msgstr ""
 
@@ -230,36 +308,24 @@ msgstr ""
 msgid "price"
 msgstr ""
 
-#: items/templates/items/detail.html:4 items/templates/items/item_form.html:5
+#: items/templates/items/detail.html:7 items/templates/items/item_form.html:6
+#: templates/search.html:39
 msgid "Item"
 msgstr ""
 
-#: items/templates/items/detail.html:11 items/templates/items/index.html:11
+#: items/templates/items/detail.html:12 items/templates/items/index.html:11
 #: items/templates/items/index.html:16
-#: items/templates/items/item_confirm_delete.html:8
-#: items/templates/items/item_form.html:10
-#: items/templates/items/item_list.html:4 jobs/templates/jobs/index.html:14
+#: items/templates/items/item_confirm_delete.html:10
+#: items/templates/items/item_form.html:12
+#: items/templates/items/item_list.html:5
 msgid "Items"
 msgstr ""
 
-#: items/templates/items/detail.html:53 rents/templates/rents/detail.html:37
-#: rents/templates/rents/detail.html:54
-msgid "Price:"
-msgstr ""
-
-#: items/templates/items/index.html:50
-msgid "Delete"
-msgstr ""
-
-#: items/templates/items/index.html:53
-msgid "Edit"
-msgstr ""
-
-#: items/templates/items/item_confirm_delete.html:4
+#: items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr ""
 
-#: items/templates/items/item_list.html:8
+#: items/templates/items/item_list.html:13
 msgid "Map of Items"
 msgstr ""
 
@@ -295,143 +361,134 @@ msgstr ""
 msgid "salary"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:5 jobs/templates/jobs/job_form.html:6
+#: jobs/templates/jobs/detail.html:8 jobs/templates/jobs/job_form.html:7
+#: templates/search.html:53
 msgid "Job"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:9 jobs/templates/jobs/index.html:10
-#: jobs/templates/jobs/job_confirm_delete.html:8
-#: jobs/templates/jobs/job_form.html:10 jobs/templates/jobs/job_list.html:5
-#: templates/home.html:115
+#: jobs/templates/jobs/detail.html:13 jobs/templates/jobs/index.html:11
+#: jobs/templates/jobs/index.html:16
+#: jobs/templates/jobs/job_confirm_delete.html:10
+#: jobs/templates/jobs/job_form.html:12 jobs/templates/jobs/job_list.html:6
+#: rents/templates/rents/index.html:11 templates/home.html:118
+#: templates/place_ad.html:57
 msgid "Jobs"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:27
+#: jobs/templates/jobs/detail.html:55
 msgid "Job type:"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:39
-msgid "Salary:"
-msgstr ""
-
-#: jobs/templates/jobs/detail.html:40
+#: jobs/templates/jobs/detail.html:69
 msgid "Duration:"
 msgstr ""
 
-#: jobs/templates/jobs/detail.html:42
+#: jobs/templates/jobs/detail.html:71
 msgid "Language(s) spoken by the employer:"
 msgstr ""
 
-#: jobs/templates/jobs/job_confirm_delete.html:4
+#: jobs/templates/jobs/job_confirm_delete.html:5
 msgid "Job delete"
 msgstr ""
 
-#: rents/models.py:25
+#: rents/models.py:26
 msgid "property type"
 msgstr ""
 
-#: rents/models.py:31
+#: rents/models.py:32
 msgid "None"
 msgstr ""
 
-#: rents/models.py:32
+#: rents/models.py:33
 msgid "Dogs"
 msgstr ""
 
-#: rents/models.py:33 templates/home.html:129
+#: rents/models.py:34 templates/home.html:132 templates/place_ad.html:72
 msgid "Cats"
 msgstr ""
 
-#: rents/models.py:34
+#: rents/models.py:35
 msgid "Dogs and Cats"
 msgstr ""
 
-#: rents/models.py:35
+#: rents/models.py:36
 msgid "Any"
 msgstr ""
 
-#: rents/models.py:42
+#: rents/models.py:43
 msgid "any"
 msgstr ""
 
-#: rents/models.py:43
+#: rents/models.py:44
 msgid "woman"
 msgstr ""
 
-#: rents/models.py:44
+#: rents/models.py:45
 msgid "man"
 msgstr ""
 
-#: rents/templates/rents/detail.html:5 rents/templates/rents/rental_form.html:5
+#: rents/templates/rents/detail.html:7 rents/templates/rents/rental_form.html:6
+#: templates/home.html:126 templates/place_ad.html:65 templates/search.html:60
 msgid "Rent"
 msgstr ""
 
-#: rents/templates/rents/detail.html:9 rents/templates/rents/index.html:5
-#: rents/templates/rents/rental_confirm_delete.html:9
-#: rents/templates/rents/rental_form.html:9
+#: rents/templates/rents/detail.html:12 rents/templates/rents/index.html:16
+#: rents/templates/rents/rental_confirm_delete.html:14
+#: rents/templates/rents/rental_form.html:14
 #: rents/templates/rents/rental_list.html:4
 msgid "Rents"
 msgstr ""
 
-#: rents/templates/rents/detail.html:35
+#: rents/templates/rents/detail.html:56
 msgid "Bathrooms:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:36
-msgid "Bedrooms"
+#: rents/templates/rents/detail.html:57
+msgid "Bedrooms:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:38
+#: rents/templates/rents/detail.html:58
 msgid "Pet policy:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:41
+#: rents/templates/rents/detail.html:61
 msgid "Furnished:"
 msgstr ""
 
-#: rents/templates/rents/detail.html:44
+#: rents/templates/rents/detail.html:64
 msgid "Prefer sex"
 msgstr ""
 
-#: rents/templates/rents/rental_confirm_delete.html:5
+#: rents/templates/rents/rental_confirm_delete.html:6
 msgid "Rent delete"
 msgstr ""
 
-#: rents/templates/rents/rental_table_list.html:5
+#: rents/templates/rents/rental_table_list.html:6
 msgid "Rents table"
-msgstr ""
-
-#: sendemail/forms.py:6
-msgid "From  email"
 msgstr ""
 
 #: sendemail/forms.py:7
 msgid "Subject"
 msgstr ""
 
-#: sendemail/forms.py:8
-msgid "Message"
-msgstr ""
-
-#: sendemail/templates/sendemail/email.html:6
-#: sendemail/templates/sendemail/email.html:18
-#: sendemail/templates/sendemail/email.html:25 templates/base.html:79
+#: sendemail/templates/sendemail/email.html:7
+#: sendemail/templates/sendemail/email.html:19 templates/base.html:85
 msgid "Contact us"
 msgstr ""
 
-#: sendemail/templates/sendemail/email.html:30
-msgid "Send"
+#: sendemail/templates/sendemail/email.html:26
+msgid "Us"
 msgstr ""
 
-#: sendemail/templates/sendemail/no_success.html:4
+#: sendemail/templates/sendemail/no_success.html:5
 msgid " No success"
 msgstr ""
 
-#: sendemail/templates/sendemail/no_success.html:8
+#: sendemail/templates/sendemail/no_success.html:10
 msgid " no success"
 msgstr ""
 
-#: sendemail/templates/sendemail/no_success.html:24
+#: sendemail/templates/sendemail/no_success.html:19
 msgid "No Success(  Probably a non-existent email. Please try again."
 msgstr ""
 
@@ -451,162 +508,183 @@ msgstr ""
 msgid "Checkout"
 msgstr ""
 
-#: templates/base.html:82
+#: templates/404.html:8
+msgid "404"
+msgstr ""
+
+#: templates/404.html:24
+msgid "Page"
+msgstr ""
+
+#: templates/404.html:25
+msgid "not found"
+msgstr ""
+
+#: templates/404.html:43
+msgid "To home page"
+msgstr ""
+
+#: templates/base.html:88
 msgid "Map"
 msgstr ""
 
-#: templates/base.html:85
+#: templates/base.html:91
 msgid "Admin"
 msgstr ""
 
-#: templates/base.html:99 templates/base.html:101
-msgid "Hello"
-msgstr ""
-
-#: templates/base.html:105
+#: templates/base.html:128 templates/base.html:157
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:110
+#: templates/base.html:136
 msgid "Sign up"
 msgstr ""
 
-#: templates/base.html:113 templates/registration/login.html:6
-#: templates/registration/login.html:23 templates/registration/login.html:34
+#: templates/base.html:139 templates/registration/login.html:7
+#: templates/registration/login.html:19 templates/registration/login.html:29
 msgid "Log in"
 msgstr ""
 
-#: templates/base.html:146
+#: templates/base.html:145
+msgid "Place Ad"
+msgstr ""
+
+#: templates/base.html:173
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr ""
 
-#: templates/cookielaw/banner.html:8
+#: templates/base.html:249
+msgid "Conditions of Use"
+msgstr ""
+
+#: templates/base.html:254
+msgid "Privacy Notice"
+msgstr ""
+
+#: templates/base.html:259
+msgid "Terms and conditions"
+msgstr ""
+
+#: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
 msgstr ""
 
-#: templates/cookielaw/banner.html:9 templates/policy/cookie_policy.html:4
-#: templates/policy/cookie_policy.html:18
+#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:5
+#: templates/policy/cookie_policy.html:11
 msgid "Cookie Policy"
 msgstr ""
 
-#: templates/cookielaw/banner.html:10
+#: templates/cookielaw/banner.html:12 templates/policy/privacy_policy.html:5
+#: templates/policy/privacy_policy.html:11
 msgid "Privacy Policy"
 msgstr ""
 
-#: templates/cookielaw/banner.html:11
+#: templates/cookielaw/banner.html:13
 msgid " and our "
 msgstr ""
 
-#: templates/cookielaw/banner.html:11
+#: templates/cookielaw/banner.html:14
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/home.html:96
-msgid "Frog greeting!"
+#: templates/home.html:99
+msgid "Main"
 msgstr ""
 
-#: templates/home.html:107
+#: templates/home.html:100
+msgid "Categories"
+msgstr ""
+
+#: templates/home.html:111 templates/place_ad.html:50
 msgid "Sell"
 msgstr ""
 
-#: templates/home.html:122
-msgid "Housing"
+#: templates/home.html:147
+msgid "Popular"
 msgstr ""
 
-#: templates/home.html:136
-msgid "Popular Ads"
+#: templates/home.html:148 templates/home.html:235
+msgid "Ads"
 msgstr ""
 
-#: templates/home.html:179
-msgid "New Ads"
+#: templates/place_ad.html:10
+msgid "Select ad's type"
 msgstr ""
 
-#: templates/policy/privacy_policy.html:4
-#: templates/policy/privacy_policy.html:18
-msgid "Privet Policy"
+#: templates/place_ad.html:14
+msgid "Back"
 msgstr ""
 
-#: templates/policy/term_of_services.html:4
-#: templates/policy/term_of_services.html:18
+#: templates/place_ad.html:38
+msgid "Select a category"
+msgstr ""
+
+#: templates/place_ad.html:39
+msgid "to create ad"
+msgstr ""
+
+#: templates/policy/term_of_services.html:5
+#: templates/policy/term_of_services.html:11
 msgid "Term of Services"
 msgstr ""
 
-#: templates/registration/logged_out.html:3
-msgid "Logget out"
-msgstr ""
-
-#: templates/registration/logged_out.html:16
-#: templates/registration/logged_out.html:25
+#: templates/registration/logged_out.html:5
+#: templates/registration/logged_out.html:11
+#: templates/registration/logged_out.html:19
 msgid "Logged out"
 msgstr ""
 
-#: templates/registration/logged_out.html:28
+#: templates/registration/logged_out.html:22
 msgid "You have been successfully logged out. You can"
 msgstr ""
 
-#: templates/registration/logged_out.html:29
+#: templates/registration/logged_out.html:23
 msgid "log-in again"
 msgstr ""
 
-#: templates/registration/login.html:38
+#: templates/registration/login.html:36
 msgid "Your username and password didn't match. Please try again."
 msgstr ""
 
-#: templates/registration/login.html:42
-msgid "Please, use the following form to log-in."
-msgstr ""
-
 #: templates/registration/login.html:44
-msgid "If you don't have an account"
-msgstr ""
-
-#: templates/registration/login.html:45
-msgid "register here"
-msgstr ""
-
-#: templates/registration/login.html:54
-msgid "Log In"
-msgstr ""
-
-#: templates/registration/login.html:58
 #: templates/registration/password_reset_form.html:24
 msgid "Forgotten your password"
 msgstr ""
 
-#: templates/registration/login.html:71
-msgid "Login with Google"
+#: templates/registration/login.html:50
+msgid "Register here"
 msgstr ""
 
-#: templates/registration/password_change_done.html:17
-#: templates/registration/password_change_form.html:17
+#: templates/registration/password_change_done.html:6
+#: templates/registration/password_change_form.html:7
 msgid "Password"
 msgstr ""
 
-#: templates/registration/password_change_done.html:27
+#: templates/registration/password_change_done.html:13
 msgid "Password changed"
 msgstr ""
 
-#: templates/registration/password_change_done.html:28
+#: templates/registration/password_change_done.html:14
 msgid "Your password has been successfully changed"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:12
 msgid "Password reset"
 msgstr ""
 
-#: templates/registration/password_reset_complete.html:17
+#: templates/registration/password_reset_complete.html:18
 msgid "Your password has been set. You can"
 msgstr ""
 
-#: templates/registration/password_reset_confirm.html:10
-#: templates/registration/password_reset_done.html:8
-#: templates/registration/password_reset_form.html:9
+#: templates/registration/password_reset_confirm.html:12
+#: templates/registration/password_reset_done.html:10
+#: templates/registration/password_reset_form.html:12
 msgid "Reset password"
 msgstr ""
 
 #: templates/registration/password_reset_confirm.html:20
-#: templates/registration/password_reset_done.html:26
+#: templates/registration/password_reset_done.html:18
 msgid "Reset your password"
 msgstr ""
 
@@ -624,11 +702,11 @@ msgid ""
 "used. Please request a new password reset."
 msgstr ""
 
-#: templates/registration/password_reset_done.html:27
+#: templates/registration/password_reset_done.html:19
 msgid "We've emailed you instructions for setting your password"
 msgstr ""
 
-#: templates/registration/password_reset_done.html:28
+#: templates/registration/password_reset_done.html:20
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
@@ -646,11 +724,11 @@ msgstr ""
 msgid "Your username, in case you've forgotten:"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:25
+#: templates/registration/password_reset_form.html:30
 msgid "Enter your e-mail address to obtain a new password"
 msgstr ""
 
-#: templates/registration/password_reset_form.html:28
+#: templates/registration/password_reset_form.html:36
 msgid "Send e-mail"
 msgstr ""
 
@@ -658,38 +736,46 @@ msgstr ""
 msgid "Search result"
 msgstr ""
 
+#: templates/search.html:29
+msgid "try searching in other languages also"
+msgstr ""
+
 #: templates/search.html:77
 msgid "Enter another query to search at this site"
 msgstr ""
 
-#: templates/snippets/filter.html:26
+#: templates/snippets/filter.html:29
 msgid "Search"
 msgstr ""
 
-#: templates/snippets/filter.html:31
-msgid "Filter Search"
+#: templates/snippets/filter.html:35
+msgid "filter search"
 msgstr ""
 
-#: templates/snippets/filter.html:34 templates/snippets/search_bar.html:53
+#: templates/snippets/filter.html:38
 msgid " Clear all filters"
 msgstr ""
 
-#: templates/snippets/search_bar.html:44
-msgid "SEARCH"
+#: templates/snippets/right_side_detail.html:20
+msgid "Other user’s ads"
 msgstr ""
 
-#: zaba/settings.py:176
-msgid "Ukrainian"
-msgstr ""
-
-#: zaba/settings.py:177
-msgid "Russian"
+#: templates/snippets/right_side_detail.html:25
+msgid "Email"
 msgstr ""
 
 #: zaba/settings.py:178
-msgid "Polish"
+msgid "Ukrainian"
 msgstr ""
 
 #: zaba/settings.py:179
+msgid "Russian"
+msgstr ""
+
+#: zaba/settings.py:180
+msgid "Polish"
+msgstr ""
+
+#: zaba/settings.py:181
 msgid "English"
 msgstr ""

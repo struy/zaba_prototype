@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 14:39-0500\n"
-"PO-Revision-Date: 2020-07-26 22:35+0000\n"
-"Last-Translator: b'  <struykm@yandex.ru>'\n"
+"POT-Creation-Date: 2021-03-25 15:35-0500\n"
+"PO-Revision-Date: 2021-03-25 20:33+0000\n"
+"Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,22 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Translated-Using: django-rosetta 0.9.4\n"
+"X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: accounts/forms.py:50 sendemail/forms.py:6
 msgid "From  email"
 msgstr "С электронной почты"
 
 #: accounts/forms.py:51 sendemail/forms.py:8
-#, fuzzy
-#| msgid "Messages"
 msgid "Message"
 msgstr "Сообщение"
 
 #: accounts/templates/accounts/connect.html:8
 #: accounts/templates/accounts/connect.html:22
-#, fuzzy
-#| msgid "Contacts"
 msgid "Contact user"
 msgstr "Связаться с нами"
 
@@ -76,18 +72,16 @@ msgstr "Связаться с нами"
 #: templates/registration/password_reset_done.html:9
 #: templates/registration/password_reset_form.html:11 templates/search.html:6
 msgid "Home"
-msgstr "На главную"
+msgstr "Главная"
 
 #: accounts/templates/accounts/connect.html:29
 #: sendemail/templates/sendemail/email.html:26
-#, fuzzy
-#| msgid "Contacts"
 msgid "Contact"
-msgstr "Связаться с нами"
+msgstr "Связаться"
 
 #: accounts/templates/accounts/connect.html:29
 msgid "User"
-msgstr ""
+msgstr "Связаться с нами"
 
 #: accounts/templates/accounts/connect.html:36
 #: sendemail/templates/sendemail/email.html:33
@@ -99,42 +93,34 @@ msgid "Edit your account"
 msgstr "Редактирование учетной записи"
 
 #: accounts/templates/accounts/edit.html:9
-#, fuzzy
-#| msgid "Edit your account"
 msgid "Edit account"
 msgstr "Редактирование учетной записи"
 
 #: accounts/templates/accounts/favorites.html:5
 msgid "My Favorites"
-msgstr ""
+msgstr "Мои любимые"
 
 #: accounts/templates/accounts/favorites.html:10
 #: accounts/templates/accounts/favourites.html:12
 #: accounts/templates/accounts/favourites.html:17
 msgid "Favorites"
-msgstr ""
+msgstr "Любимые"
 
 #: accounts/templates/accounts/favourites.html:94
 #: gifts/templates/gifts/index.html:103 items/templates/items/index.html:102
 #: jobs/templates/jobs/index.html:102 rents/templates/rents/index.html:101
 #: templates/snippets/adverts_loop.html:85
-#, fuzzy
-#| msgid "No %(verbose_name_plural)s available"
 msgid "No adverts are available."
-msgstr "%(verbose_name_plural)s недоступны"
+msgstr "Объявления отсуствуют"
 
 #: accounts/templates/accounts/my_ads.html:12
 #: accounts/templates/accounts/my_ads.html:17
-#, fuzzy
-#| msgid "New Ads"
 msgid "My Ads"
-msgstr "Новая Реклама"
+msgstr "Мои объявления"
 
 #: accounts/templates/accounts/register.html:5
 #: accounts/templates/accounts/register.html:15
 #: accounts/templates/accounts/register_done.html:17
-#, fuzzy
-#| msgid "Duration"
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -147,8 +133,6 @@ msgid "Please, sign up using the following form:"
 msgstr "Пожалуйста, зарегистрируйтесь, воспользовавшись этой формой:"
 
 #: accounts/templates/accounts/register.html:38
-#, fuzzy
-#| msgid "created at"
 msgid "Create"
 msgstr "созданый в"
 
@@ -156,12 +140,12 @@ msgstr "созданый в"
 #: templates/registration/login.html:47
 #: templates/registration/password_reset_form.html:39
 msgid "Login"
-msgstr ""
+msgstr "Логин"
 
 #: accounts/templates/accounts/register.html:52
 #: templates/registration/login.html:74
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: accounts/templates/accounts/register_done.html:27
 msgid "Welcome"
@@ -178,11 +162,10 @@ msgstr "Войти"
 #: accounts/templates/accounts/user_ads.html:11
 #: accounts/templates/accounts/user_ads.html:20
 msgid "User's Ads"
-msgstr ""
+msgstr "Объявления автора"
 
 #: adverts/models.py:29
-#, fuzzy, python-format
-#| msgid "'%(value)s' value must be a float."
+#, python-format
 msgid "%(value)s can't be past"
 msgstr "Значение '%(value)s' не должно быть в прошлом."
 
@@ -204,8 +187,6 @@ msgid "expires"
 msgstr "заканчивается"
 
 #: adverts/models.py:79
-#, fuzzy
-#| msgid "New"
 msgid "new"
 msgstr "новое"
 
@@ -214,10 +195,8 @@ msgid "old"
 msgstr "старое"
 
 #: adverts/models.py:85
-#, fuzzy
-#| msgid "Very Good"
 msgid "very old"
-msgstr "очень старое"
+msgstr "устарело"
 
 #: adverts/models.py:86
 msgid "dead"
@@ -228,14 +207,10 @@ msgid "city"
 msgstr "город"
 
 #: adverts/models.py:133
-#, fuzzy
-#| msgid "IP address"
 msgid "address"
-msgstr "IP адрес"
+msgstr "адрес"
 
 #: adverts/models.py:134
-#, fuzzy
-#| msgid "mar"
 msgid "map"
 msgstr "карта"
 
@@ -276,10 +251,8 @@ msgstr "Город:"
 
 #: gifts/templates/gifts/detail.html:56 items/templates/items/detail.html:58
 #: jobs/templates/jobs/detail.html:78 rents/templates/rents/detail.html:66
-#, fuzzy
-#| msgid "IP address"
 msgid "Address:"
-msgstr "IP адрес"
+msgstr "Адрес:"
 
 #: gifts/templates/gifts/detail.html:60 items/templates/items/detail.html:62
 #: jobs/templates/jobs/detail.html:83 rents/templates/rents/detail.html:71
@@ -291,8 +264,6 @@ msgid "Gift delete"
 msgstr "Удалить подарок"
 
 #: gifts/templates/gifts/gift_form.html:6 templates/search.html:46
-#, fuzzy
-#| msgid "Gifts"
 msgid "Gift"
 msgstr "Подарок"
 
@@ -333,21 +304,15 @@ msgid "New"
 msgstr "Новые"
 
 #: items/models.py:22
-#, fuzzy
-#| msgid "Syndication"
 msgid "condition"
 msgstr "состояние"
 
 #: items/models.py:25
-#, fuzzy
-#| msgid "Price:"
 msgid "price"
 msgstr "цена"
 
 #: items/templates/items/detail.html:7 items/templates/items/item_form.html:6
 #: templates/search.html:39
-#, fuzzy
-#| msgid "Items"
 msgid "Item"
 msgstr "Товар"
 
@@ -380,8 +345,6 @@ msgid "casual"
 msgstr "нерегулярный рабочий день"
 
 #: jobs/models.py:30
-#, fuzzy
-#| msgid "Job type:"
 msgid "job type"
 msgstr "Тип вакансии:"
 
@@ -390,8 +353,6 @@ msgid "language"
 msgstr "язык"
 
 #: jobs/models.py:37
-#, fuzzy
-#| msgid "Languages spoken by the employer:"
 msgid "What language does the employer speak?"
 msgstr "На каком языке общается работодатель?"
 
@@ -401,12 +362,10 @@ msgstr "Логотип или изображение"
 
 #: jobs/models.py:40
 msgid "salary"
-msgstr "заработная плата"
+msgstr "зарплата"
 
 #: jobs/templates/jobs/detail.html:8 jobs/templates/jobs/job_form.html:7
 #: templates/search.html:53
-#, fuzzy
-#| msgid "Jobs"
 msgid "Job"
 msgstr "Работа"
 
@@ -424,62 +383,50 @@ msgid "Job type:"
 msgstr "Вакансия:"
 
 #: jobs/templates/jobs/detail.html:69
-#, fuzzy
-#| msgid "Duration"
 msgid "Duration:"
 msgstr "Продолжительность"
 
 #: jobs/templates/jobs/detail.html:71
-#, fuzzy
-#| msgid "Languages spoken by the employer:"
 msgid "Language(s) spoken by the employer:"
 msgstr "Языки общения работодателя:"
 
 #: jobs/templates/jobs/job_confirm_delete.html:5
-#, fuzzy
-#| msgid "Job type:"
 msgid "Job delete"
 msgstr "Удалить работу"
 
 #: rents/models.py:26
-#, fuzzy
-#| msgid "Currently"
 msgid "property type"
 msgstr "тип недвижимости"
 
 #: rents/models.py:32
 msgid "None"
-msgstr "Отсуствуют"
+msgstr "Никакими"
 
 #: rents/models.py:33
 msgid "Dogs"
-msgstr "Собаки"
+msgstr "Собаками"
 
 #: rents/models.py:34 templates/home.html:132 templates/place_ad.html:72
 msgid "Cats"
-msgstr "Коты"
+msgstr "Котиками"
 
 #: rents/models.py:35
 msgid "Dogs and Cats"
-msgstr "Собаки и Коты"
+msgstr "Собаками и Котиками"
 
 #: rents/models.py:36
 msgid "Any"
-msgstr "не важно"
+msgstr "Любыми"
 
 #: rents/models.py:43
-#, fuzzy
-#| msgid "and"
 msgid "any"
-msgstr "не важно"
+msgstr "любыми"
 
 #: rents/models.py:44
 msgid "woman"
 msgstr "женщина"
 
 #: rents/models.py:45
-#, fuzzy
-#| msgid "mar"
 msgid "man"
 msgstr "мужчина"
 
@@ -500,10 +447,8 @@ msgid "Bathrooms:"
 msgstr "Ванные:"
 
 #: rents/templates/rents/detail.html:57
-#, fuzzy
-#| msgid "Bedrooms"
 msgid "Bedrooms:"
-msgstr "Спальни"
+msgstr "Спальни:"
 
 #: rents/templates/rents/detail.html:58
 msgid "Pet policy:"
@@ -522,8 +467,6 @@ msgid "Rent delete"
 msgstr "Удалить аренду"
 
 #: rents/templates/rents/rental_table_list.html:6
-#, fuzzy
-#| msgid "Rents"
 msgid "Rents table"
 msgstr "Арендная плата"
 
@@ -533,26 +476,18 @@ msgstr "Тема"
 
 #: sendemail/templates/sendemail/email.html:7
 #: sendemail/templates/sendemail/email.html:19 templates/base.html:85
-#, fuzzy
-#| msgid "Contacts"
 msgid "Contact us"
 msgstr "Связаться с нами"
 
 #: sendemail/templates/sendemail/email.html:26
-#, fuzzy
-#| msgid "Used"
 msgid "Us"
-msgstr "Использованные"
+msgstr "с нами"
 
 #: sendemail/templates/sendemail/no_success.html:5
-#, fuzzy
-#| msgid "success"
 msgid " No success"
 msgstr "Не удалось отправить"
 
 #: sendemail/templates/sendemail/no_success.html:10
-#, fuzzy
-#| msgid "success"
 msgid " no success"
 msgstr "не удалось отправить"
 
@@ -580,19 +515,19 @@ msgstr "Оформить заказ"
 
 #: templates/404.html:8
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: templates/404.html:24
 msgid "Page"
-msgstr ""
+msgstr "Страница"
 
 #: templates/404.html:25
 msgid "not found"
-msgstr ""
+msgstr "не найдена"
 
 #: templates/404.html:43
 msgid "To home page"
-msgstr ""
+msgstr "Вернуться на главную"
 
 #: templates/base.html:88
 msgid "Map"
@@ -617,29 +552,23 @@ msgstr "Войти"
 
 #: templates/base.html:145
 msgid "Place Ad"
-msgstr ""
+msgstr "Разместить Объявление"
 
 #: templates/base.html:173
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Замечание! Объявления отображаются только на выбранном языке."
 
 #: templates/base.html:249
-#, fuzzy
-#| msgid "Syndication"
 msgid "Conditions of Use"
-msgstr "состояние"
+msgstr "Состояние"
 
 #: templates/base.html:254
-#, fuzzy
-#| msgid "Privacy Policy"
 msgid "Privacy Notice"
 msgstr "Политику Конфиденциальности"
 
 #: templates/base.html:259
-#, fuzzy
-#| msgid "Syndication"
 msgid "Terms and conditions"
-msgstr "состояние"
+msgstr "Условия и Положения"
 
 #: templates/cookielaw/banner.html:10
 msgid ""
@@ -661,57 +590,47 @@ msgid " and our "
 msgstr "и наши"
 
 #: templates/cookielaw/banner.html:14
-#, fuzzy
-#| msgid "number of retries"
 msgid "Terms of Service"
 msgstr "Условия предоставления услуг"
 
 #: templates/home.html:99
 msgid "Main"
-msgstr ""
+msgstr "Основные"
 
 #: templates/home.html:100
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: templates/home.html:111 templates/place_ad.html:50
 msgid "Sell"
 msgstr "Продажа"
 
 #: templates/home.html:147
-#, fuzzy
-#| msgid "Popular Ads"
 msgid "Popular"
-msgstr "Популярная Реклама"
+msgstr "Популярные"
 
 #: templates/home.html:148 templates/home.html:235
-#, fuzzy
-#| msgid "Adverts"
 msgid "Ads"
 msgstr "Объявления"
 
 #: templates/place_ad.html:10
 msgid "Select ad's type"
-msgstr ""
+msgstr "Выберите тип объявления"
 
 #: templates/place_ad.html:14
 msgid "Back"
-msgstr ""
+msgstr "Возвратиться"
 
 #: templates/place_ad.html:38
 msgid "Select a category"
-msgstr ""
+msgstr "Выберите категорию"
 
 #: templates/place_ad.html:39
-#, fuzzy
-#| msgid "created at"
 msgid "to create ad"
-msgstr "созданый в"
+msgstr "создать объявление"
 
 #: templates/policy/term_of_services.html:5
 #: templates/policy/term_of_services.html:11
-#, fuzzy
-#| msgid "number of retries"
 msgid "Term of Services"
 msgstr "Условия предоставления услуг"
 
@@ -739,8 +658,6 @@ msgid "Forgotten your password"
 msgstr "Забыли пароль"
 
 #: templates/registration/login.html:50
-#, fuzzy
-#| msgid "register here"
 msgid "Register here"
 msgstr "зарегистрируйтесь здесь"
 
@@ -758,22 +675,16 @@ msgid "Your password has been successfully changed"
 msgstr "Пароль успешно изменен"
 
 #: templates/registration/password_reset_complete.html:12
-#, fuzzy
-#| msgid "Password"
 msgid "Password reset"
 msgstr "Сброс пароля"
 
 #: templates/registration/password_reset_complete.html:18
-#, fuzzy
-#| msgid "Your password has been successfully changed"
 msgid "Your password has been set. You can"
 msgstr "Пароль был установлен. Вы можете"
 
 #: templates/registration/password_reset_confirm.html:12
 #: templates/registration/password_reset_done.html:10
 #: templates/registration/password_reset_form.html:12
-#, fuzzy
-#| msgid "Reset your password"
 msgid "Reset password"
 msgstr "Сбросить пароль"
 
@@ -832,44 +743,36 @@ msgid "Send e-mail"
 msgstr "Отправить сообщение электронной почты"
 
 #: templates/search.html:8
-#, fuzzy
-#| msgid "result"
 msgid "Search result"
 msgstr "Результат поиска"
 
 #: templates/search.html:29
 msgid "try searching in other languages also"
-msgstr ""
+msgstr "попробуйте поискать и на других языках"
 
 #: templates/search.html:77
 msgid "Enter another query to search at this site"
 msgstr "Введите другой запрос для поиска на этом сайте"
 
 #: templates/snippets/filter.html:29
-#, fuzzy
-#| msgid "March"
 msgid "Search"
 msgstr "Поиск"
 
 #: templates/snippets/filter.html:35
-#, fuzzy
-#| msgid "Filter Search"
 msgid "filter search"
 msgstr "Фильтр поиска"
 
 #: templates/snippets/filter.html:38
-#, fuzzy
-#| msgid "Clear all filters"
 msgid " Clear all filters"
 msgstr "Очистить фильтр"
 
 #: templates/snippets/right_side_detail.html:20
 msgid "Other user’s ads"
-msgstr ""
+msgstr "Другие объявления автора"
 
 #: templates/snippets/right_side_detail.html:25
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта"
 
 #: zaba/settings.py:178
 msgid "Ukrainian"
@@ -903,7 +806,6 @@ msgstr "Английский"
 #~ msgstr "Цена:"
 
 #, fuzzy
-#~| msgid "salary"
 #~ msgid "Salary:"
 #~ msgstr "заработная плата"
 
@@ -941,7 +843,6 @@ msgstr "Английский"
 #~ msgstr "[изображение: %s]"
 
 #, fuzzy
-#~| msgid "Image"
 #~ msgid "[image]"
 #~ msgstr "Изображение"
 
@@ -2011,7 +1912,6 @@ msgstr "Английский"
 #~ msgstr "Часы"
 
 #, fuzzy
-#~| msgid "0 minutes"
 #~ msgid "Minutes"
 #~ msgstr "0 минут"
 
@@ -2040,26 +1940,18 @@ msgstr "Английский"
 #~ msgstr "каждый {0.every:d} {0.period}"
 
 #, fuzzy
-#~| msgid "%d minute"
-#~| msgid_plural "%d minutes"
 #~ msgid "minute"
 #~ msgstr "%d минута"
 
 #, fuzzy
-#~| msgid "%d hour"
-#~| msgid_plural "%d hours"
 #~ msgid "hour"
 #~ msgstr "%d час"
 
 #, fuzzy
-#~| msgid "%d week"
-#~| msgid_plural "%d weeks"
 #~ msgid "day of week"
 #~ msgstr "%d неделя"
 
 #, fuzzy
-#~| msgid "%d month"
-#~| msgid_plural "%d months"
 #~ msgid "day of month"
 #~ msgstr "%d месяц"
 
@@ -2070,12 +1962,10 @@ msgstr "Английский"
 #~ msgstr "кронтаб"
 
 #, fuzzy
-#~| msgid "Contacts"
 #~ msgid "crontabs"
 #~ msgstr "Контакты"
 
 #, fuzzy
-#~| msgid "Description:"
 #~ msgid "Useful description"
 #~ msgstr "Описание:"
 
@@ -2104,7 +1994,6 @@ msgstr "Английский"
 #~ msgstr "Очередь определена в CELERY_QUEUES"
 
 #, fuzzy
-#~| msgid "Change"
 #~ msgid "exchange"
 #~ msgstr "Изменить"
 
@@ -2115,7 +2004,6 @@ msgstr "Английский"
 #~ msgstr "включен"
 
 #, fuzzy
-#~| msgid "Description:"
 #~ msgid "description"
 #~ msgstr "Описание:"
 
@@ -2162,12 +2050,10 @@ msgstr "Английский"
 #~ msgstr "полезная нагрузка"
 
 #, fuzzy
-#~| msgid "Messages"
 #~ msgid "message"
 #~ msgstr "Сообщения"
 
 #, fuzzy
-#~| msgid "Messages"
 #~ msgid "messages"
 #~ msgstr "Сообщения"
 
@@ -2193,8 +2079,6 @@ msgstr "Английский"
 #~ msgstr "1 секунду назад"
 
 #, fuzzy
-#~| msgid "%d minute"
-#~| msgid_plural "%d minutes"
 #~ msgid "1 minute ago"
 #~ msgstr "%d минута"
 
@@ -2235,13 +2119,11 @@ msgstr "Английский"
 #~ msgstr "%(commas)s и %(last)s"
 
 #, fuzzy
-#~| msgid "midnight"
 #~ msgctxt "law"
 #~ msgid "right"
 #~ msgstr "полночь"
 
 #, fuzzy
-#~| msgid "midnight"
 #~ msgctxt "good"
 #~ msgid "right"
 #~ msgstr "полночь"

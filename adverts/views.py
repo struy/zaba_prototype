@@ -7,6 +7,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.conf import settings
 from django.views.generic import ListView
+from django.views.decorators.http import require_GET
 
 from .models import Advert
 from items.models import Item
@@ -121,3 +122,13 @@ class SearchView(ListView):
                     reverse=True)
         self.count = len(qs)  # since qs is actually a list
         return qs
+
+
+@require_GET
+def robots_txt(request):
+    lines = [
+        "User-Agent: *",
+        "Disallow: /private/",
+        "Disallow: /junk/",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")

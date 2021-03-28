@@ -1146,8 +1146,6 @@ h2 {
   border-bottom: 2px solid #749B27;
 }
 
-/*terms scss*/
-/**/
 .dots-carousel li {
   border-radius: 50%;
   height: 0.8em;
@@ -1170,12 +1168,12 @@ h2 {
   height: 230px;
 }
 
-.btn-err-404 {
+#go_home {
   transition-duration: 0.2s;
+  color: white;
 }
-
-.btn-err-404:hover {
-  background-color: white;
+#go_home:hover {
+  background-color: black;
   border: 1px solid black;
 }
 

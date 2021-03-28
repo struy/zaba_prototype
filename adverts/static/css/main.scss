@@ -1307,21 +1307,6 @@ h2 {
   }
 }
 
-/*terms scss*/
-//#main nav[aria-label="breadcrumb"] {
-//  display: none;
-//}
-//
-//#add_button {
-//  display: none;
-//}
-//
-//p{
-//  font-size: 18px;
-//}
-
-/**/
-
 
 .dots-carousel li{
   border-radius: 50%;
@@ -1335,9 +1320,7 @@ h2 {
   color: #091B34;
 }
 
-.text-fixed-bottom{
 
-}
 .heart-position{
   position: relative;
   bottom: 0;
@@ -1346,10 +1329,12 @@ h2 {
 .image-slider{
   height: 230px;
 }
-.btn-err-404{
+
+#go_home{
   transition-duration: 0.2s;
-}
-.btn-err-404:hover{
-  background-color: white;
+  color:white;
+  &:hover{
+  background-color: black;
   border: 1px solid black;
+}
 }

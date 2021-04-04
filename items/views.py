@@ -22,19 +22,18 @@ def index(request):
     if query:
         advert_list = Item.objects.filter(Q(local__exact=lang) &
                                           (Q(title__icontains=query) | Q(description__icontains=query))
-                                          ).order_by('-modified')
+                                          ).order_by('-modified').prefetch_related('author')
+
     else:
-        advert_list = Item.objects.filter(local=lang).order_by('-modified')
+        advert_list = Item.objects.filter(local=lang).order_by('-modified').prefetch_related('author')
 
     filters = ItemsFilter(request.GET, queryset=advert_list)
 
     adverts, has_filter = context_helper(request, filters)
     favourites = Item.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
-
     context = {
         'adverts': adverts,
         'is_paginated': True,
-        'package_list': 'items:index',
         'filters': filters,
         'has_filter': has_filter,
         'favourites': favourites

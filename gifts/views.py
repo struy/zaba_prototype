@@ -7,7 +7,6 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.conf import settings
 from django.db.models import Q
 
-
 from adverts.utils import context_helper
 from .form import GiftForm
 from .filters import GiftsFilter
@@ -23,9 +22,9 @@ def index(request):
     if query:
         advert_list = Gift.objects.filter(Q(local__exact=lang) &
                                           (Q(title__icontains=query) | Q(description__icontains=query))
-                                          ).order_by('-modified')
+                                          ).order_by('-modified').prefetch_related('author')
     else:
-        advert_list = Gift.objects.filter(local=lang).order_by('-modified')
+        advert_list = Gift.objects.filter(local=lang).order_by('-modified').prefetch_related('author')
     filters = GiftsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
     favourites = Gift.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)

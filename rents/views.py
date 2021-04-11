@@ -35,6 +35,7 @@ def index(request):
         'is_paginated': True,
         'filters': filters,
         'has_filter': has_filter,
+        'package_list': 'rents:index',  # for filter url
         'favourites': favourites
     }
 

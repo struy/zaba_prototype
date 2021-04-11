@@ -22,9 +22,9 @@ def index(request):
     if query:
         advert_list = Job.objects.filter(Q(local__exact=lang)
                                          & (Q(title__icontains=query) | Q(description__icontains=query))
-                                         ).order_by('-modified')
+                                         ).prefetch_related('author').order_by('-modified')
     else:
-        advert_list = Job.objects.filter(local=lang).order_by('-modified')
+        advert_list = Job.objects.filter(local=lang).prefetch_related('author').order_by('-modified')
 
     filters = JobsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)

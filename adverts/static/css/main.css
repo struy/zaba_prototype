@@ -451,6 +451,15 @@ header .navbar-toggler {
 #main a {
   color: black;
 }
+#main #go_home {
+  transition-duration: 0.2s;
+  color: white;
+}
+#main #go_home:hover {
+  background-color: white;
+  color: #749B27;
+  border: 1px solid #749B27;
+}
 #main h2 {
   font-size: 32px;
   font-weight: 600;
@@ -1166,16 +1175,6 @@ h2 {
 
 .image-slider {
   height: 230px;
-}
-
-#go_home {
-  transition-duration: 0.2s;
-  color: white;
-}
-#go_home:hover {
-  background-color: white;
-  color: #749B27;
-  border: 1px solid #749B27;
 }
 
 /*# sourceMappingURL=main.css.map */

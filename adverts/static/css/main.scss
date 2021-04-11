@@ -530,6 +530,17 @@ header {
     color: black;
   }
 
+  #go_home {
+    transition-duration: 0.2s;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      color: #749B27;
+      border: 1px solid #749B27;
+    }
+  }
+
   h2 {
     font-size: 32px;
     font-weight: 600;
@@ -1341,13 +1352,4 @@ h2 {
   height: 230px;
 }
 
-#go_home {
-  transition-duration: 0.2s;
-  color: white;
 
-  &:hover {
-    background-color: white;
-    color: #749B27;
-    border: 1px solid #749B27;
-  }
-}

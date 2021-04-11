@@ -62,7 +62,7 @@ body {
 header {
   color: white;
   padding-top: 5px;
-  background: #ffffff ;
+  background: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 
   .mobile-logo {
@@ -99,7 +99,7 @@ header {
     border: 1px solid #f4f5f6;
     width: 30px;
     height: 20px;
-    background-size: cover ;
+    background-size: cover;
     margin-left: 50px;
   }
 
@@ -136,7 +136,7 @@ header {
       text-transform: uppercase;
 
       .nav-link {
-        color: #000000 ;
+        color: #000000;
         font-size: 14px;
       }
     }
@@ -146,9 +146,9 @@ header {
     justify-content: flex-end;
   }
 
-  .burgerPosition ul{
-     z-index: 2;
-}
+  .burgerPosition ul {
+    z-index: 2;
+  }
 
   .navbar-dark {
 
@@ -435,7 +435,7 @@ header {
 }
 
 .breadcrumb {
-  background-color: unset ;
+  background-color: unset;
 
 }
 
@@ -495,9 +495,10 @@ header {
         }
       }
 
-      #white-text a{
+      #white-text a {
         color: white;
       }
+
       & > div {
         width: 100%;
       }
@@ -514,7 +515,7 @@ header {
   }
 }
 
-#fzLogInAccount{
+#fzLogInAccount {
   background: red;
 }
 
@@ -562,6 +563,7 @@ header {
     a {
       text-decoration: none;
     }
+
     a:hover {
       color: #749B27;
     }
@@ -796,7 +798,7 @@ i.fas.fa-paw {
 }
 
 .mybtn2 {
-  color: #000!important;
+  color: #000 !important;
 }
 
 
@@ -906,7 +908,7 @@ form.new-edit {
   border: none;
 }
 
-.size-image{
+.size-image {
   max-height: 230px;
 }
 
@@ -915,24 +917,27 @@ form.new-edit {
   display: flex;
   flex-direction: column;
 }
-.shadow-item:hover{
-  box-shadow: 0 20px 22px rgba(33,33,33,.2);
+
+.shadow-item:hover {
+  box-shadow: 0 20px 22px rgba(33, 33, 33, .2);
   transform: scale(1.01)
 }
 
-.carousel-indicators{
+.carousel-indicators {
   bottom: -60px;
 }
-.corner-item{
-      position: absolute;
-    bottom: 0;
-    z-index: 10;
-    color: white;
-    left: 23px;
-    padding: 3px 15px;
-    text-transform: uppercase;
-    border-radius: 0 5px 0 0;
+
+.corner-item {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  color: white;
+  left: 23px;
+  padding: 3px 15px;
+  text-transform: uppercase;
+  border-radius: 0 5px 0 0;
 }
+
 #CookielawBanner {
   background-color: #091b33;
   position: fixed;
@@ -978,7 +983,7 @@ form.new-edit {
     position: absolute;
     color: black;
     margin-left: 10px;
-    left: auto ;
+    left: auto;
     background: #FFFFFF;
     box-shadow: 10px 10px 35px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -999,27 +1004,30 @@ form.new-edit {
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-  background-color: unset ;
+  background-color: unset;
 }
 
 .dropdown-item.active, .dropdown-item:active {
   background-color: unset;
-  color: #000 ;
+  color: #000;
 }
 
 .favorites span {
   margin: 0 5px;
 }
-.image-size-page{
+
+.image-size-page {
   max-height: 130px;
   max-width: 180px;
 }
-.icon-heart-jobs{
+
+.icon-heart-jobs {
   position: relative;
   bottom: -10px;
   right: 15px;
 }
-.icon-heart-items{
+
+.icon-heart-items {
   position: relative;
   bottom: -10px;
 }
@@ -1048,12 +1056,12 @@ form.new-edit {
   font-style: normal;
 
   h2 {
-    font-weight: 100 ;
+    font-weight: 100;
   }
 }
 
 #main .home .simple-search {
-  input.form-control{
+  input.form-control {
     border-radius: 5px 0 0 5px;
   }
 
@@ -1142,11 +1150,11 @@ form.new-edit {
     }
   }
 }
+
 /*auth scss*/
 #add_button {
   display: none;
 }
-
 
 
 h2 {
@@ -1180,7 +1188,7 @@ h2 {
     text-decoration: underline;
   }
 
-  .submit{
+  .submit {
     min-width: 100%;
   }
 }
@@ -1194,14 +1202,15 @@ h2 {
 }
 
 /*catalog scss*/
-.from{
+.from {
   margin-top: 0;
   padding-bottom: 0;
 }
+
 .filters {
   label {
     font-size: 12.5px;
-    text-transform: none ;
+    text-transform: none;
     margin-bottom: 0;
   }
 
@@ -1215,13 +1224,13 @@ h2 {
     text-transform: capitalize;
   }
 
-  .clear-filter{
+  .clear-filter {
     border: 1px solid #091B34;
   }
 }
 
 /*colors*/
-.text-green{
+.text-green {
   color: #749B27;
 }
 
@@ -1240,7 +1249,7 @@ h2 {
 }
 
 #m {
-  width: 100% ;
+  width: 100%;
   height: 300px;
   margin-bottom: 10px;
 }
@@ -1274,9 +1283,10 @@ h2 {
 }
 
 /*profile scss*/
-.user-form{
+.user-form {
   margin-bottom: 50px;
 }
+
 #add_button {
   display: none;
 }
@@ -1308,33 +1318,36 @@ h2 {
 }
 
 
-.dots-carousel li{
+.dots-carousel li {
   border-radius: 50%;
   height: 0.8em;
   width: 0.8em;
   background-color: #091B34;
 }
 
-.price-settings{
+.price-settings {
   font-weight: 700;
   color: #091B34;
 }
 
 
-.heart-position{
+.heart-position {
   position: relative;
   bottom: 0;
   right: 19px;
 }
-.image-slider{
+
+.image-slider {
   height: 230px;
 }
 
-#go_home{
+#go_home {
   transition-duration: 0.2s;
-  color:white;
-  &:hover{
-  background-color: black;
-  border: 1px solid black;
-}
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: #749B27;
+    border: 1px solid #749B27;
+  }
 }

@@ -2,7 +2,10 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load static %}
-{% block title %} {% trans "My Favorites" %} {% endblock %}
+
+{% block title %}
+    {% trans "My Favorites" %}
+{% endblock %}
 
 
 {% block breadcrumbs %}
@@ -11,10 +14,6 @@
 {% endblock %}
 
 {% block content %}
-
-{#    <div class="container">#}
-{#        {% include './navigation.html' with active="favorites" %}#}
-{#    </div>#}
     <div class="grey-back">
         <div class="container list-ads-user">
             <div class="row item ">

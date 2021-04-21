@@ -126,7 +126,7 @@ def contact_user(request, pk, name, a_id):
         form = ContactUserForm(request.POST)
         if form.is_valid():
             subject = advert.title
-            to_email = user.email
+            to_email = [user.email]
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message'] + ' ' + from_email
             try:

@@ -15,25 +15,23 @@
 {% block content %}
 
     <div class="container">
-        {#        {% include './navigation.html' with active="edit" %}#}
         <div class="user-form row">
             <div class="from col-md-6 col-12">
                 <form action="." method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="user-image">
                             {% include 'svg/icon-Profile.svg' %}
-                            <span>Upload image</span>
+                            <span> {%  trans  "Upload image" %} </span>
                         </label>
                         <input type="file" class="d-none" name="image" id="user-image">
                     </div>
                     {{ user_form|crispy }}
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">{%  trans "Password" %}</label>
                         <div>
                             <input class="textinput textInput form-control" type="password" id="password">
                         </div>
                     </div>
-                    {#        {{ profile_form.as_p }}#}
                     {% csrf_token %}
                     <br>
                     <div class="form-group">
@@ -42,7 +40,7 @@
                 </form>
             </div>
             <div class="image col-6 d-none d-md-block">
-                <img src="{% static 'img/background complete.png' %}" alt="">
+                <img src="{% static 'img/background complete.png' %}" alt="complete">
             </div>
         </div>
     </div>

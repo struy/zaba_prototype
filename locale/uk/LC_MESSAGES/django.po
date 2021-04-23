@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 15:35-0500\n"
+"POT-Creation-Date: 2021-04-22 22:32-0500\n"
 "PO-Revision-Date: 2021-03-25 17:52+0000\n"
 "Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,18 +29,18 @@ msgid "Message"
 msgstr "Повідомлення"
 
 #: accounts/templates/accounts/connect.html:8
-#: accounts/templates/accounts/connect.html:22
+#: accounts/templates/accounts/connect.html:14
 msgid "Contact user"
 msgstr "Зв'яжіться з нами"
 
-#: accounts/templates/accounts/connect.html:21
-#: accounts/templates/accounts/edit.html:8
-#: accounts/templates/accounts/favorites.html:9
+#: accounts/templates/accounts/connect.html:13
+#: accounts/templates/accounts/edit.html:11
+#: accounts/templates/accounts/favorites.html:12
 #: accounts/templates/accounts/favourites.html:16
 #: accounts/templates/accounts/my_ads.html:16
-#: accounts/templates/accounts/register.html:14
-#: accounts/templates/accounts/register_done.html:16
-#: accounts/templates/accounts/user_ads.html:19
+#: accounts/templates/accounts/register.html:16
+#: accounts/templates/accounts/register_done.html:10
+#: accounts/templates/accounts/user_ads.html:17
 #: gifts/templates/gifts/detail.html:12
 #: gifts/templates/gifts/gift_confirm_delete.html:10
 #: gifts/templates/gifts/gift_form.html:12
@@ -55,16 +55,16 @@ msgstr "Зв'яжіться з нами"
 #: rents/templates/rents/index.html:15
 #: rents/templates/rents/rental_confirm_delete.html:11
 #: rents/templates/rents/rental_form.html:11
-#: sendemail/templates/sendemail/email.html:18
+#: sendemail/templates/sendemail/email.html:13
 #: sendemail/templates/sendemail/no_success.html:9
-#: sendemail/templates/sendemail/success.html:7
+#: sendemail/templates/sendemail/success.html:11
 #: shop/templates/shop/product/checkout.html:5 templates/home.html:10
 #: templates/policy/cookie_policy.html:10
 #: templates/policy/privacy_policy.html:10
 #: templates/policy/term_of_services.html:10
 #: templates/registration/logged_out.html:10
 #: templates/registration/login.html:18
-#: templates/registration/password_change_done.html:5
+#: templates/registration/password_change_done.html:6
 #: templates/registration/password_change_form.html:6
 #: templates/registration/password_reset_complete.html:11
 #: templates/registration/password_reset_confirm.html:11
@@ -73,33 +73,43 @@ msgstr "Зв'яжіться з нами"
 msgid "Home"
 msgstr "Головна"
 
-#: accounts/templates/accounts/connect.html:29
-#: sendemail/templates/sendemail/email.html:26
+#: accounts/templates/accounts/connect.html:21
+#: sendemail/templates/sendemail/email.html:21
 msgid "Contact"
 msgstr "Зв'яжіться"
 
-#: accounts/templates/accounts/connect.html:29
+#: accounts/templates/accounts/connect.html:21
 msgid "User"
 msgstr "з нами"
 
-#: accounts/templates/accounts/connect.html:36
-#: sendemail/templates/sendemail/email.html:33
+#: accounts/templates/accounts/connect.html:28
+#: sendemail/templates/sendemail/email.html:28
 msgid "Send"
 msgstr "Відіслати"
 
-#: accounts/templates/accounts/edit.html:5
+#: accounts/templates/accounts/edit.html:7
 msgid "Edit your account"
 msgstr "Редагування облікового запису"
 
-#: accounts/templates/accounts/edit.html:9
+#: accounts/templates/accounts/edit.html:12
 msgid "Edit account"
 msgstr "Редагування облікового запису"
 
-#: accounts/templates/accounts/favorites.html:5
+#: accounts/templates/accounts/edit.html:24
+msgid "Upload image"
+msgstr ""
+
+#: accounts/templates/accounts/edit.html:30
+#: templates/registration/password_change_done.html:7
+#: templates/registration/password_change_form.html:7
+msgid "Password"
+msgstr "Пароль"
+
+#: accounts/templates/accounts/favorites.html:7
 msgid "My Favorites"
 msgstr "Мої улюблені"
 
-#: accounts/templates/accounts/favorites.html:10
+#: accounts/templates/accounts/favorites.html:13
 #: accounts/templates/accounts/favourites.html:12
 #: accounts/templates/accounts/favourites.html:17
 msgid "Favorites"
@@ -117,49 +127,50 @@ msgstr "Оголошення відсутні"
 msgid "My Ads"
 msgstr "Мої оголошення"
 
-#: accounts/templates/accounts/register.html:5
-#: accounts/templates/accounts/register.html:15
-#: accounts/templates/accounts/register_done.html:17
+#: accounts/templates/accounts/register.html:7
+#: accounts/templates/accounts/register.html:17
+#: accounts/templates/accounts/register_done.html:11
 msgid "Registration"
 msgstr "Регістрація"
 
-#: accounts/templates/accounts/register.html:25
+#: accounts/templates/accounts/register.html:27
 msgid "Create an account"
 msgstr "Створити обліковий запис"
 
-#: accounts/templates/accounts/register.html:31
+#: accounts/templates/accounts/register.html:33
 msgid "Please, sign up using the following form:"
 msgstr "Будь ласка, зареєструйтеся, скориставшись цією формою:"
 
-#: accounts/templates/accounts/register.html:38
+#: accounts/templates/accounts/register.html:40
 msgid "Create"
 msgstr "створений в"
 
-#: accounts/templates/accounts/register.html:41
+#: accounts/templates/accounts/register.html:43
 #: templates/registration/login.html:47
 #: templates/registration/password_reset_form.html:39
 msgid "Login"
 msgstr "Логін"
 
-#: accounts/templates/accounts/register.html:52
+#: accounts/templates/accounts/register.html:54
 #: templates/registration/login.html:74
 msgid "Google"
 msgstr "Google"
 
-#: accounts/templates/accounts/register_done.html:27
+#: accounts/templates/accounts/register_done.html:5
+#: accounts/templates/accounts/register_done.html:19
 msgid "Welcome"
 msgstr "Ласкаво просимо"
 
-#: accounts/templates/accounts/register_done.html:29
+#: accounts/templates/accounts/register_done.html:21
 msgid "Your account has been successfully created. Now you can"
 msgstr "Ваш обліковий запис успішно створено. Тепер ви можете"
 
-#: accounts/templates/accounts/register_done.html:31
+#: accounts/templates/accounts/register_done.html:23
 msgid "log in"
 msgstr "Ввійти"
 
-#: accounts/templates/accounts/user_ads.html:11
-#: accounts/templates/accounts/user_ads.html:20
+#: accounts/templates/accounts/user_ads.html:9
+#: accounts/templates/accounts/user_ads.html:18
 msgid "User's Ads"
 msgstr "Всі оголошення автора"
 
@@ -473,40 +484,50 @@ msgstr "Орендна плата "
 msgid "Subject"
 msgstr "Тема"
 
-#: sendemail/templates/sendemail/email.html:7
-#: sendemail/templates/sendemail/email.html:19 templates/base.html:85
+#: sendemail/templates/sendemail/email.html:8
+#: sendemail/templates/sendemail/email.html:14 templates/base.html:85
 msgid "Contact us"
 msgstr "Зв'яжіться з нами"
 
-#: sendemail/templates/sendemail/email.html:26
+#: sendemail/templates/sendemail/email.html:21
 msgid "Us"
 msgstr "з нами"
 
 #: sendemail/templates/sendemail/no_success.html:5
-msgid " No success"
+#, fuzzy
+#| msgid " No success"
+msgid "No success"
 msgstr "Не вдалось відправити"
 
 #: sendemail/templates/sendemail/no_success.html:10
-msgid " no success"
+#, fuzzy
+#| msgid " no success"
+msgid "no success"
 msgstr "не вдалось відправити"
 
 #: sendemail/templates/sendemail/no_success.html:19
-msgid "No Success(  Probably a non-existent email. Please try again."
+#, fuzzy
+#| msgid "No Success(  Probably a non-existent email. Please try again."
+msgid "Some thing wrong. Probably a non-existent email. Please try again."
 msgstr ""
 "Не вдалося відправити (ймовірно, неіснуюча електронна пошта. Спробуйте ще "
 "раз."
 
-#: sendemail/templates/sendemail/success.html:4
+#: sendemail/templates/sendemail/success.html:6
 msgid "Success"
 msgstr "Лист відправлено"
 
-#: sendemail/templates/sendemail/success.html:8
+#: sendemail/templates/sendemail/success.html:12
 msgid "success"
 msgstr "лист відправлено"
 
-#: sendemail/templates/sendemail/success.html:24
+#: sendemail/templates/sendemail/success.html:21
 msgid "Success! Thank you for your message."
 msgstr "Лист відправлено! Дякую за ваше повідомлення."
+
+#: sendemail/templates/sendemail/success.html:24
+msgid "The recipient will receive your message..."
+msgstr ""
 
 #: shop/templates/shop/product/checkout.html:6
 msgid "Checkout"
@@ -660,26 +681,44 @@ msgstr "Забули пароль"
 msgid "Register here"
 msgstr "зареєструйтесь тут"
 
-#: templates/registration/password_change_done.html:6
-#: templates/registration/password_change_form.html:7
-msgid "Password"
-msgstr "Пароль"
-
-#: templates/registration/password_change_done.html:13
+#: templates/registration/password_change_done.html:14
 msgid "Password changed"
 msgstr "Пароль змінено"
 
-#: templates/registration/password_change_done.html:14
+#: templates/registration/password_change_done.html:15
 msgid "Your password has been successfully changed"
 msgstr "Пароль успішно змінено"
 
+#: templates/registration/password_change_form.html:14
+#, fuzzy
+#| msgid "Change my password"
+msgid "Change you password"
+msgstr "Змінити пароль"
+
+#: templates/registration/password_change_form.html:15
+msgid "Use the form below to change your password"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:12
 msgid "Password reset"
 msgstr "Cкинути пароль"
 
-#: templates/registration/password_reset_complete.html:18
+#: templates/registration/password_reset_complete.html:20
+#, fuzzy
+#| msgid "Password reset"
+msgid "Password set"
+msgstr "Cкинути пароль"
+
+#: templates/registration/password_reset_complete.html:22
 msgid "Your password has been set. You can"
 msgstr "Пароль був встановлений. Ви можете"
+
+#: templates/registration/password_reset_complete.html:23
+#, fuzzy
+#| msgid "log in"
+msgid "log in now"
+msgstr "Ввійти"
 
 #: templates/registration/password_reset_confirm.html:12
 #: templates/registration/password_reset_done.html:10
@@ -688,7 +727,9 @@ msgid "Reset password"
 msgstr "Скинути пароль"
 
 #: templates/registration/password_reset_confirm.html:20
+#: templates/registration/password_reset_done.html:5
 #: templates/registration/password_reset_done.html:18
+#: templates/registration/password_reset_form.html:7
 msgid "Reset your password"
 msgstr "Скинути пароль"
 
@@ -701,9 +742,13 @@ msgid "Change my password"
 msgstr "Змінити пароль"
 
 #: templates/registration/password_reset_confirm.html:30
+#, fuzzy
+#| msgid ""
+#| "The password reset link was invalid, possibly because it has already been "
+#| "used. Please request a new password reset."
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used. Please request a new password reset."
+"used. Please request a new password reset"
 msgstr ""
 "Посилання для відновлення пароля було недійсним, можливо тому, що його вже "
 "використали. Будь ласка, запросіть нове посилання на відновлення пароля."

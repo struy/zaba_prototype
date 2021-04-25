@@ -173,3 +173,4 @@ node_modules
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+/zaba/settings_prod_test.py

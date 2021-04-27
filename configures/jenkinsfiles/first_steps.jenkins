@@ -32,7 +32,6 @@ pipeline {
             steps{
                 sh """
                 cd /home/ubuntu/Build/zaba_prototype
-                cp  -r /home/ubuntu/Build/env /home/ubuntu/Build/zaba_prototype/
                 cp /home/ubuntu/.env  /home/ubuntu/Build/zaba_prototype/
                 source env/bin/activate
                 pip install --no-cache-dir -r requirements.txt

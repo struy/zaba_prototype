@@ -1,0 +1,64 @@
+#!groovy
+properties([disableConcurrentBuilds()])
+//Build, Test, Prod
+pipeline {
+    agent any
+
+    options {
+        skipDefaultCheckout(true)
+        // Keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage ("Code pull"){
+            steps{
+                checkout scm
+            }
+        }
+        stage ("Clone") {
+             steps{
+                sh """
+                cd /home/ubuntu/Build
+                git clone https://github.com/struy/zaba_prototype.git
+                cd /home/ubuntu/Build/zaba_prototype
+                python3 -m venv env
+                """
+            }
+        }
+        stage ("Build"){
+            steps{
+                sh """
+                cd /home/ubuntu/Build/zaba_prototype
+                cp /home/ubuntu/.env  /home/ubuntu/Build/zaba_prototype/
+                source env/bin/activate
+                pip install --no-cache-dir -r requirements.txt
+                export DJANGO_SETTINGS_MODULE=zaba.settings_prod
+                python manage.py collectstatic --noinput --settings=zaba.settings_prod
+                python manage.py makemigrations --settings=zaba.settings_prod
+                python manage.py migrate --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_gift_type.json --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_job_type.json --settings=zaba.settings_prod
+                python manage.py loaddata fixtures/data_rent_type.json --settings=zaba.settings_prod
+                """
+            }
+        }
+         stage ("Test"){
+            steps{
+              sh 'echo TEST'
+            }
+        }
+        stage('Deploy') {
+            when {
+            expression {
+            currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                    }
+                    }
+            steps {
+                sh 'echo YES'
+            }
+        }
+
+
+    }
+}

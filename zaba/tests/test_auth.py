@@ -19,6 +19,6 @@ class SigninTest(TestCase):
         user = authenticate(username='wrong', password='12test12')
         self.assertFalse(user is not None and user.is_authenticated)
 
-    def test_wrong_pssword(self):
+    def test_wrong_password(self):
         user = authenticate(username='test', password='wrong')
         self.assertFalse(user is not None and user.is_authenticated)

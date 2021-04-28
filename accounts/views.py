@@ -30,7 +30,7 @@ def favourite_list(request):
 
 
 @login_required
-def favourite_add(request, name, id):
+def favourite_add(request, name, record_id):
     models = {
         "Item": Item,
         "Job": Job,
@@ -39,7 +39,7 @@ def favourite_add(request, name, id):
     }
     sample_task.delay("Our printed value!")
     # AppConfig.get_models(name)
-    ad = get_object_or_404(models[name.capitalize()], id=id)
+    ad = get_object_or_404(models[name.capitalize()], id=record_id)
     if ad:
         r = redis.Redis(connection_pool=settings.POOL)
 

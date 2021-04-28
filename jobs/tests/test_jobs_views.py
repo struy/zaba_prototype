@@ -1,5 +1,5 @@
 from django.test import TestCase, RequestFactory
-from items.views import index
+from jobs.views import index
 from django.contrib.auth.models import AnonymousUser
 
 
@@ -12,7 +12,7 @@ class IndexViewTestCase(TestCase):
         Test that index view returns a 200 response and uses
         the correct template
         """
-        request = self.factory.get('/items')
+        request = self.factory.get('/jobs')
         request.user = AnonymousUser()
         response = index(request)
         self.assertEqual(response.status_code, 200)

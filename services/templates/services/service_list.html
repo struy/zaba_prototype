@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load countries %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Services" %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    <a href="{% url 'services:index' %}">Services</a>
+                </h2>
+                <ul>
+                    {% for serv in object_list %}
+                        <li>{{ serv.title }}
+                            <a href="{% url 'services:edit' serv.id %}">edit</a>
+                            <a href="{% url 'services:delete' serv.id %}">delete</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'services:new' %}">New</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base_detail.html" %}
+{% load countries %}
+{% load i18n %}
+{% load static %}
+{% load advert_money %}
+
+{% block title %}
+    {% trans "Service" %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item "><a href="javascript: history.go(-1)">{% trans "Services" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail</li>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-md-8">
+                {% if advert.image %}
+                    <div class="image">
+                        <a href="{{ advert.image.url }}">
+                            <img src="{{ advert.image.url }}" alt="{{ advert.title }}" width="550px" height="auto">
+                        </a>
+                    </div>
+                {% endif %}
+                <div class="information">
+                    <h2 class="d-flex justify-content-between">
+                        <span> {{ advert.title }} </span>
+                        <span>
+                            <small class="text-muted">
+                                 <a href="{% url 'favourite_add' 'Service' advert.id %}">
+                                    <i class="
+                                     {% if favourite %}
+                                        fas
+                                     {% else %}
+                                        far
+                                     {% endif %}
+                                     fa-heart fa-heart"></i>
+                                </a>
+                            </small>
+                        </span>
+                    </h2>
+                    <h1>{{ advert.salary|prepend_dollars }}</h1>
+
+{#                    <p>#}
+{#                        {% if advert.jobtype.icon %}#}
+{#                            <i class="fas fa-{{ advert.jobtype.icon }} fa-3x"></i>#}
+{#                        {% endif %}#}
+{#                    </p>#}
+
+{#                    <p>#}
+{#                        <b>{% trans "Job type:" %}</b>#}
+{#                        {{ advert.jobtype }}#}
+{#                    </p>#}
+
+                    {% if advert.description %}
+
+                        <span class="mb-2">
+                                <b>{% trans "Description:" %}</b>
+                            </span>
+                        <p>
+                            {{ advert.description }}
+                        </p>
+                    {% endif %}
+
+{#                    <p><b>{% trans "Duration:" %}</b> {{ advert.get_duration_display }} </p>#}
+
+                    <p><b>{% trans "Language(s) spoken by the employer:" %} </b>
+                        {% for country in advert.countries %}
+                            <i class="{{ country.flag_css }}"></i>
+                        {% endfor %}
+                    </p>
+
+                    <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
+                    <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
+                    {% if advert.point %}
+                        <p>
+                            {% include 'svg/icon-Locate.svg' %}
+                            <span>{% trans "Location:" %} </span>
+                        </p>
+                        <div id="m"></div>
+                    {% endif %}
+                    <div class="count d-flex justify-content-start mt-4">
+                        <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
+                    </div>
+                </div>
+            </div>
+
+            {% include "snippets/right_side_detail.html" %}
+
+        </div>
+    </div>
+
+
+    <div class="wrap popular-ads grey-back mt-0">
+        <section id="google_ads">
+            <div class="container">
+                <div class="col-sm-6 mx-auto">
+                    <img src="{% static 'img/image-20.png' %}"
+                         width="724"
+                         alt="" class="img_ad">
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

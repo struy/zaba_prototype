@@ -353,6 +353,10 @@
     padding: 5px;
     height: 35px;
   }
+
+  header button[type=submit] {
+    margin-left: 10px;
+  }
 }
 /***************************************************************************************/
 @media (max-width: 326px) {

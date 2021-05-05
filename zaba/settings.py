@@ -12,6 +12,8 @@ env = environ.Env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 env.read_env(str(BASE_DIR + "/" + ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -62,15 +64,15 @@ THIRD_PARTY_APPS = ['django_countries',
                     'django_cleanup.apps.CleanupConfig',
                     ]
 
-LOCAL_APPS = ['accounts.apps.AccountsConfig',
-              'adverts.apps.AdvertsConfig',
-              'rents.apps.RentsConfig',
-              'jobs.apps.JobsConfig',
-              'items.apps.ItemsConfig',
-              'gifts.apps.GiftsConfig',
-              'sendemail.apps.SendemailConfig',
-              'shop.apps.ShopConfig',
-              'services.apps.ServicesConfig'
+LOCAL_APPS = ['apps.accounts.apps.AccountsConfig',
+              'apps.adverts.apps.AdvertsConfig',
+              'apps.rents.apps.RentsConfig',
+              'apps.jobs.apps.JobsConfig',
+              'apps.items.apps.ItemsConfig',
+              'apps.gifts.apps.GiftsConfig',
+              'apps.sendemail.apps.SendemailConfig',
+              'apps.shop.apps.ShopConfig',
+              'apps.services.apps.ServicesConfig'
               ]
 
 INSTALLED_APPS = ['modeltranslation', ] + DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -109,7 +111,10 @@ ROOT_URLCONF = 'zaba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(PROJECT_ROOT, '../apps'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +125,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
-                'accounts.context_processors.fav_count'
+                'apps.accounts.context_processors.fav_count'
             ],
         },
     },
@@ -188,7 +193,7 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 
 MODELTRANSLATION_TRANSLATION_FILES = (
-    'gifts.translation', 'jobs.translation',)
+    'apps.gifts.translation', 'apps.jobs.translation',)
 
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6379

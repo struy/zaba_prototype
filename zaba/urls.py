@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
-from adverts import views
+from apps.adverts import views
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
 
-from adverts.views import robots_txt
+from apps.adverts.views import robots_txt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,19 +19,19 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
-    path('', include('sendemail.urls')),
+    path('', include('apps.sendemail.urls')),
     path('search', views.SearchView.as_view(), name="global_search"),
-    path('jobs/', include('jobs.urls')),
-    path('rents/', include('rents.urls')),
-    path('items/', include('items.urls')),
-    path('gifts/', include('gifts.urls')),
-    path('services/', include('services.urls')),
-    path('accounts/', include('accounts.urls')),
+    path('jobs/', include('apps.jobs.urls')),
+    path('rents/', include('apps.rents.urls')),
+    path('items/', include('apps.items.urls')),
+    path('gifts/', include('apps.gifts.urls')),
+    path('services/', include('apps.services.urls')),
+    path('accounts/', include('apps.accounts.urls')),
     path('cookie-policy', TemplateView.as_view(template_name='policy/cookie_policy.html'), name='cookie'),
     path('privacy-policy', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
     path('term-of-services', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
     path('place-ad', TemplateView.as_view(template_name='place_ad.html'), name='place_ad'),
-    path('checkout', include('shop.urls')),
+    path('checkout', include('apps.shop.urls')),
 )
 
 if settings.DEBUG:

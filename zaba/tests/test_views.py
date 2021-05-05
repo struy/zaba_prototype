@@ -1,6 +1,6 @@
 from http import HTTPStatus
 from django.test import TestCase, RequestFactory
-from adverts.views import home
+from apps.adverts.views import home
 from django.contrib.auth.models import AnonymousUser
 
 

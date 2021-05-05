@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    {% trans "User's Ads" %}
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "User's Ads" %}</li>
+{% endblock %}
+
+{% block content %}
+    <div class="grey-back">
+      <div class="container mt-4  list-ads-user">
+          {% include 'snippets/all_adverts_loop.html' %}
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    {% include "snippets/js/city-latin-only-js.html" %}
+    {% include "snippets/js/address-input-js.html" %}
+{% endblock %}
+
+{% block add_ad_link %}
+    {% url 'items:new' %}
+{% endblock %}
+

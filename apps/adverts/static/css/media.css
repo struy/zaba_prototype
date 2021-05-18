@@ -35,6 +35,9 @@
   #main .icon-box {
     padding: 15px 15px;
   }
+  #main .advert .text-center {
+    text-align: left !important;
+  }
 
   #main .home button#btn_search {
     text-align: right;

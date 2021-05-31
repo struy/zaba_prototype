@@ -419,7 +419,7 @@ msgstr "Собаками"
 
 #: rents/models.py:34 templates/home.html:132 templates/place_ad.html:72
 msgid "Cats"
-msgstr "Котиками"
+msgstr "Котики"
 
 #: rents/models.py:35
 msgid "Dogs and Cats"
@@ -573,7 +573,7 @@ msgstr "Войти"
 
 #: templates/base.html:145
 msgid "Place Ad"
-msgstr "Разместить Объявление"
+msgstr "Подать Объявление"
 
 #: templates/base.html:173
 msgid "Notice! Ads are displayed only in the selected language."

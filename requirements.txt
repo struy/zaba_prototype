@@ -82,7 +82,7 @@ outcome==1.1.0
 packaging==20.8
 parso==0.8.1
 pep8==1.7.1
-Pillow==8.1.1
+Pillow==8.2.0
 pipdeptree==2.0.0
 pluggy==0.12.0
 polib==1.1.0

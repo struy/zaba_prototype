@@ -24,7 +24,7 @@ coverage==5.3.1
 cryptography==3.4.6
 defusedxml==0.7.0rc1
 distlib==0.3.1
-Django==2.2.20
+Django==2.2.22
 django-anymail==8.2
 django-appconf==1.0.4
 django-celery-results==2.0.0

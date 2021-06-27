@@ -10,65 +10,120 @@
 {% endblock %}
 
 {% block content %}
-    <div class="global-search home">
+    <div class="global-search ">
         <div class="grey-back">
             <div class="container">
-                {% include "snippets/search_bar.html" %}
+                <div class="home">
+                    {% include "snippets/search_bar.html" %}
+                </div>
             </div>
         </div>
         <div class="container">
             <div class="row title-row my-5">
-                <div class="col-12 py-0">
+                <div class="col-md-10 offset-md-2 py-0">
                     {% if query != None %}
                         <h3 class="my-0 py-0">
-                            {{ count }} results
-                            <b>
-                                {% if query %} for {{ query }} {% endif %} {% if address %} in {{ address }} {% endif %}
-                            </b>
+                            {% if count %}
+                                {{ count }} {% trans "results" %}
+                            {% else %}
+                                {% trans "Nothing found for your request" %}
+                            {% endif %}
+                            {% if query %} for <span class="text-info">{{ query }} </span>{% endif %}
+                            {% if address %} in <span class="text-info">{{ address }} </span> {% endif %}
                         </h3>
-                        <h5>{% trans "try searching in other languages also" %}</h5>
+                        <p>{% trans "try searching in other languages also" %}</p>
                     {% endif %}
                 </div>
             </div>
 
             {% for object in object_list %}
-                {% with object|class_name as klass %}
-                    {% if klass == 'Item' %}
-                        <div class="row">
-                            <div class="offset-md-2 col-12">
-                                {% trans 'Item' %}: <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
-                            </div>
-                        </div>
+                {% with object|class_name as cls %}
 
-                    {% elif klass == 'Gift' %}
-                        <div class="row">
-                            <div class="offset-md-2 col-12">
-                                {% trans 'Gift' %}: <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
-                            </div>
-                        </div>
 
-                    {% elif klass == 'Job' %}
-                        <div class="row">
-                            <div class="offset-md-2 col-12">
-                                {% trans 'Job' %}: <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                    <div class="list-group">
+                        {% if cls == 'Item' %}
+                            <div class="row no-gutters">
+                                <div class="col-md-2 text-center offset-md-2">
+                                    <a class="list-group-item list-group-item-action list-group-item-primary"
+                                       style="pointer-events: none;">
+                                        {% trans 'Item' %}
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ object.get_absolute_url }}"
+                                       class="list-group-item list-group-item-action">
+                                        {{ object.title }}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
 
-                    {% elif klass == 'Rental' %}
-                        <div class="row">
-                            <div class="offset-md-2 col-12">
-                                {% trans 'Rent' %}: <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+
+                        {% elif cls == 'Gift' %}
+                            <div class="row no-gutters">
+                                <div class="col-md-2 text-center offset-md-2">
+                                    <a class="list-group-item list-group-item-action list-group-item-danger"
+                                       style="pointer-events: none;">
+                                        {% trans 'Gift' %}
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ object.get_absolute_url }}"
+                                       class="list-group-item list-group-item-action">
+                                        {{ object.title }}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% else %}
-                        <div class="row">
-                            <div class="offset-md-2 col-12 col-lg-8 offset-lg-4">
-                                <a href="{{ object.get_absolute_url }}">
-                                    {{ object }} | {{ object|class_name }}
-                                </a>
+
+                        {% elif cls == 'Job' %}
+                            <div class="row no-gutters">
+                                <div class="col-md-2 text-center offset-md-2">
+                                    <a class="list-group-item list-group-item-action list-group-item-success"
+                                       style="pointer-events: none;">
+                                        {% trans 'Job' %}
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ object.get_absolute_url }}"
+                                       class="list-group-item list-group-item-action">
+                                        {{ object.title }}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    {% endif %}
+
+                        {% elif cls == 'Rental' %}
+                            <div class="row no-gutters">
+                                <div class="col-md-2 text-center offset-md-2">
+                                    <a class="list-group-item list-group-item-action list-group-item-warning"
+                                       style="pointer-events: none;">
+                                        {% trans 'Rent' %}
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ object.get_absolute_url }}"
+                                       class="list-group-item list-group-item-action">
+                                        {{ object.title }}
+                                    </a>
+                                </div>
+                            </div>
+
+                        {% else %}
+                            <div class="row">
+                                <div class="col-md-2 text-center offset-md-2">
+                                    <a class="list-group-item list-group-item-action list-group-item-secondary"
+                                       style="pointer-events: none;">
+                                        {{ object|class_name }}
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <a href="{{ object.get_absolute_url }}"
+                                       class="list-group-item">
+                                        {{ object.title }}
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+
                 {% endwith %}
             {% empty %}
                 <div class="row">

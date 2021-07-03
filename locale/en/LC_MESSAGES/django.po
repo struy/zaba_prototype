@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-20 16:29-0500\n"
+"POT-Creation-Date: 2021-07-03 09:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -298,7 +298,7 @@ msgstr ""
 msgid "Gift delete"
 msgstr ""
 
-#: apps/gifts/templates/gifts/gift_form.html:6 templates/search.html:46
+#: apps/gifts/templates/gifts/gift_form.html:6 templates/search.html:66
 msgid "Gift"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgid "price"
 msgstr ""
 
 #: apps/items/templates/items/detail.html:7
-#: apps/items/templates/items/item_form.html:6 templates/search.html:39
+#: apps/items/templates/items/item_form.html:6 templates/search.html:49
 msgid "Item"
 msgstr ""
 
@@ -407,7 +407,7 @@ msgid "salary"
 msgstr ""
 
 #: apps/jobs/templates/jobs/detail.html:8
-#: apps/jobs/templates/jobs/job_form.html:7 templates/search.html:53
+#: apps/jobs/templates/jobs/job_form.html:7 templates/search.html:82
 msgid "Job"
 msgstr ""
 
@@ -477,7 +477,7 @@ msgstr ""
 
 #: apps/rents/templates/rents/detail.html:7
 #: apps/rents/templates/rents/rental_form.html:6 templates/home.html:126
-#: templates/place_ad.html:65 templates/search.html:60
+#: templates/place_ad.html:65 templates/search.html:98
 msgid "Rent"
 msgstr ""
 
@@ -827,11 +827,19 @@ msgstr ""
 msgid "Search result"
 msgstr ""
 
+#: templates/search.html:27
+msgid "results"
+msgstr ""
+
 #: templates/search.html:29
+msgid "Nothing found for your request"
+msgstr ""
+
+#: templates/search.html:34
 msgid "try searching in other languages also"
 msgstr ""
 
-#: templates/search.html:77
+#: templates/search.html:132
 msgid "Enter another query to search at this site"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-20 16:29-0500\n"
+"POT-Creation-Date: 2021-07-03 09:46-0500\n"
 "PO-Revision-Date: 2021-03-25 17:52+0000\n"
 "Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -300,7 +300,7 @@ msgstr "Місцеположення:"
 msgid "Gift delete"
 msgstr "Видалити подарунок"
 
-#: apps/gifts/templates/gifts/gift_form.html:6 templates/search.html:46
+#: apps/gifts/templates/gifts/gift_form.html:6 templates/search.html:66
 msgid "Gift"
 msgstr "Подарунок"
 
@@ -355,7 +355,7 @@ msgid "price"
 msgstr "ціна"
 
 #: apps/items/templates/items/detail.html:7
-#: apps/items/templates/items/item_form.html:6 templates/search.html:39
+#: apps/items/templates/items/item_form.html:6 templates/search.html:49
 msgid "Item"
 msgstr "Товар"
 
@@ -409,7 +409,7 @@ msgid "salary"
 msgstr "зарплата"
 
 #: apps/jobs/templates/jobs/detail.html:8
-#: apps/jobs/templates/jobs/job_form.html:7 templates/search.html:53
+#: apps/jobs/templates/jobs/job_form.html:7 templates/search.html:82
 msgid "Job"
 msgstr "Робота"
 
@@ -479,7 +479,7 @@ msgstr "чоловік"
 
 #: apps/rents/templates/rents/detail.html:7
 #: apps/rents/templates/rents/rental_form.html:6 templates/home.html:126
-#: templates/place_ad.html:65 templates/search.html:60
+#: templates/place_ad.html:65 templates/search.html:98
 msgid "Rent"
 msgstr "Оренда"
 
@@ -860,11 +860,21 @@ msgstr "Надіслати повідомлення електронної по�
 msgid "Search result"
 msgstr "Результат пошуку"
 
+#: templates/search.html:27
+#, fuzzy
+#| msgid "Search result"
+msgid "results"
+msgstr "Результат пошуку"
+
 #: templates/search.html:29
+msgid "Nothing found for your request"
+msgstr ""
+
+#: templates/search.html:34
 msgid "try searching in other languages also"
 msgstr "спробуйте також шукати іншими мовами"
 
-#: templates/search.html:77
+#: templates/search.html:132
 msgid "Enter another query to search at this site"
 msgstr "Введіть інший запит для пошуку на цьому сайті"
 

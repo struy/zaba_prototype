@@ -7,7 +7,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
     path('edit/', edit, name='profile_edit'),
-    path('fav/<str:name>/<int:id>', favourite_add, name='favourite_add'),
+    path('fav/<str:name>/<int:record_id>', favourite_add, name='favourite_add'),
     path('favorites/', favourite_list, name="favorites"),
     path('my_ads/', my_ads, name='my_ads'),
     path('ads/<int:pk>', user_ads, name='user_ads'),

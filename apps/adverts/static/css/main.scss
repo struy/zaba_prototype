@@ -191,7 +191,7 @@ header {
   width: 30px;
   height: 25px;
   position: relative;
-  margin: 0px;
+  margin: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -782,11 +782,11 @@ i.fas.fa-paw {
 }
 
 .bg-color-sell {
-  background-color: #ffe999;
+  background-color: #d6e7ff;
 }
 
 .bg-color-jobs {
-  background-color: #d6e7ff;
+  background-color:   #ffc480;
 }
 
 .bg-color-services {
@@ -794,7 +794,7 @@ i.fas.fa-paw {
 }
 
 .bg-color-housing {
-  background-color: #ffc480;
+  background-color: #ffe999;
 }
 
 .bg-color-cats {
@@ -1355,8 +1355,10 @@ h2 {
 .image-slider {
   height: 230px;
 }
+
 #main ul li {
-  margin-left: 40px;}
+  margin-left: 40px;
+}
 
 
 

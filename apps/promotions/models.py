@@ -11,6 +11,7 @@ def user_directory_path(instance, filename):
 class Promote(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('author'))
     name = models.CharField(max_length=200, verbose_name=_('name'))
+    paid = models.BooleanField()
 
     class Meta:
         ordering = ('name',)

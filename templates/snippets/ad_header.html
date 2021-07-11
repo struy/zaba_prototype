@@ -1,18 +1,18 @@
+{% load bootstrap_size_css %}
 {% load staticfiles %}
 {% load static %}
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{% static 'ads/header/1.png' %}" alt="First slide">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+        {% for promote in promotion %}
+            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                {% for banner in  promote.banners.all %}
+                    <img class="{{ banner.size|bootstrap_size_css }}" src="{{ banner.image.url }}"
+                         alt="{{ banner.promote.name }}"/>
+                {% endfor %}
+            </div>
+        {% endfor %}
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'ads/header/2.png' %}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'ads/header/3.png' %}" alt="Third slide">
-    </div>
-  </div>
 </div>

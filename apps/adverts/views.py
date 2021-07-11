@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.conf import settings
 from django.views.generic import ListView
 from django.views.decorators.http import require_GET
+from django.utils.translation import get_language
 
 from .models import Advert
 from apps.items.models import Item
@@ -15,6 +16,7 @@ from apps.gifts.models import Gift
 from apps.rents.models import Rental
 from apps.jobs.models import Job
 from apps.services.models import Service
+from apps.promotions.models import Promote
 from .utils import get_most_viewed, get_new_ads
 
 
@@ -47,12 +49,17 @@ def home(request):
     month = r.zcount("adverts", month_ago.timestamp(), "+inf")
     week = r.zcount("adverts", week_ago.timestamp(), "+inf")
     today = r.zcount("adverts", day_ago.timestamp(), "+inf")
+    lang = get_language()
+    if lang:
+        lang = lang[:2]
+    promotion = Promote.objects.filter(banners__local=lang).distinct()
 
     context = {'total': total,
                'month': month,
                'today': today,
                'week': week,
                'new': new,
+               'promotion': promotion,
                'most_viewed': most_viewed}
 
     return render(request, 'home.html', context)

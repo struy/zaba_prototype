@@ -72,7 +72,8 @@ LOCAL_APPS = ['apps.accounts.apps.AccountsConfig',
               'apps.gifts.apps.GiftsConfig',
               'apps.sendemail.apps.SendemailConfig',
               'apps.shop.apps.ShopConfig',
-              'apps.services.apps.ServicesConfig'
+              'apps.services.apps.ServicesConfig',
+              'apps.promotions.apps.PromotionsConfig'
               ]
 
 INSTALLED_APPS = ['modeltranslation', ] + DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -91,7 +92,6 @@ SITE_ID = 1
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -236,14 +236,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 sentry_sdk.init(
     dsn=env('SENTRY_DSN'),
-    # integrations=[DjangoIntegration()],
     integrations=[RedisIntegration()],
-
-    # temporary fix
-    # transport=print,
-
-    # If you wish to associate users to errors (assuming you are using
-    # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
 

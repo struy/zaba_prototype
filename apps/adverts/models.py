@@ -107,7 +107,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
             r.incr(f'Total:saved')
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
             r.lpush(f'{self.__class__.__name__}:new', self.id)
-            r.ltrim(f'{self.__class__.__name__}:new', 0, 5)
+            r.ltrim(f'{self.__class__.__name__}:new', 0, 15)
             data = self.created.timestamp()
             score = f'{self.__class__.__name__}:{self.created.timestamp()}'
             r.zadd("adverts", {score: data})

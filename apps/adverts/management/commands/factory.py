@@ -12,4 +12,4 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for count in options['ads']:
             start(count)
-            self.stdout.write(self.style.SUCCESS('Successfully generate "%s"' % count*4))
+            self.stdout.write(self.style.SUCCESS('Successfully generate "%s"' % count))

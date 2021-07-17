@@ -15,7 +15,6 @@ def create_img(fake, model):
         image_url = fake.image_url()
         image_name = image_url.rsplit('.', 1)[1].lower() + '.jpeg'
         agent = str(fake.user_agent())
-        print(agent)
         req = request.Request(
             image_url,
             data=None,
@@ -32,7 +31,7 @@ def create_img(fake, model):
 
 
 def start(count):
-    author_id = 2
+    author_id = 1
     local = ['en_US', 'uk_UA', 'ru_RU', 'pl_PL']
 
     for loc in local:
@@ -53,6 +52,8 @@ def start(count):
                         price=rand.randint(1, 2000),
                         )
             create_img(fake, item)
+            item.save()
+            print("created Item")
 
             # jobs
         for i in range(count):
@@ -72,6 +73,8 @@ def start(count):
                       countries=rand.choice(['US', 'UA', 'RU', 'PL'])
                       )
             create_img(fake, job)
+            job.save()
+            print("created Job")
             # rents
         for i in range(count):
             local_lat = fake.local_latlng()
@@ -93,12 +96,14 @@ def start(count):
                           price=rand.randint(1, 2000),
                           )
             create_img(fake, rent)
+            rent.save()
+            print("created Rent")
             # gifts
         for i in range(count):
             local_lat = fake.local_latlng()
             gift = Gift(title=fake.catch_phrase(),
                         description=fake.text(),
-                        gift_type=GiftType.objects.get(pk=rand.randint(0, 4)),
+                        gift_type=GiftType.objects.get(pk=rand.randint(1, 4)),
                         author_id=author_id,
                         point=Point((float(local_lat[0]), float(local_lat[1]))),
                         expires=fake.date_this_year(),
@@ -106,3 +111,5 @@ def start(count):
                         address=fake.street_address(),
                         local=loc[:2])
             create_img(fake, gift)
+            gift.save()
+            print("created Gift")

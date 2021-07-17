@@ -12,7 +12,6 @@ def inform_users(user_id):
 
 
 def get_most_viewed(pool):
-    # get all
     result = []
     ranking = [i.decode('utf-8') for i in pool.zrange('ranking:All', 0, -1, desc=True)[:12]]
     models = {"Item": Item, "Job": Job, "Gift": Gift, "Rental": Rental}
@@ -32,7 +31,7 @@ def get_new_ads(pool):
     models = ["Item", "Job", "Gift", "Rental"]
     result = []
     for name in models:
-        ids = [int(i) for i in pool.lrange(f'{name}:new', 0, 4)]
+        ids = [int(i) for i in pool.lrange(f'{name}:new', 0, 12)]
         result.append(list(Item.objects.filter(id__in=ids)))
     new = chain(*result)
     return new

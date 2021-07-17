@@ -164,16 +164,19 @@
                 <div id="multi-item-example" class="carousel slide carousel-multi-item"
                      data-ride="carousel">
 
-                    {# logins carosel (add points for tunr page #}
-                    {% if most_viewed|length >= 4 %}
-                        <ol class="carousel-indicators dots-carousel">
-                            {% for x in most_viewed|length|divisibleby:4|floatformat %}
-                                <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if x == 0 %}
-                                    class="active" {% endif %}></li>
-                            {% endfor %}
-                        </ol>
-                        <!--/.Indicators-->
-                    {% endif %}
+                     <!--Indicators-->
+                <ol class="carousel-indicators dots-carousel d-none d-md-flex">
+                    {% for x in "012" %}
+                        <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if  forloop.counter0 == 0 %}
+                            class="active" {% endif %}>
+                        </li>
+                    {% endfor %}
+                </ol>
+                <!--/.Indicators-->
+
+
+
+
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
                         {% for advert in most_viewed %}
@@ -249,17 +252,16 @@
         <div class="container my-4 py-2">
             <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-                {# logins carosel (add points for tunr page #}
                 <!--Indicators-->
-                {% if new|length >= 4 %}
-                    <ol class="carousel-indicators dots-carousel">
-                        {% for x in new|length|divisibleby:4|floatformat %}
-                            <li data-target="#multi-item-example2" data-slide-to="{{ x }}" {% if x == 0 %}
-                                class="active" {% endif %}></li>
-                        {% endfor %}
-                    </ol>
-                    <!--/.Indicators-->
-                {% endif %}
+                <ol class="carousel-indicators dots-carousel d-none d-md-flex">
+                    {% for x in "012" %}
+                        <li data-target="#multi-item-example2" data-slide-to="{{ x }}" {% if  forloop.counter0 == 0 %}
+                            class="active" {% endif %}>
+                        </li>
+                    {% endfor %}
+                </ol>
+                <!--/.Indicators-->
+
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
                     {% for advert in new %}

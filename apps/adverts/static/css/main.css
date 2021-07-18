@@ -683,6 +683,16 @@ i.fas.fa-paw {
   background-color: #d8e7bb;
 }
 
+.bg-color-base {
+  background-color: #749B27;
+}
+
+/* place ad */
+#dropdownMenuLink:hover {
+  background-color: #091B34;
+  color: #FFFFFF;
+}
+
 /*JOB*/
 .job_title {
   margin-left: 10px;

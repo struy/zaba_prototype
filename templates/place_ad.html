@@ -24,26 +24,28 @@
 
 {% block content %}
     <div class="home bg-white">
-        <div class="container">
+
+    <section id="place-ad">
+            <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2><span>{% trans "Select category to " %}</span></h2>
                 </div>
 
                 <div class="col-12 m-auto text-center">
-                    <div class="dropdown showb ">
-                        <a class="btn btn-primary text-white dropdown-toggle col-md-3" href="#" role="button"
+                    <div class="dropdown show">
+                        <a class="btn bg-color-base text-white dropdown-toggle col-md-3" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span>{% trans "create ad" %}</span>
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a href="{% url 'items:new' %}" class="dropdown-item  text-center bg-color-sell w-100">
+                            <a href="{% url 'items:new' %}" class="dropdown-item  text-center bg-color-sell">
                                 <img src="{% static 'img/icon-hand-bag.svg' %}" alt="sell">
                                 <span>{% trans "Sell" %} </span>
                             </a>
-                            <a href="{% url 'jobs:new' %}" class="dropdown-item  text-center bg-color-jobs w-100">
+                            <a href="{% url 'jobs:new' %}" class="dropdown-item  text-center bg-color-jobs">
                                 <img src="{% static 'img/icon-Job.svg' %}" alt="jobs">
                                 <span>{% trans "Jobs" %}</span>
                             </a>
@@ -61,6 +63,8 @@
                 </div>
             </div>
         </div>
+    </section>
+
 
 
     </div>

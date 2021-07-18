@@ -581,19 +581,21 @@ header {
   }
 
   .home {
+    .categories {
+      a {
+        font-size: 3em;
 
-    a {
-      font-size: 3em;
+        span {
+          opacity: 0.75;
+        }
 
-      span {
-        opacity: 0.75;
+        &:hover {
+          text-decoration: none;
+        }
+
       }
-
-      &:hover {
-        text-decoration: none;
-      }
-
     }
+
 
     .count-box span {
       font-size: 28px;
@@ -786,7 +788,7 @@ i.fas.fa-paw {
 }
 
 .bg-color-jobs {
-  background-color:   #ffc480;
+  background-color: #ffc480;
 }
 
 .bg-color-services {

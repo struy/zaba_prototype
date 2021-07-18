@@ -16,6 +16,9 @@
   #btn_sm_md_ext {
     display: none;
   }
+  #google_ads {
+    margin-top: 50px;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -77,7 +80,7 @@
   .with-submenu .sub-menu {
     position: initial;
     box-shadow: unset;
-    display: block ;
+    display: block;
     margin-left: -10px;
     font-size: 16px;
   }
@@ -95,13 +98,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .item a {
-      color: #262a5d ;
+      color: #262a5d;
       font-size: 14px;
     }
 
     .item {
-      color: #262a5d ;
+      color: #262a5d;
       font-size: 14px;
 
       svg {
@@ -191,9 +195,9 @@
     justify-content: space-between;
 
     a {
-      margin: 0 ;
-      font-size: 18px ;
-      padding: 10px 20px 20px ;
+      margin: 0;
+      font-size: 18px;
+      padding: 10px 20px 20px;
     }
   }
 
@@ -210,7 +214,7 @@
     margin-top: 20px;
   }
   .list-ads-user .item {
-    margin: 0 auto 10px ;
+    margin: 0 auto 10px;
   }
   #btn_sm_md_ext {
     display: flex;
@@ -254,7 +258,7 @@
     width: 100%;
   }
   #main .form-inline .form-group {
-    margin-bottom: 5rem ;
+    margin-bottom: 5rem;
   }
   #main .form-inline .form-row {
     margin-bottom: 0;
@@ -276,7 +280,7 @@
     width: 100%;
 
     &:first-child {
-      text-align: left ;
+      text-align: left;
     }
   }
 
@@ -325,21 +329,21 @@
   .filters .clear-filter {
     width: 100%;
     height: 40px;
-    padding: 5px 5px -2px 5px ;
+    padding: 5px 5px -2px 5px;
     margin-top: 10px;
     white-space: nowrap;
 
   }
 
 
-  #main h2.log_with_account{
+  #main h2.log_with_account {
     font-size: 22px;
   }
 
 }
 
 @media (max-width: 425px) {
-  .filters .clear-filter{
+  .filters .clear-filter {
     padding: 5px;
     height: 35px;
   }
@@ -353,10 +357,11 @@
   header button[type="submit"] {
     margin-left: 5px;
   }
-  .navbar-ml{
+  .navbar-ml {
     margin: 0 0 0 -17px;
   }
 }
+
 @media (max-width: 990px) {
   header button[type="submit"] {
     background-size: cover;
@@ -383,7 +388,7 @@
 
 /*Medium devices (tablets, 768px and up)*/
 @media (max-width: 991.98px) {
-  .image-advert{
+  .image-advert {
     width: 100%;
   }
 }
@@ -395,10 +400,11 @@
 
 /*Large devices (desktops, 992px and up)*/
 @media (max-width: 1199.98px) {
-  .corner-item{
+  .corner-item {
     left: 15px;
   }
 }
+
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
@@ -409,20 +415,20 @@
 }
 
 @media (max-width: 425px) {
-  #main .home .simple-search input.form-control{
+  #main .home .simple-search input.form-control {
     font-size: 13px;
     text-indent: 100%;
-}
-  #main .home .simple-search .form-group .form-control-feedback{
+  }
+  #main .home .simple-search .form-group .form-control-feedback {
     top: 3px
   }
-  #main .home .simple-search button#btn_search{
+  #main .home .simple-search button#btn_search {
     height: 42px;
     width: 42px;
     margin: 0;
     padding: 10px 0;
   }
-  .grey-back{
+  .grey-back {
     padding: 0;
   }
 }

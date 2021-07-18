@@ -491,13 +491,13 @@ header .navbar-toggler {
 #main .advert a:hover {
   color: #749B27;
 }
-#main .home a {
+#main .home .categories a {
   font-size: 3em;
 }
-#main .home a span {
+#main .home .categories a span {
   opacity: 0.75;
 }
-#main .home a:hover {
+#main .home .categories a:hover {
   text-decoration: none;
 }
 #main .home .count-box span {

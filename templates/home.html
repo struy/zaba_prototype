@@ -29,6 +29,7 @@
 
 {% block content %}
     <div class="home bg-white">
+
         <div class="grey-back">
             <div class="container">
                 {% include "snippets/search_bar.html" %}
@@ -146,6 +147,7 @@
 
 
     </div>
+
     <div class="wrap popular-ads grey-back">
         <div class="top-svg">
             {% include 'svg/top.html' %}
@@ -160,22 +162,20 @@
 
 
         {% if most_viewed %}
-            <div class="container my-4 pt-1 pb-4">
+            <div class="container my-4 pt-1 pb-4 mt-10">
                 <div id="multi-item-example" class="carousel slide carousel-multi-item"
-                     data-ride="carousel">
+                     data-ride="carousel" data-interval="4000">
 
-                     <!--Indicators-->
-                <ol class="carousel-indicators dots-carousel d-none d-md-flex">
-                    {% for x in "012" %}
-                        <li data-target="#multi-item-example" data-slide-to="{{ x }}" {% if  forloop.counter0 == 0 %}
-                            class="active" {% endif %}>
-                        </li>
-                    {% endfor %}
-                </ol>
-                <!--/.Indicators-->
-
-
-
+                    <!--Indicators-->
+                    <ol class="carousel-indicators dots-carousel d-none d-md-flex">
+                        {% for x in "012" %}
+                            <li data-target="#multi-item-example" data-slide-to="{{ x }}"
+                                    {% if  forloop.counter0 == 0 %}
+                                class="active" {% endif %}>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    <!--/.Indicators-->
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
@@ -235,8 +235,7 @@
         <center>
             <div class="container">
                 <img src="{% static 'img/image-20.png' %}" border="0"
-                     width="724"
-                     alt="" class="img_ad">
+                     width="724" alt="" class="img_ad">
             </div>
         </center>
     </section>
@@ -250,7 +249,7 @@
 
     {% if new %}
         <div class="container my-4 py-2">
-            <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel" data-interval="4000">
 
                 <!--Indicators-->
                 <ol class="carousel-indicators dots-carousel d-none d-md-flex">

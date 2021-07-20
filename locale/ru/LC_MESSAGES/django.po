@@ -464,11 +464,11 @@ msgstr "Собаками и Котиками"
 
 #: apps/rents/models.py:36
 msgid "Any"
-msgstr "Любыми"
+msgstr "Любой"
 
 #: apps/rents/models.py:43
 msgid "any"
-msgstr "любыми"
+msgstr "любой"
 
 #: apps/rents/models.py:44
 msgid "woman"

@@ -463,11 +463,11 @@ msgstr "Собаками та Котиками"
 
 #: apps/rents/models.py:36
 msgid "Any"
-msgstr "Будь-якими"
+msgstr "Будь-який"
 
 #: apps/rents/models.py:43
 msgid "any"
-msgstr "будь-якими"
+msgstr "будь-який"
 
 #: apps/rents/models.py:44
 msgid "woman"

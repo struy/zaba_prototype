@@ -67,7 +67,7 @@ def start(count):
                       city=local_lat[2],
                       expires=fake.date_this_year(),
                       # uniq
-                      jobtype=JobType.objects.get(pk=rand.randint(1, 4)),
+                      jobtype=JobType.objects.get(pk=rand.randint(1, 7)),
                       duration=rand.randint(0, 3),
                       salary=rand.randint(1, 2000),
                       countries=rand.choice(['US', 'UA', 'RU', 'PL'])

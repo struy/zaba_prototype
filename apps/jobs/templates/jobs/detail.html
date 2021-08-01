@@ -18,6 +18,8 @@
 
     <div class="container">
         <div class="row align-items-start">
+
+
             <div class="col-md-8">
                 {% if advert.image %}
                     <div class="image">
@@ -26,9 +28,15 @@
                         </a>
                     </div>
                 {% endif %}
+
                 <div class="information">
                     <h2 class="d-flex justify-content-between">
-                        <span> {{ advert.title }} </span>
+                        <span>
+                                  {% if advert.jobtype.icon %}
+                                      <i class="fas fa-{{ advert.jobtype.icon }} fa-1x" style="color: #749B27;"></i>
+                                  {% endif %}
+                            {{ advert.title }}
+                        </span>
                         <span>
                             <small class="text-muted">
                                  <a href="{% url 'favourite_add' 'Job' advert.id %}">
@@ -44,12 +52,6 @@
                         </span>
                     </h2>
                     <h1>{{ advert.salary|prepend_dollars }}</h1>
-
-                    <p>
-                        {% if advert.jobtype.icon %}
-                            <i class="fas fa-{{ advert.jobtype.icon }} fa-3x"></i>
-                        {% endif %}
-                    </p>
 
                     <p>
                         <b>{% trans "Job type:" %}</b>

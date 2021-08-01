@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
 env.read_env(str(BASE_DIR + "/" + ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("DJANGO_SECRET_KEY")
+SECRET_KEY = env("DJANGO_SECRET_KEY") | "secret"
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS')
 
 # Google Recaptcha

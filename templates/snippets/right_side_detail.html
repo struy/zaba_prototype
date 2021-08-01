@@ -5,7 +5,7 @@
     <div class="info">
         <div class="mb-3">
             {% include 'svg/icon-Account.svg' %}
-            <span>User</span>
+            <span>Author Info</span>
         </div>
         <div class="mb-4">
             <h3>
@@ -20,7 +20,7 @@
             <a href="{% url 'user_ads'  advert.author.id %}">{% trans 'Other user’s ads' %}</a>
         </div>
         <div class="mb-4">
-            <a href="{% url 'connect_user'  advert.author.id 'Item' advert.id %}">
+            <a href="{% url 'connect_user'  advert.author.id name advert.id %}">
                 <div class="button">
                     {% trans "Email" %}
                 </div>

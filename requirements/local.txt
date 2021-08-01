@@ -1,0 +1,5 @@
+-r tests.txt
+
+django-debug-toolbar==3.2.1
+pipdeptree==2.0.0
+sentry-sdk==1.1.0

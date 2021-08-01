@@ -117,6 +117,8 @@ venv.bak/
 # !.vscode/tasks.json
 # !.vscode/launch.json
 # !.vscode/extensions.json
+*.code-workspace
+
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -161,16 +163,7 @@ $RECYCLE.BIN/
 
 node_modules 
 
-
-### VisualStudioCode ###
-.vscode/*
-#!.vscode/settings.json
-#!.vscode/tasks.json
-#!.vscode/launch.json
-#!.vscode/extensions.json
-*.code-workspace
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
 /zaba/settings_prod_test.py
+
+#Local
+settings_local.py

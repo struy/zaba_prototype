@@ -56,7 +56,11 @@ def detail(request, advert_id):
     if advert.favourites.filter(id=request.user.id).exists():
         is_favourite = True
 
-    context = {'advert': advert, 'total_views': total_views, 'favourite': is_favourite}
+    context = {'advert': advert,
+               'total_views': total_views,
+               'favourite': is_favourite,
+               'name': 'Service'
+               }
     return render(request, 'services/templates/services/detail.html', context)
 
 

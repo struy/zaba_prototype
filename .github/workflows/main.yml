@@ -34,18 +34,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
-      - uses: actions/setup-python@v1
+        uses: actions/setup-python@v1
         with:
           python-verstion: 3.8
       - run: which python
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Lint with flake8
-      - run: |
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      - name: Run a multi-line script
-      - run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+#      - name: Lint with flake8
+#        run: |
+#          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+#          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+#      - name: Run a multi-line script
+#      - run: |
+#          echo Add other actions to build,
+#          echo test, and deploy your project.

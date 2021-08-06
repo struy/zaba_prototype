@@ -50,6 +50,7 @@ django-rosetta==0.9.5
 django-sekizai==2.0.0
 django-select2==7.6.1
 django-storages==1.11.1
+django-svg-image-form-field==1.0.1
 django-tables2==2.3.4
 djangorestframework==3.12.2
 docutils==0.16
@@ -86,6 +87,7 @@ parso==0.8.1
 pep8==1.7.1
 Pillow==8.2.0
 pipdeptree==2.0.0
+pkg_resources==0.0.0
 pluggy==0.12.0
 polib==1.1.0
 pony==0.7.14

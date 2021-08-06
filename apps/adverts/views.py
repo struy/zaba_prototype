@@ -16,7 +16,7 @@ from apps.gifts.models import Gift
 from apps.rents.models import Rental
 from apps.jobs.models import Job
 from apps.services.models import Service
-from apps.promotions.models import Promote
+from apps.promotions.models import Promote, Banner
 from .utils import get_most_viewed, get_new_ads
 
 
@@ -52,14 +52,14 @@ def home(request):
     lang = get_language()
     if lang:
         lang = lang[:2]
-    promotion = Promote.objects.filter(banners__local=lang).distinct()
+    header_banners = Banner.objects.filter(local=lang)
 
     context = {'total': total,
                'month': month,
                'today': today,
                'week': week,
                'new': new,
-               'promotion': promotion,
+               'header_banners': header_banners,
                'most_viewed': most_viewed}
 
     return render(request, 'home.html', context)

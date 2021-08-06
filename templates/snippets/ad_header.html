@@ -1,4 +1,6 @@
 {% load bootstrap_size_css %}
+{% load bootstrap_size_svg_width %}
+{% load bootstrap_size_svg_height %}
 {% load staticfiles %}
 {% load static %}
 {% load i18n %}
@@ -6,12 +8,23 @@
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
-        {% for promote in promotion %}
+        {% for banner in header_banners %}
             <div class="carousel-item{% if forloop.first %} active{% endif %}">
-                {% for banner in  promote.banners.all %}
-                    <img class="{{ banner.size|bootstrap_size_css }}" src="{{ banner.image.url }}"
-                         alt="{{ banner.promote.name }}"/>
-                {% endfor %}
+                <a href="{% if banner.link is not None %}{{ banner.link }}{% else %}{% url 'home' %}{% endif %}"
+                   target="_blank">
+                    {% if 'svg' in banner.image.url %}
+                        <svg width="{{ banner.size|bootstrap_size_svg_width }}"
+                             height="{{ banner.size|bootstrap_size_svg_height }}" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image xlink:href="{{ banner.image.url }}"
+                                   width="{{ banner.size|bootstrap_size_svg_width }}"
+                                   height="{{ banner.size|bootstrap_size_svg_height }}"></image>
+                        </svg>
+                    {% else %}
+                        <img class="{{ banner.size|bootstrap_size_css }}" src="{{ banner.image.url }}"
+                             alt="{{ banner.promote.name }}"/>
+                    {% endif %}
+                </a>
             </div>
         {% endfor %}
     </div>

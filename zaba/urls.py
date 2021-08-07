@@ -20,6 +20,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', views.home, name='home'),
     path('', include('apps.sendemail.urls')),
+    path('', include('apps.adverts.urls')),
     path('search', views.SearchView.as_view(), name="global_search"),
     path('jobs/', include('apps.jobs.urls')),
     path('rents/', include('apps.rents.urls')),

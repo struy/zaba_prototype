@@ -137,6 +137,22 @@ class SearchView(ListView):
         return qs
 
 
+class MapList(ListView):
+    context_object_name = 'adverts'
+    template_name = 'adverts/map.html'
+
+    def get_queryset(self):
+        lang = get_language()
+        queryset = {'items': Item.objects.filter(point__isnull=False, local__exact=lang),
+                    'jobs': Job.objects.filter(point__isnull=False, local__exact=lang),
+                    'gifts': Gift.objects.filter(point__isnull=False, local__exact=lang),
+                    'rents': Rental.objects.filter(point__isnull=False, local__exact=lang)
+                    }
+        return queryset
+
+
+
+
 @require_GET
 def robots_txt(request):
     lines = [

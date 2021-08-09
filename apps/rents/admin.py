@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Rental, PropertyType
 from modeltranslation.admin import TranslationAdmin
+
+from .models import Rental, PropertyType
 
 
 class RentalAdmin(TranslationAdmin):

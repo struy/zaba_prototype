@@ -1,8 +1,9 @@
+import django_tables2 as tables
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-import django_tables2 as tables
+
 from apps.adverts.models import Advert, Location, user_directory_path
 
 

@@ -32,7 +32,7 @@ msgstr "Сообщение"
 #: apps/accounts/templates/accounts/connect.html:8
 #: apps/accounts/templates/accounts/connect.html:14
 msgid "Contact user"
-msgstr "Связаться с нами"
+msgstr "Связаться с пользователем"
 
 #: apps/accounts/templates/accounts/connect.html:13
 #: apps/accounts/templates/accounts/edit.html:11

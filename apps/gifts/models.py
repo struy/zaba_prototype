@@ -1,8 +1,9 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
-from django.contrib.auth.models import User
-from apps.adverts.models import Advert, Location, user_directory_path
 from django.utils.translation import gettext_lazy as _
+
+from apps.adverts.models import Advert, Location, user_directory_path
 
 
 class GiftType(models.Model):

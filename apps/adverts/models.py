@@ -1,18 +1,19 @@
 import datetime
+from collections import namedtuple
+
 import pytz
 import redis
-from collections import namedtuple
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.contrib.gis.db.models import PointField
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
 from django.utils import timezone
 from django.utils.translation import get_language
-from django.contrib.auth.models import User
-from django.conf import settings
-from django.contrib.gis.db.models import PointField
-from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
-from django.utils.translation import gettext_lazy as _
 
 
 def user_directory_path(instance, filename):
@@ -104,7 +105,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         r = redis.Redis(connection_pool=settings.POOL)
 
         if (self.modified - self.created).seconds == 0:
-            r.incr(f'Total:saved')
+            r.incr(f"Total:saved")
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
             r.lpush(f'{self.__class__.__name__}:new', self.id)
             r.ltrim(f'{self.__class__.__name__}:new', 0, 12)
@@ -115,7 +116,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     def delete(self, using=None, keep_parents=False):
         r = redis.Redis(connection_pool=settings.POOL)
         super(Advert, self).delete()
-        r.decr(f'Total:saved')
+        r.decr(f"Total:saved")
         r.decr(f'{self.__class__.__name__}:{self.id}:saved')
         data = self.created.timestamp()
         score = f'{self.__class__.__name__}:{self.created.timestamp()}'

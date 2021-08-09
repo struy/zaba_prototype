@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django_svg_image_form_field import SvgAndImageFormField
 
 from .forms import BannerForm
 from .models import Promote, Banner, Area

@@ -1,16 +1,16 @@
 import redis
 from django.conf import settings
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse_lazy
 from django.utils.translation import get_language
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse_lazy
-from django.db.models import Q
 
 from apps.adverts.utils import context_helper
 from .filters import ServicesFilter
-from .models import Service
 from .form import ServiceForm
+from .models import Service
 
 # connect to redis
 r = redis.Redis(connection_pool=settings.POOL)

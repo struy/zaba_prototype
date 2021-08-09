@@ -105,7 +105,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         r = redis.Redis(connection_pool=settings.POOL)
 
         if (self.modified - self.created).seconds == 0:
-            r.incr(f"Total:saved")
+            r.incr('Total:saved')
             r.incr(f'{self.__class__.__name__}:{self.id}:saved')
             r.lpush(f'{self.__class__.__name__}:new', self.id)
             r.ltrim(f'{self.__class__.__name__}:new', 0, 12)
@@ -116,7 +116,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     def delete(self, using=None, keep_parents=False):
         r = redis.Redis(connection_pool=settings.POOL)
         super(Advert, self).delete()
-        r.decr(f"Total:saved")
+        r.decr('Total:saved')
         r.decr(f'{self.__class__.__name__}:{self.id}:saved')
         data = self.created.timestamp()
         score = f'{self.__class__.__name__}:{self.created.timestamp()}'

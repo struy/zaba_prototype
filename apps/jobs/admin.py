@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Job, JobType
 from modeltranslation.admin import TranslationAdmin
+
+from .models import Job, JobType
 
 
 class JobAdmin(TranslationAdmin):

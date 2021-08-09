@@ -1,22 +1,23 @@
 import datetime
-import redis
 import re
 from itertools import chain
-from django.http import HttpResponse
-from django.template import loader
-from django.shortcuts import get_object_or_404, render
-from django.conf import settings
-from django.views.generic import ListView
-from django.views.decorators.http import require_GET
-from django.utils.translation import get_language
 
-from .models import Advert
-from apps.items.models import Item
+import redis
+from django.conf import settings
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from django.template import loader
+from django.utils.translation import get_language
+from django.views.decorators.http import require_GET
+from django.views.generic import ListView
+
 from apps.gifts.models import Gift
-from apps.rents.models import Rental
+from apps.items.models import Item
 from apps.jobs.models import Job
+from apps.promotions.models import Banner
+from apps.rents.models import Rental
 from apps.services.models import Service
-from apps.promotions.models import Promote, Banner
+from .models import Advert
 from .utils import get_most_viewed, get_new_ads
 
 
@@ -149,8 +150,6 @@ class MapList(ListView):
                     'rents': Rental.objects.filter(point__isnull=False, local__exact=lang)
                     }
         return queryset
-
-
 
 
 @require_GET

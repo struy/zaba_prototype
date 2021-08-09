@@ -1,7 +1,7 @@
 from django import forms
+from django_svg_image_form_field import SvgAndImageFormField
 
 from .models import Banner
-from django_svg_image_form_field import SvgAndImageFormField
 
 
 class BannerForm(forms.ModelForm):

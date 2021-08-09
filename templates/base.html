@@ -85,7 +85,7 @@
                         <a class="nav-link" href="{% url 'contact' %}">{% trans 'Contact us' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'items:map' %}">{% trans 'Map' %}</a>
+                        <a class="nav-link" href="{% url 'home_map' %}">{% trans 'Map' %}</a>
                     </li>
                     {% if user.is_superuser %}
                         <li class="nav-item"><a class="nav-link" href="/admin">{% trans "Admin" %}</a></li>

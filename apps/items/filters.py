@@ -7,9 +7,6 @@ from .models import Item
 class ItemsFilter(django_filters.FilterSet):
     city = django_filters.CharFilter(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
 
-    # TODO   price = django_filters.RangeFilter()
-    # TODO django_filters/widgets/multiwidget.html
-
     class Meta:
         model = Item
         fields = {

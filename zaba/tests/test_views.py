@@ -1,7 +1,9 @@
 from http import HTTPStatus
-from django.test import TestCase, RequestFactory
-from apps.adverts.views import home
+
 from django.contrib.auth.models import AnonymousUser
+from django.test import TestCase, RequestFactory
+
+from apps.adverts.views import home
 
 
 class RobotsTxtTests(TestCase):
@@ -32,4 +34,3 @@ class HomeViewTestCase(TestCase):
         request.user = AnonymousUser()
         response = home(request)
         self.assertEqual(response.status_code, 200)
-

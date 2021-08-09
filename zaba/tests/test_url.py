@@ -1,7 +1,5 @@
-from django.urls import reverse
 import pytest
-import requests
-import json
+from django.urls import reverse
 
 
 def test_an_admin_view(admin_client):
@@ -22,7 +20,6 @@ def test_feed_passing(client):
     resp = client.get(uri)
     content = resp.content.decode(resp.charset)
     assert 'Notice! Ads are displayed only in the selected language.' in content
-
 
 # soup = bs4.BeautifulSoup(content, 'html.parser')
 # assert soup.select_one('h1#title-headliner') == '<h1>title</h1>'

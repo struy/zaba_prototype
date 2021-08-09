@@ -1,4 +1,5 @@
-from django.core.management.base import BaseCommand, CommandError, no_translations
+from django.core.management.base import BaseCommand, no_translations
+
 from ._factory_items import start
 
 

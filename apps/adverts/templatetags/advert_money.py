@@ -21,4 +21,3 @@ def prepend_dollars_only(dollars):
         return "$%s" % (intcomma(int(dollars)))
     else:
         return ''
-

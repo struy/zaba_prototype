@@ -1,11 +1,13 @@
 import random as rand
-from urllib.error import URLError
 from urllib import request
-from faker import Factory
+from urllib.error import URLError
+
 from django.contrib.gis.geos import Point
 from django.core.files.base import ContentFile
-from apps.items.models import Item
+from faker import Factory
+
 from apps.gifts.models import Gift, GiftType
+from apps.items.models import Item
 from apps.jobs.models import Job, JobType
 from apps.rents.models import Rental, PropertyType
 
@@ -25,8 +27,6 @@ def create_img(fake, model):
         response = request.urlopen(req)
         model.image.save(image_name, ContentFile(response.read()))
     except URLError:
-        pass
-    except Exception as err:
         pass
 
 

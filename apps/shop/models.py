@@ -1,4 +1,5 @@
 from django.db import models
+
 from apps.adverts.models import user_directory_path
 
 

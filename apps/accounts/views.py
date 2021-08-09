@@ -1,13 +1,13 @@
-import redis
 from itertools import chain
 from smtplib import SMTPDataError
 
-from django.contrib.auth.models import User
+import redis
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.core.mail import send_mail, BadHeaderError
 
 from apps.gifts.models import Gift
 from apps.items.models import Item

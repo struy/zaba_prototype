@@ -1,6 +1,7 @@
-from django.urls import path, include
-from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user
 from django.contrib.auth import views as auth_views
+from django.urls import path, include
+
+from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user
 
 # app_name = 'accounts'
 urlpatterns = [

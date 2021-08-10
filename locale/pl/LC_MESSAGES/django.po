@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-03 09:46-0500\n"
+"POT-Creation-Date: 2021-08-10 16:39-0500\n"
 "PO-Revision-Date: 2020-12-06 22:38+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
-#: apps/accounts/forms.py:50 apps/sendemail/forms.py:6
+#: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
 msgid "From  email"
 msgstr ""
 
-#: apps/accounts/forms.py:51 apps/sendemail/forms.py:8
+#: apps/accounts/forms.py:52 apps/sendemail/forms.py:8
 #, fuzzy
 #| msgid "Messages"
 msgid "Message"
@@ -44,6 +44,7 @@ msgstr ""
 #: apps/accounts/templates/accounts/register.html:16
 #: apps/accounts/templates/accounts/register_done.html:10
 #: apps/accounts/templates/accounts/user_ads.html:17
+#: apps/adverts/templates/adverts/map.html:10
 #: apps/gifts/templates/gifts/detail.html:12
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
@@ -188,53 +189,53 @@ msgstr ""
 msgid "User's Ads"
 msgstr ""
 
-#: apps/adverts/models.py:29
+#: apps/adverts/models.py:30
 #, python-format
 msgid "%(value)s can't be past"
 msgstr ""
 
-#: apps/adverts/models.py:34
+#: apps/adverts/models.py:35
 #, python-format
 msgid "%(value)s can't be more than month"
 msgstr ""
 
-#: apps/adverts/models.py:56
+#: apps/adverts/models.py:57 apps/promotions/models.py:12
 msgid "author"
 msgstr ""
 
-#: apps/adverts/models.py:57
+#: apps/adverts/models.py:58
 msgid "Format mm/dd/yyyy"
 msgstr ""
 
-#: apps/adverts/models.py:58
+#: apps/adverts/models.py:59
 msgid "expires"
 msgstr ""
 
-#: apps/adverts/models.py:79
+#: apps/adverts/models.py:80
 msgid "new"
 msgstr ""
 
-#: apps/adverts/models.py:83
+#: apps/adverts/models.py:84
 msgid "old"
 msgstr ""
 
-#: apps/adverts/models.py:85
+#: apps/adverts/models.py:86
 msgid "very old"
 msgstr ""
 
-#: apps/adverts/models.py:86
+#: apps/adverts/models.py:87
 msgid "dead"
 msgstr ""
 
-#: apps/adverts/models.py:132
+#: apps/adverts/models.py:133
 msgid "city"
 msgstr ""
 
-#: apps/adverts/models.py:133
+#: apps/adverts/models.py:134
 msgid "address"
 msgstr ""
 
-#: apps/adverts/models.py:134
+#: apps/adverts/models.py:135
 msgid "map"
 msgstr ""
 
@@ -246,14 +247,28 @@ msgstr "Jedzenie"
 msgid "Detail"
 msgstr "Szczegół"
 
-#: apps/gifts/filters.py:10 apps/gifts/form.py:18 apps/items/filters.py:8
-#: apps/items/forms.py:18 apps/jobs/filters.py:9 apps/jobs/form.py:18
-#: apps/rents/filters.py:10 apps/rents/forms.py:18 apps/services/filters.py:9
-#: apps/services/form.py:18
+#: apps/adverts/templates/adverts/map.html:5
+#: apps/items/templates/items/detail.html:12
+#: apps/items/templates/items/index.html:11
+#: apps/items/templates/items/index.html:16
+#: apps/items/templates/items/item_confirm_delete.html:10
+#: apps/items/templates/items/item_form.html:12
+#: apps/items/templates/items/item_list.html:5
+msgid "Items"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
+msgid "Map"
+msgstr ""
+
+#: apps/gifts/filters.py:9 apps/gifts/form.py:18 apps/items/filters.py:9
+#: apps/items/forms.py:19 apps/jobs/filters.py:9 apps/jobs/form.py:19
+#: apps/rents/filters.py:10 apps/rents/forms.py:19 apps/services/filters.py:9
+#: apps/services/form.py:19
 msgid "Only Latin characters"
 msgstr ""
 
-#: apps/gifts/models.py:24
+#: apps/gifts/models.py:25
 msgid "gift type"
 msgstr ""
 
@@ -269,7 +284,7 @@ msgstr ""
 
 #: apps/gifts/templates/gifts/detail.html:48
 #: apps/items/templates/items/detail.html:50
-#: apps/jobs/templates/jobs/detail.html:62
+#: apps/jobs/templates/jobs/detail.html:64
 #: apps/rents/templates/rents/detail.html:49
 #: apps/services/templates/services/detail.html:62
 msgid "Description:"
@@ -277,7 +292,7 @@ msgstr ""
 
 #: apps/gifts/templates/gifts/detail.html:55
 #: apps/items/templates/items/detail.html:57
-#: apps/jobs/templates/jobs/detail.html:77
+#: apps/jobs/templates/jobs/detail.html:79
 #: apps/rents/templates/rents/detail.html:65
 #: apps/services/templates/services/detail.html:77
 msgid "City:"
@@ -285,7 +300,7 @@ msgstr ""
 
 #: apps/gifts/templates/gifts/detail.html:56
 #: apps/items/templates/items/detail.html:58
-#: apps/jobs/templates/jobs/detail.html:78
+#: apps/jobs/templates/jobs/detail.html:80
 #: apps/rents/templates/rents/detail.html:66
 #: apps/services/templates/services/detail.html:78
 msgid "Address:"
@@ -293,7 +308,7 @@ msgstr ""
 
 #: apps/gifts/templates/gifts/detail.html:60
 #: apps/items/templates/items/detail.html:62
-#: apps/jobs/templates/jobs/detail.html:83
+#: apps/jobs/templates/jobs/detail.html:85
 #: apps/rents/templates/rents/detail.html:71
 #: apps/services/templates/services/detail.html:83
 msgid "Location:"
@@ -345,7 +360,7 @@ msgstr ""
 msgid "Like New"
 msgstr ""
 
-#: apps/items/models.py:16 templates/home.html:243
+#: apps/items/models.py:16 templates/home.html:245
 msgid "New"
 msgstr ""
 
@@ -362,21 +377,16 @@ msgstr ""
 msgid "Item"
 msgstr ""
 
-#: apps/items/templates/items/detail.html:12
-#: apps/items/templates/items/index.html:11
-#: apps/items/templates/items/index.html:16
-#: apps/items/templates/items/item_confirm_delete.html:10
-#: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_list.html:5
-msgid "Items"
-msgstr ""
-
 #: apps/items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr ""
 
 #: apps/items/templates/items/item_list.html:13
 msgid "Map of Items"
+msgstr ""
+
+#: apps/items/templates/items/table.html:10
+msgid "List of items"
 msgstr ""
 
 #: apps/jobs/models.py:26
@@ -426,20 +436,20 @@ msgstr "Praca"
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:118
-#: templates/place_ad.html:57
+#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: templates/place_ad.html:50
 msgid "Jobs"
 msgstr "Praca"
 
-#: apps/jobs/templates/jobs/detail.html:55
+#: apps/jobs/templates/jobs/detail.html:57
 msgid "Job type:"
 msgstr "Rodzaj pracy"
 
-#: apps/jobs/templates/jobs/detail.html:69
+#: apps/jobs/templates/jobs/detail.html:71
 msgid "Duration:"
 msgstr ""
 
-#: apps/jobs/templates/jobs/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:73
 #: apps/services/templates/services/detail.html:71
 msgid "Language(s) spoken by the employer:"
 msgstr ""
@@ -450,45 +460,85 @@ msgstr ""
 msgid "Job delete"
 msgstr "Rodzaj pracy"
 
-#: apps/rents/models.py:26
+#: apps/promotions/models.py:13
+msgid "name"
+msgstr ""
+
+#: apps/promotions/models.py:25
+msgid "Header"
+msgstr ""
+
+#: apps/promotions/models.py:26
+msgid "Right Sidebar"
+msgstr ""
+
+#: apps/promotions/models.py:27
+msgid "Left Sidebar"
+msgstr ""
+
+#: apps/promotions/models.py:47
+msgid "Extra small"
+msgstr ""
+
+#: apps/promotions/models.py:48
+msgid "Small"
+msgstr ""
+
+#: apps/promotions/models.py:49
+msgid "Medium"
+msgstr ""
+
+#: apps/promotions/models.py:50
+msgid "Large"
+msgstr ""
+
+#: apps/promotions/models.py:51
+msgid "Extra large"
+msgstr ""
+
+#: apps/promotions/models.py:59
+msgid "link"
+msgstr ""
+
+#: apps/rents/models.py:27
 msgid "property type"
 msgstr ""
 
-#: apps/rents/models.py:32
+#: apps/rents/models.py:33
 msgid "None"
 msgstr ""
 
-#: apps/rents/models.py:33
+#: apps/rents/models.py:34
 msgid "Dogs"
 msgstr ""
 
-#: apps/rents/models.py:34 templates/home.html:140 templates/place_ad.html:81
+#: apps/rents/models.py:35 templates/home.html:141 templates/place_ad.html:58
 msgid "Cats"
 msgstr "Koty"
 
-#: apps/rents/models.py:35
+#: apps/rents/models.py:36
 msgid "Dogs and Cats"
 msgstr ""
 
-#: apps/rents/models.py:36
+#: apps/rents/models.py:37
 msgid "Any"
 msgstr ""
 
-#: apps/rents/models.py:43
+#: apps/rents/models.py:44
 msgid "any"
 msgstr ""
 
-#: apps/rents/models.py:44
+#: apps/rents/models.py:45
 msgid "woman"
 msgstr ""
 
-#: apps/rents/models.py:45
+#: apps/rents/models.py:46
 msgid "man"
 msgstr ""
 
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:126
-#: templates/place_ad.html:65 templates/search.html:98
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: templates/place_ad.html:54 templates/search.html:98
 msgid "Rent"
 msgstr ""
 
@@ -583,8 +633,7 @@ msgstr ""
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:132
-#: templates/place_ad.html:71
+#: apps/services/templates/services/service_list.html:6 templates/home.html:133
 msgid "Services"
 msgstr ""
 
@@ -612,10 +661,6 @@ msgstr ""
 msgid "To home page"
 msgstr ""
 
-#: templates/base.html:88
-msgid "Map"
-msgstr ""
-
 #: templates/base.html:91
 msgid "Admin"
 msgstr ""
@@ -641,15 +686,15 @@ msgstr ""
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Ogłoszenie! Reklamy są wyświetlane tylko w wybranym języku."
 
-#: templates/base.html:249
+#: templates/base.html:251
 msgid "Conditions of Use"
 msgstr ""
 
-#: templates/base.html:254
+#: templates/base.html:256
 msgid "Privacy Notice"
 msgstr ""
 
-#: templates/base.html:259
+#: templates/base.html:261
 msgid "Terms and conditions"
 msgstr ""
 
@@ -676,23 +721,23 @@ msgstr ""
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/home.html:99
+#: templates/home.html:100
 msgid "Main"
 msgstr ""
 
-#: templates/home.html:100
+#: templates/home.html:101
 msgid "Categories"
 msgstr ""
 
-#: templates/home.html:111 templates/place_ad.html:50
+#: templates/home.html:112 templates/place_ad.html:46
 msgid "Sell"
 msgstr "Sprzedać"
 
-#: templates/home.html:156
+#: templates/home.html:158
 msgid "Popular"
 msgstr ""
 
-#: templates/home.html:157 templates/home.html:244
+#: templates/home.html:159 templates/home.html:246
 #, fuzzy
 #| msgid "Adverts"
 msgid "Ads"
@@ -706,12 +751,12 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: templates/place_ad.html:38
-msgid "Select a category"
+#: templates/place_ad.html:32
+msgid "Select category to "
 msgstr ""
 
-#: templates/place_ad.html:39
-msgid "to create ad"
+#: templates/place_ad.html:40
+msgid "create ad"
 msgstr ""
 
 #: templates/policy/term_of_services.html:5
@@ -803,7 +848,7 @@ msgstr ""
 #: templates/registration/password_reset_confirm.html:30
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used. Please request a new password reset"
+"used. Please request a new password reset."
 msgstr ""
 
 #: templates/registration/password_reset_done.html:19

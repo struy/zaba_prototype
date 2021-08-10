@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-03 09:46-0500\n"
+"POT-Creation-Date: 2021-08-10 16:39-0500\n"
 "PO-Revision-Date: 2021-03-25 20:33+0000\n"
 "Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
-#: apps/accounts/forms.py:50 apps/sendemail/forms.py:6
+#: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
 msgid "From  email"
 msgstr "С электронной почты"
 
-#: apps/accounts/forms.py:51 apps/sendemail/forms.py:8
+#: apps/accounts/forms.py:52 apps/sendemail/forms.py:8
 msgid "Message"
 msgstr "Сообщение"
 
@@ -42,6 +42,7 @@ msgstr "Связаться с пользователем"
 #: apps/accounts/templates/accounts/register.html:16
 #: apps/accounts/templates/accounts/register_done.html:10
 #: apps/accounts/templates/accounts/user_ads.html:17
+#: apps/adverts/templates/adverts/map.html:10
 #: apps/gifts/templates/gifts/detail.html:12
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
@@ -186,53 +187,53 @@ msgstr "Войти"
 msgid "User's Ads"
 msgstr "Объявления автора"
 
-#: apps/adverts/models.py:29
+#: apps/adverts/models.py:30
 #, python-format
 msgid "%(value)s can't be past"
 msgstr "Значение '%(value)s' не должно быть в прошлом."
 
-#: apps/adverts/models.py:34
+#: apps/adverts/models.py:35
 #, python-format
 msgid "%(value)s can't be more than month"
 msgstr "Значение '%(value)s' не должно превышать месяц"
 
-#: apps/adverts/models.py:56
+#: apps/adverts/models.py:57 apps/promotions/models.py:12
 msgid "author"
 msgstr "автор"
 
-#: apps/adverts/models.py:57
+#: apps/adverts/models.py:58
 msgid "Format mm/dd/yyyy"
 msgstr "Формат мм/дд/гггг"
 
-#: apps/adverts/models.py:58
+#: apps/adverts/models.py:59
 msgid "expires"
 msgstr "заканчивается"
 
-#: apps/adverts/models.py:79
+#: apps/adverts/models.py:80
 msgid "new"
 msgstr "новое"
 
-#: apps/adverts/models.py:83
+#: apps/adverts/models.py:84
 msgid "old"
 msgstr "старое"
 
-#: apps/adverts/models.py:85
+#: apps/adverts/models.py:86
 msgid "very old"
 msgstr "устарело"
 
-#: apps/adverts/models.py:86
+#: apps/adverts/models.py:87
 msgid "dead"
 msgstr "мертвое"
 
-#: apps/adverts/models.py:132
+#: apps/adverts/models.py:133
 msgid "city"
 msgstr "город"
 
-#: apps/adverts/models.py:133
+#: apps/adverts/models.py:134
 msgid "address"
 msgstr "адрес"
 
-#: apps/adverts/models.py:134
+#: apps/adverts/models.py:135
 msgid "map"
 msgstr "карта"
 
@@ -244,14 +245,28 @@ msgstr "Объявления"
 msgid "Detail"
 msgstr "Подробности"
 
-#: apps/gifts/filters.py:10 apps/gifts/form.py:18 apps/items/filters.py:8
-#: apps/items/forms.py:18 apps/jobs/filters.py:9 apps/jobs/form.py:18
-#: apps/rents/filters.py:10 apps/rents/forms.py:18 apps/services/filters.py:9
-#: apps/services/form.py:18
+#: apps/adverts/templates/adverts/map.html:5
+#: apps/items/templates/items/detail.html:12
+#: apps/items/templates/items/index.html:11
+#: apps/items/templates/items/index.html:16
+#: apps/items/templates/items/item_confirm_delete.html:10
+#: apps/items/templates/items/item_form.html:12
+#: apps/items/templates/items/item_list.html:5
+msgid "Items"
+msgstr "Товары"
+
+#: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
+msgid "Map"
+msgstr "Карта"
+
+#: apps/gifts/filters.py:9 apps/gifts/form.py:18 apps/items/filters.py:9
+#: apps/items/forms.py:19 apps/jobs/filters.py:9 apps/jobs/form.py:19
+#: apps/rents/filters.py:10 apps/rents/forms.py:19 apps/services/filters.py:9
+#: apps/services/form.py:19
 msgid "Only Latin characters"
 msgstr "Только латинские символы"
 
-#: apps/gifts/models.py:24
+#: apps/gifts/models.py:25
 msgid "gift type"
 msgstr "тип подарка"
 
@@ -267,7 +282,7 @@ msgstr "Подарки"
 
 #: apps/gifts/templates/gifts/detail.html:48
 #: apps/items/templates/items/detail.html:50
-#: apps/jobs/templates/jobs/detail.html:62
+#: apps/jobs/templates/jobs/detail.html:64
 #: apps/rents/templates/rents/detail.html:49
 #: apps/services/templates/services/detail.html:62
 msgid "Description:"
@@ -275,7 +290,7 @@ msgstr "Описание:"
 
 #: apps/gifts/templates/gifts/detail.html:55
 #: apps/items/templates/items/detail.html:57
-#: apps/jobs/templates/jobs/detail.html:77
+#: apps/jobs/templates/jobs/detail.html:79
 #: apps/rents/templates/rents/detail.html:65
 #: apps/services/templates/services/detail.html:77
 msgid "City:"
@@ -283,7 +298,7 @@ msgstr "Город:"
 
 #: apps/gifts/templates/gifts/detail.html:56
 #: apps/items/templates/items/detail.html:58
-#: apps/jobs/templates/jobs/detail.html:78
+#: apps/jobs/templates/jobs/detail.html:80
 #: apps/rents/templates/rents/detail.html:66
 #: apps/services/templates/services/detail.html:78
 msgid "Address:"
@@ -291,7 +306,7 @@ msgstr "Адрес:"
 
 #: apps/gifts/templates/gifts/detail.html:60
 #: apps/items/templates/items/detail.html:62
-#: apps/jobs/templates/jobs/detail.html:83
+#: apps/jobs/templates/jobs/detail.html:85
 #: apps/rents/templates/rents/detail.html:71
 #: apps/services/templates/services/detail.html:83
 msgid "Location:"
@@ -343,7 +358,7 @@ msgstr "В хорошем состоянии"
 msgid "Like New"
 msgstr "Как Новые"
 
-#: apps/items/models.py:16 templates/home.html:243
+#: apps/items/models.py:16 templates/home.html:245
 msgid "New"
 msgstr "Новые"
 
@@ -360,21 +375,18 @@ msgstr "цена"
 msgid "Item"
 msgstr "Товар"
 
-#: apps/items/templates/items/detail.html:12
-#: apps/items/templates/items/index.html:11
-#: apps/items/templates/items/index.html:16
-#: apps/items/templates/items/item_confirm_delete.html:10
-#: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_list.html:5
-msgid "Items"
-msgstr "Товары"
-
 #: apps/items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr "Удалить товар"
 
 #: apps/items/templates/items/item_list.html:13
 msgid "Map of Items"
+msgstr "Карта товаров"
+
+#: apps/items/templates/items/table.html:10
+#, fuzzy
+#| msgid "Map of Items"
+msgid "List of items"
 msgstr "Карта товаров"
 
 #: apps/jobs/models.py:26
@@ -420,20 +432,20 @@ msgstr "Работа"
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:118
-#: templates/place_ad.html:57
+#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: templates/place_ad.html:50
 msgid "Jobs"
 msgstr "Работа"
 
-#: apps/jobs/templates/jobs/detail.html:55
+#: apps/jobs/templates/jobs/detail.html:57
 msgid "Job type:"
 msgstr "Вакансия:"
 
-#: apps/jobs/templates/jobs/detail.html:69
+#: apps/jobs/templates/jobs/detail.html:71
 msgid "Duration:"
 msgstr "Продолжительность"
 
-#: apps/jobs/templates/jobs/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:73
 #: apps/services/templates/services/detail.html:71
 msgid "Language(s) spoken by the employer:"
 msgstr "Языки общения работодателя:"
@@ -442,45 +454,85 @@ msgstr "Языки общения работодателя:"
 msgid "Job delete"
 msgstr "Удалить работу"
 
-#: apps/rents/models.py:26
+#: apps/promotions/models.py:13
+msgid "name"
+msgstr "имя"
+
+#: apps/promotions/models.py:25
+msgid "Header"
+msgstr ""
+
+#: apps/promotions/models.py:26
+msgid "Right Sidebar"
+msgstr ""
+
+#: apps/promotions/models.py:27
+msgid "Left Sidebar"
+msgstr ""
+
+#: apps/promotions/models.py:47
+msgid "Extra small"
+msgstr ""
+
+#: apps/promotions/models.py:48
+msgid "Small"
+msgstr ""
+
+#: apps/promotions/models.py:49
+msgid "Medium"
+msgstr ""
+
+#: apps/promotions/models.py:50
+msgid "Large"
+msgstr ""
+
+#: apps/promotions/models.py:51
+msgid "Extra large"
+msgstr ""
+
+#: apps/promotions/models.py:59
+msgid "link"
+msgstr ""
+
+#: apps/rents/models.py:27
 msgid "property type"
 msgstr "тип недвижимости"
 
-#: apps/rents/models.py:32
+#: apps/rents/models.py:33
 msgid "None"
 msgstr "Никакими"
 
-#: apps/rents/models.py:33
+#: apps/rents/models.py:34
 msgid "Dogs"
 msgstr "Собаками"
 
-#: apps/rents/models.py:34 templates/home.html:140 templates/place_ad.html:81
+#: apps/rents/models.py:35 templates/home.html:141 templates/place_ad.html:58
 msgid "Cats"
 msgstr "Котики"
 
-#: apps/rents/models.py:35
+#: apps/rents/models.py:36
 msgid "Dogs and Cats"
 msgstr "Собаками и Котиками"
 
-#: apps/rents/models.py:36
+#: apps/rents/models.py:37
 msgid "Any"
 msgstr "Любой"
 
-#: apps/rents/models.py:43
+#: apps/rents/models.py:44
 msgid "any"
 msgstr "любой"
 
-#: apps/rents/models.py:44
+#: apps/rents/models.py:45
 msgid "woman"
 msgstr "женщина"
 
-#: apps/rents/models.py:45
+#: apps/rents/models.py:46
 msgid "man"
 msgstr "мужчина"
 
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:126
-#: templates/place_ad.html:65 templates/search.html:98
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: templates/place_ad.html:54 templates/search.html:98
 msgid "Rent"
 msgstr "Аренда"
 
@@ -587,8 +639,7 @@ msgstr "Условия предоставления услуг"
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:132
-#: templates/place_ad.html:71
+#: apps/services/templates/services/service_list.html:6 templates/home.html:133
 #, fuzzy
 #| msgid "Term of Services"
 msgid "Services"
@@ -620,10 +671,6 @@ msgstr "не найдена"
 msgid "To home page"
 msgstr "Вернуться на главную"
 
-#: templates/base.html:88
-msgid "Map"
-msgstr "Карта"
-
 #: templates/base.html:91
 msgid "Admin"
 msgstr "Админ"
@@ -649,15 +696,15 @@ msgstr "Подать Объявление"
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Замечание! Объявления отображаются только на выбранном языке."
 
-#: templates/base.html:249
+#: templates/base.html:251
 msgid "Conditions of Use"
 msgstr "Состояние"
 
-#: templates/base.html:254
+#: templates/base.html:256
 msgid "Privacy Notice"
 msgstr "Политику Конфиденциальности"
 
-#: templates/base.html:259
+#: templates/base.html:261
 msgid "Terms and conditions"
 msgstr "Условия и Положения"
 
@@ -684,23 +731,23 @@ msgstr "и наши"
 msgid "Terms of Service"
 msgstr "Условия предоставления услуг"
 
-#: templates/home.html:99
+#: templates/home.html:100
 msgid "Main"
 msgstr "Основные"
 
-#: templates/home.html:100
+#: templates/home.html:101
 msgid "Categories"
 msgstr "Категории"
 
-#: templates/home.html:111 templates/place_ad.html:50
+#: templates/home.html:112 templates/place_ad.html:46
 msgid "Sell"
 msgstr "Продажа"
 
-#: templates/home.html:156
+#: templates/home.html:158
 msgid "Popular"
 msgstr "Популярные"
 
-#: templates/home.html:157 templates/home.html:244
+#: templates/home.html:159 templates/home.html:246
 msgid "Ads"
 msgstr "Объявления"
 
@@ -712,12 +759,16 @@ msgstr "Выберите тип объявления"
 msgid "Back"
 msgstr "Возвратиться"
 
-#: templates/place_ad.html:38
-msgid "Select a category"
+#: templates/place_ad.html:32
+#, fuzzy
+#| msgid "Select a category"
+msgid "Select category to "
 msgstr "Выберите категорию"
 
-#: templates/place_ad.html:39
-msgid "to create ad"
+#: templates/place_ad.html:40
+#, fuzzy
+#| msgid "to create ad"
+msgid "create ad"
 msgstr "создать объявление"
 
 #: templates/policy/term_of_services.html:5
@@ -819,7 +870,7 @@ msgstr "Изменить пароль"
 #| "used. Please request a new password reset."
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used. Please request a new password reset"
+"used. Please request a new password reset."
 msgstr ""
 "Ссылка для восстановления пароля была недействительной, возможно потому, что "
 "ее уже использовали. Пожалуйста, дайте запрос на новую ссылку восстановления "
@@ -1897,9 +1948,6 @@ msgstr "Английский"
 
 #~ msgid "when"
 #~ msgstr "когда"
-
-#~ msgid "name"
-#~ msgstr "имя"
 
 #~ msgid "Task detail"
 #~ msgstr "Подробности задания"

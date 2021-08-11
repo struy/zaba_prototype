@@ -8,17 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 16:39-0500\n"
-"PO-Revision-Date: 2020-12-06 22:38+0000\n"
+"POT-Creation-Date: 2021-08-10 22:41-0500\n"
+"PO-Revision-Date: 2021-08-11 03:43+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
@@ -26,7 +24,6 @@ msgid "From  email"
 msgstr ""
 
 #: apps/accounts/forms.py:52 apps/sendemail/forms.py:8
-#, fuzzy
 #| msgid "Messages"
 msgid "Message"
 msgstr "Wiadomości"
@@ -633,7 +630,8 @@ msgstr ""
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+#: apps/services/templates/services/service_list.html:6
+#: templates/home.html:133
 msgid "Services"
 msgstr ""
 
@@ -950,11 +948,9 @@ msgstr ""
 #~ msgstr "Mapy witryny"
 
 #, fuzzy
-#~| msgid "Messages"
 #~ msgid "message"
 #~ msgstr "Wiadomości"
 
 #, fuzzy
-#~| msgid "Messages"
 #~ msgid "messages"
 #~ msgstr "Wiadomości"

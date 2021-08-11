@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 16:39-0500\n"
-"PO-Revision-Date: 2021-03-25 20:33+0000\n"
-"Last-Translator: b'Oleksandr Dubovyk <struykm@yandex.ru>'\n"
+"POT-Creation-Date: 2021-08-10 22:41-0500\n"
+"PO-Revision-Date: 2021-08-11 03:40+0000\n"
+"Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -107,7 +107,7 @@ msgstr "Редактирование учетной записи"
 
 #: apps/accounts/templates/accounts/edit.html:24
 msgid "Upload image"
-msgstr ""
+msgstr "Загрузить изображение"
 
 #: apps/accounts/templates/accounts/edit.html:30
 #: templates/registration/password_change_done.html:7
@@ -384,10 +384,8 @@ msgid "Map of Items"
 msgstr "Карта товаров"
 
 #: apps/items/templates/items/table.html:10
-#, fuzzy
-#| msgid "Map of Items"
 msgid "List of items"
-msgstr "Карта товаров"
+msgstr "Список товаров"
 
 #: apps/jobs/models.py:26
 msgid "full-time"
@@ -460,7 +458,7 @@ msgstr "имя"
 
 #: apps/promotions/models.py:25
 msgid "Header"
-msgstr ""
+msgstr "Шабка сайта"
 
 #: apps/promotions/models.py:26
 msgid "Right Sidebar"
@@ -492,7 +490,7 @@ msgstr ""
 
 #: apps/promotions/models.py:59
 msgid "link"
-msgstr ""
+msgstr "ссылка"
 
 #: apps/rents/models.py:27
 msgid "property type"
@@ -586,20 +584,14 @@ msgid "Us"
 msgstr "с нами"
 
 #: apps/sendemail/templates/sendemail/no_success.html:5
-#, fuzzy
-#| msgid " No success"
 msgid "No success"
 msgstr "Не удалось отправить"
 
 #: apps/sendemail/templates/sendemail/no_success.html:10
-#, fuzzy
-#| msgid " no success"
 msgid "no success"
 msgstr "не удалось отправить"
 
 #: apps/sendemail/templates/sendemail/no_success.html:19
-#, fuzzy
-#| msgid "No Success(  Probably a non-existent email. Please try again."
 msgid "Some thing wrong. Probably a non-existent email. Please try again."
 msgstr ""
 "Не удалось отправить (вероятно, несуществующая электронная почта. Попробуйте "
@@ -619,20 +611,16 @@ msgstr "Письмо отправлено! Спасибо за ваше сооб
 
 #: apps/sendemail/templates/sendemail/success.html:24
 msgid "The recipient will receive your message..."
-msgstr ""
+msgstr "Ваше сообщение будет доставлено..."
 
 #: apps/services/models.py:16
-#, fuzzy
-#| msgid "What language does the employer speak?"
 msgid "What language do we speak?"
 msgstr "На каком языке общается работодатель?"
 
 #: apps/services/templates/services/detail.html:8
 #: apps/services/templates/services/service_form.html:7
-#, fuzzy
-#| msgid "Terms of Service"
 msgid "Service"
-msgstr "Условия предоставления услуг"
+msgstr "Услуга"
 
 #: apps/services/templates/services/detail.html:13
 #: apps/services/templates/services/index.html:11
@@ -640,14 +628,10 @@ msgstr "Условия предоставления услуг"
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
 #: apps/services/templates/services/service_list.html:6 templates/home.html:133
-#, fuzzy
-#| msgid "Term of Services"
 msgid "Services"
-msgstr "Условия предоставления услуг"
+msgstr "Услуги"
 
 #: apps/services/templates/services/service_confirm_delete.html:5
-#, fuzzy
-#| msgid "Gift delete"
 msgid "Service delete"
 msgstr "Удалить подарок"
 
@@ -766,8 +750,6 @@ msgid "Select category to "
 msgstr "Выберите категорию"
 
 #: templates/place_ad.html:40
-#, fuzzy
-#| msgid "to create ad"
 msgid "create ad"
 msgstr "создать объявление"
 
@@ -819,7 +801,7 @@ msgstr "Изменить пароль"
 
 #: templates/registration/password_change_form.html:15
 msgid "Use the form below to change your password"
-msgstr ""
+msgstr "Используйте форму для сброса пароля"
 
 #: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:12
@@ -827,8 +809,6 @@ msgid "Password reset"
 msgstr "Сброс пароля"
 
 #: templates/registration/password_reset_complete.html:20
-#, fuzzy
-#| msgid "Password reset"
 msgid "Password set"
 msgstr "Сброс пароля"
 
@@ -837,8 +817,6 @@ msgid "Your password has been set. You can"
 msgstr "Пароль был установлен. Вы можете"
 
 #: templates/registration/password_reset_complete.html:23
-#, fuzzy
-#| msgid "log in"
 msgid "log in now"
 msgstr "Войти"
 
@@ -864,10 +842,6 @@ msgid "Change my password"
 msgstr "Изменить пароль"
 
 #: templates/registration/password_reset_confirm.html:30
-#, fuzzy
-#| msgid ""
-#| "The password reset link was invalid, possibly because it has already been "
-#| "used. Please request a new password reset."
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
@@ -898,7 +872,7 @@ msgstr "Перейдите по ссылке ниже:"
 
 #: templates/registration/password_reset_email.html:7
 msgid "Your username, in case you've forgotten:"
-msgstr "Ваше имя пользователя, если вы забыли:"
+msgstr "Ваше имя пользователя, если Вы забыли:"
 
 #: templates/registration/password_reset_form.html:30
 msgid "Enter your e-mail address to obtain a new password"
@@ -913,14 +887,12 @@ msgid "Search result"
 msgstr "Результат поиска"
 
 #: templates/search.html:27
-#, fuzzy
-#| msgid "Search result"
 msgid "results"
 msgstr "Результат поиска"
 
 #: templates/search.html:29
 msgid "Nothing found for your request"
-msgstr ""
+msgstr "Ничего не найдено по Вашему запросу"
 
 #: templates/search.html:34
 msgid "try searching in other languages also"

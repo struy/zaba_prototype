@@ -10,6 +10,7 @@ from django.template import loader
 from django.utils.translation import get_language
 from django.views.decorators.http import require_GET
 from django.views.generic import ListView
+from pytz import utc
 
 from apps.gifts.models import Gift
 from apps.items.models import Item
@@ -160,3 +161,39 @@ def robots_txt(request):
         "Disallow: /junk/",
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+class MapListView(ListView):
+    context_object_name = 'adverts'
+    detail_name_link = ""
+    template_name = ''
+    # example for Item
+    model = Item
+
+    def get_queryset(self):
+        lang = get_language()
+        now = utc.localize(datetime.datetime.today())
+        new = now - datetime.timedelta(weeks=2)
+        old = now - datetime.timedelta(weeks=4)
+        very_old = now - datetime.timedelta(weeks=12)
+        dead = now - datetime.timedelta(weeks=24)
+        queryset = {'new_items': self.model.objects.filter(point__isnull=False, local__exact=lang, modified__gte=new),
+                    'not_new_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
+                                                               modified__range=[very_old, new]),
+                    # 'other_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
+                    #                                          modified__range=[old, new]),
+                    #
+                    # 'old_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
+                    #                                        modified__range=[very_old, old]),
+                    # 'very_old_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
+                    #                                             modified__range=[dead, very_old]),
+                    # 'dead_items': self.model.objects.filter(point__isnull=False, local__exact=lang, modified__lt=dead),
+                    }
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['detail_name_link'] = self.detail_name_link
+        return context

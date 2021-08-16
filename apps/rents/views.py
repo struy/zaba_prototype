@@ -4,15 +4,15 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.translation import get_language
-from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from apps.adverts.utils import context_helper
 from .filters import RentsFilter
 from .forms import RentForm
 from .models import Rental, RentalTable
-
 # connect to redis
+from ..adverts.views import MapListView
+
 r = redis.Redis(connection_pool=settings.POOL)
 
 
@@ -69,10 +69,6 @@ def rents_list(request):
     return render(request, 'rents/templates/rents/rental_table_list.html', {'table': table})
 
 
-class RentList(ListView):
-    queryset = Rental.objects.filter(point__isnull=False)
-
-
 class RentCreate(CreateView):
     model = Rental
     form_class = RentForm
@@ -95,3 +91,9 @@ class RentDelete(DeleteView):
     model = Rental
     login_required = True
     success_url = reverse_lazy('rents:index')
+
+
+class RentMapList(MapListView):
+    template_name = 'rents/rent_map_list.html'
+    model = Rental
+    detail_name_link = "rents:detail"

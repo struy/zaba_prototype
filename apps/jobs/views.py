@@ -4,15 +4,15 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.translation import get_language
-from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from apps.adverts.utils import context_helper
 from .filters import JobsFilter
 from .form import JobForm
 from .models import Job
-
 # connect to redis
+from ..adverts.views import MapListView
+
 r = redis.Redis(connection_pool=settings.POOL)
 
 
@@ -63,10 +63,6 @@ def detail(request, advert_id):
     return render(request, 'jobs/detail.html', context)
 
 
-class JobList(ListView):
-    queryset = Job.objects.filter(point__isnull=False)
-
-
 class JobCreate(CreateView):
     model = Job
     form_class = JobForm
@@ -89,3 +85,9 @@ class JobDelete(DeleteView):
     model = Job
     login_required = True
     success_url = reverse_lazy('jobs:index')
+
+
+class JobMapList(MapListView):
+    template_name = 'jobs/job_map_list.html'
+    model = Job
+    detail_name_link = "jobs:detail"

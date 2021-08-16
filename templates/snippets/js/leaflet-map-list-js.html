@@ -1,0 +1,57 @@
+<script type="text/javascript">
+
+    function initMap() {
+        let m = L.map("m", {scrollWheelZoom: false}).setView([pos.lat, pos.lng], 4);
+        L.tileLayer("//{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(m);
+
+        let greenIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+
+        let greyIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        {% for e in adverts.new_items %}
+            L.marker({{e.lat_lng}}, {icon: greenIcon}).addTo(m).bindPopup('<a href="{% url detail_name_link e.id %}">{{e.title}}</a>');
+        {% endfor %}
+
+        {% for e in adverts.not_new_items %}
+            L.marker({{e.lat_lng}}, {icon: greyIcon}).addTo(m).bindPopup('<a href="{% url detail_name_link e.id %}">{{e.title}}</a>');
+        {% endfor %}
+
+    }
+
+    function error(err) {
+        initMap();
+    }
+
+    let pos = {lat: 41.90, lng: -87.67};   //Chicago
+    //if you wish use center of USA  is 39.809734, -98.555620
+    pos = {lat: 39.809, lng: -98.555}
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function (position) {
+                pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                initMap();
+            }, error);
+    } else {
+        initMap();
+    }
+
+</script>

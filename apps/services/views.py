@@ -13,6 +13,8 @@ from .form import ServiceForm
 from .models import Service
 
 # connect to redis
+from ..adverts.views import MapListView
+
 r = redis.Redis(connection_pool=settings.POOL)
 
 
@@ -90,3 +92,9 @@ class ServiceDelete(DeleteView):
     model = Service
     login_required = True
     success_url = reverse_lazy('services:index')
+
+
+class ServiceMapList(MapListView):
+    template_name = 'services/service_map_list.html'
+    model = Service
+    detail_name_link = "services:detail"

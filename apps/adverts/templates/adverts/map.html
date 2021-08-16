@@ -26,6 +26,24 @@
             <div class="offset-md-1 col-md-10">
                 <h1>Map of all adverts in select language</h1>
                 <br>
+                <a href="{% url 'items:map' %}">
+                    <span class="p-1" style="background-color:#2A81CB; color: white">{% trans "Sell" %}</span>
+                </a>
+                <a href="{% url 'jobs:map' %}">
+                    <span class="p-1" style="background-color:#CB8427; color: white">{% trans "Jobs" %}</span>
+                </a>
+                <a href="{% url 'rents:map' %}">
+                    <span class="p-1" style="background-color:#CAC428; color: white">{% trans "Rent" %}</span>
+                </a>
+                <a href="{% url 'services:map' %}">
+                    <span class="p-1 d-none"
+                          style="background-color:#9C2BCB; color: white">{% trans "Services" %}</span>
+                </a>
+                <a href="{% url 'gifts:map' %}">
+                    <span class="p-1" style="background-color:#2AAD27; color: white"> {% trans "Cats" %}</span>
+                </a>
+                <br>
+                <br>
                 <div id="m" style="width: 100%; height: 550px;" class="mb-5"></div>
             </div>
         </div>
@@ -51,6 +69,16 @@
                 popupAnchor: [1, -34],
                 shadowSize: [41, 41]
             });
+
+            let orangeIcon = new L.Icon({
+                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+
 
             let yellowIcon = new L.Icon({
                 iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
@@ -78,7 +106,7 @@
             {% endfor %}
 
             {% for e in adverts.jobs %}
-                L.marker({{e.lat_lng}}, {icon: greenIcon}).addTo(m).bindPopup('<a href="{% url 'jobs:detail' e.id %}">{{e.title}}</a>');
+                L.marker({{e.lat_lng}}, {icon: orangeIcon}).addTo(m).bindPopup('<a href="{% url 'jobs:detail' e.id %}">{{e.title}}</a>');
             {% endfor %}
 
             {% for e in adverts.rents %}
@@ -86,7 +114,11 @@
             {% endfor %}
 
             {% for e in adverts.gifts %}
-                L.marker({{e.lat_lng}}, {icon: violetIcon}).addTo(m).bindPopup('<a href="{% url 'gifts:detail' e.id %}">{{e.title}}</a>');
+                L.marker({{e.lat_lng}}, {icon: greenIcon}).addTo(m).bindPopup('<a href="{% url 'gifts:detail' e.id %}">{{e.title}}</a>');
+            {% endfor %}
+
+            {% for e in adverts.services %}
+                L.marker({{e.lat_lng}}, {icon: violetIcon}).addTo(m).bindPopup('<a href="{% url 'services:detail' e.id %}">{{e.title}}</a>');
             {% endfor %}
 
 

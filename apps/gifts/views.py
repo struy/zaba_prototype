@@ -11,8 +11,9 @@ from apps.adverts.utils import context_helper
 from .filters import GiftsFilter
 from .form import GiftForm
 from .models import Gift
-
 # connect to redis
+from ..adverts.views import MapListView
+
 r = redis.Redis(connection_pool=settings.POOL)
 
 
@@ -62,8 +63,7 @@ def detail(request, advert_id):
     return render(request, 'gifts/templates/gifts/detail.html', context)
 
 
-class GiftList(ListView):
-    queryset = Gift.objects.filter(point__isnull=False)
+
 
 
 class GiftCreate(CreateView):
@@ -88,3 +88,9 @@ class GiftDelete(DeleteView):
     model = Gift
     login_required = True
     success_url = reverse_lazy('gifts:index')
+
+
+class GiftMapList(MapListView):
+    template_name = 'gifts/gift_map_list.html'
+    model = Gift
+    detail_name_link = "gifts:detail"

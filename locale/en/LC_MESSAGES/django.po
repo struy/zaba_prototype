@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 22:41-0500\n"
+"POT-Creation-Date: 2021-08-17 14:13-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,18 +44,21 @@ msgstr ""
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
 #: apps/gifts/templates/gifts/gift_list.html:10
+#: apps/gifts/templates/gifts/gift_map_list.html:10
 #: apps/gifts/templates/gifts/index.html:15
 #: apps/items/templates/items/detail.html:11
 #: apps/items/templates/items/index.html:15
 #: apps/items/templates/items/item_confirm_delete.html:9
 #: apps/items/templates/items/item_form.html:11
-#: apps/items/templates/items/item_list.html:10
+#: apps/items/templates/items/item_map_list.html:10
 #: apps/jobs/templates/jobs/detail.html:12
 #: apps/jobs/templates/jobs/index.html:15
 #: apps/jobs/templates/jobs/job_confirm_delete.html:9
 #: apps/jobs/templates/jobs/job_form.html:11
+#: apps/jobs/templates/jobs/job_map_list.html:10
 #: apps/rents/templates/rents/detail.html:11
 #: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/rent_map_list.html:10
 #: apps/rents/templates/rents/rental_confirm_delete.html:11
 #: apps/rents/templates/rents/rental_form.html:11
 #: apps/sendemail/templates/sendemail/email.html:13
@@ -65,6 +68,7 @@ msgstr ""
 #: apps/services/templates/services/index.html:15
 #: apps/services/templates/services/service_confirm_delete.html:9
 #: apps/services/templates/services/service_form.html:11
+#: apps/services/templates/services/service_map_list.html:10
 #: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:10
 #: templates/policy/cookie_policy.html:11
 #: templates/policy/privacy_policy.html:10
@@ -124,7 +128,7 @@ msgstr ""
 
 #: apps/accounts/templates/accounts/favourites.html:94
 #: apps/gifts/templates/gifts/index.html:103
-#: apps/items/templates/items/index.html:102
+#: apps/items/templates/items/index.html:113
 #: apps/jobs/templates/jobs/index.html:102
 #: apps/rents/templates/rents/index.html:101
 #: apps/services/templates/services/index.html:102
@@ -248,12 +252,51 @@ msgstr ""
 #: apps/items/templates/items/index.html:16
 #: apps/items/templates/items/item_confirm_delete.html:10
 #: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_list.html:5
+#: apps/items/templates/items/item_map_list.html:5
 msgid "Items"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
 msgid "Map"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:112
+#: templates/place_ad.html:46
+msgid "Sell"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:33
+#: apps/jobs/templates/jobs/detail.html:13
+#: apps/jobs/templates/jobs/index.html:11
+#: apps/jobs/templates/jobs/index.html:16
+#: apps/jobs/templates/jobs/job_confirm_delete.html:10
+#: apps/jobs/templates/jobs/job_form.html:12
+#: apps/jobs/templates/jobs/job_list.html:6
+#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: templates/place_ad.html:50
+msgid "Jobs"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:36
+#: apps/rents/templates/rents/detail.html:7
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: templates/place_ad.html:54 templates/search.html:98
+msgid "Rent"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:40
+#: apps/services/templates/services/detail.html:13
+#: apps/services/templates/services/index.html:11
+#: apps/services/templates/services/index.html:16
+#: apps/services/templates/services/service_confirm_delete.html:10
+#: apps/services/templates/services/service_form.html:12
+#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+msgid "Services"
+msgstr ""
+
+#: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
+#: templates/home.html:141 templates/place_ad.html:58
+msgid "Cats"
 msgstr ""
 
 #: apps/gifts/filters.py:9 apps/gifts/form.py:18 apps/items/filters.py:9
@@ -318,11 +361,14 @@ msgid "Gift"
 msgstr ""
 
 #: apps/gifts/templates/gifts/gift_list.html:13
+#: apps/gifts/templates/gifts/gift_map_list.html:5
+#: apps/gifts/templates/gifts/gift_map_list.html:13
+#: apps/gifts/templates/gifts/gift_map_list.html:27
 msgid "Map of Gifts"
 msgstr ""
 
 #: apps/gifts/templates/gifts/index.html:73
-#: apps/items/templates/items/index.html:73
+#: apps/items/templates/items/index.html:81
 #: apps/jobs/templates/jobs/index.html:73
 #: apps/rents/templates/rents/index.html:73
 #: apps/services/templates/services/index.html:73
@@ -331,7 +377,7 @@ msgid "Delete"
 msgstr ""
 
 #: apps/gifts/templates/gifts/index.html:76
-#: apps/items/templates/items/index.html:76
+#: apps/items/templates/items/index.html:86
 #: apps/jobs/templates/jobs/index.html:76
 #: apps/rents/templates/rents/index.html:76
 #: apps/services/templates/services/index.html:76
@@ -376,8 +422,16 @@ msgstr ""
 msgid "Item delete"
 msgstr ""
 
-#: apps/items/templates/items/item_list.html:13
+#: apps/items/templates/items/item_map_list.html:13
 msgid "Map of Items"
+msgstr ""
+
+#: apps/items/templates/items/item_map_list.html:29
+msgid "to 2 weeks"
+msgstr ""
+
+#: apps/items/templates/items/item_map_list.html:30
+msgid "2 weeks - 12 weeks"
 msgstr ""
 
 #: apps/items/templates/items/table.html:10
@@ -421,17 +475,6 @@ msgstr ""
 msgid "Job"
 msgstr ""
 
-#: apps/jobs/templates/jobs/detail.html:13
-#: apps/jobs/templates/jobs/index.html:11
-#: apps/jobs/templates/jobs/index.html:16
-#: apps/jobs/templates/jobs/job_confirm_delete.html:10
-#: apps/jobs/templates/jobs/job_form.html:12
-#: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:119
-#: templates/place_ad.html:50
-msgid "Jobs"
-msgstr ""
-
 #: apps/jobs/templates/jobs/detail.html:57
 msgid "Job type:"
 msgstr ""
@@ -447,6 +490,11 @@ msgstr ""
 
 #: apps/jobs/templates/jobs/job_confirm_delete.html:5
 msgid "Job delete"
+msgstr ""
+
+#: apps/jobs/templates/jobs/job_map_list.html:5
+#: apps/jobs/templates/jobs/job_map_list.html:13
+msgid "Map of Jobs"
 msgstr ""
 
 #: apps/promotions/models.py:13
@@ -501,10 +549,6 @@ msgstr ""
 msgid "Dogs"
 msgstr ""
 
-#: apps/rents/models.py:35 templates/home.html:141 templates/place_ad.html:58
-msgid "Cats"
-msgstr ""
-
 #: apps/rents/models.py:36
 msgid "Dogs and Cats"
 msgstr ""
@@ -523,12 +567,6 @@ msgstr ""
 
 #: apps/rents/models.py:46
 msgid "man"
-msgstr ""
-
-#: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
-#: templates/place_ad.html:54 templates/search.html:98
-msgid "Rent"
 msgstr ""
 
 #: apps/rents/templates/rents/detail.html:12
@@ -557,6 +595,12 @@ msgstr ""
 
 #: apps/rents/templates/rents/detail.html:64
 msgid "Prefer sex"
+msgstr ""
+
+#: apps/rents/templates/rents/rent_map_list.html:5
+#: apps/rents/templates/rents/rent_map_list.html:13
+#: apps/rents/templates/rents/rent_map_list.html:27
+msgid "Map of Rents"
 msgstr ""
 
 #: apps/rents/templates/rents/rental_confirm_delete.html:6
@@ -617,17 +661,14 @@ msgstr ""
 msgid "Service"
 msgstr ""
 
-#: apps/services/templates/services/detail.html:13
-#: apps/services/templates/services/index.html:11
-#: apps/services/templates/services/index.html:16
-#: apps/services/templates/services/service_confirm_delete.html:10
-#: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:133
-msgid "Services"
-msgstr ""
-
 #: apps/services/templates/services/service_confirm_delete.html:5
 msgid "Service delete"
+msgstr ""
+
+#: apps/services/templates/services/service_map_list.html:5
+#: apps/services/templates/services/service_map_list.html:13
+#: apps/services/templates/services/service_map_list.html:27
+msgid "Map of Services"
 msgstr ""
 
 #: apps/shop/templates/shop/product/checkout.html:6
@@ -716,10 +757,6 @@ msgstr ""
 
 #: templates/home.html:101
 msgid "Categories"
-msgstr ""
-
-#: templates/home.html:112 templates/place_ad.html:46
-msgid "Sell"
 msgstr ""
 
 #: templates/home.html:158

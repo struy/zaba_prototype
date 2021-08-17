@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-10 22:41-0500\n"
+"POT-Creation-Date: 2021-08-17 14:13-0500\n"
 "PO-Revision-Date: 2021-08-11 03:43+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
@@ -24,7 +26,6 @@ msgid "From  email"
 msgstr "Z e-maila"
 
 #: apps/accounts/forms.py:52 apps/sendemail/forms.py:8
-#| msgid "Messages"
 msgid "Message"
 msgstr "Wiadomość"
 
@@ -46,18 +47,21 @@ msgstr "Kontakt użytkownika"
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
 #: apps/gifts/templates/gifts/gift_list.html:10
+#: apps/gifts/templates/gifts/gift_map_list.html:10
 #: apps/gifts/templates/gifts/index.html:15
 #: apps/items/templates/items/detail.html:11
 #: apps/items/templates/items/index.html:15
 #: apps/items/templates/items/item_confirm_delete.html:9
 #: apps/items/templates/items/item_form.html:11
-#: apps/items/templates/items/item_list.html:10
+#: apps/items/templates/items/item_map_list.html:10
 #: apps/jobs/templates/jobs/detail.html:12
 #: apps/jobs/templates/jobs/index.html:15
 #: apps/jobs/templates/jobs/job_confirm_delete.html:9
 #: apps/jobs/templates/jobs/job_form.html:11
+#: apps/jobs/templates/jobs/job_map_list.html:10
 #: apps/rents/templates/rents/detail.html:11
 #: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/rent_map_list.html:10
 #: apps/rents/templates/rents/rental_confirm_delete.html:11
 #: apps/rents/templates/rents/rental_form.html:11
 #: apps/sendemail/templates/sendemail/email.html:13
@@ -67,6 +71,7 @@ msgstr "Kontakt użytkownika"
 #: apps/services/templates/services/index.html:15
 #: apps/services/templates/services/service_confirm_delete.html:9
 #: apps/services/templates/services/service_form.html:11
+#: apps/services/templates/services/service_map_list.html:10
 #: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:10
 #: templates/policy/cookie_policy.html:11
 #: templates/policy/privacy_policy.html:10
@@ -126,7 +131,7 @@ msgstr "Ulubione"
 
 #: apps/accounts/templates/accounts/favourites.html:94
 #: apps/gifts/templates/gifts/index.html:103
-#: apps/items/templates/items/index.html:102
+#: apps/items/templates/items/index.html:113
 #: apps/jobs/templates/jobs/index.html:102
 #: apps/rents/templates/rents/index.html:101
 #: apps/services/templates/services/index.html:102
@@ -189,12 +194,12 @@ msgstr "Ogłoszenia użytkowników"
 #: apps/adverts/models.py:30
 #, python-format
 msgid "%(value)s can't be past"
-msgstr "%Znaczenie (value)s' nie może być w przeszłości"
+msgstr "%(value)s' nie może być w przeszłości"
 
 #: apps/adverts/models.py:35
 #, python-format
 msgid "%(value)s can't be more than month"
-msgstr "%Znaczenie (value)s' nie może przekraczać miesiąc"
+msgstr "%(value)s' nie może przekraczać miesiąc"
 
 #: apps/adverts/models.py:57 apps/promotions/models.py:12
 msgid "author"
@@ -250,13 +255,52 @@ msgstr "Szczegóły"
 #: apps/items/templates/items/index.html:16
 #: apps/items/templates/items/item_confirm_delete.html:10
 #: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_list.html:5
+#: apps/items/templates/items/item_map_list.html:5
 msgid "Items"
 msgstr "Towary"
 
 #: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
 msgid "Map"
 msgstr "Mapa"
+
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:112
+#: templates/place_ad.html:46
+msgid "Sell"
+msgstr "Sprzedać"
+
+#: apps/adverts/templates/adverts/map.html:33
+#: apps/jobs/templates/jobs/detail.html:13
+#: apps/jobs/templates/jobs/index.html:11
+#: apps/jobs/templates/jobs/index.html:16
+#: apps/jobs/templates/jobs/job_confirm_delete.html:10
+#: apps/jobs/templates/jobs/job_form.html:12
+#: apps/jobs/templates/jobs/job_list.html:6
+#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: templates/place_ad.html:50
+msgid "Jobs"
+msgstr "Praca"
+
+#: apps/adverts/templates/adverts/map.html:36
+#: apps/rents/templates/rents/detail.html:7
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: templates/place_ad.html:54 templates/search.html:98
+msgid "Rent"
+msgstr "Wynajem"
+
+#: apps/adverts/templates/adverts/map.html:40
+#: apps/services/templates/services/detail.html:13
+#: apps/services/templates/services/index.html:11
+#: apps/services/templates/services/index.html:16
+#: apps/services/templates/services/service_confirm_delete.html:10
+#: apps/services/templates/services/service_form.html:12
+#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+msgid "Services"
+msgstr "Warunki świadczenia usługi"
+
+#: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
+#: templates/home.html:141 templates/place_ad.html:58
+msgid "Cats"
+msgstr "Koty"
 
 #: apps/gifts/filters.py:9 apps/gifts/form.py:18 apps/items/filters.py:9
 #: apps/items/forms.py:19 apps/jobs/filters.py:9 apps/jobs/form.py:19
@@ -320,11 +364,14 @@ msgid "Gift"
 msgstr "Prezent"
 
 #: apps/gifts/templates/gifts/gift_list.html:13
+#: apps/gifts/templates/gifts/gift_map_list.html:5
+#: apps/gifts/templates/gifts/gift_map_list.html:13
+#: apps/gifts/templates/gifts/gift_map_list.html:27
 msgid "Map of Gifts"
 msgstr "Mapa prezentów"
 
 #: apps/gifts/templates/gifts/index.html:73
-#: apps/items/templates/items/index.html:73
+#: apps/items/templates/items/index.html:81
 #: apps/jobs/templates/jobs/index.html:73
 #: apps/rents/templates/rents/index.html:73
 #: apps/services/templates/services/index.html:73
@@ -333,7 +380,7 @@ msgid "Delete"
 msgstr "Usuń"
 
 #: apps/gifts/templates/gifts/index.html:76
-#: apps/items/templates/items/index.html:76
+#: apps/items/templates/items/index.html:86
 #: apps/jobs/templates/jobs/index.html:76
 #: apps/rents/templates/rents/index.html:76
 #: apps/services/templates/services/index.html:76
@@ -378,9 +425,17 @@ msgstr "Towar"
 msgid "Item delete"
 msgstr "Usunięcie towaru"
 
-#: apps/items/templates/items/item_list.html:13
+#: apps/items/templates/items/item_map_list.html:13
 msgid "Map of Items"
 msgstr "Mapa towarów"
+
+#: apps/items/templates/items/item_map_list.html:29
+msgid "to 2 weeks"
+msgstr ""
+
+#: apps/items/templates/items/item_map_list.html:30
+msgid "2 weeks - 12 weeks"
+msgstr ""
 
 #: apps/items/templates/items/table.html:10
 msgid "List of items"
@@ -427,17 +482,6 @@ msgstr "pensja"
 msgid "Job"
 msgstr "Praca"
 
-#: apps/jobs/templates/jobs/detail.html:13
-#: apps/jobs/templates/jobs/index.html:11
-#: apps/jobs/templates/jobs/index.html:16
-#: apps/jobs/templates/jobs/job_confirm_delete.html:10
-#: apps/jobs/templates/jobs/job_form.html:12
-#: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:119
-#: templates/place_ad.html:50
-msgid "Jobs"
-msgstr "Praca"
-
 #: apps/jobs/templates/jobs/detail.html:57
 msgid "Job type:"
 msgstr "Rodzaj pracy:"
@@ -456,6 +500,13 @@ msgstr "Języki komunikacji pracodawcy:"
 #| msgid "Job type:"
 msgid "Job delete"
 msgstr "Usuń pracę"
+
+#: apps/jobs/templates/jobs/job_map_list.html:5
+#: apps/jobs/templates/jobs/job_map_list.html:13
+#, fuzzy
+#| msgid "Map of Gifts"
+msgid "Map of Jobs"
+msgstr "Mapa prezentów"
 
 #: apps/promotions/models.py:13
 msgid "name"
@@ -509,10 +560,6 @@ msgstr "Żaden"
 msgid "Dogs"
 msgstr "Psy"
 
-#: apps/rents/models.py:35 templates/home.html:141 templates/place_ad.html:58
-msgid "Cats"
-msgstr "Koty"
-
 #: apps/rents/models.py:36
 msgid "Dogs and Cats"
 msgstr "Psy i Koty"
@@ -532,12 +579,6 @@ msgstr "kobieta"
 #: apps/rents/models.py:46
 msgid "man"
 msgstr "mężczyzna"
-
-#: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
-#: templates/place_ad.html:54 templates/search.html:98
-msgid "Rent"
-msgstr "Wynajem"
 
 #: apps/rents/templates/rents/detail.html:12
 #: apps/rents/templates/rents/index.html:16
@@ -566,6 +607,14 @@ msgstr "Umeblowany:"
 #: apps/rents/templates/rents/detail.html:64
 msgid "Prefer sex"
 msgstr "Preferowana płeć"
+
+#: apps/rents/templates/rents/rent_map_list.html:5
+#: apps/rents/templates/rents/rent_map_list.html:13
+#: apps/rents/templates/rents/rent_map_list.html:27
+#, fuzzy
+#| msgid "Map of Gifts"
+msgid "Map of Rents"
+msgstr "Mapa prezentów"
 
 #: apps/rents/templates/rents/rental_confirm_delete.html:6
 msgid "Rent delete"
@@ -598,7 +647,9 @@ msgstr "nie udało się wysłać"
 
 #: apps/sendemail/templates/sendemail/no_success.html:19
 msgid "Some thing wrong. Probably a non-existent email. Please try again."
-msgstr "Coś jest nie tak. Prawdopodobnie nieistniejący e-mail. Proszę, spróbuj jeszcze raz."
+msgstr ""
+"Coś jest nie tak. Prawdopodobnie nieistniejący e-mail. Proszę, spróbuj "
+"jeszcze raz."
 
 #: apps/sendemail/templates/sendemail/success.html:6
 msgid "Success"
@@ -625,19 +676,17 @@ msgstr "W jakim języku mówi pracodawca?"
 msgid "Service"
 msgstr "Warunki świadczenia usługi"
 
-#: apps/services/templates/services/detail.html:13
-#: apps/services/templates/services/index.html:11
-#: apps/services/templates/services/index.html:16
-#: apps/services/templates/services/service_confirm_delete.html:10
-#: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6
-#: templates/home.html:133
-msgid "Services"
-msgstr "Warunki świadczenia usługi"
-
 #: apps/services/templates/services/service_confirm_delete.html:5
 msgid "Service delete"
 msgstr "Usunięcie usługi"
+
+#: apps/services/templates/services/service_map_list.html:5
+#: apps/services/templates/services/service_map_list.html:13
+#: apps/services/templates/services/service_map_list.html:27
+#, fuzzy
+#| msgid "Term of Services"
+msgid "Map of Services"
+msgstr "Warunki świadczenia usług"
 
 #: apps/shop/templates/shop/product/checkout.html:6
 msgid "Checkout"
@@ -699,7 +748,9 @@ msgstr "Regulamin"
 #: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
-msgstr "Korzystając z naszej strony Internetowej potwierdzasz, że przeczytałeś(-aś) i rozumiesz nasze"
+msgstr ""
+"Korzystając z naszej strony Internetowej potwierdzasz, że przeczytałeś(-aś) "
+"i rozumiesz nasze"
 
 #: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:6
 #: templates/policy/cookie_policy.html:12
@@ -726,10 +777,6 @@ msgstr "Główny"
 #: templates/home.html:101
 msgid "Categories"
 msgstr "Kategorie"
-
-#: templates/home.html:112 templates/place_ad.html:46
-msgid "Sell"
-msgstr "Sprzedać"
 
 #: templates/home.html:158
 msgid "Popular"
@@ -847,8 +894,9 @@ msgstr "Zmień moje hasło"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr "Nieprawidłowy link do zresetowania hasła, prawdopodobnie dlatego, że był już używany."
-"Poproś o nowy link do zresetowania hasła."
+msgstr ""
+"Nieprawidłowy link do zresetowania hasła, prawdopodobnie dlatego, że był już "
+"używany.Poproś o nowy link do zresetowania hasła."
 
 #: templates/registration/password_reset_done.html:19
 msgid "We've emailed you instructions for setting your password"
@@ -858,8 +906,9 @@ msgstr "Wysłaliśmy instrukcje dotyczące ustawiania hasła e-mailem"
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
-msgstr "Jeśli nie otrzymasz e-maila, upewnij się, że wpisałeś adres"
-"zarejestrowałeś się w"
+msgstr ""
+"Jeśli nie otrzymasz e-maila, upewnij się, że wpisałeś adreszarejestrowałeś "
+"się w"
 
 #: templates/registration/password_reset_email.html:4
 msgid "Someone asked for password reset for email "

@@ -21,17 +21,17 @@ msgstr ""
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
 msgid "From  email"
-msgstr ""
+msgstr "Z e-maila"
 
 #: apps/accounts/forms.py:52 apps/sendemail/forms.py:8
 #| msgid "Messages"
 msgid "Message"
-msgstr "Wiadomości"
+msgstr "Wiadomość"
 
 #: apps/accounts/templates/accounts/connect.html:8
 #: apps/accounts/templates/accounts/connect.html:14
 msgid "Contact user"
-msgstr ""
+msgstr "Kontakt użytkownika"
 
 #: apps/accounts/templates/accounts/connect.html:13
 #: apps/accounts/templates/accounts/edit.html:11
@@ -80,49 +80,49 @@ msgstr ""
 #: templates/registration/password_reset_done.html:9
 #: templates/registration/password_reset_form.html:11 templates/search.html:6
 msgid "Home"
-msgstr ""
+msgstr "Strona główna"
 
 #: apps/accounts/templates/accounts/connect.html:21
 #: apps/sendemail/templates/sendemail/email.html:21
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: apps/accounts/templates/accounts/connect.html:21
 msgid "User"
-msgstr ""
+msgstr "Użytkownik"
 
 #: apps/accounts/templates/accounts/connect.html:28
 #: apps/sendemail/templates/sendemail/email.html:28
 msgid "Send"
-msgstr ""
+msgstr "Wysłać"
 
 #: apps/accounts/templates/accounts/edit.html:7
 msgid "Edit your account"
-msgstr ""
+msgstr "Edytuj swoje konto"
 
 #: apps/accounts/templates/accounts/edit.html:12
 msgid "Edit account"
-msgstr ""
+msgstr "Edytuj konto"
 
 #: apps/accounts/templates/accounts/edit.html:24
 msgid "Upload image"
-msgstr ""
+msgstr "Załaduj obrazek"
 
 #: apps/accounts/templates/accounts/edit.html:30
 #: templates/registration/password_change_done.html:7
 #: templates/registration/password_change_form.html:7
 msgid "Password"
-msgstr ""
+msgstr "Hasło"
 
 #: apps/accounts/templates/accounts/favorites.html:7
 msgid "My Favorites"
-msgstr ""
+msgstr "Moje ulubione"
 
 #: apps/accounts/templates/accounts/favorites.html:13
 #: apps/accounts/templates/accounts/favourites.html:12
 #: apps/accounts/templates/accounts/favourites.html:17
 msgid "Favorites"
-msgstr ""
+msgstr "Ulubione"
 
 #: apps/accounts/templates/accounts/favourites.html:94
 #: apps/gifts/templates/gifts/index.html:103
@@ -132,117 +132,117 @@ msgstr ""
 #: apps/services/templates/services/index.html:102
 #: templates/snippets/adverts_loop.html:85
 msgid "No adverts are available."
-msgstr ""
+msgstr "Brak dostępnych ogłoszeń"
 
 #: apps/accounts/templates/accounts/my_ads.html:12
 #: apps/accounts/templates/accounts/my_ads.html:17
 msgid "My Ads"
-msgstr ""
+msgstr "Moje ogłoszenia"
 
 #: apps/accounts/templates/accounts/register.html:7
 #: apps/accounts/templates/accounts/register.html:17
 #: apps/accounts/templates/accounts/register_done.html:11
 msgid "Registration"
-msgstr ""
+msgstr "Rejestracja"
 
 #: apps/accounts/templates/accounts/register.html:27
 msgid "Create an account"
-msgstr ""
+msgstr "Utwórz konto"
 
 #: apps/accounts/templates/accounts/register.html:33
 msgid "Please, sign up using the following form:"
-msgstr ""
+msgstr "Zarejestruj się za pomocą poniższego formularza:"
 
 #: apps/accounts/templates/accounts/register.html:40
 msgid "Create"
-msgstr ""
+msgstr "Utwórz"
 
 #: apps/accounts/templates/accounts/register.html:43
 #: templates/registration/login.html:47
 #: templates/registration/password_reset_form.html:39
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: apps/accounts/templates/accounts/register.html:54
 #: templates/registration/login.html:74
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: apps/accounts/templates/accounts/register_done.html:5
 #: apps/accounts/templates/accounts/register_done.html:19
 msgid "Welcome"
-msgstr ""
+msgstr "Witamy"
 
 #: apps/accounts/templates/accounts/register_done.html:21
 msgid "Your account has been successfully created. Now you can"
-msgstr ""
+msgstr "Twoje konto zostało pomyślnie utworzone. Teraz możesz"
 
 #: apps/accounts/templates/accounts/register_done.html:23
 msgid "log in"
-msgstr ""
+msgstr "zaloguj się"
 
 #: apps/accounts/templates/accounts/user_ads.html:9
 #: apps/accounts/templates/accounts/user_ads.html:18
 msgid "User's Ads"
-msgstr ""
+msgstr "Ogłoszenia użytkowników"
 
 #: apps/adverts/models.py:30
 #, python-format
 msgid "%(value)s can't be past"
-msgstr ""
+msgstr "%Znaczenie (value)s' nie może być w przeszłości"
 
 #: apps/adverts/models.py:35
 #, python-format
 msgid "%(value)s can't be more than month"
-msgstr ""
+msgstr "%Znaczenie (value)s' nie może przekraczać miesiąc"
 
 #: apps/adverts/models.py:57 apps/promotions/models.py:12
 msgid "author"
-msgstr ""
+msgstr "autor"
 
 #: apps/adverts/models.py:58
 msgid "Format mm/dd/yyyy"
-msgstr ""
+msgstr "Format mm/dd/rrrr"
 
 #: apps/adverts/models.py:59
 msgid "expires"
-msgstr ""
+msgstr "data ważności"
 
 #: apps/adverts/models.py:80
 msgid "new"
-msgstr ""
+msgstr "nowe"
 
 #: apps/adverts/models.py:84
 msgid "old"
-msgstr ""
+msgstr "stare"
 
 #: apps/adverts/models.py:86
 msgid "very old"
-msgstr ""
+msgstr "bardzo stare"
 
 #: apps/adverts/models.py:87
 msgid "dead"
-msgstr ""
+msgstr "martwe"
 
 #: apps/adverts/models.py:133
 msgid "city"
-msgstr ""
+msgstr "miasto"
 
 #: apps/adverts/models.py:134
 msgid "address"
-msgstr ""
+msgstr "adres"
 
 #: apps/adverts/models.py:135
 msgid "map"
-msgstr ""
+msgstr "mapa"
 
 #: apps/adverts/templates/adverts/index.html:15
 msgid "Adverts"
-msgstr "Jedzenie"
+msgstr "Ogłoszenie"
 
 #: apps/adverts/templates/adverts/index.html:25
 msgid "Detail"
-msgstr "Szczegół"
+msgstr "Szczegóły"
 
 #: apps/adverts/templates/adverts/map.html:5
 #: apps/items/templates/items/detail.html:12
@@ -252,22 +252,22 @@ msgstr "Szczegół"
 #: apps/items/templates/items/item_form.html:12
 #: apps/items/templates/items/item_list.html:5
 msgid "Items"
-msgstr ""
+msgstr "Towary"
 
 #: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
 msgid "Map"
-msgstr ""
+msgstr "Mapa"
 
 #: apps/gifts/filters.py:9 apps/gifts/form.py:18 apps/items/filters.py:9
 #: apps/items/forms.py:19 apps/jobs/filters.py:9 apps/jobs/form.py:19
 #: apps/rents/filters.py:10 apps/rents/forms.py:19 apps/services/filters.py:9
 #: apps/services/form.py:19
 msgid "Only Latin characters"
-msgstr ""
+msgstr "Tylko znaki łacińskie"
 
 #: apps/gifts/models.py:25
 msgid "gift type"
-msgstr ""
+msgstr "rodzaj prezentu"
 
 #: apps/gifts/templates/gifts/detail.html:8
 #: apps/gifts/templates/gifts/detail.html:13
@@ -277,7 +277,7 @@ msgstr ""
 #: apps/gifts/templates/gifts/index.html:11
 #: apps/gifts/templates/gifts/index.html:16
 msgid "Gifts"
-msgstr ""
+msgstr "Prezenty"
 
 #: apps/gifts/templates/gifts/detail.html:48
 #: apps/items/templates/items/detail.html:50
@@ -285,7 +285,7 @@ msgstr ""
 #: apps/rents/templates/rents/detail.html:49
 #: apps/services/templates/services/detail.html:62
 msgid "Description:"
-msgstr ""
+msgstr "Opis"
 
 #: apps/gifts/templates/gifts/detail.html:55
 #: apps/items/templates/items/detail.html:57
@@ -293,7 +293,7 @@ msgstr ""
 #: apps/rents/templates/rents/detail.html:65
 #: apps/services/templates/services/detail.html:77
 msgid "City:"
-msgstr ""
+msgstr "Miasto:"
 
 #: apps/gifts/templates/gifts/detail.html:56
 #: apps/items/templates/items/detail.html:58
@@ -301,7 +301,7 @@ msgstr ""
 #: apps/rents/templates/rents/detail.html:66
 #: apps/services/templates/services/detail.html:78
 msgid "Address:"
-msgstr ""
+msgstr "Adres"
 
 #: apps/gifts/templates/gifts/detail.html:60
 #: apps/items/templates/items/detail.html:62
@@ -309,19 +309,19 @@ msgstr ""
 #: apps/rents/templates/rents/detail.html:71
 #: apps/services/templates/services/detail.html:83
 msgid "Location:"
-msgstr ""
+msgstr "Lokalizacja"
 
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:5
 msgid "Gift delete"
-msgstr ""
+msgstr "Usuń prezent"
 
 #: apps/gifts/templates/gifts/gift_form.html:6 templates/search.html:66
 msgid "Gift"
-msgstr ""
+msgstr "Prezent"
 
 #: apps/gifts/templates/gifts/gift_list.html:13
 msgid "Map of Gifts"
-msgstr ""
+msgstr "Mapa prezentów"
 
 #: apps/gifts/templates/gifts/index.html:73
 #: apps/items/templates/items/index.html:73
@@ -330,7 +330,7 @@ msgstr ""
 #: apps/services/templates/services/index.html:73
 #: templates/snippets/adverts_loop.html:58
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: apps/gifts/templates/gifts/index.html:76
 #: apps/items/templates/items/index.html:76
@@ -339,86 +339,86 @@ msgstr ""
 #: apps/services/templates/services/index.html:76
 #: templates/snippets/adverts_loop.html:62
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 #: apps/items/models.py:12
 msgid "Used"
-msgstr ""
+msgstr "Używane"
 
 #: apps/items/models.py:13
 msgid "Acceptable"
-msgstr ""
+msgstr "Akceptowalne"
 
 #: apps/items/models.py:14
 msgid "Very Good"
-msgstr ""
+msgstr "Bardzo dobre"
 
 #: apps/items/models.py:15
 msgid "Like New"
-msgstr ""
+msgstr "Jak Nowe"
 
 #: apps/items/models.py:16 templates/home.html:245
 msgid "New"
-msgstr ""
+msgstr "Nowe"
 
 #: apps/items/models.py:22
 msgid "condition"
-msgstr ""
+msgstr "stan"
 
 #: apps/items/models.py:25
 msgid "price"
-msgstr ""
+msgstr "cena"
 
 #: apps/items/templates/items/detail.html:7
 #: apps/items/templates/items/item_form.html:6 templates/search.html:49
 msgid "Item"
-msgstr ""
+msgstr "Towar"
 
 #: apps/items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
-msgstr ""
+msgstr "Usunięcie towaru"
 
 #: apps/items/templates/items/item_list.html:13
 msgid "Map of Items"
-msgstr ""
+msgstr "Mapa towarów"
 
 #: apps/items/templates/items/table.html:10
 msgid "List of items"
-msgstr ""
+msgstr "Lista towarów"
 
 #: apps/jobs/models.py:26
 msgid "full-time"
-msgstr ""
+msgstr "pełny etat"
 
 #: apps/jobs/models.py:27
 msgid "part-time"
-msgstr ""
+msgstr "na niepełny etat"
 
 #: apps/jobs/models.py:28
 msgid "casual"
-msgstr ""
+msgstr "nieregularny dzień roboczy"
 
 #: apps/jobs/models.py:30
 #, fuzzy
 #| msgid "Job type:"
 msgid "job type"
-msgstr "Rodzaj pracy"
+msgstr "rodzaj pracy"
 
 #: apps/jobs/models.py:36 apps/services/models.py:15
 msgid "language"
-msgstr ""
+msgstr "język"
 
 #: apps/jobs/models.py:37
 msgid "What language does the employer speak?"
-msgstr ""
+msgstr "W jakim języku mówi pracodawca?"
 
 #: apps/jobs/models.py:38 apps/services/models.py:17
 msgid "Logo or image"
-msgstr ""
+msgstr "Logo lub obrazek"
 
 #: apps/jobs/models.py:40 apps/services/models.py:19
 msgid "salary"
-msgstr ""
+msgstr "pensja"
 
 #: apps/jobs/templates/jobs/detail.html:8
 #: apps/jobs/templates/jobs/job_form.html:7 templates/search.html:82
@@ -440,74 +440,74 @@ msgstr "Praca"
 
 #: apps/jobs/templates/jobs/detail.html:57
 msgid "Job type:"
-msgstr "Rodzaj pracy"
+msgstr "Rodzaj pracy:"
 
 #: apps/jobs/templates/jobs/detail.html:71
 msgid "Duration:"
-msgstr ""
+msgstr "Trwałość:"
 
 #: apps/jobs/templates/jobs/detail.html:73
 #: apps/services/templates/services/detail.html:71
 msgid "Language(s) spoken by the employer:"
-msgstr ""
+msgstr "Języki komunikacji pracodawcy:"
 
 #: apps/jobs/templates/jobs/job_confirm_delete.html:5
 #, fuzzy
 #| msgid "Job type:"
 msgid "Job delete"
-msgstr "Rodzaj pracy"
+msgstr "Usuń pracę"
 
 #: apps/promotions/models.py:13
 msgid "name"
-msgstr ""
+msgstr "imię"
 
 #: apps/promotions/models.py:25
 msgid "Header"
-msgstr ""
+msgstr "Nagłówek strony"
 
 #: apps/promotions/models.py:26
 msgid "Right Sidebar"
-msgstr ""
+msgstr "Prawy panel"
 
 #: apps/promotions/models.py:27
 msgid "Left Sidebar"
-msgstr ""
+msgstr "Lewy panel"
 
 #: apps/promotions/models.py:47
 msgid "Extra small"
-msgstr ""
+msgstr "Bardzo małe"
 
 #: apps/promotions/models.py:48
 msgid "Small"
-msgstr ""
+msgstr "Małe"
 
 #: apps/promotions/models.py:49
 msgid "Medium"
-msgstr ""
+msgstr "Średnie"
 
 #: apps/promotions/models.py:50
 msgid "Large"
-msgstr ""
+msgstr "Duże"
 
 #: apps/promotions/models.py:51
 msgid "Extra large"
-msgstr ""
+msgstr "Bardzo duże"
 
 #: apps/promotions/models.py:59
 msgid "link"
-msgstr ""
+msgstr "link"
 
 #: apps/rents/models.py:27
 msgid "property type"
-msgstr ""
+msgstr "rodzaj nieruchomości"
 
 #: apps/rents/models.py:33
 msgid "None"
-msgstr ""
+msgstr "Żaden"
 
 #: apps/rents/models.py:34
 msgid "Dogs"
-msgstr ""
+msgstr "Psy"
 
 #: apps/rents/models.py:35 templates/home.html:141 templates/place_ad.html:58
 msgid "Cats"
@@ -515,29 +515,29 @@ msgstr "Koty"
 
 #: apps/rents/models.py:36
 msgid "Dogs and Cats"
-msgstr ""
+msgstr "Psy i Koty"
 
 #: apps/rents/models.py:37
 msgid "Any"
-msgstr ""
+msgstr "Dowolny"
 
 #: apps/rents/models.py:44
 msgid "any"
-msgstr ""
+msgstr "dowolny"
 
 #: apps/rents/models.py:45
 msgid "woman"
-msgstr ""
+msgstr "kobieta"
 
 #: apps/rents/models.py:46
 msgid "man"
-msgstr ""
+msgstr "mężczyzna"
 
 #: apps/rents/templates/rents/detail.html:7
 #: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
 #: templates/place_ad.html:54 templates/search.html:98
 msgid "Rent"
-msgstr ""
+msgstr "Wynajem"
 
 #: apps/rents/templates/rents/detail.html:12
 #: apps/rents/templates/rents/index.html:16
@@ -545,85 +545,85 @@ msgstr ""
 #: apps/rents/templates/rents/rental_form.html:14
 #: apps/rents/templates/rents/rental_list.html:4
 msgid "Rents"
-msgstr ""
+msgstr "Wynajem"
 
 #: apps/rents/templates/rents/detail.html:56
 msgid "Bathrooms:"
-msgstr ""
+msgstr "Łazienki:"
 
 #: apps/rents/templates/rents/detail.html:57
 msgid "Bedrooms:"
-msgstr ""
+msgstr "Sypialnie:"
 
 #: apps/rents/templates/rents/detail.html:58
 msgid "Pet policy:"
-msgstr ""
+msgstr "Polityka dotycząca zwierząt domowych:"
 
 #: apps/rents/templates/rents/detail.html:61
 msgid "Furnished:"
-msgstr ""
+msgstr "Umeblowany:"
 
 #: apps/rents/templates/rents/detail.html:64
 msgid "Prefer sex"
-msgstr ""
+msgstr "Preferowana płeć"
 
 #: apps/rents/templates/rents/rental_confirm_delete.html:6
 msgid "Rent delete"
-msgstr ""
+msgstr "Usuń wynajem"
 
 #: apps/rents/templates/rents/rental_table_list.html:6
 msgid "Rents table"
-msgstr ""
+msgstr "Czynsz"
 
 #: apps/sendemail/forms.py:7
 msgid "Subject"
-msgstr ""
+msgstr "Temat"
 
 #: apps/sendemail/templates/sendemail/email.html:8
 #: apps/sendemail/templates/sendemail/email.html:14 templates/base.html:85
 msgid "Contact us"
-msgstr ""
+msgstr "Skontaktuj się z nami"
 
 #: apps/sendemail/templates/sendemail/email.html:21
 msgid "Us"
-msgstr ""
+msgstr "Z nami"
 
 #: apps/sendemail/templates/sendemail/no_success.html:5
 msgid "No success"
-msgstr ""
+msgstr "Nie udało się wysłać"
 
 #: apps/sendemail/templates/sendemail/no_success.html:10
 msgid "no success"
-msgstr ""
+msgstr "nie udało się wysłać"
 
 #: apps/sendemail/templates/sendemail/no_success.html:19
 msgid "Some thing wrong. Probably a non-existent email. Please try again."
-msgstr ""
+msgstr "Coś jest nie tak. Prawdopodobnie nieistniejący e-mail. Proszę, spróbuj jeszcze raz."
 
 #: apps/sendemail/templates/sendemail/success.html:6
 msgid "Success"
-msgstr ""
+msgstr "List został wysłany"
 
 #: apps/sendemail/templates/sendemail/success.html:12
 msgid "success"
-msgstr ""
+msgstr "list został wysłany"
 
 #: apps/sendemail/templates/sendemail/success.html:21
 msgid "Success! Thank you for your message."
-msgstr ""
+msgstr "List został wysłany! Dziękuję za Twoją wiadomość. "
 
 #: apps/sendemail/templates/sendemail/success.html:24
 msgid "The recipient will receive your message..."
-msgstr ""
+msgstr "Twoja wiadomość zostanie dostarczona..."
 
 #: apps/services/models.py:16
 msgid "What language do we speak?"
-msgstr ""
+msgstr "W jakim języku mówi pracodawca?"
 
 #: apps/services/templates/services/detail.html:8
 #: apps/services/templates/services/service_form.html:7
 msgid "Service"
-msgstr ""
+msgstr "Warunki świadczenia usługi"
 
 #: apps/services/templates/services/detail.html:13
 #: apps/services/templates/services/index.html:11
@@ -633,99 +633,99 @@ msgstr ""
 #: apps/services/templates/services/service_list.html:6
 #: templates/home.html:133
 msgid "Services"
-msgstr ""
+msgstr "Warunki świadczenia usługi"
 
 #: apps/services/templates/services/service_confirm_delete.html:5
 msgid "Service delete"
-msgstr ""
+msgstr "Usunięcie usługi"
 
 #: apps/shop/templates/shop/product/checkout.html:6
 msgid "Checkout"
-msgstr ""
+msgstr "Zamówić"
 
 #: templates/404.html:8
 msgid "404"
-msgstr ""
+msgstr "404"
 
 #: templates/404.html:24
 msgid "Page"
-msgstr ""
+msgstr "Strona"
 
 #: templates/404.html:25
 msgid "not found"
-msgstr ""
+msgstr "nie znaleziono"
 
 #: templates/404.html:43
 msgid "To home page"
-msgstr ""
+msgstr "Do strony głównej"
 
 #: templates/base.html:91
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: templates/base.html:128 templates/base.html:157
 msgid "Logout"
-msgstr ""
+msgstr "Wyloguj się"
 
 #: templates/base.html:136
 msgid "Sign up"
-msgstr ""
+msgstr "Zarejestrować się"
 
 #: templates/base.html:139 templates/registration/login.html:7
 #: templates/registration/login.html:19 templates/registration/login.html:29
 msgid "Log in"
-msgstr ""
+msgstr "Zaloguj się"
 
 #: templates/base.html:145
 msgid "Place Ad"
-msgstr ""
+msgstr "Dodaj Ogłoszenie"
 
 #: templates/base.html:173
 msgid "Notice! Ads are displayed only in the selected language."
-msgstr "Ogłoszenie! Reklamy są wyświetlane tylko w wybranym języku."
+msgstr "Uwaga! Reklamy są wyświetlane tylko w wybranym języku."
 
 #: templates/base.html:251
 msgid "Conditions of Use"
-msgstr ""
+msgstr "Warunki korzystania"
 
 #: templates/base.html:256
 msgid "Privacy Notice"
-msgstr ""
+msgstr "Polityka Prywatności"
 
 #: templates/base.html:261
 msgid "Terms and conditions"
-msgstr ""
+msgstr "Regulamin"
 
 #: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
-msgstr ""
+msgstr "Korzystając z naszej strony Internetowej potwierdzasz, że przeczytałeś(-aś) i rozumiesz nasze"
 
 #: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:6
 #: templates/policy/cookie_policy.html:12
 msgid "Cookie Policy"
-msgstr ""
+msgstr "Polityka Cookie"
 
 #: templates/cookielaw/banner.html:12 templates/policy/privacy_policy.html:5
 #: templates/policy/privacy_policy.html:11
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Polityka prywatności"
 
 #: templates/cookielaw/banner.html:13
 msgid " and our "
-msgstr ""
+msgstr " i nasze "
 
 #: templates/cookielaw/banner.html:14
 msgid "Terms of Service"
-msgstr ""
+msgstr "Warunki świadczenia usług"
 
 #: templates/home.html:100
 msgid "Main"
-msgstr ""
+msgstr "Główny"
 
 #: templates/home.html:101
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: templates/home.html:112 templates/place_ad.html:46
 msgid "Sell"
@@ -733,213 +733,215 @@ msgstr "Sprzedać"
 
 #: templates/home.html:158
 msgid "Popular"
-msgstr ""
+msgstr "Popularne"
 
 #: templates/home.html:159 templates/home.html:246
 #, fuzzy
 #| msgid "Adverts"
 msgid "Ads"
-msgstr "Jedzenie"
+msgstr "Ogłoszenia"
 
 #: templates/place_ad.html:10
 msgid "Select ad's type"
-msgstr ""
+msgstr "Wybierz rodzaj ogłoszenia"
 
 #: templates/place_ad.html:14
 msgid "Back"
-msgstr ""
+msgstr "Wstecz"
 
 #: templates/place_ad.html:32
 msgid "Select category to "
-msgstr ""
+msgstr "Wybrać kategorię do"
 
 #: templates/place_ad.html:40
 msgid "create ad"
-msgstr ""
+msgstr "stworzyć ogłoszenie"
 
 #: templates/policy/term_of_services.html:5
 #: templates/policy/term_of_services.html:11
 msgid "Term of Services"
-msgstr ""
+msgstr "Warunki świadczenia usług"
 
 #: templates/registration/logged_out.html:5
 #: templates/registration/logged_out.html:11
 #: templates/registration/logged_out.html:19
 msgid "Logged out"
-msgstr ""
+msgstr "Wylogowano"
 
 #: templates/registration/logged_out.html:22
 msgid "You have been successfully logged out. You can"
-msgstr ""
+msgstr "Zostałeś pomyślnie wylogowany. Możesz"
 
 #: templates/registration/logged_out.html:23
 msgid "log-in again"
-msgstr ""
+msgstr "zaloguj się ponownie"
 
 #: templates/registration/login.html:36
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
+msgstr "Twoja nazwa użytkownika i hasło nie pasują. Proszę spróbuj ponownie. "
 
 #: templates/registration/login.html:44
 #: templates/registration/password_reset_form.html:24
 msgid "Forgotten your password"
-msgstr ""
+msgstr "Zapomniałeś hasła"
 
 #: templates/registration/login.html:50
 msgid "Register here"
-msgstr ""
+msgstr "Rejestracja tutaj"
 
 #: templates/registration/password_change_done.html:14
 msgid "Password changed"
-msgstr ""
+msgstr "Hasło zostało zmienione"
 
 #: templates/registration/password_change_done.html:15
 msgid "Your password has been successfully changed"
-msgstr ""
+msgstr "Twoje hasło zostało zmienione"
 
 #: templates/registration/password_change_form.html:14
 msgid "Change you password"
-msgstr ""
+msgstr "Zmień swoje hasło"
 
 #: templates/registration/password_change_form.html:15
 msgid "Use the form below to change your password"
-msgstr ""
+msgstr "Skorzystaj z poniższego formularza, aby zmienić hasło"
 
 #: templates/registration/password_reset_complete.html:6
 #: templates/registration/password_reset_complete.html:12
 msgid "Password reset"
-msgstr ""
+msgstr "Resetowanie hasła"
 
 #: templates/registration/password_reset_complete.html:20
 msgid "Password set"
-msgstr ""
+msgstr "Hasło ustawione"
 
 #: templates/registration/password_reset_complete.html:22
 msgid "Your password has been set. You can"
-msgstr ""
+msgstr "Twoje hasło zostało ustawione. Możesz"
 
 #: templates/registration/password_reset_complete.html:23
 msgid "log in now"
-msgstr ""
+msgstr "zaloguje się teraz"
 
 #: templates/registration/password_reset_confirm.html:12
 #: templates/registration/password_reset_done.html:10
 #: templates/registration/password_reset_form.html:12
 msgid "Reset password"
-msgstr ""
+msgstr "Zresetuj hasło"
 
 #: templates/registration/password_reset_confirm.html:20
 #: templates/registration/password_reset_done.html:5
 #: templates/registration/password_reset_done.html:18
 #: templates/registration/password_reset_form.html:7
 msgid "Reset your password"
-msgstr ""
+msgstr "Zresetuj swoje hasło"
 
 #: templates/registration/password_reset_confirm.html:22
 msgid "Please enter your new password twice:"
-msgstr ""
+msgstr "Proszę wprowadzić nowe hasło dwa razy:"
 
 #: templates/registration/password_reset_confirm.html:26
 msgid "Change my password"
-msgstr ""
+msgstr "Zmień moje hasło"
 
 #: templates/registration/password_reset_confirm.html:30
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr ""
+msgstr "Nieprawidłowy link do zresetowania hasła, prawdopodobnie dlatego, że był już używany."
+"Poproś o nowy link do zresetowania hasła."
 
 #: templates/registration/password_reset_done.html:19
 msgid "We've emailed you instructions for setting your password"
-msgstr ""
+msgstr "Wysłaliśmy instrukcje dotyczące ustawiania hasła e-mailem"
 
 #: templates/registration/password_reset_done.html:20
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with"
-msgstr ""
+msgstr "Jeśli nie otrzymasz e-maila, upewnij się, że wpisałeś adres"
+"zarejestrowałeś się w"
 
 #: templates/registration/password_reset_email.html:4
 msgid "Someone asked for password reset for email "
-msgstr ""
+msgstr "Ktoś poprosił o zresetowanie hasła do e-maila"
 
 #: templates/registration/password_reset_email.html:5
 msgid "Follow the link below:"
-msgstr ""
+msgstr "Kliknij na poniższy link:"
 
 #: templates/registration/password_reset_email.html:7
 msgid "Your username, in case you've forgotten:"
-msgstr ""
+msgstr "Twoja nazwa użytkownika, na wypadek gdybyś zapomniał"
 
 #: templates/registration/password_reset_form.html:30
 msgid "Enter your e-mail address to obtain a new password"
-msgstr ""
+msgstr "Wpisz swój adres e-mail, aby uzyskać nowe hasło"
 
 #: templates/registration/password_reset_form.html:36
 msgid "Send e-mail"
-msgstr ""
+msgstr "Wysłać e-mail"
 
 #: templates/search.html:8
 msgid "Search result"
-msgstr ""
+msgstr "Wynik wyszukiwania"
 
 #: templates/search.html:27
 msgid "results"
-msgstr ""
+msgstr "wyniki"
 
 #: templates/search.html:29
 msgid "Nothing found for your request"
-msgstr ""
+msgstr "Nic nie znaleziono"
 
 #: templates/search.html:34
 msgid "try searching in other languages also"
-msgstr ""
+msgstr "spróbuj wyszukać również w innych językach"
 
 #: templates/search.html:132
 msgid "Enter another query to search at this site"
-msgstr ""
+msgstr "Wpisz inne pytanie, aby wyszukać na tej stronie"
 
 #: templates/snippets/filter.html:29
 msgid "Search"
-msgstr ""
+msgstr "Poszukiwanie"
 
 #: templates/snippets/filter.html:35
 msgid "filter search"
-msgstr ""
+msgstr "filtr wyszukiwania"
 
 #: templates/snippets/filter.html:38
 msgid " Clear all filters"
-msgstr ""
+msgstr "Wyczyść wstystkie filtry"
 
 #: templates/snippets/right_side_detail.html:20
 msgid "Other user’s ads"
-msgstr ""
+msgstr "Ogłoszenia innych użytkowników"
 
 #: templates/snippets/right_side_detail.html:25
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: zaba/settings.py:183
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukraiński"
 
 #: zaba/settings.py:184
 msgid "Russian"
-msgstr ""
+msgstr "Rosyjski"
 
 #: zaba/settings.py:185
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
 #: zaba/settings.py:186
 msgid "English"
-msgstr ""
+msgstr "Angielski"
 
 #~ msgid "Frog greeting!"
-#~ msgstr "Żaba wita cię!"
+#~ msgstr "Żaba wita Cię!"
 
 #~ msgid "Housing"
-#~ msgstr "Mieszkaniowy"
+#~ msgstr "Mieszkania"
 
 #~ msgid "Messages"
 #~ msgstr "Wiadomości"
@@ -949,7 +951,7 @@ msgstr ""
 
 #, fuzzy
 #~ msgid "message"
-#~ msgstr "Wiadomości"
+#~ msgstr "Wiadomość"
 
 #, fuzzy
 #~ msgid "messages"

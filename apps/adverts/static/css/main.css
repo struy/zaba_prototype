@@ -688,9 +688,10 @@ i.fas.fa-paw {
 
 /* place ad */
 #dropdownMenuLink:hover {
-  background-color: #091B34;
+  background-color: #749b27;
   color: #FFFFFF;
 }
+
 
 /*JOB*/
 .job_title {
@@ -898,6 +899,11 @@ form.new-edit .gj-datepicker-bootstrap {
 .dropdown-item.active, .dropdown-item:active {
   background-color: unset;
   color: #000;
+}
+.dropdown-menu {
+  background-color: #f4f5f6;
+  border: none;
+
 }
 
 .favorites span {

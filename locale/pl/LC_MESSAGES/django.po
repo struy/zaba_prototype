@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 14:13-0500\n"
+"POT-Creation-Date: 2021-08-21 15:06-0500\n"
 "PO-Revision-Date: 2021-08-11 03:43+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -526,23 +526,23 @@ msgstr "Lewy panel"
 
 #: apps/promotions/models.py:47
 msgid "Extra small"
-msgstr "Bardzo małe"
+msgstr "Bardzo mały"
 
 #: apps/promotions/models.py:48
 msgid "Small"
-msgstr "Małe"
+msgstr "Mały"
 
 #: apps/promotions/models.py:49
 msgid "Medium"
-msgstr "Średnie"
+msgstr "Średni"
 
 #: apps/promotions/models.py:50
 msgid "Large"
-msgstr "Duże"
+msgstr "Wielki"
 
 #: apps/promotions/models.py:51
 msgid "Extra large"
-msgstr "Bardzo duże"
+msgstr "Bardzo wielki"
 
 #: apps/promotions/models.py:59
 msgid "link"
@@ -566,11 +566,11 @@ msgstr "Psy i Koty"
 
 #: apps/rents/models.py:37
 msgid "Any"
-msgstr "Dowolny"
+msgstr "Dowolne"
 
 #: apps/rents/models.py:44
 msgid "any"
-msgstr "dowolny"
+msgstr "dowolne"
 
 #: apps/rents/models.py:45
 msgid "woman"
@@ -772,7 +772,7 @@ msgstr "Warunki świadczenia usług"
 
 #: templates/home.html:100
 msgid "Main"
-msgstr "Główny"
+msgstr "Główne"
 
 #: templates/home.html:101
 msgid "Categories"
@@ -969,6 +969,16 @@ msgstr "Ogłoszenia innych użytkowników"
 #: templates/snippets/right_side_detail.html:25
 msgid "Email"
 msgstr "Email"
+
+#: templates/snippets/search_bar.html:12
+msgid "type in what you are looking for"
+msgstr ""
+
+#: templates/snippets/search_bar.html:32
+#, fuzzy
+#| msgid "Only Latin characters"
+msgid "only Latin characters"
+msgstr "Tylko znaki łacińskie"
 
 #: zaba/settings.py:183
 msgid "Ukrainian"

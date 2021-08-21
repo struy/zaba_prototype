@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 14:13-0500\n"
+"POT-Creation-Date: 2021-08-21 15:06-0500\n"
 "PO-Revision-Date: 2021-08-11 03:42+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -959,6 +959,16 @@ msgstr "Інші оголошення автора"
 #: templates/snippets/right_side_detail.html:25
 msgid "Email"
 msgstr "електрона скринька"
+
+#: templates/snippets/search_bar.html:12
+msgid "type in what you are looking for"
+msgstr ""
+
+#: templates/snippets/search_bar.html:32
+#, fuzzy
+#| msgid "Only Latin characters"
+msgid "only Latin characters"
+msgstr "Тільки латинські символи"
 
 #: zaba/settings.py:183
 msgid "Ukrainian"

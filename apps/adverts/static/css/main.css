@@ -692,7 +692,6 @@ i.fas.fa-paw {
   color: #FFFFFF;
 }
 
-
 /*JOB*/
 .job_title {
   margin-left: 10px;
@@ -900,10 +899,10 @@ form.new-edit .gj-datepicker-bootstrap {
   background-color: unset;
   color: #000;
 }
+
 .dropdown-menu {
   background-color: #f4f5f6;
   border: none;
-
 }
 
 .favorites span {

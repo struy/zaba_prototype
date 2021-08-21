@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 16:00-0500\n"
+"POT-Creation-Date: 2021-08-21 16:18-0500\n"
 "PO-Revision-Date: 2021-08-11 03:42+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -292,12 +292,12 @@ msgstr "Оренда"
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:142
+#: apps/services/templates/services/service_list.html:6 templates/home.html:133
 msgid "Services"
 msgstr "Послуги"
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:133 templates/place_ad.html:68
+#: templates/home.html:141 templates/place_ad.html:68
 msgid "Cats"
 msgstr "Котики"
 
@@ -403,7 +403,7 @@ msgstr "В гарному стані"
 msgid "Like New"
 msgstr "Як Нові"
 
-#: apps/items/models.py:16 templates/home.html:247
+#: apps/items/models.py:16 templates/home.html:245
 msgid "New"
 msgstr "Нові"
 
@@ -769,11 +769,11 @@ msgstr "Основні"
 msgid "Categories"
 msgstr "Категорії"
 
-#: templates/home.html:160
+#: templates/home.html:158
 msgid "Popular"
 msgstr "Популярні"
 
-#: templates/home.html:161 templates/home.html:248
+#: templates/home.html:159 templates/home.html:246
 msgid "Ads"
 msgstr "Оголошення"
 

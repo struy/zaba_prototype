@@ -1,70 +1,74 @@
+{% load i18n %}
 {% if is_paginated %}
     {% if adverts.paginator.num_pages > 1 %}
 
-<!--start of Pagination-->
-<div class="pagination">
-    <span class="step-links">
+        <!--start of Pagination-->
+        <div class="pagination">
+            <div class="step-links">
         <span class="current">
             Page {{ adverts.number }} of {{ adverts.paginator.num_pages }}.
         </span>
-    </span>
-</div>
+            </div>
+        </div>
 
-<nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center pagination-sm">
-        {% if adverts.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ adverts.previous_page_number }}">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <a class="page-link">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </a>
-            </li>
-        {% endif %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center pagination-sm">
+                {% if adverts.has_previous %}
+                    <li class="page-item{% if adverts.number == 1 %} disabled{% endif %}">
+                        <a class="page-link" href="?page={{ adverts.previous_page_number }}">
+                            <i class="fa fa-chevron-left{% if adverts.number == 1 %} text-muted{% endif %} " aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% endif %}
 
-        {% if adverts.number|add:'-3' > 1 %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ adverts.number|add:'-4' }}">&hellip;</a>
-            </li>
-        {% endif %}
+                {% if adverts.number|add:'-3' > 1 %}
+                    <li class="page-item d-none d-md-block">
+                        <a class="page-link" href="?page={{ adverts.number|add:'-4' }}">&hellip;</a>
+                    </li>
+                {% endif %}
 
-        {% for i in adverts.paginator.page_range %}
-            {% if adverts.number == i %}
-                <li class="page-item  active">
-                  <a class="page-link text-white" href="?page={{ i }}">{{ i }}</a>
-                </li>
-            {% elif i > adverts.number|add:'-4' and i < adverts.number|add:'4' %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-                </li>
-            {% endif %}
-        {% endfor %}
+                {% for i in adverts.paginator.page_range %}
+                    {% if adverts.number == i %}
+                        <li class="page-item  active">
+                            <a class="page-link text-white" href="?page={{ i }}"><span
+                                    class="d-md-none">{% trans 'Page ' %}</span>{{ i }}</a>
+                        </li>
+                    {% elif i > adverts.number|add:'-4' and i < adverts.number|add:'4' %}
+                        <li class="page-item d-none d-md-block">
+                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
 
-        {% if adverts.paginator.num_pages > adverts.number|add:'3' %}
-            <li  class="page-item"><a class="page-link" href="?page={{ adverts.number|add:'4' }}">&hellip;</a></li>
-        {% endif %}
+                {% if adverts.paginator.num_pages > adverts.number|add:'3' %}
+                    <li class="page-item d-none d-md-block">
+                        <a class="page-link" href="?page={{ adverts.number|add:'4' }}">&hellip;</a>
+                    </li>
+                {% endif %}
 
-        {% if adverts.has_next %}
-            <li  class="page-item">
-                <a class="page-link" href="?page={{ adverts.next_page_number }}">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <a class="page-link">
-                    <i class="fa fa-chevron-right " aria-hidden="true"></i>
-                </a>
-            </li>
-        {% endif %}
+                {% if adverts.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ adverts.next_page_number }}">
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">
+                            <i class="fa fa-chevron-right " aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% endif %}
 
-    </ul>
-</nav>
-    <!--end of Pagination-->
+            </ul>
+        </nav>
+        <!--end of Pagination-->
     {% endif %}
 {% endif %}
 

@@ -8,17 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 16:18-0500\n"
-"PO-Revision-Date: 2021-08-11 03:40+0000\n"
+"POT-Creation-Date: 2021-08-22 20:17-0500\n"
+"PO-Revision-Date: 2021-08-23 01:22+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
@@ -263,7 +261,7 @@ msgstr "Товары"
 msgid "Map"
 msgstr "Карта"
 
-#: apps/adverts/templates/adverts/map.html:30 templates/home.html:112
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:114
 #: templates/place_ad.html:49
 msgid "Sell"
 msgstr "Продажа"
@@ -275,14 +273,14 @@ msgstr "Продажа"
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: apps/rents/templates/rents/index.html:11 templates/home.html:123
 #: templates/place_ad.html:55
 msgid "Jobs"
 msgstr "Работа"
 
 #: apps/adverts/templates/adverts/map.html:36
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:133
 #: templates/place_ad.html:62 templates/search.html:98
 msgid "Rent"
 msgstr "Аренда"
@@ -293,12 +291,13 @@ msgstr "Аренда"
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+#: apps/services/templates/services/service_list.html:6
+#: templates/home.html:141
 msgid "Services"
 msgstr "Услуги"
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:141 templates/place_ad.html:68
+#: templates/home.html:151 templates/place_ad.html:68
 msgid "Cats"
 msgstr "Котики"
 
@@ -404,7 +403,7 @@ msgstr "В хорошем состоянии"
 msgid "Like New"
 msgstr "Как Новые"
 
-#: apps/items/models.py:16 templates/home.html:245
+#: apps/items/models.py:16 templates/home.html:255
 msgid "New"
 msgstr "Новые"
 
@@ -642,8 +641,8 @@ msgstr "не удалось отправить"
 #: apps/sendemail/templates/sendemail/no_success.html:19
 msgid "Some thing wrong. Probably a non-existent email. Please try again."
 msgstr ""
-"Не удалось отправить (вероятно, несуществующая электронная почта. Попробуйте "
-"еще раз."
+"Не удалось отправить (вероятно, несуществующая электронная почта. Попробуйте"
+" еще раз."
 
 #: apps/sendemail/templates/sendemail/success.html:6
 msgid "Success"
@@ -727,18 +726,6 @@ msgstr "Подать Объявление"
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Замечание! Объявления отображаются только на выбранном языке."
 
-#: templates/base.html:251
-msgid "Conditions of Use"
-msgstr "Состояние"
-
-#: templates/base.html:256
-msgid "Privacy Notice"
-msgstr "Политику Конфиденциальности"
-
-#: templates/base.html:261
-msgid "Terms and conditions"
-msgstr "Условия и Положения"
-
 #: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
@@ -770,11 +757,33 @@ msgstr "Основные"
 msgid "Categories"
 msgstr "Категории"
 
-#: templates/home.html:158
+#: templates/home.html:111
+msgid "offer for sale"
+msgstr "продам"
+
+#: templates/home.html:120
+msgid "offering a job"
+msgstr "предлагаю работу"
+
+#: templates/home.html:130
+msgid "space for rent"
+msgstr "сдам в аренду"
+
+#: templates/home.html:138
+#, fuzzy
+#| msgid "Term of Services"
+msgid "provide services"
+msgstr "Условия предоставления услуг"
+
+#: templates/home.html:148
+msgid "give away"
+msgstr "отдам даром"
+
+#: templates/home.html:168
 msgid "Popular"
 msgstr "Популярные"
 
-#: templates/home.html:159 templates/home.html:246
+#: templates/home.html:169 templates/home.html:256
 msgid "Ads"
 msgstr "Объявления"
 
@@ -787,7 +796,6 @@ msgid "Back"
 msgstr "Возвратиться"
 
 #: templates/place_ad.html:32
-#, fuzzy
 #| msgid "Select a category"
 msgid "Select category to "
 msgstr "Выберите категорию"
@@ -837,7 +845,6 @@ msgid "Your password has been successfully changed"
 msgstr "Пароль успешно изменен"
 
 #: templates/registration/password_change_form.html:14
-#, fuzzy
 #| msgid "Change my password"
 msgid "Change you password"
 msgstr "Изменить пароль"
@@ -889,9 +896,9 @@ msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
 msgstr ""
-"Ссылка для восстановления пароля была недействительной, возможно потому, что "
-"ее уже использовали. Пожалуйста, дайте запрос на новую ссылку восстановления "
-"пароля."
+"Ссылка для восстановления пароля была недействительной, возможно потому, что"
+" ее уже использовали. Пожалуйста, дайте запрос на новую ссылку "
+"восстановления пароля."
 
 #: templates/registration/password_reset_done.html:19
 msgid "We've emailed you instructions for setting your password"
@@ -957,6 +964,27 @@ msgstr "Фильтр поиска"
 msgid " Clear all filters"
 msgstr "Очистить фильтр"
 
+#: templates/snippets/footer.html:46
+msgid "Conditions of Use"
+msgstr "Состояние"
+
+#: templates/snippets/footer.html:51
+msgid "Privacy Notice"
+msgstr "Политику Конфиденциальности"
+
+#: templates/snippets/footer.html:56
+msgid "Terms and conditions"
+msgstr "Условия и Положения"
+
+#: templates/snippets/footer.html:64
+msgid "Inc. or its affiliates"
+msgstr ""
+
+#: templates/snippets/pagination.html:40
+#| msgid "Page"
+msgid "Page "
+msgstr "Страница"
+
 #: templates/snippets/right_side_detail.html:20
 msgid "Other user’s ads"
 msgstr "Другие объявления автора"
@@ -967,13 +995,15 @@ msgstr "Электронная почта"
 
 #: templates/snippets/search_bar.html:12
 msgid "type in what you are looking for"
-msgstr ""
+msgstr "текст поиска"
+
+#: templates/snippets/search_bar.html:31
+msgid "location"
+msgstr "местоположение"
 
 #: templates/snippets/search_bar.html:32
-#, fuzzy
-#| msgid "Only Latin characters"
 msgid "only Latin characters"
-msgstr "Только латинские символы"
+msgstr "только латинские символы"
 
 #: zaba/settings.py:183
 msgid "Ukrainian"
@@ -1090,15 +1120,14 @@ msgstr "Английский"
 #~ msgstr "Введите корректный email адрес."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or "
-#~ "hyphens."
+#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
 #~ msgstr ""
 #~ "Введите корректное значение 'slug', который может содержать только буквы, "
 #~ "числа, символы подчеркивания или дефисы."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, "
-#~ "or hyphens."
+#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
+#~ " hyphens."
 #~ msgstr ""
 #~ "Введите корректное значение 'slug', который может содержать только буквы "
 #~ "Unicode, числа, символы подчеркивания или дефисы."
@@ -1135,8 +1164,8 @@ msgstr "Английский"
 #~ "Убедитесь, что это значение содержит не менее чем %(limit_value)d символ "
 #~ "(сейчас %(show_value)d)."
 #~ msgstr[1] ""
-#~ "Убедитесь, что это значение содержит не менее чем %(limit_value)d "
-#~ "символов (сейчас %(show_value)d)."
+#~ "Убедитесь, что это значение содержит не менее чем %(limit_value)d символов "
+#~ "(сейчас %(show_value)d)."
 
 #~ msgid ""
 #~ "Ensure this value has at most %(limit_value)d character (it has "
@@ -1148,8 +1177,8 @@ msgstr "Английский"
 #~ "Убедитесь, что это значение содержит не более чем %(limit_value)d символ "
 #~ "(сейчас %(show_value)d)."
 #~ msgstr[1] ""
-#~ "Убедитесь, что это значение содержит не более чем %(limit_value)d "
-#~ "символов (сейчас %(show_value)d)."
+#~ "Убедитесь, что это значение содержит не более чем %(limit_value)d символов "
+#~ "(сейчас %(show_value)d)."
 
 #~ msgid "Enter a number."
 #~ msgstr "Введите число."
@@ -1169,8 +1198,7 @@ msgstr "Английский"
 #~ msgid ""
 #~ "Ensure that there are no more than %(max)s digit before the decimal point."
 #~ msgid_plural ""
-#~ "Ensure that there are no more than %(max)s digits before the decimal "
-#~ "point."
+#~ "Ensure that there are no more than %(max)s digits before the decimal point."
 #~ msgstr[0] ""
 #~ "Убедитесь, что здесь не более чем %(max)s цифра перед десятичной запятой."
 #~ msgstr[1] ""
@@ -1238,12 +1266,12 @@ msgstr "Английский"
 #~ "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 #~ "format."
 #~ msgstr ""
-#~ "Значение '%(value)s' имеет неверный формат даты. Оно должна быть в "
-#~ "формате YYYY-MM-DD."
+#~ "Значение '%(value)s' имеет неверный формат даты. Оно должна быть в формате "
+#~ "YYYY-MM-DD."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an "
-#~ "invalid date."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+#~ "date."
 #~ msgstr ""
 #~ "Значение '%(value)s' имеет корректный формат (YYYY-MM-DD), но это "
 #~ "недействительна дата."
@@ -1252,18 +1280,18 @@ msgstr "Английский"
 #~ msgstr "Дата (без времени)"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
-#~ "ss[.uuuuuu]][TZ] format."
+#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD "
+#~ "HH:MM[:ss[.uuuuuu]][TZ] format."
 #~ msgstr ""
-#~ "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате "
-#~ "YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
+#~ "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате YYYY-"
+#~ "MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]) but it is an invalid date/time."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD "
+#~ "HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 #~ msgstr ""
-#~ "Значение '%(value)s' имеет верный формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]), но это недействительна дата/время."
+#~ "Значение '%(value)s' имеет верный формат (YYYY-MM-DD "
+#~ "HH:MM[:ss[.uuuuuu]][TZ]), но это недействительна дата/время."
 
 #~ msgid "Date (with time)"
 #~ msgstr "Дата (со временем)"
@@ -1275,8 +1303,8 @@ msgstr "Английский"
 #~ msgstr "Десятичное число"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
-#~ "uuuuuu] format."
+#~ "'%(value)s' value has an invalid format. It must be in [DD] "
+#~ "[HH:[MM:]]ss[.uuuuuu] format."
 #~ msgstr ""
 #~ "Значение '%(value)s' не соответствует формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
@@ -1320,15 +1348,15 @@ msgstr "Английский"
 #~ msgstr "Текст"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[."
-#~ "uuuuuu]] format."
+#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+#~ "format."
 #~ msgstr ""
-#~ "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате HH:"
-#~ "MM[:ss[.uuuuuu]]."
+#~ "Значение '%(value)s' имеет неверный формат. Оно должно быть в формате "
+#~ "HH:MM[:ss[.uuuuuu]]."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
-#~ "an invalid time."
+#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+#~ "invalid time."
 #~ msgstr ""
 #~ "Значение '%(value)s' имеет верный формат (HH:MM[:ss[.uuuuuu]]), но это "
 #~ "недействительное время."
@@ -1410,8 +1438,8 @@ msgstr "Английский"
 #~ "Убедитесь, что это имя файла содержит не более чем %(max)d символ (сейчас "
 #~ "%(length)d)."
 #~ msgstr[1] ""
-#~ "Убедитесь, что это имя файла содержит не более чем %(max)d символов "
-#~ "(сейчас %(length)d)."
+#~ "Убедитесь, что это имя файла содержит не более чем %(max)d символов (сейчас "
+#~ "%(length)d)."
 
 #~ msgid "Please either submit a file or check the clear checkbox, not both."
 #~ msgstr ""
@@ -1425,8 +1453,7 @@ msgstr "Английский"
 #~ "Загрузите правильное изображение. Файл, который вы загрузили, не является "
 #~ "изображением, или является испорченным изображением."
 
-#~ msgid ""
-#~ "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgid "Select a valid choice. %(value)s is not one of the available choices."
 #~ msgstr "Сделайте корректный выбор, %(value)s нет среди вариантов выбора."
 
 #~ msgid "Enter a list of values."
@@ -1463,8 +1490,7 @@ msgstr "Английский"
 #~ msgid "Please correct the duplicate data for %(field)s."
 #~ msgstr "Пожалуйста, исправьте повторяющиеся данные для поля %(field)s."
 
-#~ msgid ""
-#~ "Please correct the duplicate data for %(field)s, which must be unique."
+#~ msgid "Please correct the duplicate data for %(field)s, which must be unique."
 #~ msgstr ""
 #~ "Пожалуйста, исправьте повторяющиеся данные для поля %(field)s, которое "
 #~ "должно быть уникальным."
@@ -1473,8 +1499,8 @@ msgstr "Английский"
 #~ "Please correct the duplicate data for %(field_name)s which must be unique "
 #~ "for the %(lookup)s in %(date_field)s."
 #~ msgstr ""
-#~ "Пожалуйста, исправьте повторяющиеся данные для поля %(field_name)s, "
-#~ "которое должно быть  уникальным для выборки %(lookup)s на %(date_field)s."
+#~ "Пожалуйста, исправьте повторяющиеся данные для поля %(field_name)s, которое "
+#~ "должно быть  уникальным для выборки %(lookup)s на %(date_field)s."
 
 #~ msgid "Please correct the duplicate values below."
 #~ msgstr "Пожалуйста, исправьте повторяющиеся значения ниже."
@@ -1490,8 +1516,8 @@ msgstr "Английский"
 #~ msgstr "\"%(pk)s\" не является допустимым значением."
 
 #~ msgid ""
-#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; "
-#~ "it may be ambiguous or it may not exist."
+#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+#~ "may be ambiguous or it may not exist."
 #~ msgstr ""
 #~ "%(datetime)s не может быть интерпретирована в часовом поясе "
 #~ "%(current_timezone)s; дата может быть неодзначной или оказаться "
@@ -1827,43 +1853,43 @@ msgstr "Английский"
 #~ "Вы видите это сообщение, потому что данный сайт использует защищенное "
 #~ "соединение и требует, чтобы заголовок 'Referer' был передан вашим "
 #~ "браузером,но он не был им передан. Данный заголовок необходим из "
-#~ "соображенийбезопасности, чтобы убедиться, что ваш браузер не был сломан, "
-#~ "а запроссервера не был перехвачен или подменен."
+#~ "соображенийбезопасности, чтобы убедиться, что ваш браузер не был сломан, а "
+#~ "запроссервера не был перехвачен или подменен."
 
 #~ msgid ""
-#~ "If you have configured your browser to disable 'Referer' headers, please "
-#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
-#~ "'same-origin' requests."
+#~ "If you have configured your browser to disable 'Referer' headers, please re-"
+#~ "enable them, at least for this site, or for HTTPS connections, or for 'same-"
+#~ "origin' requests."
 #~ msgstr ""
-#~ "Если вы настроили свой браузер таким образом, чтобы запретить ему "
-#~ "передавать заголовок 'Referer ', пожалуйста, позвольте ему отсылать "
-#~ "данный заголовокпо крайней мере для данного сайта, или для всех HTTPS-"
-#~ "соединений, или для 'same-origin' запросов."
+#~ "Если вы настроили свой браузер таким образом, чтобы запретить ему передавать"
+#~ " заголовок 'Referer ', пожалуйста, позвольте ему отсылать данный заголовокпо"
+#~ " крайней мере для данного сайта, или для всех HTTPS-соединений, или для "
+#~ "'same-origin' запросов."
 
 #~ msgid ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
-#~ "or including the 'Referrer-Policy: no-referrer' header, please remove "
-#~ "them. The CSRF protection requires the 'Referer' header to do strict "
-#~ "referer checking. If you're concerned about privacy, use alternatives "
-#~ "like <a rel=\"noreferrer\" ...> for links to third-party sites."
+#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+#~ " including the 'Referrer-Policy: no-referrer' header, please remove them. "
+#~ "The CSRF protection requires the 'Referer' header to do strict referer "
+#~ "checking. If you're concerned about privacy, use alternatives like <a "
+#~ "rel=\"noreferrer\" ...> for links to third-party sites."
 #~ msgstr ""
-#~ "Если вы используете <meta name=\"referrer\" content=\"no-referrer\"> тег "
-#~ "или в том числе 'Referrer-Policy: no-referrer' заголовок, пожалуйста, "
-#~ "удалите их. Защита CSRF требует заголовка 'Referer', чтобы сделать "
-#~ "строгую refererпроверку. Если вы обеспокоены о конфиденциальности, "
-#~ "используйте альтернативы, такие как <а rel=\"noreferrer\" ...> ссылки на "
-#~ "сторонние сайты. "
+#~ "Если вы используете <meta name=\"referrer\" content=\"no-referrer\"> тег или"
+#~ " в том числе 'Referrer-Policy: no-referrer' заголовок, пожалуйста, удалите "
+#~ "их. Защита CSRF требует заголовка 'Referer', чтобы сделать строгую "
+#~ "refererпроверку. Если вы обеспокоены о конфиденциальности, используйте "
+#~ "альтернативы, такие как <а rel=\"noreferrer\" ...> ссылки на сторонние "
+#~ "сайты. "
 
 #~ msgid ""
 #~ "You are seeing this message because this site requires a CSRF cookie when "
 #~ "submitting forms. This cookie is required for security reasons, to ensure "
 #~ "that your browser is not being hijacked by third parties."
 #~ msgstr ""
-#~ "Вы видите это сообщение, потому что данный сайт требует, чтобы при "
-#~ "отправке форм были отправлены также CSRF-cookie. Данный тип cookie "
-#~ "необходим посоображениям безопасности, чтобы убедиться, что ваш браузер "
-#~ "не был взломан ине выполняет с вашей стороны действий, "
-#~ "запрограммированных третьими лицами."
+#~ "Вы видите это сообщение, потому что данный сайт требует, чтобы при отправке "
+#~ "форм были отправлены также CSRF-cookie. Данный тип cookie необходим "
+#~ "посоображениям безопасности, чтобы убедиться, что ваш браузер не был взломан"
+#~ " ине выполняет с вашей стороны действий, запрограммированных третьими "
+#~ "лицами."
 
 #~ msgid ""
 #~ "If you have configured your browser to disable cookies, please re-enable "
@@ -1891,11 +1917,11 @@ msgstr "Английский"
 #~ msgstr "Неделя не указана"
 
 #~ msgid ""
-#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
-#~ "allow_future is False."
+#~ "Future %(verbose_name_plural)s not available because "
+#~ "%(class_name)s.allow_future is False."
 #~ msgstr ""
-#~ "Будущие %(verbose_name_plural)s недоступны, так как %(class_name)s."
-#~ "allow_future имеет нулевое значение."
+#~ "Будущие %(verbose_name_plural)s недоступны, так как "
+#~ "%(class_name)s.allow_future имеет нулевое значение."
 
 #~ msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
 #~ msgstr "Недействительна дата '%(datestr)s' для формата '%(format)s'"
@@ -1926,26 +1952,24 @@ msgstr "Английский"
 
 #~ msgid ""
 #~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
-#~ "%(version)s"
+#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 #~ msgstr ""
-#~ "Просмотр <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/"
-#~ "\" target=\"_blank\" rel=\"noopener\">release notes</a> для Django "
-#~ "%(version)s"
+#~ "Просмотр <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\""
+#~ " target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
 
 #~ msgid "The install worked successfully! Congratulations!"
 #~ msgstr "Установки успешно работали! Поздравляем!"
 
 #~ msgid ""
-#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
-#~ "any URLs."
+#~ "You are seeing this page because <a "
+#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+#~ "and you have not configured any URLs."
 #~ msgstr ""
-#~ "Вы видите эту страницу, так как <a href =\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target = \"_blank\" rel =\"noopener"
-#~ "\" > DEBUG = True</a> находится в файле настроек и вы не настроили ни "
-#~ "один URLs."
+#~ "Вы видите эту страницу, так как <a href "
+#~ "=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+#~ "target = \"_blank\" rel =\"noopener\" > DEBUG = True</a> находится в файле "
+#~ "настроек и вы не настроили ни один URLs."
 
 #~ msgid "Django Documentation"
 #~ msgstr "Django Документация"
@@ -2339,8 +2363,8 @@ msgstr "Английский"
 
 #~ msgid "``language_code`` is optional with ``reversed`` set to True only."
 #~ msgstr ""
-#~ "``Language_code`` не является обязательным с ``reversed`` установлено "
-#~ "только значение True."
+#~ "``Language_code`` не является обязательным с ``reversed`` установлено только"
+#~ " значение True."
 
 #~ msgid "Can't detect language for the text \"%s\" given."
 #~ msgstr "Невозможно определить язык текста \"%s\" который дано."

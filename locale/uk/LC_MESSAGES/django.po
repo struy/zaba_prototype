@@ -8,16 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 16:18-0500\n"
-"PO-Revision-Date: 2021-08-11 03:42+0000\n"
+"POT-Creation-Date: 2021-08-22 20:17-0500\n"
+"PO-Revision-Date: 2021-08-23 01:24+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
@@ -110,7 +109,7 @@ msgstr "Редагування облікового запису"
 
 #: apps/accounts/templates/accounts/edit.html:24
 msgid "Upload image"
-msgstr ""
+msgstr "Завантажити зображення"
 
 #: apps/accounts/templates/accounts/edit.html:30
 #: templates/registration/password_change_done.html:7
@@ -262,7 +261,7 @@ msgstr "Товари"
 msgid "Map"
 msgstr "Карта"
 
-#: apps/adverts/templates/adverts/map.html:30 templates/home.html:112
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:114
 #: templates/place_ad.html:49
 msgid "Sell"
 msgstr "Продаж"
@@ -274,14 +273,14 @@ msgstr "Продаж"
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: apps/rents/templates/rents/index.html:11 templates/home.html:123
 #: templates/place_ad.html:55
 msgid "Jobs"
 msgstr "Робота"
 
 #: apps/adverts/templates/adverts/map.html:36
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:133
 #: templates/place_ad.html:62 templates/search.html:98
 msgid "Rent"
 msgstr "Оренда"
@@ -292,12 +291,13 @@ msgstr "Оренда"
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+#: apps/services/templates/services/service_list.html:6
+#: templates/home.html:141
 msgid "Services"
 msgstr "Послуги"
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:141 templates/place_ad.html:68
+#: templates/home.html:151 templates/place_ad.html:68
 msgid "Cats"
 msgstr "Котики"
 
@@ -403,7 +403,7 @@ msgstr "В гарному стані"
 msgid "Like New"
 msgstr "Як Нові"
 
-#: apps/items/models.py:16 templates/home.html:245
+#: apps/items/models.py:16 templates/home.html:255
 msgid "New"
 msgstr "Нові"
 
@@ -430,11 +430,11 @@ msgstr "Мапа товарів"
 
 #: apps/items/templates/items/item_map_list.html:29
 msgid "to 2 weeks"
-msgstr ""
+msgstr "до 2-х тижнів"
 
 #: apps/items/templates/items/item_map_list.html:30
 msgid "2 weeks - 12 weeks"
-msgstr ""
+msgstr "2-12 тижнів "
 
 #: apps/items/templates/items/table.html:10
 msgid "List of items"
@@ -496,8 +496,6 @@ msgstr "Видалити роботу"
 
 #: apps/jobs/templates/jobs/job_map_list.html:5
 #: apps/jobs/templates/jobs/job_map_list.html:13
-#, fuzzy
-#| msgid "Map of Gifts"
 msgid "Map of Jobs"
 msgstr "Карта подарунків"
 
@@ -507,7 +505,7 @@ msgstr "ім'я"
 
 #: apps/promotions/models.py:25
 msgid "Header"
-msgstr ""
+msgstr "Шапка"
 
 #: apps/promotions/models.py:26
 msgid "Right Sidebar"
@@ -604,8 +602,6 @@ msgstr "Вибір статі"
 #: apps/rents/templates/rents/rent_map_list.html:5
 #: apps/rents/templates/rents/rent_map_list.html:13
 #: apps/rents/templates/rents/rent_map_list.html:27
-#, fuzzy
-#| msgid "Map of Gifts"
 msgid "Map of Rents"
 msgstr "Карта подарунків"
 
@@ -676,10 +672,8 @@ msgstr "Видалити послугу"
 #: apps/services/templates/services/service_map_list.html:5
 #: apps/services/templates/services/service_map_list.html:13
 #: apps/services/templates/services/service_map_list.html:27
-#, fuzzy
-#| msgid "Term of Services"
 msgid "Map of Services"
-msgstr "Умови надання послуг"
+msgstr "Карта Послуг"
 
 #: apps/shop/templates/shop/product/checkout.html:6
 msgid "Checkout"
@@ -726,18 +720,6 @@ msgstr "Додати Оголошення"
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Зауваження! Оголошення відображаються тільки на вибраній мові."
 
-#: templates/base.html:251
-msgid "Conditions of Use"
-msgstr "Умови використання"
-
-#: templates/base.html:256
-msgid "Privacy Notice"
-msgstr "Політику Конфіденційності"
-
-#: templates/base.html:261
-msgid "Terms and conditions"
-msgstr "Правила та умови"
-
 #: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
@@ -769,11 +751,32 @@ msgstr "Основні"
 msgid "Categories"
 msgstr "Категорії"
 
-#: templates/home.html:158
+#: templates/home.html:111
+msgid "offer for sale"
+msgstr "продам"
+
+#: templates/home.html:120
+msgid "offering a job"
+msgstr "пропоную роботу"
+
+#: templates/home.html:130
+msgid "space for rent"
+msgstr "здам в оренду"
+
+#: templates/home.html:138
+#| msgid "Map of Services"
+msgid "provide services"
+msgstr "Карта Послуг"
+
+#: templates/home.html:148
+msgid "give away"
+msgstr "віддам безкоштовно"
+
+#: templates/home.html:168
 msgid "Popular"
 msgstr "Популярні"
 
-#: templates/home.html:159 templates/home.html:246
+#: templates/home.html:169 templates/home.html:256
 msgid "Ads"
 msgstr "Оголошення"
 
@@ -814,7 +817,8 @@ msgstr "Ввійти повторно"
 
 #: templates/registration/login.html:36
 msgid "Your username and password didn't match. Please try again."
-msgstr "Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
+msgstr ""
+"Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
 
 #: templates/registration/login.html:44
 #: templates/registration/password_reset_form.html:24
@@ -952,6 +956,27 @@ msgstr "Фільтр пошуку"
 msgid " Clear all filters"
 msgstr "Очистити фільтр"
 
+#: templates/snippets/footer.html:46
+msgid "Conditions of Use"
+msgstr "Умови використання"
+
+#: templates/snippets/footer.html:51
+msgid "Privacy Notice"
+msgstr "Політику Конфіденційності"
+
+#: templates/snippets/footer.html:56
+msgid "Terms and conditions"
+msgstr "Правила та умови"
+
+#: templates/snippets/footer.html:64
+msgid "Inc. or its affiliates"
+msgstr ""
+
+#: templates/snippets/pagination.html:40
+#| msgid "Page"
+msgid "Page "
+msgstr "Cторінка"
+
 #: templates/snippets/right_side_detail.html:20
 msgid "Other user’s ads"
 msgstr "Інші оголошення автора"
@@ -962,11 +987,13 @@ msgstr "електрона скринька"
 
 #: templates/snippets/search_bar.html:12
 msgid "type in what you are looking for"
-msgstr ""
+msgstr "текст пошуку"
+
+#: templates/snippets/search_bar.html:31
+msgid "location"
+msgstr "місцеположення"
 
 #: templates/snippets/search_bar.html:32
-#, fuzzy
-#| msgid "Only Latin characters"
 msgid "only Latin characters"
 msgstr "Тільки латинські символи"
 
@@ -987,8 +1014,7 @@ msgid "English"
 msgstr "Англійська"
 
 #~ msgid "You can edit your account using the following form:"
-#~ msgstr ""
-#~ "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
+#~ msgstr "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
 
 #~ msgid "Create my account"
 #~ msgstr "Створити свій обліковий запис"
@@ -1086,15 +1112,14 @@ msgstr "Англійська"
 #~ msgstr "Введіть коректну email адресу."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or "
-#~ "hyphens."
+#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери, числа, "
 #~ "символи підкреслювання та дефіси."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, "
-#~ "or hyphens."
+#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
+#~ " hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери Unicode, "
 #~ "числа, символи підкреслювання або дефіси."
@@ -1166,8 +1191,7 @@ msgstr "Англійська"
 #~ msgid ""
 #~ "Ensure that there are no more than %(max)s digit before the decimal point."
 #~ msgid_plural ""
-#~ "Ensure that there are no more than %(max)s digits before the decimal "
-#~ "point."
+#~ "Ensure that there are no more than %(max)s digits before the decimal point."
 #~ msgstr[0] ""
 #~ "Переконайтеся, що тут не більше ніж %(max)s цифра до десяткової коми."
 #~ msgstr[1] ""
@@ -1235,12 +1259,12 @@ msgstr "Англійська"
 #~ "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 #~ "format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у "
-#~ "форматі YYYY-MM-DD."
+#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у форматі "
+#~ "YYYY-MM-DD."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an "
-#~ "invalid date."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+#~ "date."
 #~ msgstr ""
 #~ "Значення '%(value)s' має коректний формат (YYYY-MM-DD), але це недійсна "
 #~ "дата."
@@ -1249,18 +1273,18 @@ msgstr "Англійська"
 #~ msgstr "Дата (без часу)"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
-#~ "ss[.uuuuuu]][TZ] format."
+#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD "
+#~ "HH:MM[:ss[.uuuuuu]][TZ] format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
-#~ "YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі YYYY-"
+#~ "MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]) but it is an invalid date/time."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD "
+#~ "HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 #~ msgstr ""
-#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-#~ "[TZ]), але це недійсна дата/час."
+#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]),"
+#~ " але це недійсна дата/час."
 
 #~ msgid "Date (with time)"
 #~ msgstr "Дата (з часом)"
@@ -1272,8 +1296,8 @@ msgstr "Англійська"
 #~ msgstr "Десяткове число"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
-#~ "uuuuuu] format."
+#~ "'%(value)s' value has an invalid format. It must be in [DD] "
+#~ "[HH:[MM:]]ss[.uuuuuu] format."
 #~ msgstr ""
 #~ "Значення '%(value)s' не відповідає формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
@@ -1317,15 +1341,15 @@ msgstr "Англійська"
 #~ msgstr "Текст"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[."
-#~ "uuuuuu]] format."
+#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+#~ "format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі HH:"
-#~ "MM[:ss[.uuuuuu]]."
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
+#~ "HH:MM[:ss[.uuuuuu]]."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
-#~ "an invalid time."
+#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+#~ "invalid time."
 #~ msgstr ""
 #~ "Значення '%(value)s' має вірний формат (HH:MM[:ss[.uuuuuu]]), але це "
 #~ "недійсний час."
@@ -1404,8 +1428,8 @@ msgstr "Англійська"
 #~ msgid_plural ""
 #~ "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 #~ msgstr[0] ""
-#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. "
-#~ "(зараз %(length)d)."
+#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. (зараз"
+#~ " %(length)d)."
 #~ msgstr[1] ""
 #~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символів. "
 #~ "(зараз %(length)d)."
@@ -1422,8 +1446,7 @@ msgstr "Англійська"
 #~ "Завантажте правильне зображення. Файл, який ви завантажили, не є "
 #~ "зображенням, або є зіпсованим зображенням."
 
-#~ msgid ""
-#~ "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgid "Select a valid choice. %(value)s is not one of the available choices."
 #~ msgstr "Зробіть коректний вибір, %(value)s немає серед варіантів вибору."
 
 #~ msgid "Enter a list of values."
@@ -1460,8 +1483,7 @@ msgstr "Англійська"
 #~ msgid "Please correct the duplicate data for %(field)s."
 #~ msgstr "Будь ласка, виправте повторювані дані для поля %(field)s."
 
-#~ msgid ""
-#~ "Please correct the duplicate data for %(field)s, which must be unique."
+#~ msgid "Please correct the duplicate data for %(field)s, which must be unique."
 #~ msgstr ""
 #~ "Будь ласка, виправте повторювані дані для поля %(field)s, яке має бути "
 #~ "унікальним."
@@ -1470,8 +1492,8 @@ msgstr "Англійська"
 #~ "Please correct the duplicate data for %(field_name)s which must be unique "
 #~ "for the %(lookup)s in %(date_field)s."
 #~ msgstr ""
-#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має "
-#~ "бути унікальним для вибірки %(lookup)s на %(date_field)s."
+#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має бути "
+#~ "унікальним для вибірки %(lookup)s на %(date_field)s."
 
 #~ msgid "Please correct the duplicate values below."
 #~ msgstr "Будь ласка, виправте повторювані значення нижче."
@@ -1487,8 +1509,8 @@ msgstr "Англійська"
 #~ msgstr "\"%(pk)s\" не є допустимим значенням."
 
 #~ msgid ""
-#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; "
-#~ "it may be ambiguous or it may not exist."
+#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+#~ "may be ambiguous or it may not exist."
 #~ msgstr ""
 #~ "%(datetime)s не може бути інтерпретована в часовому поясі "
 #~ "%(current_timezone)s; дата може бути неодзначною або виявитись неіснуючою."
@@ -1823,32 +1845,32 @@ msgstr "Англійська"
 #~ "Ви бачите це повідомлення, тому що даний сайт використовує захищене "
 #~ "з'єднання і вимагає, щоб заголовок 'Referer' був переданий вашим "
 #~ "браузером,але він не був їм переданий. Даний заголовок необхідний з "
-#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а "
-#~ "запит досерверу не був перехоплений або підмінений."
+#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а запит "
+#~ "досерверу не був перехоплений або підмінений."
 
 #~ msgid ""
-#~ "If you have configured your browser to disable 'Referer' headers, please "
-#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
-#~ "'same-origin' requests."
+#~ "If you have configured your browser to disable 'Referer' headers, please re-"
+#~ "enable them, at least for this site, or for HTTPS connections, or for 'same-"
+#~ "origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому "
-#~ "передавати заголовок 'Referer', будь ласка, дозвольте йому відсилати "
-#~ "даний заголовок принаймні для даного сайту, або для всіх HTTPS-з'єднань, "
-#~ "або для 'same-origin' запитів."
+#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому передавати"
+#~ " заголовок 'Referer', будь ласка, дозвольте йому відсилати даний заголовок "
+#~ "принаймні для даного сайту, або для всіх HTTPS-з'єднань, або для 'same-"
+#~ "origin' запитів."
 
 #~ msgid ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
-#~ "or including the 'Referrer-Policy: no-referrer' header, please remove "
-#~ "them. The CSRF protection requires the 'Referer' header to do strict "
-#~ "referer checking. If you're concerned about privacy, use alternatives "
-#~ "like <a rel=\"noreferrer\" ...> for links to third-party sites."
+#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+#~ " including the 'Referrer-Policy: no-referrer' header, please remove them. "
+#~ "The CSRF protection requires the 'Referer' header to do strict referer "
+#~ "checking. If you're concerned about privacy, use alternatives like <a "
+#~ "rel=\"noreferrer\" ...> for links to third-party sites."
 #~ msgstr ""
-#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> "
-#~ "тег або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-"
-#~ "ласка, видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити "
-#~ "сувору referer перевірку. Якщо ви стурбовані про конфіденційність, "
-#~ "використовуйте альтернативи, такі як <а rel=\"noreferrer\" ...> посилання "
-#~ "на сторонні сайти."
+#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> тег "
+#~ "або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-ласка, "
+#~ "видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити сувору "
+#~ "referer перевірку. Якщо ви стурбовані про конфіденційність, використовуйте "
+#~ "альтернативи, такі як <а rel=\"noreferrer\" ...> посилання на сторонні "
+#~ "сайти."
 
 #~ msgid ""
 #~ "You are seeing this message because this site requires a CSRF cookie when "
@@ -1864,9 +1886,8 @@ msgstr "Англійська"
 #~ "If you have configured your browser to disable cookies, please re-enable "
 #~ "them, at least for this site, or for 'same-origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, "
-#~ "повторно включіть їх принаймі на цьому сайті або для 'same-origin' "
-#~ "запитів."
+#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, повторно"
+#~ " включіть їх принаймі на цьому сайті або для 'same-origin' запитів."
 
 #~ msgid "More information is available with DEBUG=True."
 #~ msgstr "Більше інформації можна отримати при DEBUG=True."
@@ -1887,11 +1908,11 @@ msgstr "Англійська"
 #~ msgstr "Тиждень не вказано"
 
 #~ msgid ""
-#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
-#~ "allow_future is False."
+#~ "Future %(verbose_name_plural)s not available because "
+#~ "%(class_name)s.allow_future is False."
 #~ msgstr ""
-#~ "Майбутні %(verbose_name_plural)s недоступні, тому що %(class_name)s."
-#~ "allow_future має нульове значення."
+#~ "Майбутні %(verbose_name_plural)s недоступні, тому що "
+#~ "%(class_name)s.allow_future має нульове значення."
 
 #~ msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
 #~ msgstr "Недійсна дата '%(datestr)s' для формату '%(format)s'"
@@ -1922,26 +1943,24 @@ msgstr "Англійська"
 
 #~ msgid ""
 #~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
-#~ "%(version)s"
+#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 #~ msgstr ""
-#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/"
-#~ "\" target=\"_blank\" rel=\"noopener\">release notes</a> для Django "
-#~ "%(version)s"
+#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\""
+#~ " target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
 
 #~ msgid "The install worked successfully! Congratulations!"
 #~ msgstr "Встановлення успішно працювали! Вітаємо!"
 
 #~ msgid ""
-#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
-#~ "any URLs."
+#~ "You are seeing this page because <a "
+#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+#~ "and you have not configured any URLs."
 #~ msgstr ""
-#~ "Ви бачите цю сторінку, тому що <a href=\"https://docs.djangoproject.com/"
-#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-#~ "\">DEBUG=True</a> знаходиться в файлі налаштувань і ви не налаштували "
-#~ "жодної URL."
+#~ "Ви бачите цю сторінку, тому що <a "
+#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> знаходиться в файлі "
+#~ "налаштувань і ви не налаштували жодної URL."
 
 #~ msgid "Django Documentation"
 #~ msgstr "Django Документація"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-21 16:18-0500\n"
+"POT-Creation-Date: 2021-08-22 20:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
-#: apps/adverts/templates/adverts/map.html:30 templates/home.html:112
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:114
 #: templates/place_ad.html:49
 msgid "Sell"
 msgstr ""
@@ -272,14 +272,14 @@ msgstr ""
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:119
+#: apps/rents/templates/rents/index.html:11 templates/home.html:123
 #: templates/place_ad.html:55
 msgid "Jobs"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:36
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:127
+#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:133
 #: templates/place_ad.html:62 templates/search.html:98
 msgid "Rent"
 msgstr ""
@@ -290,12 +290,12 @@ msgstr ""
 #: apps/services/templates/services/index.html:16
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:133
+#: apps/services/templates/services/service_list.html:6 templates/home.html:141
 msgid "Services"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:141 templates/place_ad.html:68
+#: templates/home.html:151 templates/place_ad.html:68
 msgid "Cats"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgstr ""
 msgid "Like New"
 msgstr ""
 
-#: apps/items/models.py:16 templates/home.html:245
+#: apps/items/models.py:16 templates/home.html:255
 msgid "New"
 msgstr ""
 
@@ -716,18 +716,6 @@ msgstr ""
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr ""
 
-#: templates/base.html:251
-msgid "Conditions of Use"
-msgstr ""
-
-#: templates/base.html:256
-msgid "Privacy Notice"
-msgstr ""
-
-#: templates/base.html:261
-msgid "Terms and conditions"
-msgstr ""
-
 #: templates/cookielaw/banner.html:10
 msgid ""
 "By using our site, you acknowledge that you have read and understand our"
@@ -759,11 +747,31 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: templates/home.html:158
+#: templates/home.html:111
+msgid "offer for sale"
+msgstr ""
+
+#: templates/home.html:120
+msgid "offering a job"
+msgstr ""
+
+#: templates/home.html:130
+msgid "space for rent"
+msgstr ""
+
+#: templates/home.html:138
+msgid "provide services"
+msgstr ""
+
+#: templates/home.html:148
+msgid "give away"
+msgstr ""
+
+#: templates/home.html:168
 msgid "Popular"
 msgstr ""
 
-#: templates/home.html:159 templates/home.html:246
+#: templates/home.html:169 templates/home.html:256
 msgid "Ads"
 msgstr ""
 
@@ -937,6 +945,26 @@ msgstr ""
 msgid " Clear all filters"
 msgstr ""
 
+#: templates/snippets/footer.html:46
+msgid "Conditions of Use"
+msgstr ""
+
+#: templates/snippets/footer.html:51
+msgid "Privacy Notice"
+msgstr ""
+
+#: templates/snippets/footer.html:56
+msgid "Terms and conditions"
+msgstr ""
+
+#: templates/snippets/footer.html:64
+msgid "Inc. or its affiliates"
+msgstr ""
+
+#: templates/snippets/pagination.html:40
+msgid "Page "
+msgstr ""
+
 #: templates/snippets/right_side_detail.html:20
 msgid "Other user’s ads"
 msgstr ""
@@ -947,6 +975,10 @@ msgstr ""
 
 #: templates/snippets/search_bar.html:12
 msgid "type in what you are looking for"
+msgstr ""
+
+#: templates/snippets/search_bar.html:31
+msgid "location"
 msgstr ""
 
 #: templates/snippets/search_bar.html:32

@@ -35,6 +35,14 @@
                 <form action="" method="post" class="col-md-11 col-12 pl-0">
                     {{ user_form|crispy }}
                     {% csrf_token %}
+                    <div class="row">
+                        <div class="col-12">
+                            <p>
+                                {% trans 'By creating an account and clicking "Submit,"' %}
+                                {% trans 'I agree to the Terms of Use and understand my information will be used as described in the Privacy Policy.' %}
+                            </p>
+                        </div>
+                    </div>
                     <div class="row register">
                         <div class="col-6">
                             <input type="submit" class="btn btn-success submit mb-5" value={% trans "Create" %}>

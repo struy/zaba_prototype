@@ -685,12 +685,50 @@ i.fas.fa-paw {
 .bg-color-base {
   background-color: #749B27;
 }
+.bg-color-sell:hover {
+  background-color: #d6e7ff!important;
+}
+.bg-color-jobs:hover {
+  background-color: #ffc480!important;
+}
+.bg-color-services:hover {
+  background-color: #ede4f6!important;
+}
+.bg-color-housing:hover {
+  background-color: #ffe999!important;
+}
+.bg-color-sell:active {
+  background-color: #d6e7ff!important;
+}
+.bg-color-jobs:active {
+  background-color: #ffc480!important;
+}
+.bg-color-services:active {
+  background-color: #ede4f6!important;
+}
+.bg-color-housing:active {
+  background-color: #ffe999!important;
+}
+
 
 /* place ad */
 #dropdownMenuLink:hover {
   background-color: #749b27;
   color: #FFFFFF;
 }
+#dropdownMenuLink {
+  max-width: 25%;
+  margin: 0 auto;
+  padding: 0.5rem;
+} 
+.dropdown-menu {
+  left: 50% !important;
+  top: 35px!important;
+  text-align: center;
+  transform: translate(-50%, 0)!important;
+}
+
+
 
 /*JOB*/
 .job_title {
@@ -890,15 +928,19 @@ form.new-edit .gj-datepicker-bootstrap {
 .with-menu .sub-menu a {
   color: black;
 }
-
-.dropdown-item:focus, .dropdown-item:hover {
-  background-color: unset;
+.dropdown-item {
+  margin: .25rem;
+  border-radius: 10px;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+/* .dropdown-item:focus, .dropdown-item:hover {
+  background-color: unset;
+} */
+
+/* .dropdown-item.active, .dropdown-item:active {
   background-color: unset;
   color: #000;
-}
+} */
 
 .dropdown-menu {
   background-color: #f4f5f6;

@@ -19,11 +19,17 @@
   #google_ads {
     margin-top: 50px;
   }
+  
 }
 
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-}
+/*Large devices (desktops, 992px and up)*/
+// @media (min-width: 991.98px) {
+//   #dropdownMenuLink {
+//     max-width: 50%;
+//     margin: 0 auto;
+// }
+// }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
@@ -168,10 +174,10 @@
     margin: 10px auto;
     max-width: 80%;
   }
-  #dropdownMenuLink {
-    width: 80%;
-    margin: 0 auto;
-}
+//   #main #dropdownMenuLink {
+//     width: 80%;
+//     margin: 0 auto;
+// }
 }
 
 /*Small devices (landscape phones, less than 768px)*/
@@ -204,6 +210,15 @@
       font-size: 18px;
       padding: 10px 20px 20px;
     }
+    
+  }
+  #dropdownMenuLink {
+    max-width: 50%;
+    margin: 0 auto;
+   
+  } 
+  .dropdown-menu {
+    top: 70px!important;
   }
 
   .list-ads-user .item .image {

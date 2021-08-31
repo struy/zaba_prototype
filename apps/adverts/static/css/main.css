@@ -697,6 +697,9 @@ i.fas.fa-paw {
 .bg-color-housing:hover {
   background-color: #ffe999!important;
 }
+.bg-color-cats:hover {
+  background-color: #d8e7bb!important;
+}
 .bg-color-sell:active {
   background-color: #d6e7ff!important;
 }
@@ -708,6 +711,9 @@ i.fas.fa-paw {
 }
 .bg-color-housing:active {
   background-color: #ffe999!important;
+}
+.bg-color-cats:active {
+  background-color: #d8e7bb!important;
 }
 
 
@@ -723,7 +729,7 @@ i.fas.fa-paw {
 } 
 .dropdown-menu {
   left: 50% !important;
-  top: 35px!important;
+  top: 50px!important;
   text-align: center;
   transform: translate(-50%, 0)!important;
 }

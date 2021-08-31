@@ -54,20 +54,26 @@
                                 <img src="{% static 'img/icon-Job.svg' %}" alt="jobs">
                                 <span>{% trans "Jobs" %}</span>
                             </a>                    
-                         </div>
+                    </div>
                     
                     <div class="col-12  p-0">
                         <a href="{% url 'rents:new' %}" class="dropdown-item text-center bg-color-housing">
                                 <img src="{% static 'img/icon-RealEstate.svg' %}" alt="housing">
                                 <span>{% trans "Rent" %}</span>
                             </a>                    
-                         </div>
-                                            <div class="col-12  p-0">
+                    </div>
+                    <div class="col-12  p-0">
                         <a href=" {% url 'services:new' %}" class="dropdown-item text-center bg-color-services">
                                 <img src="{% static 'img/icon-Services.svg' %}" alt="services">
                                 <span> {% trans "Services" %}</span>
                             </a>                    
-                 </div>
+                    </div>
+                     <div class="col-12  p-0">
+                       <a href="{% url 'gifts:new' %}" class="dropdown-item text-center bg-color-cats">
+                                <img src="{% static 'img/icon-Pets.svg' %}" alt="cats">
+                                <span>{% trans "Cats" %} </span>
+                        </a>
+                    </div>
                     </div>
                          </div>
 

@@ -184,10 +184,7 @@
     margin: 10px auto;
     max-width: 80%;
   }
-  #dropdownMenuLink {
-    max-width: 43%;
-} 
-
+  
 
   
 }
@@ -447,6 +444,12 @@
   .grey-back {
     padding: 0;
   }
+}
+/*Small devices (landscape phones, 300px-600px)*/
+@media (min-width: 220px) and (max-width: 600px) {
+#dropdownMenuLink {
+max-width: 220px;
+} 
 }
 
 /*# sourceMappingURL=media.css.map */

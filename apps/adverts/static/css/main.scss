@@ -818,6 +818,9 @@ i.fas.fa-paw {
 .bg-color-housing:hover {
   background-color: #ffe999!important;
 }
+.bg-color-cats:hover {
+  background-color: #d8e7bb!important;
+}
 .bg-color-sell:active {
   background-color: #d6e7ff!important;
 }
@@ -829,6 +832,23 @@ i.fas.fa-paw {
 }
 .bg-color-housing:active {
   background-color: #ffe999!important;
+.bg-color-cats:active {
+    background-color: #d8e7bb!important;
+  }
+}.bg-color-sell:focus {
+  background-color: #d6e7ff!important;
+}
+.bg-color-jobs:focus {
+  background-color: #ffc480!important;
+}
+.bg-color-services:focus {
+  background-color: #ede4f6!important;
+}
+.bg-color-housing:focus {
+  background-color: #ffe999!important;
+}
+.bg-color-cats:focus {
+  background-color: #d8e7bb!important;
 }
 
 

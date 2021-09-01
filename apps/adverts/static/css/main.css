@@ -715,6 +715,22 @@ i.fas.fa-paw {
 .bg-color-cats:active {
   background-color: #d8e7bb!important;
 }
+.bg-color-sell:focus {
+  background-color: #d6e7ff!important;
+}
+.bg-color-jobs:focus {
+  background-color: #ffc480!important;
+}
+.bg-color-services:focus {
+  background-color: #ede4f6!important;
+}
+.bg-color-housing:focus {
+  background-color: #ffe999!important;
+}
+.bg-color-cats:focus {
+  background-color: #d8e7bb!important;
+}
+
 
 
 /* place ad */

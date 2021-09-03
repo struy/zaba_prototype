@@ -194,6 +194,11 @@
   #dropdownMenuLink {
     max-width: 43%;
 } 
+.dropdown-item img {
+  float: none;
+  display: none;
+ 
+}
 
 
 

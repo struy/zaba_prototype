@@ -862,6 +862,7 @@ i.fas.fa-paw {
   max-width: 25%;
   margin: 0 auto;
   padding: 0.5rem;
+  font-weight: 500;
 } 
 .dropdown-menu {
   left: 50% !important;
@@ -1088,17 +1089,18 @@ form.new-edit {
   }
 }
 .dropdown-item {
+  width: 90%;
   margin: .25rem;
   border-radius: 10px;
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+transition: all 0.3s ease-in-out;
+font-weight: 500;
 }
-// .dropdown-item:focus, .dropdown-item:hover {
-//   background-color: unset;
-// }
+.dropdown-item img {
+  float: left;
+  margin-top: 10px;
+}
 
-// .dropdown-item.active, .dropdown-item:active {
-//   background-color: unset;
-//   color: #000;
-// }
 .dropdown-menu {
   background-color: #f4f5f6;
   border: none;

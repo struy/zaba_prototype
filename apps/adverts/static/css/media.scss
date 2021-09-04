@@ -19,11 +19,13 @@
   #google_ads {
     margin-top: 50px;
   }
+  
 }
 
 /*Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-}
+/*Large devices (desktops, 992px and up)*/
+// @media (min-width: 991.98px) {
+
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
@@ -153,7 +155,15 @@
     width: 3em;
     height: 2em;
   }
-
+  .image-advert {
+    width: 100%;
+    max-height: 130px;
+    max-width: 180px;
+  }
+  #dropdownMenuLink {
+    max-width: 32%;
+    margin: 0 auto;
+} 
 }
 
 @media (max-width: 390px) {
@@ -168,17 +178,12 @@
     margin: 10px auto;
     max-width: 80%;
   }
-  #dropdownMenuLink {
-    width: 80%;
-    margin: 0 auto;
-}
+ 
 }
 
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
-  #main .home a {
-    font-size: 2em;
-  }
+
   header .favorites i {
     font-size: 24px;
   }
@@ -204,7 +209,16 @@
       font-size: 18px;
       padding: 10px 20px 20px;
     }
-  }
+}
+  #dropdownMenuLink {
+    max-width: 43%;
+} 
+.dropdown-item img {
+  float: none;
+  display: none;
+}
+
+ 
 
   .list-ads-user .item .image {
     background-size: cover;
@@ -393,11 +407,7 @@
 
 /*Medium devices (tablets, 768px and up)*/
 @media (max-width: 991.98px) {
-  .image-advert {
-    width: 100%;
-    max-height: 130px;
-    max-width: 180px;
-  }
+  
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -410,6 +420,7 @@
   .corner-item {
     left: 15px;
   }
+
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -437,6 +448,12 @@
   }
   .grey-back {
     padding: 0;
+  }
+  /*Small devices (landscape phones, 300px-600px)*/
+@media (min-width: 220px) and (max-width: 600px) {
+  #dropdownMenuLink {
+  max-width: 220px;
+  } 
   }
 }
 

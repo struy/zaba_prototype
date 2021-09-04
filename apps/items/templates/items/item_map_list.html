@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load staticfiles %}
+{% load static %}
 
 {% block title %}
     {% trans "Items" %}
 {% endblock %}
 
 {% block breadcrumbs %}
-    <li class="breadcrumb-item">
-        <a href="/">{% trans "Home" %}</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-        {% trans "Map of Items" %}
-    </li>
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">  {% trans "Map of Items" %}  </li>
+    <li class="breadcrumb-item "><a href="javascript: history.go(-1)">{% trans "Back" %}</a></li>
 {% endblock %}
 
 
@@ -21,12 +20,42 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="container">
         <div class="row">
-            <div class="offset-md-1 col-md-10">
+            <div class="col-12">
+
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'items:index' %}" class="btn btn-secondary">
+                            <i class="fas fa-lg fa-equals text-white"></i>
+                        </a>
+                        <a href="{% url 'items:table' %}" class="btn btn-secondary d-none d-md-block">
+                            <i class="fas fa-lg fa-table text-white"></i>
+                        </a>
+                        <a href="{% url 'items:map' %}" class="btn btn-secondary active">
+                            <i class="fas fa-lg fa-map-marker-alt text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="d-none d-md-block col-md-2">
+                <div class="item">
+                    <img src="{% static 'img/test/WS2_160x600.jpeg' %}" alt="WS2">
+                    <img src="{% static 'img/test/WS160x600.jpeg' %}" alt="WS">
+                </div>
+            </div>
+            <div class="col-12 col-md-10">
                 <h1>Map of Items</h1>
                 <br>
-                 <span class="p-1" style="background-color:#2AAD27; color: white">{% trans "to 2 weeks" %}</span>
+                <span class="p-1" style="background-color:#2AAD27; color: white">{% trans "to 2 weeks" %}</span>
                 <span class="p-1" style="background-color:gray; color: white">{% trans "2 weeks - 12 weeks" %}</span>
                 <br>
                 <br>
@@ -34,11 +63,11 @@
             </div>
         </div>
     </div>
+
 {% endblock %}
 
 
 {% block script %}
-
     <script src="//unpkg.com/leaflet/dist/leaflet.js"></script>
     {% include "snippets/js/leaflet-map-list-js.html" %}
 {% endblock %}

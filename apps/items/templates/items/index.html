@@ -19,6 +19,29 @@
 {% block content %}
     {% include 'snippets/filter.html' %}
 
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'items:index' %}" class="btn btn-secondary active">
+                            <i class="fas fa-lg fa-equals text-white"></i>
+                        </a>
+                        <a href="{% url 'items:table' %}" class="btn btn-secondary d-none d-md-block">
+                            <i class="fas fa-lg fa-table text-white"></i>
+                        </a>
+                        <a href="{% url 'items:map' %}" class="btn btn-secondary">
+                            <i class="fas fa-lg fa-map-marker-alt text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div class="grey-back">
         <div class="container mt-4  list-ads-user">
             <div class="row">

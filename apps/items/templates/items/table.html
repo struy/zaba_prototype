@@ -10,6 +10,14 @@
     {% trans "List of items" %}
 {% endblock %}
 
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
+    <li class="breadcrumb-item "><a href="javascript: history.go(-1)">{% trans "Back" %}</a></li>
+{% endblock %}
+
+
+
 {% block content %}
     {% if filter %}
         {% with  filter as filters %}
@@ -20,8 +28,31 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'items:index' %}" class="btn btn-secondary ">
+                            <i class="fas fa-lg fa-equals text-white"></i>
+                        </a>
+                        <a href="{% url 'items:table' %}" class="btn btn-secondary active">
+                            <i class="fas fa-lg fa-table text-white"></i>
+                        </a>
+                        <a href="{% url 'items:map' %}" class="btn btn-secondary">
+                            <i class="fas fa-lg fa-map-marker-alt text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
                 {% render_table table %}
             </div>
         </div>
     </div>
+
 {% endblock %}

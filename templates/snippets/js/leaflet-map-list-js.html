@@ -23,12 +23,13 @@
             shadowSize: [41, 41]
         });
 
-        {% for e in adverts.new_items %}
-            L.marker({{e.lat_lng}}, {icon: greenIcon}).addTo(m).bindPopup('<a href="{% url detail_name_link e.id %}">{{e.title}}</a>');
-        {% endfor %}
 
         {% for e in adverts.not_new_items %}
             L.marker({{e.lat_lng}}, {icon: greyIcon}).addTo(m).bindPopup('<a href="{% url detail_name_link e.id %}">{{e.title}}</a>');
+        {% endfor %}
+
+        {% for e in adverts.new_items %}
+            L.marker({{e.lat_lng}}, {icon: greenIcon}).addTo(m).bindPopup('<a href="{% url detail_name_link e.id %}">{{e.title}}</a>');
         {% endfor %}
 
     }

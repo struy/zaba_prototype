@@ -19,14 +19,14 @@
             <div class="col-md-9">
                 <h2>
                     <a href="{% url 'items:index' %}">Item </a>
-                    : Delete?
+                    : {% trans "Delete" %}?
                 </h2>
                 <form method="post">{% csrf_token %}
-                    Are you sure you want to delete "{{ object }}" ?
+                    {% trans "Are you sure you want to delete" %} "{{ object }}" ?
                     <br>
                     <br>
                     <input type="submit" class="btn btn-danger" value="Delete"/>
-                    <a href="javascript:history.back()" class="btn btn-primary text-white">Go Back</a>
+                    <a href="javascript:history.back()" class="btn btn-primary text-white">{%  trans "Go Back" %}</a>
                 </form>
             </div>
         </div>

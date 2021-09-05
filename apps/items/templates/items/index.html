@@ -45,13 +45,13 @@
     <div class="grey-back">
         <div class="container mt-4  list-ads-user">
             <div class="row">
-                <div class="d-none d-md-block col-md-2">
+                <div class="d-none d-md-block col-md-3">
                     <div class="item">
-                        <img src="{% static 'img/test/WS2_160x600.jpeg' %}" alt="WS2">
-                        <img src="{% static 'img/test/WS160x600.jpeg' %}" alt="WS">
+                        <img src="{% static 'img/test/WS2_160x600.jpeg' %}" width="100%" alt="WS2">
+                        <img src="{% static 'img/test/WS160x600.jpeg' %}"  width="100%" alt="WS">
                     </div>
                 </div>
-                <div class="col-12 col-md-10">
+                <div class="col-12 col-md-9">
                     <div class="advert">
                         {% if adverts %} {% for advert in adverts %}
                             <div class="row item ">

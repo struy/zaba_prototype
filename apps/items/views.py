@@ -48,7 +48,7 @@ def detail(request, advert_id):
     if not request.session.get(f'item:{advert.id}:views'):
         request.session[f'item:{advert.id}:views'] = True
         total_views = r.incr(f'item:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'Item:{advert_id}')
+        r.zincrby('ranking:All', 1, f'Item:{advert.id}')
     else:
         total_views = r.get(f'item:{advert.id}:views').decode('utf-8')
 

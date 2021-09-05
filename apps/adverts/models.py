@@ -16,18 +16,6 @@ from django.utils.translation import gettext_lazy as _
 from django_extensions.db.models import (
     TitleSlugDescriptionModel, TimeStampedModel)
 
-alphabet = {'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo', 'ж': 'zh', 'з': 'z', 'и': 'i',
-            'й': 'j', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't',
-            'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ы': 'i', 'э': 'e', 'ю': 'yu',
-            'я': 'ya'}
-
-
-def slugify(s):
-    """
-    Overriding django slugify that allows to use russian words as well.
-    """
-    return django_slugify(''.join(alphabet.get(w, w) for w in s.lower()))
-
 
 def user_directory_path(instance, filename):
     """ file will be uploaded to MEDIA_ROOT /<class_name>/<year>/<month>/<day>/user_<id>_<filename>"""
@@ -113,9 +101,6 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         # TODO admin save with local
         if lang:
             self.local = lang[:2]
-
-        if lang in ['uk', 'ru']:
-            self.slug = slugify(self.title)
         super(Advert, self).save(*args, **kwargs)
 
         r = redis.Redis(connection_pool=settings.POOL)

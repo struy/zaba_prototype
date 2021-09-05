@@ -45,11 +45,12 @@ class Banner(models.Model):
 
     SIZES = (
         ("xs", _("Extra small")),
-        ("sm", _("Small")),
-        ("md", _("Medium")),
-        ("lg", _("Large")),
+        ("sm", _("Small")),  # 720x176
+        ("md", _("Medium")),  # 800x176
+        ("lg", _("Large")),  # 1000x176
         ("xl", _("Extra large")),
     )
+    # detail banner 350 x 400
 
     size = models.CharField(max_length=2, choices=SIZES)
     local = models.CharField(max_length=2, choices=LOCALES, default='en')

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+
+
+<section id="right_banners">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-none d-md-block">
+
+                <div class="banner" style="background-image: url('{% static 'img/image-23.png' %}')"></div>
+
+                {% if right_banners %}
+                    {% for banner in right_banners %}
+                        <img class="w-100" src="{{ banner.image.url }}"
+                             alt="{{ banner.promote.name }}"/>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+

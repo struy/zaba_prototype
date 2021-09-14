@@ -68,26 +68,16 @@
                     </div>
                 </div>
             </div>
-            
+
             {% include "snippets/right_side_detail.html" %}
 
         </div>
     </div>
 
-    <div class="wrap popular-ads grey-back mt-0">
-        <section id="google_ads">
-            <div class="container">
-                <div class="col-sm-6 mx-auto">
-                    <img src="{% static 'img/image-20.png' %}"
-                         width="724"
-                         alt="" class="img_ad">
-                </div>
-            </div>
-        </section>
-    </div>
+
+    {% include 'snippets/banners/bottom.html' %}
 
 
-    {#   TODO:  Other user’s  CAROUSEL #}
 
 {% endblock %}
 

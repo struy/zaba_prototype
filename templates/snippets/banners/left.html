@@ -1,0 +1,17 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+
+
+<div class="item">
+    {% if left_banners %}
+        {% for banner in left_banners %}
+            <img class="w-100" src="{{ banner.image.url }}"
+                 alt="{{ banner.promote.name }}"/>
+        {% endfor %}
+    {% endif %}
+
+    <img src="{% static 'img/test/WS2_160x600.jpeg' %}" width="100%" alt="WS2">
+    <img src="{% static 'img/test/WS160x600.jpeg' %}" width="100%" alt="WS">
+
+</div>

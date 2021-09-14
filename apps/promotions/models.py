@@ -23,10 +23,11 @@ class Promote(models.Model):
 
 class Area(models.Model):
     AREAS = (('h', _('Header')),
-             ('rs', _('Right Sidebar')),
-             ('ls', _('Left Sidebar')),
+             ('r', _('Right Sidebar')),
+             ('l', _('Left Sidebar')),
+             ('b', _('Bottom'))
              )
-    area = models.CharField(max_length=2, choices=AREAS)
+    area = models.CharField(max_length=1, choices=AREAS)
 
     class Meta:
         ordering = ('area',)

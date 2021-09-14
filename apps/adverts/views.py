@@ -54,7 +54,8 @@ def home(request):
     lang = get_language()
     if lang:
         lang = lang[:2]
-    header_banners = Banner.objects.filter(local=lang)
+    header_banners = Banner.objects.filter(local=lang, areas__area='h')
+    bottom_banners = Banner.objects.filter(local=lang, areas__area='b').order_by('?').first()
 
     context = {'total': total,
                'month': month,
@@ -62,6 +63,7 @@ def home(request):
                'week': week,
                'new': new,
                'header_banners': header_banners,
+               'bottom_banners': bottom_banners,
                'most_viewed': most_viewed}
 
     return render(request, 'home.html', context)

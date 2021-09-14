@@ -16,6 +16,8 @@ from .models import Item
 from .tables import ItemTable
 
 # connect to redis
+from ..promotions.models import Banner
+
 r = redis.Redis(connection_pool=settings.POOL)
 
 
@@ -31,13 +33,20 @@ def index(request):
     filters = ItemsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
     favourites = Item.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)
+
+    header_banners = Banner.objects.filter(local=lang, areas__area='h')
+    left_banners = Banner.objects.filter(local=lang, areas__area='l').order_by('?').first()
+
     context = {
         'adverts': adverts,
         'is_paginated': True,
         'filters': filters,
         'has_filter': has_filter,
         'package_list': 'items:index',  # for filter url
-        'favourites': favourites
+        'favourites': favourites,
+        'header_banners': header_banners,
+        'left_banners': left_banners
+
     }
     return render(request, 'items/templates/items/index.html', context)
 

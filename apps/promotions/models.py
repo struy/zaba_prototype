@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 def user_directory_path(instance, filename):
     """ file will be uploaded to MEDIA_ROOT /<class_name>/<year>/<month>/<day>/user_<id>_<filename>"""
-    return f'{instance.__class__.__name__.lower()}s/{instance.local}/{instance.size}/{filename}'
+    return f'{instance.__class__.__name__.lower()}s/{instance.promote.name}/{instance.local}/{instance.size}/{filename}'
 
 
 class Promote(models.Model):

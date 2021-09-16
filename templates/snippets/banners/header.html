@@ -6,10 +6,12 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="5000">
+
+<!-- xs sm -->
+<div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade d-block d-md-none" data-ride="carousel" data-interval="5000">
     <div class="carousel-inner">
-        {% for banner in header_banners %}
-            <div class="carousel-item{% if forloop.first %} active{% endif %} {{ banner.size|bootstrap_size_css }}">
+        {% for banner in sm_header_banners %}
+            <div class="carousel-item{% if forloop.first %} active{% endif %} ">
                 <a href="{% if banner.link is not None %}{{ banner.link }}{% else %}{% url 'home' %}{% endif %}"
                    target="_blank">
                     {% if 'svg' in banner.image.url %}
@@ -21,7 +23,7 @@
                                    height="{{ banner.size|bootstrap_size_svg_height }}"></image>
                         </svg>
                     {% else %}
-                        <img class="{{ banner.size|bootstrap_size_css }}" src="{{ banner.image.url }}"
+                        <img class="w-100" src="{{ banner.image.url }}"
                              alt="{{ banner.promote.name }}"/>
                     {% endif %}
                 </a>
@@ -29,3 +31,64 @@
         {% endfor %}
     </div>
 </div>
+<!-- end xs sm -->
+
+
+
+
+<!-- md -->
+<div id="carouselExampleSlidesOnly2" class="carousel slide carousel-fade d-none d-md-block d-lg-none" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+        {% for banner in md_header_banners %}
+            <div class="carousel-item{% if forloop.first %} active{% endif %} ">
+                <a href="{% if banner.link is not None %}{{ banner.link }}{% else %}{% url 'home' %}{% endif %}"
+                   target="_blank">
+                    {% if 'svg' in banner.image.url %}
+                        <svg width="{{ banner.size|bootstrap_size_svg_width }}"
+                             height="{{ banner.size|bootstrap_size_svg_height }}" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image xlink:href="{{ banner.image.url }}"
+                                   width="{{ banner.size|bootstrap_size_svg_width }}"
+                                   height="{{ banner.size|bootstrap_size_svg_height }}"></image>
+                        </svg>
+                    {% else %}
+                        <img class="w-100" src="{{ banner.image.url }}"
+                             alt="{{ banner.promote.name }}"/>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- end md -->
+
+<!-- lg xl -->
+<div id="carouselExampleSlidesOnly3" class="carousel slide carousel-fade d-none d-lg-block" data-ride="carousel" data-interval="5000">
+    <div class="carousel-inner">
+        {% for banner in lg_header_banners %}
+            <div class="carousel-item{% if forloop.first %} active{% endif %} ">
+                <a href="{% if banner.link is not None %}{{ banner.link }}{% else %}{% url 'home' %}{% endif %}"
+                   target="_blank">
+                    {% if 'svg' in banner.image.url %}
+                        <svg width="{{ banner.size|bootstrap_size_svg_width }}"
+                             height="{{ banner.size|bootstrap_size_svg_height }}" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image xlink:href="{{ banner.image.url }}"
+                                   width="{{ banner.size|bootstrap_size_svg_width }}"
+                                   height="{{ banner.size|bootstrap_size_svg_height }}"></image>
+                        </svg>
+                    {% else %}
+                        <img class="w-100" src="{{ banner.image.url }}"
+                             alt="{{ banner.promote.name }}"/>
+                    {% endif %}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- end lg xl -->
+
+
+
+
+

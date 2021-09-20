@@ -85,7 +85,7 @@ outcome==1.1.0
 packaging==20.8
 parso==0.8.1
 pep8==1.7.1
-Pillow==8.2.0
+Pillow==8.3.2
 pipdeptree==2.0.0
 pluggy==0.12.0
 polib==1.1.0
@@ -131,7 +131,7 @@ social-auth-core==3.3.3
 sorl-thumbnail==12.7.0
 sortedcontainers==2.3.0
 soupsieve==2.1
-sqlparse==0.4.1
+sqlparse==0.4.2
 structlog==20.1.0
 text-unidecode==1.3
 toml==0.10.2

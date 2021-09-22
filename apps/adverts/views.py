@@ -51,18 +51,23 @@ def home(request):
     month = r.zcount("adverts", month_ago.timestamp(), "+inf")
     week = r.zcount("adverts", week_ago.timestamp(), "+inf")
     today = r.zcount("adverts", day_ago.timestamp(), "+inf")
+
+    counter = {
+        'total': total,
+        'month': month,
+        'week': week,
+        'today': today
+    }
+
     lang = get_language()
     if lang:
         lang = lang[:2]
-    sm_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='sm')
-    md_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='md')
-    lg_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='lg')
+    sm_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='sm').order_by('?')
+    md_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='md').order_by('?')
+    lg_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='lg').order_by('?')
     bottom_banners = Banner.objects.filter(local=lang, areas__area='b').order_by('?').first()
 
-    context = {'total': total,
-               'month': month,
-               'today': today,
-               'week': week,
+    context = {'counter': counter,
                'new': new,
                'sm_header_banners': sm_header_banners,
                'md_header_banners': md_header_banners,
@@ -75,7 +80,6 @@ def home(request):
 
 class SearchView(ListView):
     template_name = 'search.html'
-    # paginate_by = 20
     count = 0
 
     def get_context_data(self, *args, **kwargs):
@@ -84,7 +88,6 @@ class SearchView(ListView):
         context['query'] = self.request.GET.get('q')
         context['address'] = self.request.GET.get('address')
         context['has_filter'] = bool(self.request.GET.get('q') or self.request.GET.get('address'))
-        # context['is_paginated'] = True
         return context
 
     def get_queryset(self):

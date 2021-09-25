@@ -62,6 +62,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     # 'django_select2',
                     'django_filters',
                     'django_cleanup.apps.CleanupConfig',
+                    'phonenumber_field',
                     ]
 
 LOCAL_APPS = ['apps.accounts.apps.AccountsConfig',

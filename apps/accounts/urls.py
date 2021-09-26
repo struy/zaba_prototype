@@ -1,14 +1,15 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
-from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user
+from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user, AdFavAPIToggle
 
 # app_name = 'accounts'
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('register/', register, name='register'),
     path('edit/', edit, name='profile_edit'),
-    path('fav/<str:name>/<int:record_id>', favourite_add, name='favourite_add'),
+    # favourite_add
+    path('api/fav/<str:name>/<int:record_id>', AdFavAPIToggle.as_view(), name='favourite_add'),
     path('favorites/', favourite_list, name="favorites"),
     path('my_ads/', my_ads, name='my_ads'),
     path('ads/<int:pk>', user_ads, name='user_ads'),

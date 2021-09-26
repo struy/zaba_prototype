@@ -1,0 +1,29 @@
+<script>
+    $(document).ready(function () {
+        $('.favorite').click(function (e) {
+            e.preventDefault()
+            let this_ = $(this);
+            let favUrl = this_.data('href');
+            let fa = "far";
+            $.ajax(
+                {
+                    url: favUrl,
+                    method: "GET",
+                    data: {},
+                    success: data => {
+                        if (data.updated) {
+                            if (data.favourite) {
+                                fa = "fas";
+                            }
+                            this_.html('<i class="' + fa + ' fa-heart fa-heart"></i>');
+                        }
+
+                    }
+                }
+            )
+
+
+        })
+    });
+</script>
+

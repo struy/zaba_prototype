@@ -112,8 +112,8 @@
                                                     {% else %}
                                                         {% if user.is_authenticated %}
                                                             <div class="d-flex justify-content-end align-self-md-end">
-
-                                                                <a class="text-dark"
+                                                                <a class="text-dark favorite"
+                                                                   data-href="{{ advert.get_api_fav_url }}"
                                                                    href="{% url 'favourite_add' 'Item' advert.id %}">
                                                                     {% if advert.id in  favourites %}
                                                                         <i class="fas fa-heart icon-heart-items"></i>
@@ -145,8 +145,10 @@
 
 {% endblock %}
 
+
 {% block script %}
     {% include "snippets/js/city-latin-only-js.html" %}
     {% include "snippets/js/address-input-js.html" %}
+    {% include "snippets/js/favorite-update-js.html" %}
 {% endblock %}
 

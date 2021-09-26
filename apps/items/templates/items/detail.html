@@ -29,7 +29,7 @@
                         <span> {{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <a href="{% url 'favourite_add' 'Item' advert.id %}">
+                                <a class="favorite"  data-href="{{ advert.get_api_fav_url }}" href="{% url 'favourite_add' 'Item' advert.id %}">
                                     <i class="
                                      {% if favourite %}
                                         fas
@@ -81,3 +81,6 @@
 
 {% endblock %}
 
+{% block script %}
+    {% include "snippets/js/favorite-update-js.html" %}
+{% endblock %}

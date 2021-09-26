@@ -8,6 +8,9 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
+from rest_framework import authentication, permissions
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from apps.gifts.models import Gift
 from apps.items.models import Item
@@ -50,6 +53,40 @@ def favourite_add(request, name, record_id):
             ad.favourites.add(request.user)
             r.incr(f'Author:fav:{request.user.id}')
     return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+
+class AdFavAPIToggle(APIView):
+    authentication_classes = (authentication.SessionAuthentication,)
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, name=None, record_id=None):
+        models = {
+            "Item": Item,
+            "Job": Job,
+            "Gift": Gift,
+            "Rental": Rental
+        }
+        ad = get_object_or_404(models[name.capitalize()], id=record_id)
+        user = self.request.user
+        updated = False
+        favourite = False
+        if ad:  # and user.is_authenticated()
+            r = redis.Redis(connection_pool=settings.POOL)
+            if ad.favourites.filter(id=user.id).exists():
+                ad.favourites.remove(user)
+                r.decr(f'Author:fav:{user.id}')
+                favourite = False
+            else:
+                ad.favourites.add(user)
+                r.incr(f'Author:fav:{user.id}')
+                favourite = True
+            updated = True
+
+        data = {
+            "updated": updated,
+            "favourite": favourite
+        }
+        return Response(data)
 
 
 def register(request):

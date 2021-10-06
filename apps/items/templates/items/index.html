@@ -19,11 +19,9 @@
 {% block content %}
     {% include 'snippets/filter.html' %}
 
-
     <div class="container">
         <div class="row">
             <div class="col-12">
-
                 <div class="d-flex justify-content-end">
                     <div class="btn-group" role="group">
                         <a href="{% url 'items:index' %}" class="btn btn-secondary active">
@@ -37,7 +35,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -45,11 +42,9 @@
     <div class="grey-back">
         <div class="container mt-4  list-ads-user">
             <div class="row">
-
                 <div class="d-none d-md-block col-md-3">
                     {% include 'snippets/banners/left.html' %}
                 </div>
-
                 <div class="col-12 col-md-9">
                     <div class="advert">
                         {% if adverts %} {% for advert in adverts %}
@@ -110,11 +105,12 @@
                                                             </a>
                                                         </div>
                                                     {% else %}
+
                                                         {% if user.is_authenticated %}
                                                             <div class="d-flex justify-content-end align-self-md-end">
                                                                 <a class="text-dark favorite"
                                                                    data-href="{{ advert.get_api_fav_url }}"
-                                                                   href="{% url 'favourite_add' 'Item' advert.id %}">
+                                                                   href="{{ advert.get_api_fav_url }}">
                                                                     {% if advert.id in  favourites %}
                                                                         <i class="fas fa-heart icon-heart-items"></i>
                                                                     {% else %}
@@ -139,7 +135,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 

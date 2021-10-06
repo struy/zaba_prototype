@@ -19,97 +19,129 @@
 {% block content %}
     {% include 'snippets/filter.html' %}
 
-    <div class="grey-back">
-        <div class="container mt-4  list-ads-user">
-            <div class="advert">
-                {% if adverts %} {% for advert in adverts %}
-                    <div class="row item ">
-                        <div class="media d-lg-flex d-block w-100">
-                            <div class="col-12 col-lg-2 text-center align-self-center">
-                                {% thumbnail advert.image "128" as ad %}
-                                    <a href="{% url 'rents:detail' advert.id %}">
-                                        <img class="mr-3 image-advert image-size-page" src="{{ ad.url }}"
-                                             alt="no image"/>
-                                    </a>
-                                {% endthumbnail %} {% if not advert.image %}
-                                <img
-                                        class="mr-3  image-advert"
-                                        src="{% static 'none/no-img.jpg' %}"
-                                        alt="no image"
-                                        width="128"
-                                />
-                            {% endif %}
-                                {% if advert.expires_type %}
-                                    <div class="corner-item {{ advert.expires_type.css }}">
-                                        <b>
-                                            {{ advert.expires_type.text }}
-                                        </b>
-                                    </div>
-                                {% endif %}
-                            </div>
-                            <div class="media-body col-12 col-lg-10">
-                                <div class="advert">
-                                    <div class="wrap_list_adverts row">
-                                        <div class="col-12 col-md-8">
-                                            <a href="{% url 'rents:detail' advert.id %}">
-                                                <h3>
-                                                    {{ advert.title }}
-                                                </h3>
-                                            </a>
-                                            <span class="form_{{ advert.local }}"></span>
-                                            <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
-                                                {{ advert.city }}
-                                                <i>{{ advert.modified|naturaltime }} </i>
-                                            </small>
-                                        </div>
-                                        <div class="col-12 col-md-4 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
-                                            <div class="d-flex justify-content-end">
-                                                <h3>{{ advert.price|prepend_dollars }}</h3>
-                                            </div>
-                                            {% if advert.author.id == request.user.id %}
-                                                <div class="d-flex" id="white-text">
-                                                    <a href="{% url 'rents:delete' advert.id %}"
-                                                       class="btn btn-sm delete">
-                                                        {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                    <a href="{% url 'rents:edit' advert.id %}" class="btn btn-sm edit">
-                                                        {% trans "Edit" %} <i class="fas fa-edit"></i>
-                                                    </a>
-                                                </div>
-                                            {% else %}
-                                                {% if user.is_authenticated %}
-                                                    <div class="d-flex justify-content-end align-self-md-end">
-                                                        <a class="text-dark"
-                                                           href="{% url 'favourite_add' 'Rental' advert.id %}">
-                                                            {% if advert.id in  favourites %}
-                                                                <i class="fas fa-heart icon-heart-items"></i>
-                                                            {% else %}
-                                                                <i class="far fa-heart icon-heart-items"></i>
-                                                            {% endif %}
-                                                        </a>
-                                                    </div>
-                                                {% endif %}
-
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'rents:index' %}" class="btn btn-secondary active">
+                            <i class="fas fa-lg fa-equals text-white"></i>
+                        </a>
+                        <a href="{% url 'rents:table' %}" class="btn btn-secondary d-none d-md-block">
+                            <i class="fas fa-lg fa-table text-white"></i>
+                        </a>
+                        <a href="{% url 'rents:map' %}" class="btn btn-secondary">
+                            <i class="fas fa-lg fa-map-marker-alt text-white"></i>
+                        </a>
                     </div>
-                {% empty %}
-                    <p>{% trans "No adverts are available." %}</p>
-                {% endfor %}
-                    {% include "snippets/pagination.html" %}
-                {% endif %}
+                </div>
             </div>
         </div>
     </div>
 
+    <div class="grey-back">
+        <div class="container mt-4  list-ads-user">
+            <div class="row">
+                <div class="d-none d-md-block col-md-3">
+                    {% include 'snippets/banners/left.html' %}
+                </div>
+                <div class="col-12 col-md-9">
+                    <div class="advert">
+                        {% if adverts %} {% for advert in adverts %}
+                            <div class="row item ">
+                                <div class="media d-lg-flex d-block w-100">
+                                    <div class="col-12 col-lg-2 text-center align-self-center">
+                                        {% thumbnail advert.image "128" as ad %}
+                                            <a href="{% url 'rents:detail' advert.id %}">
+                                                <img class="mr-3 image-advert image-size-page" src="{{ ad.url }}"
+                                                     alt="no image"/>
+                                            </a>
+                                        {% endthumbnail %} {% if not advert.image %}
+                                        <img
+                                                class="mr-3  image-advert"
+                                                src="{% static 'none/no-img.jpg' %}"
+                                                alt="no image"
+                                                width="128"
+                                        />
+                                    {% endif %}
+                                        {% if advert.expires_type %}
+                                            <div class="corner-item {{ advert.expires_type.css }}">
+                                                <b>
+                                                    {{ advert.expires_type.text }}
+                                                </b>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="media-body col-12 col-lg-10">
+                                        <div class="advert">
+                                            <div class="wrap_list_adverts row">
+                                                <div class="col-12 col-md-8">
+                                                    <a href="{% url 'rents:detail' advert.id %}">
+                                                        <h3>
+                                                            {{ advert.title }}
+                                                        </h3>
+                                                    </a>
+                                                    <span class="form_{{ advert.local }}"></span>
+                                                    <small class="text-muted"><i class="fas fa-map-marker-alt"> </i>
+                                                        {{ advert.city }}
+                                                        <i>{{ advert.modified|naturaltime }} </i>
+                                                    </small>
+                                                </div>
+                                                <div class="col-12 col-md-4 events d-flex flex-wrap align-items-center justify-content-between justify-content-md-normal">
+                                                    <div class="d-flex justify-content-end">
+                                                        <h3>{{ advert.price|prepend_dollars }}</h3>
+                                                    </div>
+                                                    {% if advert.author.id == request.user.id %}
+                                                        <div class="d-flex" id="white-text">
+                                                            <a href="{% url 'rents:delete' advert.id %}"
+                                                               class="btn btn-sm delete">
+                                                                {% trans "Delete" %} <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                            <a href="{% url 'rents:edit' advert.id %}"
+                                                               class="btn btn-sm edit">
+                                                                {% trans "Edit" %} <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    {% else %}
+                                                        {% if user.is_authenticated %}
+                                                            <div class="d-flex justify-content-end align-self-md-end">
+                                                                <a class="text-dark favorite"
+                                                                   data-href="{{ advert.get_api_fav_url }}"
+                                                                   href="{{ advert.get_api_fav_url }}">
+                                                                    {% if advert.id in  favourites %}
+                                                                        <i class="fas fa-heart icon-heart-items"></i>
+                                                                    {% else %}
+                                                                        <i class="far fa-heart icon-heart-items"></i>
+                                                                    {% endif %}
+                                                                </a>
+                                                            </div>
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>{% trans "No adverts are available." %}</p>
+                        {% endfor %}
+                            {% include "snippets/pagination.html" %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
+
 
 {% block script %}
     {% include "snippets/js/city-latin-only-js.html" %}
     {% include "snippets/js/address-input-js.html" %}
+    {% include "snippets/js/favorite-update-js.html" %}
 {% endblock %}
 

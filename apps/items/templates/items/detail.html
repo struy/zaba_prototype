@@ -3,6 +3,7 @@
 {% load static %}
 {% load advert_money %}
 
+
 {% block title %}
     {% trans "Item" %}
 {% endblock %}
@@ -29,7 +30,7 @@
                         <span> {{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <a class="favorite"  data-href="{{ advert.get_api_fav_url }}" href="{% url 'favourite_add' 'Item' advert.id %}">
+                                <a class="favorite" data-href="{{ advert.get_api_fav_url }}" href="{{ advert.get_api_fav_url }}">
                                     <i class="
                                      {% if favourite %}
                                         fas
@@ -56,6 +57,7 @@
 
                     <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
                     <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
                     {% if advert.point %}
                         <p>
                             {% include 'svg/icon-Locate.svg' %}
@@ -63,9 +65,11 @@
                         </p>
                         <div id="m"></div>
                     {% endif %}
+
                     <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
+
                 </div>
             </div>
 

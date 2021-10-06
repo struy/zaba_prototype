@@ -31,7 +31,7 @@
                         <span> {{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                 <a href="{% url 'favourite_add' 'Service' advert.id %}">
+                                <a class="favorite" data-href="{{ advert.get_api_fav_url }}" href="{{ advert.get_api_fav_url }}">
                                     <i class="
                                      {% if favourite %}
                                         fas
@@ -45,19 +45,8 @@
                     </h2>
                     <h1>{{ advert.salary|prepend_dollars }}</h1>
 
-{#                    <p>#}
-{#                        {% if advert.jobtype.icon %}#}
-{#                            <i class="fas fa-{{ advert.jobtype.icon }} fa-3x"></i>#}
-{#                        {% endif %}#}
-{#                    </p>#}
-
-{#                    <p>#}
-{#                        <b>{% trans "Job type:" %}</b>#}
-{#                        {{ advert.jobtype }}#}
-{#                    </p>#}
 
                     {% if advert.description %}
-
                         <span class="mb-2">
                                 <b>{% trans "Description:" %}</b>
                             </span>
@@ -66,7 +55,6 @@
                         </p>
                     {% endif %}
 
-{#                    <p><b>{% trans "Duration:" %}</b> {{ advert.get_duration_display }} </p>#}
 
                     <p><b>{% trans "Language(s) spoken by the employer:" %} </b>
                         {% for country in advert.countries %}
@@ -84,9 +72,11 @@
                         </p>
                         <div id="m"></div>
                     {% endif %}
+
                     <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
                     </div>
+
                 </div>
             </div>
 
@@ -96,16 +86,14 @@
     </div>
 
 
-    <div class="wrap popular-ads grey-back mt-0">
-        <section id="google_ads">
-            <div class="container">
-                <div class="col-sm-6 mx-auto">
-                    <img src="{% static 'img/image-20.png' %}"
-                         width="724"
-                         alt="" class="img_ad">
-                </div>
-            </div>
-        </section>
-    </div>
 
+
+    {% include 'snippets/banners/bottom.html' %}
+
+
+
+{% endblock %}
+
+{% block script %}
+    {% include "snippets/js/favorite-update-js.html" %}
 {% endblock %}

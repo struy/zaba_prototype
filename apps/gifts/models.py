@@ -29,6 +29,9 @@ class Gift(Advert, Location):
     def get_absolute_url(self):
         return reverse('gifts:detail', args=[self.id])
 
+    def get_api_fav_url(self):
+        return reverse('favourite_add', kwargs={'name': 'Gift', 'record_id': self.id})
+
     def delete(self, *args, **kwargs):
         self.image.delete()
         super().delete(*args, **kwargs)

@@ -42,6 +42,9 @@ class Job(Advert, Location):
     def get_absolute_url(self):
         return reverse('jobs:detail', args=[self.id])
 
+    def get_api_fav_url(self):
+        return reverse('favourite_add', kwargs={'name': 'Job', 'record_id': self.id})
+
     def delete(self, *args, **kwargs):
         self.image.delete()
         super().delete(*args, **kwargs)

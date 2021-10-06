@@ -10,8 +10,8 @@ from apps.adverts.models import Advert, Location, user_directory_path
 
 class Service(Advert, Location):
     """
+    Temporary  Service advertise, example Sales
     """
-    # jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('service type'))
     countries = CountryField(multiple=True, default='EN', verbose_name=_('language'),
                              help_text=_('What language do we speak?'), )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True, verbose_name=_('Logo or image'))
@@ -20,6 +20,9 @@ class Service(Advert, Location):
 
     def get_absolute_url(self):
         return reverse('services:detail', args=[self.id])
+
+    def get_api_fav_url(self):
+        return reverse('favourite_add', kwargs={'name': 'Service', 'record_id': self.id})
 
     def delete(self, *args, **kwargs):
         self.image.delete()

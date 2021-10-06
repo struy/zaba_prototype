@@ -55,6 +55,9 @@ class Rental(Advert, Location):
     def get_absolute_url(self):
         return reverse('rents:detail', args=[self.id])
 
+    def get_api_fav_url(self):
+        return reverse('favourite_add', kwargs={'name': 'Rental', 'record_id': self.id})
+
 
 class RentalTable(tables.Table):
     class Meta:

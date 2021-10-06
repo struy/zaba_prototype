@@ -6,7 +6,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
@@ -30,29 +30,6 @@ def favourite_list(request):
     return render(request,
                   'accounts/templates/accounts/favourites.html',
                   {'adverts': adverts})
-
-
-@login_required
-def favourite_add(request, name, record_id):
-    models = {
-        "Item": Item,
-        "Job": Job,
-        "Gift": Gift,
-        "Rental": Rental
-    }
-    sample_task.delay("Our printed value!")
-    # AppConfig.get_models(name)
-    ad = get_object_or_404(models[name.capitalize()], id=record_id)
-    if ad:
-        r = redis.Redis(connection_pool=settings.POOL)
-
-        if ad.favourites.filter(id=request.user.id).exists():
-            ad.favourites.remove(request.user)
-            r.decr(f'Author:fav:{request.user.id}')
-        else:
-            ad.favourites.add(request.user)
-            r.incr(f'Author:fav:{request.user.id}')
-    return HttpResponseRedirect(request.META['HTTP_REFERER'])
 
 
 class AdFavAPIToggle(APIView):

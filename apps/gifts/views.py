@@ -4,14 +4,12 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.translation import get_language
-from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from apps.adverts.utils import context_helper
 from .filters import GiftsFilter
 from .form import GiftForm
 from .models import Gift
-# connect to redis
 from ..adverts.views import MapListView
 
 r = redis.Redis(connection_pool=settings.POOL)
@@ -61,9 +59,6 @@ def detail(request, advert_id):
                'favourite': is_favourite,
                'name': 'Gift'}
     return render(request, 'gifts/templates/gifts/detail.html', context)
-
-
-
 
 
 class GiftCreate(CreateView):

@@ -1,7 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
-from .views import register, edit, my_ads, user_ads, favourite_add, favourite_list, contact_user, AdFavAPIToggle
+from .views import register, edit, my_ads, user_ads, favourite_list, contact_user, AdFavAPIToggle
 
 # app_name = 'accounts'
 urlpatterns = [

@@ -18,7 +18,6 @@ from apps.jobs.models import Job
 from apps.rents.models import Rental
 from .forms import UserEditForm, ContactUserForm
 from .forms import UserRegistrationForm
-from .tasks import sample_task
 
 
 @login_required

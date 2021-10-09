@@ -7,5 +7,4 @@ class ItemTable(tables.Table):
     class Meta:
         link = tables.URLColumn()
         model = Item
-        template_name = "django_tables2/bootstrap.html"
         fields = ('city', 'title', 'condition', 'price')

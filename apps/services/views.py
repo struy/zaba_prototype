@@ -6,13 +6,15 @@ from django.urls import reverse_lazy
 from django.utils.translation import get_language
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django_filters.views import FilterView
+from django_tables2 import SingleTableMixin
 
 from apps.adverts.utils import context_helper
 from .filters import ServicesFilter
 from .form import ServiceForm
 from .models import Service
-
 # connect to redis
+from .tables import ServiceTable
 from ..adverts.views import MapListView
 
 r = redis.Redis(connection_pool=settings.POOL)
@@ -98,3 +100,14 @@ class ServiceMapList(MapListView):
     template_name = 'services/service_map_list.html'
     model = Service
     detail_name_link = "services:detail"
+
+
+class ServiceTableList(SingleTableMixin, FilterView):
+    table_class = ServiceTable
+    template_name = "items/table.html"
+    filterset_class = ServicesFilter
+
+    def get_queryset(self):
+        lang = get_language()
+        queryset = Service.objects.filter(local__exact=lang)
+        return queryset

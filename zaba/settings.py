@@ -221,6 +221,7 @@ CACHES = {
 }
 
 SELECT2_CACHE_BACKEND = "select2"
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"

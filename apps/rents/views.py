@@ -5,12 +5,15 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.translation import get_language
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django_filters.views import FilterView
+from django_tables2 import SingleTableMixin
 
 from apps.adverts.utils import context_helper
 from .filters import RentsFilter
 from .forms import RentForm
 from .models import Rental, RentalTable
 # connect to redis
+from .tables import RentTable
 from ..adverts.views import MapListView
 
 r = redis.Redis(connection_pool=settings.POOL)
@@ -97,3 +100,14 @@ class RentMapList(MapListView):
     template_name = 'rents/rent_map_list.html'
     model = Rental
     detail_name_link = "rents:detail"
+
+
+class RentTableList(SingleTableMixin, FilterView):
+        table_class = RentTable
+        template_name = "items/table.html"
+        filterset_class = RentsFilter
+
+        def get_queryset(self):
+            lang = get_language()
+            queryset = Rental.objects.filter(local__exact=lang)
+            return queryset

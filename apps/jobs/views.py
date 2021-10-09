@@ -5,12 +5,15 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.utils.translation import get_language
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django_filters.views import FilterView
+from django_tables2 import SingleTableMixin
 
 from apps.adverts.utils import context_helper
 from .filters import JobsFilter
 from .form import JobForm
 from .models import Job
 # connect to redis
+from .tables import JobTable
 from ..adverts.views import MapListView
 
 r = redis.Redis(connection_pool=settings.POOL)
@@ -91,3 +94,14 @@ class JobMapList(MapListView):
     template_name = 'jobs/job_map_list.html'
     model = Job
     detail_name_link = "jobs:detail"
+
+
+class JobTableList(SingleTableMixin, FilterView):
+        table_class = JobTable
+        template_name = "items/table.html"
+        filterset_class = JobsFilter
+
+        def get_queryset(self):
+            lang = get_language()
+            queryset = Job.objects.filter(local__exact=lang)
+            return queryset

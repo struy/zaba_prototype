@@ -4,10 +4,24 @@
 {% load thumbnail %}
 {% load humanize %}
 {% load advert_money %}
+{% get_current_language as LANGUAGE_CODE %}
 
 
 {% block title %}
     {% trans "Home" %}
+{% endblock %}
+
+
+{% block description %}
+    {% if LANGUAGE_CODE == 'uk' %}Сайт оголошень на декількох мовах,робота, квартира,хата,здам житло, на підселлення,
+        віддам безкоштовно, подарую, пропоную роботу, акція
+    {% else %} Adverts, Offering a job, provide services, give away, offer for sale, space for rent {% endif %}
+{% endblock %}
+
+{% block keywords %}
+    {% if LANGUAGE_CODE == 'uk' %}Сайт оголошень на декількох мовах,робота, квартира,хата,здам житло, на підселлення,
+        віддам безкоштовно, подарую, пропоную роботу, акція
+    {% else %} Adverts, Offering a job, provide services, give away, offer for sale, space for rent {% endif %}
 {% endblock %}
 
 {% block head %}
@@ -38,7 +52,7 @@
 
         <div class="container">
 
-         {%  include 'snippets/time_counter.html' %}
+            {% include 'snippets/time_counter.html' %}
 
             <div class="row mt-3">
                 <div id="container" class="head-block">

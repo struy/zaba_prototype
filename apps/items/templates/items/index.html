@@ -17,6 +17,15 @@
 {% endblock %}
 
 {% block content %}
+
+    <div class="container">
+        <div class="d-none d-md-block col-12">
+            <div class="alert alert-dark" role="alert">
+                {% trans "Offer for sale" %}
+            </div>
+        </div>
+    </div>
+
     {% include 'snippets/filter.html' %}
 
     <div class="container">

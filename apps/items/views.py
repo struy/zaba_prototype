@@ -76,7 +76,6 @@ class ItemCreate(CreateView):
     form_class = ItemForm
     login_required = True
     success_url = reverse_lazy('items:index')
-    short_name = "888888888888888"
 
     def form_valid(self, form):
         form.instance.author = self.request.user

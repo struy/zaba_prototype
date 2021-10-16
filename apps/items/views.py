@@ -14,8 +14,6 @@ from .filters import ItemsFilter
 from .forms import ItemForm
 from .models import Item
 from .tables import ItemTable
-
-# connect to redis
 from ..promotions.models import Banner
 
 r = redis.Redis(connection_pool=settings.POOL)
@@ -78,6 +76,7 @@ class ItemCreate(CreateView):
     form_class = ItemForm
     login_required = True
     success_url = reverse_lazy('items:index')
+    short_name = "888888888888888"
 
     def form_valid(self, form):
         form.instance.author = self.request.user

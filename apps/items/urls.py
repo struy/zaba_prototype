@@ -6,7 +6,7 @@ from . import views
 app_name = 'items'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:advert_id>/', views.detail, name='detail'),
+    path('<int:pk>/', views.detail, name='detail'),
     path('map/', views.ItemMapList.as_view(), name='map'),
     path('table/', views.ItemTableList.as_view(), name='table'),
     path('new', login_required(views.ItemCreate.as_view()), name='new'),

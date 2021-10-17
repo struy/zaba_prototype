@@ -49,10 +49,10 @@ def index(request):
     return render(request, 'items/templates/items/index.html', context)
 
 
-def detail(request, advert_id):
-    advert = get_object_or_404(Item, pk=advert_id)
+def detail(request, pk):
+    advert = get_object_or_404(Item, pk=pk)
 
-    redis_key = f'item:{advert.id}:views'
+    redis_key = f'item:{pk}:views'
     if not request.session.get(redis_key):
         request.session[redis_key] = True
         total_views = r.incr(redis_key)

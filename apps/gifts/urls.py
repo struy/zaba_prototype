@@ -6,7 +6,7 @@ from . import views
 app_name = 'gifts'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:advert_id>/', views.detail, name='detail'),
+    path('<int:pk>/', views.detail, name='detail'),
     path('map/', views.GiftMapList.as_view(), name='map'),
     path('table/', views.GiftTableList.as_view(), name='table'),
     path('new', login_required(views.GiftCreate.as_view()), name='new'),

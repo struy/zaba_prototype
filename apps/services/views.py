@@ -47,12 +47,12 @@ def index(request):
     return render(request, 'services/templates/services/index.html', context)
 
 
-def detail(request, advert_id):
-    advert = get_object_or_404(Service, pk=advert_id)
+def detail(request, pk):
+    advert = get_object_or_404(Service, pk=pk)
     if not request.session.get(f'service:{advert.id}:views'):
         request.session[f'service:{advert.id}:views'] = True
         total_views = r.incr(f'service:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'service:{advert_id}')
+        r.zincrby('ranking:All', 1, f'service:{pk}')
     else:
         total_views = r.get(f'service:{advert.id}:views').decode('utf-8')
 

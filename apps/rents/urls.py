@@ -6,7 +6,7 @@ from . import views
 app_name = 'rents'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:advert_id>/', views.detail, name='detail'),
+    path('<int:pk>/', views.detail, name='detail'),
     path('map/', views.RentMapList.as_view(), name='map'),
     path('table/', views.RentTableList.as_view(), name='table'),
     path('list', views.rents_list, name='list'),

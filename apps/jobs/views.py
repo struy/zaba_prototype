@@ -45,13 +45,13 @@ def index(request):
     return render(request, 'jobs/index.html', context)
 
 
-def detail(request, advert_id):
-    advert = get_object_or_404(Job, pk=advert_id)
+def detail(request, pk):
+    advert = get_object_or_404(Job, pk=pk)
 
     if not request.session.get(f'job:{advert.id}:views'):
         request.session[f'job:{advert.id}:views'] = True
         total_views = r.incr(f'job:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'Job:{advert_id}')
+        r.zincrby('ranking:All', 1, f'Job:{pk}')
     else:
         total_views = r.get(f'job:{advert.id}:views').decode('utf-8')
 

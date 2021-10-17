@@ -43,13 +43,13 @@ def index(request):
     return render(request, 'gifts/templates/gifts/index.html', context)
 
 
-def detail(request, advert_id):
-    advert = get_object_or_404(Gift, pk=advert_id)
+def detail(request, pk):
+    advert = get_object_or_404(Gift, pk=pk)
 
     if not request.session.get(f'gift:{advert.id}:views'):
         request.session[f'gift:{advert.id}:views'] = True
         total_views = r.incr(f'gift:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'Gift:{advert_id}')
+        r.zincrby('ranking:All', 1, f'Gift:{pk}')
     else:
         total_views = r.get(f'gift:{advert.id}:views').decode('utf-8')
 

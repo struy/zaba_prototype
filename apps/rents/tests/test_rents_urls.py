@@ -17,17 +17,17 @@ def rents():
     ('/en/rents/1/', 200),
     ('/en/rents/map/', 200),
     ('/en/rents/table/', 200),
-    ('/en/rents/edit/1', 302),
-    ('/en/rents/delete/1', 302),
-    ('/en/rents/100000', 301)
+    ('/en/rents/edit/1/', 302),
+    ('/en/rents/delete/1/', 302),
+    ('/en/rents/100000/', 404)
 ])
 def test_item_urls(client, rents, url, status):
     assert client.get(url).status_code == status
 
 
 @pytest.mark.parametrize("url", [
-    '/en/rents/edit/1',
-    '/en/rents/delete/1'
+    '/en/rents/edit/1/',
+    '/en/rents/delete/1/'
 ])
 def test_item_auth_urls(admin_client, url, rents):
     assert admin_client.get(url).status_code == 200

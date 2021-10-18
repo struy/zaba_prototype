@@ -17,17 +17,17 @@ def gifts():
     ('/en/gifts/1/', 200),
     ('/en/gifts/map/', 200),
     ('/en/gifts/table/', 200),
-    ('/en/gifts/edit/1', 302),
-    ('/en/gifts/delete/1', 302),
-    ('/en/gifts/100000', 301)
+    ('/en/gifts/edit/1/', 302),
+    ('/en/gifts/delete/1/', 302),
+    ('/en/gifts/100000/', 404)
 ])
 def test_item_urls(client, gifts, url, status):
     assert client.get(url).status_code == status
 
 
 @pytest.mark.parametrize("url", [
-    '/en/gifts/edit/1',
-    '/en/gifts/delete/1'
+    '/en/gifts/edit/1/',
+    '/en/gifts/delete/1/'
 ])
 def test_item_auth_urls(admin_client, url, gifts):
     assert admin_client.get(url).status_code == 200

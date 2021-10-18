@@ -17,17 +17,18 @@ def services():
     ('/en/services/1/', 200),
     ('/en/services/map/', 200),
     ('/en/services/table/', 200),
-    ('/en/services/edit/1', 302),
-    ('/en/services/delete/1', 302),
-    ('/en/services/100000', 301)
+    ('/en/services/edit/1/', 302),
+    ('/en/services/delete/1/', 302),
+    ('/en/services/100000/', 404)
 ])
 def test_item_urls(client, services, url, status):
     assert client.get(url).status_code == status
 
 
 @pytest.mark.parametrize("url", [
-    '/en/services/edit/1',
-    '/en/services/delete/1'
+    '/en/services/edit/1/',
+    '/en/services/delete/1/',
+    '/en/services/new/'
 ])
 def test_item_auth_urls(admin_client, url, services):
     assert admin_client.get(url).status_code == 200

@@ -27,7 +27,8 @@ def test_item_urls(client, jobs, url, status):
 
 @pytest.mark.parametrize("url", [
     '/en/jobs/edit/1/',
-    '/en/jobs/delete/1/'
+    '/en/jobs/delete/1/',
+    '/en/jobs/new/'
 ])
 def test_item_auth_urls(admin_client, url, jobs):
     assert admin_client.get(url).status_code == 200

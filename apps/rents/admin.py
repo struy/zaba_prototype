@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from .models import Rental, PropertyType
+from .models import Rent, PropertyType
 
 
 class RentalAdmin(TranslationAdmin):
@@ -9,4 +9,4 @@ class RentalAdmin(TranslationAdmin):
 
 
 admin.site.register(PropertyType, RentalAdmin)
-admin.site.register(Rental)
+admin.site.register(Rent)

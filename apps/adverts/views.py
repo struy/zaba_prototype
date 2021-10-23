@@ -16,7 +16,7 @@ from apps.gifts.models import Gift
 from apps.items.models import Item
 from apps.jobs.models import Job
 from apps.promotions.models import Banner
-from apps.rents.models import Rental
+from apps.rents.models import Rent
 from apps.services.models import Service
 from .models import Advert
 from .utils import get_most_viewed, get_new_ads
@@ -117,20 +117,20 @@ class SearchView(ListView):
             item_results = Item.objects.search(query)
             job_results = Job.objects.search(query)
             gift_results = Gift.objects.search(query)
-            rental_results = Rental.objects.search(query)
+            rental_results = Rent.objects.search(query)
             service_results = Service.objects.search(query)
         if not query:
             item_results = Item.objects.filter(city__contains=locality)
             job_results = Job.objects.filter(city__contains=locality)
             gift_results = Gift.objects.filter(city__contains=locality)
-            rental_results = Rental.objects.filter(city__contains=locality)
+            rental_results = Rent.objects.filter(city__contains=locality)
             service_results = Service.objects.filter(city__contains=locality)
 
         if query and locality:
             item_results = Item.objects.search(query).filter(city__contains=locality)
             job_results = Job.objects.search(query).filter(city__contains=locality)
             gift_results = Gift.objects.search(query).filter(city__contains=locality)
-            rental_results = Rental.objects.search(query).filter(city__contains=locality)
+            rental_results = Rent.objects.search(query).filter(city__contains=locality)
             service_results = Service.objects.search(query).filter(city__contains=locality)
 
         # combine querysets
@@ -157,7 +157,7 @@ class MapList(ListView):
         queryset = {'items': Item.objects.filter(point__isnull=False, local__exact=lang),
                     'jobs': Job.objects.filter(point__isnull=False, local__exact=lang),
                     'gifts': Gift.objects.filter(point__isnull=False, local__exact=lang),
-                    'rents': Rental.objects.filter(point__isnull=False, local__exact=lang)
+                    'rents': Rent.objects.filter(point__isnull=False, local__exact=lang)
                     }
         return queryset
 

@@ -2,7 +2,7 @@ from itertools import chain
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from apps.items.models import Item
 from apps.gifts.models import Gift
-from apps.rents.models import Rental
+from apps.rents.models import Rent
 from apps.jobs.models import Job
 
 
@@ -14,7 +14,7 @@ def inform_users(user_id):
 def get_most_viewed(pool):
     result = []
     ranking = [i.decode('utf-8') for i in pool.zrange('ranking:All', 0, -1, desc=True)[:12]]
-    models = {"Item": Item, "Job": Job, "Gift": Gift, "Rental": Rental}
+    models = {"Item": Item, "Job": Job, "Gift": Gift, "Rent": Rent}
 
     for key, value in models.items():
         ranking_ids = [int(item[len(key) + 1:]) for item in ranking if item.startswith(key)]
@@ -28,7 +28,7 @@ def get_most_viewed(pool):
 
 
 def get_new_ads(pool):
-    models = ["Item", "Job", "Gift", "Rental"]
+    models = ["Item", "Job", "Gift", "Rent"]
     result = []
     for name in models:
         ids = [int(i) for i in pool.lrange(f'{name}:new', 0, 12)]

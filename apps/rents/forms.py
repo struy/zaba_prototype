@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.gis import forms as gis_forms
 from django.utils.translation import gettext_lazy as _
 
-from .models import Rental
+from .models import Rent
 
 
 class RentForm(forms.ModelForm):
@@ -19,7 +19,7 @@ class RentForm(forms.ModelForm):
     city = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
 
     class Meta:
-        model = Rental
+        model = Rent
         fields = ['property_type', 'title', 'description', 'expires', 'price', 'image', 'pet_policy',
                   'bathrooms', 'bedrooms', 'furnished', 'city', 'address', 'point']
         widgets = {

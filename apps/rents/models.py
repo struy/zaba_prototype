@@ -14,7 +14,7 @@ class PropertyType(models.Model):
         return self.name
 
 
-class Rental(Advert, Location):
+class Rent(Advert, Location):
     """
     Move-in Date
     Type : apartments, houses, condos, townhouses, basement
@@ -56,9 +56,9 @@ class Rental(Advert, Location):
         return reverse('rents:detail', args=[self.id])
 
     def get_api_fav_url(self):
-        return reverse('favourite_add', kwargs={'name': 'Rental', 'record_id': self.id})
+        return reverse('favourite_add', kwargs={'name': 'Rent', 'record_id': self.id})
 
 
 class RentalTable(tables.Table):
     class Meta:
-        model = Rental
+        model = Rent

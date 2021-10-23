@@ -9,7 +9,7 @@ pytestmark = pytest.mark.django_db
 @pytest.fixture()
 def rents():
     user = baker.make(User, email=gen_email)
-    return baker.make('rents.Rental', local='en', author=user, _quantity=10)
+    return baker.make('rents.Rent', local='en', author=user, _quantity=10)
 
 
 @pytest.mark.parametrize("url, status", [

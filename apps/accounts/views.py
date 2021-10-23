@@ -15,14 +15,14 @@ from rest_framework.views import APIView
 from apps.gifts.models import Gift
 from apps.items.models import Item
 from apps.jobs.models import Job
-from apps.rents.models import Rental
+from apps.rents.models import Rent
 from .forms import UserEditForm, ContactUserForm
 from .forms import UserRegistrationForm
 
 
 @login_required
 def favourite_list(request):
-    models = [Item, Job, Rental, Gift]
+    models = [Item, Job, Rent, Gift]
     ads = [m.objects.filter(favourites=request.user) for m in models]
     adverts = chain(*ads)
 
@@ -40,7 +40,7 @@ class AdFavAPIToggle(APIView):
             "Item": Item,
             "Job": Job,
             "Gift": Gift,
-            "Rental": Rental
+            "Rent": Rent
         }
         ad = get_object_or_404(models[name.capitalize()], id=record_id)
         user = self.request.user
@@ -95,7 +95,7 @@ def edit(request):
 
 @login_required
 def my_ads(request):
-    models = [Item, Job, Rental, Gift]
+    models = [Item, Job, Rent, Gift]
     adverts = [m.objects.filter(author_id=request.user.id) for m in models]
     ads = [i for i in adverts if len(i)]
     names = [i.model.__name__ + "s" for i in ads]
@@ -110,7 +110,7 @@ def my_ads(request):
 
 
 def user_ads(request, pk):
-    models = [Item, Job, Rental, Gift]
+    models = [Item, Job, Rent, Gift]
     adverts = [m.objects.filter(author_id=pk) for m in models]
     ads = [i for i in adverts if len(i)]
     names = [i.model.__name__ + "s" for i in ads]
@@ -130,7 +130,7 @@ def contact_user(request, pk, name, a_id):
         "Item": Item,
         "Job": Job,
         "Gift": Gift,
-        "Rental": Rental
+        "Rent": Rent
     }
     advert = get_object_or_404(models[name.capitalize()], id=a_id)
     if request.method == 'GET':

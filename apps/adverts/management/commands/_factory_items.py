@@ -9,7 +9,7 @@ from faker import Factory
 from apps.gifts.models import Gift, GiftType
 from apps.items.models import Item
 from apps.jobs.models import Job, JobType
-from apps.rents.models import Rental, PropertyType
+from apps.rents.models import Rent, PropertyType
 
 
 def create_img(fake, model):
@@ -78,23 +78,23 @@ def start(count):
             # rents
         for i in range(count):
             local_lat = fake.local_latlng()
-            rent = Rental(title=fake.catch_phrase(),
-                          description=fake.text(),
-                          author_id=author_id,
-                          point=Point((float(local_lat[0]), float(local_lat[1]))),
-                          local=loc[:2],
-                          address=fake.street_address(),
-                          city=local_lat[2],
-                          expires=fake.date_this_year(),
-                          # uniq
-                          property_type=PropertyType.objects.get(pk=rand.randint(1, 4)),
-                          bathrooms=rand.randint(1, 3),
-                          bedrooms=rand.randint(1, 3),
-                          pet_policy=rand.randint(0, 5),
-                          furnished=bool(rand.getrandbits(1)),
-                          prefer_sex=rand.choice(['a', 'w', 'm']),
-                          price=rand.randint(1, 2000),
-                          )
+            rent = Rent(title=fake.catch_phrase(),
+                        description=fake.text(),
+                        author_id=author_id,
+                        point=Point((float(local_lat[0]), float(local_lat[1]))),
+                        local=loc[:2],
+                        address=fake.street_address(),
+                        city=local_lat[2],
+                        expires=fake.date_this_year(),
+                        # uniq
+                        property_type=PropertyType.objects.get(pk=rand.randint(1, 4)),
+                        bathrooms=rand.randint(1, 3),
+                        bedrooms=rand.randint(1, 3),
+                        pet_policy=rand.randint(0, 5),
+                        furnished=bool(rand.getrandbits(1)),
+                        prefer_sex=rand.choice(['a', 'w', 'm']),
+                        price=rand.randint(1, 2000),
+                        )
             create_img(fake, rent)
             rent.save()
             print("created Rent")

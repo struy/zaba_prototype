@@ -3,14 +3,14 @@ from django import forms
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .models import Rental
+from .models import Rent
 
 
 class RentsFilter(django_filters.FilterSet):
     city = django_filters.CharFilter(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
 
     class Meta:
-        model = Rental
+        model = Rent
         fields = {
             'property_type': ['exact'],
             'prefer_sex': ['exact'],

@@ -97,11 +97,11 @@ class JobMapList(MapListView):
 
 
 class JobTableList(SingleTableMixin, FilterView):
-        table_class = JobTable
-        template_name = "items/table.html"
-        filterset_class = JobsFilter
+    table_class = JobTable
+    template_name = "items/table.html"
+    filterset_class = JobsFilter
 
-        def get_queryset(self):
-            lang = get_language()
-            queryset = Job.objects.filter(local__exact=lang)
-            return queryset
+    def get_queryset(self):
+        lang = get_language()
+        queryset = Job.objects.filter(local__exact=lang)
+        return queryset

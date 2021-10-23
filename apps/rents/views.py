@@ -103,11 +103,11 @@ class RentMapList(MapListView):
 
 
 class RentTableList(SingleTableMixin, FilterView):
-        table_class = RentTable
-        template_name = "items/table.html"
-        filterset_class = RentsFilter
+    table_class = RentTable
+    template_name = "items/table.html"
+    filterset_class = RentsFilter
 
-        def get_queryset(self):
-            lang = get_language()
-            queryset = Rent.objects.filter(local__exact=lang)
-            return queryset
+    def get_queryset(self):
+        lang = get_language()
+        queryset = Rent.objects.filter(local__exact=lang)
+        return queryset

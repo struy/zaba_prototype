@@ -183,20 +183,10 @@ class MapListView(ListView):
         lang = get_language()
         now = utc.localize(datetime.datetime.today())
         new = now - datetime.timedelta(weeks=2)
-        old = now - datetime.timedelta(weeks=4)
         very_old = now - datetime.timedelta(weeks=12)
-        dead = now - datetime.timedelta(weeks=24)
         queryset = {'new_items': self.model.objects.filter(point__isnull=False, local__exact=lang, modified__gte=new),
                     'not_new_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
                                                                modified__range=[very_old, new]),
-                    # 'other_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
-                    #                                          modified__range=[old, new]),
-                    #
-                    # 'old_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
-                    #                                        modified__range=[very_old, old]),
-                    # 'very_old_items': self.model.objects.filter(point__isnull=False, local__exact=lang,
-                    #                                             modified__range=[dead, very_old]),
-                    # 'dead_items': self.model.objects.filter(point__isnull=False, local__exact=lang, modified__lt=dead),
                     }
         return queryset
 

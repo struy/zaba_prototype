@@ -3,7 +3,6 @@ import sys
 import environ
 import redis
 import sentry_sdk
-from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 from braintree import Configuration, Environment
 from django.utils.translation import gettext_lazy as _

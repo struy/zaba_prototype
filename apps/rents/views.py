@@ -69,7 +69,7 @@ def detail(request, pk):
 def rents_list(request):
     queryset = Rent.objects.all()
     table = RentalTable(queryset)
-    return render(request, 'rents/templates/rents/rental_table_list.html', {'table': table})
+    return render(request, 'rents/templates/rents/rent_table_list.html', {'table': table})
 
 
 class RentCreate(CreateView):

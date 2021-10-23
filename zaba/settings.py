@@ -21,8 +21,8 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default="secret")
 ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
 
 # Google Recaptcha
-RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = env('RECAPTCHA_PUBLIC_KEY', default="")
+RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY', default="")
 RECAPTCHA_REQUIRED_SCORE = 0.7
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -241,14 +241,14 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 
 sentry_sdk.init(
-    dsn=env('SENTRY_DSN'),
+    dsn=env('SENTRY_DSN', default=""),
     integrations=[RedisIntegration()],
     send_default_pii=True
 )
 
-BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID')
-BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY')
-BRAINTREE_PRIVATE_KEY = env('BRAINTREE_PRIVATE_KEY')
+BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID', default="")
+BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY', default="")
+BRAINTREE_PRIVATE_KEY = env('BRAINTREE_PRIVATE_KEY', default="")
 
 Configuration.configure(
     Environment.Sandbox,
@@ -258,7 +258,7 @@ Configuration.configure(
 )
 
 GOOGLE_ANALYTICS = {
-    'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS'),
+    'google_analytics_id': env('DJANGO_GOOGLE_ANALYTICS', default=""),
 }
 
 

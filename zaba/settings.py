@@ -1,11 +1,12 @@
 import os
 import sys
+
 import environ
 import redis
 import sentry_sdk
-from sentry_sdk.integrations.redis import RedisIntegration
 from braintree import Configuration, Environment
 from django.utils.translation import gettext_lazy as _
+from sentry_sdk.integrations.redis import RedisIntegration
 
 env = environ.Env()
 
@@ -37,12 +38,12 @@ if DEBUG:
 DJANGO_APPS = ['django.contrib.admin',
                'django.contrib.auth',
                'django.contrib.contenttypes',
-               'django.contrib.sessions',
-               'django.contrib.messages',
-               'django.contrib.staticfiles',
                'django.contrib.humanize',
                'django.contrib.gis',
+               'django.contrib.messages',
+               'django.contrib.sessions',
                'django.contrib.sites',
+               'django.contrib.staticfiles',
                ]
 
 THIRD_PARTY_APPS = ['django_countries',
@@ -63,6 +64,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'django_cleanup.apps.CleanupConfig',
                     'phonenumber_field',
                     'rest_framework',
+                    'django_social_share'
                     ]
 
 LOCAL_APPS = ['apps.accounts.apps.AccountsConfig',

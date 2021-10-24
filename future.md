@@ -78,3 +78,7 @@ https://pypi.org/project/django-node-assets/
 
 diff icons for diff types of ads
 https://github.com/lvoogdt/Leaflet.awesome-markers
+
+Distance
+qs = SouthTexasCity.objects.filter(point__distance_gte=(pnt, D(mi=20)))
+https://docs.djangoproject.com/en/2.2/ref/contrib/gis/db-api/

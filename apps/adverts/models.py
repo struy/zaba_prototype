@@ -73,10 +73,8 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
     @property
     def expires_type(self):
         """ return namedtuple(css, text) or None"""
-        # utc = pytz.UTC
-        # now = utc.localize(datetime.datetime.today())
-        today = datetime.datetime.today()
-        now = today.localize(pytz.UTC)
+        utc = pytz.UTC
+        now = utc.localize(datetime.datetime.today())
         NT = namedtuple('NT', 'css text')
         if (self.modified + datetime.timedelta(weeks=2)) > now:
             return NT("px-1 text-white bg-success", _("new"))

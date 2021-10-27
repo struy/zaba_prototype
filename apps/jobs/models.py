@@ -23,27 +23,34 @@ class Job(Advert, Location):
     payment
     LOGO
     """
-    DURATIONS = (('ft', _('full-time')),
-                 ('pt', _('part-time')),
-                 ('ca', _('casual')),)
+    DURATIONS = (('f', _('full-time')),
+                 ('p', _('part-time')),
+                 ('c', _('casual')),)
+
+    PERS = (
+        ('h', _('per hour')),
+        ('w', _('per week')),
+        ('y', _('annual salary')),
+        ('m', _('per mile')),
+    )
 
     jobtype = models.ForeignKey(JobType, on_delete=models.CASCADE, verbose_name=_('job type'))
-    duration = models.CharField(
-        max_length=2,
-        choices=DURATIONS,
-        default='ft'
-    )
+    duration = models.CharField(max_length=1, choices=DURATIONS, default='f')
     countries = CountryField(multiple=True, default='EN', verbose_name=_('language'),
                              help_text=_('What language does the employer speak?'), )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True, verbose_name=_('Logo or image'))
     favourites = models.ManyToManyField(User, related_name='favourite_jobs', default=None, blank=True)
     salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('salary'), null=True, blank=True)
+    per = models.CharField(max_length=1, choices=PERS, default='h')
 
     def get_absolute_url(self):
         return reverse('jobs:detail', args=[self.id])
 
     def get_api_fav_url(self):
         return reverse('favourite_add', kwargs={'name': 'Job', 'record_id': self.id})
+
+    def save(self, *args, **kwargs):
+        pass
 
     def delete(self, *args, **kwargs):
         self.image.delete()

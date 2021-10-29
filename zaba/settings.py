@@ -277,3 +277,6 @@ def FILTERS_VERBOSE_LOOKUPS():
 
 
 EXTENSIONS_MAX_UNIQUE_QUERY_ATTEMPTS = 1000
+
+# Upgrading to Django 3.2 and fixing DEFAULT_AUTO_FIELD warnings
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

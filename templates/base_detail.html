@@ -17,4 +17,6 @@
             L.marker({{ advert.lat_lng }}).addTo(m).bindPopup('{{ advert.title }}');
         {% endif %}
     </script>
+
+        {% include "snippets/js/favorite-update-js.html" %}
 {% endblock %}

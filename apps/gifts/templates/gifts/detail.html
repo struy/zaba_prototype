@@ -30,7 +30,8 @@
                         <span>{{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
-                                <a class="favorite" data-href="{{ advert.get_api_fav_url }}" href="{{ advert.get_api_fav_url }}">
+                                <a class="favorite" data-href="{{ advert.get_api_fav_url }}"
+                                   href="{{ advert.get_api_fav_url }}">
                                     <i class="
                                      {% if favourite %}
                                         fas
@@ -60,7 +61,7 @@
                             {% include 'svg/icon-Locate.svg' %}
                             <span>{% trans "Location:" %} </span>
                         </p>
-                        <div id="m" ></div>
+                        <div id="m"></div>
                     {% endif %}
                     <div class="count d-flex justify-content-start mt-4">
                         <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
@@ -75,11 +76,7 @@
 
     {% include 'snippets/banners/bottom.html' %}
 
-
-
 {% endblock %}
 
-{% block script %}
-    {% include "snippets/js/favorite-update-js.html" %}
-{% endblock %}
+
 

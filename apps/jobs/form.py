@@ -17,6 +17,7 @@ class JobForm(forms.ModelForm):
                                       }),
     )
     city = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
+    salary = forms.DecimalField(widget=forms.TextInput(attrs={'placeholder': _("per hour / per mile")}))
 
     class Meta:
         model = Job
@@ -25,7 +26,6 @@ class JobForm(forms.ModelForm):
             "jobtype",
             "description",
             "image",
-            "salary",
             "address",
             "city",
             "duration",

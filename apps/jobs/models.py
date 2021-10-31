@@ -50,7 +50,7 @@ class Job(Advert, Location):
         return reverse('favourite_add', kwargs={'name': 'Job', 'record_id': self.id})
 
     def save(self, *args, **kwargs):
-        pass
+        super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
         self.image.delete()

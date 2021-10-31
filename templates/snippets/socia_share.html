@@ -1,0 +1,7 @@
+<div class="d-inline-flex justify-content-end ">
+    {% load social_share %}
+    {% post_to_facebook object_or_url '<i class="fab fa-facebook-square fa-2x mr-1" style="color:#3b5998"></i>' %}
+    {% post_to_gplus object_or_url '<i class="fab fa-google-plus-square fa-2x mr-1" style="color:#dd4b39"></i>' %}
+    {% post_to_twitter "New ad: {{advert.title}}" object_or_url '<i class="fab fa-twitter-square fa-2x mr-1" style="color:#1da1f2"></i>' %}
+    {% post_to_telegram "New ad: {{advert.title}}" object_or_url '<i class="fab fa-telegram-plane fa-2x mr-1" style="color:#0088cc"></i>' %}
+</div>

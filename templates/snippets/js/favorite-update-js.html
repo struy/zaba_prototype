@@ -11,11 +11,19 @@
                     method: "GET",
                     data: {},
                     success: data => {
+                        let counter = $('.counter-favorites b');
+                        let current = +counter.text();
+
                         if (data.updated) {
                             if (data.favourite) {
                                 fa = "fas";
+                                current += 1;
+                            } else {
+                                current -= 1;
                             }
                             this_.html('<i class="' + fa + ' fa-heart fa-heart"></i>');
+                            counter.text(current);
+
                         }
 
                     }

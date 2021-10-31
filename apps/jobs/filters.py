@@ -16,3 +16,14 @@ class JobsFilter(django_filters.FilterSet):
             'jobtype': ['exact'],
             'city': ['exact']
         }
+
+    # @property
+    # def qs(self):
+    #     per = getattr(self.request, 'per', None)
+    #     if self.request and per:
+    #         self.request['salary__gte'] *= 2000  # (50 weeks * 40 hours)
+    #         self.request['salary__lte'] *= 2000
+    #
+    #     parent = super().qs
+    #
+    #     return parent

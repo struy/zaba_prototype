@@ -1,0 +1,20 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/Build/zaba_prototype
+ExecStart=/home/ubuntu/Build/zaba_prototype/env/bin/gunicorn \
+    --access-logfile - \
+    --workers 3 \
+    --bind unix:/run/gunicorn.sock \
+    zaba.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+

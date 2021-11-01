@@ -1,0 +1,48 @@
+# /etc/nginx/sites-available/zaba
+server {
+    server_name www.zaba.today zaba.today;
+
+    location = /favicon.ico {access_log off; log_not_found off;}
+    location /static/ {
+        root /home/ubuntu/Build/zaba_prototype;
+    }
+    location /{
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+    location /jenkins/ {
+        include /etc/nginx/proxy_params;
+        proxy_pass http://localhost:8080;
+        proxy_read_timeout 90s;
+        proxy_redirect http://localhost:8080 https://zaba.today/jenkins/;
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/zaba.today/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/zaba.today/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}server {
+#    if ($host = www.zaba.today) {
+#        return 301 https://$host$request_uri;
+#    } # managed by Certbot
+
+#    if ($host = zaba.today) {
+#        return 301 https://$host$request_uri;
+#    } # managed by Certbot
+
+
+#    listen 80;
+#    server_name zaba.today www.zaba.today;
+#    return 404; # managed by Certbot
+
+
+
+
+}

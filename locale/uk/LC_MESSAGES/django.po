@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-22 20:17-0500\n"
+"POT-Creation-Date: 2021-10-31 19:46-0500\n"
 "PO-Revision-Date: 2021-08-23 01:24+0000\n"
 "Last-Translator: b'  <struykm@yandex.ru>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: apps/accounts/forms.py:51 apps/sendemail/forms.py:6
@@ -35,43 +36,44 @@ msgstr "Зв'язатись з користувачем"
 #: apps/accounts/templates/accounts/connect.html:13
 #: apps/accounts/templates/accounts/edit.html:11
 #: apps/accounts/templates/accounts/favorites.html:12
-#: apps/accounts/templates/accounts/favourites.html:16
-#: apps/accounts/templates/accounts/my_ads.html:16
+#: apps/accounts/templates/accounts/favourites.html:15
+#: apps/accounts/templates/accounts/my_ads.html:15
 #: apps/accounts/templates/accounts/register.html:16
 #: apps/accounts/templates/accounts/register_done.html:10
-#: apps/accounts/templates/accounts/user_ads.html:17
+#: apps/accounts/templates/accounts/user_ads.html:16
 #: apps/adverts/templates/adverts/map.html:10
 #: apps/gifts/templates/gifts/detail.html:12
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
 #: apps/gifts/templates/gifts/gift_list.html:10
 #: apps/gifts/templates/gifts/gift_map_list.html:10
-#: apps/gifts/templates/gifts/index.html:15
-#: apps/items/templates/items/detail.html:11
-#: apps/items/templates/items/index.html:15
+#: apps/gifts/templates/gifts/index.html:14
+#: apps/items/templates/items/detail.html:12
+#: apps/items/templates/items/index.html:14
 #: apps/items/templates/items/item_confirm_delete.html:9
 #: apps/items/templates/items/item_form.html:11
 #: apps/items/templates/items/item_map_list.html:10
+#: apps/items/templates/items/table.html:14
 #: apps/jobs/templates/jobs/detail.html:12
-#: apps/jobs/templates/jobs/index.html:15
+#: apps/jobs/templates/jobs/index.html:14
 #: apps/jobs/templates/jobs/job_confirm_delete.html:9
 #: apps/jobs/templates/jobs/job_form.html:11
 #: apps/jobs/templates/jobs/job_map_list.html:10
 #: apps/rents/templates/rents/detail.html:11
-#: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/index.html:14
+#: apps/rents/templates/rents/rent_confirm_delete.html:11
+#: apps/rents/templates/rents/rent_form.html:11
 #: apps/rents/templates/rents/rent_map_list.html:10
-#: apps/rents/templates/rents/rental_confirm_delete.html:11
-#: apps/rents/templates/rents/rental_form.html:11
 #: apps/sendemail/templates/sendemail/email.html:13
 #: apps/sendemail/templates/sendemail/no_success.html:9
 #: apps/sendemail/templates/sendemail/success.html:11
 #: apps/services/templates/services/detail.html:12
-#: apps/services/templates/services/index.html:15
+#: apps/services/templates/services/index.html:14
 #: apps/services/templates/services/service_confirm_delete.html:9
 #: apps/services/templates/services/service_form.html:11
 #: apps/services/templates/services/service_map_list.html:10
-#: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:10
-#: templates/policy/cookie_policy.html:11
+#: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:11
+#: templates/policy/cookie_policy.html:8
 #: templates/policy/privacy_policy.html:10
 #: templates/policy/term_of_services.html:10
 #: templates/registration/logged_out.html:10
@@ -122,23 +124,23 @@ msgid "My Favorites"
 msgstr "Мої улюблені"
 
 #: apps/accounts/templates/accounts/favorites.html:13
-#: apps/accounts/templates/accounts/favourites.html:12
-#: apps/accounts/templates/accounts/favourites.html:17
+#: apps/accounts/templates/accounts/favourites.html:11
+#: apps/accounts/templates/accounts/favourites.html:16
 msgid "Favorites"
 msgstr "Улюблені"
 
-#: apps/accounts/templates/accounts/favourites.html:94
-#: apps/gifts/templates/gifts/index.html:103
-#: apps/items/templates/items/index.html:113
-#: apps/jobs/templates/jobs/index.html:102
-#: apps/rents/templates/rents/index.html:101
-#: apps/services/templates/services/index.html:102
-#: templates/snippets/adverts_loop.html:85
+#: apps/accounts/templates/accounts/favourites.html:93
+#: apps/gifts/templates/gifts/index.html:139
+#: apps/items/templates/items/index.html:139
+#: apps/jobs/templates/jobs/index.html:141
+#: apps/rents/templates/rents/index.html:135
+#: apps/services/templates/services/index.html:137
+#: templates/snippets/adverts_loop.html:84
 msgid "No adverts are available."
 msgstr "Оголошення відсутні"
 
-#: apps/accounts/templates/accounts/my_ads.html:12
-#: apps/accounts/templates/accounts/my_ads.html:17
+#: apps/accounts/templates/accounts/my_ads.html:11
+#: apps/accounts/templates/accounts/my_ads.html:16
 msgid "My Ads"
 msgstr "Мої оголошення"
 
@@ -156,17 +158,27 @@ msgstr "Створити обліковий запис"
 msgid "Please, sign up using the following form:"
 msgstr "Будь ласка, зареєструйтеся, скориставшись цією формою:"
 
-#: apps/accounts/templates/accounts/register.html:40
+#: apps/accounts/templates/accounts/register.html:41
+msgid "By creating an account and clicking \"Submit,\""
+msgstr ""
+
+#: apps/accounts/templates/accounts/register.html:42
+msgid ""
+"I agree to the Terms of Use and understand my information will be used as "
+"described in the Privacy Policy."
+msgstr ""
+
+#: apps/accounts/templates/accounts/register.html:48
 msgid "Create"
 msgstr "створений в"
 
-#: apps/accounts/templates/accounts/register.html:43
+#: apps/accounts/templates/accounts/register.html:51
 #: templates/registration/login.html:47
 #: templates/registration/password_reset_form.html:39
 msgid "Login"
 msgstr "Логін"
 
-#: apps/accounts/templates/accounts/register.html:54
+#: apps/accounts/templates/accounts/register.html:62
 #: templates/registration/login.html:74
 msgid "Google"
 msgstr "Google"
@@ -184,8 +196,8 @@ msgstr "Ваш обліковий запис успішно створено. Т
 msgid "log in"
 msgstr "Ввійти"
 
-#: apps/accounts/templates/accounts/user_ads.html:9
-#: apps/accounts/templates/accounts/user_ads.html:18
+#: apps/accounts/templates/accounts/user_ads.html:8
+#: apps/accounts/templates/accounts/user_ads.html:17
 msgid "User's Ads"
 msgstr "Всі оголошення автора"
 
@@ -239,65 +251,66 @@ msgstr "адреса"
 msgid "map"
 msgstr "мапа"
 
-#: apps/adverts/templates/adverts/index.html:15
+#: apps/adverts/templates/adverts/index.html:14
 msgid "Adverts"
 msgstr "Оголошення"
 
-#: apps/adverts/templates/adverts/index.html:25
+#: apps/adverts/templates/adverts/index.html:24
 msgid "Detail"
 msgstr "Подробиці"
 
 #: apps/adverts/templates/adverts/map.html:5
-#: apps/items/templates/items/detail.html:12
-#: apps/items/templates/items/index.html:11
-#: apps/items/templates/items/index.html:16
+#: apps/items/templates/items/detail.html:13
+#: apps/items/templates/items/index.html:10
+#: apps/items/templates/items/index.html:15
 #: apps/items/templates/items/item_confirm_delete.html:10
 #: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_map_list.html:5
+#: apps/items/templates/items/item_map_list.html:6
+#: apps/items/templates/items/table.html:15
 msgid "Items"
 msgstr "Товари"
 
-#: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
+#: apps/adverts/templates/adverts/map.html:13 templates/base.html:86
 msgid "Map"
 msgstr "Карта"
 
-#: apps/adverts/templates/adverts/map.html:30 templates/home.html:114
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:75
 #: templates/place_ad.html:49
 msgid "Sell"
 msgstr "Продаж"
 
 #: apps/adverts/templates/adverts/map.html:33
 #: apps/jobs/templates/jobs/detail.html:13
-#: apps/jobs/templates/jobs/index.html:11
-#: apps/jobs/templates/jobs/index.html:16
+#: apps/jobs/templates/jobs/index.html:10
+#: apps/jobs/templates/jobs/index.html:15
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:123
+#: apps/rents/templates/rents/index.html:10 templates/home.html:84
 #: templates/place_ad.html:55
 msgid "Jobs"
 msgstr "Робота"
 
 #: apps/adverts/templates/adverts/map.html:36
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:133
+#: apps/rents/templates/rents/rent_form.html:6 templates/home.html:94
 #: templates/place_ad.html:62 templates/search.html:98
 msgid "Rent"
 msgstr "Оренда"
 
 #: apps/adverts/templates/adverts/map.html:40
 #: apps/services/templates/services/detail.html:13
-#: apps/services/templates/services/index.html:11
-#: apps/services/templates/services/index.html:16
+#: apps/services/templates/services/index.html:10
+#: apps/services/templates/services/index.html:15
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6
-#: templates/home.html:141
+#: apps/services/templates/services/service_list.html:6 templates/home.html:102
+#: templates/place_ad.html:68
 msgid "Services"
 msgstr "Послуги"
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:151 templates/place_ad.html:68
+#: templates/home.html:112 templates/place_ad.html:74
 msgid "Cats"
 msgstr "Котики"
 
@@ -317,40 +330,40 @@ msgstr "тип подарунка"
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:11
 #: apps/gifts/templates/gifts/gift_form.html:15
 #: apps/gifts/templates/gifts/gift_list.html:5
-#: apps/gifts/templates/gifts/index.html:11
-#: apps/gifts/templates/gifts/index.html:16
+#: apps/gifts/templates/gifts/index.html:10
+#: apps/gifts/templates/gifts/index.html:15
 msgid "Gifts"
 msgstr "Подарунки"
 
-#: apps/gifts/templates/gifts/detail.html:48
-#: apps/items/templates/items/detail.html:50
-#: apps/jobs/templates/jobs/detail.html:64
-#: apps/rents/templates/rents/detail.html:49
-#: apps/services/templates/services/detail.html:62
+#: apps/gifts/templates/gifts/detail.html:50
+#: apps/items/templates/items/detail.html:52
+#: apps/jobs/templates/jobs/detail.html:62
+#: apps/rents/templates/rents/detail.html:50
+#: apps/services/templates/services/detail.html:52
 msgid "Description:"
 msgstr "Опис:"
 
-#: apps/gifts/templates/gifts/detail.html:55
-#: apps/items/templates/items/detail.html:57
-#: apps/jobs/templates/jobs/detail.html:79
-#: apps/rents/templates/rents/detail.html:65
-#: apps/services/templates/services/detail.html:77
+#: apps/gifts/templates/gifts/detail.html:57
+#: apps/items/templates/items/detail.html:59
+#: apps/jobs/templates/jobs/detail.html:77
+#: apps/rents/templates/rents/detail.html:66
+#: apps/services/templates/services/detail.html:66
 msgid "City:"
 msgstr "Місто:"
 
-#: apps/gifts/templates/gifts/detail.html:56
-#: apps/items/templates/items/detail.html:58
-#: apps/jobs/templates/jobs/detail.html:80
-#: apps/rents/templates/rents/detail.html:66
-#: apps/services/templates/services/detail.html:78
+#: apps/gifts/templates/gifts/detail.html:58
+#: apps/items/templates/items/detail.html:60
+#: apps/jobs/templates/jobs/detail.html:78
+#: apps/rents/templates/rents/detail.html:67
+#: apps/services/templates/services/detail.html:67
 msgid "Address:"
 msgstr "Адреса:"
 
-#: apps/gifts/templates/gifts/detail.html:60
-#: apps/items/templates/items/detail.html:62
-#: apps/jobs/templates/jobs/detail.html:85
-#: apps/rents/templates/rents/detail.html:71
-#: apps/services/templates/services/detail.html:83
+#: apps/gifts/templates/gifts/detail.html:62
+#: apps/items/templates/items/detail.html:65
+#: apps/jobs/templates/jobs/detail.html:83
+#: apps/rents/templates/rents/detail.html:72
+#: apps/services/templates/services/detail.html:72
 msgid "Location:"
 msgstr "Місцеположення:"
 
@@ -369,21 +382,28 @@ msgstr "Подарунок"
 msgid "Map of Gifts"
 msgstr "Карта подарунків"
 
-#: apps/gifts/templates/gifts/index.html:73
-#: apps/items/templates/items/index.html:81
-#: apps/jobs/templates/jobs/index.html:73
-#: apps/rents/templates/rents/index.html:73
-#: apps/services/templates/services/index.html:73
-#: templates/snippets/adverts_loop.html:58
+#: apps/gifts/templates/gifts/index.html:23
+#, fuzzy
+#| msgid "give away"
+msgid "Give away"
+msgstr "віддам безкоштовно"
+
+#: apps/gifts/templates/gifts/index.html:109
+#: apps/items/templates/items/index.html:106
+#: apps/items/templates/items/item_confirm_delete.html:22
+#: apps/jobs/templates/jobs/index.html:110
+#: apps/rents/templates/rents/index.html:105
+#: apps/services/templates/services/index.html:106
+#: templates/snippets/adverts_loop.html:57
 msgid "Delete"
 msgstr "Видалити"
 
-#: apps/gifts/templates/gifts/index.html:76
-#: apps/items/templates/items/index.html:86
-#: apps/jobs/templates/jobs/index.html:76
-#: apps/rents/templates/rents/index.html:76
-#: apps/services/templates/services/index.html:76
-#: templates/snippets/adverts_loop.html:62
+#: apps/gifts/templates/gifts/index.html:113
+#: apps/items/templates/items/index.html:111
+#: apps/jobs/templates/jobs/index.html:114
+#: apps/rents/templates/rents/index.html:109
+#: apps/services/templates/services/index.html:110
+#: templates/snippets/adverts_loop.html:61
 msgid "Edit"
 msgstr "Редагувати"
 
@@ -403,7 +423,7 @@ msgstr "В гарному стані"
 msgid "Like New"
 msgstr "Як Нові"
 
-#: apps/items/models.py:16 templates/home.html:255
+#: apps/items/models.py:16 templates/home.html:209
 msgid "New"
 msgstr "Нові"
 
@@ -415,24 +435,45 @@ msgstr "стан"
 msgid "price"
 msgstr "ціна"
 
-#: apps/items/templates/items/detail.html:7
+#: apps/items/templates/items/detail.html:8
 #: apps/items/templates/items/item_form.html:6 templates/search.html:49
 msgid "Item"
 msgstr "Товар"
+
+#: apps/items/templates/items/index.html:23
+#, fuzzy
+#| msgid "offer for sale"
+msgid "Offer for sale"
+msgstr "продам"
 
 #: apps/items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr "Видалити товар"
 
-#: apps/items/templates/items/item_map_list.html:13
+#: apps/items/templates/items/item_confirm_delete.html:25
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: apps/items/templates/items/item_confirm_delete.html:29
+#, fuzzy
+#| msgid "Back"
+msgid "Go Back"
+msgstr "Повернутись"
+
+#: apps/items/templates/items/item_map_list.html:11
 msgid "Map of Items"
 msgstr "Мапа товарів"
 
-#: apps/items/templates/items/item_map_list.html:29
+#: apps/items/templates/items/item_map_list.html:12
+#: apps/items/templates/items/table.html:16 templates/place_ad.html:14
+msgid "Back"
+msgstr "Повернутись"
+
+#: apps/items/templates/items/item_map_list.html:56
 msgid "to 2 weeks"
 msgstr "до 2-х тижнів"
 
-#: apps/items/templates/items/item_map_list.html:30
+#: apps/items/templates/items/item_map_list.html:57
 msgid "2 weeks - 12 weeks"
 msgstr "2-12 тижнів "
 
@@ -440,35 +481,39 @@ msgstr "2-12 тижнів "
 msgid "List of items"
 msgstr "Список товарів"
 
-#: apps/jobs/models.py:26
+#: apps/jobs/form.py:20
+msgid "per hour / per mile"
+msgstr ""
+
+#: apps/jobs/models.py:32
 msgid "full-time"
 msgstr "Повний робочий день"
 
-#: apps/jobs/models.py:27
+#: apps/jobs/models.py:33
 msgid "part-time"
 msgstr "Неповний робочий день"
 
-#: apps/jobs/models.py:28
+#: apps/jobs/models.py:34
 msgid "casual"
 msgstr "нерегулярний робочий день"
 
-#: apps/jobs/models.py:30
+#: apps/jobs/models.py:36
 msgid "job type"
 msgstr "тип роботи"
 
-#: apps/jobs/models.py:36 apps/services/models.py:15
+#: apps/jobs/models.py:38 apps/services/models.py:15
 msgid "language"
 msgstr "Мова"
 
-#: apps/jobs/models.py:37
+#: apps/jobs/models.py:39
 msgid "What language does the employer speak?"
 msgstr "На якій мові спілкується роботодавець?"
 
-#: apps/jobs/models.py:38 apps/services/models.py:17
+#: apps/jobs/models.py:40 apps/services/models.py:17
 msgid "Logo or image"
 msgstr "Логотип чи зображення"
 
-#: apps/jobs/models.py:40 apps/services/models.py:19
+#: apps/jobs/models.py:42 apps/services/models.py:19
 msgid "salary"
 msgstr "зарплата"
 
@@ -477,18 +522,24 @@ msgstr "зарплата"
 msgid "Job"
 msgstr "Робота"
 
-#: apps/jobs/templates/jobs/detail.html:57
+#: apps/jobs/templates/jobs/detail.html:55
 msgid "Job type:"
 msgstr "Вакансія:"
 
-#: apps/jobs/templates/jobs/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:69
 msgid "Duration:"
 msgstr "Тривалість"
 
-#: apps/jobs/templates/jobs/detail.html:73
-#: apps/services/templates/services/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:71
+#: apps/services/templates/services/detail.html:60
 msgid "Language(s) spoken by the employer:"
 msgstr "Мови спілкування роботодавця:"
+
+#: apps/jobs/templates/jobs/index.html:22
+#, fuzzy
+#| msgid "offering a job"
+msgid "Offering a job"
+msgstr "пропоную роботу"
 
 #: apps/jobs/templates/jobs/job_confirm_delete.html:5
 msgid "Job delete"
@@ -503,39 +554,43 @@ msgstr "Карта подарунків"
 msgid "name"
 msgstr "ім'я"
 
-#: apps/promotions/models.py:25
+#: apps/promotions/models.py:27
 msgid "Header"
 msgstr "Шапка"
 
-#: apps/promotions/models.py:26
+#: apps/promotions/models.py:28
 msgid "Right Sidebar"
 msgstr ""
 
-#: apps/promotions/models.py:27
+#: apps/promotions/models.py:29
 msgid "Left Sidebar"
 msgstr ""
 
-#: apps/promotions/models.py:47
-msgid "Extra small"
-msgstr ""
-
-#: apps/promotions/models.py:48
-msgid "Small"
-msgstr ""
-
-#: apps/promotions/models.py:49
-msgid "Medium"
+#: apps/promotions/models.py:30
+msgid "Bottom"
 msgstr ""
 
 #: apps/promotions/models.py:50
-msgid "Large"
+msgid "Extra small"
 msgstr ""
 
 #: apps/promotions/models.py:51
+msgid "Small"
+msgstr ""
+
+#: apps/promotions/models.py:52
+msgid "Medium"
+msgstr ""
+
+#: apps/promotions/models.py:53
+msgid "Large"
+msgstr ""
+
+#: apps/promotions/models.py:54
 msgid "Extra large"
 msgstr ""
 
-#: apps/promotions/models.py:59
+#: apps/promotions/models.py:63
 msgid "link"
 msgstr "посилання"
 
@@ -572,32 +627,42 @@ msgid "man"
 msgstr "чоловік"
 
 #: apps/rents/templates/rents/detail.html:12
-#: apps/rents/templates/rents/index.html:16
-#: apps/rents/templates/rents/rental_confirm_delete.html:14
-#: apps/rents/templates/rents/rental_form.html:14
-#: apps/rents/templates/rents/rental_list.html:4
+#: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/rent_confirm_delete.html:14
+#: apps/rents/templates/rents/rent_form.html:14
+#: apps/rents/templates/rents/rent_list.html:4
 msgid "Rents"
 msgstr "Оренда"
 
-#: apps/rents/templates/rents/detail.html:56
+#: apps/rents/templates/rents/detail.html:57
 msgid "Bathrooms:"
 msgstr "Ванні кімнати:"
 
-#: apps/rents/templates/rents/detail.html:57
+#: apps/rents/templates/rents/detail.html:58
 msgid "Bedrooms:"
 msgstr "Спальні:"
 
-#: apps/rents/templates/rents/detail.html:58
+#: apps/rents/templates/rents/detail.html:59
 msgid "Pet policy:"
 msgstr "Політика щодо домашніх тварин:"
 
-#: apps/rents/templates/rents/detail.html:61
+#: apps/rents/templates/rents/detail.html:62
 msgid "Furnished:"
 msgstr "Мебльований:"
 
-#: apps/rents/templates/rents/detail.html:64
+#: apps/rents/templates/rents/detail.html:65
 msgid "Prefer sex"
 msgstr "Вибір статі"
+
+#: apps/rents/templates/rents/index.html:22
+#, fuzzy
+#| msgid "space for rent"
+msgid "Space for rent"
+msgstr "здам в оренду"
+
+#: apps/rents/templates/rents/rent_confirm_delete.html:6
+msgid "Rent delete"
+msgstr "Видалити оренду"
 
 #: apps/rents/templates/rents/rent_map_list.html:5
 #: apps/rents/templates/rents/rent_map_list.html:13
@@ -605,11 +670,7 @@ msgstr "Вибір статі"
 msgid "Map of Rents"
 msgstr "Карта подарунків"
 
-#: apps/rents/templates/rents/rental_confirm_delete.html:6
-msgid "Rent delete"
-msgstr "Видалити оренду"
-
-#: apps/rents/templates/rents/rental_table_list.html:6
+#: apps/rents/templates/rents/rent_table_list.html:6
 msgid "Rents table"
 msgstr "Орендна плата "
 
@@ -618,7 +679,7 @@ msgid "Subject"
 msgstr "Тема"
 
 #: apps/sendemail/templates/sendemail/email.html:8
-#: apps/sendemail/templates/sendemail/email.html:14 templates/base.html:85
+#: apps/sendemail/templates/sendemail/email.html:14 templates/base.html:83
 msgid "Contact us"
 msgstr "Зв'яжіться з нами"
 
@@ -665,6 +726,12 @@ msgstr "На якій мові спілкується роботодавець?"
 msgid "Service"
 msgstr "Умови надання послуг"
 
+#: apps/services/templates/services/index.html:22
+#, fuzzy
+#| msgid "provide services"
+msgid "Provide services"
+msgstr "Карта Послуг"
+
 #: apps/services/templates/services/service_confirm_delete.html:5
 msgid "Service delete"
 msgstr "Видалити послугу"
@@ -695,28 +762,28 @@ msgstr "не знайдена"
 msgid "To home page"
 msgstr "Повернутись на головну"
 
-#: templates/base.html:91
+#: templates/base.html:89
 msgid "Admin"
 msgstr "Адмін"
 
-#: templates/base.html:128 templates/base.html:157
+#: templates/base.html:126 templates/base.html:155
 msgid "Logout"
 msgstr "Вийти"
 
-#: templates/base.html:136
+#: templates/base.html:134
 msgid "Sign up"
 msgstr "Зареєструватися"
 
-#: templates/base.html:139 templates/registration/login.html:7
+#: templates/base.html:137 templates/registration/login.html:7
 #: templates/registration/login.html:19 templates/registration/login.html:29
 msgid "Log in"
 msgstr "Ввійти"
 
-#: templates/base.html:145
+#: templates/base.html:143
 msgid "Place Ad"
 msgstr "Додати Оголошення"
 
-#: templates/base.html:173
+#: templates/base.html:171
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr "Зауваження! Оголошення відображаються тільки на вибраній мові."
 
@@ -725,8 +792,8 @@ msgid ""
 "By using our site, you acknowledge that you have read and understand our"
 msgstr "Використовуючи наш сайт, ви визнаєте, що ви прочитали і розумієте"
 
-#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:6
-#: templates/policy/cookie_policy.html:12
+#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:5
+#: templates/policy/cookie_policy.html:9
 msgid "Cookie Policy"
 msgstr "Політику щодо cookie-файлів"
 
@@ -743,50 +810,45 @@ msgstr "та наші"
 msgid "Terms of Service"
 msgstr "Умови надання послуг"
 
-#: templates/home.html:100
+#: templates/home.html:61
 msgid "Main"
 msgstr "Основні"
 
-#: templates/home.html:101
+#: templates/home.html:62
 msgid "Categories"
 msgstr "Категорії"
 
-#: templates/home.html:111
+#: templates/home.html:72
 msgid "offer for sale"
 msgstr "продам"
 
-#: templates/home.html:120
+#: templates/home.html:81
 msgid "offering a job"
 msgstr "пропоную роботу"
 
-#: templates/home.html:130
+#: templates/home.html:91
 msgid "space for rent"
 msgstr "здам в оренду"
 
-#: templates/home.html:138
-#| msgid "Map of Services"
+#: templates/home.html:99
 msgid "provide services"
 msgstr "Карта Послуг"
 
-#: templates/home.html:148
+#: templates/home.html:109
 msgid "give away"
 msgstr "віддам безкоштовно"
 
-#: templates/home.html:168
+#: templates/home.html:129
 msgid "Popular"
 msgstr "Популярні"
 
-#: templates/home.html:169 templates/home.html:256
+#: templates/home.html:130 templates/home.html:210
 msgid "Ads"
 msgstr "Оголошення"
 
 #: templates/place_ad.html:10
 msgid "Select ad's type"
 msgstr "Виберіть тип оголошення"
-
-#: templates/place_ad.html:14
-msgid "Back"
-msgstr "Повернутись"
 
 #: templates/place_ad.html:32
 msgid "Select category to "
@@ -817,8 +879,7 @@ msgstr "Ввійти повторно"
 
 #: templates/registration/login.html:36
 msgid "Your username and password didn't match. Please try again."
-msgstr ""
-"Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
+msgstr "Ім'я користувача та пароль не збігаються. Будь ласка спробуйте ще раз."
 
 #: templates/registration/login.html:44
 #: templates/registration/password_reset_form.html:24
@@ -973,7 +1034,6 @@ msgid "Inc. or its affiliates"
 msgstr ""
 
 #: templates/snippets/pagination.html:40
-#| msgid "Page"
 msgid "Page "
 msgstr "Cторінка"
 
@@ -997,24 +1057,25 @@ msgstr "місцеположення"
 msgid "only Latin characters"
 msgstr "Тільки латинські символи"
 
-#: zaba/settings.py:183
+#: zaba/settings.py:191
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: zaba/settings.py:184
+#: zaba/settings.py:192
 msgid "Russian"
 msgstr "Російська"
 
-#: zaba/settings.py:185
+#: zaba/settings.py:193
 msgid "Polish"
 msgstr "Польська"
 
-#: zaba/settings.py:186
+#: zaba/settings.py:194
 msgid "English"
 msgstr "Англійська"
 
 #~ msgid "You can edit your account using the following form:"
-#~ msgstr "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
+#~ msgstr ""
+#~ "Ви можете редагувати обліковий запис, використовуючи наступну форму:"
 
 #~ msgid "Create my account"
 #~ msgstr "Створити свій обліковий запис"
@@ -1112,14 +1173,15 @@ msgstr "Англійська"
 #~ msgstr "Введіть коректну email адресу."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+#~ "Enter a valid 'slug' consisting of letters, numbers, underscores or "
+#~ "hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери, числа, "
 #~ "символи підкреслювання та дефіси."
 
 #~ msgid ""
-#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or"
-#~ " hyphens."
+#~ "Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, "
+#~ "or hyphens."
 #~ msgstr ""
 #~ "Введіть коректне значення 'slug', що може містити тільки літери Unicode, "
 #~ "числа, символи підкреслювання або дефіси."
@@ -1191,7 +1253,8 @@ msgstr "Англійська"
 #~ msgid ""
 #~ "Ensure that there are no more than %(max)s digit before the decimal point."
 #~ msgid_plural ""
-#~ "Ensure that there are no more than %(max)s digits before the decimal point."
+#~ "Ensure that there are no more than %(max)s digits before the decimal "
+#~ "point."
 #~ msgstr[0] ""
 #~ "Переконайтеся, що тут не більше ніж %(max)s цифра до десяткової коми."
 #~ msgstr[1] ""
@@ -1259,12 +1322,12 @@ msgstr "Англійська"
 #~ "'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
 #~ "format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у форматі "
-#~ "YYYY-MM-DD."
+#~ "Значення '%(value)s' має невірний формат дати. Воно повинно бути у "
+#~ "форматі YYYY-MM-DD."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
-#~ "date."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD) but it is an "
+#~ "invalid date."
 #~ msgstr ""
 #~ "Значення '%(value)s' має коректний формат (YYYY-MM-DD), але це недійсна "
 #~ "дата."
@@ -1273,18 +1336,18 @@ msgstr "Англійська"
 #~ msgstr "Дата (без часу)"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD "
-#~ "HH:MM[:ss[.uuuuuu]][TZ] format."
+#~ "'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:"
+#~ "ss[.uuuuuu]][TZ] format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі YYYY-"
-#~ "MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
+#~ "YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]"
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (YYYY-MM-DD "
-#~ "HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+#~ "'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+#~ "[TZ]) but it is an invalid date/time."
 #~ msgstr ""
-#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]),"
-#~ " але це недійсна дата/час."
+#~ "Значення '%(value)s' має вірний формат (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+#~ "[TZ]), але це недійсна дата/час."
 
 #~ msgid "Date (with time)"
 #~ msgstr "Дата (з часом)"
@@ -1296,8 +1359,8 @@ msgstr "Англійська"
 #~ msgstr "Десяткове число"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in [DD] "
-#~ "[HH:[MM:]]ss[.uuuuuu] format."
+#~ "'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+#~ "uuuuuu] format."
 #~ msgstr ""
 #~ "Значення '%(value)s' не відповідає формату [DD] [HH:[MM:]]ss[.uuuuuu]."
 
@@ -1341,15 +1404,15 @@ msgstr "Англійська"
 #~ msgstr "Текст"
 
 #~ msgid ""
-#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-#~ "format."
+#~ "'%(value)s' value has an invalid format. It must be in HH:MM[:ss[."
+#~ "uuuuuu]] format."
 #~ msgstr ""
-#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі "
-#~ "HH:MM[:ss[.uuuuuu]]."
+#~ "Значення '%(value)s' має невірний формат. Воно повинне бути у форматі HH:"
+#~ "MM[:ss[.uuuuuu]]."
 
 #~ msgid ""
-#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-#~ "invalid time."
+#~ "'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is "
+#~ "an invalid time."
 #~ msgstr ""
 #~ "Значення '%(value)s' має вірний формат (HH:MM[:ss[.uuuuuu]]), але це "
 #~ "недійсний час."
@@ -1428,8 +1491,8 @@ msgstr "Англійська"
 #~ msgid_plural ""
 #~ "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 #~ msgstr[0] ""
-#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. (зараз"
-#~ " %(length)d)."
+#~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символ. "
+#~ "(зараз %(length)d)."
 #~ msgstr[1] ""
 #~ "Переконайтеся, що це ім'я файлу містить не більше ніж %(max)d символів. "
 #~ "(зараз %(length)d)."
@@ -1446,7 +1509,8 @@ msgstr "Англійська"
 #~ "Завантажте правильне зображення. Файл, який ви завантажили, не є "
 #~ "зображенням, або є зіпсованим зображенням."
 
-#~ msgid "Select a valid choice. %(value)s is not one of the available choices."
+#~ msgid ""
+#~ "Select a valid choice. %(value)s is not one of the available choices."
 #~ msgstr "Зробіть коректний вибір, %(value)s немає серед варіантів вибору."
 
 #~ msgid "Enter a list of values."
@@ -1483,7 +1547,8 @@ msgstr "Англійська"
 #~ msgid "Please correct the duplicate data for %(field)s."
 #~ msgstr "Будь ласка, виправте повторювані дані для поля %(field)s."
 
-#~ msgid "Please correct the duplicate data for %(field)s, which must be unique."
+#~ msgid ""
+#~ "Please correct the duplicate data for %(field)s, which must be unique."
 #~ msgstr ""
 #~ "Будь ласка, виправте повторювані дані для поля %(field)s, яке має бути "
 #~ "унікальним."
@@ -1492,8 +1557,8 @@ msgstr "Англійська"
 #~ "Please correct the duplicate data for %(field_name)s which must be unique "
 #~ "for the %(lookup)s in %(date_field)s."
 #~ msgstr ""
-#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має бути "
-#~ "унікальним для вибірки %(lookup)s на %(date_field)s."
+#~ "Будь ласка, виправте повторювані дані для поля %(field_name)s, яке має "
+#~ "бути унікальним для вибірки %(lookup)s на %(date_field)s."
 
 #~ msgid "Please correct the duplicate values below."
 #~ msgstr "Будь ласка, виправте повторювані значення нижче."
@@ -1509,8 +1574,8 @@ msgstr "Англійська"
 #~ msgstr "\"%(pk)s\" не є допустимим значенням."
 
 #~ msgid ""
-#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
-#~ "may be ambiguous or it may not exist."
+#~ "%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; "
+#~ "it may be ambiguous or it may not exist."
 #~ msgstr ""
 #~ "%(datetime)s не може бути інтерпретована в часовому поясі "
 #~ "%(current_timezone)s; дата може бути неодзначною або виявитись неіснуючою."
@@ -1845,32 +1910,32 @@ msgstr "Англійська"
 #~ "Ви бачите це повідомлення, тому що даний сайт використовує захищене "
 #~ "з'єднання і вимагає, щоб заголовок 'Referer' був переданий вашим "
 #~ "браузером,але він не був їм переданий. Даний заголовок необхідний з "
-#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а запит "
-#~ "досерверу не був перехоплений або підмінений."
+#~ "міркуваньбезпеки, щоб переконатися, що ваш браузер не був зламаний, а "
+#~ "запит досерверу не був перехоплений або підмінений."
 
 #~ msgid ""
-#~ "If you have configured your browser to disable 'Referer' headers, please re-"
-#~ "enable them, at least for this site, or for HTTPS connections, or for 'same-"
-#~ "origin' requests."
+#~ "If you have configured your browser to disable 'Referer' headers, please "
+#~ "re-enable them, at least for this site, or for HTTPS connections, or for "
+#~ "'same-origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому передавати"
-#~ " заголовок 'Referer', будь ласка, дозвольте йому відсилати даний заголовок "
-#~ "принаймні для даного сайту, або для всіх HTTPS-з'єднань, або для 'same-"
-#~ "origin' запитів."
+#~ "Якщо ви налаштували свій браузер таким чином, щоб заборонити йому "
+#~ "передавати заголовок 'Referer', будь ласка, дозвольте йому відсилати "
+#~ "даний заголовок принаймні для даного сайту, або для всіх HTTPS-з'єднань, "
+#~ "або для 'same-origin' запитів."
 
 #~ msgid ""
-#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
-#~ " including the 'Referrer-Policy: no-referrer' header, please remove them. "
-#~ "The CSRF protection requires the 'Referer' header to do strict referer "
-#~ "checking. If you're concerned about privacy, use alternatives like <a "
-#~ "rel=\"noreferrer\" ...> for links to third-party sites."
+#~ "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
+#~ "or including the 'Referrer-Policy: no-referrer' header, please remove "
+#~ "them. The CSRF protection requires the 'Referer' header to do strict "
+#~ "referer checking. If you're concerned about privacy, use alternatives "
+#~ "like <a rel=\"noreferrer\" ...> for links to third-party sites."
 #~ msgstr ""
-#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> тег "
-#~ "або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-ласка, "
-#~ "видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити сувору "
-#~ "referer перевірку. Якщо ви стурбовані про конфіденційність, використовуйте "
-#~ "альтернативи, такі як <а rel=\"noreferrer\" ...> посилання на сторонні "
-#~ "сайти."
+#~ "Якщо ви використовуєте <meta name=\"referrer\" content=\"no-referrer\"> "
+#~ "тег або в тому числі 'Referrer-Policy: no-referrer' заголовок, будь-"
+#~ "ласка, видаліть їх.Захист CSRF вимагає заголовка 'Referer', щоб зробити "
+#~ "сувору referer перевірку. Якщо ви стурбовані про конфіденційність, "
+#~ "використовуйте альтернативи, такі як <а rel=\"noreferrer\" ...> посилання "
+#~ "на сторонні сайти."
 
 #~ msgid ""
 #~ "You are seeing this message because this site requires a CSRF cookie when "
@@ -1886,8 +1951,9 @@ msgstr "Англійська"
 #~ "If you have configured your browser to disable cookies, please re-enable "
 #~ "them, at least for this site, or for 'same-origin' requests."
 #~ msgstr ""
-#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, повторно"
-#~ " включіть їх принаймі на цьому сайті або для 'same-origin' запитів."
+#~ "Якщо ви налаштували свій браузер для відключення куків, будь ласка, "
+#~ "повторно включіть їх принаймі на цьому сайті або для 'same-origin' "
+#~ "запитів."
 
 #~ msgid "More information is available with DEBUG=True."
 #~ msgstr "Більше інформації можна отримати при DEBUG=True."
@@ -1908,11 +1974,11 @@ msgstr "Англійська"
 #~ msgstr "Тиждень не вказано"
 
 #~ msgid ""
-#~ "Future %(verbose_name_plural)s not available because "
-#~ "%(class_name)s.allow_future is False."
+#~ "Future %(verbose_name_plural)s not available because %(class_name)s."
+#~ "allow_future is False."
 #~ msgstr ""
-#~ "Майбутні %(verbose_name_plural)s недоступні, тому що "
-#~ "%(class_name)s.allow_future має нульове значення."
+#~ "Майбутні %(verbose_name_plural)s недоступні, тому що %(class_name)s."
+#~ "allow_future має нульове значення."
 
 #~ msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
 #~ msgstr "Недійсна дата '%(datestr)s' для формату '%(format)s'"
@@ -1943,24 +2009,26 @@ msgstr "Англійська"
 
 #~ msgid ""
 #~ "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+#~ "target=\"_blank\" rel=\"noopener\">release notes</a> for Django "
+#~ "%(version)s"
 #~ msgstr ""
-#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\""
-#~ " target=\"_blank\" rel=\"noopener\">release notes</a> для Django %(version)s"
+#~ "Перегляд <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/"
+#~ "\" target=\"_blank\" rel=\"noopener\">release notes</a> для Django "
+#~ "%(version)s"
 
 #~ msgid "The install worked successfully! Congratulations!"
 #~ msgstr "Встановлення успішно працювали! Вітаємо!"
 
 #~ msgid ""
-#~ "You are seeing this page because <a "
-#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
-#~ "and you have not configured any URLs."
+#~ "You are seeing this page because <a href=\"https://docs.djangoproject.com/"
+#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+#~ "\">DEBUG=True</a> is in your settings file and you have not configured "
+#~ "any URLs."
 #~ msgstr ""
-#~ "Ви бачите цю сторінку, тому що <a "
-#~ "href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-#~ "target=\"_blank\" rel=\"noopener\">DEBUG=True</a> знаходиться в файлі "
-#~ "налаштувань і ви не налаштували жодної URL."
+#~ "Ви бачите цю сторінку, тому що <a href=\"https://docs.djangoproject.com/"
+#~ "en/%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+#~ "\">DEBUG=True</a> знаходиться в файлі налаштувань і ви не налаштували "
+#~ "жодної URL."
 
 #~ msgid "Django Documentation"
 #~ msgstr "Django Документація"

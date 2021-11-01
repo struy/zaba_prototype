@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-22 20:17-0500\n"
+"POT-Creation-Date: 2021-10-31 19:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,43 +34,44 @@ msgstr ""
 #: apps/accounts/templates/accounts/connect.html:13
 #: apps/accounts/templates/accounts/edit.html:11
 #: apps/accounts/templates/accounts/favorites.html:12
-#: apps/accounts/templates/accounts/favourites.html:16
-#: apps/accounts/templates/accounts/my_ads.html:16
+#: apps/accounts/templates/accounts/favourites.html:15
+#: apps/accounts/templates/accounts/my_ads.html:15
 #: apps/accounts/templates/accounts/register.html:16
 #: apps/accounts/templates/accounts/register_done.html:10
-#: apps/accounts/templates/accounts/user_ads.html:17
+#: apps/accounts/templates/accounts/user_ads.html:16
 #: apps/adverts/templates/adverts/map.html:10
 #: apps/gifts/templates/gifts/detail.html:12
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:10
 #: apps/gifts/templates/gifts/gift_form.html:12
 #: apps/gifts/templates/gifts/gift_list.html:10
 #: apps/gifts/templates/gifts/gift_map_list.html:10
-#: apps/gifts/templates/gifts/index.html:15
-#: apps/items/templates/items/detail.html:11
-#: apps/items/templates/items/index.html:15
+#: apps/gifts/templates/gifts/index.html:14
+#: apps/items/templates/items/detail.html:12
+#: apps/items/templates/items/index.html:14
 #: apps/items/templates/items/item_confirm_delete.html:9
 #: apps/items/templates/items/item_form.html:11
 #: apps/items/templates/items/item_map_list.html:10
+#: apps/items/templates/items/table.html:14
 #: apps/jobs/templates/jobs/detail.html:12
-#: apps/jobs/templates/jobs/index.html:15
+#: apps/jobs/templates/jobs/index.html:14
 #: apps/jobs/templates/jobs/job_confirm_delete.html:9
 #: apps/jobs/templates/jobs/job_form.html:11
 #: apps/jobs/templates/jobs/job_map_list.html:10
 #: apps/rents/templates/rents/detail.html:11
-#: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/index.html:14
+#: apps/rents/templates/rents/rent_confirm_delete.html:11
+#: apps/rents/templates/rents/rent_form.html:11
 #: apps/rents/templates/rents/rent_map_list.html:10
-#: apps/rents/templates/rents/rental_confirm_delete.html:11
-#: apps/rents/templates/rents/rental_form.html:11
 #: apps/sendemail/templates/sendemail/email.html:13
 #: apps/sendemail/templates/sendemail/no_success.html:9
 #: apps/sendemail/templates/sendemail/success.html:11
 #: apps/services/templates/services/detail.html:12
-#: apps/services/templates/services/index.html:15
+#: apps/services/templates/services/index.html:14
 #: apps/services/templates/services/service_confirm_delete.html:9
 #: apps/services/templates/services/service_form.html:11
 #: apps/services/templates/services/service_map_list.html:10
-#: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:10
-#: templates/policy/cookie_policy.html:11
+#: apps/shop/templates/shop/product/checkout.html:5 templates/home.html:11
+#: templates/policy/cookie_policy.html:8
 #: templates/policy/privacy_policy.html:10
 #: templates/policy/term_of_services.html:10
 #: templates/registration/logged_out.html:10
@@ -121,23 +122,23 @@ msgid "My Favorites"
 msgstr ""
 
 #: apps/accounts/templates/accounts/favorites.html:13
-#: apps/accounts/templates/accounts/favourites.html:12
-#: apps/accounts/templates/accounts/favourites.html:17
+#: apps/accounts/templates/accounts/favourites.html:11
+#: apps/accounts/templates/accounts/favourites.html:16
 msgid "Favorites"
 msgstr ""
 
-#: apps/accounts/templates/accounts/favourites.html:94
-#: apps/gifts/templates/gifts/index.html:103
-#: apps/items/templates/items/index.html:113
-#: apps/jobs/templates/jobs/index.html:102
-#: apps/rents/templates/rents/index.html:101
-#: apps/services/templates/services/index.html:102
-#: templates/snippets/adverts_loop.html:85
+#: apps/accounts/templates/accounts/favourites.html:93
+#: apps/gifts/templates/gifts/index.html:139
+#: apps/items/templates/items/index.html:139
+#: apps/jobs/templates/jobs/index.html:141
+#: apps/rents/templates/rents/index.html:135
+#: apps/services/templates/services/index.html:137
+#: templates/snippets/adverts_loop.html:84
 msgid "No adverts are available."
 msgstr ""
 
-#: apps/accounts/templates/accounts/my_ads.html:12
-#: apps/accounts/templates/accounts/my_ads.html:17
+#: apps/accounts/templates/accounts/my_ads.html:11
+#: apps/accounts/templates/accounts/my_ads.html:16
 msgid "My Ads"
 msgstr ""
 
@@ -155,17 +156,27 @@ msgstr ""
 msgid "Please, sign up using the following form:"
 msgstr ""
 
-#: apps/accounts/templates/accounts/register.html:40
+#: apps/accounts/templates/accounts/register.html:41
+msgid "By creating an account and clicking \"Submit,\""
+msgstr ""
+
+#: apps/accounts/templates/accounts/register.html:42
+msgid ""
+"I agree to the Terms of Use and understand my information will be used as "
+"described in the Privacy Policy."
+msgstr ""
+
+#: apps/accounts/templates/accounts/register.html:48
 msgid "Create"
 msgstr ""
 
-#: apps/accounts/templates/accounts/register.html:43
+#: apps/accounts/templates/accounts/register.html:51
 #: templates/registration/login.html:47
 #: templates/registration/password_reset_form.html:39
 msgid "Login"
 msgstr ""
 
-#: apps/accounts/templates/accounts/register.html:54
+#: apps/accounts/templates/accounts/register.html:62
 #: templates/registration/login.html:74
 msgid "Google"
 msgstr ""
@@ -183,8 +194,8 @@ msgstr ""
 msgid "log in"
 msgstr ""
 
-#: apps/accounts/templates/accounts/user_ads.html:9
-#: apps/accounts/templates/accounts/user_ads.html:18
+#: apps/accounts/templates/accounts/user_ads.html:8
+#: apps/accounts/templates/accounts/user_ads.html:17
 msgid "User's Ads"
 msgstr ""
 
@@ -238,64 +249,66 @@ msgstr ""
 msgid "map"
 msgstr ""
 
-#: apps/adverts/templates/adverts/index.html:15
+#: apps/adverts/templates/adverts/index.html:14
 msgid "Adverts"
 msgstr ""
 
-#: apps/adverts/templates/adverts/index.html:25
+#: apps/adverts/templates/adverts/index.html:24
 msgid "Detail"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:5
-#: apps/items/templates/items/detail.html:12
-#: apps/items/templates/items/index.html:11
-#: apps/items/templates/items/index.html:16
+#: apps/items/templates/items/detail.html:13
+#: apps/items/templates/items/index.html:10
+#: apps/items/templates/items/index.html:15
 #: apps/items/templates/items/item_confirm_delete.html:10
 #: apps/items/templates/items/item_form.html:12
-#: apps/items/templates/items/item_map_list.html:5
+#: apps/items/templates/items/item_map_list.html:6
+#: apps/items/templates/items/table.html:15
 msgid "Items"
 msgstr ""
 
-#: apps/adverts/templates/adverts/map.html:13 templates/base.html:88
+#: apps/adverts/templates/adverts/map.html:13 templates/base.html:86
 msgid "Map"
 msgstr ""
 
-#: apps/adverts/templates/adverts/map.html:30 templates/home.html:114
+#: apps/adverts/templates/adverts/map.html:30 templates/home.html:75
 #: templates/place_ad.html:49
 msgid "Sell"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:33
 #: apps/jobs/templates/jobs/detail.html:13
-#: apps/jobs/templates/jobs/index.html:11
-#: apps/jobs/templates/jobs/index.html:16
+#: apps/jobs/templates/jobs/index.html:10
+#: apps/jobs/templates/jobs/index.html:15
 #: apps/jobs/templates/jobs/job_confirm_delete.html:10
 #: apps/jobs/templates/jobs/job_form.html:12
 #: apps/jobs/templates/jobs/job_list.html:6
-#: apps/rents/templates/rents/index.html:11 templates/home.html:123
+#: apps/rents/templates/rents/index.html:10 templates/home.html:84
 #: templates/place_ad.html:55
 msgid "Jobs"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:36
 #: apps/rents/templates/rents/detail.html:7
-#: apps/rents/templates/rents/rental_form.html:6 templates/home.html:133
+#: apps/rents/templates/rents/rent_form.html:6 templates/home.html:94
 #: templates/place_ad.html:62 templates/search.html:98
 msgid "Rent"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:40
 #: apps/services/templates/services/detail.html:13
-#: apps/services/templates/services/index.html:11
-#: apps/services/templates/services/index.html:16
+#: apps/services/templates/services/index.html:10
+#: apps/services/templates/services/index.html:15
 #: apps/services/templates/services/service_confirm_delete.html:10
 #: apps/services/templates/services/service_form.html:12
-#: apps/services/templates/services/service_list.html:6 templates/home.html:141
+#: apps/services/templates/services/service_list.html:6 templates/home.html:102
+#: templates/place_ad.html:68
 msgid "Services"
 msgstr ""
 
 #: apps/adverts/templates/adverts/map.html:43 apps/rents/models.py:35
-#: templates/home.html:151 templates/place_ad.html:68
+#: templates/home.html:112 templates/place_ad.html:74
 msgid "Cats"
 msgstr ""
 
@@ -315,40 +328,40 @@ msgstr ""
 #: apps/gifts/templates/gifts/gift_confirm_delete.html:11
 #: apps/gifts/templates/gifts/gift_form.html:15
 #: apps/gifts/templates/gifts/gift_list.html:5
-#: apps/gifts/templates/gifts/index.html:11
-#: apps/gifts/templates/gifts/index.html:16
+#: apps/gifts/templates/gifts/index.html:10
+#: apps/gifts/templates/gifts/index.html:15
 msgid "Gifts"
 msgstr ""
 
-#: apps/gifts/templates/gifts/detail.html:48
-#: apps/items/templates/items/detail.html:50
-#: apps/jobs/templates/jobs/detail.html:64
-#: apps/rents/templates/rents/detail.html:49
-#: apps/services/templates/services/detail.html:62
+#: apps/gifts/templates/gifts/detail.html:50
+#: apps/items/templates/items/detail.html:52
+#: apps/jobs/templates/jobs/detail.html:62
+#: apps/rents/templates/rents/detail.html:50
+#: apps/services/templates/services/detail.html:52
 msgid "Description:"
 msgstr ""
 
-#: apps/gifts/templates/gifts/detail.html:55
-#: apps/items/templates/items/detail.html:57
-#: apps/jobs/templates/jobs/detail.html:79
-#: apps/rents/templates/rents/detail.html:65
-#: apps/services/templates/services/detail.html:77
+#: apps/gifts/templates/gifts/detail.html:57
+#: apps/items/templates/items/detail.html:59
+#: apps/jobs/templates/jobs/detail.html:77
+#: apps/rents/templates/rents/detail.html:66
+#: apps/services/templates/services/detail.html:66
 msgid "City:"
 msgstr ""
 
-#: apps/gifts/templates/gifts/detail.html:56
-#: apps/items/templates/items/detail.html:58
-#: apps/jobs/templates/jobs/detail.html:80
-#: apps/rents/templates/rents/detail.html:66
-#: apps/services/templates/services/detail.html:78
+#: apps/gifts/templates/gifts/detail.html:58
+#: apps/items/templates/items/detail.html:60
+#: apps/jobs/templates/jobs/detail.html:78
+#: apps/rents/templates/rents/detail.html:67
+#: apps/services/templates/services/detail.html:67
 msgid "Address:"
 msgstr ""
 
-#: apps/gifts/templates/gifts/detail.html:60
-#: apps/items/templates/items/detail.html:62
-#: apps/jobs/templates/jobs/detail.html:85
-#: apps/rents/templates/rents/detail.html:71
-#: apps/services/templates/services/detail.html:83
+#: apps/gifts/templates/gifts/detail.html:62
+#: apps/items/templates/items/detail.html:65
+#: apps/jobs/templates/jobs/detail.html:83
+#: apps/rents/templates/rents/detail.html:72
+#: apps/services/templates/services/detail.html:72
 msgid "Location:"
 msgstr ""
 
@@ -367,21 +380,26 @@ msgstr ""
 msgid "Map of Gifts"
 msgstr ""
 
-#: apps/gifts/templates/gifts/index.html:73
-#: apps/items/templates/items/index.html:81
-#: apps/jobs/templates/jobs/index.html:73
-#: apps/rents/templates/rents/index.html:73
-#: apps/services/templates/services/index.html:73
-#: templates/snippets/adverts_loop.html:58
+#: apps/gifts/templates/gifts/index.html:23
+msgid "Give away"
+msgstr ""
+
+#: apps/gifts/templates/gifts/index.html:109
+#: apps/items/templates/items/index.html:106
+#: apps/items/templates/items/item_confirm_delete.html:22
+#: apps/jobs/templates/jobs/index.html:110
+#: apps/rents/templates/rents/index.html:105
+#: apps/services/templates/services/index.html:106
+#: templates/snippets/adverts_loop.html:57
 msgid "Delete"
 msgstr ""
 
-#: apps/gifts/templates/gifts/index.html:76
-#: apps/items/templates/items/index.html:86
-#: apps/jobs/templates/jobs/index.html:76
-#: apps/rents/templates/rents/index.html:76
-#: apps/services/templates/services/index.html:76
-#: templates/snippets/adverts_loop.html:62
+#: apps/gifts/templates/gifts/index.html:113
+#: apps/items/templates/items/index.html:111
+#: apps/jobs/templates/jobs/index.html:114
+#: apps/rents/templates/rents/index.html:109
+#: apps/services/templates/services/index.html:110
+#: templates/snippets/adverts_loop.html:61
 msgid "Edit"
 msgstr ""
 
@@ -401,7 +419,7 @@ msgstr ""
 msgid "Like New"
 msgstr ""
 
-#: apps/items/models.py:16 templates/home.html:255
+#: apps/items/models.py:16 templates/home.html:209
 msgid "New"
 msgstr ""
 
@@ -413,24 +431,41 @@ msgstr ""
 msgid "price"
 msgstr ""
 
-#: apps/items/templates/items/detail.html:7
+#: apps/items/templates/items/detail.html:8
 #: apps/items/templates/items/item_form.html:6 templates/search.html:49
 msgid "Item"
+msgstr ""
+
+#: apps/items/templates/items/index.html:23
+msgid "Offer for sale"
 msgstr ""
 
 #: apps/items/templates/items/item_confirm_delete.html:5
 msgid "Item delete"
 msgstr ""
 
-#: apps/items/templates/items/item_map_list.html:13
+#: apps/items/templates/items/item_confirm_delete.html:25
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: apps/items/templates/items/item_confirm_delete.html:29
+msgid "Go Back"
+msgstr ""
+
+#: apps/items/templates/items/item_map_list.html:11
 msgid "Map of Items"
 msgstr ""
 
-#: apps/items/templates/items/item_map_list.html:29
+#: apps/items/templates/items/item_map_list.html:12
+#: apps/items/templates/items/table.html:16 templates/place_ad.html:14
+msgid "Back"
+msgstr ""
+
+#: apps/items/templates/items/item_map_list.html:56
 msgid "to 2 weeks"
 msgstr ""
 
-#: apps/items/templates/items/item_map_list.html:30
+#: apps/items/templates/items/item_map_list.html:57
 msgid "2 weeks - 12 weeks"
 msgstr ""
 
@@ -438,35 +473,39 @@ msgstr ""
 msgid "List of items"
 msgstr ""
 
-#: apps/jobs/models.py:26
+#: apps/jobs/form.py:20
+msgid "per hour / per mile"
+msgstr ""
+
+#: apps/jobs/models.py:32
 msgid "full-time"
 msgstr ""
 
-#: apps/jobs/models.py:27
+#: apps/jobs/models.py:33
 msgid "part-time"
 msgstr ""
 
-#: apps/jobs/models.py:28
+#: apps/jobs/models.py:34
 msgid "casual"
 msgstr ""
 
-#: apps/jobs/models.py:30
+#: apps/jobs/models.py:36
 msgid "job type"
 msgstr ""
 
-#: apps/jobs/models.py:36 apps/services/models.py:15
+#: apps/jobs/models.py:38 apps/services/models.py:15
 msgid "language"
 msgstr ""
 
-#: apps/jobs/models.py:37
+#: apps/jobs/models.py:39
 msgid "What language does the employer speak?"
 msgstr ""
 
-#: apps/jobs/models.py:38 apps/services/models.py:17
+#: apps/jobs/models.py:40 apps/services/models.py:17
 msgid "Logo or image"
 msgstr ""
 
-#: apps/jobs/models.py:40 apps/services/models.py:19
+#: apps/jobs/models.py:42 apps/services/models.py:19
 msgid "salary"
 msgstr ""
 
@@ -475,17 +514,21 @@ msgstr ""
 msgid "Job"
 msgstr ""
 
-#: apps/jobs/templates/jobs/detail.html:57
+#: apps/jobs/templates/jobs/detail.html:55
 msgid "Job type:"
 msgstr ""
 
-#: apps/jobs/templates/jobs/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:69
 msgid "Duration:"
 msgstr ""
 
-#: apps/jobs/templates/jobs/detail.html:73
-#: apps/services/templates/services/detail.html:71
+#: apps/jobs/templates/jobs/detail.html:71
+#: apps/services/templates/services/detail.html:60
 msgid "Language(s) spoken by the employer:"
+msgstr ""
+
+#: apps/jobs/templates/jobs/index.html:22
+msgid "Offering a job"
 msgstr ""
 
 #: apps/jobs/templates/jobs/job_confirm_delete.html:5
@@ -501,39 +544,43 @@ msgstr ""
 msgid "name"
 msgstr ""
 
-#: apps/promotions/models.py:25
+#: apps/promotions/models.py:27
 msgid "Header"
 msgstr ""
 
-#: apps/promotions/models.py:26
+#: apps/promotions/models.py:28
 msgid "Right Sidebar"
 msgstr ""
 
-#: apps/promotions/models.py:27
+#: apps/promotions/models.py:29
 msgid "Left Sidebar"
 msgstr ""
 
-#: apps/promotions/models.py:47
-msgid "Extra small"
-msgstr ""
-
-#: apps/promotions/models.py:48
-msgid "Small"
-msgstr ""
-
-#: apps/promotions/models.py:49
-msgid "Medium"
+#: apps/promotions/models.py:30
+msgid "Bottom"
 msgstr ""
 
 #: apps/promotions/models.py:50
-msgid "Large"
+msgid "Extra small"
 msgstr ""
 
 #: apps/promotions/models.py:51
+msgid "Small"
+msgstr ""
+
+#: apps/promotions/models.py:52
+msgid "Medium"
+msgstr ""
+
+#: apps/promotions/models.py:53
+msgid "Large"
+msgstr ""
+
+#: apps/promotions/models.py:54
 msgid "Extra large"
 msgstr ""
 
-#: apps/promotions/models.py:59
+#: apps/promotions/models.py:63
 msgid "link"
 msgstr ""
 
@@ -570,31 +617,39 @@ msgid "man"
 msgstr ""
 
 #: apps/rents/templates/rents/detail.html:12
-#: apps/rents/templates/rents/index.html:16
-#: apps/rents/templates/rents/rental_confirm_delete.html:14
-#: apps/rents/templates/rents/rental_form.html:14
-#: apps/rents/templates/rents/rental_list.html:4
+#: apps/rents/templates/rents/index.html:15
+#: apps/rents/templates/rents/rent_confirm_delete.html:14
+#: apps/rents/templates/rents/rent_form.html:14
+#: apps/rents/templates/rents/rent_list.html:4
 msgid "Rents"
 msgstr ""
 
-#: apps/rents/templates/rents/detail.html:56
+#: apps/rents/templates/rents/detail.html:57
 msgid "Bathrooms:"
 msgstr ""
 
-#: apps/rents/templates/rents/detail.html:57
+#: apps/rents/templates/rents/detail.html:58
 msgid "Bedrooms:"
 msgstr ""
 
-#: apps/rents/templates/rents/detail.html:58
+#: apps/rents/templates/rents/detail.html:59
 msgid "Pet policy:"
 msgstr ""
 
-#: apps/rents/templates/rents/detail.html:61
+#: apps/rents/templates/rents/detail.html:62
 msgid "Furnished:"
 msgstr ""
 
-#: apps/rents/templates/rents/detail.html:64
+#: apps/rents/templates/rents/detail.html:65
 msgid "Prefer sex"
+msgstr ""
+
+#: apps/rents/templates/rents/index.html:22
+msgid "Space for rent"
+msgstr ""
+
+#: apps/rents/templates/rents/rent_confirm_delete.html:6
+msgid "Rent delete"
 msgstr ""
 
 #: apps/rents/templates/rents/rent_map_list.html:5
@@ -603,11 +658,7 @@ msgstr ""
 msgid "Map of Rents"
 msgstr ""
 
-#: apps/rents/templates/rents/rental_confirm_delete.html:6
-msgid "Rent delete"
-msgstr ""
-
-#: apps/rents/templates/rents/rental_table_list.html:6
+#: apps/rents/templates/rents/rent_table_list.html:6
 msgid "Rents table"
 msgstr ""
 
@@ -616,7 +667,7 @@ msgid "Subject"
 msgstr ""
 
 #: apps/sendemail/templates/sendemail/email.html:8
-#: apps/sendemail/templates/sendemail/email.html:14 templates/base.html:85
+#: apps/sendemail/templates/sendemail/email.html:14 templates/base.html:83
 msgid "Contact us"
 msgstr ""
 
@@ -661,6 +712,10 @@ msgstr ""
 msgid "Service"
 msgstr ""
 
+#: apps/services/templates/services/index.html:22
+msgid "Provide services"
+msgstr ""
+
 #: apps/services/templates/services/service_confirm_delete.html:5
 msgid "Service delete"
 msgstr ""
@@ -691,28 +746,28 @@ msgstr ""
 msgid "To home page"
 msgstr ""
 
-#: templates/base.html:91
+#: templates/base.html:89
 msgid "Admin"
 msgstr ""
 
-#: templates/base.html:128 templates/base.html:157
+#: templates/base.html:126 templates/base.html:155
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:136
+#: templates/base.html:134
 msgid "Sign up"
 msgstr ""
 
-#: templates/base.html:139 templates/registration/login.html:7
+#: templates/base.html:137 templates/registration/login.html:7
 #: templates/registration/login.html:19 templates/registration/login.html:29
 msgid "Log in"
 msgstr ""
 
-#: templates/base.html:145
+#: templates/base.html:143
 msgid "Place Ad"
 msgstr ""
 
-#: templates/base.html:173
+#: templates/base.html:171
 msgid "Notice! Ads are displayed only in the selected language."
 msgstr ""
 
@@ -721,8 +776,8 @@ msgid ""
 "By using our site, you acknowledge that you have read and understand our"
 msgstr ""
 
-#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:6
-#: templates/policy/cookie_policy.html:12
+#: templates/cookielaw/banner.html:11 templates/policy/cookie_policy.html:5
+#: templates/policy/cookie_policy.html:9
 msgid "Cookie Policy"
 msgstr ""
 
@@ -739,48 +794,44 @@ msgstr ""
 msgid "Terms of Service"
 msgstr ""
 
-#: templates/home.html:100
+#: templates/home.html:61
 msgid "Main"
 msgstr ""
 
-#: templates/home.html:101
+#: templates/home.html:62
 msgid "Categories"
 msgstr ""
 
-#: templates/home.html:111
+#: templates/home.html:72
 msgid "offer for sale"
 msgstr ""
 
-#: templates/home.html:120
+#: templates/home.html:81
 msgid "offering a job"
 msgstr ""
 
-#: templates/home.html:130
+#: templates/home.html:91
 msgid "space for rent"
 msgstr ""
 
-#: templates/home.html:138
+#: templates/home.html:99
 msgid "provide services"
 msgstr ""
 
-#: templates/home.html:148
+#: templates/home.html:109
 msgid "give away"
 msgstr ""
 
-#: templates/home.html:168
+#: templates/home.html:129
 msgid "Popular"
 msgstr ""
 
-#: templates/home.html:169 templates/home.html:256
+#: templates/home.html:130 templates/home.html:210
 msgid "Ads"
 msgstr ""
 
 #: templates/place_ad.html:10
 msgid "Select ad's type"
-msgstr ""
-
-#: templates/place_ad.html:14
-msgid "Back"
 msgstr ""
 
 #: templates/place_ad.html:32
@@ -985,18 +1036,18 @@ msgstr ""
 msgid "only Latin characters"
 msgstr ""
 
-#: zaba/settings.py:183
+#: zaba/settings.py:191
 msgid "Ukrainian"
 msgstr ""
 
-#: zaba/settings.py:184
+#: zaba/settings.py:192
 msgid "Russian"
 msgstr ""
 
-#: zaba/settings.py:185
+#: zaba/settings.py:193
 msgid "Polish"
 msgstr ""
 
-#: zaba/settings.py:186
+#: zaba/settings.py:194
 msgid "English"
 msgstr ""

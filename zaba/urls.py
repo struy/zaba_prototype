@@ -29,6 +29,7 @@ urlpatterns += i18n_patterns(
     path('services/', include('apps.services.urls')),
     path('accounts/', include('apps.accounts.urls')),
     path('cookie-policy/', TemplateView.as_view(template_name='policy/cookie_policy.html'), name='cookie'),
+    path('about-us/', TemplateView.as_view(template_name='policy/about_us.html'), name='about_us'),
     path('privacy-policy/', TemplateView.as_view(template_name='policy/privacy_policy.html'), name='privacy'),
     path('term-of-services/', TemplateView.as_view(template_name='policy/term_of_services.html'), name='term'),
     path('place-ad/', TemplateView.as_view(template_name='place_ad.html'), name='place_ad'),

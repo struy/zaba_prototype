@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %} {% trans "Cookie Policy" %} {% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{% trans "About Us" %} </li>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"
+                            src="https://www.youtube.com/embed/i1Unm9AWsVY?rel=0"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+
+{#                <!-- 21:9 aspect ratio -->#}
+{#                <div class="embed-responsive embed-responsive-21by9">#}
+{#                    <iframe class="embed-responsive-item" src="..."></iframe>#}
+{#                </div>#}
+{##}
+{#                <!-- 16:9 aspect ratio -->#}
+{#                <div class="embed-responsive embed-responsive-16by9">#}
+{#                    <iframe class="embed-responsive-item" src="..."></iframe>#}
+{#                </div>#}
+{##}
+{#                <!-- 4:3 aspect ratio -->#}
+{#                <div class="embed-responsive embed-responsive-4by3">#}
+{#                    <iframe class="embed-responsive-item" src="..."></iframe>#}
+{#                </div>#}
+{##}
+{#                <!-- 1:1 aspect ratio -->#}
+{#                <div class="embed-responsive embed-responsive-1by1">#}
+{#                    <iframe class="embed-responsive-item" src="..."></iframe>#}
+{#                </div>#}
+
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

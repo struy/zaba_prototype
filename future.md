@@ -84,3 +84,6 @@ qs = SouthTexasCity.objects.filter(point__distance_gte=(pnt, D(mi=20)))
 https://docs.djangoproject.com/en/2.2/ref/contrib/gis/db-api/
 
 https://stefanbschneider.github.io/blog/django-google-analytics
+
+States
+https://django-localflavor.readthedocs.io/en/latest/

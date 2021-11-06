@@ -19,7 +19,7 @@ env.read_env(str(BASE_DIR + "/" + ".env"))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("DJANGO_SECRET_KEY", default="secret")
 # ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
-ALLOWED_HOSTS = ['zaba.today', 'www.zaba.today']
+ALLOWED_HOSTS = ['zaba.today', 'www.zaba.today', '3.23.189.174']
 
 
 # Google Recaptcha

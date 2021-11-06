@@ -104,6 +104,4 @@ SECURE_SSL_REDIRECT = True
 
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-)
+SOCIAL_AUTH_JSONFIELD_ENABLED = True

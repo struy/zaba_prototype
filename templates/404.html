@@ -3,6 +3,7 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
     {% trans "404" %}
@@ -10,7 +11,7 @@
 
 {% block head %}
     <style>
-         #attention, .breadcrumb {
+        #attention, .breadcrumb {
             display: none;
         }
     </style>
@@ -28,15 +29,46 @@
                     <div class="from col-md-5 col-12">
                         <div class="mt-5">
                             <p>
-                                You’ve got lucky - you are one of those who found this unique page. It became real for
-                                one of the following reasons:
+                                {% if LANGUAGE_CODE == 'en' %}
+                                    You’ve got lucky - you are one of those who found this unique page.
+                                    It became real for one of the following reasons:
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'ru' %}
+                                    Вам повезло - вы один из тех, кто нашел эту уникальную страницу.
+                                    Это стало реальностью по одной из следующих причин:
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'uk' %}
+                                    Вам пощастило – ви один із тих, хто знайшов цю унікальну сторінку.
+                                    Це стало реальним з однієї з наступних причин:
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'pl' %}
+                                    Masz szczęście - jesteś jednym z tych, którzy znaleźli tę wyjątkową stronę.
+                                    Stało się to realne z jednego z następujących powodów:
+                                {% endif %}
                             </p>
                         </div>
                         <div class="mt-5">
                             <ul style="margin-left: 20px">
-                                <li>Perhaps page has moved</li>
-                                <li>The page no longer exists</li>
-                                <li>We all make mistakes - don’t get frustrated</li>
+                                {% if LANGUAGE_CODE == 'en' %}
+                                    <li>Perhaps page has moved</li>
+                                    <li>The page no longer exists</li>
+                                    <li>We all make mistakes - don’t get frustrated</li>
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'ru' %}
+                                    <li> Возможно, страница переместилась.</li>
+                                    <li> Страницы больше не существует</li>
+                                    <li> Мы все делаем ошибки, не расстраивайтесь</li>
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'uk' %}
+                                    <li>Можливо, сторінка переміщена</li>
+                                    <li>Сторінка більше не існує</li>
+                                    <li>Ми всі робимо помилки – не засмучуйтеся</li>
+                                {% endif %}
+                                {% if LANGUAGE_CODE == 'pl' %}
+                                    <li>Być może strona została przeniesiona</li>
+                                    <li>Strona już nie istnieje</li>
+                                    <li>Wszyscy popełniamy błędy – nie denerwuj się</li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="mt-5 text-center">

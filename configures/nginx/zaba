@@ -18,7 +18,7 @@ server {
         proxy_redirect http://localhost:8080 https://zaba.today/jenkins/;
     }
 
-
+    client_max_body_size 20M;
 
 
     listen 443 ssl; # managed by Certbot

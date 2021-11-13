@@ -1,7 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 
-from .views import register, edit, my_ads, user_ads, favourite_list, contact_user, AdFavAPIToggle
+from .views import register, edit, my_ads, user_ads, favourite_list, contact_user, AdFavAPIToggle, UserDelete
 
 # app_name = 'accounts'
 urlpatterns = [
@@ -28,5 +28,6 @@ urlpatterns = [
          name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(),
          name='password_reset_complete'),
-    path('connect_user/<int:pk>/<str:name>/<int:a_id>', contact_user, name='connect_user')
+    path('connect_user/<int:pk>/<str:name>/<int:a_id>', contact_user, name='connect_user'),
+    path('account/<int:pk>/delete', UserDelete.as_view(), name='user_confirm_delete'),
 ]

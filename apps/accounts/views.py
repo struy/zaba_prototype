@@ -3,11 +3,14 @@ from smtplib import SMTPDataError
 
 import redis
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -151,3 +154,12 @@ def contact_user(request, pk, name, a_id):
 
             return redirect('success')
     return render(request, "accounts/templates/accounts/connect.html", {'form': form})
+
+
+User = get_user_model()
+
+
+class UserDelete(DeleteView):
+    model = User
+    success_url = reverse_lazy('home')
+    template_name = 'user_confirm_delete.html'

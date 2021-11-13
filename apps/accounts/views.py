@@ -162,4 +162,4 @@ User = get_user_model()
 class UserDelete(DeleteView):
     model = User
     success_url = reverse_lazy('home')
-    template_name = 'user_confirm_delete.html'
+    template_name = 'accounts/user_confirm_delete.html'

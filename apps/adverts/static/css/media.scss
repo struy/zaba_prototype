@@ -181,11 +181,22 @@
     }
 
     .home {
+
+      .dropdown {
+        .categories {
+          .dropdown-item {
+            margin: 0;
+          }
+        }
+      }
+
       .categories {
         a {
           font-size: 2em;
         }
       }
+
+
     }
 
   }
@@ -200,7 +211,7 @@
     .home {
       .categories {
         a {
-          font-size: 2.5em;
+          font-size: 2em;
         }
       }
     }

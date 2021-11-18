@@ -181,6 +181,9 @@
     margin: 10px auto;
     max-width: 80%;
   }
+  #main .home .dropdown .categories .dropdown-item {
+    margin: 0;
+  }
   #main .home .categories a {
     font-size: 2em;
   }
@@ -188,7 +191,7 @@
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.98px) {
   #main .home .categories a {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 
   header .favorites i {

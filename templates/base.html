@@ -170,9 +170,12 @@
 <div class="wrapper">
     <section id="main">
         <div class="container">
+
+            {% block attention %}
             <div id="attention" class="text-center">
                 <h3>{% trans "Notice! Ads are displayed only in the selected language." %}</h3>
             </div>
+            {% endblock %}
 
             {% include 'snippets/banners/header.html' %}
 

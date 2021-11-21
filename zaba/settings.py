@@ -167,7 +167,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
@@ -180,10 +180,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 INTERNAL_IPS = ['127.0.0.1']
 
 LANGUAGES = (
-    ('en', 'English'),
-    ('ru', 'Russian'),
-    ('pl', 'Polish'),
-    ('uk', 'Ukrainian'),
+    ('uk', _('Ukrainian')),
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    ('pl', _('Polish')),
 )
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]

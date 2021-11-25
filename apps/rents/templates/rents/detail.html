@@ -75,7 +75,8 @@
                     {% endif %}
 
                     <div class="count d-flex justify-content-start mt-4">
-                        <b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b>
+                        <div class="mr-auto "><b>{{ total_views }}&nbsp;<i class="far fa-eye"></i></b></div>
+                        {% include 'snippets/socia_share.html' %}
                     </div>
 
                 </div>

@@ -5,10 +5,31 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
+
 
 {% block title %}
     {% trans "Services" %}
 {% endblock %}
+
+{% if LANGUAGE_CODE == 'ru' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'uk' %}
+    {% block keywords %} Послуги, послуги Чикаго, США, перевезення, різні послуги, доставка,  уроки   {% endblock %}
+    {% block description %} Послуги! Вже сьогодні знайди що шукаєш. Різні пропозиції на нашому сайті стануть корисними як дорослим так і дітям. Зроби свій вибір! {% endblock %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'us' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+{% endif %}
+
+
+
+
+
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

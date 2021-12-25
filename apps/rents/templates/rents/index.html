@@ -5,10 +5,30 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
     {% trans "Jobs" %}
 {% endblock %}
+
+
+{% if LANGUAGE_CODE == 'ru' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'uk' %}
+    {% block keywords %} житло, оренда, квартира, житло в Чикаго, США, жаба {% endblock %}
+    {% block description %} Оренда житла в Чикаго! Вже сьогодні нові пропозиції! Тут ви зможете знайти великий перелік оголошень про здачу та пошуку житла!  {% endblock %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'us' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+{% endif %}
+
+
+
+
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

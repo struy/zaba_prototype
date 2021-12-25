@@ -5,10 +5,27 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
     {% trans "Jobs" %}
 {% endblock %}
+
+
+{% if LANGUAGE_CODE == 'ru' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'uk' %}
+    {% block keywords %} робота в , робота Чикаго,  Чикаго, США, вакансії, оголошення, без посередників, акція {% endblock %}
+    {% block description %} Шукаєте роботу?  Вже сьогодні нові вакансії! Тут ви можете знайти приватні некомерційні оголошення! Завітайте до нас та знайдіть улюблену роботу!  {% endblock %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'us' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+{% endif %}
+
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

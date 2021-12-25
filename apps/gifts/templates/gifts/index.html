@@ -5,10 +5,27 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block title %}
     {% trans "Gifts" %}
 {% endblock %}
+
+
+{% if LANGUAGE_CODE == 'ru' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'uk' %}
+    {% block keywords %} Віддам, даром , Чикаго,  речі, США, безкоштовно, подарунок, безоплатно  {% endblock %}
+    {% block description %} Віддам даром ! Прийму як подарунок  техніку,  яка були у користуванні, б/у комп'ютер, телефон, а також тварин. Знайди собі безкоштовну річ в категорії Котики!  {% endblock %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'us' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+{% endif %}
+
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

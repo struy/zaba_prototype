@@ -5,15 +5,36 @@
 {% load advert_money %}
 {% load crispy_forms_tags %}
 {% load thumbnail %}
+{% get_current_language as LANGUAGE_CODE %}
+
 
 {% block title %}
     {% trans "Items" %}
 {% endblock %}
 
+
+{% if LANGUAGE_CODE == 'ru' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'uk' %}
+    {% block keywords %} продаж, покупка, речі, товари, авто, Чикаго, нерухомість в США, квартира, будинок, вартість  {% endblock %}
+    {% block description %} Продаж в Чикаго, вже сьогодні придбай на zaba.today те, що тобі потрібно. 1 нове оголошення. Завітай до нас! Ми чекаємо на тебе! {% endblock %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'us' %}
+{% endif %}
+
+{% if LANGUAGE_CODE == 'en' %}
+{% endif %}
+
+
+
+
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{% trans "Items" %}</li>
 {% endblock %}
+
 
 {% block content %}
 

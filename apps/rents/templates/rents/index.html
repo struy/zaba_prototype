@@ -13,17 +13,23 @@
 
 
 {% if LANGUAGE_CODE == 'ru' %}
+{% block keywords %} жилье, аренда, квартира, жилье в Чикаго, США {% endblock %}
+    {% block description %}  Аренда жилья в Чикаго, США! Уже сегодня новые предложения! Здесь вы можете найти большой список объявлений сдачи и поиска жилья!  {% endblock %}
 {% endif %}
 
 {% if LANGUAGE_CODE == 'uk' %}
-    {% block keywords %} житло, оренда, квартира, житло в Чикаго, США, жаба {% endblock %}
-    {% block description %} Оренда житла в Чикаго! Вже сьогодні нові пропозиції! Тут ви зможете знайти великий перелік оголошень про здачу та пошуку житла!  {% endblock %}
+    {% block keywords %} житло, оренда, квартира, житло в Чикаго, США {% endblock %}
+    {% block description %}  Оренда житла в Чикаго, США! Вже сьогодні нові пропозиції! Тут ви зможете знайти великий перелік оголошень про здачу та пошуку житла!  {% endblock %}
 {% endif %}
 
-{% if LANGUAGE_CODE == 'us' %}
+{% if LANGUAGE_CODE == 'pl' %}
+{% block keywords %} Obudowa, wynajem, mieszkania, mieszkania w Chicago, USA  {% endblock %}
+    {% block description %}   Wynajem mieszkań w Chicago, USA! Już dziś nowe oferty! Tutaj znajdziesz dużą listę ofert i wyszukiwań zakwaterowania!  {% endblock %}
 {% endif %}
 
 {% if LANGUAGE_CODE == 'en' %}
+{% block keywords %} housing, rental, apartment, rent, housing in Chicago, USA  {% endblock %}
+    {% block description %}  Housing rental in Chicago, USA! New offers today! Here you can find a large list of listings for rentals and housing searches!  {% endblock %}
 {% endif %}
 
 

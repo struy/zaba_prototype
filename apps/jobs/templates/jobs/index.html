@@ -11,27 +11,27 @@
     {% trans "Jobs" %}
 {% endblock %}
 
+{% block keywords %}
+    {% if LANGUAGE_CODE == 'ru' %}работа в, работа Чикаго, Чикаго, США, вакансии, объявления, без посредников, акции{% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}робота в, робота Чикаго,  Чикаго, США, вакансії, оголошення, без посередників, акція{% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}praca, praca Chicago, Chicago, USA, wolne miejsca, ogłoszenia, bez odsprzedawców, promocje{% endif %}
+    {% if LANGUAGE_CODE == 'en' %}job, work in, Chicago, Chicago, USA, vacancies, ads, without intermediaries, promotions{% endif %}
+{% endblock %}
 
-{% if LANGUAGE_CODE == 'ru' %}
-    {% block keywords %}работа в, работа Чикаго, Чикаго, США, вакансии, объявления, без посредников, акции{% endblock %}
-    {% block description %}Ищешь  работу в Чикаго? Уже сегодня новые вакансии! Здесь ты сможешь найти частные некоммерческие объявления! Заходи на zaba.today и найди любимую работу!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'uk' %}
-    {% block keywords %}робота в, робота Чикаго,  Чикаго, США, вакансії, оголошення, без посередників, акція  {% endblock %}
-    {% block description %}Шукаєш роботу в Чикаго?  Вже сьогодні нові вакансії! Тут ти зможеш знайти приватні некомерційні оголошення! Завітай на сайт та знайди улюблену роботу! {% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'pl' %}
-{% block keywords %}praca, praca Chicago, Chicago, USA, wolne miejsca, ogłoszenia, bez odsprzedawców, promocje   {% endblock %}
-    {% block description %} Szukasz pracy w Chicago? Już dziś nowe wakaty! Tutaj znajdziesz prywatne niekomercyjne reklamy! Chodź na Zaba.Today i znajdź swoją ulubioną pracę!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'en' %}
-{% block keywords %}job, work in, Chicago, Chicago, USA, vacancies, ads, without intermediaries, promotions  {% endblock %}
-    {% block description %}Looking for a job in Chicago? There are new vacancies today! Here you can find private non-commercial ads! Come on Zaba.Today and find your favorite job!{% endblock %}
-{% endif %}
-
+{% block description %}
+    {% if LANGUAGE_CODE == 'ru' %}
+        Ищешь  работу в Чикаго? Уже сегодня новые вакансии! Здесь ты сможешь найти частные некоммерческие объявления! Заходи на zaba.today и найди любимую работу!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}
+        Шукаєш роботу в Чикаго?  Вже сьогодні нові вакансії! Тут ти зможеш знайти приватні некомерційні оголошення! Завітай на сайт та знайди улюблену роботу!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}
+        Szukasz pracy w Chicago? Już dziś nowe wakaty! Tutaj znajdziesz prywatne niekomercyjne reklamy! Chodź na Zaba.Today i znajdź swoją ulubioną pracę!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'en' %}
+        Looking for a job in Chicago? There are new vacancies today! Here you can find private non-commercial ads! Come on Zaba.Today and find your favorite job!
+    {% endif %}
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

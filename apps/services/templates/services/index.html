@@ -12,30 +12,27 @@
     {% trans "Services" %}
 {% endblock %}
 
-{% if LANGUAGE_CODE == 'ru' %}
-{% block keywords %} услуги, Чикаго, США, перевозки, различные услуги, доставка, уроки     {% endblock %}
-    {% block description %} Услуги в Чикаго, США! Уже сегодня найди что ищешь. Различные предложения на нашем сайте станут полезными как взрослым, так и детям. Сделай свой выбор!     {% endblock %}
-{% endif %}
+{% block keywords %} 
+    {% if LANGUAGE_CODE == 'ru' %}услуги, Чикаго, США, перевозки, различные услуги, доставка, уроки{% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}послуги, Чикаго, США, перевезення, різні послуги, доставка,  уроки{% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}usługi, Chicago, USA, transport, różne usługi, dostawa, lekcje{% endif %}
+    {% if LANGUAGE_CODE == 'en' %}services, Chicago, USA, transportation, miscellaneous services, delivery, lessons{% endif %}
+{% endblock %}
 
-{% if LANGUAGE_CODE == 'uk' %}
-    {% block keywords %} послуги, Чикаго, США, перевезення, різні послуги, доставка,  уроки    {% endblock %}
-    {% block description %} Послуги в Чикаго, США! Вже сьогодні знайди що шукаєш. Різні пропозиції на нашому сайті стануть корисними як дорослим так і дітям. Зроби свій вибір!     {% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'pl' %}
-{% block keywords %} usługi, Chicago, USA, transport, różne usługi, dostawa, lekcje    {% endblock %}
-    {% block description %} Usługi w Chicago, USA! Już dziś znajdź to, czego szukasz. Różne oferty na naszej stronie internetowej przyda się zarówno dorosłym, jak i dzieciom. Dokonaj wyboru!     {% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'en' %}
-{% block keywords %} services, Chicago, USA, transportation, miscellaneous services, delivery, lessons    {% endblock %}
-{% block description %} Services in Chicago, USA! Find what you're looking for today. The various offers on our website will be useful for both adults and children. Make your choice!     {% endblock %}
-{% endif %}
-
-
-
-
-
+{% block description %}
+    {% if LANGUAGE_CODE == 'ru' %}
+     Услуги в Чикаго, США! Уже сегодня найди что ищешь. Различные предложения на нашем сайте станут полезными как взрослым, так и детям. Сделай свой выбор!    
+    {% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}
+        Послуги в Чикаго, США! Вже сьогодні знайди що шукаєш. Різні пропозиції на нашому сайті стануть корисними як дорослим так і дітям. Зроби свій вибір!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}
+    Usługi w Chicago, USA! Już dziś znajdź to, czego szukasz. Różne oferty na naszej stronie internetowej przyda się zarówno dorosłym, jak i dzieciom. Dokonaj wyboru!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'en' %}
+    Services in Chicago, USA! Find what you're looking for today. The various offers on our website will be useful for both adults and children. Make your choice!
+    {% endif %}
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

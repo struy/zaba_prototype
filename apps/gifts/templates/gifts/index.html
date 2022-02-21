@@ -11,27 +11,27 @@
     {% trans "Gifts" %}
 {% endblock %}
 
+{% block keywords %}
+    {% if LANGUAGE_CODE == 'ru' %} отдам, даром, Чикаго, вещи, США, бесплатно, подарок, безвозмездно {% endif %}
+    {% if LANGUAGE_CODE == 'uk' %} віддам, даром , Чикаго,  речі, США, безкоштовно, подарунок, безоплатно {% endif %}
+    {% if LANGUAGE_CODE == 'pl' %} rozdać, za darmo, Chicago, rzeczy, USA, prezent, bezpłatnie {% endif %}
+    {% if LANGUAGE_CODE == 'en' %} give away, free, Chicago, stuff, USA, free, gift, free of charge{% endif %}
+{% endblock %}
 
-{% if LANGUAGE_CODE == 'ru' %}
-    {% block keywords %}отдам, даром, Чикаго, вещи, США, бесплатно, подарок, безвозмездно{% endblock %}
-    {% block description %}Отдам даром в Чикаго! Приму в подарок технику, которая была в употреблении, б/у  компьютер, телефон , а также животных. Найди себе бесплатную вещь в категории Котики!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'uk' %}
-    {% block keywords %}віддам, даром , Чикаго,  речі, США, безкоштовно, подарунок, безоплатно{% endblock %}
-    {% block description %}Віддам даром в Чикаго! Прийму як подарунок  техніку,  яка були у користуванні, б/у комп'ютер, телефон, а також тварин. Знайди собі безкоштовну річ в категорії Котики!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'pl' %}
-    {% block keywords %}rozdać, za darmo, Chicago, rzeczy, USA, prezent, bezpłatnie{% endblock %}
-    {% block description %}Rozdam go za darmo w Chicago! Wezmę jako prezent sprzęt, komputer, telefon, który był w użyciu, a także zwierzęta. Znajdź sobie darmowy przedmiot w kategorii Koty!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'en' %}
-    {% block keywords %}give away, free, Chicago, stuff, USA, free, gift, free of charge  {% endblock %}
-    {% block description %}Give it away for free in Chicago! Accept the gift of technique, computer, phone, which were used,  as well as animals. Find stuff for free in the Cats category!{% endblock %}
-{% endif %}
-
+{% block description %}
+    {% if LANGUAGE_CODE == 'ru' %}
+       Отдам даром в Чикаго! Приму в подарок технику, которая была в употреблении, б/у  компьютер, телефон , а также животных. Найди себе бесплатную вещь в категории Котики!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}
+     Віддам даром в Чикаго! Прийму як подарунок  техніку,  яка були у користуванні, б/у комп'ютер, телефон, а також тварин. Знайди собі безкоштовну річ в категорії Котики!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}
+        Rozdam go za darmo w Chicago! Wezmę jako prezent sprzęt, komputer, telefon, który był w użyciu, a także zwierzęta. Znajdź sobie darmowy przedmiot w kategorii Koty!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'en' %}
+      Give it away for free in Chicago! Accept the gift of technique, computer, phone, which were used,  as well as animals. Find stuff for free in the Cats category!
+    {% endif %}
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

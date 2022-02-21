@@ -12,29 +12,27 @@
     {% trans "Items" %}
 {% endblock %}
 
+{% block keywords %}
+    {% if LANGUAGE_CODE == 'ru' %}продажа, покупка, вещи, товары, авто, Чикаго, недвижимость в США, квартира, дом, cтоимость{% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}продаж, покупка, речі, товари, авто, Чикаго, нерухомість в США, квартира, будинок, вартість{% endif %}
+    {% if LANGUAGE_CODE == 'en' %}sale, buy, stuff,  items, goods, auto, Chicago, real estate in USA, apartment, house, value{% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}sprzedaż, kupno, przedmioty, towary, auto, Chicago, US nieruchomości, mieszkanie, dom, wartość{% endif %}
+{% endblock %}
 
-{% if LANGUAGE_CODE == 'ru' %}
-    {% block keywords %}продажа, покупка, вещи, товары, авто, Чикаго, недвижимость в США, квартира, дом, cтоимость{% endblock %}
-    {% block description %} Продажа в Чикаго, США! Уже сегодня покупай на Zaba.Today то, что тебе нужно. 1 новое объявление! Посети наш сайт! Мы ждем тебя!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'uk' %}
-    {% block keywords %}продаж, покупка, речі, товари, авто, Чикаго, нерухомість в США, квартира, будинок, вартість{% endblock %}
-    {% block description %}Продаж в Чикаго, США! Вже сьогодні придбай на zaba.today те, що тобі потрібно. 1 нове оголошення. Завітай на наш сайт! Ми чекаємо на тебе!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'en' %}
-   {% block keywords %}sale, buy, stuff,  items, goods, auto, Chicago, real estate in USA, apartment, house, value{% endblock %}
-   {% block description %}For sale in Chicago, Illinois, USA! Buy what you need on Zaba.Today. 1 new ad! Visit our website! We're waiting for you!{% endblock %}
-{% endif %}
-
-{% if LANGUAGE_CODE == 'pl' %}
-   {% block keywords %}sprzedaż, kupno, przedmioty, towary, auto, Chicago, US nieruchomości, mieszkanie, dom, wartość{% endblock %}
-   {% block description %}Na sprzedaż w Chicago, USA! Już dziś kup to, czego potrzebujesz w Zaba.Today. 1 nowe ogłoszenie! Odwiedź naszą stronę internetową! Czekamy na Ciebie!{% endblock %}
-{% endif %}
-
-
-
+{% block description %}
+    {% if LANGUAGE_CODE == 'ru' %}
+       Продажа в Чикаго, США! Уже сегодня покупай на Zaba.Today то, что тебе нужно. 1 новое объявление! Посети наш сайт! Мы ждем тебя!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'uk' %}
+        Продаж в Чикаго, США! Вже сьогодні придбай на zaba.today те, що тобі потрібно. 1 нове оголошення. Завітай на наш сайт! Ми чекаємо на тебе!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'en' %}
+      For sale in Chicago, Illinois, USA! Buy what you need on Zaba.Today. 1 new ad! Visit our website! We're waiting for you!
+    {% endif %}
+    {% if LANGUAGE_CODE == 'pl' %}
+       Na sprzedaż w Chicago, USA! Już dziś kup to, czego potrzebujesz w Zaba.Today. 1 nowe ogłoszenie! Odwiedź naszą stronę internetową! Czekamy na Ciebie!
+    {% endif %}
+{% endblock %}
 
 {% block breadcrumbs %}
     <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>

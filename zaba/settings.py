@@ -204,7 +204,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 MODELTRANSLATION_TRANSLATION_FILES = (
     'apps.gifts.translation', 'apps.jobs.translation',)
 
-REDIS_HOST = 'localhost'
+REDIS_HOST = env('REDIS_HOST', default='localhost')
 REDIS_PORT = 6379
 REDIS_DB = 0
 
@@ -213,14 +213,14 @@ POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://localhost:6379/1',
+        'LOCATION': f'redis://{REDIS_HOST}:6379/1',
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         }
     },
     "select2": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://localhost:6379/2",
+        "LOCATION": f"redis://{REDIS_HOST}:6379/2",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -236,8 +236,8 @@ SESSION_CACHE_ALIAS = "default"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # CELERY
-BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+BROKER_URL = f'redis://{REDIS_HOST}:6379'
+CELERY_RESULT_BACKEND = 'redis://{REDIS_HOST}:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'

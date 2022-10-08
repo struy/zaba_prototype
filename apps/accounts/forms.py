@@ -2,7 +2,6 @@ from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV3
 from django import forms
 from django.contrib.auth.models import User
-from django.utils.translation import get_language
 from django.utils.translation import gettext_lazy as _
 
 from zaba.settings import RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY
@@ -36,7 +35,7 @@ class UserRegistrationForm(forms.ModelForm):
         fields = ('username', 'first_name', 'last_name', 'email')
         widgets = {
             'captcha': ReCaptchaV3(
-                api_params={'badge': 'inline'}  # 'hl': get_language()[:2],
+                api_params={'badge': 'inline'}
             ),
         }
 

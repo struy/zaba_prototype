@@ -12,10 +12,6 @@ class Promote(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, verbose_name=_('author'))
     name = models.CharField(max_length=200, verbose_name=_('name'))
 
-    # paid = models.BooleanField()
-    # location
-
-
     class Meta:
         ordering = ('name',)
 

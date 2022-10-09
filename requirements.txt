@@ -105,7 +105,7 @@ polib==1.1.0
 pony==0.7.14
 prometheus-client==0.8.0
 prompt-toolkit==3.0.8
-psycopg2-binary
+psycopg2-binary==2.8.6
 py==1.10.0
 py-translate==1.0.3
 pycodestyle==2.8.0

@@ -26,6 +26,13 @@ class Gift(Advert, Location):
     image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
     favourites = models.ManyToManyField(User, related_name='favourite_gifts', default=None, blank=True)
 
+    @property
+    def icon_path(self):
+        if self.gift_type == 'pets':
+            return f'none/gifts/none-pets.svg'
+        else:
+            return f'none/gifts/none-free.svg'
+
     def get_absolute_url(self):
         return reverse('gifts:detail', args=[self.id])
 

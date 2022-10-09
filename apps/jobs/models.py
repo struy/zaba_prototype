@@ -41,6 +41,13 @@ class Job(Advert, Location):
     favourites = models.ManyToManyField(User, related_name='favourite_jobs', default=None, blank=True)
     salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('salary'), null=True, blank=True)
 
+    @property
+    def icon_path(self):
+        if self.jobtype.icon:
+            return f'none/jobs/none-{self.jobtype.icon}.svg'
+        else:
+            return f'none/jobs/none-jobs.svg'
+
     def get_absolute_url(self):
         return reverse('jobs:detail', args=[self.id])
 

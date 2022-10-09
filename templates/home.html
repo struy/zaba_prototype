@@ -164,7 +164,7 @@
                                 {% endthumbnail %}
                                 {% if not advert.image %}
                                     <img class="card-img-top rounded size-image"
-                                         src="{% static 'none/no-img.jpg' %}"
+                                         src="{% static advert.icon_path %}"
                                          alt="no image"
                                          width="128"
                                     />
@@ -243,7 +243,7 @@
                                 </div>
                             {% endthumbnail %}
                             {% if not advert.image %}
-                                <img class="card-img-top size-image" src="{% static 'none/no-img.jpg' %}" alt="no image"
+                                <img class="card-img-top size-image" src="{% static ad.icon_path %}" alt="no image"
                                      width="128"/>
                             {% endif %}
 

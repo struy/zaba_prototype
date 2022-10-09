@@ -18,6 +18,10 @@ class Service(Advert, Location):
     favourites = models.ManyToManyField(User, related_name='favourite_services', default=None, blank=True)
     salary = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_('salary'), null=True, blank=True)
 
+    @property
+    def icon_path(self):
+        return f'none/services/none-services.svg'
+
     def get_absolute_url(self):
         return reverse('services:detail', args=[self.id])
 

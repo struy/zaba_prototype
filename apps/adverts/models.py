@@ -4,7 +4,6 @@ from collections import namedtuple
 import pytz
 import redis
 from django.conf import settings
-# from django.contrib.auth.models import User
 from django.contrib.gis.db.models import PointField
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -85,6 +84,10 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         if (self.modified + datetime.timedelta(weeks=24)) > now:
             return NT("px-1 text-white bg-secondary", _("very old"))
         return NT("px-1 text-white bg-dark", _("dead"))
+
+    @property
+    def icon_path(self):
+        return 'none/no-img.jpg'
 
     objects = AdvertsManager()
 

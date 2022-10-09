@@ -1,9 +1,9 @@
-import django_tables2 as tables
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
+import django_tables2 as tables
 from apps.adverts.models import Advert, Location, user_directory_path
 
 
@@ -51,6 +51,18 @@ class Rent(Advert, Location):
         choices=prefer_sex_list,
         default='a'
     )
+
+    @property
+    def icon_path(self):
+        if self.property_type == 'house':
+            return f'none/rents/none-house.svg'
+        elif  self.property_type == 'townhouse':
+            return f'none/rents/none-townhouse.svg'
+        elif  self.property_type == 'ap':
+            return f'none/rents/none-room.svg'
+        else:
+            return  f'none/rents/none-room.svg'
+
 
     def get_absolute_url(self):
         return reverse('rents:detail', args=[self.id])

@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="26" y="117" width="68" height="3" fill="#FFDB57"/>
+<rect x="26" y="97" width="68" height="18" fill="#FFDB57"/>
+<path d="M26 79C26 76.7909 27.7909 75 30 75H90C92.2091 75 94 76.7909 94 79V95H26V79Z" fill="#FFDB57"/>
+<path d="M96 94C96 91.7909 97.7909 90 100 90C102.209 90 104 91.7909 104 94V120H96V94Z" fill="#FFDB57"/>
+<path d="M16 94C16 91.7909 17.7909 90 20 90C22.2091 90 24 91.7909 24 94V120H16V94Z" fill="#FFDB57"/>
+<path d="M63 90C63 87.7909 64.7909 86 67 86H85C87.2091 86 89 87.7909 89 90V95H63V90Z" fill="white"/>
+<path d="M31 90C31 87.7909 32.7909 86 35 86H53C55.2091 86 57 87.7909 57 90V95H31V90Z" fill="white"/>
+<rect x="49" y="32" width="22" height="32" stroke="#FFDB57" stroke-width="4"/>
+<rect x="108" width="12" height="27" fill="#FFDB57"/>
+<rect x="94" width="12" height="27" fill="#FFDB57"/>
+<rect x="94" y="29" width="12" height="28" fill="#FFDB57"/>
+<rect x="108" y="29" width="12" height="28" fill="#FFDB57"/>
+<rect x="14" width="12" height="27" fill="#FFDB57"/>
+<rect width="12" height="27" fill="#FFDB57"/>
+<rect y="29" width="12" height="28" fill="#FFDB57"/>
+<rect x="14" y="29" width="12" height="28" fill="#FFDB57"/>
+<path d="M55.5 11.5H64.5V15C64.5 17.4853 62.4853 19.5 60 19.5C57.5147 19.5 55.5 17.4853 55.5 15V11.5Z" stroke="#FFDB57" stroke-width="3"/>
+<path d="M45.8749 13.5L54.2442 1.5H65.7558L74.1251 13.5H45.8749Z" fill="#FFDB57" stroke="#FFDB57" stroke-width="3"/>
+</svg>

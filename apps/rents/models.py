@@ -58,10 +58,10 @@ class Rent(Advert, Location):
             return f'none/rents/none-house.svg'
         elif  self.property_type == 'townhouse':
             return f'none/rents/none-townhouse.svg'
-        elif  self.property_type == 'ap':
+        elif  self.property_type == 'apartment':
             return f'none/rents/none-room.svg'
         else:
-            return  f'none/rents/none-room.svg'
+            return  f'none/rents/none-house.svg'
 
 
     def get_absolute_url(self):

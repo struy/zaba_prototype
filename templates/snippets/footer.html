@@ -1,70 +1,76 @@
 {% load i18n %}
 <footer>
-        <div id="mobile-data" class="d-flex d-lg-none pr-4 pl-4">
-            <div class="item">
-                <a href="/" class="nav-item">
-                    {% include 'svg/icon-Home.svg' %}
-                    <div>Home</div>
-                </a>
-            </div>
-            <div class="item">
-                <div data-toggle="collapse" class="nav-item"
-                     data-target="#navbarSupportedSubContent"
-                     aria-controls="navbarSupportedSubContent20" aria-expanded="false"
-                     aria-label="Toggle navigation">
-                    {% include 'svg/icon-Profile.svg' %}
-                    <div>Profile</div>
-                </div>
-            </div>
-            <div class="item">
-                <a href="{% url 'place_ad' %}" class="nav-item">
-                    {% include 'svg/icon-Plus.svg' %}
-                    <div>Create</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="{% url 'favorites' %}" class="nav-item">
-                    {% include 'svg/icon-Star.svg' %}
-                    <div>Fav</div>
-                </a>
-            </div>
-            <div class="item">
-                <button class="navbar-toggler first-button" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="animated-icon1"><span></span><span></span><span></span></div>
-                </button>
+    <div id="mobile-data" class="d-flex d-lg-none pr-4 pl-4">
+        <div class="item">
+            <a href="/" class="nav-item">
+                {% include 'svg/icon-Home.svg' %}
+                <div>Home</div>
+            </a>
+        </div>
+        <div class="item">
+            <div data-toggle="collapse" class="nav-item"
+                 data-target="#navbarSupportedSubContent"
+                 aria-controls="navbarSupportedSubContent20" aria-expanded="false"
+                 aria-label="Toggle navigation">
+                {% include 'svg/icon-Profile.svg' %}
+                <div>Profile</div>
             </div>
         </div>
-        <div class="container d-none d-md-block">
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-12 text-center">
-                    <ul>
-                        <li class="nav_first">
-                            <a href="{% url 'term' %}" class="home_a">
-                                {% trans "Conditions of Use" %}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'privacy' %}" class="nav_a">
-                                {% trans "Privacy Notice" %}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'term' %}" class="nav_a">
-                                {% trans "Terms and conditions" %}
-                            </a>
-                        </li>
-                        <li class="nav_last">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear().toString())
-                            </script>
-                            , zaba.today, {% trans 'Inc. or its affiliates' %}
-                        </li>
-                    </ul>
-                </div>
+        <div class="item">
+            <a href="{% url 'place_ad' %}" class="nav-item">
+                {% include 'svg/icon-Plus.svg' %}
+                <div>Create</div>
+            </a>
+        </div>
+        <div class="item">
+            <a href="{% url 'favorites' %}" class="nav-item">
+                {% include 'svg/icon-Star.svg' %}
+                <div>Fav</div>
+            </a>
+        </div>
+        <div class="item">
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+        </div>
+    </div>
+    <div class="container d-none d-md-block">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-12 text-center">
+                <ul>
+                    <li class="nav_first">
+                        <a href="{% url 'term' %}" class="home_a">
+                            {% trans "Conditions of Use" %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy' %}" class="nav_a">
+                            {% trans "Privacy Notice" %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'term' %}" class="nav_a">
+                            {% trans "Terms and conditions" %}
+                        </a>
+                    </li>
+                    <li class="nav_last">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear().toString())
+                        </script>
+                        , zaba.today, {% trans 'Inc. or its affiliates' %}
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/zaba.today/?igshid=NzNkNDdiOGI%3D&utm_source=inst&utm_campaign=from%20site"
+                           target="_blank" class="text-white pl-1">
+                            <i class="fa-brands fa-instagram fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>

@@ -19,7 +19,7 @@ pipeline {
         stage ("Pull") {
              steps{
                 sh """
-                cd /home/ubuntu/Build
+                cd /home/ubuntu/Build/zaba_prototype
                 git fetch
                 git pull
                 """

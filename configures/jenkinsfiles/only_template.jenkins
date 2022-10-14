@@ -1,1 +1,56 @@
+#!groovy
+properties([disableConcurrentBuilds()])
+//Build, Test, Prod
+pipeline {
+    agent any
 
+    options {
+        skipDefaultCheckout(true)
+        // Keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage ("Code pull"){
+            steps{
+                checkout scm
+            }
+        }
+        stage ("Pull") {
+             steps{
+                sh """
+                cd /home/ubuntu/Build
+                git fetch
+                git pull
+                """
+            }
+        }
+        stage ("Collectstatic"){
+            steps{
+                sh """
+                cd /home/ubuntu/Build/zaba_prototype
+                source env/bin/activate
+                export DJANGO_SETTINGS_MODULE=zaba.settings_prod
+                python manage.py collectstatic --noinput --settings=zaba.settings_prod
+                """
+            }
+        }
+         stage ("Test"){
+            steps{
+              sh 'echo TEST'
+            }
+        }
+        stage('Deploy') {
+            when {
+            expression {
+            currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                    }
+                    }
+            steps {
+                sh 'echo YES'
+            }
+        }
+
+
+    }
+}

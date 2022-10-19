@@ -38,8 +38,19 @@
     </div>
     <div class="container d-none d-md-block">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-12 text-center">
+            <div class="col-3 text-center footer-copyright">
+                <ul>
+                    <li class="nav_last">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear().toString())
+                        </script>
+                        ,
+                        <a href="/"> zaba.today </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 text-center">
                 <ul>
                     <li class="nav_first">
                         <a href="{% url 'term' %}" class="home_a">
@@ -56,17 +67,26 @@
                             {% trans "Terms and conditions" %}
                         </a>
                     </li>
-                    <li class="nav_last">
-                        ©
-                        <script>
-                            document.write(new Date().getFullYear().toString())
-                        </script>
-                        , zaba.today, {% trans 'Inc. or its affiliates' %}
+                </ul>
+            </div>
+            <div class="col-3 text-center text-md-right">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/"
+                           target="_blank" class="text-white pl-2">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/zaba.today/?igshid=NzNkNDdiOGI%3D&utm_source=inst&utm_campaign=from%20site"
-                           target="_blank" class="text-white pl-1">
-                            <i class="fab fa-instagram fa-2x"></i>
+                           target="_blank" class="text-white pl-2">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=i1Unm9AWsVY"
+                           target="_blank" class="text-white pl-2">
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </li>
                 </ul>

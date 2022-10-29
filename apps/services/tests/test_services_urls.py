@@ -3,13 +3,16 @@ from django.contrib.auth.models import User
 from model_bakery import baker
 from model_bakery.random_gen import gen_email
 
+from apps.services.models import ServiceType
+
 pytestmark = pytest.mark.django_db
 
 
 @pytest.fixture()
 def services():
     user = baker.make(User, email=gen_email)
-    return baker.make('services.Service', local='en', author=user, _quantity=10)
+    service_type = baker.make(ServiceType, name='Beauty', icon='beauty' )
+    return baker.make('services.Service', local='en', service_type=service_type, author=user, _quantity=10)
 
 
 @pytest.mark.parametrize("url, status", [

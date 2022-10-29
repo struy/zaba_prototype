@@ -15,10 +15,6 @@ class ServiceType(models.Model):
     def __str__(self):
         return self.name
 
-    class Meta:
-        ordering = ['name']
-
-
 class Service(Advert, Location):
     """
     Temporary  Service advertise, example Sales

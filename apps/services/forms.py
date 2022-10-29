@@ -17,7 +17,8 @@ class ServiceForm(forms.ModelForm):
                                       }),
     )
     city = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
-    # service_type = forms.ModelChoiceField(queryset=ServiceType.objects.order_by('name'))
+    # TODO order by lang
+    # service_type = forms.ModelChoiceField(queryset=ServiceType.objects.order_by(f'name<LANG>'))
 
     class Meta:
         model = Service

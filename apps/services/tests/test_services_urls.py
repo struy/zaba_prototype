@@ -11,8 +11,9 @@ pytestmark = pytest.mark.django_db
 @pytest.fixture()
 def services():
     user = baker.make(User, email=gen_email)
-    service_type = baker.make(ServiceType, name='Beauty', icon='beauty' )
-    return baker.make('services.Service', local='en', service_type=service_type, author=user, _quantity=10)
+    # service_type = baker.make(ServiceType, name='Beauty', icon='beauty' )
+    return baker.make('services.Service', local='en', author=user, _quantity=10)
+    # return baker.make('services.Service', local='en', service_type=service_type, author=user, _quantity=10)
 
 
 @pytest.mark.parametrize("url, status", [

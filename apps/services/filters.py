@@ -11,7 +11,6 @@ class ServicesFilter(django_filters.FilterSet):
     class Meta:
         model = Service
         fields = {
-            'salary': ['gte', 'lte'],
-            # 'jobtype': ['exact'],
+            'service_type': ['exact'],
             'city': ['exact']
         }

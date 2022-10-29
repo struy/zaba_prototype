@@ -11,7 +11,7 @@ from django_tables2 import SingleTableMixin
 
 from apps.adverts.utils import context_helper
 from .filters import ServicesFilter
-from .form import ServiceForm
+from .forms import ServiceForm
 from .models import Service
 # connect to redis
 from .tables import ServiceTable

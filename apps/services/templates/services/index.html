@@ -91,7 +91,8 @@
                                         {% endthumbnail %} {% if not advert.image %}
                                         <img
                                                 class="mr-3  image-advert"
-                                                src="{% if advert.type_icon_path %}{% static advert.type_icon_path %}{% else %}{% static advert.icon_path %}{% endif %}"
+                                                src="{% static advert.icon_path %}"
+{#                                                src="{% if advert.type_icon_path %}{% static advert.type_icon_path %}{% else %}{% static advert.icon_path %}{% endif %}"#}
                                                 alt="no image"
                                                 width="128"
                                         />

@@ -26,10 +26,5 @@ class Migration(migrations.Migration):
         migrations.RemoveField(
             model_name='service',
             name='salary',
-        ),
-        migrations.AddField(
-            model_name='service',
-            name='service_type',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='services.ServiceType', verbose_name='service type'),
-        ),
+        )
     ]

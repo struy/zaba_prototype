@@ -23,15 +23,15 @@ class Service(Advert, Location):
                              help_text=_('What language do we speak?'), )
     image = ImageField(upload_to=user_directory_path, null=True, blank=True, verbose_name=_('Logo or image'))
     favourites = models.ManyToManyField(User, related_name='favourite_services', default=None, blank=True)
-    # service_type = models.ForeignKey(ServiceType, on_delete=models.CASCADE, verbose_name=_('service type'), default="1")
+    service_type = models.ForeignKey(ServiceType, on_delete=models.CASCADE, verbose_name=_('service type'), default="1")
 
     @property
     def icon_path(self):
         return f'none/services/none-services.svg'
 
-    # @property
-    # def type_icon_path(self):
-    #     return f'services/type_icons/{self.service_type.icon}.svg'
+    @property
+    def type_icon_path(self):
+        return f'services/type_icons/{self.service_type.icon}.svg'
 
     def get_absolute_url(self):
         return reverse('services:detail', args=[self.id])

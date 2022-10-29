@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.gis import forms as gis_forms
 from django.utils.translation import gettext_lazy as _
 
-from .models import Service
+from .models import Service, ServiceType
 
 
 class ServiceForm(forms.ModelForm):
@@ -17,6 +17,7 @@ class ServiceForm(forms.ModelForm):
                                       }),
     )
     city = forms.CharField(widget=forms.TextInput(attrs={'placeholder': _("Only Latin characters")}))
+    # service_type = forms.ModelChoiceField(queryset=ServiceType.objects.order_by('name'))
 
     class Meta:
         model = Service

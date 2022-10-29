@@ -15,6 +15,9 @@ class ServiceType(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Service(Advert, Location):
     """
@@ -29,6 +32,10 @@ class Service(Advert, Location):
     @property
     def icon_path(self):
         return f'none/services/none-services.svg'
+
+    @property
+    def type_icon_path(self):
+        return f'services/type_icons/{self.service_type.icon}.svg'
 
     def get_absolute_url(self):
         return reverse('services:detail', args=[self.id])

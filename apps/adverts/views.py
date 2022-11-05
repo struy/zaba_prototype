@@ -1,9 +1,9 @@
 import datetime
 import re
 from itertools import chain
-
 import redis
 from django.conf import settings
+from django.core.cache import cache
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
@@ -36,6 +36,7 @@ def detail(request, advert_id):
 
 def home(request):
     r = redis.Redis(connection_pool=settings.POOL)
+
     new = get_new_ads(r)
     most_viewed = get_most_viewed(r)
 
@@ -62,10 +63,17 @@ def home(request):
     lang = get_language()
     if lang:
         lang = lang[:2]
-    sm_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='sm').order_by('?')
-    md_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='md').order_by('?')
-    lg_header_banners = Banner.objects.filter(local=lang, areas__area='h', size='lg').order_by('?')
-    bottom_banners = Banner.objects.filter(local=lang, areas__area='b').order_by('?').first()
+    sm_header_banners = cache.get_or_set('sm_header_banners',
+                                         Banner.objects.filter(local=lang, areas__area='h', size='sm').order_by('?'),
+                                         3600)
+    md_header_banners = cache.get_or_set('md_header_banners',
+                                         Banner.objects.filter(local=lang, areas__area='h', size='md').order_by('?'),
+                                         3600)
+    lg_header_banners = cache.get_or_set('lg_header_banners',
+                                         Banner.objects.filter(local=lang, areas__area='h', size='lg').order_by('?'),
+                                         3600)
+    bottom_banners = cache.get_or_set('bottom_banners',
+                                      Banner.objects.filter(local=lang, areas__area='b').order_by('?'), 3600)
 
     context = {'counter': counter,
                'new': new,

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load cache %}
 {% load i18n %}
 {% load static %}
 {% load thumbnail %}
@@ -13,12 +14,14 @@
 
 
 {% block description %}
-    {% if LANGUAGE_CODE == 'uk' %}Безкоштовна дошка оголошень в Чикаго, США, де вже сьогодні ви зможете знайти роботу, продати та купити, зняти житло в оренду, віддати та отримати безкоштовну річ!
+    {% if LANGUAGE_CODE == 'uk' %}Безкоштовна дошка оголошень в Чикаго, США, де вже сьогодні ви зможете знайти роботу,
+        продати та купити, зняти житло в оренду, віддати та отримати безкоштовну річ!
     {% else %} Adverts, Offering a job, provide services, give away, offer for sale, space for rent {% endif %}
 {% endblock %}
 
 {% block keywords %}
-    {% if LANGUAGE_CODE == 'uk' %} безкоштовна дошка оголошень США, інфо-портал, російськомовне населення, українське село в Чикаго, онлайн,  іллінойс, росіяни в США
+    {% if LANGUAGE_CODE == 'uk' %} безкоштовна дошка оголошень США, інфо-портал, російськомовне населення, українське
+        село в Чикаго, онлайн,  іллінойс, росіяни в США
     {% else %} Adverts, Offering a job, provide services, give away, offer for sale, space for rent {% endif %}
 {% endblock %}
 
@@ -121,55 +124,138 @@
             {% include 'svg/top.html' %}
         </div>
 
-        <div class="head-block">
-            <h2 align="center">
-                <span class="text-black">{% trans "Popular" %}</span>
-                <span class="text-green">{% trans "Ads" %}</span>
-            </h2>
-        </div>
+        {% cache 900 most_viewed %}
+            {% block most_viewed %}
+                <div class="head-block">
+                    <h2 align="center">
+                        <span class="text-black">{% trans "Popular" %}</span>
+                        <span class="text-green">{% trans "Ads" %}</span>
+                    </h2>
+                </div>
+                {% if most_viewed %}
+                    <div class="container my-4 pt-1 pb-4 mt-10">
+                        <div id="multi-item-example" class="carousel slide carousel-multi-item"
+                             data-ride="carousel" data-interval="4200">
 
+                            <!--Indicators-->
+                            <ol class="carousel-indicators dots-carousel d-none d-md-flex">
+                                {% for x in "012" %}
+                                    <li data-target="#multi-item-example" data-slide-to="{{ x }}"
+                                            {% if  forloop.counter0 == 0 %}
+                                        class="active" {% endif %}>
+                                    </li>
+                                {% endfor %}
+                            </ol>
+                            <!--/.Indicators-->
 
-        {% if most_viewed %}
-            <div class="container my-4 pt-1 pb-4 mt-10">
-                <div id="multi-item-example" class="carousel slide carousel-multi-item"
-                     data-ride="carousel" data-interval="4200">
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                {% for advert in most_viewed %}
+                                    <!--First slide-->
+                                    {% if forloop.counter0|divisibleby:4 %}
+                                        <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                                        <div class="row">
+                                    {% endif %}
+                                <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
 
-                    <!--Indicators-->
-                    <ol class="carousel-indicators dots-carousel d-none d-md-flex">
-                        {% for x in "012" %}
-                            <li data-target="#multi-item-example" data-slide-to="{{ x }}"
-                                    {% if  forloop.counter0 == 0 %}
-                                class="active" {% endif %}>
-                            </li>
-                        {% endfor %}
-                    </ol>
-                    <!--/.Indicators-->
+                                    <a href="{{ advert.get_absolute_url }}"
+                                       class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
+                                        {% thumbnail advert.image "128" as ad %}
+                                            <div class="image-slider">
+                                                <img class="card-img-top size-image" src="{{ ad.url }}" alt="no image"/>
+                                            </div>
+                                        {% endthumbnail %}
+                                        {% if not advert.image %}
+                                            <img class="card-img-top rounded size-image"
+                                                 src="{% static advert.icon_path %}"
+                                                 alt="no image"
+                                                 width="128"
+                                            />
+                                        {% endif %}
+                                        <div class="text-fixed-bottom">
+                                            <h5 class="name pt-3 pb-2">
+                                                <div>{{ advert.title }}</div>
+                                            </h5>
+                                            <div class="subtype">
+                                                <small class="text-muted">
+                                                    <i class="fas fa-map-marker-alt"> </i>
+                                                    {{ advert.city }}
+                                                </small>
+                                            </div>
+                                            <div class="price price-settings">
+                                                <span>{{ advert.price|prepend_dollars }}</span>
+                                            </div>
+                                        </div>
+                                    </a>
 
-                    <!--Slides-->
-                    <div class="carousel-inner" role="listbox">
-                        {% for advert in most_viewed %}
-                            <!--First slide-->
-                            {% if forloop.counter0|divisibleby:4 %}
-                                <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                                <div class="row">
-                            {% endif %}
-                        <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
-
-                            <a href="{{ advert.get_absolute_url }}"
-                               class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
-                                {% thumbnail advert.image "128" as ad %}
-                                    <div class="image-slider">
-                                        <img class="card-img-top size-image" src="{{ ad.url }}" alt="no image"/>
+                                </div>
+                                {% if forloop.counter|divisibleby:4 %}
                                     </div>
-                                {% endthumbnail %}
-                                {% if not advert.image %}
-                                    <img class="card-img-top rounded size-image"
-                                         src="{% static advert.icon_path %}"
-                                         alt="no image"
-                                         width="128"
-                                    />
+                                    </div>
                                 {% endif %}
-                                <div class="text-fixed-bottom">
+                                    <!--/.First slide-->
+                                {% endfor %}
+                            </div>
+                            <!--/.Slides-->
+                        </div>
+                    </div>
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% endcache %}
+
+
+    {% include 'snippets/banners/bottom.html' %}
+
+    {% cache 900 new %}
+        {% block new %}
+            <div class="head-block">
+                <h2 align="center">
+                    <span class="text-black">{% trans "New" %}</span>
+                    <span class="text-green">{% trans "Ads" %}</span>
+                </h2>
+            </div>
+            {% if new %}
+                <div class="container my-4 py-2">
+                    <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel"
+                         data-interval="4500">
+
+                        <!--Indicators-->
+                        <ol class="carousel-indicators dots-carousel d-none d-md-flex">
+                            {% for x in "0123" %}
+                                <li data-target="#multi-item-example2" data-slide-to="{{ x }}"
+                                        {% if  forloop.counter0 == 0 %}
+                                    class="active" {% endif %}>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                        <!--/.Indicators-->
+
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">
+                            {% for advert in new %}
+
+                                <!--First slide-->
+                                {% if forloop.counter0|divisibleby:4 %}
+                                    <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                                    <div class="row">
+                                {% endif %}
+                            <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
+
+                                <a href="{{ advert.get_absolute_url }}"
+                                   class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
+                                    {% thumbnail advert.image "128" as ad %}
+                                        <div class="image-slider">
+                                            <img class="card-img-top rounded size-image" src="{{ ad.url }}"
+                                                 alt="no image"/>
+                                        </div>
+                                    {% endthumbnail %}
+                                    {% if not advert.image %}
+                                        <img class="card-img-top size-image" src="{% static advert.icon_path %}"
+                                             alt="no image"
+                                             width="128"/>
+                                    {% endif %}
+
                                     <h5 class="name pt-3 pb-2">
                                         <div>{{ advert.title }}</div>
                                     </h5>
@@ -182,98 +268,21 @@
                                     <div class="price price-settings">
                                         <span>{{ advert.price|prepend_dollars }}</span>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
 
-                        </div>
-                        {% if forloop.counter|divisibleby:4 %}
                             </div>
-                            </div>
-                        {% endif %}
-                            <!--/.First slide-->
-                        {% endfor %}
-                    </div>
-                    <!--/.Slides-->
-                </div>
-            </div>
-            </div>
-        {% endif %}
-
-    {% include 'snippets/banners/bottom.html' %}
-
-    <div class="head-block">
-        <h2 align="center">
-            <span class="text-black">{% trans "New" %}</span>
-            <span class="text-green">{% trans "Ads" %}</span>
-        </h2>
-    </div>
-
-    {% if new %}
-        <div class="container my-4 py-2">
-            <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-ride="carousel"
-                 data-interval="4500">
-
-                <!--Indicators-->
-                <ol class="carousel-indicators dots-carousel d-none d-md-flex">
-                    {% for x in "012" %}
-                        <li data-target="#multi-item-example2" data-slide-to="{{ x }}" {% if  forloop.counter0 == 0 %}
-                            class="active" {% endif %}>
-                        </li>
-                    {% endfor %}
-                </ol>
-                <!--/.Indicators-->
-
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-                    {% for advert in new %}
-
-                        <!--First slide-->
-                        {% if forloop.counter0|divisibleby:4 %}
-                            <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                            <div class="row">
-                        {% endif %}
-                    <div class="col-md-3 {% if forloop.counter0|divisibleby:4 == False %} clearfix d-none d-md-block {% endif %}">
-
-                        <a href="{{ advert.get_absolute_url }}"
-                           class="card mb-2 p-3 item-slider h-100 shadow-item text-decoration-none">
-                            {% thumbnail advert.image "128" as ad %}
-                                <div class="image-slider">
-                                    <img class="card-img-top rounded size-image" src="{{ ad.url }}"
-                                         alt="no image"/>
+                            {% if forloop.counter|divisibleby:4 %}
                                 </div>
-                            {% endthumbnail %}
-                            {% if not advert.image %}
-                                <img class="card-img-top size-image" src="{% static advert.icon_path %}" alt="no image"
-                                     width="128"/>
+                                </div>
                             {% endif %}
-
-                            <h5 class="name pt-3 pb-2">
-                                <div>{{ advert.title }}</div>
-                            </h5>
-                            <div class="subtype">
-                                <small class="text-muted">
-                                    <i class="fas fa-map-marker-alt"> </i>
-                                    {{ advert.city }}
-                                </small>
-                            </div>
-                            <div class="price price-settings">
-                                <span>{{ advert.price|prepend_dollars }}</span>
-                            </div>
-                        </a>
-
+                                <!--/.First slide-->
+                            {% endfor %}
+                        </div>
+                        <!--/.Slides-->
                     </div>
-                    {% if forloop.counter|divisibleby:4 %}
-                        </div>
-                        </div>
-                    {% endif %}
-                        <!--/.First slide-->
-                    {% endfor %}
                 </div>
-                <!--/.Slides-->
-            </div>
-        </div>
-    {% endif %}
-
-
+            {% endif %}
+        {% endblock %}
+    {% endcache %}
 
 {% endblock %}

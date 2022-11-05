@@ -24,9 +24,9 @@ def index(request):
     if query:
         advert_list = Gift.objects.filter(Q(local__exact=lang) &
                                           (Q(title__icontains=query) | Q(description__icontains=query))
-                                          ).order_by('-modified').prefetch_related('author')
+                                          ).select_related('gift_type').prefetch_related('author').order_by('-modified')
     else:
-        advert_list = Gift.objects.filter(local=lang).order_by('-modified').prefetch_related('author')
+        advert_list = Gift.objects.filter(local=lang).select_related('gift_type').prefetch_related('author').order_by('-modified')
     filters = GiftsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)
     favourites = Gift.objects.filter(local__exact=lang, favourites__in=[request.user.id]).values_list('id', flat=True)

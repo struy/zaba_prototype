@@ -12,7 +12,6 @@ from apps.adverts.utils import context_helper
 from .filters import JobsFilter
 from .form import JobForm
 from .models import Job
-# connect to redis
 from .tables import JobTable
 from ..adverts.views import MapListView
 
@@ -25,9 +24,9 @@ def index(request):
     if query:
         advert_list = Job.objects.filter(Q(local__exact=lang)
                                          & (Q(title__icontains=query) | Q(description__icontains=query))
-                                         ).prefetch_related('author').order_by('-modified')
+                                         ).select_related('jobtype').prefetch_related('author').order_by('-modified')
     else:
-        advert_list = Job.objects.filter(local=lang).prefetch_related('author').order_by('-modified')
+        advert_list = Job.objects.filter(local=lang).select_related('jobtype').prefetch_related('author').order_by('-modified')
 
     filters = JobsFilter(request.GET, queryset=advert_list)
     adverts, has_filter = context_helper(request, filters)

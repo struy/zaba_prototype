@@ -4,9 +4,12 @@ from modeltranslation.admin import TranslationAdmin
 from .models import Service, ServiceType
 
 
-class ServiceAdmin(TranslationAdmin):
+class ServiceTypeAdmin(TranslationAdmin):
     pass
 
+class ServiceAdmin(admin.ModelAdmin):
+    list_filter = ('local','service_type', 'city')
 
-admin.site.register(Service)
-admin.site.register(ServiceType, ServiceAdmin)
+
+admin.site.register(Service, ServiceAdmin)
+admin.site.register(ServiceType, ServiceTypeAdmin)

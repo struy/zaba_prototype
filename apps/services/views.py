@@ -38,7 +38,7 @@ def index(request):
     context = {
         'adverts': adverts,
         'is_paginated': True,
-        'package_list': 'Services:index',  # for filter url
+        'package_list': 'services:index',  # for filter url
         'filters': filters,
         'has_filter': has_filter,
         'favourites': favourites

@@ -47,17 +47,14 @@
                     <h1>{{ advert.price|prepend_dollars }}</h1>
 
                     {% if advert.description %}
-
-                        <span class="mb-2">
-                                <b>{% trans "Description:" %}</b>
-                            </span>
-                        <p>
-                            {{ advert.description }}
-                        </p>
+                        <p> {{ advert.description }} </p>
                     {% endif %}
 
                     <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
-                    <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
+                    {% if advert.address %}
+                        <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+                    {% endif %}
 
                     {% if advert.point %}
                         <p>

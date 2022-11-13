@@ -28,7 +28,14 @@
                 {% endif %}
                 <div class="information">
                     <h2 class="d-flex justify-content-between">
-                        <span> {{ advert.title }} </span>
+                        <span>
+                              <img
+                                      class="mr-3  image-advert"
+                                      src="{% static advert.type_icon_path %}"
+                                      alt="no image"
+                                      width="64"
+                              />
+                            {{ advert.title }} </span>
                         <span>
                             <small class="text-muted">
                                 <a class="favorite" data-href="{{ advert.get_api_fav_url }}"
@@ -48,12 +55,7 @@
 
 
                     {% if advert.description %}
-                        <span class="mb-2">
-                                <b>{% trans "Description:" %}</b>
-                            </span>
-                        <p>
-                            {{ advert.description }}
-                        </p>
+                        <p> {{ advert.description }} </p>
                     {% endif %}
 
 
@@ -64,7 +66,10 @@
                     </p>
 
                     <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
-                    <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
+                    {% if  advert.address %}
+                        <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+                    {% endif %}
 
                     {% if advert.point %}
                         <p>

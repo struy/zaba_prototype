@@ -44,14 +44,9 @@
                         </span>
                     </h2>
                     <h1>{{ advert.price|prepend_dollars }}</h1>
-                    {% if advert.description %}
 
-                        <div class="mb-2">
-                            <b>{% trans "Description:" %}</b>
-                        </div>
-                        <p>
-                            {{ advert.description }}
-                        </p>
+                    {% if advert.description %}
+                        <p> {{ advert.description }} </p>
                     {% endif %}
 
                     <p><b>{% trans "Bathrooms:" %}</b> {{ advert.bathrooms }}</p>

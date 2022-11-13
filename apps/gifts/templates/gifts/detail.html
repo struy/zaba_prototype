@@ -45,17 +45,15 @@
                     </h2>
 
                     {% if advert.description %}
-
-                        <div class="mb-2">
-                            <b>{% trans "Description:" %}</b>
-                        </div>
-                        <p>
-                            {{ advert.description }}
-                        </p>
+                        <p> {{ advert.description }} </p>
                     {% endif %}
 
                     <p><b>{% trans "City:" %} </b>{{ advert.city }} </p>
-                    <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+
+                    {% if advert.address %}
+                        <p><b>{% trans "Address:" %} </b>{{ advert.address }} </p>
+                    {% endif %}
+
                     {% if advert.point %}
                         <p>
                             {% include 'svg/icon-Locate.svg' %}

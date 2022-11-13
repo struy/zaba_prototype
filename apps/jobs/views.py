@@ -97,7 +97,7 @@ class JobMapList(MapListView):
 
 class JobTableList(SingleTableMixin, FilterView):
     table_class = JobTable
-    template_name = "items/table.html"
+    template_name = "jobs/table.html"
     filterset_class = JobsFilter
 
     def get_queryset(self):

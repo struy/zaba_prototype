@@ -104,7 +104,7 @@ class ServiceMapList(MapListView):
 
 class ServiceTableList(SingleTableMixin, FilterView):
     table_class = ServiceTable
-    template_name = "items/table.html"
+    template_name = "services/table.html"
     filterset_class = ServicesFilter
 
     def get_queryset(self):

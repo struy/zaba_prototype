@@ -96,7 +96,7 @@ class GiftMapList(MapListView):
 
 class GiftTableList(SingleTableMixin, FilterView):
     table_class = GiftTable
-    template_name = "items/table.html"
+    template_name = "gifts/table.html"
     filterset_class = GiftsFilter
 
     def get_queryset(self):

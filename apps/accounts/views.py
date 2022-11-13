@@ -19,6 +19,7 @@ from apps.gifts.models import Gift
 from apps.items.models import Item
 from apps.jobs.models import Job
 from apps.rents.models import Rent
+from apps.services.models import Service
 from .forms import UserEditForm, ContactUserForm
 from .forms import UserRegistrationForm
 
@@ -43,7 +44,8 @@ class AdFavAPIToggle(APIView):
             "Item": Item,
             "Job": Job,
             "Gift": Gift,
-            "Rent": Rent
+            "Rent": Rent,
+            "Service": Service
         }
         ad = get_object_or_404(models[name.capitalize()], id=record_id)
         user = self.request.user
@@ -113,7 +115,7 @@ def my_ads(request):
 
 
 def user_ads(request, pk):
-    models = [Item, Job, Rent, Gift]
+    models = [Item, Job, Rent, Gift, Service]
     adverts = [m.objects.filter(author_id=pk) for m in models]
     ads = [i for i in adverts if len(i)]
     names = [i.model.__name__ + "s" for i in ads]

@@ -20,7 +20,7 @@ click==8.0.0a1
 click-didyoumean==0.0.3
 click-repl==0.1.6
 Collectfast==2.2.0
-cryptography==3.4.6
+cryptography==39.0.1
 defusedxml==0.7.0rc1
 distlib==0.3.1
 Django==2.2.24

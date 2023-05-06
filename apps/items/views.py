@@ -16,7 +16,6 @@ from .models import Item
 from .tables import ItemTable
 from ..promotions.models import Banner
 
-r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
@@ -51,14 +50,16 @@ def index(request):
 
 def detail(request, pk):
     advert = get_object_or_404(Item, pk=pk)
-
-    redis_key = f'item:{pk}:views'
-    if not request.session.get(redis_key):
-        request.session[redis_key] = True
-        total_views = r.incr(redis_key)
-        r.zincrby('ranking:All', 1, f'Item:{advert.id}')
-    else:
-        total_views = r.get(redis_key).decode('utf-8')
+    total_views = 0
+    if settings.REDIS:
+        r = redis.Redis(connection_pool=settings.POOL)
+        redis_key = f'item:{pk}:views'
+        if not request.session.get(redis_key):
+            request.session[redis_key] = True
+            total_views = r.incr(redis_key)
+            r.zincrby('ranking:All', 1, f'Item:{advert.id}')
+        else:
+            total_views = r.get(redis_key).decode('utf-8')
 
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():

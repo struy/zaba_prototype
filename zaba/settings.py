@@ -6,7 +6,7 @@ import redis
 import sentry_sdk
 from braintree import Configuration, Environment
 from django.utils.translation import gettext_lazy as _
-from sentry_sdk.integrations.redis import RedisIntegration
+from sentry_sdk.integrations.redis import RedisIntegration, DjangoIntegration
 
 env = environ.Env()
 
@@ -205,52 +205,68 @@ MODELTRANSLATION_LANGUAGES = ('en', 'ru', 'pl', 'uk')
 MODELTRANSLATION_TRANSLATION_FILES = (
     'apps.gifts.translation', 'apps.jobs.translation',)
 
-REDIS_HOST = env('REDIS_HOST', default='localhost')
-REDIS_PORT = 6379
-REDIS_DB = 0
+REDIS = env('REDIS', default=False)
+if REDIS:
+        
+    REDIS_HOST = env('REDIS_HOST', default='localhost')
+    REDIS_PORT = 6379
+    REDIS_DB = 0
 
-POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+    POOL = redis.ConnectionPool(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': f'redis://{REDIS_HOST}:6379/1',
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient"
-        }
-    },
-    "select2": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": f"redis://{REDIS_HOST}:6379/2",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+    CACHES = {
+        'default': {
+            'BACKEND': 'django_redis.cache.RedisCache',
+            'LOCATION': f'redis://{REDIS_HOST}:6379/1',
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient"
+            }
+        },
+        "select2": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": f"redis://{REDIS_HOST}:6379/2",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
         }
     }
-}
 
-SELECT2_CACHE_BACKEND = "select2"
-DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
+    SELECT2_CACHE_BACKEND = "select2"
+    DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap4.html"
 
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
+    SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+    SESSION_CACHE_ALIAS = "default"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+    # CELERY
+    BROKER_URL = f'redis://{REDIS_HOST}:6379'
+    CELERY_RESULT_BACKEND = 'redis://{REDIS_HOST}:6379'
+    CELERY_ACCEPT_CONTENT = ['application/json']
+    CELERY_TASK_SERIALIZER = 'json'
+    CELERY_RESULT_SERIALIZER = 'json'
+    CELERY_TASK_TRACK_STARTED = True
+    CELERY_TASK_TIME_LIMIT = 30 * 60
 
-# CELERY
-BROKER_URL = f'redis://{REDIS_HOST}:6379'
-CELERY_RESULT_BACKEND = 'redis://{REDIS_HOST}:6379'
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_TRACK_STARTED = True
-CELERY_TASK_TIME_LIMIT = 30 * 60
-
-
-sentry_sdk.init(
+    sentry_sdk.init(
     dsn=env('SENTRY_DSN', default=""),
     integrations=[RedisIntegration()],
     send_default_pii=True
-)
+    ) 
+else:
+    sentry_sdk.init(
+    dsn=env('SENTRY_DSN', default=""),
+    integrations=[
+        DjangoIntegration(
+            transaction_style='url',
+            middleware_spans=True,
+            signals_spans=False,
+            cache_spans=False,
+        ),
+    ],    send_default_pii=True
+    )   
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+ 
 
 BRAINTREE_MERCHANT_ID = env('BRAINTREE_MERCHANT_ID', default="")
 BRAINTREE_PUBLIC_KEY = env('BRAINTREE_PUBLIC_KEY', default="")

@@ -15,7 +15,6 @@ from .models import Gift
 from .tables import GiftTable
 from ..adverts.views import MapListView
 
-r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
@@ -46,12 +45,16 @@ def index(request):
 def detail(request, pk):
     advert = get_object_or_404(Gift, pk=pk)
 
-    if not request.session.get(f'gift:{advert.id}:views'):
-        request.session[f'gift:{advert.id}:views'] = True
-        total_views = r.incr(f'gift:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'Gift:{pk}')
+    if settings.REDIS:
+        r = redis.Redis(connection_pool=settings.POOL)
+        if not request.session.get(f'gift:{advert.id}:views'):
+            request.session[f'gift:{advert.id}:views'] = True
+            total_views = r.incr(f'gift:{advert.id}:views')
+            r.zincrby('ranking:All', 1, f'Gift:{pk}')
+        else:
+            total_views = r.get(f'gift:{advert.id}:views').decode('utf-8')
     else:
-        total_views = r.get(f'gift:{advert.id}:views').decode('utf-8')
+        total_views = 0
 
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():

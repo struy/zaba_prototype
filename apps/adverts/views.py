@@ -84,7 +84,6 @@ def home(request):
                 'bottom_banners': bottom_banners,
                 'most_viewed': most_viewed}
     else:
-
         context = {'counter': 0,
                 'new': [],
                 'sm_header_banners': [],

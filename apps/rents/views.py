@@ -15,7 +15,6 @@ from .models import Rent, RentalTable
 from .tables import RentTable
 from ..adverts.views import MapListView
 
-r = redis.Redis(connection_pool=settings.POOL)
 
 
 def index(request):
@@ -46,13 +45,16 @@ def index(request):
 
 def detail(request, pk):
     advert = get_object_or_404(Rent, pk=pk)
-
-    if not request.session.get(f'rent:{advert.id}:views'):
-        request.session[f'rent:{advert.id}:views'] = True
-        total_views = r.incr(f'rent:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'Rent:{pk}')
+    if settings.REDIS:
+        r = redis.Redis(connection_pool=settings.POOL)
+        if not request.session.get(f'rent:{advert.id}:views'):
+            request.session[f'rent:{advert.id}:views'] = True
+            total_views = r.incr(f'rent:{advert.id}:views')
+            r.zincrby('ranking:All', 1, f'Rent:{pk}')
+        else:
+            total_views = r.get(f'rent:{advert.id}:views').decode('utf-8')
     else:
-        total_views = r.get(f'rent:{advert.id}:views').decode('utf-8')
+        total_views = 0
 
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():
@@ -62,6 +64,7 @@ def detail(request, pk):
                'total_views': total_views,
                'favourite': is_favourite,
                'name': 'Rent'}
+               
     return render(request, 'rents/templates/rents/detail.html', context)
 
 

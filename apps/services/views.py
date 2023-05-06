@@ -17,7 +17,7 @@ from .models import Service
 from .tables import ServiceTable
 from ..adverts.views import MapListView
 
-r = redis.Redis(connection_pool=settings.POOL)
+
 
 
 def index(request):
@@ -49,16 +49,21 @@ def index(request):
 
 def detail(request, pk):
     advert = get_object_or_404(Service, pk=pk)
-    if not request.session.get(f'service:{advert.id}:views'):
-        request.session[f'service:{advert.id}:views'] = True
-        total_views = r.incr(f'service:{advert.id}:views')
-        r.zincrby('ranking:All', 1, f'service:{pk}')
+    if settings.REDIS:
+        r = redis.Redis(connection_pool=settings.POOL)
+        if not request.session.get(f'service:{advert.id}:views'):
+            request.session[f'service:{advert.id}:views'] = True
+            total_views = r.incr(f'service:{advert.id}:views')
+            r.zincrby('ranking:All', 1, f'service:{pk}')
+        else:
+            total_views = r.get(f'service:{advert.id}:views').decode('utf-8')  
     else:
-        total_views = r.get(f'service:{advert.id}:views').decode('utf-8')
+        total_views = 0
 
     is_favourite = False
     if advert.favourites.filter(id=request.user.id).exists():
-        is_favourite = True
+        is_favourite = True   
+
 
     context = {'advert': advert,
                'total_views': total_views,

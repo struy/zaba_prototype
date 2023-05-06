@@ -51,7 +51,7 @@ class AdFavAPIToggle(APIView):
         user = self.request.user
         updated = False
         favourite = False
-        if ad:  # and user.is_authenticated()
+        if settings.REDIS and ad:  # and user.is_authenticated()
             r = redis.Redis(connection_pool=settings.POOL)
             if ad.favourites.filter(id=user.id).exists():
                 ad.favourites.remove(user)

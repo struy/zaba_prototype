@@ -6,7 +6,10 @@ import redis
 import sentry_sdk
 from braintree import Configuration, Environment
 from django.utils.translation import gettext_lazy as _
-from sentry_sdk.integrations.redis import RedisIntegration, DjangoIntegration
+from sentry_sdk.integrations.redis import RedisIntegration
+from sentry_sdk.integrations.django import DjangoIntegration
+
+
 
 env = environ.Env()
 
@@ -28,12 +31,12 @@ RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY', default="")
 RECAPTCHA_REQUIRED_SCORE = 0.7
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (len(sys.argv) >= 2 and sys.argv[1] == 'runserver')
+DEBUG = True or (len(sys.argv) >= 2 and sys.argv[1] == 'runserver')
 
 if DEBUG:
     THUMBNAIL_DEBUG = True
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "*"]
+    ALLOWED_HOSTS += ["localhost", "0.0.0.0", "127.0.0.1", "*"]
     SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Application definition
@@ -255,12 +258,7 @@ else:
     sentry_sdk.init(
     dsn=env('SENTRY_DSN', default=""),
     integrations=[
-        DjangoIntegration(
-            transaction_style='url',
-            middleware_spans=True,
-            signals_spans=False,
-            cache_spans=False,
-        ),
+        DjangoIntegration(),
     ],    send_default_pii=True
     )   
 

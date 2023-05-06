@@ -4,6 +4,8 @@ from django.conf import settings
 
 def fav_count(request):
     """Return len of favorites ads"""
+    if not settings.REDIS:
+        return {'fav_count': 0}
     r = redis.Redis(connection_pool=settings.POOL)
     count = 0
     if request.user.id:

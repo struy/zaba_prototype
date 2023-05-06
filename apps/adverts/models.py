@@ -102,26 +102,26 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         if lang:
             self.local = lang[:2]
         super(Advert, self).save(*args, **kwargs)
+        if settings.REDIS:
+            r = redis.Redis(connection_pool=settings.POOL)
+            if (self.modified - self.created).seconds == 0:
+                r.incr('Total:saved')
+                r.incr(f'{self.__class__.__name__}:{self.id}:saved')
+                r.lpush(f'{self.__class__.__name__}:new', self.id)
+                r.ltrim(f'{self.__class__.__name__}:new', 0, 12)
+                data = self.created.timestamp()
+                score = f'{self.__class__.__name__}:{self.created.timestamp()}'
+                r.zadd("adverts", {score: data})
 
-        r = redis.Redis(connection_pool=settings.POOL)
-
-        if (self.modified - self.created).seconds == 0:
-            r.incr('Total:saved')
-            r.incr(f'{self.__class__.__name__}:{self.id}:saved')
-            r.lpush(f'{self.__class__.__name__}:new', self.id)
-            r.ltrim(f'{self.__class__.__name__}:new', 0, 12)
+    def delete(self, using=None, keep_parents=False):
+        if settings.REDIS:
+            r = redis.Redis(connection_pool=settings.POOL)
+            super(Advert, self).delete()
+            r.decr('Total:saved')
+            r.decr(f'{self.__class__.__name__}:{self.id}:saved')
             data = self.created.timestamp()
             score = f'{self.__class__.__name__}:{self.created.timestamp()}'
             r.zadd("adverts", {score: data})
-
-    def delete(self, using=None, keep_parents=False):
-        r = redis.Redis(connection_pool=settings.POOL)
-        super(Advert, self).delete()
-        r.decr('Total:saved')
-        r.decr(f'{self.__class__.__name__}:{self.id}:saved')
-        data = self.created.timestamp()
-        score = f'{self.__class__.__name__}:{self.created.timestamp()}'
-        r.zadd("adverts", {score: data})
 
     def __str__(self):
         return self.title

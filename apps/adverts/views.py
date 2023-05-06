@@ -35,53 +35,64 @@ def detail(request, advert_id):
 
 
 def home(request):
-    r = redis.Redis(connection_pool=settings.POOL)
+    if settings.REDIS:
+        r = redis.Redis(connection_pool=settings.POOL)
 
-    new = get_new_ads(r)
-    most_viewed = get_most_viewed(r)
+        new = get_new_ads(r)
+        most_viewed = get_most_viewed(r)
 
-    total = r.get("Total:saved")
-    if total:
-        total = total.decode('utf-8')
+        total = r.get("Total:saved")
+        if total:
+            total = total.decode('utf-8')
 
-    now = datetime.datetime.now()
-    month_ago = now - datetime.timedelta(weeks=4)
-    week_ago = now - datetime.timedelta(weeks=1)
-    day_ago = now - datetime.timedelta(days=1)
+        now = datetime.datetime.now()
+        month_ago = now - datetime.timedelta(weeks=4)
+        week_ago = now - datetime.timedelta(weeks=1)
+        day_ago = now - datetime.timedelta(days=1)
 
-    month = r.zcount("adverts", month_ago.timestamp(), "+inf")
-    week = r.zcount("adverts", week_ago.timestamp(), "+inf")
-    today = r.zcount("adverts", day_ago.timestamp(), "+inf")
+        month = r.zcount("adverts", month_ago.timestamp(), "+inf")
+        week = r.zcount("adverts", week_ago.timestamp(), "+inf")
+        today = r.zcount("adverts", day_ago.timestamp(), "+inf")
 
-    counter = {
-        'total': total,
-        'month': month,
-        'week': week,
-        'today': today
-    }
+        counter = {
+            'total': total,
+            'month': month,
+            'week': week,
+            'today': today
+        }
 
-    lang = get_language()
-    if lang:
-        lang = lang[:2]
-    sm_header_banners = cache.get_or_set('sm_header_banners',
-                                         Banner.objects.filter(local=lang, areas__area='h', size='sm').order_by('?'),
-                                         3600)
-    md_header_banners = cache.get_or_set('md_header_banners',
-                                         Banner.objects.filter(local=lang, areas__area='h', size='md').order_by('?'),
-                                         3600)
-    lg_header_banners = cache.get_or_set('lg_header_banners',
-                                         Banner.objects.filter(local=lang, areas__area='h', size='lg').order_by('?'),
-                                         3600)
-    bottom_banners = cache.get_or_set('bottom_banners',
-                                      Banner.objects.filter(local=lang, areas__area='b').order_by('?'), 3600)
+        lang = get_language()
+        if lang:
+            lang = lang[:2]
+        sm_header_banners = cache.get_or_set('sm_header_banners',
+                                            Banner.objects.filter(local=lang, areas__area='h', size='sm').order_by('?'),
+                                            3600)
+        md_header_banners = cache.get_or_set('md_header_banners',
+                                            Banner.objects.filter(local=lang, areas__area='h', size='md').order_by('?'),
+                                            3600)
+        lg_header_banners = cache.get_or_set('lg_header_banners',
+                                            Banner.objects.filter(local=lang, areas__area='h', size='lg').order_by('?'),
+                                            3600)
+        bottom_banners = cache.get_or_set('bottom_banners',
+                                        Banner.objects.filter(local=lang, areas__area='b').order_by('?'), 3600)
 
-    context = {'counter': counter,
-               'new': new,
-               'sm_header_banners': sm_header_banners,
-               'md_header_banners': md_header_banners,
-               'lg_header_banners': lg_header_banners,
-               'bottom_banners': bottom_banners,
-               'most_viewed': most_viewed}
+        context = {'counter': counter,
+                'new': new,
+                'sm_header_banners': sm_header_banners,
+                'md_header_banners': md_header_banners,
+                'lg_header_banners': lg_header_banners,
+                'bottom_banners': bottom_banners,
+                'most_viewed': most_viewed}
+    else:
+
+        context = {'counter': 0,
+                'new': [],
+                'sm_header_banners': [],
+                'md_header_banners': [],
+                'lg_header_banners': [],
+                'bottom_banners': [],
+                'most_viewed': []}
+
 
     return render(request, 'home.html', context)
 

@@ -31,12 +31,12 @@ RECAPTCHA_PRIVATE_KEY = env('RECAPTCHA_PRIVATE_KEY', default="")
 RECAPTCHA_REQUIRED_SCORE = 0.7
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True or (len(sys.argv) >= 2 and sys.argv[1] == 'runserver')
+DEBUG = (len(sys.argv) >= 2 and sys.argv[1] == 'runserver')
 
 if DEBUG:
     THUMBNAIL_DEBUG = True
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    ALLOWED_HOSTS += ["localhost", "0.0.0.0", "127.0.0.1", "*"]
+    ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "*"]
     SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Application definition
@@ -64,7 +64,7 @@ THIRD_PARTY_APPS = ['django_countries',
                     'rosetta',
                     'debug_toolbar',
                     'social_django',
-                    'google_analytics',
+                    # 'google_analytics', temporary turn off
                     # 'django_select2',
                     'django_filters',
                     'django_cleanup.apps.CleanupConfig',

@@ -1,5 +1,5 @@
 amqp==2.6.0
-anyjson==0.3.3
+# anyjson==0.3.3
 apipkg==1.5
 appdirs==1.4.4
 asgiref==3.2.10

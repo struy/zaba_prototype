@@ -3,6 +3,8 @@ from collections import namedtuple
 
 import pytz
 import redis
+from transliterate import translit
+
 from django.conf import settings
 from django.contrib.gis.db.models import PointField
 from django.core.exceptions import ValidationError
@@ -95,6 +97,21 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
 
     def was_published_recently(self):
         return self.created >= timezone.now() - datetime.timedelta(days=1)
+
+    def slugify_function(self, content):
+        """
+        This function will be used to slugify
+        the title (default `populate_from` field)
+        """
+        content = content.replace('_', '-').lower()
+        lang = get_language()
+        if lang:
+            self.local = lang[:2]
+
+        if local in ['ru','uk']:
+            return translit(content, local, reversed=True)
+        
+        return content.replace('_', '-').lower()
 
     def save(self, *args, **kwargs):
         lang = get_language()

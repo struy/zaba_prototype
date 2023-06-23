@@ -106,7 +106,7 @@ class Advert(TitleSlugDescriptionModel, TimeStampedModel):
         content = content.replace('_', '-').lower()
         lang = get_language()
         if lang:
-            self.local = lang[:2]
+            local = lang[:2]
 
         if local in ['ru','uk']:
             return translit(content, local, reversed=True)

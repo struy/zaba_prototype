@@ -135,7 +135,8 @@ def contact_user(request, pk, name, a_id):
         "Item": Item,
         "Job": Job,
         "Gift": Gift,
-        "Rent": Rent
+        "Rent": Rent,
+        "Service": Service
     }
     advert = get_object_or_404(models[name.capitalize()], id=a_id)
     if request.method == 'GET':
